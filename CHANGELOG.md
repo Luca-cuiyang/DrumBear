@@ -9,7 +9,10 @@
 - 首次在 macOS（Apple Silicon）完成完整 CMake 配置与编译：Qt 6.10.2 + Ninja，
   Release 构建全部通过（2940 个构建步骤，无报错）。
 - 修复首次启动取消提示的一处编译错误：`firstlaunchsetupmodel.cpp` 中 `muse::qtrc`
- 误返回 `QString`，但变量为 `std::string`，已改为 `muse::trc`。
+  误返回 `QString`，但变量为 `std::string`，已改为 `muse::trc`。
+- 修复启动崩溃：此前关闭 `MUSE_MODULE_CLOUD_MUSESCORECOM` 导致“转文件为谱”
+  （云端 OMR）服务在启动时因缺少 `IMuseScoreComService` 而 `std::out_of_range` 崩溃。
+  现改为保留 musescore.com 服务编译（用户可见的账户/Learn/发布/云曲谱 UI 已另行移除）。
 
 ### 功能去 Muse 化（Phase 3，第一批）
 

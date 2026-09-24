@@ -83,8 +83,10 @@ set(MUSE_APP_BUILD_MODE "dev" CACHE STRING "Build mode")
 
 set(MUSESCORE_REVISION "" CACHE STRING "Build revision")
 
-# DrumBear: disable the MuseScore.com account backend by default.
-set(MUSE_MODULE_CLOUD_MUSESCORECOM OFF CACHE BOOL "Enable MuseScore.com account" FORCE)
+# DrumBear: keep the musescore.com service compiled so cloud-dependent services
+# (e.g. "Convert file to score") don't crash at startup. All user-facing
+# musescore.com UI (account, learn, publish, cloud scores) is removed separately.
+set(MUSE_MODULE_CLOUD_MUSESCORECOM ON CACHE BOOL "Enable MuseScore.com account" FORCE)
 
 include(${MUSE_FRAMEWORK_SRC_PATH}/cmake/MuseDeclareOptions.cmake)
 
