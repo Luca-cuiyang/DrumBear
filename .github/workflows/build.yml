@@ -53,7 +53,7 @@ jobs:
           path: DrumBear-Windows-x64-portable.zip
 
   macos-universal:
-    name: macOS (universal: Apple Silicon + Intel)
+    name: "macOS (universal: Apple Silicon + Intel)"
     runs-on: macos-latest
     steps:
       - name: Checkout
