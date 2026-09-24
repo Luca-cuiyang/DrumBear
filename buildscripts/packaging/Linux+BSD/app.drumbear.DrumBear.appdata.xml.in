@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2026 DrumBear. Forked from MuseScore Studio (GPL-3.0). -->
+<component type="desktop-application">
+    <id>app.drumbear.DrumBear@MUSE_APP_INSTALL_SUFFIX@</id>
+    <metadata_license>CC0-1.0</metadata_license><!-- License of this file -->
+    <project_license>GPL-3.0-only</project_license>
+    <name>DB动谱studio</name>
+    <summary>Create, play and print beautiful sheet music</summary>
+    <description>
+        <p>DB动谱studio (DrumBear) is a cross-platform, multi-lingual, open source music notation software.
+        It is an independent fork of MuseScore Studio and is licensed under GPL-3.0.</p>
+        <p>It features an easy-to-use WYSIWYG editor with audio score playback, unlimited staves,
+        dynamics, articulations, lyrics, chords, lead sheet notation, and import/export of MIDI,
+        MusicXML, MEI and other formats, as well as export to PDF and audio.</p>
+    </description>
+    <url type="homepage">https://www.drumbear.app</url>
+    <url type="vcs-browser">https://github.com/drumbear/DrumBear</url>
+    <launchable type="desktop-id">app.drumbear.DrumBear@MUSE_APP_INSTALL_SUFFIX@.desktop</launchable>
+    <provides>
+        <binary>mscore@MUSE_APP_INSTALL_SUFFIX@</binary>
+        <id>app.drumbear.DrumBear@MUSE_APP_INSTALL_SUFFIX@.desktop</id>
+    </provides>
+    <developer id="app.drumbear">
+        <name>DrumBear</name>
+    </developer>
+    <translation type="qt">mscore@MUSE_APP_INSTALL_SUFFIX@-@MUSE_APP_VERSION_MAJ_MIN@/locale/instruments</translation>
+    <translation type="qt">mscore@MUSE_APP_INSTALL_SUFFIX@-@MUSE_APP_VERSION_MAJ_MIN@/locale/musescore</translation>
+    <translation type="qt">mscore@MUSE_APP_INSTALL_SUFFIX@-@MUSE_APP_VERSION_MAJ_MIN@/locale/qt</translation>
+    <translation type="qt">mscore@MUSE_APP_INSTALL_SUFFIX@-@MUSE_APP_VERSION_MAJ_MIN@/locale/qtbase</translation>
+    <content_rating type="oars-1.1" />
+    <releases>
+        <release date="2026-09-24" version="0.1.0" />
+    </releases>
+</component>

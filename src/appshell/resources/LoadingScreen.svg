@@ -1,0 +1,19 @@
+<svg width="800" height="380" viewBox="0 0 800 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1F2430"/>
+      <stop offset="1" stop-color="#2E3A59"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="380" fill="url(#bg)"/>
+  <g opacity="0.9">
+    <rect x="96" y="126" width="120" height="70" rx="8" fill="#F0A63A"/>
+    <ellipse cx="156" cy="126" rx="60" ry="12" fill="#C98A1B"/>
+    <ellipse cx="156" cy="90" rx="60" ry="38" fill="#FFF6E6"/>
+    <ellipse cx="156" cy="90" rx="46" ry="28" fill="none" stroke="#C98A1B" stroke-width="5"/>
+    <line x1="74" y1="184" x2="238" y2="76" stroke="#EDE6D6" stroke-width="9" stroke-linecap="round"/>
+    <line x1="238" y1="184" x2="74" y2="76" stroke="#EDE6D6" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <text x="252" y="166" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="54" font-weight="700" fill="#FFF6E6">DB动谱studio</text>
+  <text x="254" y="208" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#9AA6C4">DrumBear</text>
+</svg>
