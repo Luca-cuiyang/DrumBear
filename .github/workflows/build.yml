@@ -19,7 +19,7 @@ jobs:
       - name: Configure build
         shell: bash
         run: |
-          bash ./buildscripts/ci/tools/make_build_mode_env.sh -e "${{ github.event_name }}" -m devel
+          bash ./buildscripts/ci/tools/make_build_mode_env.sh -e "${{ github.event_name }}" -m stable
           bash ./buildscripts/ci/tools/make_build_number.sh
           echo "BUILD_NUMBER=$(cat ./build.artifacts/env/build_number.env)" >> "$GITHUB_ENV"
 
@@ -64,7 +64,7 @@ jobs:
       - name: Configure build
         shell: bash
         run: |
-          bash ./buildscripts/ci/tools/make_build_mode_env.sh -e "${{ github.event_name }}" -m devel
+          bash ./buildscripts/ci/tools/make_build_mode_env.sh -e "${{ github.event_name }}" -m stable
           bash ./buildscripts/ci/tools/make_build_number.sh
           echo "BUILD_NUMBER=$(cat ./build.artifacts/env/build_number.env)" >> "$GITHUB_ENV"
 

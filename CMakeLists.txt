@@ -75,7 +75,7 @@ set(MUSESCORE_BUILD_CONFIGURATION "app" CACHE STRING "Build configuration")
 # - vtest           - for visual tests (for CI)
 # - utest           - for unit tests (for CI)
 
-set(MUSE_APP_BUILD_MODE "dev" CACHE STRING "Build mode")
+set(MUSE_APP_BUILD_MODE "release" CACHE STRING "Build mode")
 # Possible MUSE_APP_BUILD_MODE values:
 # - dev     - for development/nightly builds
 # - testing - for testing versions (alpha, beta, RC)
