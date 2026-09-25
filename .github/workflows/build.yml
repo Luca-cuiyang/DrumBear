@@ -12,7 +12,7 @@ jobs:
     runs-on: windows-2025
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: recursive
 
@@ -47,7 +47,7 @@ jobs:
           Compress-Archive -Path "build.install\App\MuseScore\*" -DestinationPath "DBScore-Windows-x64-portable.zip"
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: DBScore-Windows-x64-portable
           path: DBScore-Windows-x64-portable.zip
@@ -57,7 +57,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: recursive
 
@@ -93,7 +93,7 @@ jobs:
           ditto -c -k --keepParent "$APP" "../DBScore-macOS-universal.zip"
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: DBScore-macOS-universal
           path: DBScore-macOS-universal.zip
