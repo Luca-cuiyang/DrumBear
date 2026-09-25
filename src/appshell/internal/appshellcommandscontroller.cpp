@@ -465,8 +465,8 @@ void AppshellCommandsController::revertToFactorySettings()
         static constexpr bool NOTIFY_OTHER_INSTANCES = false;
         configuration()->revertToFactorySettings(KEEP_DEFAULT_SETTINGS, NOTIFY_ABOUT_CHANGES, NOTIFY_OTHER_INSTANCES);
 
-        std::string title = muse::trc("appshell", "Would you like to restart DB动谱studio now?");
-        std::string question = muse::trc("appshell", "DB动谱studio needs to be restarted for these changes to take effect.");
+        std::string title = muse::trc("appshell", "Would you like to restart DB Score now?");
+        std::string question = muse::trc("appshell", "DB Score needs to be restarted for these changes to take effect.");
 
         int restartBtn = int(IInteractive::Button::Apply);
         auto promise = interactive()->question(title, question,

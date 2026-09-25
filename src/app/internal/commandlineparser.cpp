@@ -116,7 +116,7 @@ void CommandLineParser::init()
 
     m_parser.addOption(QCommandLineOption("sound-profile",
                                           "Use with '-o <file>.mp3' or with '-j <file>', override the sound profile in the given score(s). "
-                                          "Possible values: \"DrumBear Basic\"", "sound-profile"));
+                                          "Possible values: \"DBScore Basic\"", "sound-profile"));
 
     m_parser.addOption(QCommandLineOption("tracks-diff",
                                           "Use with -o <file>.mp3, write a diff of tracks before and after applying the sound profile. "

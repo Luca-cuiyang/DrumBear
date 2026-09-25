@@ -102,7 +102,7 @@ bool FirstLaunchSetupModel::askAboutClosingEarly()
 {
     const std::string title = muse::trc("appshell/gettingstarted", "Are you sure you want to cancel?");
     const std::string body = muse::trc("appshell/gettingstarted",
-                                        "You can finish setting up DB动谱studio later from the Home page.");
+                                        "You can finish setting up DB Score later from the Home page.");
     const IInteractive::Text text(body, IInteractive::TextFormat::RichText);
 
     const IInteractive::ButtonData keepGoingBtn {

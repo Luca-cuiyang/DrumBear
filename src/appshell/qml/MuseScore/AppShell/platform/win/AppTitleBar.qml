@@ -92,7 +92,7 @@ Rectangle {
             TextMetrics {
                 id: titleTextmetrics
 
-                text: qsTrc("appshell", "DB动谱studio")
+                text: qsTrc("appshell", "DB Score")
                 font: titleLabel.font
                 elide: Qt.ElideRight
                 elideWidth: titleLabel.width

@@ -76,7 +76,7 @@ elseif(OS_IS_MAC)
 
 elseif(OS_IS_WASM)
 
-    set(EXECUTABLE_NAME DrumBear)
+    set(EXECUTABLE_NAME DBScore)
 
 elseif(OS_IS_FBSD)
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -L /usr/local/lib -lasound -lpthread")
@@ -232,7 +232,7 @@ if (CC_IS_EMCC)
     set(APP_SRC ${APP_SRC} webapi_export.cpp)
 endif()
 
-qt_add_executable(DrumBear
+qt_add_executable(DBScore
     WIN32 MACOSX_BUNDLE
     ${APP_RCC_SOURCES}
     ${MSCORE_APPEND_SRC}
@@ -243,31 +243,31 @@ qt_add_executable(DrumBear
 # Setting target properties
 ###########################################
 
-set_target_properties(DrumBear PROPERTIES OUTPUT_NAME ${EXECUTABLE_NAME})
+set_target_properties(DBScore PROPERTIES OUTPUT_NAME ${EXECUTABLE_NAME})
 
 if (MUSE_ENABLE_UNIT_TESTS_CODE_COVERAGE)
     set(COVERAGE_FLAGS -fprofile-arcs -ftest-coverage --coverage)
     set(COVERAGE_LINK_FLAGS --coverage)
-    target_compile_options(DrumBear PRIVATE ${COVERAGE_FLAGS})
-    target_link_options(DrumBear PRIVATE ${COVERAGE_LINK_FLAGS})
+    target_compile_options(DBScore PRIVATE ${COVERAGE_FLAGS})
+    target_link_options(DBScore PRIVATE ${COVERAGE_LINK_FLAGS})
 endif()
 
 if (OS_IS_MAC)
     include(${PROJECT_SOURCE_DIR}/share/icons/SetupIconComposerIcon.cmake)
-    target_setup_iconcomposer_icon(DrumBear "${PROJECT_SOURCE_DIR}/share/icons/AppIcon/AppIcon.icon")
+    target_setup_iconcomposer_icon(DBScore "${PROJECT_SOURCE_DIR}/share/icons/AppIcon/AppIcon.icon")
 
-    set_target_properties(DrumBear PROPERTIES
+    set_target_properties(DBScore PROPERTIES
         MACOSX_BUNDLE_INFO_PLIST ${PROJECT_SOURCE_DIR}/buildscripts/packaging/macOS/Info.plist.in
         XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER ${MACOSX_BUNDLE_GUI_IDENTIFIER}
     )
 
     # Embed the update helper so codesign --deep signs it with the bundle.
     if (TARGET museupdater)
-        add_dependencies(DrumBear museupdater)
-        add_custom_command(TARGET DrumBear POST_BUILD
+        add_dependencies(DBScore museupdater)
+        add_custom_command(TARGET DBScore POST_BUILD
             COMMAND ${CMAKE_COMMAND} -E copy
                 $<TARGET_FILE:museupdater>
-                $<TARGET_BUNDLE_DIR:DrumBear>/Contents/MacOS/museupdater
+                $<TARGET_BUNDLE_DIR:DBScore>/Contents/MacOS/museupdater
             COMMENT "Embedding update helper (museupdater) into the app bundle"
             VERBATIM
         )
@@ -276,21 +276,21 @@ endif (OS_IS_MAC)
 
 if (CC_IS_MINGW)
     if (CMAKE_BUILD_TYPE MATCHES "DEBUG")
-        set_target_properties(DrumBear PROPERTIES LINK_FLAGS "-mwindows -mconsole")
+        set_target_properties(DBScore PROPERTIES LINK_FLAGS "-mwindows -mconsole")
     else (CMAKE_BUILD_TYPE MATCHES "DEBUG")
-        set_target_properties(DrumBear PROPERTIES LINK_FLAGS "-Wl,-S -mwindows")
+        set_target_properties(DBScore PROPERTIES LINK_FLAGS "-Wl,-S -mwindows")
     endif (CMAKE_BUILD_TYPE MATCHES "DEBUG")
 endif(CC_IS_MINGW)
 
 if (CC_IS_MSVC)
-    target_link_options(DrumBear PRIVATE /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup)
+    target_link_options(DBScore PRIVATE /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup)
 endif(CC_IS_MSVC)
 
 ###########################################
 # Includes
 ###########################################
 
-target_include_directories(DrumBear PRIVATE
+target_include_directories(DBScore PRIVATE
     ${PROJECT_BINARY_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
 
@@ -311,12 +311,12 @@ target_include_directories(DrumBear PRIVATE
 # Link
 ###########################################
 
-target_link_libraries(DrumBear PRIVATE ${LINK_LIB} ${COVERAGE_LINK_FLAGS})
+target_link_libraries(DBScore PRIVATE ${LINK_LIB} ${COVERAGE_LINK_FLAGS})
 
 if (CC_IS_EMCC)
     include(exported_functions.cmake)
-    target_link_options(DrumBear PRIVATE ${EMCC_LINKER_FLAGS})
-    target_link_options(DrumBear PRIVATE ${EXPORTED_FUNCTIONS})
+    target_link_options(DBScore PRIVATE ${EMCC_LINKER_FLAGS})
+    target_link_options(DBScore PRIVATE ${EXPORTED_FUNCTIONS})
 endif()
 
 
@@ -324,7 +324,7 @@ endif()
 # INSTALL
 ###########################################
 
-install(TARGETS DrumBear
+install(TARGETS DBScore
     BUNDLE  DESTINATION .
     RUNTIME DESTINATION bin
 )
@@ -362,7 +362,7 @@ if (OS_IS_WIN)
     if (MUE_RUN_WINDEPLOYQT)
         set(deploy_tool_options_arg "--plugindir bin --qmldir ${PROJECT_SOURCE_DIR}")
         qt_generate_deploy_qml_app_script(
-            TARGET DrumBear
+            TARGET DBScore
             OUTPUT_SCRIPT deploy_script
             NO_UNSUPPORTED_PLATFORM_ERROR
             DEPLOY_TOOL_OPTIONS ${deploy_tool_options_arg}
@@ -428,7 +428,7 @@ elseif(OS_IS_MAC)
     )
 
     qt_generate_deploy_qml_app_script(
-        TARGET DrumBear
+        TARGET DBScore
         OUTPUT_SCRIPT deploy_script
         MACOS_BUNDLE_POST_BUILD
     )
@@ -439,7 +439,7 @@ elseif(OS_IS_MAC)
 elseif(OS_IS_WASM)
 
     add_custom_command(
-        TARGET DrumBear
+        TARGET DBScore
         POST_BUILD
         COMMAND node ${PROJECT_SOURCE_DIR}/src/web/appjs/install.js ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}
         WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
@@ -462,7 +462,7 @@ if (MSVC)
         set(CONFIG_STR "$(Configuration)")
 
         add_custom_command(
-            TARGET DrumBear POST_BUILD
+            TARGET DBScore POST_BUILD
             COMMAND ${CMAKE_COMMAND} -DBUILD_TYPE=${CONFIG_STR} -P cmake_install.cmake
             WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
             VERBATIM
@@ -473,12 +473,12 @@ if (MSVC)
     set(CMAKE_SKIP_INSTALL_ALL_DEPENDENCY true)
     set(CMAKE_SKIP_PACKAGE_ALL_DEPENDENCY true)
 
-    # Set the startup project to "DrumBear".
-    set_property(DIRECTORY "${PROJECT_SOURCE_DIR}" PROPERTY VS_STARTUP_PROJECT DrumBear)
+    # Set the startup project to "DBScore".
+    set_property(DIRECTORY "${PROJECT_SOURCE_DIR}" PROPERTY VS_STARTUP_PROJECT DBScore)
 
-    # Set the debugging properties for the "DrumBear" project.
+    # Set the debugging properties for the "DBScore" project.
     file(TO_NATIVE_PATH "${CMAKE_INSTALL_PREFIX}/bin" VS_DEBUGGER_WORKING_DIRECTORY)
-    set_target_properties(DrumBear PROPERTIES VS_DEBUGGER_COMMAND "${VS_DEBUGGER_WORKING_DIRECTORY}\\${EXECUTABLE_NAME}${CMAKE_EXECUTABLE_SUFFIX}")
-    set_target_properties(DrumBear PROPERTIES VS_DEBUGGER_WORKING_DIRECTORY "${VS_DEBUGGER_WORKING_DIRECTORY}")
-    set_target_properties(DrumBear PROPERTIES VS_DEBUGGER_COMMAND_ARGUMENTS "--debug")
+    set_target_properties(DBScore PROPERTIES VS_DEBUGGER_COMMAND "${VS_DEBUGGER_WORKING_DIRECTORY}\\${EXECUTABLE_NAME}${CMAKE_EXECUTABLE_SUFFIX}")
+    set_target_properties(DBScore PROPERTIES VS_DEBUGGER_WORKING_DIRECTORY "${VS_DEBUGGER_WORKING_DIRECTORY}")
+    set_target_properties(DBScore PROPERTIES VS_DEBUGGER_COMMAND_ARGUMENTS "--debug")
 endif (MSVC)

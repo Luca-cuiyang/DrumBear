@@ -32,7 +32,7 @@ set(MUSE_FRAMEWORK_SRC_PATH ${MUSE_FRAMEWORK_PATH}/framework)
 
 include(${MUSE_FRAMEWORK_PATH}/buildscripts/cmake/SetupMacOSDeploymentTarget.cmake)
 
-project(DrumBear LANGUAGES C CXX)
+project(DBScore LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -83,7 +83,7 @@ set(MUSE_APP_BUILD_MODE "dev" CACHE STRING "Build mode")
 
 set(MUSESCORE_REVISION "" CACHE STRING "Build revision")
 
-# DrumBear: keep the musescore.com service compiled so cloud-dependent services
+# DBScore: keep the musescore.com service compiled so cloud-dependent services
 # (e.g. "Convert file to score") don't crash at startup. All user-facing
 # musescore.com UI (account, learn, publish, cloud scores) is removed separately.
 set(MUSE_MODULE_CLOUD_MUSESCORECOM ON CACHE BOOL "Enable MuseScore.com account" FORCE)

@@ -1,6 +1,6 @@
 [project]
-name = "DrumBear"
-description = "Python scripts for DrumBear (a MuseScore Studio fork) development."
+name = "DBScore"
+description = "Python scripts for DBScore (a MuseScore Studio fork) development."
 version = "0.1.0"
 readme = "https://github.com/musescore/MuseScore/wiki/Running-Python-scripts"
 requires-python = ">=3.10"

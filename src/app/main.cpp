@@ -125,8 +125,8 @@ int main(int argc, char** argv)
 #else
     QCoreApplication::setApplicationName(MUSE_APP_NAME_MACHINE_READABLE MUSE_APP_VERSION_MAJOR);
 #endif
-    QCoreApplication::setOrganizationName("DrumBear");
-    QCoreApplication::setOrganizationDomain("drumbear.app");
+    QCoreApplication::setOrganizationName("DBScore");
+    QCoreApplication::setOrganizationDomain("dbscore.app");
     QCoreApplication::setApplicationVersion(MUSE_APP_VERSION);
 
 #if !defined(Q_OS_WIN) && !defined(Q_OS_DARWIN) && !defined(Q_OS_WASM)
@@ -134,7 +134,7 @@ int main(int argc, char** argv)
 #ifndef MUSE_APP_INSTALL_SUFFIX
 #define MUSE_APP_INSTALL_SUFFIX ""
 #endif
-    QGuiApplication::setDesktopFileName("app.drumbear.DrumBear" MUSE_APP_INSTALL_SUFFIX);
+    QGuiApplication::setDesktopFileName("app.dbscore.DBScore" MUSE_APP_INSTALL_SUFFIX);
 #endif
 
     using namespace muse;

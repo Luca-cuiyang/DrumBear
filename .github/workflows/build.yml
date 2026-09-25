@@ -44,13 +44,13 @@ jobs:
       - name: Package (zip)
         shell: pwsh
         run: |
-          Compress-Archive -Path "build.install\App\MuseScore\*" -DestinationPath "DrumBear-Windows-x64-portable.zip"
+          Compress-Archive -Path "build.install\App\MuseScore\*" -DestinationPath "DBScore-Windows-x64-portable.zip"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: DrumBear-Windows-x64-portable
-          path: DrumBear-Windows-x64-portable.zip
+          name: DBScore-Windows-x64-portable
+          path: DBScore-Windows-x64-portable.zip
 
   macos-universal:
     name: "macOS (universal: Apple Silicon + Intel)"
@@ -88,10 +88,12 @@ jobs:
           cd applebuild
           APP=$(ls -d *.app | head -1)
           echo "Packaging: $APP"
-          ditto -c -k --keepParent "$APP" "../DrumBear-macOS-universal.zip"
+          # Ad-hoc code sign so macOS does not report the app as "damaged"
+          codesign --force --deep --sign - "$APP"
+          ditto -c -k --keepParent "$APP" "../DBScore-macOS-universal.zip"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: DrumBear-macOS-universal
-          path: DrumBear-macOS-universal.zip
+          name: DBScore-macOS-universal
+          path: DBScore-macOS-universal.zip

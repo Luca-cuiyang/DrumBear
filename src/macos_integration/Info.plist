@@ -30,9 +30,9 @@
 			<true/>
 			<key>QLSupportedContentTypes</key>
 			<array>
-				<string>app.drumbear.mscz</string>
-				<string>app.drumbear.mscx</string>
-				<string>app.drumbear.mscs</string>
+				<string>app.dbscore.mscz</string>
+				<string>app.dbscore.mscx</string>
+				<string>app.dbscore.mscs</string>
 			</array>
 			<key>QLSupportsSearchableItems</key>
 			<false/>

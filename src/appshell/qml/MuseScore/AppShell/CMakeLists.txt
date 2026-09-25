@@ -83,7 +83,7 @@ qt_add_qml_module(appshell_qml
     RESOURCES
         FirstLaunchSetup/resources/Sounds.png
         FirstLaunchSetup/resources/VideoTutorials.png
-        resources/drumbear_logo.svg
+        resources/dbscore_logo.svg
     IMPORTS
         TARGET muse_ui_qml
         TARGET muse_uicomponents_qml

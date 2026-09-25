@@ -31,7 +31,7 @@ import MuseScore.AppShell
 StyledDialogView {
     id: root
 
-    title: qsTrc("appshell/about", "About DB动谱studio")
+    title: qsTrc("appshell/about", "About DB Score")
 
     contentHeight: 424
     contentWidth: 480
@@ -59,7 +59,7 @@ StyledDialogView {
                 id: logo
                 Layout.alignment: Qt.AlignHCenter
 
-                source: "resources/drumbear_logo.svg"
+                source: "resources/dbscore_logo.svg"
                 sourceSize: Qt.size(100, 100)
 
                 MouseArea {

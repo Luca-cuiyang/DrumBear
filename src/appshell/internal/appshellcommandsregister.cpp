@@ -57,8 +57,8 @@ static const std::vector<CommandInfo> s_commandInfos = {
 
     CommandInfo(
         APP_ABOUT_MUSESCORE_COMMAND,
-        TranslatableString("action", "&About DB动谱studio…"),
-        TranslatableString("action", "About DB动谱studio"),
+        TranslatableString("action", "&About DB Score…"),
+        TranslatableString("action", "About DB Score"),
         InputSchema(),
         Decoration()
         ),
