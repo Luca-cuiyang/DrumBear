@@ -168,9 +168,9 @@ fn__set_default(INSTALL_PATH "install") # relative to BUILD_PATH
 if(WIN32)
     fn__set_default(MSCORE_EXECUTABLE "bin/DBScore5.exe")
 elseif(APPLE)
-    fn__set_default(MSCORE_EXECUTABLE "mscore.app/Contents/MacOS/mscore")
+    fn__set_default(MSCORE_EXECUTABLE "dbscore.app/Contents/MacOS/dbscore")
 else()
-    fn__set_default(MSCORE_EXECUTABLE "bin/mscore")
+    fn__set_default(MSCORE_EXECUTABLE "bin/dbscore")
 endif()
 
 # make paths absolute if they are not already

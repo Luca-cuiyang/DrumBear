@@ -31,7 +31,7 @@ include(${EXTDEPS_DIR}/buildtools/manifest.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/DependencyManifest.cmake)
 include(${MUSE_FRAMEWORK_PATH}/buildscripts/cmake/ExtDepsManifest.cmake)
 
-extdeps_install_consumed(MACOS_BUNDLE mscore.app)
+extdeps_install_consumed(MACOS_BUNDLE dbscore.app)
 
 add_custom_target(prepare_deps_sources
     COMMAND ${CMAKE_COMMAND} -P "${CMAKE_CURRENT_LIST_DIR}/PrepareDepsSources.cmake"

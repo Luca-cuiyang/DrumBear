@@ -75,11 +75,11 @@ set(MUSE_APP_ICON_WIN "${PROJECT_SOURCE_DIR}/share/icons/AppIcon/MS4_AppIcon.ico
 # Setup paths
 ###########################################
 if (OS_IS_MAC)
-    set(MUSE_APP_INSTALL_RESOURCES_LOCATION "mscore.app/Contents/Resources")
+    set(MUSE_APP_INSTALL_RESOURCES_LOCATION "dbscore.app/Contents/Resources")
 elseif (OS_IS_WIN)
     set(MUSE_APP_INSTALL_RESOURCES_LOCATION ".")
 else()
-    set(MUSE_APP_INSTALL_RESOURCES_LOCATION "share/mscore${MUSE_APP_INSTALL_SUFFIX}-${MUSE_APP_VERSION_MAJ_MIN}")
+    set(MUSE_APP_INSTALL_RESOURCES_LOCATION "share/dbscore${MUSE_APP_INSTALL_SUFFIX}-${MUSE_APP_VERSION_MAJ_MIN}")
 endif()
 
 ###########################################
