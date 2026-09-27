@@ -23,12 +23,15 @@
 
 #include <algorithm>
 #include <cmath>
+#include <vector>
 
 #include <QFile>
 #include <QFileInfo>
 
 #include "log.h"
 #include "project/inotationproject.h"
+
+#include "audio/engine/internal/codecs/thirdparty/dr_mp3.h"
 
 using namespace mu::project;
 
@@ -121,6 +124,50 @@ bool computeWavPeaks(const QString& path, double& duration, QVariantList& peaks,
 
     return true;
 }
+
+bool computeMp3Peaks(const QString& path, double& duration, QVariantList& peaks, int buckets = 600)
+{
+    drmp3 mp3;
+    if (!drmp3_init_file(&mp3, path.toUtf8().constData(), nullptr)) {
+        return false;
+    }
+
+    const uint64_t totalFrames = drmp3_get_pcm_frame_count(&mp3);
+    if (totalFrames == 0 || mp3.channels == 0 || mp3.sampleRate == 0) {
+        drmp3_uninit(&mp3);
+        return false;
+    }
+
+    std::vector<float> samples(totalFrames * mp3.channels);
+    const uint64_t read = drmp3_read_pcm_frames_f32(&mp3, totalFrames, samples.data());
+    drmp3_uninit(&mp3);
+
+    if (read != totalFrames) {
+        return false;
+    }
+
+    duration = double(totalFrames) / mp3.sampleRate;
+    const int bucketCount = std::min(buckets, int(totalFrames));
+    peaks.clear();
+    peaks.reserve(bucketCount);
+
+    for (int b = 0; b < bucketCount; ++b) {
+        const int startFrame = int((uint64_t(b) * totalFrames) / bucketCount);
+        const int endFrame = int((uint64_t(b + 1) * totalFrames) / bucketCount);
+        float peak = 0.f;
+        for (int f = startFrame; f < endFrame; ++f) {
+            for (unsigned int c = 0; c < mp3.channels; ++c) {
+                const size_t index = size_t(f) * mp3.channels + c;
+                if (index < samples.size()) {
+                    peak = std::max(peak, std::abs(samples[index]));
+                }
+            }
+        }
+        peaks.append(peak);
+    }
+
+    return true;
+}
 }
 
 AudioTrackSettingsModel::AudioTrackSettingsModel(QObject* parent)
@@ -197,7 +244,19 @@ void AudioTrackSettingsModel::updateWaveform()
 
     double duration = 0.0;
     QVariantList peaks;
-    if (computeWavPeaks(m_settings.filePath.toQString(), duration, peaks)) {
+    const QString path = m_settings.filePath.toQString();
+    if (path.endsWith(".wav", Qt::CaseInsensitive) || path.endsWith(".aiff", Qt::CaseInsensitive)
+        || path.endsWith(".aif", Qt::CaseInsensitive)) {
+        if (!computeWavPeaks(path, duration, peaks)) {
+            peaks.clear();
+        }
+    } else if (path.endsWith(".mp3", Qt::CaseInsensitive)) {
+        if (!computeMp3Peaks(path, duration, peaks)) {
+            peaks.clear();
+        }
+    }
+
+    if (!peaks.isEmpty()) {
         m_duration = duration;
         m_waveformPeaks = peaks;
     }

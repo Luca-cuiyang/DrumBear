@@ -9754,12 +9754,12 @@ followed by dashes</source>
         <translation>过滤器 (&amp;L)</translation>
     </message>
     <message>
-        <source>Accompaniment &amp;track…</source>
-        <translation>伴奏轨(&amp;T)…</translation>
+        <source>Import accompaniment &amp;track…</source>
+        <translation>导入伴奏轨(&amp;T)…</translation>
     </message>
     <message>
-        <source>Accompaniment track</source>
-        <translation>伴奏轨</translation>
+        <source>Import accompaniment track</source>
+        <translation>导入伴奏轨</translation>
     </message>
     <message>
         <source>&amp;Parts…</source>
@@ -35398,12 +35398,12 @@ failed: %2</source>
         <translation>Audio.com URL</translation>
     </message>
     <message>
-        <source>Accompaniment &amp;track…</source>
-        <translation>伴奏轨(&amp;T)…</translation>
+        <source>Import accompaniment &amp;track…</source>
+        <translation>导入伴奏轨(&amp;T)…</translation>
     </message>
     <message>
-        <source>Add an audio accompaniment track</source>
-        <translation>添加音频伴奏轨</translation>
+        <source>Import an audio accompaniment track</source>
+        <translation>导入音频伴奏轨</translation>
     </message>
     <message>
         <source>Accompaniment track</source>

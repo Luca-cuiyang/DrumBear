@@ -27,7 +27,7 @@
 #include "modularity/ioc.h"
 #include "log.h"
 #include "types/ret.h"
-#include "global/io/filestream.h"
+#include "global/io/file.h"
 
 #include "audio/common/audioutils.h"
 #include "audio/devtools/inputlag.h"
@@ -1330,7 +1330,7 @@ void PlaybackController::addAudioTrack(const AudioTrackSettings& settings, const
         return;
     }
 
-    m_audioTrackFile = std::make_shared<muse::io::FileStream>(settings.filePath);
+    m_audioTrackFile = std::make_shared<muse::io::File>(settings.filePath);
     if (!m_audioTrackFile->open(muse::io::IODevice::ReadOnly)) {
         LOGE() << "can't open audio track file: " << settings.filePath;
         m_audioTrackFile.reset();

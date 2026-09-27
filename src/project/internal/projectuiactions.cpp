@@ -48,8 +48,8 @@ const UiActionList ProjectUiActions::m_actions = {
     UiAction("file-audio-track",
              mu::context::UiCtxAny,
              mu::context::CTX_ANY,
-             TranslatableString("action", "Accompaniment &track…"),
-             TranslatableString("action", "Accompaniment track"),
+             TranslatableString("action", "Import accompaniment &track…"),
+             TranslatableString("action", "Import accompaniment track"),
              IconCode::Code::WAVEFORM
              ),
     UiAction("file-new",

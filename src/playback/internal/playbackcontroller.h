@@ -47,7 +47,7 @@
 #include "../isoundprofilesrepository.h"
 
 namespace muse::io {
-class FileStream;
+class File;
 }
 
 namespace mu::playback {
@@ -272,7 +272,7 @@ private:
     InstrumentTrackIdMap m_instrumentTrackIdMap;
     AuxTrackIdMap m_auxTrackIdMap;
     std::optional<muse::audio::TrackId> m_audioTrackId;
-    std::shared_ptr<muse::io::FileStream> m_audioTrackFile;
+    std::shared_ptr<muse::io::File> m_audioTrackFile;
 
     std::unordered_map<engraving::InstrumentTrackId, muse::audio::ControlParams> m_automatedControlParamsCache;
 

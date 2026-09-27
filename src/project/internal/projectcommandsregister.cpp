@@ -58,8 +58,8 @@ static const std::vector<CommandInfo> s_commandInfos = {
     },
     CommandInfo{
         PROJECT_AUDIO_TRACK_COMMAND,
-        TranslatableString("project", "Accompaniment &track…"),
-        TranslatableString("project", "Add an audio accompaniment track"),
+        TranslatableString("project", "Import accompaniment &track…"),
+        TranslatableString("project", "Import an audio accompaniment track"),
         InputSchema(),
         Decoration(IconCode::Code::WAVEFORM)
     },
