@@ -12,7 +12,7 @@
 		<!-- MuseScore documents -->
 		<dict>
 			<key>UTTypeIdentifier</key>
-			<string>org.musescore.mscz</string>
+			<string>org.dbscore.mscz</string>
 			<key>UTTypeDescription</key>
 			<string>DB Score File</string>
 			<key>UTTypeIconFile</key>
@@ -36,7 +36,7 @@
 		</dict>
 		<dict>
 			<key>UTTypeIdentifier</key>
-			<string>org.musescore.mscx</string>
+			<string>org.dbscore.mscx</string>
 			<key>UTTypeDescription</key>
 			<string>DB Score Uncompressed File</string>
 			<key>UTTypeIconFile</key>
@@ -60,7 +60,7 @@
 		</dict>
 		<dict>
 			<key>UTTypeIdentifier</key>
-			<string>org.musescore.mscs</string>
+			<string>org.dbscore.mscs</string>
 			<key>UTTypeDescription</key>
 			<string>DB Score Stand-alone File</string>
 			<key>UTTypeConformsTo</key>
@@ -82,7 +82,7 @@
 		</dict>
 		<dict>
 			<key>UTTypeIdentifier</key>
-			<string>org.musescore.mscz,</string>
+			<string>org.dbscore.mscz,</string>
 			<key>UTTypeDescription</key>
 			<string>DB Score Backup File</string>
 			<key>UTTypeIconFile</key>
@@ -114,7 +114,7 @@
 			<string>MsczIcon.icns</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>org.musescore.mscz</string>
+				<string>org.dbscore.mscz</string>
 			</array>
 			<key>CFBundleTypeExtensions</key>
 			<array>
@@ -134,7 +134,7 @@
 			<string>MscxIcon.icns</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>org.musescore.mscx</string>
+				<string>org.dbscore.mscx</string>
 			</array>
 			<key>CFBundleTypeExtensions</key>
 			<array>
@@ -152,7 +152,7 @@
 			<string>DB Score Stand-alone File</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>org.musescore.mscs</string>
+				<string>org.dbscore.mscs</string>
 			</array>
 			<key>CFBundleTypeExtensions</key>
 			<array>
@@ -172,7 +172,7 @@
 			<string>MsczIcon.icns</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>org.musescore.mscz,</string>
+				<string>org.dbscore.mscz,</string>
 			</array>
 			<key>CFBundleTypeExtensions</key>
 			<array>
@@ -192,7 +192,7 @@
 			<string>MscxIcon.icns</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>org.musescore.mscx,</string>
+				<string>org.dbscore.mscx,</string>
 			</array>
 			<key>CFBundleTypeExtensions</key>
 			<array>
