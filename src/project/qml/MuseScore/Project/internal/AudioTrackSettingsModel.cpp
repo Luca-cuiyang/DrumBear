@@ -229,13 +229,17 @@ void AudioTrackSettingsModel::chooseFile()
         return;
     }
 
-    m_settings.filePath = path;
-    m_duration = 0.0;
+    if (m_settings.clips.empty()) {
+        AudioClipSettings clip;
+        clip.filePath = path;
+        m_settings.clips.push_back(clip);
+    } else {
+        m_settings.clips[0].filePath = path;
+    }
+
     updateWaveform();
-    emit filePathChanged();
-    emit hasTrackChanged();
-    emit durationChanged();
-    emit waveformPeaksChanged();
+    updateClipsList();
+    notifyAll();
 }
 
 void AudioTrackSettingsModel::apply()
@@ -253,6 +257,7 @@ void AudioTrackSettingsModel::remove()
     m_settings = AudioTrackSettings();
     m_duration = 0.0;
     m_waveformPeaks.clear();
+    updateClipsList();
     apply();
     notifyAll();
 }
@@ -283,18 +288,41 @@ IProjectAudioSettingsPtr AudioTrackSettingsModel::audioSettings() const
     return project ? project->audioSettings() : nullptr;
 }
 
+void AudioTrackSettingsModel::updateClipsList()
+{
+    m_clips.clear();
+    for (const AudioClipSettings& clip : m_settings.clips) {
+        QVariantMap map;
+        map.insert("filePath", clip.filePath.toQString());
+        map.insert("startOffset", clip.startOffset.to_double());
+        map.insert("clipStart", clip.clipStart.to_double());
+        map.insert("clipEnd", clip.clipEnd.to_double());
+        map.insert("speed", clip.speed);
+        map.insert("volume", clip.volume.to_double());
+        map.insert("muted", clip.muted);
+        m_clips.append(map);
+    }
+    emit clipsChanged();
+}
+
+const AudioClipSettings* AudioTrackSettingsModel::firstClip() const
+{
+    return m_settings.clips.empty() ? nullptr : &m_settings.clips[0];
+}
+
 void AudioTrackSettingsModel::updateWaveform()
 {
     m_waveformPeaks.clear();
     m_duration = 0.0;
 
-    if (m_settings.filePath.empty()) {
+    const AudioClipSettings* clip = firstClip();
+    if (!clip || clip->filePath.empty()) {
         return;
     }
 
     double duration = 0.0;
     QVariantList peaks;
-    const QString path = m_settings.filePath.toQString();
+    const QString path = clip->filePath.toQString();
     if (path.endsWith(".wav", Qt::CaseInsensitive) || path.endsWith(".aiff", Qt::CaseInsensitive)
         || path.endsWith(".aif", Qt::CaseInsensitive)) {
         if (!computeWavPeaks(path, duration, peaks)) {
@@ -325,25 +353,132 @@ void AudioTrackSettingsModel::notifyAll()
     emit hasTrackChanged();
     emit durationChanged();
     emit waveformPeaksChanged();
+    emit clipsChanged();
 }
 
-QString AudioTrackSettingsModel::filePath() const { return m_settings.filePath.toQString(); }
-double AudioTrackSettingsModel::startOffset() const { return m_settings.startOffset.to_double(); }
-double AudioTrackSettingsModel::clipStart() const { return m_settings.clipStart.to_double(); }
-double AudioTrackSettingsModel::clipEnd() const { return m_settings.clipEnd.to_double(); }
-double AudioTrackSettingsModel::volumeDb() const { return m_settings.volume.to_double(); }
-bool AudioTrackSettingsModel::muted() const { return m_settings.muted; }
-bool AudioTrackSettingsModel::tempoSync() const { return m_settings.tempoSync; }
-double AudioTrackSettingsModel::speed() const { return m_settings.speed; }
+QString AudioTrackSettingsModel::filePath() const { const AudioClipSettings* c = firstClip(); return c ? c->filePath.toQString() : QString(); }
+double AudioTrackSettingsModel::startOffset() const { const AudioClipSettings* c = firstClip(); return c ? c->startOffset.to_double() : 0.0; }
+double AudioTrackSettingsModel::clipStart() const { const AudioClipSettings* c = firstClip(); return c ? c->clipStart.to_double() : 0.0; }
+double AudioTrackSettingsModel::clipEnd() const { const AudioClipSettings* c = firstClip(); return c ? c->clipEnd.to_double() : 0.0; }
+double AudioTrackSettingsModel::volumeDb() const { const AudioClipSettings* c = firstClip(); return c ? c->volume.to_double() : 0.0; }
+bool AudioTrackSettingsModel::muted() const { const AudioClipSettings* c = firstClip(); return c ? c->muted : false; }
+bool AudioTrackSettingsModel::tempoSync() const { return false; }
+double AudioTrackSettingsModel::speed() const { const AudioClipSettings* c = firstClip(); return c ? c->speed : 1.0; }
 bool AudioTrackSettingsModel::hasTrack() const { return m_settings.isValid(); }
 double AudioTrackSettingsModel::duration() const { return m_duration; }
 QVariantList AudioTrackSettingsModel::waveformPeaks() const { return m_waveformPeaks; }
 double AudioTrackSettingsModel::playbackPosition() const { return m_playbackPosition; }
+QVariantList AudioTrackSettingsModel::clips() const { return m_clips; }
 
-void AudioTrackSettingsModel::setStartOffset(double value) { m_settings.startOffset = muse::secs_t(value); emit startOffsetChanged(); }
-void AudioTrackSettingsModel::setClipStart(double value) { m_settings.clipStart = muse::secs_t(value); emit clipStartChanged(); }
-void AudioTrackSettingsModel::setClipEnd(double value) { m_settings.clipEnd = muse::secs_t(value); emit clipEndChanged(); }
-void AudioTrackSettingsModel::setVolumeDb(double value) { m_settings.volume = muse::audio::volume_db_t(value); emit volumeDbChanged(); }
-void AudioTrackSettingsModel::setMuted(bool value) { m_settings.muted = value; emit mutedChanged(); }
-void AudioTrackSettingsModel::setTempoSync(bool value) { m_settings.tempoSync = value; emit tempoSyncChanged(); }
-void AudioTrackSettingsModel::setSpeed(double value) { m_settings.speed = float(value); emit speedChanged(); }
+void AudioTrackSettingsModel::setStartOffset(double value) { if (!m_settings.clips.empty()) { m_settings.clips[0].startOffset = muse::secs_t(value); } emit startOffsetChanged(); updateClipsList(); }
+void AudioTrackSettingsModel::setClipStart(double value) { if (!m_settings.clips.empty()) { m_settings.clips[0].clipStart = muse::secs_t(value); } emit clipStartChanged(); updateClipsList(); }
+void AudioTrackSettingsModel::setClipEnd(double value) { if (!m_settings.clips.empty()) { m_settings.clips[0].clipEnd = muse::secs_t(value); } emit clipEndChanged(); updateClipsList(); }
+void AudioTrackSettingsModel::setVolumeDb(double value) { if (!m_settings.clips.empty()) { m_settings.clips[0].volume = muse::audio::volume_db_t(value); } emit volumeDbChanged(); updateClipsList(); }
+void AudioTrackSettingsModel::setMuted(bool value) { if (!m_settings.clips.empty()) { m_settings.clips[0].muted = value; } emit mutedChanged(); updateClipsList(); }
+void AudioTrackSettingsModel::setTempoSync(bool value) { emit tempoSyncChanged(); }
+void AudioTrackSettingsModel::setSpeed(double value) { if (!m_settings.clips.empty()) { m_settings.clips[0].speed = float(value); } emit speedChanged(); updateClipsList(); }
+
+void AudioTrackSettingsModel::addClipFromFile()
+{
+    const std::vector<std::string> filter {
+        muse::trc("project", "Audio files") + " (*.mp3 *.wav *.m4a *.aac *.flac *.ogg *.aiff *.aif)"
+    };
+    const muse::io::path_t path = interactive()->selectOpeningFileSync(muse::trc("project", "Choose audio track"), "", filter);
+    if (path.empty()) {
+        return;
+    }
+
+    AudioClipSettings clip;
+    clip.filePath = path;
+    m_settings.clips.push_back(clip);
+    updateWaveform();
+    updateClipsList();
+    apply();
+    notifyAll();
+}
+
+void AudioTrackSettingsModel::splitClip(int index, double at)
+{
+    if (index < 0 || index >= int(m_settings.clips.size())) {
+        return;
+    }
+
+    AudioClipSettings& clip = m_settings.clips[index];
+    const double dur = m_duration > 0.0 ? m_duration : 600.0;
+    const double splitSource = clip.clipStart + (at - clip.startOffset);
+    if (splitSource <= clip.clipStart || (clip.clipEnd > 0.0 && splitSource >= clip.clipEnd) || splitSource >= dur) {
+        return;
+    }
+
+    AudioClipSettings right = clip;
+    right.clipStart = muse::secs_t(splitSource);
+    right.startOffset = muse::secs_t(at);
+    clip.clipEnd = muse::secs_t(splitSource);
+
+    m_settings.clips.insert(m_settings.clips.begin() + index + 1, right);
+    updateClipsList();
+    apply();
+    notifyAll();
+}
+
+void AudioTrackSettingsModel::removeClip(int index)
+{
+    if (index < 0 || index >= int(m_settings.clips.size())) {
+        return;
+    }
+    m_settings.clips.erase(m_settings.clips.begin() + index);
+    updateClipsList();
+    apply();
+    notifyAll();
+}
+
+void AudioTrackSettingsModel::moveClip(int index, double startOffset)
+{
+    if (index < 0 || index >= int(m_settings.clips.size())) {
+        return;
+    }
+    m_settings.clips[index].startOffset = muse::secs_t(startOffset);
+    updateClipsList();
+    apply();
+}
+
+void AudioTrackSettingsModel::trimClip(int index, double clipStart, double clipEnd)
+{
+    if (index < 0 || index >= int(m_settings.clips.size())) {
+        return;
+    }
+    m_settings.clips[index].clipStart = muse::secs_t(clipStart);
+    m_settings.clips[index].clipEnd = muse::secs_t(clipEnd);
+    updateClipsList();
+    apply();
+}
+
+void AudioTrackSettingsModel::setClipSpeed(int index, double speed)
+{
+    if (index < 0 || index >= int(m_settings.clips.size())) {
+        return;
+    }
+    m_settings.clips[index].speed = float(speed);
+    updateClipsList();
+    apply();
+}
+
+void AudioTrackSettingsModel::setClipVolume(int index, double volume)
+{
+    if (index < 0 || index >= int(m_settings.clips.size())) {
+        return;
+    }
+    m_settings.clips[index].volume = muse::audio::volume_db_t(volume);
+    updateClipsList();
+    apply();
+}
+
+void AudioTrackSettingsModel::setClipMuted(int index, bool muted)
+{
+    if (index < 0 || index >= int(m_settings.clips.size())) {
+        return;
+    }
+    m_settings.clips[index].muted = muted;
+    updateClipsList();
+    apply();
+}

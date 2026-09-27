@@ -271,8 +271,8 @@ private:
 
     InstrumentTrackIdMap m_instrumentTrackIdMap;
     AuxTrackIdMap m_auxTrackIdMap;
-    std::optional<muse::audio::TrackId> m_audioTrackId;
-    std::shared_ptr<muse::io::File> m_audioTrackFile;
+    std::vector<muse::audio::TrackId> m_audioTrackIds;
+    std::vector<std::shared_ptr<muse::io::File> > m_audioTrackFiles;
 
     std::unordered_map<engraving::InstrumentTrackId, muse::audio::ControlParams> m_automatedControlParamsCache;
 

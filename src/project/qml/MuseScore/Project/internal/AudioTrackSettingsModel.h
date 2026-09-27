@@ -51,6 +51,7 @@ class AudioTrackSettingsModel : public QObject, public muse::Contextable, public
     Q_PROPERTY(double duration READ duration NOTIFY durationChanged)
     Q_PROPERTY(QVariantList waveformPeaks READ waveformPeaks NOTIFY waveformPeaksChanged)
     Q_PROPERTY(double playbackPosition READ playbackPosition NOTIFY playbackPositionChanged)
+    Q_PROPERTY(QVariantList clips READ clips NOTIFY clipsChanged)
 
 public:
     explicit AudioTrackSettingsModel(QObject* parent = nullptr);
@@ -67,6 +68,7 @@ public:
     double duration() const;
     QVariantList waveformPeaks() const;
     double playbackPosition() const;
+    QVariantList clips() const;
 
     Q_INVOKABLE void setStartOffset(double value);
     Q_INVOKABLE void setClipStart(double value);
@@ -82,6 +84,14 @@ public:
     Q_INVOKABLE void remove();
     Q_INVOKABLE void seek(double seconds);
     Q_INVOKABLE double snapToBeat(double seconds);
+    Q_INVOKABLE void addClipFromFile();
+    Q_INVOKABLE void splitClip(int index, double at);
+    Q_INVOKABLE void removeClip(int index);
+    Q_INVOKABLE void moveClip(int index, double startOffset);
+    Q_INVOKABLE void trimClip(int index, double clipStart, double clipEnd);
+    Q_INVOKABLE void setClipSpeed(int index, double speed);
+    Q_INVOKABLE void setClipVolume(int index, double volume);
+    Q_INVOKABLE void setClipMuted(int index, bool muted);
 
 signals:
     void filePathChanged();
@@ -96,11 +106,14 @@ signals:
     void durationChanged();
     void waveformPeaksChanged();
     void playbackPositionChanged();
+    void clipsChanged();
 
 private:
     IProjectAudioSettingsPtr audioSettings() const;
     void updateWaveform();
     void subscribeOnPlayback();
+    void updateClipsList();
+    const AudioClipSettings* firstClip() const;
     void notifyAll();
 
     muse::ContextInject<context::IGlobalContext> globalContext = { this };
@@ -113,6 +126,7 @@ private:
     double m_playbackPosition = 0.0;
     bool m_settingsSubscribed = false;
     bool m_playbackSubscribed = false;
+    QVariantList m_clips;
 };
 }
 

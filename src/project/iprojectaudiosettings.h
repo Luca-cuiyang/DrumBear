@@ -23,6 +23,7 @@
 #pragma once
 
 #include <memory>
+#include <vector>
 
 #include "async/notification.h"
 #include "audio/common/audiotypes.h"
@@ -35,19 +36,18 @@ namespace mu::project {
 using AudioInputParams = muse::audio::AudioInputParams;
 using TrackInputParamsMap = std::unordered_map<engraving::InstrumentTrackId, AudioInputParams>;
 
-struct AudioTrackSettings {
+struct AudioClipSettings {
     muse::io::path_t filePath;
     muse::secs_t startOffset = 0.0;   //! score time (seconds) at which the audio starts playing
     muse::secs_t clipStart = 0.0;     //! crop start within the audio file (seconds)
     muse::secs_t clipEnd = 0.0;       //! crop end within the audio file (seconds); 0 means until the end
     muse::audio::volume_db_t volume = 0.f;
     bool muted = false;
-    bool tempoSync = true;
     float speed = 1.f;
 
     bool isValid() const { return !filePath.empty(); }
 
-    bool operator==(const AudioTrackSettings& other) const
+    bool operator==(const AudioClipSettings& other) const
     {
         return filePath == other.filePath
                && muse::is_equal(startOffset, other.startOffset)
@@ -55,8 +55,18 @@ struct AudioTrackSettings {
                && muse::is_equal(clipEnd, other.clipEnd)
                && muse::is_equal(volume, other.volume)
                && muted == other.muted
-               && tempoSync == other.tempoSync
                && muse::is_equal(speed, other.speed);
+    }
+};
+
+struct AudioTrackSettings {
+    std::vector<AudioClipSettings> clips;
+
+    bool isValid() const { return !clips.empty(); }
+
+    bool operator==(const AudioTrackSettings& other) const
+    {
+        return clips == other.clips;
     }
 };
 

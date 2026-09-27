@@ -676,27 +676,54 @@ QJsonObject ProjectAudioSettings::buildTrackObject(notation::INotationSoloMuteSt
 QJsonObject ProjectAudioSettings::audioTrackSettingsToJson(const AudioTrackSettings& settings) const
 {
     QJsonObject result;
-    result.insert("filePath", settings.filePath.toQString());
-    result.insert("startOffset", settings.startOffset.to_double());
-    result.insert("clipStart", settings.clipStart.to_double());
-    result.insert("clipEnd", settings.clipEnd.to_double());
-    result.insert("volume", settings.volume.to_double());
-    result.insert("muted", settings.muted);
-    result.insert("tempoSync", settings.tempoSync);
-    result.insert("speed", settings.speed);
+    QJsonArray clipsArray;
+    for (const AudioClipSettings& clip : settings.clips) {
+        QJsonObject clipObj;
+        clipObj.insert("filePath", clip.filePath.toQString());
+        clipObj.insert("startOffset", clip.startOffset.to_double());
+        clipObj.insert("clipStart", clip.clipStart.to_double());
+        clipObj.insert("clipEnd", clip.clipEnd.to_double());
+        clipObj.insert("volume", clip.volume.to_double());
+        clipObj.insert("muted", clip.muted);
+        clipObj.insert("speed", clip.speed);
+        clipsArray.append(clipObj);
+    }
+    result.insert("clips", clipsArray);
     return result;
 }
 
 AudioTrackSettings ProjectAudioSettings::audioTrackSettingsFromJson(const QJsonObject& object) const
 {
     AudioTrackSettings settings;
-    settings.filePath = muse::io::path_t(object.value("filePath").toString());
-    settings.startOffset = muse::secs_t(object.value("startOffset").toDouble(0.0));
-    settings.clipStart = muse::secs_t(object.value("clipStart").toDouble(0.0));
-    settings.clipEnd = muse::secs_t(object.value("clipEnd").toDouble(0.0));
-    settings.volume = muse::audio::volume_db_t(object.value("volume").toDouble(0.0));
-    settings.muted = object.value("muted").toBool(false);
-    settings.tempoSync = object.value("tempoSync").toBool(true);
-    settings.speed = object.value("speed").toDouble(1.0);
+
+    if (object.contains("clips")) {
+        const QJsonArray clipsArray = object.value("clips").toArray();
+        for (const QJsonValue& value : clipsArray) {
+            const QJsonObject clipObj = value.toObject();
+            AudioClipSettings clip;
+            clip.filePath = muse::io::path_t(clipObj.value("filePath").toString());
+            clip.startOffset = muse::secs_t(clipObj.value("startOffset").toDouble(0.0));
+            clip.clipStart = muse::secs_t(clipObj.value("clipStart").toDouble(0.0));
+            clip.clipEnd = muse::secs_t(clipObj.value("clipEnd").toDouble(0.0));
+            clip.volume = muse::audio::volume_db_t(clipObj.value("volume").toDouble(0.0));
+            clip.muted = clipObj.value("muted").toBool(false);
+            clip.speed = clipObj.value("speed").toDouble(1.0);
+            settings.clips.push_back(clip);
+        }
+    } else {
+        //! NOTE: Backward compatibility with the single-clip format.
+        AudioClipSettings clip;
+        clip.filePath = muse::io::path_t(object.value("filePath").toString());
+        clip.startOffset = muse::secs_t(object.value("startOffset").toDouble(0.0));
+        clip.clipStart = muse::secs_t(object.value("clipStart").toDouble(0.0));
+        clip.clipEnd = muse::secs_t(object.value("clipEnd").toDouble(0.0));
+        clip.volume = muse::audio::volume_db_t(object.value("volume").toDouble(0.0));
+        clip.muted = object.value("muted").toBool(false);
+        clip.speed = object.value("speed").toDouble(1.0);
+        if (clip.isValid()) {
+            settings.clips.push_back(clip);
+        }
+    }
+
     return settings;
 }

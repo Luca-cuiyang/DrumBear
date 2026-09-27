@@ -68,6 +68,18 @@ Item {
                 onClicked: timeline.zoomIn()
             }
 
+            FlatButton {
+                text: qsTrc("project", "Split")
+                enabled: audioModel.hasTrack
+                onClicked: audioModel.splitClip(0, audioModel.playbackPosition)
+            }
+
+            FlatButton {
+                text: qsTrc("project", "Delete clip")
+                enabled: audioModel.hasTrack
+                onClicked: audioModel.removeClip(0)
+            }
+
             Item { Layout.fillWidth: true }
 
             FlatButton {

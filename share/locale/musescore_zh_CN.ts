@@ -35597,6 +35597,14 @@ failed: %2</source>
         <source>Audio</source>
         <translation>音频</translation>
     </message>
+    <message>
+        <source>Split</source>
+        <translation>分割</translation>
+    </message>
+    <message>
+        <source>Delete clip</source>
+        <translation>删除片段</translation>
+    </message>
 </context>
 <context>
     <name>project/cloud</name>

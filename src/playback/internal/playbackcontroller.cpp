@@ -1126,7 +1126,8 @@ void PlaybackController::resetPlayback()
 
     m_instrumentTrackIdMap.clear();
     m_auxTrackIdMap.clear();
-    m_audioTrackId.reset();
+    m_audioTrackIds.clear();
+    m_audioTrackFiles.clear();
 
     m_isRangeSelection = false;
 
@@ -1330,40 +1331,45 @@ void PlaybackController::addAudioTrack(const AudioTrackSettings& settings, const
         return;
     }
 
-    m_audioTrackFile = std::make_shared<muse::io::File>(settings.filePath);
-    if (!m_audioTrackFile->open(muse::io::IODevice::ReadOnly)) {
-        LOGE() << "can't open audio track file: " << settings.filePath;
-        m_audioTrackFile.reset();
-        onFinished();
-        return;
-    }
-
-    TrackParams trackParams;
-    trackParams.source = {};
-    trackParams.control.volume = settings.volume;
-    trackParams.control.muted = settings.muted;
-    trackParams.soundTrack.startOffset = settings.startOffset;
-    trackParams.soundTrack.clipStart = settings.clipStart;
-    trackParams.soundTrack.clipEnd = settings.clipEnd;
-    trackParams.soundTrack.speed = settings.speed;
-
     uint64_t playbackKey = notationPlaybackKey();
 
-    playback()->addTrack("Accompaniment", m_audioTrackFile.get(), trackParams)
-    .onResolve(this, [this, playbackKey, onFinished](const TrackId trackId, const TrackParams&) {
-        if (notationPlaybackKey() != playbackKey) {
-            onFinished();
-            return;
+    for (const AudioClipSettings& clip : settings.clips) {
+        if (!clip.isValid()) {
+            continue;
         }
 
-        m_audioTrackId = trackId;
-        m_trackAdded.send(trackId);
-        onFinished();
-    })
-    .onReject(this, [onFinished](int code, const std::string& msg) {
-        LOGE() << "can't add audio track, code: [" << code << "] " << msg;
-        onFinished();
-    });
+        std::shared_ptr<muse::io::File> file = std::make_shared<muse::io::File>(clip.filePath);
+        if (!file->open(muse::io::IODevice::ReadOnly)) {
+            LOGE() << "can't open audio clip file: " << clip.filePath;
+            continue;
+        }
+
+        TrackParams trackParams;
+        trackParams.source = {};
+        trackParams.control.volume = clip.volume;
+        trackParams.control.muted = clip.muted;
+        trackParams.soundTrack.startOffset = clip.startOffset;
+        trackParams.soundTrack.clipStart = clip.clipStart;
+        trackParams.soundTrack.clipEnd = clip.clipEnd;
+        trackParams.soundTrack.speed = clip.speed;
+
+        playback()->addTrack("Accompaniment", file.get(), trackParams)
+        .onResolve(this, [this, playbackKey, onFinished](const TrackId trackId, const TrackParams&) {
+            if (notationPlaybackKey() != playbackKey) {
+                return;
+            }
+
+            m_audioTrackIds.push_back(trackId);
+            m_trackAdded.send(trackId);
+            onFinished();
+        })
+        .onReject(this, [onFinished](int code, const std::string& msg) {
+            LOGE() << "can't add audio clip, code: [" << code << "] " << msg;
+            onFinished();
+        });
+
+        m_audioTrackFiles.push_back(file);
+    }
 
     if (trackLoading) {
         m_loadingTrackCount++;
@@ -1372,10 +1378,11 @@ void PlaybackController::addAudioTrack(const AudioTrackSettings& settings, const
 
 void PlaybackController::removeAudioTrack()
 {
-    if (m_audioTrackId.has_value()) {
-        playback()->removeTrack(*m_audioTrackId);
-        m_audioTrackId.reset();
+    for (muse::audio::TrackId trackId : m_audioTrackIds) {
+        playback()->removeTrack(trackId);
     }
+    m_audioTrackIds.clear();
+    m_audioTrackFiles.clear();
 }
 
 void PlaybackController::setTrackActivity(const engraving::InstrumentTrackId& instrumentTrackId, const bool isActive)
