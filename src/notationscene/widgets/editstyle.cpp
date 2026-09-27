@@ -834,7 +834,7 @@ void EditStyle::classBegin()
 
     auto noteFlagsTypeSelector = createQmlWidget(
         groupBox_noteFlags,
-        QUrl(QString::fromUtf8("qrc:/qt/qml/MuseScore/NotationScene/styledialog/NoteFlagsTypeSelector.qml")));
+        QUrl(QString::fromUtf8("qrc:/qt/qml/DBScore/NotationScene/styledialog/NoteFlagsTypeSelector.qml")));
     noteFlagsTypeSelector.widget->setMinimumSize(224, 70);
     groupBox_noteFlags->layout()->addWidget(noteFlagsTypeSelector.widget);
 
@@ -844,7 +844,7 @@ void EditStyle::classBegin()
 
     auto restOffsetSelector = createQmlWidget(
         groupBox_rests,
-        QUrl(QString::fromUtf8("qrc:/qt/qml/MuseScore/NotationScene/styledialog/RestOffsetSelector.qml")));
+        QUrl(QString::fromUtf8("qrc:/qt/qml/DBScore/NotationScene/styledialog/RestOffsetSelector.qml")));
     restOffsetSelector.widget->setMinimumSize(224, 70);
     groupBox_rests->layout()->addWidget(restOffsetSelector.widget);
 
@@ -862,7 +862,7 @@ void EditStyle::classBegin()
 
     auto beamsPage = createQmlWidget(
         groupBox_beams,
-        QUrl(QString::fromUtf8("qrc:/qt/qml/MuseScore/NotationScene/styledialog/BeamsPage.qml")));
+        QUrl(QString::fromUtf8("qrc:/qt/qml/DBScore/NotationScene/styledialog/BeamsPage.qml")));
     beamsPage.widget->setMinimumSize(224, 418);
     groupBox_beams->layout()->addWidget(beamsPage.widget);
 
@@ -872,7 +872,7 @@ void EditStyle::classBegin()
 
     auto bendsPage = createQmlWidget(
         PageBend,
-        QUrl(QString::fromUtf8("qrc:/qt/qml/MuseScore/NotationScene/styledialog/BendsPage.qml")));
+        QUrl(QString::fromUtf8("qrc:/qt/qml/DBScore/NotationScene/styledialog/BendsPage.qml")));
     bendsPage.widget->setMinimumSize(224, 60);
     connect(bendsPage.view->rootObject(), SIGNAL(goToTextStylePage(QString)), this, SLOT(goToTextStylePage(QString)));
     PageBend->layout()->addWidget(bendsPage.widget);
@@ -883,7 +883,7 @@ void EditStyle::classBegin()
 
     auto slursAndTiesPage = createQmlWidget(
         PageSlursTies,
-        QUrl(QString::fromUtf8("qrc:/qt/qml/MuseScore/NotationScene/styledialog/SlursAndTiesPage.qml")));
+        QUrl(QString::fromUtf8("qrc:/qt/qml/DBScore/NotationScene/styledialog/SlursAndTiesPage.qml")));
     PageSlursTies->layout()->addWidget(slursAndTiesPage.widget);
 
     // ====================================================
@@ -892,7 +892,7 @@ void EditStyle::classBegin()
 
     auto accidentalsPage = createQmlWidget(
         PageAccidentals,
-        QUrl(QString::fromUtf8("qrc:/qt/qml/MuseScore/NotationScene/styledialog/AccidentalsPage.qml")));
+        QUrl(QString::fromUtf8("qrc:/qt/qml/DBScore/NotationScene/styledialog/AccidentalsPage.qml")));
     PageAccidentals->layout()->addWidget(accidentalsPage.widget);
 
     // ====================================================
@@ -901,7 +901,7 @@ void EditStyle::classBegin()
 
     auto fretboardsPage = createQmlWidget(
         PageFretboardDiagrams,
-        QUrl(QString::fromUtf8("qrc:/qt/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml")));
+        QUrl(QString::fromUtf8("qrc:/qt/qml/DBScore/NotationScene/styledialog/FretboardsPage.qml")));
     connect(fretboardsPage.view->rootObject(), SIGNAL(goToTextStylePage(QString)), this, SLOT(goToTextStylePage(QString)));
     PageFretboardDiagrams->layout()->addWidget(fretboardsPage.widget);
 
@@ -911,7 +911,7 @@ void EditStyle::classBegin()
 
     auto hoposTappingPage = createQmlWidget(
         hoposPageWidget,
-        QUrl(QString::fromUtf8("qrc:/qt/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml")));
+        QUrl(QString::fromUtf8("qrc:/qt/qml/DBScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml")));
     hoposTappingPage.widget->setMinimumSize(224, 400);
     connect(hoposTappingPage.view->rootObject(), SIGNAL(goToTextStylePage(QString)), this, SLOT(goToTextStylePage(QString)));
     hoposPageWidget->layout()->addWidget(hoposTappingPage.widget);
@@ -922,7 +922,7 @@ void EditStyle::classBegin()
 
     auto glissandoSection = createQmlWidget(
         groupBox_glissando,
-        QUrl(QString::fromUtf8("qrc:/qt/qml/MuseScore/NotationScene/styledialog/GlissandoSection.qml")));
+        QUrl(QString::fromUtf8("qrc:/qt/qml/DBScore/NotationScene/styledialog/GlissandoSection.qml")));
     glissandoSection.widget->setMinimumSize(224, 284);
     connect(glissandoSection.view->rootObject(), SIGNAL(goToTextStylePage(QString)), this, SLOT(goToTextStylePage(QString)));
     groupBox_glissando->layout()->addWidget(glissandoSection.widget);
@@ -933,7 +933,7 @@ void EditStyle::classBegin()
 
     auto noteLineSection = createQmlWidget(
         groupBox_noteline,
-        QUrl(QString::fromUtf8("qrc:/qt/qml/MuseScore/NotationScene/styledialog/NoteLineSection.qml")));
+        QUrl(QString::fromUtf8("qrc:/qt/qml/DBScore/NotationScene/styledialog/NoteLineSection.qml")));
     noteLineSection.widget->setMinimumSize(224, 200);
     connect(noteLineSection.view->rootObject(), SIGNAL(goToTextStylePage(QString)), this, SLOT(goToTextStylePage(QString)));
     groupBox_noteline->layout()->addWidget(noteLineSection.widget);
@@ -944,7 +944,7 @@ void EditStyle::classBegin()
 
     auto clefKeyTimeSigPage = createQmlWidget(
         clefTimeKeySigPage,
-        QUrl(QString::fromUtf8("qrc:/qt/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml")));
+        QUrl(QString::fromUtf8("qrc:/qt/qml/DBScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml")));
     clefKeyTimeSigPage.widget->setMinimumSize(224, 400);
     clefTimeKeySigPage->layout()->addWidget(clefKeyTimeSigPage.widget);
 
@@ -954,7 +954,7 @@ void EditStyle::classBegin()
 
     auto repeatBarlinesSection = createQmlWidget(
         repeatBarlinesGroupBox,
-        QUrl(QString::fromUtf8("qrc:/qt/qml/MuseScore/NotationScene/styledialog/RepeatBarlinesSection.qml")));
+        QUrl(QString::fromUtf8("qrc:/qt/qml/DBScore/NotationScene/styledialog/RepeatBarlinesSection.qml")));
     repeatBarlinesSection.widget->setMinimumSize(224, 90);
     repeatBarlinesGroupBox->layout()->addWidget(repeatBarlinesSection.widget);
 
@@ -964,7 +964,7 @@ void EditStyle::classBegin()
 
     auto chordSymbolsPageWidget = createQmlWidget(
         chordSymbolsPage,
-        QUrl(QString::fromUtf8("qrc:/qt/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml")));
+        QUrl(QString::fromUtf8("qrc:/qt/qml/DBScore/NotationScene/styledialog/ChordSymbolsPage.qml")));
     chordSymbolsPageWidget.widget->setMinimumSize(224, 400);
     connect(chordSymbolsPageWidget.view->rootObject(), SIGNAL(goToTextStylePage(QString)), this, SLOT(goToTextStylePage(QString)));
     chordSymbolsPage->layout()->addWidget(chordSymbolsPageWidget.widget);
@@ -975,7 +975,7 @@ void EditStyle::classBegin()
 
     auto voltasPage = createQmlWidget(
         voltasPageWidget,
-        QUrl(QString::fromUtf8("qrc:/qt/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml")));
+        QUrl(QString::fromUtf8("qrc:/qt/qml/DBScore/NotationScene/styledialog/VoltasPage.qml")));
     voltasPage.widget->setMinimumSize(504, 400);
     voltasPageWidget->layout()->addWidget(voltasPage.widget);
 
@@ -985,7 +985,7 @@ void EditStyle::classBegin()
 
     auto barNumbersPage = createQmlWidget(
         pageMeasureNumbers,
-        QUrl(QString::fromUtf8("qrc:/qt/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml")));
+        QUrl(QString::fromUtf8("qrc:/qt/qml/DBScore/NotationScene/styledialog/MeasureNumbersPage.qml")));
     barNumbersPage.widget->setMinimumSize(224, 400);
     pageMeasureNumbers->layout()->addWidget(barNumbersPage.widget);
     connect(barNumbersPage.view->rootObject(), SIGNAL(goToTextStylePage(int)), this, SLOT(goToTextStylePage(int)));
@@ -996,7 +996,7 @@ void EditStyle::classBegin()
 
     auto tupletCenteringSelector = createQmlWidget(
         groupBox_tuplets_properties,
-        QUrl(QString::fromUtf8("qrc:/qt/qml/MuseScore/NotationScene/styledialog/TupletCenteringSelector.qml")));
+        QUrl(QString::fromUtf8("qrc:/qt/qml/DBScore/NotationScene/styledialog/TupletCenteringSelector.qml")));
     tupletCenteringSelector.widget->setMinimumSize(288, 88);
     groupBox_tuplets_properties->layout()->addWidget(tupletCenteringSelector.widget);
 
@@ -1006,7 +1006,7 @@ void EditStyle::classBegin()
 
     auto repeatPlayCountSection = createQmlWidget(
         PageRepeats,
-        QUrl(QString::fromUtf8("qrc:/qt/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml")));
+        QUrl(QString::fromUtf8("qrc:/qt/qml/DBScore/NotationScene/styledialog/RepeatPage.qml")));
     repeatPlayCountSection.widget->setMinimumSize(224, 500);
     connect(repeatPlayCountSection.view->rootObject(), SIGNAL(goToTextStylePage(QString)), this, SLOT(goToTextStylePage(QString)));
     PageRepeats->layout()->addWidget(repeatPlayCountSection.widget);
@@ -1017,7 +1017,7 @@ void EditStyle::classBegin()
 
     auto instrNamesPage = createQmlWidget(
         pageInstrumentNames,
-        QUrl(QString::fromUtf8("qrc:/qt/qml/MuseScore/NotationScene/styledialog/InstrumentNamesPage.qml")));
+        QUrl(QString::fromUtf8("qrc:/qt/qml/DBScore/NotationScene/styledialog/InstrumentNamesPage.qml")));
     instrNamesPage.widget->setMinimumSize(224, 400);
     pageInstrumentNames->layout()->addWidget(instrNamesPage.widget);
 
@@ -1027,7 +1027,7 @@ void EditStyle::classBegin()
 
     auto staveSharingPage = createQmlWidget(
         PageStaveSharing,
-        QUrl(QString::fromUtf8("qrc:/qt/qml/MuseScore/NotationScene/styledialog/StaveSharingPage.qml")));
+        QUrl(QString::fromUtf8("qrc:/qt/qml/DBScore/NotationScene/styledialog/StaveSharingPage.qml")));
     staveSharingPage.widget->setMinimumSize(224, 400);
     PageStaveSharing->layout()->addWidget(staveSharingPage.widget);
 

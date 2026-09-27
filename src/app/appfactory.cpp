@@ -426,7 +426,6 @@ std::shared_ptr<muse::IApplication> AppFactory::newGuiApp(const std::shared_ptr<
     app->addModule(new mu::instrumentsscene::InstrumentsSceneModule());
     app->addModule(new muse::extensions::ExtensionsModule());
     app->addModule(new muse::languages::LanguagesModule());
-    app->addModule(new muse::learn::LearnModule());
     app->addModule(new muse::mi::MultiWindowsModule());
     app->addModule(new mu::musesounds::MuseSoundsModule());
     app->addModule(new mu::notation::NotationModule());

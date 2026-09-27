@@ -97,7 +97,7 @@ std::shared_ptr<muse::CmdOptions> MuseScoreGuiApp::makeContextOptions(const muse
 
 QString MuseScoreGuiApp::mainWindowQmlPath(const QString& platform) const
 {
-    return QString(":/qt/qml/MuseScore/AppShell/platform/%1/Main.qml").arg(platform);
+    return QString(":/qt/qml/DBScore/AppShell/platform/%1/Main.qml").arg(platform);
 }
 
 void MuseScoreGuiApp::doStartupScenario(const muse::modularity::ContextPtr& ctxId)

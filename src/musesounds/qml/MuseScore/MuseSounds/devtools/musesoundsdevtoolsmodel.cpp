@@ -385,7 +385,7 @@ void MuseSoundsDevToolsModel::openUpdateDialog()
         }
     }
     if (imageUrl.isEmpty()) {
-        imageUrl = "qrc:/qt/qml/MuseScore/MuseSounds/resources/muse_sounds_promo.png";
+        imageUrl = "qrc:/qt/qml/DBScore/MuseSounds/resources/muse_sounds_promo.png";
     }
     query.addParam("imageUrl", Val(imageUrl.toStdString()));
 
