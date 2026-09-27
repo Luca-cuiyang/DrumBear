@@ -45,16 +45,8 @@ static std::vector<QVariantMap> welcomeDialogData()
     create.insert("buttonText", muse::qtrc("appshell/welcome", "Open handbook"));
     create.insert("destinationUrl", "https://www.drumbearai.com/");
 
-    QVariantMap openSource;
-    openSource.insert("title", muse::qtrc("appshell/welcome", "Free and open source"));
-    openSource.insert("imageUrl", "qrc:/resources/welcomedialog/WhatsNew.png");
-    openSource.insert("description", muse::qtrc("appshell/welcome",
-                                                 "DBScore respects your freedom: the full source code is available under the GNU GPL v3, so you can study, modify and share it."));
-    openSource.insert("buttonText", muse::qtrc("appshell/welcome", "View source"));
-    openSource.insert("destinationUrl", "https://github.com/Luca-cuiyang/DrumBear");
-
     //! NOTE: This is the order the above items will appear in the carousel
-    return { welcome, create, openSource };
+    return { welcome, create };
 }
 
 WelcomeDialogModel::WelcomeDialogModel()
