@@ -9761,6 +9761,14 @@ followed by dashes</source>
         <source>Accompaniment track</source>
         <translation>伴奏轨</translation>
     </message>
+    <message>
+        <source>&amp;Parts…</source>
+        <translation>分谱 (&amp;P)…</translation>
+    </message>
+    <message>
+        <source>Automation</source>
+        <translation>自动化</translation>
+    </message>
 </context>
 <context>
     <name>appshell</name>
