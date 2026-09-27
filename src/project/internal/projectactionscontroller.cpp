@@ -27,6 +27,7 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QProcess>
+#include <QTimer>
 #include <QTemporaryFile>
 #include <QUrl>
 #include <QUrlQuery>
@@ -400,12 +401,12 @@ muse::Ret ProjectActionsController::exportScore()
 
 muse::Ret ProjectActionsController::importAudioToScore()
 {
-    static const std::vector<std::string> AUDIO_FILTERS {
-        "*.mp3", "*.wav", "*.m4a", "*.aac", "*.flac", "*.ogg", "*.aiff", "*.aif"
+    std::vector<std::string> audioFilter {
+        muse::trc("project", "Audio files") + " (*.mp3 *.wav *.m4a *.aac *.flac *.ogg *.aiff *.aif)"
     };
 
     muse::io::path_t audioPath = interactive()->selectOpeningFileSync(
-        muse::trc("project", "Import Audio to Score"), "", AUDIO_FILTERS);
+        muse::trc("project", "Import Audio to Score"), "", audioFilter);
 
     if (audioPath.empty()) {
         return make_ret(Ret::Code::Cancel);
@@ -438,9 +439,22 @@ muse::Ret ProjectActionsController::importAudioToScore()
     interactive()->showProgress(muse::trc("project", "Import Audio to Score"), progress);
     progress.start();
 
+    int progressPercent = 0;
+    QTimer* progressTimer = new QTimer();
+    progressTimer->setInterval(700);
+    QObject::connect(progressTimer, &QTimer::timeout, [progress, progressPercent]() mutable {
+        if (progressPercent < 90) {
+            progressPercent += 5;
+            progress.progress(progressPercent, 100, "Converting audio…");
+        }
+    });
+    progressTimer->start();
+
     QProcess* process = new QProcess();
     QObject::connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), process,
-                     [this, process, midiPath, progress](int exitCode, QProcess::ExitStatus) mutable {
+                     [this, process, midiPath, progress, progressTimer](int exitCode, QProcess::ExitStatus) mutable {
+        progressTimer->stop();
+        progressTimer->deleteLater();
         process->deleteLater();
         progress.finish(muse::make_ok());
         if (exitCode == 0 && QFileInfo::exists(midiPath)) {
