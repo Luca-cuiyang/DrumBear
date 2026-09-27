@@ -35,7 +35,7 @@ static std::vector<QVariantMap> welcomeDialogData()
     welcome.insert("description", muse::qtrc("appshell/welcome",
                                               "DB Score is a free, open source music notation software, forked from MuseScore Studio and licensed under GPL-3.0."));
     welcome.insert("buttonText", muse::qtrc("appshell/welcome", "Learn more"));
-    welcome.insert("destinationUrl", "https://www.dbscore.app");
+    welcome.insert("destinationUrl", "https://www.drumbearai.com/");
 
     QVariantMap create;
     create.insert("title", muse::qtrc("appshell/welcome", "Create, play and print"));
@@ -43,7 +43,7 @@ static std::vector<QVariantMap> welcomeDialogData()
     create.insert("description", muse::qtrc("appshell/welcome",
                                             "Compose with an easy-to-use editor, hear your score in real time, and export to PDF, audio, MIDI and MusicXML."));
     create.insert("buttonText", muse::qtrc("appshell/welcome", "Open handbook"));
-    create.insert("destinationUrl", "https://www.dbscore.app");
+    create.insert("destinationUrl", "https://www.drumbearai.com/");
 
     QVariantMap openSource;
     openSource.insert("title", muse::qtrc("appshell/welcome", "Free and open source"));
@@ -51,7 +51,7 @@ static std::vector<QVariantMap> welcomeDialogData()
     openSource.insert("description", muse::qtrc("appshell/welcome",
                                                  "DBScore respects your freedom: the full source code is available under the GNU GPL v3, so you can study, modify and share it."));
     openSource.insert("buttonText", muse::qtrc("appshell/welcome", "View source"));
-    openSource.insert("destinationUrl", "https://github.com/dbscore/DBScore");
+    openSource.insert("destinationUrl", "https://github.com/Luca-cuiyang/DrumBear");
 
     //! NOTE: This is the order the above items will appear in the carousel
     return { welcome, create, openSource };

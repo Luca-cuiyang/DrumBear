@@ -126,7 +126,7 @@ int main(int argc, char** argv)
     QCoreApplication::setApplicationName(MUSE_APP_NAME_MACHINE_READABLE MUSE_APP_VERSION_MAJOR);
 #endif
     QCoreApplication::setOrganizationName("DBScore");
-    QCoreApplication::setOrganizationDomain("dbscore.app");
+    QCoreApplication::setOrganizationDomain("drumbearai.com");
     QCoreApplication::setApplicationVersion(MUSE_APP_VERSION);
 
 #if !defined(Q_OS_WIN) && !defined(Q_OS_DARWIN) && !defined(Q_OS_WASM)

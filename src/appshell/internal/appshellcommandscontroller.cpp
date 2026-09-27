@@ -308,6 +308,12 @@ muse::async::Promise<muse::Ret> AppshellCommandsController::quit(bool isAllInsta
 
     m_quiting = true;
 
+    // Hide the window immediately so quitting feels instant, even though
+    // the full teardown (project close, QML engine, module destruction) takes a bit longer.
+    if (mainWindow() && mainWindow()->qWindow()) {
+        mainWindow()->qWindow()->hide();
+    }
+
     return muse::async::make_promise<Ret>([this, isAllInstances, installerPath](auto resolve) {
         closeProjectScenario()->closeOpenedProject(false)
         .onResolve(this, [this, isAllInstances, installerPath, resolve](const Ret& ret) {
