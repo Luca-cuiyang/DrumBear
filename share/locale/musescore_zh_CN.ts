@@ -35425,6 +35425,62 @@ failed: %2</source>
         <source>Follow score tempo</source>
         <translation>跟随谱面速度</translation>
     </message>
+    <message>
+        <source>&amp;New…</source>
+        <translation>新建 (&amp;N)…</translation>
+    </message>
+    <message>
+        <source>&amp;Open…</source>
+        <translation>打开… (&amp;O)</translation>
+    </message>
+    <message>
+        <source>&amp;Close</source>
+        <translation>关闭 (&amp;C)</translation>
+    </message>
+    <message>
+        <source>&amp;Save</source>
+        <translation>保存… (&amp;S)</translation>
+    </message>
+    <message>
+        <source>Save &amp;as…</source>
+        <translation>另存为… (&amp;A)</translation>
+    </message>
+    <message>
+        <source>Save a &amp;copy…</source>
+        <translation>保存副本… (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Save &amp;selection…</source>
+        <translation>保存选区… (&amp;S)</translation>
+    </message>
+    <message>
+        <source>Save at…</source>
+        <translation>保存到…</translation>
+    </message>
+    <message>
+        <source>&amp;Export…</source>
+        <translation>导出 (&amp;E)…</translation>
+    </message>
+    <message>
+        <source>Convert &amp;file…</source>
+        <translation>转换文件 (&amp;F)…</translation>
+    </message>
+    <message>
+        <source>Project propert&amp;ies…</source>
+        <translation>项目属性… (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Print…</source>
+        <translation>打印 (&amp;P)…</translation>
+    </message>
+    <message>
+        <source>&amp;Clear list of recent files</source>
+        <translation>清空最近文件列表 (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Continue last session</source>
+        <translation>继续上次会话</translation>
+    </message>
 </context>
 <context>
     <name>project/cloud</name>
