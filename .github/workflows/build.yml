@@ -89,6 +89,9 @@ jobs:
           APP=$(ls -d *.app | head -1)
           echo "Packaging: $APP"
 
+          # Bundle Qt frameworks and QML modules so the app is self-contained.
+          macdeployqt "$APP" -verbose=2 -qmldir=..
+
           # Ad-hoc code sign everything, deepest first, so macOS treats the app
           # as "unidentified developer" (Open Anyway) rather than "damaged".
           find "$APP/Contents/Frameworks" -name "*.dylib" -exec codesign --force --sign - {} \; 2>/dev/null || true
