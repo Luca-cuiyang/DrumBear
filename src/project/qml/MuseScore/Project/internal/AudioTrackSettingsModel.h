@@ -81,6 +81,7 @@ public:
     Q_INVOKABLE void apply();
     Q_INVOKABLE void remove();
     Q_INVOKABLE void seek(double seconds);
+    Q_INVOKABLE double snapToBeat(double seconds);
 
 signals:
     void filePathChanged();

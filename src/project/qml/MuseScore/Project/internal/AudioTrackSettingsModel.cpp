@@ -29,6 +29,8 @@
 #include <QFileInfo>
 
 #include "log.h"
+#include "notation/imasternotation.h"
+#include "notation/inotationplayback.h"
 #include "project/inotationproject.h"
 
 #include "audio/engine/internal/codecs/thirdparty/dr_mp3.h"
@@ -253,6 +255,20 @@ void AudioTrackSettingsModel::seek(double seconds)
 {
     commandDispatcher()->dispatch(muse::rcommand::Command("command://playback/rewind"),
                                   muse::rcommand::Params({ { "position", muse::Val(seconds) } }));
+}
+
+double AudioTrackSettingsModel::snapToBeat(double seconds)
+{
+    const notation::IMasterNotationPtr master = globalContext()->currentMasterNotation();
+    if (!master || !master->playback()) {
+        return std::round(seconds * 10.0) / 10.0;
+    }
+
+    const notation::INotationPlaybackPtr playback = master->playback();
+    const muse::midi::tick_t tick = playback->secToTick(muse::audio::secs_t(seconds));
+    const engraving::MeasureBeat beat = playback->beat(tick);
+    const muse::midi::tick_t beatTick = playback->beatToRawTick(beat.measureIndex, int(beat.beat));
+    return playback->playedTickToSec(beatTick).to_double();
 }
 
 IProjectAudioSettingsPtr AudioTrackSettingsModel::audioSettings() const

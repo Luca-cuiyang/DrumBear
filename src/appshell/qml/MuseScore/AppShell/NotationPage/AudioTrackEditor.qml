@@ -242,7 +242,7 @@ Item {
 
                     onPositionChanged: {
                         var t = timeline.viewStart + clipStartHandle.x / timeline.pxPerSec
-                        audioModel.setClipStart(root.snapTime(Math.max(0, t)))
+                        audioModel.setClipStart(audioModel.snapToBeat(Math.max(0, t)))
                     }
 
                     onReleased: audioModel.apply()
@@ -281,7 +281,7 @@ Item {
 
                     onPositionChanged: {
                         var t = timeline.viewStart + clipEndHandle.x / timeline.pxPerSec
-                        audioModel.setClipEnd(root.snapTime(Math.min(timeRange, t)))
+                        audioModel.setClipEnd(audioModel.snapToBeat(Math.min(timeRange, t)))
                     }
 
                     onReleased: audioModel.apply()
