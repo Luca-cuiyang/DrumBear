@@ -411,10 +411,25 @@ muse::Ret ProjectActionsController::importAudioToScore()
         return make_ret(Ret::Code::Cancel);
     }
 
-    QString python = qEnvironmentVariable("ADTOF_PYTHON",
-                                          QStringLiteral("/Users/luca/.workbuddy/binaries/python/envs/adtof/bin/python"));
-    QString script = qEnvironmentVariable("ADTOF_SCRIPT",
-                                          QStringLiteral("/Users/luca/Documents/Codex/2026-09-04/wo/work/sources/desktop/adtof/transcribe_mdx.py"));
+    const QString resourcesDir = QDir::cleanPath(QCoreApplication::applicationDirPath() + QStringLiteral("/../Resources"));
+
+    auto resolveAdtofPath = [&resourcesDir](const QString& envKey, const QString& relativePath,
+                                            const QString& fallbackPath) -> QString {
+        QString bundled = QDir::cleanPath(resourcesDir + QStringLiteral("/") + relativePath);
+        if (QFileInfo::exists(bundled)) {
+            return bundled;
+        }
+        QString env = qEnvironmentVariable(envKey.toUtf8().constData());
+        if (!env.isEmpty()) {
+            return env;
+        }
+        return fallbackPath;
+    };
+
+    QString python = resolveAdtofPath("ADTOF_PYTHON", QStringLiteral("python/bin/python"),
+                                      QStringLiteral("/Users/luca/.workbuddy/binaries/python/envs/adtof/bin/python"));
+    QString script = resolveAdtofPath("ADTOF_SCRIPT", QStringLiteral("adtof/transcribe_mdx.py"),
+                                      QStringLiteral("/Users/luca/Documents/Codex/2026-09-04/wo/work/sources/desktop/adtof/transcribe_mdx.py"));
 
     QString midiPath = QDir::temp().filePath(QStringLiteral("dbscore_audio_to_score_%1.mid")
                                              .arg(QDateTime::currentMSecsSinceEpoch()));

@@ -421,6 +421,14 @@ elseif(OS_IS_MAC)
             DESTINATION ${MUSE_APP_INSTALL_RESOURCES_LOCATION}/fonts
     )
 
+    if (MUSE_ADTOF_SOURCE_DIR)
+        install(DIRECTORY ${MUSE_ADTOF_SOURCE_DIR}/ DESTINATION ${MUSE_APP_INSTALL_RESOURCES_LOCATION}/adtof)
+    endif()
+
+    if (MUSE_ADTOF_PYTHON_DIR)
+        install(DIRECTORY ${MUSE_ADTOF_PYTHON_DIR}/ DESTINATION ${MUSE_APP_INSTALL_RESOURCES_LOCATION}/python)
+    endif()
+
     qt_generate_deploy_qml_app_script(
         TARGET DBScore
         OUTPUT_SCRIPT deploy_script

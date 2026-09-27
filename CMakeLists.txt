@@ -88,6 +88,9 @@ set(MUSESCORE_REVISION "" CACHE STRING "Build revision")
 # musescore.com UI (account, learn, publish, cloud scores) is removed separately.
 set(MUSE_MODULE_CLOUD_DBSCORECLOUD ON CACHE BOOL "Enable DB Score cloud account" FORCE)
 
+set(MUSE_ADTOF_SOURCE_DIR "" CACHE PATH "Path to the ADTOF transcription source (scripts + models) to bundle")
+set(MUSE_ADTOF_PYTHON_DIR "" CACHE PATH "Path to a portable Python runtime to bundle")
+
 include(${MUSE_FRAMEWORK_SRC_PATH}/cmake/MuseDeclareOptions.cmake)
 
 # Modules (alphabetical order please)
