@@ -32,6 +32,7 @@ import DBScore.AppShell
 
 import "./HomePage"
 import "./NotationPage"
+import "./NotationReviewPage"
 import "./DevTools"
 
 DockWindow {
@@ -101,6 +102,10 @@ DockWindow {
         },
 
         NotationPage {
+            topToolbarKeyNavSec: topToolbarKeyNavSec
+        },
+
+        NotationReviewPage {
             topToolbarKeyNavSec: topToolbarKeyNavSec
         },
 

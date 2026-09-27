@@ -111,6 +111,14 @@ static const std::vector<CommandInfo> s_commandInfos = {
     },
 
     CommandInfo{
+        PROJECT_CONVERT_TO_SCORE_COMMAND,
+        TranslatableString("project", "Convert &file…"),
+        TranslatableString("project", "Convert a file to a score"),
+        InputSchema(),
+        Decoration(IconCode::Code::IMPORT)
+    },
+
+    CommandInfo{
         PROJECT_PROPERTIES_COMMAND,
         TranslatableString("project", "Project propert&ies…"),
         TranslatableString("project", "Project properties"),

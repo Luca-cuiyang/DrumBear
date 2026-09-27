@@ -28,6 +28,7 @@ using namespace mu::appshell;
 
 static const QString HOME_PAGE("dbscore://home");
 static const QString NOTATION_PAGE("dbscore://notation");
+static const QString NOTATION_REVIEW_PAGE("dbscore://notation/review");
 static const QString DEVTOOLS_PAGE("dbscore://devtools");
 
 static const QString TITLE_KEY("title");
@@ -37,7 +38,7 @@ static const QString IS_CHECKED_KEY("isChecked");
 
 static bool isNotationPageUri(const QString& uri)
 {
-    return uri == NOTATION_PAGE;
+    return uri == NOTATION_PAGE || uri == NOTATION_REVIEW_PAGE;
 }
 
 static bool isItemChecked(const QString& itemUri, const QString& currentUri)

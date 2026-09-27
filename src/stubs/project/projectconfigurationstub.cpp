@@ -101,6 +101,15 @@ muse::io::path_t ProjectConfigurationStub::defaultUserProjectsPath() const
     return muse::io::path_t();
 }
 
+muse::io::path_t ProjectConfigurationStub::defaultConvertFilePath() const
+{
+    return muse::io::path_t();
+}
+
+void ProjectConfigurationStub::setLastOpenedConvertFilePath(const muse::io::path_t&)
+{
+}
+
 bool ProjectConfigurationStub::shouldAskSaveLocationType() const
 {
     return false;
@@ -394,4 +403,18 @@ bool ProjectConfigurationStub::createBackupBeforeSaving() const
 
 void ProjectConfigurationStub::setCreateBackupBeforeSaving(bool)
 {
+}
+
+bool ProjectConfigurationStub::showConvertFileProcessingDialog() const
+{
+    return false;
+}
+
+void ProjectConfigurationStub::setShowConvertFileProcessingDialog(bool)
+{
+}
+
+muse::io::path_t ProjectConfigurationStub::watchedConvertsJsonPath() const
+{
+    return muse::io::path_t();
 }

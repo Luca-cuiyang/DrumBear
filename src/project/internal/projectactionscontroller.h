@@ -42,6 +42,7 @@
 #include "icloseprojectscenario.h"
 #include "iopenprojectscenario.h"
 #include "isaveprojectscenario.h"
+#include "iconvertfiletoscorescenario.h"
 
 #include "async/asyncable.h"
 
@@ -57,6 +58,7 @@ public:
     muse::ContextInject<IOpenProjectScenario> openProjectScenario = { this };
     muse::ContextInject<ISaveProjectScenario> saveProjectScenario = { this };
     muse::ContextInject<ICloseProjectScenario> closeProjectScenario = { this };
+    muse::ContextInject<IConvertFileToScoreScenario> convertFileToScoreScenario = { this };
     muse::ContextInject<muse::actions::IActionsDispatcher> dispatcher = { this };
     muse::ContextInject<muse::rcommand::ICommandDispatcher> commandDispatcher = { this };
     muse::ContextInject<muse::IInteractive> interactive = { this };
@@ -108,6 +110,8 @@ private:
     muse::async::Promise<muse::Ret> saveProject(SaveMode saveMode, SaveLocationType saveLocationType = SaveLocationType::Undefined,
                                                 bool force = false);
     muse::async::Promise<muse::Ret> saveProjectAt(const muse::rcommand::Params& params);
+
+    muse::Ret convertFileToScore();
 
     muse::Ret clearRecentScores();
 

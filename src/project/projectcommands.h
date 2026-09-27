@@ -37,6 +37,7 @@ inline static const muse::rcommand::Command PROJECT_SAVE_SELECTION_COMMAND("comm
 inline static const muse::rcommand::Command PROJECT_SAVE_AT_COMMAND("command://project/save-at");
 
 inline static const muse::rcommand::Command PROJECT_EXPORT_COMMAND("command://project/export");
+inline static const muse::rcommand::Command PROJECT_CONVERT_TO_SCORE_COMMAND("command://project/convert-to-score");
 
 inline static const muse::rcommand::Command PROJECT_PRINT_COMMAND("command://project/print");
 inline static const muse::rcommand::Command PROJECT_CLEAR_RECENT_COMMAND("command://project/clear-recent");

@@ -36,6 +36,8 @@
 #include "internal/templatesrepository.h"
 #include "internal/projectmigrator.h"
 #include "internal/projectautosaver.h"
+#include "internal/convertfiletoscoreservice.h"
+#include "internal/convertfiletoscorescenario.h"
 
 #include "internal/notationreadersregister.h"
 #include "internal/notationwritersregister.h"
@@ -91,6 +93,8 @@ void ProjectModule::resolveImports()
         ir->registerQmlUri(Uri("dbscore://project/upload/progress"), "DBScore.Project", "UploadProgressDialog");
         ir->registerQmlUri(Uri("dbscore://project/upload/success"), "DBScore.Project", "ProjectUploadedDialog");
         ir->registerQmlUri(Uri("dbscore://project/audiogenerationsettings"), "DBScore.Project", "AudioGenerationSettingsDialog");
+        ir->registerQmlUri(Uri("dbscore://project/convert/selectfiles"), "DBScore.Project", "ConvertFileToScoreDialog");
+        ir->registerQmlUri(Uri("dbscore://project/convert/processing"), "DBScore.Project", "ConvertFileProcessingDialog");
     }
 
     auto cr = globalIoc()->resolve<muse::rcommand::ICommandsRegister>(mname);
@@ -118,6 +122,8 @@ void ProjectContext::registerExports()
     m_actionsController = std::make_shared<ProjectActionsController>(iocContext());
     m_projectAutoSaver = std::make_shared<ProjectAutoSaver>(iocContext());
     m_engravingPluginAPIHelper = std::make_shared<EngravingPluginAPIHelper>(iocContext());
+    m_convertFileToScoreService = std::make_shared<ConvertFileToScoreService>(iocContext());
+    m_convertFileToScoreScenario = std::make_shared<ConvertFileToScoreScenario>(iocContext());
 
 #ifdef Q_OS_MAC
     m_recentFilesController = std::make_shared<MacOSRecentFilesController>();
@@ -138,6 +144,8 @@ void ProjectContext::registerExports()
     ioc()->registerExport<IProjectMigrator>(mname, new ProjectMigrator(iocContext()));
     ioc()->registerExport<IProjectAutoSaver>(mname, m_projectAutoSaver);
     ioc()->registerExport<mu::engraving::IEngravingPluginAPIHelper>(mname, m_engravingPluginAPIHelper);
+    ioc()->registerExport<IConvertFileToScoreService>(mname, m_convertFileToScoreService);
+    ioc()->registerExport<IConvertFileToScoreScenario>(mname, m_convertFileToScoreScenario);
 }
 
 void ProjectContext::resolveImports()
@@ -162,6 +170,8 @@ void ProjectContext::onInit(const IApplication::RunMode& mode)
     m_actionsController->init();
     m_recentFilesController->init();
     m_projectAutoSaver->init();
+    m_convertFileToScoreService->init();
+    m_convertFileToScoreScenario->init();
 }
 
 void ProjectContext::onAllInited(const IApplication::RunMode& mode)
@@ -169,4 +179,8 @@ void ProjectContext::onAllInited(const IApplication::RunMode& mode)
     if (IApplication::RunMode::GuiApp != mode) {
         return;
     }
+
+    //! NOTE: resuming polling can show dialogs (errors, review prompts), so it must wait
+    //! until the main window is up rather than running during onInit()
+    m_convertFileToScoreService->resumeConvert();
 }
