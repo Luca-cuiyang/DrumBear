@@ -33,7 +33,7 @@
 #include "project/iprojectaudiosettings.h"
 
 namespace mu::project {
-class AudioTrackSettingsModel : public QObject, public muse::Contextable
+class AudioTrackSettingsModel : public QObject, public muse::Contextable, public muse::async::Asyncable
 {
     Q_OBJECT
     QML_ELEMENT
@@ -49,6 +49,7 @@ class AudioTrackSettingsModel : public QObject, public muse::Contextable
     Q_PROPERTY(bool hasTrack READ hasTrack NOTIFY hasTrackChanged)
     Q_PROPERTY(double duration READ duration NOTIFY durationChanged)
     Q_PROPERTY(QVariantList waveformPeaks READ waveformPeaks NOTIFY waveformPeaksChanged)
+    Q_PROPERTY(double playbackPosition READ playbackPosition NOTIFY playbackPositionChanged)
 
 public:
     explicit AudioTrackSettingsModel(QObject* parent = nullptr);
@@ -64,6 +65,7 @@ public:
     bool hasTrack() const;
     double duration() const;
     QVariantList waveformPeaks() const;
+    double playbackPosition() const;
 
     void setStartOffset(double value);
     void setClipStart(double value);
@@ -90,10 +92,12 @@ signals:
     void hasTrackChanged();
     void durationChanged();
     void waveformPeaksChanged();
+    void playbackPositionChanged();
 
 private:
     IProjectAudioSettingsPtr audioSettings() const;
     void updateWaveform();
+    void subscribeOnPlayback();
     void notifyAll();
 
     muse::ContextInject<context::IGlobalContext> globalContext = { this };
@@ -102,6 +106,8 @@ private:
     AudioTrackSettings m_settings;
     double m_duration = 0.0;
     QVariantList m_waveformPeaks;
+    double m_playbackPosition = 0.0;
+    bool m_settingsSubscribed = false;
 };
 }
 

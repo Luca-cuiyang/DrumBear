@@ -173,6 +173,7 @@ bool computeMp3Peaks(const QString& path, double& duration, QVariantList& peaks,
 AudioTrackSettingsModel::AudioTrackSettingsModel(QObject* parent)
     : QObject(parent), muse::Contextable(muse::iocCtxForQmlObject(this))
 {
+    subscribeOnPlayback();
 }
 
 void AudioTrackSettingsModel::load()
@@ -182,10 +183,31 @@ void AudioTrackSettingsModel::load()
         return;
     }
 
+    if (!m_settingsSubscribed) {
+        settings->audioTrackSettingsChanged().onNotify(this, [this]() {
+            load();
+        });
+        m_settingsSubscribed = true;
+    }
+
     m_settings = settings->audioTrackSettings();
     m_duration = 0.0;
     updateWaveform();
     notifyAll();
+}
+
+void AudioTrackSettingsModel::subscribeOnPlayback()
+{
+    const context::IPlaybackStatePtr state = globalContext()->playbackState();
+    if (!state) {
+        return;
+    }
+
+    m_playbackPosition = state->playbackPosition().to_double();
+    state->playbackPositionChanged().onReceive(this, [this](muse::audio::secs_t position) {
+        m_playbackPosition = position.to_double();
+        emit playbackPositionChanged();
+    });
 }
 
 void AudioTrackSettingsModel::chooseFile()
@@ -288,6 +310,7 @@ double AudioTrackSettingsModel::speed() const { return m_settings.speed; }
 bool AudioTrackSettingsModel::hasTrack() const { return m_settings.isValid(); }
 double AudioTrackSettingsModel::duration() const { return m_duration; }
 QVariantList AudioTrackSettingsModel::waveformPeaks() const { return m_waveformPeaks; }
+double AudioTrackSettingsModel::playbackPosition() const { return m_playbackPosition; }
 
 void AudioTrackSettingsModel::setStartOffset(double value) { m_settings.startOffset = muse::secs_t(value); emit startOffsetChanged(); }
 void AudioTrackSettingsModel::setClipStart(double value) { m_settings.clipStart = muse::secs_t(value); emit clipStartChanged(); }

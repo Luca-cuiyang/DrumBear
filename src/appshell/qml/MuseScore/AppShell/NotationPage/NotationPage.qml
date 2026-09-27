@@ -35,6 +35,7 @@ import DBScore.Palette
 import DBScore.PropertiesPanel
 import DBScore.InstrumentsScene
 import DBScore.Playback
+import DBScore.Project
 
 DockPage {
     id: root
@@ -501,14 +502,23 @@ DockPage {
 
             groupName: root.horizontalPanelsGroup
 
-            visible: true
+            visible: audioModel.hasTrack
             location: Location.Bottom
 
             dropDestinations: root.horizontalPanelDropDestinations
 
             navigationSection: root.navigationPanelSec(audioTrackPanel.location)
 
+            AudioTrackSettingsModel {
+                id: audioModel
+
+                Component.onCompleted: {
+                    audioModel.load()
+                }
+            }
+
             AudioTrackEditor {
+                audioModel: audioModel
                 navigationSection: audioTrackPanel.navigationSection
                 contentNavigationPanelOrderStart: audioTrackPanel.contentNavigationPanelOrderStart
             }
