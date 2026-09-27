@@ -92,6 +92,7 @@ public:
     Q_INVOKABLE void setClipSpeed(int index, double speed);
     Q_INVOKABLE void setClipVolume(int index, double volume);
     Q_INVOKABLE void setClipMuted(int index, bool muted);
+    Q_INVOKABLE void setClipFade(int index, double fadeIn, double fadeOut);
 
 signals:
     void filePathChanged();

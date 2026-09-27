@@ -686,6 +686,8 @@ QJsonObject ProjectAudioSettings::audioTrackSettingsToJson(const AudioTrackSetti
         clipObj.insert("volume", clip.volume.to_double());
         clipObj.insert("muted", clip.muted);
         clipObj.insert("speed", clip.speed);
+        clipObj.insert("fadeIn", clip.fadeIn.to_double());
+        clipObj.insert("fadeOut", clip.fadeOut.to_double());
         clipsArray.append(clipObj);
     }
     result.insert("clips", clipsArray);
@@ -708,6 +710,8 @@ AudioTrackSettings ProjectAudioSettings::audioTrackSettingsFromJson(const QJsonO
             clip.volume = muse::audio::volume_db_t(clipObj.value("volume").toDouble(0.0));
             clip.muted = clipObj.value("muted").toBool(false);
             clip.speed = clipObj.value("speed").toDouble(1.0);
+            clip.fadeIn = muse::secs_t(clipObj.value("fadeIn").toDouble(0.0));
+            clip.fadeOut = muse::secs_t(clipObj.value("fadeOut").toDouble(0.0));
             settings.clips.push_back(clip);
         }
     } else {
@@ -720,6 +724,8 @@ AudioTrackSettings ProjectAudioSettings::audioTrackSettingsFromJson(const QJsonO
         clip.volume = muse::audio::volume_db_t(object.value("volume").toDouble(0.0));
         clip.muted = object.value("muted").toBool(false);
         clip.speed = object.value("speed").toDouble(1.0);
+        clip.fadeIn = muse::secs_t(object.value("fadeIn").toDouble(0.0));
+        clip.fadeOut = muse::secs_t(object.value("fadeOut").toDouble(0.0));
         if (clip.isValid()) {
             settings.clips.push_back(clip);
         }

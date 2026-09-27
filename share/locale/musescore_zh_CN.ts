@@ -35605,6 +35605,14 @@ failed: %2</source>
         <source>Delete clip</source>
         <translation>删除片段</translation>
     </message>
+    <message>
+        <source>Fade in</source>
+        <translation>淡入</translation>
+    </message>
+    <message>
+        <source>Fade out</source>
+        <translation>淡出</translation>
+    </message>
 </context>
 <context>
     <name>project/cloud</name>

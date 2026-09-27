@@ -300,6 +300,8 @@ void AudioTrackSettingsModel::updateClipsList()
         map.insert("speed", clip.speed);
         map.insert("volume", clip.volume.to_double());
         map.insert("muted", clip.muted);
+        map.insert("fadeIn", clip.fadeIn.to_double());
+        map.insert("fadeOut", clip.fadeOut.to_double());
         m_clips.append(map);
     }
     emit clipsChanged();
@@ -482,6 +484,17 @@ void AudioTrackSettingsModel::setClipMuted(int index, bool muted)
         return;
     }
     m_settings.clips[index].muted = muted;
+    updateClipsList();
+    apply();
+}
+
+void AudioTrackSettingsModel::setClipFade(int index, double fadeIn, double fadeOut)
+{
+    if (index < 0 || index >= int(m_settings.clips.size())) {
+        return;
+    }
+    m_settings.clips[index].fadeIn = muse::secs_t(fadeIn);
+    m_settings.clips[index].fadeOut = muse::secs_t(fadeOut);
     updateClipsList();
     apply();
 }

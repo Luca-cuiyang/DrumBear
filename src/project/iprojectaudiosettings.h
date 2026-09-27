@@ -44,6 +44,8 @@ struct AudioClipSettings {
     muse::audio::volume_db_t volume = 0.f;
     bool muted = false;
     float speed = 1.f;
+    muse::secs_t fadeIn = 0.0;
+    muse::secs_t fadeOut = 0.0;
 
     bool isValid() const { return !filePath.empty(); }
 
@@ -55,7 +57,9 @@ struct AudioClipSettings {
                && muse::is_equal(clipEnd, other.clipEnd)
                && muse::is_equal(volume, other.volume)
                && muted == other.muted
-               && muse::is_equal(speed, other.speed);
+               && muse::is_equal(speed, other.speed)
+               && muse::is_equal(fadeIn, other.fadeIn)
+               && muse::is_equal(fadeOut, other.fadeOut);
     }
 };
 

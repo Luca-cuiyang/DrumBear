@@ -475,6 +475,34 @@ Item {
                 }
                 StyledTextLabel { text: audioModel.volumeDb.toFixed(1) + " dB" }
             }
+
+            StyledTextLabel { text: qsTrc("project", "Fade in") }
+            RowLayout {
+                Layout.fillWidth: true
+                StyledSlider {
+                    Layout.fillWidth: true
+                    value: audioModel.clips.length > 0 ? audioModel.clips[0].fadeIn : 0
+                    from: 0
+                    to: timeRange
+                    stepSize: 0.01
+                    onMoved: { audioModel.setClipFade(0, value, audioModel.clips.length > 0 ? audioModel.clips[0].fadeOut : 0) }
+                }
+                StyledTextLabel { text: (audioModel.clips.length > 0 ? audioModel.clips[0].fadeIn : 0).toFixed(2) + " s" }
+            }
+
+            StyledTextLabel { text: qsTrc("project", "Fade out") }
+            RowLayout {
+                Layout.fillWidth: true
+                StyledSlider {
+                    Layout.fillWidth: true
+                    value: audioModel.clips.length > 0 ? audioModel.clips[0].fadeOut : 0
+                    from: 0
+                    to: timeRange
+                    stepSize: 0.01
+                    onMoved: { audioModel.setClipFade(0, audioModel.clips.length > 0 ? audioModel.clips[0].fadeIn : 0, value) }
+                }
+                StyledTextLabel { text: (audioModel.clips.length > 0 ? audioModel.clips[0].fadeOut : 0).toFixed(2) + " s" }
+            }
         }
 
         CheckBox {

@@ -1352,6 +1352,8 @@ void PlaybackController::addAudioTrack(const AudioTrackSettings& settings, const
         trackParams.soundTrack.clipStart = clip.clipStart;
         trackParams.soundTrack.clipEnd = clip.clipEnd;
         trackParams.soundTrack.speed = clip.speed;
+        trackParams.soundTrack.fadeIn = clip.fadeIn;
+        trackParams.soundTrack.fadeOut = clip.fadeOut;
 
         playback()->addTrack("Accompaniment", file.get(), trackParams)
         .onResolve(this, [this, playbackKey, onFinished](const TrackId trackId, const TrackParams&) {
