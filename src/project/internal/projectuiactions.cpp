@@ -83,13 +83,6 @@ const UiActionList ProjectUiActions::m_actions = {
              TranslatableString("action", "Export"),
              IconCode::Code::SHARE_FILE
              ),
-    UiAction("file-convert-to-score",
-             mu::context::UiCtxAny,
-             mu::context::CTX_ANY,
-             TranslatableString("action", "Convert &file…"),
-             TranslatableString("action", "Convert file"),
-             IconCode::Code::IMPORT
-             ),
     UiAction("project-properties",
              mu::context::UiCtxAny,
              mu::context::CTX_ANY,

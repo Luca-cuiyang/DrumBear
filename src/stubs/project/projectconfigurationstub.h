@@ -53,9 +53,6 @@ public:
     muse::async::Channel<muse::io::path_t> userProjectsPathChanged() const override;
     muse::io::path_t defaultUserProjectsPath() const override;
 
-    muse::io::path_t defaultConvertFilePath() const override;
-    void setLastOpenedConvertFilePath(const muse::io::path_t& path) override;
-
     bool shouldAskSaveLocationType() const override;
     void setShouldAskSaveLocationType(bool shouldAsk) override;
 
@@ -149,10 +146,5 @@ public:
 
     bool createBackupBeforeSaving() const override;
     void setCreateBackupBeforeSaving(bool create) override;
-
-    bool showConvertFileProcessingDialog() const override;
-    void setShowConvertFileProcessingDialog(bool show) override;
-
-    muse::io::path_t watchedConvertsJsonPath() const override;
 };
 }

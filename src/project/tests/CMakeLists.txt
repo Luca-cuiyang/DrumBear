@@ -21,8 +21,6 @@
 set(MODULE_TEST project_test)
 
 set(MODULE_TEST_SRC
-    ${CMAKE_CURRENT_LIST_DIR}/mocks/convertfiletoscorescenariomock.h
-    ${CMAKE_CURRENT_LIST_DIR}/mocks/convertfiletoscoreservicemock.h
     ${CMAKE_CURRENT_LIST_DIR}/mocks/exportprojectscenariomock.h
     ${CMAKE_CURRENT_LIST_DIR}/mocks/mscmetareadermock.h
     ${CMAKE_CURRENT_LIST_DIR}/mocks/notationprojectmock.h
@@ -36,8 +34,6 @@ set(MODULE_TEST_SRC
     ${CMAKE_CURRENT_LIST_DIR}/mocks/saveprojectscenariomock.h
     ${CMAKE_CURRENT_LIST_DIR}/utils/promisetest.h
     ${CMAKE_CURRENT_LIST_DIR}/mscmetareadertests.cpp
-    ${CMAKE_CURRENT_LIST_DIR}/convertfiletoscoreservice_tests.cpp
-    ${CMAKE_CURRENT_LIST_DIR}/convertfiletoscorescenario_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/openprojectscenariotests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/saveprojectscenariotests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/closeprojectscenariotests.cpp
@@ -56,4 +52,3 @@ set(MODULE_TEST_LINK
 )
 
 include(SetupGTest)
-

@@ -28,7 +28,6 @@
 
 namespace mu::project {
 inline const muse::Uri NOTATION_PAGE_URI("musescore://notation");
-inline const muse::Uri NOTATION_REVIEW_PAGE_URI("musescore://notation/review");
 inline const muse::Uri HOME_PAGE_URI("musescore://home");
 inline const muse::Uri NEW_SCORE_URI("musescore://project/newscore");
 inline const muse::Uri PROJECT_PROPERTIES_URI("musescore://project/properties");

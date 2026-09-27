@@ -49,7 +49,6 @@ static std::map<Command, PCondition> PROJECT_COMMAND_CONDITIONS = {
     { PROJECT_SAVE_SELECTION_COMMAND, PCondition::HasSelection },
     { PROJECT_SAVE_AT_COMMAND, PCondition::NotBusy },
     { PROJECT_EXPORT_COMMAND, PCondition::HasProject },
-    { PROJECT_CONVERT_TO_SCORE_COMMAND, PCondition::Any },
     { PROJECT_PRINT_COMMAND, PCondition::HasProject },
     { PROJECT_CLEAR_RECENT_COMMAND, PCondition::Any },
     { PROJECT_CONTINUE_LAST_SESSION_COMMAND, PCondition::Any },

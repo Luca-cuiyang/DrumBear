@@ -53,9 +53,6 @@ public:
     MOCK_METHOD(muse::async::Channel<muse::io::path_t>, userProjectsPathChanged, (), (const, override));
     MOCK_METHOD(muse::io::path_t, defaultUserProjectsPath, (), (const, override));
 
-    MOCK_METHOD(muse::io::path_t, defaultConvertFilePath, (), (const, override));
-    MOCK_METHOD(void, setLastOpenedConvertFilePath, (const muse::io::path_t&), (override));
-
     MOCK_METHOD(bool, shouldAskSaveLocationType, (), (const, override));
     MOCK_METHOD(void, setShouldAskSaveLocationType, (bool), (override));
 
@@ -147,11 +144,6 @@ public:
 
     MOCK_METHOD(bool, createBackupBeforeSaving, (), (const, override));
     MOCK_METHOD(void, setCreateBackupBeforeSaving, (bool), (override));
-
-    MOCK_METHOD(bool, showConvertFileProcessingDialog, (), (const, override));
-    MOCK_METHOD(void, setShowConvertFileProcessingDialog, (bool), (override));
-
-    MOCK_METHOD(muse::io::path_t, watchedConvertsJsonPath, (), (const, override));
 };
 }
 

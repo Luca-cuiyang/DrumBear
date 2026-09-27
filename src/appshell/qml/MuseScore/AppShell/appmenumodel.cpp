@@ -205,7 +205,6 @@ MenuItem* AppMenuModel::makeFileMenu()
             makeMenuItem(PROJECT_SAVE_SELECTION_COMMAND),
         }),
         makeSeparator(),
-        makeMenuItem(PROJECT_CONVERT_TO_SCORE_COMMAND),
         makeMenuItem(PROJECT_EXPORT_COMMAND),
         makeSeparator(),
         makeMenuItem(PROJECT_PROPERTIES_COMMAND),
