@@ -40,6 +40,7 @@
 #include "multiwindows/iprojectprovider.h"
 #include "print/iprintprovider.h"
 #include "icloseprojectscenario.h"
+#include "iexportprojectscenario.h"
 #include "iopenprojectscenario.h"
 #include "isaveprojectscenario.h"
 
@@ -57,6 +58,7 @@ public:
     muse::ContextInject<IOpenProjectScenario> openProjectScenario = { this };
     muse::ContextInject<ISaveProjectScenario> saveProjectScenario = { this };
     muse::ContextInject<ICloseProjectScenario> closeProjectScenario = { this };
+    muse::ContextInject<IExportProjectScenario> exportProjectScenario = { this };
     muse::ContextInject<muse::actions::IActionsDispatcher> dispatcher = { this };
     muse::ContextInject<muse::rcommand::ICommandDispatcher> commandDispatcher = { this };
     muse::ContextInject<muse::IInteractive> interactive = { this };
@@ -115,6 +117,7 @@ private:
     muse::Ret openProjectProperties();
 
     muse::Ret exportScore();
+    muse::Ret exportDynamicDrumScore();
     muse::Ret printScore();
 
     void setBusy(BusyStatus status, bool isBusy);

@@ -104,6 +104,14 @@ static const std::vector<CommandInfo> s_commandInfos = {
     },
 
     CommandInfo{
+        PROJECT_EXPORT_DYNAMIC_DRUM_SCORE_COMMAND,
+        TranslatableString("project", "Export dynamic drum score…"),
+        TranslatableString("project", "Export the score as MusicXML for the dynamic drum score player"),
+        InputSchema(),
+        Decoration(IconCode::Code::SHARE_FILE)
+    },
+
+    CommandInfo{
         PROJECT_PROPERTIES_COMMAND,
         TranslatableString("project", "Project propert&ies…"),
         TranslatableString("project", "Project properties"),
