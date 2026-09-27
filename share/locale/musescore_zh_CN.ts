@@ -9769,6 +9769,10 @@ followed by dashes</source>
         <source>Automation</source>
         <translation>自动化</translation>
     </message>
+    <message>
+        <source>Show search</source>
+        <translation>显示搜索</translation>
+    </message>
 </context>
 <context>
     <name>appshell</name>
@@ -39279,6 +39283,13 @@ failed: %2</source>
         <location filename="../../src/framework/workspace/qml/Muse/Workspace/workspacelistmodel.cpp" line="273"/>
         <source>Name already exists</source>
         <translation>名称已存在</translation>
+    </message>
+</context>
+<context>
+    <name>dock</name>
+    <message>
+        <source>Restore default layout</source>
+        <translation>恢复默认布局</translation>
     </message>
 </context>
 </TS>
