@@ -50,6 +50,13 @@ static const std::vector<CommandInfo> s_commandInfos = {
         Decoration(IconCode::Code::OPEN_FILE)
     },
     CommandInfo{
+        PROJECT_IMPORT_AUDIO_TO_SCORE_COMMAND,
+        TranslatableString("project", "Import &Audio to Score…"),
+        TranslatableString("project", "Import an audio file and transcribe it into a score"),
+        InputSchema(),
+        Decoration(IconCode::Code::OPEN_FILE)
+    },
+    CommandInfo{
         PROJECT_CLOSE_COMMAND,
         TranslatableString("project", "&Close"),
         TranslatableString("project", "Close the project"),

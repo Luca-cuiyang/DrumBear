@@ -38,6 +38,13 @@ const UiActionList ProjectUiActions::m_actions = {
              TranslatableString("action", "Open"),
              IconCode::Code::OPEN_FILE
              ),
+    UiAction("file-import-audio-to-score",
+             mu::context::UiCtxAny,
+             mu::context::CTX_ANY,
+             TranslatableString("action", "Import &Audio to Score…"),
+             TranslatableString("action", "Import Audio to Score"),
+             IconCode::Code::OPEN_FILE
+             ),
     UiAction("file-new",
              mu::context::UiCtxAny,
              mu::context::CTX_ANY,

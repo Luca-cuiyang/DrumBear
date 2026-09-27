@@ -196,6 +196,7 @@ MenuItem* AppMenuModel::makeFileMenu()
         makeMenuItem(PROJECT_NEW_COMMAND),
         makeMenuItem(PROJECT_OPEN_COMMAND),
         makeMenu(TranslatableString("appshell/menu/file", "Open &recent"), recentSubMenuItems, "menu-file-open", openRecentEnabled),
+        makeMenuItem(PROJECT_IMPORT_AUDIO_TO_SCORE_COMMAND),
         makeMenuItem(PROJECT_CLOSE_COMMAND),
         makeSeparator(),
         makeMenuItem(PROJECT_SAVE_COMMAND),

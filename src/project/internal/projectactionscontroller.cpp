@@ -23,7 +23,10 @@
 #include "projectactionscontroller.h"
 
 #include <QBuffer>
+#include <QDateTime>
+#include <QDir>
 #include <QFileInfo>
+#include <QProcess>
 #include <QTemporaryFile>
 #include <QUrl>
 #include <QUrlQuery>
@@ -70,6 +73,7 @@ void ProjectActionsController::init()
 
     d->onRequest(this, PROJECT_NEW_COMMAND, [this]() { return newProject(); });
     d->onRequest(this, PROJECT_OPEN_COMMAND, [this](const rcommand::Params& params) { return openProject(params); });
+    d->onRequest(this, PROJECT_IMPORT_AUDIO_TO_SCORE_COMMAND, [this]() { return importAudioToScore(); });
     d->onRequest(this, PROJECT_CLOSE_COMMAND, [this]() { return closeProject(); });
 
     d->onRequest(this, PROJECT_SAVE_COMMAND, [this]() { return runAsync(saveProject(SaveMode::Save)); });
@@ -93,6 +97,7 @@ void ProjectActionsController::init()
         static const std::vector<ActionToCommand> actionToCommand = {
             { "file-new", PROJECT_NEW_COMMAND, {} },
             { "file-open", PROJECT_OPEN_COMMAND, openArgs },
+            { "file-import-audio-to-score", PROJECT_IMPORT_AUDIO_TO_SCORE_COMMAND, {} },
             { "file-close", PROJECT_CLOSE_COMMAND, {} },
             { "file-save", PROJECT_SAVE_COMMAND, {} },
             { "file-save-as", PROJECT_SAVE_AS_COMMAND, {} },
@@ -390,6 +395,46 @@ muse::Ret ProjectActionsController::exportScore()
     if (!interactive()->isOpened(EXPORT_URI).val) {
         interactive()->open(EXPORT_URI);
     }
+    return make_ok();
+}
+
+muse::Ret ProjectActionsController::importAudioToScore()
+{
+    static const std::vector<std::string> AUDIO_FILTERS {
+        "*.mp3", "*.wav", "*.m4a", "*.aac", "*.flac", "*.ogg", "*.aiff", "*.aif"
+    };
+
+    muse::io::path_t audioPath = interactive()->selectOpeningFileSync(
+        muse::trc("project", "Import Audio to Score"), "", AUDIO_FILTERS);
+
+    if (audioPath.empty()) {
+        return make_ret(Ret::Code::Cancel);
+    }
+
+    QString python = qEnvironmentVariable("ADTOF_PYTHON",
+                                          QStringLiteral("/Users/luca/.workbuddy/binaries/python/envs/adtof/bin/python"));
+    QString script = qEnvironmentVariable("ADTOF_SCRIPT",
+                                          QStringLiteral("/Users/luca/Documents/Codex/2026-09-04/wo/work/sources/desktop/adtof/transcribe_mdx.py"));
+
+    QString midiPath = QDir::temp().filePath(QStringLiteral("dbscore_audio_to_score_%1.mid")
+                                             .arg(QDateTime::currentMSecsSinceEpoch()));
+
+    QProcess* process = new QProcess();
+    QObject::connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), process,
+                     [this, process, midiPath](int exitCode, QProcess::ExitStatus) {
+        process->deleteLater();
+        if (exitCode == 0 && QFileInfo::exists(midiPath)) {
+            openProjectScenario()->openProject(muse::io::path_t(midiPath));
+        } else {
+            LOGE() << "Audio to score conversion failed with exit code: " << exitCode;
+        }
+    });
+    QObject::connect(process, &QProcess::errorOccurred, [](QProcess::ProcessError error) {
+        LOGE() << "Audio to score process error: " << error;
+    });
+
+    process->start(python, QStringList() << script << audioPath.toQString() << midiPath);
+
     return make_ok();
 }
 
