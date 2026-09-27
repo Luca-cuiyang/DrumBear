@@ -227,7 +227,8 @@ private:
     void doAddTrack(const engraving::InstrumentTrackId& instrumentTrackId, const std::string& title, bool projectHadNoAudioSettings,
                     const TrackAddFinished& onFinished);
     void addAuxTrack(muse::audio::aux_channel_idx_t index, bool projectHadNoAudioSettings, const TrackAddFinished& onFinished);
-    void addAudioTrack(const project::AudioTrackSettings& settings, const TrackAddFinished& onFinished);
+    void addAudioTrack(const project::AudioTrackSettings& settings, const TrackAddFinished& onFinished, bool trackLoading = true);
+    void removeAudioTrack();
 
     void setTrackActivity(const engraving::InstrumentTrackId& instrumentTrackId, const bool isActive);
     project::AudioOutputParams trackOutputParams(const engraving::InstrumentTrackId& instrumentTrackId) const;

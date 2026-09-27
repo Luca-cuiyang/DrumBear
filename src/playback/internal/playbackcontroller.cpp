@@ -1323,7 +1323,7 @@ void PlaybackController::addAuxTrack(aux_channel_idx_t index, bool projectHadNoA
     m_loadingTrackCount++;
 }
 
-void PlaybackController::addAudioTrack(const AudioTrackSettings& settings, const TrackAddFinished& onFinished)
+void PlaybackController::addAudioTrack(const AudioTrackSettings& settings, const TrackAddFinished& onFinished, bool trackLoading)
 {
     IF_ASSERT_FAILED(playback()) {
         onFinished();
@@ -1365,7 +1365,17 @@ void PlaybackController::addAudioTrack(const AudioTrackSettings& settings, const
         onFinished();
     });
 
-    m_loadingTrackCount++;
+    if (trackLoading) {
+        m_loadingTrackCount++;
+    }
+}
+
+void PlaybackController::removeAudioTrack()
+{
+    if (m_audioTrackId.has_value()) {
+        playback()->removeTrack(*m_audioTrackId);
+        m_audioTrackId.reset();
+    }
 }
 
 void PlaybackController::setTrackActivity(const engraving::InstrumentTrackId& instrumentTrackId, const bool isActive)
@@ -1746,6 +1756,14 @@ void PlaybackController::setupTracks()
     audioSettings()->auxSoloMuteStateChanged().onReceive(
         this, [this](aux_channel_idx_t, const notation::INotationSoloMuteState::SoloMuteState&) {
         updateSoloMuteStates();
+    });
+
+    audioSettings()->audioTrackSettingsChanged().onNotify(this, [this]() {
+        removeAudioTrack();
+        const AudioTrackSettings settings = audioSettings()->audioTrackSettings();
+        if (settings.isValid()) {
+            addAudioTrack(settings, []() {}, false);
+        }
     });
 
     m_isPlayAllowedChanged.send(isPlayAllowed());
