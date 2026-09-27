@@ -440,6 +440,9 @@ void AudioTrackSettingsModel::moveClip(int index, double startOffset)
     m_settings.clips[index].startOffset = muse::secs_t(startOffset);
     updateClipsList();
     apply();
+    if (index == 0) {
+        emit startOffsetChanged();
+    }
 }
 
 void AudioTrackSettingsModel::trimClip(int index, double clipStart, double clipEnd)

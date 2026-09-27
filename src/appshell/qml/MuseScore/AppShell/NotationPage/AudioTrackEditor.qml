@@ -258,6 +258,49 @@ Item {
                     }
                 }
 
+                // Draggable clip body (moves the clip's start offset)
+                Rectangle {
+                    id: clipDragArea
+
+                    x: (audioModel.startOffset - timeline.viewStart) * timeline.pxPerSec
+                    y: rulerCanvas.height + 6
+                    height: timeline.height - rulerCanvas.height - 12
+                    width: Math.max(10, ((audioModel.clipEnd > 0 ? audioModel.clipEnd : timeRange) - audioModel.clipStart) * timeline.pxPerSec)
+                    color: "transparent"
+                    visible: audioModel.hasTrack
+
+                    Connections {
+                        target: audioModel
+                        function onStartOffsetChanged() {
+                            clipDragArea.x = (audioModel.startOffset - timeline.viewStart) * timeline.pxPerSec
+                        }
+                        function onClipStartChanged() {
+                            clipDragArea.width = Math.max(10, ((audioModel.clipEnd > 0 ? audioModel.clipEnd : timeRange) - audioModel.clipStart) * timeline.pxPerSec)
+                        }
+                        function onClipEndChanged() {
+                            clipDragArea.width = Math.max(10, ((audioModel.clipEnd > 0 ? audioModel.clipEnd : timeRange) - audioModel.clipStart) * timeline.pxPerSec)
+                        }
+                    }
+
+                    MouseArea {
+                        anchors.fill: parent
+                        cursorShape: Qt.OpenHandCursor
+                        drag.target: clipDragArea
+                        drag.axis: Drag.XAxis
+                        drag.minimumX: 0
+                        drag.maximumX: timeline.width - clipDragArea.width
+
+                        onPositionChanged: {
+                            var t = timeline.viewStart + clipDragArea.x / timeline.pxPerSec
+                            audioModel.moveClip(0, Math.max(0, t))
+                        }
+
+                        onReleased: {
+                            audioModel.apply()
+                        }
+                    }
+                }
+
                 // Playhead
                 Rectangle {
                     id: playhead
