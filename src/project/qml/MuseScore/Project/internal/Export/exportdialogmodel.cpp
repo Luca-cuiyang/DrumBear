@@ -64,8 +64,8 @@ ExportDialogModel::ExportDialogModel(QObject* parent)
                                      muse::qtrc("project/export", "Uncompressed MusicXML files"),
                                      "MusicXmlSettingsPage.qml"),
         ExportType::makeWithSuffixes({ "dbsc" },
-                                     muse::qtrc("project/export", "Dynamic drum score") + " (*.dbsc)",
-                                     muse::qtrc("project/export", "Dynamic drum score files"),
+                                     muse::qtrc("project/export", "Dynamic score") + " (*.dbsc)",
+                                     muse::qtrc("project/export", "Dynamic score files"),
                                      "MusicXmlSettingsPage.qml"),
     };
 

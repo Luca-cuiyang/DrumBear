@@ -36166,6 +36166,14 @@ failed: %2</source>
         <translation>不压缩（过时）</translation>
     </message>
     <message>
+        <source>Dynamic score</source>
+        <translation>动态谱</translation>
+    </message>
+    <message>
+        <source>Dynamic score files</source>
+        <translation>动态谱文件</translation>
+    </message>
+    <message>
         <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="70"/>
         <source>PDF file</source>
         <translation>PDF文件</translation>
