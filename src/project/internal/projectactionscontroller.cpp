@@ -408,8 +408,8 @@ muse::Ret ProjectActionsController::exportDynamicDrumScore()
     }
 
     ExportType exportType = ExportType::makeWithSuffixes(
-        { "musicxml" },
-        muse::qtrc("project/export", "Dynamic drum score (MusicXML)"),
+        { "dbsc" },
+        muse::qtrc("project/export", "Dynamic drum score (*.dbsc)"),
         muse::qtrc("project/export", "Dynamic drum score files"));
 
     INotationPtrList notations = { notation };

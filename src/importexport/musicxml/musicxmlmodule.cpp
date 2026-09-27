@@ -61,7 +61,7 @@ void MusicXmlModule::resolveImports()
 
     auto writers = globalIoc()->resolve<INotationWritersRegister>(moduleName());
     if (writers) {
-        writers->reg({ "musicxml", "xml" }, std::make_shared<MusicXmlWriter>());
+        writers->reg({ "musicxml", "xml", "dbsc" }, std::make_shared<MusicXmlWriter>());
         writers->reg({ "mxl" }, std::make_shared<MxlWriter>());
     }
 #endif
