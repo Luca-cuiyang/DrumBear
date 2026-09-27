@@ -81,7 +81,6 @@ void ProjectActionsController::init()
     d->onRequest(this, PROJECT_SAVE_AT_COMMAND, [this](const rcommand::Params& params) { return runAsync(saveProjectAt(params)); });
 
     d->onRequest(this, PROJECT_EXPORT_COMMAND, [this]() { return exportScore(); });
-    d->onRequest(this, PROJECT_EXPORT_DYNAMIC_DRUM_SCORE_COMMAND, [this]() { return exportDynamicDrumScore(); });
 
     d->onRequest(this, PROJECT_PRINT_COMMAND, [this]() { return printScore(); });
     d->onRequest(this, PROJECT_CLEAR_RECENT_COMMAND, [this]() { return clearRecentScores(); });
@@ -101,7 +100,6 @@ void ProjectActionsController::init()
             { "file-save-selection", PROJECT_SAVE_SELECTION_COMMAND, {} },
             { "file-save-at", PROJECT_SAVE_AT_COMMAND, make_conv({ { "path", param<io::path_t> } }) },
             { "file-export", PROJECT_EXPORT_COMMAND, {} },
-            { "file-export-dynamic-drum-score", PROJECT_EXPORT_DYNAMIC_DRUM_SCORE_COMMAND, {} },
             { "export", PROJECT_EXPORT_COMMAND, {} },
             { "print", PROJECT_PRINT_COMMAND, {} },
             { "clear-recent", PROJECT_CLEAR_RECENT_COMMAND, {} },
@@ -392,33 +390,6 @@ muse::Ret ProjectActionsController::exportScore()
     if (!interactive()->isOpened(EXPORT_URI).val) {
         interactive()->open(EXPORT_URI);
     }
-    return make_ok();
-}
-
-muse::Ret ProjectActionsController::exportDynamicDrumScore()
-{
-    INotationPtr notation = currentNotation();
-    if (!notation) {
-        return make_ret(Ret::Code::InternalError);
-    }
-
-    std::shared_ptr<IExportProjectScenario> scenario = exportProjectScenario();
-    if (!scenario) {
-        return make_ret(Ret::Code::InternalError);
-    }
-
-    ExportType exportType = ExportType::makeWithSuffixes(
-        { "dbsc" },
-        muse::qtrc("project/export", "Dynamic drum score (*.dbsc)"),
-        muse::qtrc("project/export", "Dynamic drum score files"));
-
-    INotationPtrList notations = { notation };
-    RetVal<muse::io::path_t> exportPath = scenario->askExportPath(notations, exportType, INotationWriter::UnitType::PER_PART);
-    if (!exportPath.ret) {
-        return exportPath.ret;
-    }
-
-    scenario->exportScores(notations, exportPath.val, INotationWriter::UnitType::PER_PART, true);
     return make_ok();
 }
 

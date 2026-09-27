@@ -83,13 +83,6 @@ const UiActionList ProjectUiActions::m_actions = {
              TranslatableString("action", "Export"),
              IconCode::Code::SHARE_FILE
              ),
-    UiAction("file-export-dynamic-drum-score",
-             mu::context::UiCtxAny,
-             mu::context::CTX_ANY,
-             TranslatableString("action", "Export dynamic drum score…"),
-             TranslatableString("action", "Export dynamic drum score"),
-             IconCode::Code::SHARE_FILE
-             ),
     UiAction("project-properties",
              mu::context::UiCtxAny,
              mu::context::CTX_ANY,

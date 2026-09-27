@@ -206,7 +206,6 @@ MenuItem* AppMenuModel::makeFileMenu()
         }),
         makeSeparator(),
         makeMenuItem(PROJECT_EXPORT_COMMAND),
-        makeMenuItem(PROJECT_EXPORT_DYNAMIC_DRUM_SCORE_COMMAND),
         makeSeparator(),
         makeMenuItem(PROJECT_PROPERTIES_COMMAND),
         makeMenuItem(OPEN_PARTS_COMMAND),
