@@ -5376,6 +5376,14 @@ followed by dashes</source>
 <context>
     <name>action</name>
     <message>
+        <source>Import &amp;Audio to Score…</source>
+        <translation>导入音频到乐谱(&amp;A)…</translation>
+    </message>
+    <message>
+        <source>Import Audio to Score</source>
+        <translation>导入音频到乐谱</translation>
+    </message>
+    <message>
         <location filename="../../src/appshell/internal/applicationuiactions.cpp" line="48"/>
         <location filename="../../src/appshell/internal/applicationuiactions.cpp" line="49"/>
         <source>Quit</source>
@@ -34774,6 +34782,14 @@ failed: %2</source>
 </context>
 <context>
     <name>project</name>
+    <message>
+        <source>Import &amp;Audio to Score…</source>
+        <translation>导入音频到乐谱(&amp;A)…</translation>
+    </message>
+    <message>
+        <source>Import an audio file and transcribe it into a score</source>
+        <translation>导入音频文件并将其转录成乐谱</translation>
+    </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="129"/>
         <source>You don’t have any online scores yet</source>

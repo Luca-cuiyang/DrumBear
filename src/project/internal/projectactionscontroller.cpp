@@ -419,14 +419,20 @@ muse::Ret ProjectActionsController::importAudioToScore()
     QString midiPath = QDir::temp().filePath(QStringLiteral("dbscore_audio_to_score_%1.mid")
                                              .arg(QDateTime::currentMSecsSinceEpoch()));
 
+    muse::Progress progress;
+    interactive()->showProgress(muse::trc("project", "Import Audio to Score"), progress);
+    progress.start();
+
     QProcess* process = new QProcess();
     QObject::connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), process,
-                     [this, process, midiPath](int exitCode, QProcess::ExitStatus) {
+                     [this, process, midiPath, progress](int exitCode, QProcess::ExitStatus) mutable {
         process->deleteLater();
+        progress.finish(muse::make_ok());
         if (exitCode == 0 && QFileInfo::exists(midiPath)) {
             openProjectScenario()->openProject(muse::io::path_t(midiPath));
         } else {
-            LOGE() << "Audio to score conversion failed with exit code: " << exitCode;
+            interactive()->error(muse::trc("project", "Audio to Score"),
+                                 muse::trc("project", "Could not convert the selected audio into a score."));
         }
     });
     QObject::connect(process, &QProcess::errorOccurred, [](QProcess::ProcessError error) {
