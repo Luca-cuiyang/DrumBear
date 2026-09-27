@@ -46,6 +46,10 @@
 #include "../iplaybackconfiguration.h"
 #include "../isoundprofilesrepository.h"
 
+namespace muse::io {
+class FileStream;
+}
+
 namespace mu::playback {
 class OnlineSoundsController;
 class PlaybackController : public IPlaybackController, public muse::async::Asyncable, public muse::Contextable
@@ -223,6 +227,7 @@ private:
     void doAddTrack(const engraving::InstrumentTrackId& instrumentTrackId, const std::string& title, bool projectHadNoAudioSettings,
                     const TrackAddFinished& onFinished);
     void addAuxTrack(muse::audio::aux_channel_idx_t index, bool projectHadNoAudioSettings, const TrackAddFinished& onFinished);
+    void addAudioTrack(const project::AudioTrackSettings& settings, const TrackAddFinished& onFinished);
 
     void setTrackActivity(const engraving::InstrumentTrackId& instrumentTrackId, const bool isActive);
     project::AudioOutputParams trackOutputParams(const engraving::InstrumentTrackId& instrumentTrackId) const;
@@ -265,6 +270,8 @@ private:
 
     InstrumentTrackIdMap m_instrumentTrackIdMap;
     AuxTrackIdMap m_auxTrackIdMap;
+    std::optional<muse::audio::TrackId> m_audioTrackId;
+    std::shared_ptr<muse::io::FileStream> m_audioTrackFile;
 
     std::unordered_map<engraving::InstrumentTrackId, muse::audio::ControlParams> m_automatedControlParamsCache;
 

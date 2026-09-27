@@ -27,6 +27,7 @@
 #include "modularity/ioc.h"
 #include "log.h"
 #include "types/ret.h"
+#include "global/io/filestream.h"
 
 #include "audio/common/audioutils.h"
 #include "audio/devtools/inputlag.h"
@@ -1125,6 +1126,7 @@ void PlaybackController::resetPlayback()
 
     m_instrumentTrackIdMap.clear();
     m_auxTrackIdMap.clear();
+    m_audioTrackId.reset();
 
     m_isRangeSelection = false;
 
@@ -1315,6 +1317,51 @@ void PlaybackController::addAuxTrack(aux_channel_idx_t index, bool projectHadNoA
     .onReject(this, [onFinished](int code, const std::string& msg) {
         LOGE() << "can't add a new aux track, code: [" << code << "] " << msg;
 
+        onFinished();
+    });
+
+    m_loadingTrackCount++;
+}
+
+void PlaybackController::addAudioTrack(const AudioTrackSettings& settings, const TrackAddFinished& onFinished)
+{
+    IF_ASSERT_FAILED(playback()) {
+        onFinished();
+        return;
+    }
+
+    m_audioTrackFile = std::make_shared<muse::io::FileStream>(settings.filePath);
+    if (!m_audioTrackFile->open(muse::io::IODevice::ReadOnly)) {
+        LOGE() << "can't open audio track file: " << settings.filePath;
+        m_audioTrackFile.reset();
+        onFinished();
+        return;
+    }
+
+    TrackParams trackParams;
+    trackParams.source = {};
+    trackParams.control.volume = settings.volume;
+    trackParams.control.muted = settings.muted;
+    trackParams.soundTrack.startOffset = settings.startOffset;
+    trackParams.soundTrack.clipStart = settings.clipStart;
+    trackParams.soundTrack.clipEnd = settings.clipEnd;
+    trackParams.soundTrack.speed = settings.tempoSync ? 1.f : 1.f;
+
+    uint64_t playbackKey = notationPlaybackKey();
+
+    playback()->addTrack("Accompaniment", m_audioTrackFile.get(), trackParams)
+    .onResolve(this, [this, playbackKey, onFinished](const TrackId trackId, const TrackParams&) {
+        if (notationPlaybackKey() != playbackKey) {
+            onFinished();
+            return;
+        }
+
+        m_audioTrackId = trackId;
+        m_trackAdded.send(trackId);
+        onFinished();
+    })
+    .onReject(this, [onFinished](int code, const std::string& msg) {
+        LOGE() << "can't add audio track, code: [" << code << "] " << msg;
         onFinished();
     });
 
@@ -1650,7 +1697,8 @@ void PlaybackController::setupTracks()
     m_loadingTrackCount = 0;
 
     InstrumentTrackIdSet trackIdSet = notationPlayback()->existingTrackIdSet();
-    size_t trackCount = trackIdSet.size() + AUX_CHANNEL_NUM;
+    const bool hasAudioTrack = audioSettings()->audioTrackSettings().isValid();
+    size_t trackCount = trackIdSet.size() + AUX_CHANNEL_NUM + (hasAudioTrack ? 1 : 0);
     std::string title = muse::trc("playback", "Loading audio samples");
 
     auto onAddFinished = [this, trackCount, title]() {
@@ -1671,6 +1719,10 @@ void PlaybackController::setupTracks()
 
     for (aux_channel_idx_t idx = 0; idx < AUX_CHANNEL_NUM; ++idx) {
         addAuxTrack(idx, projectHadNoAudioSettings, onAddFinished);
+    }
+
+    if (hasAudioTrack) {
+        addAudioTrack(audioSettings()->audioTrackSettings(), onAddFinished);
     }
 
     m_loadingProgress.progress(0, trackCount, title);
