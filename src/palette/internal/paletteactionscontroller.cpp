@@ -35,12 +35,12 @@ using namespace muse::ui;
 using namespace muse::actions;
 using namespace muse::rcommand;
 
-static const muse::UriQuery MASTER_PALETTE_URI("musescore://palette/masterpalette?modal=false");
-static const muse::UriQuery SPECIAL_CHARACTERS_URI("musescore://palette/specialcharacters?modal=false");
-static const muse::UriQuery TIME_SIGNATURE_PROPERTIES_URI("musescore://palette/timesignatureproperties");
-static const muse::UriQuery CUSTOMIZE_KIT_URI("musescore://palette/customizekit");
+static const muse::UriQuery MASTER_PALETTE_URI("dbscore://palette/masterpalette?modal=false");
+static const muse::UriQuery SPECIAL_CHARACTERS_URI("dbscore://palette/specialcharacters?modal=false");
+static const muse::UriQuery TIME_SIGNATURE_PROPERTIES_URI("dbscore://palette/timesignatureproperties");
+static const muse::UriQuery CUSTOMIZE_KIT_URI("dbscore://palette/customizekit");
 
-static const muse::Uri NOTATION_REVIEW_PAGE_URI("musescore://notation/review");
+static const muse::Uri NOTATION_REVIEW_PAGE_URI("dbscore://notation/review");
 
 bool PaletteActionsController::canReceiveAction(const ActionCode&) const
 {

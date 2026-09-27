@@ -386,7 +386,7 @@ muse::Ret ProjectActionsController::continueLastSession()
 
 muse::Ret ProjectActionsController::exportScore()
 {
-    static const Uri EXPORT_URI("musescore://project/export");
+    static const Uri EXPORT_URI("dbscore://project/export");
     if (!interactive()->isOpened(EXPORT_URI).val) {
         interactive()->open(EXPORT_URI);
     }

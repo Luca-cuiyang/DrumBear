@@ -25,7 +25,7 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Layouts
 
-import MuseScore.NotationScene
+import DBScore.NotationScene
 import Muse.UiComponents
 import Muse.Ui
 

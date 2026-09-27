@@ -25,7 +25,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
-import MuseScore.PropertiesPanel
+import DBScore.PropertiesPanel
 import Muse.UiComponents
 import Muse.Ui
 

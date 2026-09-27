@@ -26,8 +26,8 @@ import QtQuick.Layouts
 import Muse.Ui 1.0
 import Muse.UiComponents
 
-import MuseScore.AppShell 1.0
-import MuseScore.Playback 1.0
+import DBScore.AppShell 1.0
+import DBScore.Playback 1.0
 
 AppWindow {
     id: root

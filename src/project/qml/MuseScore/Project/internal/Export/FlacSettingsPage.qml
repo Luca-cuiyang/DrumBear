@@ -22,7 +22,7 @@
 import QtQuick
 
 import Muse.UiComponents
-import MuseScore.Project
+import DBScore.Project
 
 ExportSettingsPage {
     id: root

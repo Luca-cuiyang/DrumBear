@@ -124,9 +124,9 @@ void EngravingModule::resolveImports()
 #ifdef MUE_BUILD_ENGRAVING_DEVTOOLS
     auto ir = globalIoc()->resolve<muse::interactive::IInteractiveUriRegister>(mname);
     if (ir) {
-        ir->registerQmlUri(Uri("musescore://diagnostics/engraving/elements"), "MuseScore.Engraving", "EngravingElementsDialog");
-        ir->registerQmlUri(Uri("musescore://diagnostics/engraving/undostack"), "MuseScore.Engraving", "EngravingUndoStackDialog");
-        ir->registerQmlUri(Uri("musescore://diagnostics/engraving/style"), "MuseScore.Engraving", "EngravingStyleDialog");
+        ir->registerQmlUri(Uri("dbscore://diagnostics/engraving/elements"), "DBScore.Engraving", "EngravingElementsDialog");
+        ir->registerQmlUri(Uri("dbscore://diagnostics/engraving/undostack"), "DBScore.Engraving", "EngravingUndoStackDialog");
+        ir->registerQmlUri(Uri("dbscore://diagnostics/engraving/style"), "DBScore.Engraving", "EngravingStyleDialog");
     }
 #endif
 }

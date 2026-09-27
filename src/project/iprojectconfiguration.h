@@ -123,15 +123,15 @@ public:
     virtual void setAutoSaveInterval(int minutes) = 0;
     virtual muse::async::Channel<int> autoSaveIntervalChanged() const = 0;
 
-    virtual bool alsoShareAudioCom() const = 0;
-    virtual void setAlsoShareAudioCom(bool share) = 0;
-    virtual muse::async::Channel<bool> alsoShareAudioComChanged() const = 0;
+    virtual bool alsoShareDBScoreAudio() const = 0;
+    virtual void setAlsoShareDBScoreAudio(bool share) = 0;
+    virtual muse::async::Channel<bool> alsoShareDBScoreAudioChanged() const = 0;
 
-    virtual bool showAlsoShareAudioComDialog() const = 0;
-    virtual void setShowAlsoShareAudioComDialog(bool show) = 0;
+    virtual bool showAlsoShareDBScoreAudioDialog() const = 0;
+    virtual void setShowAlsoShareDBScoreAudioDialog(bool show) = 0;
 
-    virtual bool hasAskedAlsoShareAudioCom() const = 0;
-    virtual void setHasAskedAlsoShareAudioCom(bool has) = 0;
+    virtual bool hasAskedAlsoShareDBScoreAudio() const = 0;
+    virtual void setHasAskedAlsoShareDBScoreAudio(bool has) = 0;
 
     virtual muse::io::path_t newProjectTemporaryPath() const = 0;
 

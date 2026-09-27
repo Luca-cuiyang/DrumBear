@@ -24,7 +24,7 @@ import QtQuick
 
 import Muse.Ui
 import Muse.UiComponents
-import MuseScore.Palette
+import DBScore.Palette
 
 import "internal"
 

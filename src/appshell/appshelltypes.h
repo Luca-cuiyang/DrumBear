@@ -30,8 +30,8 @@
 namespace mu::appshell {
 using DockName = QString;
 
-inline const muse::Uri HOME_URI("musescore://home");
-inline const muse::Uri NOTATION_URI("musescore://notation");
+inline const muse::Uri HOME_URI("dbscore://home");
+inline const muse::Uri NOTATION_URI("dbscore://notation");
 
 // Panels:
 static const DockName PALETTES_PANEL_NAME("palettesPanel");

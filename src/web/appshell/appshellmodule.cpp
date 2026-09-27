@@ -73,8 +73,8 @@ void AppShellModule::resolveImports()
 
     auto ir = globalIoc()->resolve<interactive::IInteractiveUriRegister>(moduleName());
     if (ir) {
-        ir->registerPageUri(Uri("musescore://notation"));
-        ir->registerPageUri(Uri("musescore://devtools"));
+        ir->registerPageUri(Uri("dbscore://notation"));
+        ir->registerPageUri(Uri("dbscore://devtools"));
     }
 }
 
@@ -85,9 +85,9 @@ void AppShellModule::registerResources()
 
 void AppShellModule::registerUiTypes()
 {
-    qmlRegisterType<NavigableAppMenuModel>("MuseScore.AppShell", 1, 0, "AppMenuModel");
-    qmlRegisterType<NotationPageModel>("MuseScore.AppShell", 1, 0, "NotationPageModel");
-    qmlRegisterType<NotationStatusBarModel>("MuseScore.AppShell", 1, 0, "NotationStatusBarModel");
+    qmlRegisterType<NavigableAppMenuModel>("DBScore.AppShell", 1, 0, "AppMenuModel");
+    qmlRegisterType<NotationPageModel>("DBScore.AppShell", 1, 0, "NotationPageModel");
+    qmlRegisterType<NotationStatusBarModel>("DBScore.AppShell", 1, 0, "NotationStatusBarModel");
 }
 
 void AppShellModule::onPreInit(const IApplication::RunMode& mode)

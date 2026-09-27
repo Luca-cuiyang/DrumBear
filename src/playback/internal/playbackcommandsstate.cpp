@@ -32,7 +32,7 @@ using namespace muse::rcommand;
 using namespace mu::playback;
 using namespace mu::notation;
 
-static const muse::Uri PROJECT_PAGE_URI("musescore://notation");
+static const muse::Uri PROJECT_PAGE_URI("dbscore://notation");
 
 std::string PlaybackCommandsState::moduleName() const
 {

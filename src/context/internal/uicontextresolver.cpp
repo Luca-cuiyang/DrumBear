@@ -41,9 +41,9 @@ using namespace mu::context;
 using namespace muse;
 using namespace muse::ui;
 
-static const muse::Uri HOME_PAGE_URI("musescore://home");
-static const muse::Uri NOTATION_PAGE_URI("musescore://notation");
-static const muse::Uri DEVTOOLS_PAGE_URI("musescore://devtools");
+static const muse::Uri HOME_PAGE_URI("dbscore://home");
+static const muse::Uri NOTATION_PAGE_URI("dbscore://notation");
+static const muse::Uri DEVTOOLS_PAGE_URI("dbscore://devtools");
 
 static const muse::Uri EXTENSIONS_DIALOG_URI("muse://extensions/viewer");
 

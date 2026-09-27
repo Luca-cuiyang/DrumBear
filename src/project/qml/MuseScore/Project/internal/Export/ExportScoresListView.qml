@@ -27,7 +27,7 @@ import QtQuick.Controls
 
 import Muse.UiComponents
 import Muse.Ui
-import MuseScore.Project
+import DBScore.Project
 
 Rectangle {
     id: root

@@ -58,7 +58,7 @@ void MuseSoundsModule::resolveImports()
 {
     auto ir = globalIoc()->resolve<interactive::IInteractiveUriRegister>(mname);
     if (ir) {
-        ir->registerQmlUri(Uri("musescore://musesounds/musesoundsreleaseinfo"), "MuseScore.MuseSounds", "MuseSoundsReleaseInfoDialog");
+        ir->registerQmlUri(Uri("dbscore://musesounds/musesoundsreleaseinfo"), "DBScore.MuseSounds", "MuseSoundsReleaseInfoDialog");
     }
 }
 

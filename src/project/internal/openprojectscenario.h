@@ -30,7 +30,7 @@
 #include "modularity/ioc.h"
 #include "async/asyncable.h"
 #include "context/iglobalcontext.h"
-#include "cloud/musescorecom/imusescorecomservice.h"
+#include "cloud/dbscorecloud/idbscorecloudservice.h"
 #include "interactive/iinteractive.h"
 #include "interactive/iplatforminteractive.h"
 #include "io/ifilesystem.h"
@@ -54,7 +54,7 @@ public:
     muse::GlobalInject<IProjectConfiguration> configuration;
     muse::GlobalInject<muse::io::IFileSystem> fileSystem;
     muse::GlobalInject<muse::mi::IMultiWindowsProvider> multiwindowsProvider;
-    muse::GlobalInject<muse::cloud::IMuseScoreComService> museScoreComService;
+    muse::GlobalInject<muse::cloud::IDBScoreCloudService> dbScoreCloudService;
     muse::GlobalInject<IProjectCreator> projectCreator;
     muse::GlobalInject<INotationReadersRegister> readers;
     muse::GlobalInject<IMscMetaReader> mscMetaReader;
@@ -116,8 +116,8 @@ private:
     muse::async::Promise<muse::Ret> downloadCloudProject(int scoreId, const muse::io::path_t& localPath, const QString& hash,
                                                          const QString& secret, const CloudProjectInfo& info, bool isOwner);
     muse::async::Promise<muse::Ret> openMuseScoreUrl(const QUrl& url);
-    muse::async::Promise<muse::Ret> openScoreFromMuseScoreCom(const QUrl& url);
-    muse::async::Promise<muse::Ret> openScoreFromMuseScoreCom(const QUrl& url, int scoreId, const muse::cloud::ScoreInfo& scoreInfo);
+    muse::async::Promise<muse::Ret> openScoreFromDBScoreCloud(const QUrl& url);
+    muse::async::Promise<muse::Ret> openScoreFromDBScoreCloud(const QUrl& url, int scoreId, const muse::cloud::ScoreInfo& scoreInfo);
 
     muse::Ret openPageIfNeed(muse::Uri pageUri);
 

@@ -21,7 +21,7 @@
  */
 import QtQuick
 
-import MuseScore.PropertiesPanel
+import DBScore.PropertiesPanel
 
 FlatRadioButtonGroupPropertyView {
     id: root

@@ -1636,7 +1636,7 @@ void MnxImporter::processSequencePass2(const mnx::Sequence& sequence, Measure* m
 void MnxImporter::createMeasureRepeats(const mnx::Part& mnxPart)
 {
     /// @todo Import MeasureRepeat counter, displayNumber, and staffPosition, none of which
-    /// has a per-element home in MuseScore. counter is the iteration the player is on, which
+    /// has a per-element home in DBScore. counter is the iteration the player is on, which
     /// MuseScore derives from the repeat's place in the run under score-wide styles.
     /// displayNumber asks whether `number` itself is drawn above the glyph; MuseScore always
     /// draws it for 2- and 4-bar repeats and gates 1-bar repeats on the score-wide

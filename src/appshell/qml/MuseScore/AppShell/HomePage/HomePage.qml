@@ -28,7 +28,7 @@ import Muse.Ui
 import Muse.UiComponents
 import Muse.Dock
 
-import MuseScore.Project
+import DBScore.Project
 
 DockPage {
     id: root
@@ -39,7 +39,7 @@ DockPage {
     property var window: null
 
     objectName: "Home"
-    uri: "musescore://home"
+    uri: "dbscore://home"
 
     onSetParamsRequested: function(params) {
         if (Boolean(params["section"])) {

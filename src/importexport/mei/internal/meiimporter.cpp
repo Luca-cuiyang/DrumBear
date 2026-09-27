@@ -1006,7 +1006,7 @@ bool MeiImporter::readMeiHead(pugi::xml_node root)
 /**
  * Read the MEI score.
  * Previously builds a map of IDs being referred to (e.g., through `@startid` or `@endid`)
- * Also builds a map for staff@n and layer@n when reading MEI files not produced with MuseScore.
+ * Also builds a map for staff@n and layer@n when reading MEI files not produced with DBScore.
  * Reads the initial scoreDef before reading the section elements.
  */
 
@@ -1608,7 +1608,7 @@ bool MeiImporter::readStaves(pugi::xml_node parentNode, Measure* measure, Fracti
 
 /**
  * Read the layer and its content.
- * Also read grace notes not within a graceGrp for MEI files not written by MuseScore.
+ * Also read grace notes not within a graceGrp for MEI files not written by DBScore.
  * Relies on the m_lastChord pointer for adding grace notes to the correct ChordRest
  */
 

@@ -507,7 +507,7 @@ signals:
     /// }
     /// \endcode
     /// \warning This functionality is considered experimental.
-    /// This API may change in future versions of MuseScore.
+    /// This API may change in future versions of DBScore.
     /// \since MuseScore 3.3
     void scoreStateChanged(const QMap<QString, QVariant>& state);
 

@@ -97,15 +97,15 @@ public:
     void setAutoSaveInterval(int minutes) override;
     muse::async::Channel<int> autoSaveIntervalChanged() const override;
 
-    bool alsoShareAudioCom() const override;
-    void setAlsoShareAudioCom(bool share) override;
-    muse::async::Channel<bool> alsoShareAudioComChanged() const override;
+    bool alsoShareDBScoreAudio() const override;
+    void setAlsoShareDBScoreAudio(bool share) override;
+    muse::async::Channel<bool> alsoShareDBScoreAudioChanged() const override;
 
-    bool showAlsoShareAudioComDialog() const override;
-    void setShowAlsoShareAudioComDialog(bool show) override;
+    bool showAlsoShareDBScoreAudioDialog() const override;
+    void setShowAlsoShareDBScoreAudioDialog(bool show) override;
 
-    bool hasAskedAlsoShareAudioCom() const override;
-    void setHasAskedAlsoShareAudioCom(bool has) override;
+    bool hasAskedAlsoShareDBScoreAudio() const override;
+    void setHasAskedAlsoShareDBScoreAudio(bool has) override;
 
     muse::io::path_t newProjectTemporaryPath() const override;
 

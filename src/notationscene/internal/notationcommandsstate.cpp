@@ -30,7 +30,7 @@ using namespace muse::rcommand;
 using namespace mu::notation;
 using namespace mu::engraving;
 
-static const muse::Uri PROJECT_PAGE_URI("musescore://notation");
+static const muse::Uri PROJECT_PAGE_URI("dbscore://notation");
 
 template<typename Map>
 static inline auto commands(const Map& m) -> std::vector<typename Map::key_type>

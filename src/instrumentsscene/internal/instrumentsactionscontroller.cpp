@@ -40,7 +40,7 @@ using namespace mu::notation;
 using namespace muse;
 using namespace muse::actions;
 
-static const muse::Uri NOTATION_REVIEW_PAGE_URI("musescore://notation/review");
+static const muse::Uri NOTATION_REVIEW_PAGE_URI("dbscore://notation/review");
 
 void InstrumentsActionsController::init()
 {

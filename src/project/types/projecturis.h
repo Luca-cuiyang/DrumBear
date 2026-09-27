@@ -27,12 +27,12 @@
 #include "global/types/uri.h"
 
 namespace mu::project {
-inline const muse::Uri NOTATION_PAGE_URI("musescore://notation");
-inline const muse::Uri HOME_PAGE_URI("musescore://home");
-inline const muse::Uri NEW_SCORE_URI("musescore://project/newscore");
-inline const muse::Uri PROJECT_PROPERTIES_URI("musescore://project/properties");
-inline const muse::Uri UPLOAD_PROGRESS_URI("musescore://project/upload/progress");
+inline const muse::Uri NOTATION_PAGE_URI("dbscore://notation");
+inline const muse::Uri HOME_PAGE_URI("dbscore://home");
+inline const muse::Uri NEW_SCORE_URI("dbscore://project/newscore");
+inline const muse::Uri PROJECT_PROPERTIES_URI("dbscore://project/properties");
+inline const muse::Uri UPLOAD_PROGRESS_URI("dbscore://project/upload/progress");
 
-inline const QString MUSESCORE_URL_SCHEME("musescore");
+inline const QString DBSCORE_URL_SCHEME("dbscore");
 inline const QString OPEN_SCORE_URL_HOSTNAME("open-score");
 }

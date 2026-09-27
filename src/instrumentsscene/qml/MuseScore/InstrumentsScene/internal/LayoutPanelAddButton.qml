@@ -24,7 +24,7 @@ import QtQuick
 
 import Muse.Ui
 import Muse.UiComponents
-import MuseScore.InstrumentsScene
+import DBScore.InstrumentsScene
 
 MenuButton {
     id: root

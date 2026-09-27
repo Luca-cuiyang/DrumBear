@@ -58,7 +58,7 @@ using namespace mu::engraving;
 
 namespace Bww {
 /**
- The writer that imports into MuseScore.
+ The writer that imports into DBScore.
  */
 
 //---------------------------------------------------------

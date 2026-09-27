@@ -25,8 +25,8 @@ import QtQuick.Layouts
 
 import Muse.Ui
 import Muse.UiComponents
-import MuseScore.AppShell
-import MuseScore.Preferences
+import DBScore.AppShell
+import DBScore.Preferences
 
 Page {
     id: root

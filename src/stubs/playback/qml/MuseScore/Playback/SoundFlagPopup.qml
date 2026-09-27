@@ -24,8 +24,8 @@ import QtQuick
 import Muse.Ui
 import Muse.UiComponents
 
-import MuseScore.Playback
-import MuseScore.NotationScene
+import DBScore.Playback
+import DBScore.NotationScene
 
 AbstractElementPopup {
     id: root

@@ -21,7 +21,7 @@
 muse_create_qml_module(propertiespanel_qml FOR propertiespanel)
 
 qt_add_qml_module(propertiespanel_qml
-    URI MuseScore.PropertiesPanel
+    URI DBScore.PropertiesPanel
     VERSION 1.0
     SOURCES
         propertiespanelabstractmodel.cpp

@@ -22,7 +22,7 @@
  
 import QtQuick
 
-import MuseScore.AppShell
+import DBScore.AppShell
 
 AppWindow {
     id: root

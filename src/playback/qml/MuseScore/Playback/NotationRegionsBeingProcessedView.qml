@@ -24,7 +24,7 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 
-import MuseScore.Playback
+import DBScore.Playback
 
 import "internal"
 

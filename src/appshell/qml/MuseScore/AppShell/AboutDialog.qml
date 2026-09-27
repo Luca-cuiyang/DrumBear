@@ -26,7 +26,7 @@ import QtQuick.Layouts
 import Muse.Ui
 import Muse.UiComponents
 
-import MuseScore.AppShell
+import DBScore.AppShell
 
 StyledDialogView {
     id: root

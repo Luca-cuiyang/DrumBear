@@ -346,7 +346,7 @@ void MuseSoundsDevToolsModel::openUpdateDialog()
         return;
     }
 
-    UriQuery query("musescore://musesounds/musesoundsreleaseinfo");
+    UriQuery query("dbscore://musesounds/musesoundsreleaseinfo");
 
     QJsonObject dataObj = m_currentUpdateData.object();
     QJsonObject content = dataObj.value("content").toObject();

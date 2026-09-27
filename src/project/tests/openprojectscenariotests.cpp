@@ -32,7 +32,7 @@
 #include "cloud/clouderrors.h"
 #include "engraving/engravingerrors.h"
 #include "cloud/tests/mocks/authorizationservicemock.h"
-#include "cloud/tests/mocks/musescorecomservicemock.h"
+#include "cloud/tests/mocks/dbscorecloudservicemock.h"
 #include "context/tests/mocks/globalcontextmock.h"
 #include "global/tests/mocks/filesystemmock.h"
 #include "interactive/tests/mocks/interactivemock.h"
@@ -71,7 +71,7 @@ protected:
         m_configuration = std::make_shared<NiceMock<ProjectConfigurationMock> >();
         m_fileSystem = std::make_shared<NiceMock<io::FileSystemMock> >();
         m_multiwindows = std::make_shared<NiceMock<mi::MultiWindowsProviderMock> >();
-        m_museScoreComService = std::make_shared<NiceMock<cloud::MuseScoreComServiceMock> >();
+        m_dbScoreCloudService = std::make_shared<NiceMock<cloud::DBScoreCloudServiceMock> >();
         m_authorization = std::make_shared<NiceMock<cloud::AuthorizationServiceMock> >();
         m_projectCreator = std::make_shared<NiceMock<ProjectCreatorMock> >();
         m_readers = std::make_shared<NiceMock<NotationReadersRegisterMock> >();
@@ -86,7 +86,7 @@ protected:
         m_scenario->configuration.set(m_configuration);
         m_scenario->fileSystem.set(m_fileSystem);
         m_scenario->multiwindowsProvider.set(m_multiwindows);
-        m_scenario->museScoreComService.set(m_museScoreComService);
+        m_scenario->dbScoreCloudService.set(m_dbScoreCloudService);
         m_scenario->projectCreator.set(m_projectCreator);
         m_scenario->readers.set(m_readers);
         m_scenario->projectAutoSaver.set(m_autoSaver);
@@ -103,7 +103,7 @@ protected:
 
         ON_CALL(*m_project, masterNotation()).WillByDefault(Return(m_masterNotation));
         ON_CALL(*m_masterNotation, notation()).WillByDefault(Return(m_notation));
-        ON_CALL(*m_museScoreComService, authorization()).WillByDefault(Return(m_authorization));
+        ON_CALL(*m_dbScoreCloudService, authorization()).WillByDefault(Return(m_authorization));
 
         // Nothing open, nothing in another window, and paths are taken at face value.
         ON_CALL(*m_globalContext, currentProject()).WillByDefault(Return(nullptr));
@@ -134,10 +134,10 @@ protected:
         // never finishes, so the flow stops there unless a test says otherwise
         // (see givenDownloadFinishesWith).
         givenSignedIn();
-        ON_CALL(*m_museScoreComService, downloadScoreInfo(::testing::An<int>()))
+        ON_CALL(*m_dbScoreCloudService, downloadScoreInfo(::testing::An<int>()))
         .WillByDefault([] { return resolvedPromise(RetVal<cloud::ScoreInfo>::make_ok(cloud::ScoreInfo())); });
         ON_CALL(*m_authorization, accountInfo()).WillByDefault(ReturnRef(m_accountInfo));
-        ON_CALL(*m_museScoreComService, downloadScore(_, _, _, _))
+        ON_CALL(*m_dbScoreCloudService, downloadScore(_, _, _, _))
         .WillByDefault([](int, DevicePtr, const QString&, const QString&) {
             return std::make_shared<Progress>();
         });
@@ -224,7 +224,7 @@ protected:
     //! The download reports back with `ret` from a deferred call, after the caller has subscribed.
     void givenDownloadFinishesWith(const Ret& ret)
     {
-        ON_CALL(*m_museScoreComService, downloadScore(_, _, _, _))
+        ON_CALL(*m_dbScoreCloudService, downloadScore(_, _, _, _))
         .WillByDefault([ret](int, DevicePtr, const QString&, const QString&) {
             auto progress = std::make_shared<Progress>();
             async::Async::call(nullptr, [progress, ret]() {
@@ -241,7 +241,7 @@ protected:
     std::shared_ptr<ProjectConfigurationMock> m_configuration;
     std::shared_ptr<io::FileSystemMock> m_fileSystem;
     std::shared_ptr<mi::MultiWindowsProviderMock> m_multiwindows;
-    std::shared_ptr<cloud::MuseScoreComServiceMock> m_museScoreComService;
+    std::shared_ptr<cloud::DBScoreCloudServiceMock> m_dbScoreCloudService;
     std::shared_ptr<cloud::AuthorizationServiceMock> m_authorization;
     std::shared_ptr<ProjectCreatorMock> m_projectCreator;
     std::shared_ptr<NotationReadersRegisterMock> m_readers;
@@ -443,7 +443,7 @@ TEST_F(OpenProjectScenarioTests, OpenProject_CloudScoreAndCloudReachable_Downloa
     ON_CALL(*m_authorization, checkCloudIsAvailable()).WillByDefault([] { return resolvedPromise(make_ok()); });
 
     //! [THEN] The freshest version is fetched rather than the local copy being loaded
-    EXPECT_CALL(*m_museScoreComService, downloadScoreInfo(::testing::An<int>())).Times(1);
+    EXPECT_CALL(*m_dbScoreCloudService, downloadScoreInfo(::testing::An<int>())).Times(1);
     EXPECT_CALL(*m_project, load(_, _, _)).Times(0);
 
     //! [WHEN] Opening it, and letting it get as far as the download...
@@ -554,7 +554,7 @@ TEST_F(OpenProjectScenarioTests, DownloadCloudScore_NoScoreId_ReportsInsteadOfDo
     //! [GIVEN] A cloud score whose id never made it to the server...
     //! [THEN] The user is told, and nothing is fetched
     EXPECT_CALL(*m_interactive, warning(_, _, _, _, _, _)).Times(1);
-    EXPECT_CALL(*m_museScoreComService, downloadScore(_, _, _, _)).Times(0);
+    EXPECT_CALL(*m_dbScoreCloudService, downloadScore(_, _, _, _)).Times(0);
 
     //! [WHEN] Opening it...
     Ret ret = downloadAndOpenCloudProject(0);
@@ -569,7 +569,7 @@ TEST_F(OpenProjectScenarioTests, DownloadCloudScore_NotLoggedIn_FetchesNothing)
     givenLoginDialogAnswers(RetVal<Val>(make_ret(Ret::Code::Cancel)));
 
     //! [THEN] Nothing is fetched
-    EXPECT_CALL(*m_museScoreComService, downloadScore(_, _, _, _)).Times(0);
+    EXPECT_CALL(*m_dbScoreCloudService, downloadScore(_, _, _, _)).Times(0);
 
     //! [WHEN] Opening it...
     downloadAndOpenCloudProject(42);
@@ -578,12 +578,12 @@ TEST_F(OpenProjectScenarioTests, DownloadCloudScore_NotLoggedIn_FetchesNothing)
 TEST_F(OpenProjectScenarioTests, DownloadCloudScore_ScoreInfoUnavailable_ReportsIt)
 {
     //! [GIVEN] A server that will not say anything about the score...
-    ON_CALL(*m_museScoreComService, downloadScoreInfo(::testing::An<int>()))
+    ON_CALL(*m_dbScoreCloudService, downloadScoreInfo(::testing::An<int>()))
     .WillByDefault([] { return resolvedPromise(RetVal<cloud::ScoreInfo>(make_ret(Ret::Code::InternalError))); });
 
     //! [THEN] The user is told, and nothing is fetched
     EXPECT_CALL(*m_interactive, warning(_, _, _, _, _, _)).Times(1);
-    EXPECT_CALL(*m_museScoreComService, downloadScore(_, _, _, _)).Times(0);
+    EXPECT_CALL(*m_dbScoreCloudService, downloadScore(_, _, _, _)).Times(0);
 
     //! [WHEN] Opening it...
     downloadAndOpenCloudProject(42);
@@ -595,7 +595,7 @@ TEST_F(OpenProjectScenarioTests, DownloadCloudScore_LocalCopyIsUpToDate_SkipsThe
     cloud::ScoreInfo remote;
     remote.revisionId = 7;
     remote.title = "Symphony";
-    ON_CALL(*m_museScoreComService, downloadScoreInfo(::testing::An<int>()))
+    ON_CALL(*m_dbScoreCloudService, downloadScoreInfo(::testing::An<int>()))
     .WillByDefault([remote] { return resolvedPromise(RetVal<cloud::ScoreInfo>::make_ok(remote)); });
 
     CloudProjectInfo local;
@@ -604,7 +604,7 @@ TEST_F(OpenProjectScenarioTests, DownloadCloudScore_LocalCopyIsUpToDate_SkipsThe
     .WillByDefault(Return(RetVal<CloudProjectInfo>::make_ok(local)));
 
     //! [THEN] The copy on disk is opened as is, without going over the network again
-    EXPECT_CALL(*m_museScoreComService, downloadScore(_, _, _, _)).Times(0);
+    EXPECT_CALL(*m_dbScoreCloudService, downloadScore(_, _, _, _)).Times(0);
     EXPECT_CALL(*m_globalContext, setCurrentProject(_)).Times(1);
 
     //! [WHEN] Opening it...
@@ -616,7 +616,7 @@ TEST_F(OpenProjectScenarioTests, DownloadCloudScore_LocalCopyIsStale_FetchesTheN
     //! [GIVEN] A local copy older than the server's...
     cloud::ScoreInfo remote;
     remote.revisionId = 9;
-    ON_CALL(*m_museScoreComService, downloadScoreInfo(::testing::An<int>()))
+    ON_CALL(*m_dbScoreCloudService, downloadScoreInfo(::testing::An<int>()))
     .WillByDefault([remote] { return resolvedPromise(RetVal<cloud::ScoreInfo>::make_ok(remote)); });
 
     CloudProjectInfo local;
@@ -625,7 +625,7 @@ TEST_F(OpenProjectScenarioTests, DownloadCloudScore_LocalCopyIsStale_FetchesTheN
     .WillByDefault(Return(RetVal<CloudProjectInfo>::make_ok(local)));
 
     //! [THEN] The newer version is fetched
-    EXPECT_CALL(*m_museScoreComService, downloadScore(42, _, _, _)).Times(1);
+    EXPECT_CALL(*m_dbScoreCloudService, downloadScore(42, _, _, _)).Times(1);
 
     //! [WHEN] Opening it, and letting it get as far as the download...
     startDownloadAndOpenCloudProject(42);
@@ -655,7 +655,7 @@ TEST_F(OpenProjectScenarioTests, DownloadCloudScore_DownloadSucceeds_OpensItWith
     cloud::ScoreInfo remote;
     remote.revisionId = 9;
     remote.title = "Symphony";
-    ON_CALL(*m_museScoreComService, downloadScoreInfo(::testing::An<int>()))
+    ON_CALL(*m_dbScoreCloudService, downloadScoreInfo(::testing::An<int>()))
     .WillByDefault([remote] { return resolvedPromise(RetVal<cloud::ScoreInfo>::make_ok(remote)); });
     ON_CALL(*m_mscMetaReader, readCloudProjectInfo(_))
     .WillByDefault(Return(RetVal<CloudProjectInfo>(make_ret(Ret::Code::InternalError))));
@@ -704,14 +704,14 @@ TEST_F(OpenProjectScenarioTests, OpenScoreUrl_OwnScoreAlreadyOpenElsewhere_Raise
     //! [GIVEN] A link to the user's own score, already open in another window...
     cloud::ScoreInfo remote;
     remote.owner.id = 5;
-    ON_CALL(*m_museScoreComService, downloadScoreInfo(::testing::An<int>()))
+    ON_CALL(*m_dbScoreCloudService, downloadScoreInfo(::testing::An<int>()))
     .WillByDefault([remote] { return resolvedPromise(RetVal<cloud::ScoreInfo>::make_ok(remote)); });
     m_accountInfo.id = "5";
     ON_CALL(*m_multiwindows, isProjectAlreadyOpened(_)).WillByDefault(Return(true));
 
     //! [THEN] That window is raised instead of downloading a second copy
     EXPECT_CALL(*m_multiwindows, activateWindowWithProject(_)).Times(1);
-    EXPECT_CALL(*m_museScoreComService, downloadScore(_, _, _, _)).Times(0);
+    EXPECT_CALL(*m_dbScoreCloudService, downloadScore(_, _, _, _)).Times(0);
 
     //! [WHEN] Following the link...
     Ret ret = openProject(ProjectFile(QUrl("musescore://open-score/42")));
@@ -724,7 +724,7 @@ TEST_F(OpenProjectScenarioTests, OpenScoreUrl_WindowIsTaken_OpensANewWindowWithT
     //! [GIVEN] A link to a score while this window already holds another...
     cloud::ScoreInfo remote;
     remote.title = "Cloud title";
-    ON_CALL(*m_museScoreComService, downloadScoreInfo(::testing::An<int>()))
+    ON_CALL(*m_dbScoreCloudService, downloadScoreInfo(::testing::An<int>()))
     .WillByDefault([remote] { return resolvedPromise(RetVal<cloud::ScoreInfo>::make_ok(remote)); });
     ON_CALL(*m_globalContext, currentProject()).WillByDefault(Return(m_project));
     ON_CALL(*m_project, path()).WillByDefault(Return(io::path_t("other.mscz")));
@@ -746,7 +746,7 @@ TEST_F(OpenProjectScenarioTests, OpenScoreUrl_SharedLink_PassesHashAndSecretToTh
     .WillByDefault(Return(RetVal<CloudProjectInfo>(make_ret(Ret::Code::InternalError))));
 
     //! [THEN] Both reach the download, otherwise a private score would be refused
-    EXPECT_CALL(*m_museScoreComService, downloadScore(42, _, QString("abc"), QString("xyz"))).Times(1);
+    EXPECT_CALL(*m_dbScoreCloudService, downloadScore(42, _, QString("abc"), QString("xyz"))).Times(1);
 
     //! [WHEN] Following the link, and letting it get as far as the download...
     startOpenProject(ProjectFile(QUrl("musescore://open-score/42?h=abc&secret=xyz")));
@@ -985,7 +985,7 @@ TEST_F(OpenProjectScenarioTests, DownloadCloudScore_AlreadySignedIn_DoesNotAskTo
 
     //! [THEN] The login dialog is not shown, and the download goes ahead
     EXPECT_CALL(*m_interactive, open(IsLoginDialog())).Times(0);
-    EXPECT_CALL(*m_museScoreComService, downloadScore(_, _, _, _)).Times(1);
+    EXPECT_CALL(*m_dbScoreCloudService, downloadScore(_, _, _, _)).Times(1);
 
     //! [WHEN] Opening a cloud score, and letting it get as far as the download...
     startDownloadAndOpenCloudProject(42);
@@ -1001,7 +1001,7 @@ TEST_F(OpenProjectScenarioTests, DownloadCloudScore_SignedOutButLogsIn_ProceedsW
 
     //! [THEN] They are asked once, and the download follows
     EXPECT_CALL(*m_interactive, open(IsLoginDialog())).Times(1);
-    EXPECT_CALL(*m_museScoreComService, downloadScore(_, _, _, _)).Times(1);
+    EXPECT_CALL(*m_dbScoreCloudService, downloadScore(_, _, _, _)).Times(1);
 
     //! [WHEN] Opening a cloud score, and letting it get as far as the download...
     startDownloadAndOpenCloudProject(42);

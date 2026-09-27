@@ -22,7 +22,7 @@
 import QtQuick
 import QtQuick.Layouts
 
-import MuseScore.NotationScene
+import DBScore.NotationScene
 import Muse.UiComponents
 
 StyledFlickable {

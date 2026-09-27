@@ -22,7 +22,7 @@
 import QtQuick
 
 import Muse.UiComponents
-import MuseScore.PropertiesPanel
+import DBScore.PropertiesPanel
 
 ToggleButton {
     required property PropertyItem propertyItem

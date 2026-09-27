@@ -22,7 +22,7 @@
 import QtQuick
 import QtQuick.Controls
 
-import MuseScore.Preferences
+import DBScore.Preferences
 import Muse.Shortcuts
 
 PreferencesPage {

@@ -27,7 +27,7 @@ import QtQuick.Controls
 
 import Muse.Ui
 import Muse.UiComponents
-import MuseScore.NotationScene
+import DBScore.NotationScene
 
 ComboBox {
         // TODO - replace with StyledDropdown once this whole dialog is written in QML

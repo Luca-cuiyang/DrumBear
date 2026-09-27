@@ -381,7 +381,7 @@ muse::RetVal<muse::Val> PercussionPanelPadListModel::openPadSwapDialog()
 {
     const bool moveMidiNotesAndShortcuts = configuration()->percussionPanelMoveMidiNotesAndShortcuts();
 
-    muse::UriQuery query("musescore://notation/percussionpanelpadswap?modal=true");
+    muse::UriQuery query("dbscore://notation/percussionpanelpadswap?modal=true");
     query.addParam("moveMidiNotesAndShortcuts", muse::Val(moveMidiNotesAndShortcuts));
     muse::RetVal<muse::Val> rv = interactive()->openSync(query);
 

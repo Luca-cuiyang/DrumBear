@@ -35,7 +35,7 @@ using namespace muse::rcommand;
 using namespace muse::dock;
 using namespace mu::appshell;
 
-static const muse::Uri PROJECT_PAGE_URI("musescore://notation");
+static const muse::Uri PROJECT_PAGE_URI("dbscore://notation");
 
 static const std::vector<Command> PROJECT_PAGE_COMMANDS = {
     DOCK_TOGGLE_PLAYBACK_COMMAND,

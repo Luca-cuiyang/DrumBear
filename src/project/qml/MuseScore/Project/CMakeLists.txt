@@ -21,7 +21,7 @@
 muse_create_qml_module(project_qml FOR project)
 
 qt_add_qml_module(project_qml
-    URI MuseScore.Project
+    URI DBScore.Project
     VERSION 1.0
     SOURCES
         audiogenerationsettingsmodel.cpp
@@ -53,7 +53,7 @@ qt_add_qml_module(project_qml
         internal/ScoresPage/scorethumbnailloader.cpp
         internal/ScoresPage/scorethumbnailloader.h
     QML_FILES
-        AlsoShareAudioComDialog.qml
+        AlsoShareDBScoreAudioDialog.qml
         AskSaveLocationTypeDialog.qml
         AudioGenerationSettings.qml
         AudioGenerationSettingsDialog.qml
@@ -126,7 +126,7 @@ qt_add_qml_module(project_qml
         internal/ScoresPage/images/Placeholder_MIDI.png
         internal/ScoresPage/images/Placeholder_MXML.png
         internal/ScoresPage/images/Placeholder_Other.png
-        resources/AudioCom_Waveform.png
+        resources/DBScoreAudio_Waveform.png
         resources/PublishScores.png
         resources/ScoreProcessing.png
     IMPORTS

@@ -21,7 +21,7 @@
 muse_create_qml_module(playback_qml FOR playback)
 
 qt_add_qml_module(playback_qml
-    URI MuseScore.Playback
+    URI DBScore.Playback
     VERSION 1.0
     SOURCES
         abstractaudioresourceitem.cpp

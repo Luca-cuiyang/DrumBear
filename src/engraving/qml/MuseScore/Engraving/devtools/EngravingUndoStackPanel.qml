@@ -25,7 +25,7 @@ import QtQuick.Layouts
 
 import Muse.Ui
 import Muse.UiComponents
-import MuseScore.Engraving
+import DBScore.Engraving
 
 ColumnLayout {
     id: root

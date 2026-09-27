@@ -27,7 +27,7 @@ import QtQuick.Layouts
 
 import Muse.Ui
 import Muse.UiComponents
-import MuseScore.MuseSounds
+import DBScore.MuseSounds
 
 import "internal"
 

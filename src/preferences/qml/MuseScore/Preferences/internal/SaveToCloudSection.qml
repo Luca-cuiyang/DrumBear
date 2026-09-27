@@ -21,7 +21,7 @@
  */
 import QtQuick
 
-import MuseScore.Project
+import DBScore.Project
 import Muse.Ui
 import Muse.UiComponents
 

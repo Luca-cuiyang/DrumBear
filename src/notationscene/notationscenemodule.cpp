@@ -71,24 +71,24 @@ void NotationSceneModule::resolveImports()
 {
     auto ir = globalIoc()->resolve<muse::interactive::IInteractiveUriRegister>("notationscene");
     if (ir) {
-        ir->registerWidgetUri<EditStyle>(Uri("musescore://notation/style"));
-        ir->registerWidgetUri<PageSettings>(Uri("musescore://notation/pagesettings"));
-        ir->registerWidgetUri<MeasurePropertiesDialog>(Uri("musescore://notation/measureproperties"));
-        ir->registerWidgetUri<BreaksDialog>(Uri("musescore://notation/breaks"));
-        ir->registerWidgetUri<EditStaff>(Uri("musescore://notation/staffproperties"));
-        ir->registerWidgetUri<EditStringData>(Uri("musescore://notation/editstrings"));
-        ir->registerWidgetUri<TransposeDialog>(Uri("musescore://notation/transpose"));
-        ir->registerWidgetUri<SelectNoteDialog>(Uri("musescore://notation/selectnote"));
-        ir->registerWidgetUri<SelectDialog>(Uri("musescore://notation/selectelement"));
-        ir->registerWidgetUri<TupletDialog>(Uri("musescore://notation/othertupletdialog"));
-        ir->registerWidgetUri<StaffTextPropertiesDialog>(Uri("musescore://notation/stafftextproperties"));
-        ir->registerWidgetUri<RealizeHarmonyDialog>(Uri("musescore://notation/realizechordsymbols"));
+        ir->registerWidgetUri<EditStyle>(Uri("dbscore://notation/style"));
+        ir->registerWidgetUri<PageSettings>(Uri("dbscore://notation/pagesettings"));
+        ir->registerWidgetUri<MeasurePropertiesDialog>(Uri("dbscore://notation/measureproperties"));
+        ir->registerWidgetUri<BreaksDialog>(Uri("dbscore://notation/breaks"));
+        ir->registerWidgetUri<EditStaff>(Uri("dbscore://notation/staffproperties"));
+        ir->registerWidgetUri<EditStringData>(Uri("dbscore://notation/editstrings"));
+        ir->registerWidgetUri<TransposeDialog>(Uri("dbscore://notation/transpose"));
+        ir->registerWidgetUri<SelectNoteDialog>(Uri("dbscore://notation/selectnote"));
+        ir->registerWidgetUri<SelectDialog>(Uri("dbscore://notation/selectelement"));
+        ir->registerWidgetUri<TupletDialog>(Uri("dbscore://notation/othertupletdialog"));
+        ir->registerWidgetUri<StaffTextPropertiesDialog>(Uri("dbscore://notation/stafftextproperties"));
+        ir->registerWidgetUri<RealizeHarmonyDialog>(Uri("dbscore://notation/realizechordsymbols"));
 
-        ir->registerQmlUri(Uri("musescore://notation/parts"), "MuseScore.NotationScene", "PartsDialog");
-        ir->registerQmlUri(Uri("musescore://notation/selectmeasurescount"), "MuseScore.NotationScene", "SelectMeasuresCountDialog");
-        ir->registerQmlUri(Uri("musescore://notation/editgridsize"), "MuseScore.NotationScene", "EditGridSizeDialog");
-        ir->registerQmlUri(Uri("musescore://notation/percussionpanelpadswap"), "MuseScore.NotationScene", "PercussionPanelPadSwapDialog");
-        ir->registerQmlUri(Uri("musescore://notation/editpercussionshortcut"), "MuseScore.NotationScene", "EditPercussionShortcutDialog");
+        ir->registerQmlUri(Uri("dbscore://notation/parts"), "DBScore.NotationScene", "PartsDialog");
+        ir->registerQmlUri(Uri("dbscore://notation/selectmeasurescount"), "DBScore.NotationScene", "SelectMeasuresCountDialog");
+        ir->registerQmlUri(Uri("dbscore://notation/editgridsize"), "DBScore.NotationScene", "EditGridSizeDialog");
+        ir->registerQmlUri(Uri("dbscore://notation/percussionpanelpadswap"), "DBScore.NotationScene", "PercussionPanelPadSwapDialog");
+        ir->registerQmlUri(Uri("dbscore://notation/editpercussionshortcut"), "DBScore.NotationScene", "EditPercussionShortcutDialog");
     }
 
     auto cr = globalIoc()->resolve<muse::rcommand::ICommandsRegister>(mname);

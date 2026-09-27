@@ -24,7 +24,7 @@ import QtQuick.Controls
 
 import Muse.Ui
 import Muse.UiComponents
-import MuseScore.Palette
+import DBScore.Palette
 
 Item {
     id: root

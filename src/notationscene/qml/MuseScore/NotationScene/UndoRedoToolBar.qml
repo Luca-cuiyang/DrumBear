@@ -23,7 +23,7 @@ import QtQuick
 
 import Muse.UiComponents
 
-import MuseScore.NotationScene
+import DBScore.NotationScene
 
 StyledToolBarView {
     id: root

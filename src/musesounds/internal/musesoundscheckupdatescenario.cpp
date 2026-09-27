@@ -127,7 +127,7 @@ muse::Ret MuseSoundsCheckUpdateScenario::showReleaseInfo(const ReleaseInfo& info
         }
     };
 
-    UriQuery query("musescore://musesounds/musesoundsreleaseinfo");
+    UriQuery query("dbscore://musesounds/musesoundsreleaseinfo");
 
     if (!configuration()->museSoundsCheckForUpdateTestMode()) {
         query.addParam("notes", Val(info.notes));

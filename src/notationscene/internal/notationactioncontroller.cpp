@@ -70,7 +70,7 @@ static constexpr bool NEAR_NOTE_OR_REST = true;
 
 static constexpr bool DONT_PLAY_CHORD = false;
 
-static const muse::Uri NOTATION_REVIEW_PAGE_URI("musescore://notation/review");
+static const muse::Uri NOTATION_REVIEW_PAGE_URI("dbscore://notation/review");
 
 using EngravingDebuggingOptions = engraving::IEngravingConfiguration::DebuggingOptions;
 static const std::map<muse::rcommand::Command, bool EngravingDebuggingOptions::*> s_debuggingCommands = {
@@ -2505,9 +2505,9 @@ void NotationActionController::openSelectionMoreOptions()
     bool noteSelected = item->isNote();
 
     if (noteSelected) {
-        interactive()->open("musescore://notation/selectnote");
+        interactive()->open("dbscore://notation/selectnote");
     } else {
-        interactive()->open("musescore://notation/selectelement");
+        interactive()->open("dbscore://notation/selectelement");
     }
 }
 
@@ -2592,7 +2592,7 @@ muse::Ret NotationActionController::addMeasures(const muse::rcommand::Params& pa
         int count = params.at("count").toInt();
         addBoxes(BoxType::Measure, count, target);
     } else {
-        interactive()->open("musescore://notation/selectmeasurescount")
+        interactive()->open("dbscore://notation/selectmeasurescount")
         .onResolve(this, [this, target](const Val& v) {
             int count = v.toInt();
             addBoxes(BoxType::Measure, count, target);
@@ -2709,7 +2709,7 @@ void NotationActionController::resetBeamMode()
 
 muse::Ret NotationActionController::openEditStyleDialog(const muse::rcommand::Params& params)
 {
-    UriQuery uri("musescore://notation/style");
+    UriQuery uri("dbscore://notation/style");
 
     if (params.contains("page_code")) {
         uri.addParam("currentPageCode", Val(params.at("page_code").toString()));
@@ -2725,34 +2725,34 @@ muse::Ret NotationActionController::openEditStyleDialog(const muse::rcommand::Pa
 
 void NotationActionController::openPageSettingsDialog()
 {
-    interactive()->open("musescore://notation/pagesettings");
+    interactive()->open("dbscore://notation/pagesettings");
 }
 
 void NotationActionController::openStaffProperties()
 {
-    interactive()->open("musescore://notation/staffproperties");
+    interactive()->open("dbscore://notation/staffproperties");
 }
 
 void NotationActionController::openEditStringsDialog()
 {
-    interactive()->open("musescore://notation/editstrings");
+    interactive()->open("dbscore://notation/editstrings");
 }
 
 void NotationActionController::openBreaksDialog()
 {
-    interactive()->open("musescore://notation/breaks");
+    interactive()->open("dbscore://notation/breaks");
 }
 
 void NotationActionController::openTransposeDialog()
 {
-    interactive()->open("musescore://notation/transpose").onResolve(this, [this](const Val&) {
+    interactive()->open("dbscore://notation/transpose").onResolve(this, [this](const Val&) {
         currentNotationInteraction()->checkAndShowError();
     });
 }
 
 void NotationActionController::openPartsDialog()
 {
-    interactive()->open("musescore://notation/parts");
+    interactive()->open("dbscore://notation/parts");
 }
 
 muse::io::path_t NotationActionController::selectStyleFile(bool forLoad)
@@ -3003,29 +3003,29 @@ bool NotationActionController::isEditingText() const
 
 void NotationActionController::openTupletOtherDialog()
 {
-    interactive()->open("musescore://notation/othertupletdialog");
+    interactive()->open("dbscore://notation/othertupletdialog");
 }
 
 void NotationActionController::openStaffTextPropertiesDialog()
 {
-    interactive()->open("musescore://notation/stafftextproperties");
+    interactive()->open("dbscore://notation/stafftextproperties");
 }
 
 void NotationActionController::openMeasurePropertiesDialog()
 {
     if (currentNotationInteraction()->selectedMeasure() != nullptr) {
-        interactive()->open("musescore://notation/measureproperties");
+        interactive()->open("dbscore://notation/measureproperties");
     }
 }
 
 void NotationActionController::openEditGridSizeDialog()
 {
-    interactive()->open("musescore://notation/editgridsize");
+    interactive()->open("dbscore://notation/editgridsize");
 }
 
 void NotationActionController::openRealizeChordSymbolsDialog()
 {
-    interactive()->open("musescore://notation/realizechordsymbols");
+    interactive()->open("dbscore://notation/realizechordsymbols");
 }
 
 void NotationActionController::toggleScoreConfig(ScoreConfigType configType)

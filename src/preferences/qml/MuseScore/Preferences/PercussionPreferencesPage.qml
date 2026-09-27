@@ -26,7 +26,7 @@ import QtQuick
 
 import Muse.Ui
 import Muse.UiComponents
-import MuseScore.Preferences
+import DBScore.Preferences
 
 import "internal"
 

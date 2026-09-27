@@ -97,15 +97,15 @@ public:
     MOCK_METHOD(void, setAutoSaveInterval, (int), (override));
     MOCK_METHOD(muse::async::Channel<int>, autoSaveIntervalChanged, (), (const, override));
 
-    MOCK_METHOD(bool, alsoShareAudioCom, (), (const, override));
-    MOCK_METHOD(void, setAlsoShareAudioCom, (bool), (override));
-    MOCK_METHOD(muse::async::Channel<bool>, alsoShareAudioComChanged, (), (const, override));
+    MOCK_METHOD(bool, alsoShareDBScoreAudio, (), (const, override));
+    MOCK_METHOD(void, setAlsoShareDBScoreAudio, (bool), (override));
+    MOCK_METHOD(muse::async::Channel<bool>, alsoShareDBScoreAudioChanged, (), (const, override));
 
-    MOCK_METHOD(bool, showAlsoShareAudioComDialog, (), (const, override));
-    MOCK_METHOD(void, setShowAlsoShareAudioComDialog, (bool), (override));
+    MOCK_METHOD(bool, showAlsoShareDBScoreAudioDialog, (), (const, override));
+    MOCK_METHOD(void, setShowAlsoShareDBScoreAudioDialog, (bool), (override));
 
-    MOCK_METHOD(bool, hasAskedAlsoShareAudioCom, (), (const, override));
-    MOCK_METHOD(void, setHasAskedAlsoShareAudioCom, (bool), (override));
+    MOCK_METHOD(bool, hasAskedAlsoShareDBScoreAudio, (), (const, override));
+    MOCK_METHOD(void, setHasAskedAlsoShareDBScoreAudio, (bool), (override));
 
     MOCK_METHOD(muse::io::path_t, newProjectTemporaryPath, (), (const, override));
 

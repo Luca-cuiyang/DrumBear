@@ -28,7 +28,7 @@ import QtQuick.Layouts
 import Muse.Ui 
 import Muse.UiComponents
 
-import MuseScore.NotationScene 
+import DBScore.NotationScene 
 
 RowLayout {
     id: root

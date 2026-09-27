@@ -60,10 +60,10 @@ const UiActionList ApplicationUiActions::m_actions = {
              TranslatableString("action", "Full screen"),
              ui::Checkable::Yes
              ),
-    UiAction("about-musescore",
+    UiAction("about-dbscore",
              mu::context::UiCtxAny,
              mu::context::CTX_ANY,
-             TranslatableString("action", "&About MuseScore Studio…")
+             TranslatableString("action", "&About DB Score…")
              ),
     UiAction("about-qt",
              mu::context::UiCtxAny,

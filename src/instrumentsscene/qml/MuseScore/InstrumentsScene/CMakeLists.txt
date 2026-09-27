@@ -21,7 +21,7 @@
 muse_create_qml_module(instrumentsscene_qml FOR instrumentsscene)
 
 qt_add_qml_module(instrumentsscene_qml
-    URI MuseScore.InstrumentsScene
+    URI DBScore.InstrumentsScene
     VERSION 1.0
     SOURCES
         internal/abstractlayoutpaneltreeitem.cpp

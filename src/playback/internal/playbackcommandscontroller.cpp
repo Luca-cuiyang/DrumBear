@@ -117,7 +117,7 @@ muse::Ret PlaybackCommandsController::rewind(const muse::rcommand::Params& param
 
 muse::Ret PlaybackCommandsController::showPlaybackSetup()
 {
-    interactive()->open("musescore://playback/soundprofiles");
+    interactive()->open("dbscore://playback/soundprofiles");
     return make_ok();
 }
 

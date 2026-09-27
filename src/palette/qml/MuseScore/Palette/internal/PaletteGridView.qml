@@ -25,7 +25,7 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import QtQml.Models
 
-import MuseScore.Palette
+import DBScore.Palette
 import Muse.UiComponents
 import Muse.Ui
 

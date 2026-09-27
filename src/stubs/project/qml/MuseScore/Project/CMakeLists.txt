@@ -21,7 +21,7 @@
 muse_create_qml_module(project_qml STUB FOR project)
 
 qt_add_qml_module(project_qml
-    URI MuseScore.Project
+    URI DBScore.Project
     VERSION 1.0
     QML_FILES
         ScoresPage.qml

@@ -272,7 +272,7 @@ bool MStyle::readProperties(XmlReader& e)
 //---------------------------------------------------------
 //   readStyleValCompat
 //    Read obsolete style values which may appear in files
-//    produced by older versions of MuseScore.
+//    produced by older versions of DBScore.
 //---------------------------------------------------------
 
 bool MStyle::readStyleValCompat(XmlReader& e)

@@ -57,9 +57,9 @@ static const Settings::Key PREFERRED_SCORE_CREATION_MODE_KEY(module_name, "proje
 static const Settings::Key MIGRATION_OPTIONS(module_name, "project/migration");
 static const Settings::Key AUTOSAVE_ENABLED_KEY(module_name, "project/autoSaveEnabled");
 static const Settings::Key AUTOSAVE_INTERVAL_KEY(module_name, "project/autoSaveInterval");
-static const Settings::Key ALSO_SHARE_AUDIO_COM_AFTER_PUBLISH(module_name, "project/alsoShareAudioCom");
-static const Settings::Key SHOW_ALSO_SHARE_AUDIO_COM_DIALOG(module_name, "project/showAlsoShareAudioComDialog");
-static const Settings::Key HAS_ASKED_ALSO_SHARE_AUDIO_COM(module_name, "project/hasAskedAlsoShareAudioCom");
+static const Settings::Key ALSO_SHARE_AUDIO_COM_AFTER_PUBLISH(module_name, "project/alsoShareDBScoreAudio");
+static const Settings::Key SHOW_ALSO_SHARE_AUDIO_COM_DIALOG(module_name, "project/showAlsoShareDBScoreAudioDialog");
+static const Settings::Key HAS_ASKED_ALSO_SHARE_AUDIO_COM(module_name, "project/hasAskedAlsoShareDBScoreAudio");
 static const Settings::Key SHOULD_DESTINATION_FOLDER_BE_OPENED_ON_EXPORT(module_name, "project/shouldDestinationFolderBeOpenedOnExport");
 static const Settings::Key OPEN_DETAILED_PROJECT_UPLOADED_DIALOG(module_name, "project/openDetailedProjectUploadedDialog");
 static const Settings::Key HAS_ASKED_AUDIO_GENERATION_SETTINGS(module_name, "project/hasAskedAudioGenerationSettings");
@@ -114,7 +114,7 @@ void ProjectConfiguration::init()
 
     settings()->setDefaultValue(ALSO_SHARE_AUDIO_COM_AFTER_PUBLISH, Val(true));
     settings()->valueChanged(ALSO_SHARE_AUDIO_COM_AFTER_PUBLISH).onReceive(nullptr, [this](const Val& val) {
-        m_alsoShareAudioComChanged.send(val.toBool());
+        m_alsoShareDBScoreAudioChanged.send(val.toBool());
     });
 
     settings()->setDefaultValue(SHOW_ALSO_SHARE_AUDIO_COM_DIALOG, Val(true));
@@ -588,37 +588,37 @@ muse::async::Channel<int> ProjectConfiguration::autoSaveIntervalChanged() const
     return m_autoSaveIntervalChanged;
 }
 
-bool ProjectConfiguration::alsoShareAudioCom() const
+bool ProjectConfiguration::alsoShareDBScoreAudio() const
 {
     return settings()->value(ALSO_SHARE_AUDIO_COM_AFTER_PUBLISH).toBool();
 }
 
-void ProjectConfiguration::setAlsoShareAudioCom(bool share)
+void ProjectConfiguration::setAlsoShareDBScoreAudio(bool share)
 {
     settings()->setSharedValue(ALSO_SHARE_AUDIO_COM_AFTER_PUBLISH, Val(share));
 }
 
-muse::async::Channel<bool> ProjectConfiguration::alsoShareAudioComChanged() const
+muse::async::Channel<bool> ProjectConfiguration::alsoShareDBScoreAudioChanged() const
 {
-    return m_alsoShareAudioComChanged;
+    return m_alsoShareDBScoreAudioChanged;
 }
 
-bool ProjectConfiguration::showAlsoShareAudioComDialog() const
+bool ProjectConfiguration::showAlsoShareDBScoreAudioDialog() const
 {
     return settings()->value(SHOW_ALSO_SHARE_AUDIO_COM_DIALOG).toBool();
 }
 
-void ProjectConfiguration::setShowAlsoShareAudioComDialog(bool show)
+void ProjectConfiguration::setShowAlsoShareDBScoreAudioDialog(bool show)
 {
     settings()->setSharedValue(SHOW_ALSO_SHARE_AUDIO_COM_DIALOG, Val(show));
 }
 
-bool ProjectConfiguration::hasAskedAlsoShareAudioCom() const
+bool ProjectConfiguration::hasAskedAlsoShareDBScoreAudio() const
 {
     return settings()->value(HAS_ASKED_ALSO_SHARE_AUDIO_COM).toBool();
 }
 
-void ProjectConfiguration::setHasAskedAlsoShareAudioCom(bool has)
+void ProjectConfiguration::setHasAskedAlsoShareDBScoreAudio(bool has)
 {
     settings()->setSharedValue(HAS_ASKED_ALSO_SHARE_AUDIO_COM, Val(has));
 }

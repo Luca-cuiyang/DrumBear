@@ -25,7 +25,7 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import Qt.labs.platform as PLATFORM
 
-import MuseScore.AppShell
+import DBScore.AppShell
 
 Item {
     id: root

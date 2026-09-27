@@ -21,7 +21,7 @@
 muse_create_qml_module(notationscene_qml STUB FOR notationscene)
 
 qt_add_qml_module(notationscene_qml
-    URI MuseScore.NotationScene
+    URI DBScore.NotationScene
     VERSION 1.0
 )
 

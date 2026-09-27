@@ -36,8 +36,8 @@ using namespace mu::appshell;
 using namespace muse;
 using namespace muse::actions;
 
-static const muse::UriQuery FIRST_LAUNCH_SETUP_URI("musescore://firstLaunchSetup?floating=true");
-static const muse::UriQuery WELCOME_DIALOG_URI("musescore://welcomedialog");
+static const muse::UriQuery FIRST_LAUNCH_SETUP_URI("dbscore://firstLaunchSetup?floating=true");
+static const muse::UriQuery WELCOME_DIALOG_URI("dbscore://welcomedialog");
 
 static StartupModeType modeTypeTromString(const std::string& str)
 {

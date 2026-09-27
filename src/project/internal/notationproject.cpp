@@ -1222,7 +1222,7 @@ ProjectMeta NotationProject::metaInfo() const
     meta.partsCount = score->excerpts().size();
 
     initProjectMetaString(meta.source, SOURCE_TAG);
-    initProjectMetaString(meta.audioComUrl, AUDIO_COM_URL_TAG);
+    initProjectMetaString(meta.dbScoreAudioUrl, AUDIO_COM_URL_TAG);
     initProjectMetaString(meta.platform, PLATFORM_TAG);
 
     meta.musescoreVersion = score->mscoreVersion();
@@ -1256,7 +1256,7 @@ void NotationProject::setMetaInfo(const ProjectMeta& meta, bool undoable)
         { COPYRIGHT_TAG, meta.copyright },
         { CREATION_DATE_TAG, meta.creationDate.toString(Qt::ISODate) },
         { SOURCE_TAG, meta.source },
-        { AUDIO_COM_URL_TAG, meta.audioComUrl },
+        { AUDIO_COM_URL_TAG, meta.dbScoreAudioUrl },
         { PLATFORM_TAG, meta.platform },
     };
 

@@ -22,7 +22,7 @@
 import QtQuick
 
 import Muse.UiComponents
-import MuseScore.Preferences
+import DBScore.Preferences
 
 import "internal"
 
@@ -66,14 +66,14 @@ PreferencesPage {
 
         SeparatorLine { }
 
-        PublishMuseScoreComSection {
-            alsoShareAudioCom: preferencesModel.alsoShareAudioCom
+        PublishDBScoreCloudSection {
+            alsoShareDBScoreAudio: preferencesModel.alsoShareDBScoreAudio
 
             navigation.section: root.navigationSection
             navigation.order: root.navigationOrderStart + 3
 
-            onAlsoShareAudioComChangeRequested: function(share) {
-                preferencesModel.alsoShareAudioCom = share;
+            onAlsoShareDBScoreAudioChangeRequested: function(share) {
+                preferencesModel.alsoShareDBScoreAudio = share;
             }
         }
     }

@@ -26,7 +26,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQml.Models
 
-import MuseScore.Palette
+import DBScore.Palette
 import Muse.Ui
 import Muse.UiComponents
 

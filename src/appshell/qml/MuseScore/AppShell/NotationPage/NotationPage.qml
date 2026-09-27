@@ -28,19 +28,19 @@ import Muse.Ui
 import Muse.UiComponents
 import Muse.Dock
 import Muse.Extensions
-import MuseScore.AppShell
+import DBScore.AppShell
 
-import MuseScore.NotationScene
-import MuseScore.Palette
-import MuseScore.PropertiesPanel
-import MuseScore.InstrumentsScene
-import MuseScore.Playback
+import DBScore.NotationScene
+import DBScore.Palette
+import DBScore.PropertiesPanel
+import DBScore.InstrumentsScene
+import DBScore.Playback
 
 DockPage {
     id: root
 
     objectName: "Notation"
-    uri: "musescore://notation"
+    uri: "dbscore://notation"
 
     required property NavigationSection topToolbarKeyNavSec
 

@@ -70,7 +70,7 @@ void ProjectPropertiesModel::load()
         { CREATION_DATE_TAG, muse::qtrc("project", "Creation date"), m_projectMetaInfo.creationDate.toString(), true },
         { PLATFORM_TAG, muse::qtrc("project", "Platform"), m_projectMetaInfo.platform, true },
         { SOURCE_TAG, muse::qtrc("project", "Source"), m_projectMetaInfo.source, true },
-        { AUDIO_COM_URL_TAG, muse::qtrc("project", "DB Score URL"), m_projectMetaInfo.audioComUrl, true }
+        { AUDIO_COM_URL_TAG, muse::qtrc("project", "DB Score URL"), m_projectMetaInfo.dbScoreAudioUrl, true }
     };
 
     for (const QString& propertyName : additionalProperties.keys()) {
@@ -231,7 +231,7 @@ void ProjectPropertiesModel::saveProperties()
         } else if (property.key == SOURCE_TAG) {
             meta.source = property.value;
         } else if (property.key == AUDIO_COM_URL_TAG) {
-            meta.audioComUrl = property.value;
+            meta.dbScoreAudioUrl = property.value;
         } else if (property.key == PLATFORM_TAG) {
             meta.platform = property.value;
         } else if (!property.key.isEmpty()) {

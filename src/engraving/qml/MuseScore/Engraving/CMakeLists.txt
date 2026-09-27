@@ -26,7 +26,7 @@ endif()
 muse_create_qml_module(engraving_qml FOR engraving)
 
 qt_add_qml_module(engraving_qml
-    URI MuseScore.Engraving
+    URI DBScore.Engraving
     VERSION 1.0
     SOURCES
         devtools/corruptscoredevtoolsmodel.cpp

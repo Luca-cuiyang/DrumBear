@@ -76,7 +76,7 @@ void AppshellCommandsController::init()
     cd->onRequest(this, APP_RESTART_COMMAND, [this]() { restart(); return muse::make_ok(); });
     cd->onRequest(this, APP_FULLSCREEN_COMMAND, [this]() { toggleFullScreen(); return muse::make_ok(); });
 
-    cd->onRequest(this, APP_ABOUT_MUSESCORE_COMMAND, [this]() { openAboutDialog(); return muse::make_ok(); });
+    cd->onRequest(this, APP_ABOUT_DBSCORE_COMMAND, [this]() { openAboutDialog(); return muse::make_ok(); });
     cd->onRequest(this, APP_ABOUT_QT_COMMAND, [this]() { openAboutQtDialog(); return muse::make_ok(); });
     cd->onRequest(this, APP_ABOUT_MUSICXML_COMMAND, [this]() { openAboutMusicXMLDialog(); return muse::make_ok(); });
     cd->onRequest(this, APP_PREFERENCES_COMMAND, [this]() { openPreferencesDialog(); return muse::make_ok(); });
@@ -97,7 +97,7 @@ void AppshellCommandsController::init()
             { "quit", APP_QUIT_COMMAND, make_conv({ { "all_instances", param<bool> }, { "installer_path", param<io::path_t> } }) },
             { "restart", APP_RESTART_COMMAND, {} },
             { "fullscreen", APP_FULLSCREEN_COMMAND, {} },
-            { "about-musescore", APP_ABOUT_MUSESCORE_COMMAND, {} },
+            { "about-dbscore", APP_ABOUT_DBSCORE_COMMAND, {} },
             { "about-qt", APP_ABOUT_QT_COMMAND, {} },
             { "about-musicxml", APP_ABOUT_MUSICXML_COMMAND, {} },
             { "preference-dialog", APP_PREFERENCES_COMMAND, {} },
@@ -385,7 +385,7 @@ void AppshellCommandsController::toggleFullScreen()
 
 void AppshellCommandsController::openAboutDialog()
 {
-    interactive()->open("musescore://about/musescore");
+    interactive()->open("dbscore://about/dbscore");
 }
 
 void AppshellCommandsController::openAboutQtDialog()
@@ -395,7 +395,7 @@ void AppshellCommandsController::openAboutQtDialog()
 
 void AppshellCommandsController::openAboutMusicXMLDialog()
 {
-    interactive()->open("musescore://about/musicxml");
+    interactive()->open("dbscore://about/musicxml");
 }
 
 void AppshellCommandsController::openPreferencesDialog()
@@ -473,5 +473,5 @@ void AppshellCommandsController::revertToFactorySettings()
 
 void AppshellCommandsController::openExtensions()
 {
-    interactive()->open("musescore://home?section=plugins");
+    interactive()->open("dbscore://home?section=plugins");
 }

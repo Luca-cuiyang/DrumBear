@@ -28,7 +28,7 @@ import Muse.Dock
 import Muse.Interactive
 import Muse.Ui
 import Muse.UiComponents
-import MuseScore.AppShell
+import DBScore.AppShell
 
 import "./HomePage"
 import "./NotationPage"

@@ -22,7 +22,7 @@
 
 import QtQuick
 
-import MuseScore.Palette
+import DBScore.Palette
 import Muse.UiComponents
 import Muse.Ui
 

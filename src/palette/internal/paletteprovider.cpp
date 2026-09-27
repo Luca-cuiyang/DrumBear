@@ -123,12 +123,12 @@ void PaletteElementEditor::open()
     using Type = Palette::Type;
     switch (_type) {
     case Type::KeySig: {
-        uri = muse::UriQuery("musescore://notation/keysignatures");
+        uri = muse::UriQuery("dbscore://notation/keysignatures");
         uri.addParam("showKeyPalette", Val(false));
     }
     break;
     case Type::TimeSig: {
-        uri = muse::UriQuery("musescore://notation/timesignatures");
+        uri = muse::UriQuery("dbscore://notation/timesignatures");
         uri.addParam("showTimePalette", Val(false));
     }
     break;
@@ -528,7 +528,7 @@ void UserPaletteController::editPaletteProperties(const QModelIndex& index)
     properties["showGrid"] = palette->drawGrid();
 
     QJsonDocument document = QJsonDocument::fromVariant(properties);
-    QString uri = QString("musescore://palette/properties?properties=%1")
+    QString uri = QString("dbscore://palette/properties?properties=%1")
                   .arg(QString(document.toJson()));
 
     interactive()->open(uri.toStdString());
@@ -566,7 +566,7 @@ void UserPaletteController::editCellProperties(const QModelIndex& index)
     properties["drawStaff"] = cell->drawStaff;
 
     QJsonDocument document = QJsonDocument::fromVariant(properties);
-    QString uri = QString("musescore://palette/cellproperties?properties=%1")
+    QString uri = QString("dbscore://palette/cellproperties?properties=%1")
                   .arg(QString(document.toJson()));
 
     interactive()->open(uri.toStdString());

@@ -259,7 +259,7 @@ Promise<Ret> SaveProjectScenario::shareAudio(const AudioFile& existingAudio)
                 return resolve(make_ret(Ret::Code::BadData));
             }
 
-            uploadAudioToAudioCom(audio, project, info.val).onResolve(this, [resolve](const Ret& ret) {
+            uploadAudioToDBScoreAudio(audio, project, info.val).onResolve(this, [resolve](const Ret& ret) {
                 (void)resolve(ret);
             });
 
@@ -268,11 +268,11 @@ Promise<Ret> SaveProjectScenario::shareAudio(const AudioFile& existingAudio)
     });
 }
 
-Promise<Ret> SaveProjectScenario::uploadAudioToAudioCom(const AudioFile& audio, const INotationProjectPtr& project,
+Promise<Ret> SaveProjectScenario::uploadAudioToDBScoreAudio(const AudioFile& audio, const INotationProjectPtr& project,
                                                         const CloudAudioInfo& info)
 {
     return async::make_promise<Ret>([this, audio, project, info](auto resolve) {
-        m_uploadingAudioProgress = audioComService()->uploadAudio(audio.device, audio.format, info.name,
+        m_uploadingAudioProgress = dbScoreAudioService()->uploadAudio(audio.device, audio.format, info.name,
                                                                   project->cloudAudioInfo().url, info.visibility,
                                                                   info.replaceExisting);
         LOGD() << "Uploading audio started";
@@ -422,7 +422,7 @@ Promise<Ret> SaveProjectScenario::saveProjectLocally(const muse::io::path_t& fil
 Promise<Ret> SaveProjectScenario::saveProjectToCloud(CloudProjectInfo info, SaveMode saveMode)
 {
     return runIfNotBusy(BusyStatus::Uploading, [this, info, saveMode]() {
-        return museScoreComService()->authorization()->checkCloudIsAvailable()
+        return dbScoreCloudService()->authorization()->checkCloudIsAvailable()
                .then<Ret>(this, [this, info, saveMode](const Ret& isCloudAvailable, auto resolve) {
             if (!isCloudAvailable) {
                 warnCloudIsNotAvailable().onResolve(this, [this, info, saveMode, resolve](const Ret&) {
@@ -453,7 +453,7 @@ Promise<Ret> SaveProjectScenario::doSaveProjectToCloud(const CloudProjectInfo& i
 {
     std::string dialogText = muse::trc("project/save", "Log in to drumbearai.com to save this score to the cloud.");
 
-    return ensureAuthorization(muse::cloud::MUSESCORE_COM_CLOUD_CODE, true, dialogText)
+    return ensureAuthorization(muse::cloud::DBSCORE_CLOUD_CODE, true, dialogText)
            .then<Ret>(this, [this, info, saveMode](const RetVal<Val>& auth, auto resolve) {
         if (!auth.ret) {
             return resolve(auth.ret);
@@ -490,7 +490,7 @@ Promise<Ret> SaveProjectScenario::saveAndUploadProject(const INotationProjectPtr
     }
 
     // Get up-to-date visibility information
-    return museScoreComService()->downloadScoreInfo(info.sourceUrl)
+    return dbScoreCloudService()->downloadScoreInfo(info.sourceUrl)
            .then<Ret>(this, [this, project, info, saveMode](const RetVal<muse::cloud::ScoreInfo>& scoreInfo, auto resolve) {
         CloudProjectInfo actualInfo = info;
 
@@ -610,14 +610,14 @@ Promise<Ret> SaveProjectScenario::saveProjectLocallyInstead(const INotationProje
     });
 }
 
-Promise<Ret> SaveProjectScenario::alsoShareAudioCom(const AudioFile& audio)
+Promise<Ret> SaveProjectScenario::alsoShareDBScoreAudio(const AudioFile& audio)
 {
-    if (!configuration()->showAlsoShareAudioComDialog()) {
+    if (!configuration()->showAlsoShareDBScoreAudioDialog()) {
         return shareAudio(audio);
     }
 
-    UriQuery query("musescore://project/alsoshareaudiocom");
-    query.addParam("rememberChoice", Val(!configuration()->hasAskedAlsoShareAudioCom()));
+    UriQuery query("dbscore://project/alsosharedbscoreaudio");
+    query.addParam("rememberChoice", Val(!configuration()->hasAskedAlsoShareDBScoreAudio()));
 
     auto audioHolder = std::make_shared<AudioFile>(audio);
 
@@ -626,7 +626,7 @@ Promise<Ret> SaveProjectScenario::alsoShareAudioCom(const AudioFile& audio)
         *audioHolder = AudioFile();
 
         DEFER {
-            configuration()->setHasAskedAlsoShareAudioCom(true);
+            configuration()->setHasAskedAlsoShareDBScoreAudio(true);
         };
 
         if (rv.val.isNull()) {
@@ -634,13 +634,13 @@ Promise<Ret> SaveProjectScenario::alsoShareAudioCom(const AudioFile& audio)
         }
 
         QVariantMap vals = rv.val.toQVariant().toMap();
-        bool shareAudioCom = vals["share"].toBool();
+        bool shareDBScoreAudio = vals["share"].toBool();
         bool rememberChoice = vals["remember"].toBool();
 
-        configuration()->setShowAlsoShareAudioComDialog(!rememberChoice);
-        configuration()->setAlsoShareAudioCom(shareAudioCom);
+        configuration()->setShowAlsoShareDBScoreAudioDialog(!rememberChoice);
+        configuration()->setAlsoShareDBScoreAudio(shareDBScoreAudio);
 
-        if (!shareAudioCom) {
+        if (!shareDBScoreAudio) {
             return resolve(make_ok());
         }
 
@@ -654,7 +654,7 @@ Promise<Ret> SaveProjectScenario::alsoShareAudioCom(const AudioFile& audio)
 
 Promise<Ret> SaveProjectScenario::askAudioGenerationSettings() const
 {
-    return openDialog(UriQuery("musescore://project/audiogenerationsettings"))
+    return openDialog(UriQuery("dbscore://project/audiogenerationsettings"))
            .then<Ret>(this, [this](const RetVal<Val>& res, auto resolve) {
         if (!res.ret) {
             return resolve(res.ret);
@@ -800,7 +800,7 @@ Promise<Ret> SaveProjectScenario::uploadProject(const CloudProjectInfo& info, co
 
         bool isFirstSave = info.sourceUrl.isEmpty();
 
-        ProgressPtr progress = museScoreComService()->uploadScore(projectData, info.name, info.visibility, info.sourceUrl,
+        ProgressPtr progress = dbScoreCloudService()->uploadScore(projectData, info.name, info.visibility, info.sourceUrl,
                                                                   info.revisionId);
         m_uploadingProjectProgress = progress;
 
@@ -850,7 +850,7 @@ Promise<Ret> SaveProjectScenario::uploadProject(const CloudProjectInfo& info, co
             }
 
             if (audio.isValid()) {
-                uploadAudioToMuseScoreCom(audio, newSourceUrl, editUrl, isFirstSave, publishMode).onResolve(this,
+                uploadAudioToDBScoreCloud(audio, newSourceUrl, editUrl, isFirstSave, publishMode).onResolve(this,
                                                                                                             [resolve](const Ret& ret) {
                     (void)resolve(ret);
                 });
@@ -866,11 +866,11 @@ Promise<Ret> SaveProjectScenario::uploadProject(const CloudProjectInfo& info, co
     });
 }
 
-Promise<Ret> SaveProjectScenario::uploadAudioToMuseScoreCom(const AudioFile& audio, const QUrl& sourceUrl, const QUrl& urlToOpen,
+Promise<Ret> SaveProjectScenario::uploadAudioToDBScoreCloud(const AudioFile& audio, const QUrl& sourceUrl, const QUrl& urlToOpen,
                                                             bool isFirstSave, bool publishMode)
 {
     return async::make_promise<Ret>([this, audio, sourceUrl, urlToOpen, isFirstSave, publishMode](auto resolve) {
-        m_uploadingAudioProgress = museScoreComService()->uploadAudio(audio.device, audio.format, sourceUrl);
+        m_uploadingAudioProgress = dbScoreCloudService()->uploadAudio(audio.device, audio.format, sourceUrl);
 
         m_uploadingAudioProgress->progressChanged().onReceive(this, [](int64_t current, int64_t total, const std::string&) {
             if (total > 0) {
@@ -910,11 +910,11 @@ Promise<Ret> SaveProjectScenario::onUploadFinished(const QUrl& urlToOpen, bool i
         const AudioFile sharedAudio = *audioHolder;
         *audioHolder = AudioFile();
 
-        if (!publishMode || !(configuration()->alsoShareAudioCom() || configuration()->showAlsoShareAudioComDialog())) {
+        if (!publishMode || !(configuration()->alsoShareDBScoreAudio() || configuration()->showAlsoShareDBScoreAudioDialog())) {
             return resolve(make_ok());
         }
 
-        alsoShareAudioCom(sharedAudio).onResolve(this, [resolve](const Ret& ret) {
+        alsoShareDBScoreAudio(sharedAudio).onResolve(this, [resolve](const Ret& ret) {
             (void)resolve(ret);
         });
 
@@ -936,7 +936,7 @@ Promise<Ret> SaveProjectScenario::onProjectSuccessfullyUploaded(const QUrl& urlT
     QUrl scoreManagerUrl = this->scoreManagerUrl();
 
     if (configuration()->openDetailedProjectUploadedDialog()) {
-        UriQuery query("musescore://project/upload/success");
+        UriQuery query("dbscore://project/upload/success");
         query.addParam("scoreManagerUrl", Val(scoreManagerUrl.toString()));
         configuration()->setOpenDetailedProjectUploadedDialog(false);
 
@@ -1005,7 +1005,7 @@ Promise<Ret> SaveProjectScenario::onProjectUploadFailed(const Ret& ret, const Cl
                 return Promise<Ret>::dummy_result();
             }
             case RET_CODE_CONFLICT_RESPONSE_REPLACE: {
-                museScoreComService()->downloadScoreInfo(info.sourceUrl)
+                dbScoreCloudService()->downloadScoreInfo(info.sourceUrl)
                 .onResolve(this, [this, ret, info, audio, openEditUrl, publishMode,
                                   resolve](const RetVal<muse::cloud::ScoreInfo>& scoreInfo) {
                     if (!scoreInfo.ret) {
@@ -1357,7 +1357,7 @@ void SaveProjectScenario::moveProject(INotationProjectPtr project, const muse::i
 
 QUrl SaveProjectScenario::scoreManagerUrl() const
 {
-    return museScoreComService()->scoreManagerUrl();
+    return dbScoreCloudService()->scoreManagerUrl();
 }
 
 static std::string saveCloudStatusCodeErrorMessage(const Ret& ret, bool withHelp = false)
@@ -1549,7 +1549,7 @@ Promise<RetVal<SaveLocationType> > SaveProjectScenario::saveLocationType() const
 
 Promise<RetVal<SaveLocationType> > SaveProjectScenario::askSaveLocationType() const
 {
-    UriQuery query("musescore://project/asksavelocationtype");
+    UriQuery query("dbscore://project/asksavelocationtype");
     bool shouldAsk = configuration()->shouldAskSaveLocationType();
     query.addParam("askAgain", Val(shouldAsk));
 
@@ -1580,7 +1580,7 @@ Promise<RetVal<CloudProjectInfo> > SaveProjectScenario::askPublishLocation(INota
 
 Promise<RetVal<CloudAudioInfo> > SaveProjectScenario::askShareAudioLocation(INotationProjectPtr project) const
 {
-    return audioComService()->authorization()->checkCloudIsAvailable()
+    return dbScoreAudioService()->authorization()->checkCloudIsAvailable()
            .then<RetVal<CloudAudioInfo> >(this, [this, project](const Ret& isCloudAvailable, auto resolve) {
         if (!isCloudAvailable) {
             warnCloudNotAvailableForSharingAudio().onResolve(this, [resolve](const Ret& ret) {
@@ -1602,7 +1602,7 @@ Promise<RetVal<CloudAudioInfo> > SaveProjectScenario::doAskShareAudioLocation(IN
 {
     std::string dialogText = muse::trc("project/save", "Log in or create a new account on DB Score to share your music.");
 
-    return ensureAuthorization(muse::cloud::AUDIO_COM_CLOUD_CODE, false, dialogText)
+    return ensureAuthorization(muse::cloud::DBSCORE_AUDIO_CODE, false, dialogText)
            .then<RetVal<CloudAudioInfo> >(this, [this, project](const RetVal<Val>& auth, auto resolve) {
         if (!auth.ret) {
             return resolve(RetVal<CloudAudioInfo>(auth.ret));
@@ -1612,11 +1612,11 @@ Promise<RetVal<CloudAudioInfo> > SaveProjectScenario::doAskShareAudioLocation(IN
         QUrl uploadUrl = project->cloudAudioInfo().url;
         cloud::Visibility defaultVisibility = cloud::Visibility::Public;
 
-        UriQuery query("musescore://project/savetocloud");
+        UriQuery query("dbscore://project/savetocloud");
         query.addParam("isPublishShare", Val(true));
         query.addParam("name", Val(defaultName));
         query.addParam("visibility", Val(defaultVisibility));
-        query.addParam("cloudCode", Val(cloud::AUDIO_COM_CLOUD_CODE));
+        query.addParam("cloudCode", Val(cloud::DBSCORE_AUDIO_CODE));
 
         if (!uploadUrl.isEmpty()) {
             query.addParam("existingScoreOrAudioUrl", Val(uploadUrl.toString()));
@@ -1655,7 +1655,7 @@ Promise<RetVal<CloudAudioInfo> > SaveProjectScenario::doAskShareAudioLocation(IN
 Promise<RetVal<CloudProjectInfo> > SaveProjectScenario::doAskCloudLocation(INotationProjectPtr project, SaveMode mode,
                                                                            bool isPublishShare) const
 {
-    return museScoreComService()->authorization()->checkCloudIsAvailable()
+    return dbScoreCloudService()->authorization()->checkCloudIsAvailable()
            .then<RetVal<CloudProjectInfo> >(this, [this, project, mode, isPublishShare](const Ret& isCloudAvailable, auto resolve) {
         if (!isCloudAvailable) {
             warnCloudNotAvailableForUploading(isPublishShare).onResolve(this, [resolve](const Ret& ret) {
@@ -1680,7 +1680,7 @@ Promise<RetVal<CloudProjectInfo> > SaveProjectScenario::doAskCloudLocationAuthor
                              ? muse::trc("project/save", "Log in to drumbearai.com to publish this score.")
                              : muse::trc("project/save", "Log in to drumbearai.com to save this score to the cloud.");
 
-    return ensureAuthorization(muse::cloud::MUSESCORE_COM_CLOUD_CODE, true, dialogText)
+    return ensureAuthorization(muse::cloud::DBSCORE_CLOUD_CODE, true, dialogText)
            .then<RetVal<CloudProjectInfo> >(this, [this, project, mode, isPublishShare](const RetVal<Val>& auth, auto resolve) {
         if (!auth.ret) {
             return resolve(RetVal<CloudProjectInfo>(auth.ret));
@@ -1710,7 +1710,7 @@ Promise<RetVal<CloudProjectInfo> > SaveProjectScenario::askCloudProjectInfo(INot
         return askCloudProjectInfo(project, mode, isPublishShare, defaultName, defaultVisibility, existingScoreUrl);
     }
 
-    return museScoreComService()->downloadScoreInfo(existingScoreUrl)
+    return dbScoreCloudService()->downloadScoreInfo(existingScoreUrl)
            .then<RetVal<CloudProjectInfo> >(this, [this, project, mode, isPublishShare, defaultName, defaultVisibility,
                                                    existingScoreUrl](const RetVal<cloud::ScoreInfo>& scoreInfo, auto resolve) {
         QString name = defaultName;
@@ -1718,7 +1718,7 @@ Promise<RetVal<CloudProjectInfo> > SaveProjectScenario::askCloudProjectInfo(INot
         QUrl scoreUrl = existingScoreUrl;
 
         if (scoreInfo.val.isValid()) {
-            const cloud::AccountInfo& accountInfo = museScoreComService()->authorization()->accountInfo();
+            const cloud::AccountInfo& accountInfo = dbScoreCloudService()->authorization()->accountInfo();
             if (accountInfo.id.toInt() != scoreInfo.val.owner.id) {
                 scoreUrl = QUrl();
             }
@@ -1767,12 +1767,12 @@ Promise<RetVal<CloudProjectInfo> > SaveProjectScenario::askCloudProjectInfo(INot
 {
     const CloudProjectInfo existingProjectInfo = project->cloudInfo();
 
-    UriQuery query("musescore://project/savetocloud");
+    UriQuery query("dbscore://project/savetocloud");
     query.addParam("isPublishShare", Val(isPublishShare));
     query.addParam("name", Val(defaultName));
     query.addParam("visibility", Val(defaultVisibility));
     query.addParam("existingScoreOrAudioUrl", Val(existingScoreUrl.toString()));
-    query.addParam("cloudCode", Val(cloud::MUSESCORE_COM_CLOUD_CODE));
+    query.addParam("cloudCode", Val(cloud::DBSCORE_CLOUD_CODE));
 
     return openDialog(query)
            .then<RetVal<CloudProjectInfo> >(this, [this, mode, isPublishShare, existingProjectInfo](const RetVal<Val>& rv, auto resolve) {
@@ -1917,13 +1917,13 @@ Promise<Ret> SaveProjectScenario::warnCloudNotAvailableForSharingAudio() const
 Promise<RetVal<Val> > SaveProjectScenario::ensureAuthorization(const QString& cloudCode, bool publishingScore,
                                                                const std::string& text) const
 {
-    IF_ASSERT_FAILED(cloudCode == muse::cloud::MUSESCORE_COM_CLOUD_CODE || cloudCode == muse::cloud::AUDIO_COM_CLOUD_CODE) {
+    IF_ASSERT_FAILED(cloudCode == muse::cloud::DBSCORE_CLOUD_CODE || cloudCode == muse::cloud::DBSCORE_AUDIO_CODE) {
         return resolvedPromise(RetVal<Val>(make_ret(Err::UnknownError)));
     }
 
-    bool isMuseScoreCom = cloudCode == muse::cloud::MUSESCORE_COM_CLOUD_CODE;
-    bool userAuthorized = isMuseScoreCom ? museScoreComService()->authorization()->userAuthorized().val
-                          : audioComService()->authorization()->userAuthorized().val;
+    bool isDBScoreCloud = cloudCode == muse::cloud::DBSCORE_CLOUD_CODE;
+    bool userAuthorized = isDBScoreCloud ? dbScoreCloudService()->authorization()->userAuthorized().val
+                          : dbScoreAudioService()->authorization()->userAuthorized().val;
 
     if (userAuthorized) {
         return resolvedPromise(RetVal<Val>::make_ok(Val()));

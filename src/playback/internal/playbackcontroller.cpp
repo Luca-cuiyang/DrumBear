@@ -58,7 +58,7 @@ using namespace mu::notation;
 using namespace mu::playback;
 using namespace mu::project;
 
-static const muse::Uri NOTATION_REVIEW_PAGE_URI("musescore://notation/review");
+static const muse::Uri NOTATION_REVIEW_PAGE_URI("dbscore://notation/review");
 
 static AudioOutputParams makeReverbOutputParams()
 {

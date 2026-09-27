@@ -39,6 +39,6 @@ void PreferencesModule::resolveImports()
 {
     auto ir = globalIoc()->resolve<interactive::IInteractiveUriRegister>(moduleName());
     if (ir) {
-        ir->registerQmlUri(Uri("muse://preferences"), "MuseScore.Preferences", "PreferencesDialog");
+        ir->registerQmlUri(Uri("muse://preferences"), "DBScore.Preferences", "PreferencesDialog");
     }
 }

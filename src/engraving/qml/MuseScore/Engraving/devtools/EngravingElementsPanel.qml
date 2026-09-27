@@ -25,7 +25,7 @@ import Muse.Ui
 import Muse.UiComponents
 import Muse.UiComponents.LegacyTreeView
 
-import MuseScore.Engraving
+import DBScore.Engraving
 
 Rectangle {
 

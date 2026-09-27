@@ -25,7 +25,7 @@ import QtQuick
 import Muse.UiComponents
 import Muse.Shortcuts
 
-import MuseScore.NotationScene
+import DBScore.NotationScene
 
 StyledDialogView {
     id: root

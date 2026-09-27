@@ -160,7 +160,7 @@ EditStaffType::EditStaffType(const muse::modularity::ContextPtr& ctx, QWidget* p
     connect(addToTemplates, &QPushButton::clicked, this, &EditStaffType::addToTemplatesClicked);
 
     connect(editTextStyleButton, &QPushButton::clicked, this, [this]() {
-        UriQuery uri("musescore://notation/style");
+        UriQuery uri("dbscore://notation/style");
         uri.addParam("currentPageCode", Val("text-styles"));
         uri.addParam("currentSubPageCode", Val("tab-fret-number"));
         interactive()->open(uri);

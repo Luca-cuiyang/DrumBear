@@ -25,7 +25,7 @@ import QtQuick.Layouts
 import Muse.Ui
 import Muse.UiComponents
 import Muse.GraphicalEffects
-import MuseScore.Project
+import DBScore.Project
 
 FocusScope {
     id: root

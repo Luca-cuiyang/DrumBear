@@ -850,7 +850,7 @@ Q_ENUM_NS(NoteType);
 
 enum class PlayEventType {
     ///.\{
-    Auto = int(mu::engraving::PlayEventType::Auto), ///< Play events for all notes are calculated by MuseScore.
+    Auto = int(mu::engraving::PlayEventType::Auto), ///< Play events for all notes are calculated by DBScore.
     User = int(mu::engraving::PlayEventType::User), ///< Some play events are modified by user. Those events are written into the mscx file.
     ///.\}
 };

@@ -21,7 +21,7 @@
  */
 import QtQuick
 
-import MuseScore.Preferences
+import DBScore.Preferences
 import Muse.MidiRemote
 
 PreferencesPage {

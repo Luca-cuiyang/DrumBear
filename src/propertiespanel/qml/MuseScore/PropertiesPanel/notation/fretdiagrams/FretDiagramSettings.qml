@@ -26,7 +26,7 @@ import QtQuick
 import QtQuick.Layouts
 import Muse.Ui
 import Muse.UiComponents
-import MuseScore.PropertiesPanel
+import DBScore.PropertiesPanel
 
 import "../../common"
 import "internal"

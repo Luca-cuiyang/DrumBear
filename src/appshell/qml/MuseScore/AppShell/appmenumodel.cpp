@@ -431,7 +431,7 @@ MenuItem* AppMenuModel::makeHelpMenu(bool addDiagnosticsSubMenu)
         helpItems << makeSeparator();
     }
 
-    helpItems << makeMenuItem(APP_ABOUT_MUSESCORE_COMMAND, MenuItemRole::AboutRole);
+    helpItems << makeMenuItem(APP_ABOUT_DBSCORE_COMMAND, MenuItemRole::AboutRole);
     helpItems << makeMenuItem(APP_ABOUT_QT_COMMAND, MenuItemRole::AboutQtRole);
     helpItems << makeMenuItem(APP_ABOUT_MUSICXML_COMMAND);
     helpItems << makeSeparator();

@@ -63,7 +63,7 @@ TEST(ProjectMscMetaReaderTests, testReadFromMeta)
     EXPECT_EQ(meta.partsCount, 1);
     EXPECT_FALSE(meta.thumbnail.isNull());
     EXPECT_TRUE(meta.source.isEmpty());
-    EXPECT_TRUE(meta.audioComUrl.isEmpty());
+    EXPECT_TRUE(meta.dbScoreAudioUrl.isEmpty());
     EXPECT_TRUE(meta.platform.isEmpty());
     EXPECT_TRUE(meta.musescoreVersion.isEmpty());
     EXPECT_EQ(meta.musescoreRevision, 0);
@@ -89,7 +89,7 @@ TEST(ProjectMscMetaReaderTests, testReadFromMetaAndBox)
     EXPECT_EQ(meta.partsCount, 1);
     EXPECT_FALSE(meta.thumbnail.isNull());
     EXPECT_TRUE(meta.source.isEmpty());
-    EXPECT_TRUE(meta.audioComUrl.isEmpty());
+    EXPECT_TRUE(meta.dbScoreAudioUrl.isEmpty());
     EXPECT_TRUE(meta.platform.isEmpty());
     EXPECT_TRUE(meta.musescoreVersion.isEmpty());
     EXPECT_EQ(meta.musescoreRevision, 0);

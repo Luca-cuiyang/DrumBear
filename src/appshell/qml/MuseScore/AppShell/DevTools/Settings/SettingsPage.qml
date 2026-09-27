@@ -29,7 +29,7 @@ import QtQuick.Layouts
 import Muse.Ui
 import Muse.UiComponents
 import Muse.Dock
-import MuseScore.AppShell
+import DBScore.AppShell
 
 ColumnLayout {
     id: root

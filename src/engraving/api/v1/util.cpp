@@ -179,7 +179,7 @@ bool FileIO::isPathWriteable(const QString& filePath)
     QStringList allowedPaths;
 
     // Note: userAppDataPath() is NOT included because it contains sensitive data:
-    // - User credentials (musescorecom_cred.dat)
+    // - User credentials (dbscorecloud_cred.dat)
     // - System configuration (shortcuts.xml, midi_mappings.xml)
     // - Application logs
     // Plugins should not write to this directory

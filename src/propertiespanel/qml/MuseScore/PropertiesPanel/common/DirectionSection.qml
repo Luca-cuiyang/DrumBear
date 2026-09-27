@@ -23,7 +23,7 @@ import QtQuick
 
 import Muse.Ui
 import Muse.UiComponents
-import MuseScore.PropertiesPanel
+import DBScore.PropertiesPanel
 
 FlatRadioButtonGroupPropertyView {
     id: root

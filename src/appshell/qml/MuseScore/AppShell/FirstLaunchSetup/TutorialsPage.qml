@@ -26,7 +26,7 @@ import QtQuick.Layouts
 import Muse.Ui
 import Muse.UiComponents
 import Muse.GraphicalEffects
-import MuseScore.AppShell
+import DBScore.AppShell
 
 Page {
     title: qsTrc("appshell/gettingstarted", "Video tutorials")

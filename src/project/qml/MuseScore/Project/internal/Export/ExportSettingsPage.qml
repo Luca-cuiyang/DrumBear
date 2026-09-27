@@ -22,7 +22,7 @@
 import QtQuick
 
 import Muse.Ui
-import MuseScore.Project
+import DBScore.Project
 
 Column {
     id: root

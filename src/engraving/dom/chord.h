@@ -77,7 +77,7 @@ constexpr bool operator&(NoteType t1, NoteType t2)
 
 enum class PlayEventType : unsigned char {
     ///.\{
-    Auto,         ///< Play events for all notes are calculated by MuseScore.
+    Auto,         ///< Play events for all notes are calculated by DBScore.
     User,         ///< Some play events are modified by user. Those events are written into the mscx file.
     ///.\}
 };

@@ -24,9 +24,9 @@ import QtQuick
 import Muse.Ui
 import Muse.UiComponents
 
-import MuseScore.PropertiesPanel
-import MuseScore.NotationScene
-import MuseScore.Playback
+import DBScore.PropertiesPanel
+import DBScore.NotationScene
+import DBScore.Playback
 
 Item {
     id: container

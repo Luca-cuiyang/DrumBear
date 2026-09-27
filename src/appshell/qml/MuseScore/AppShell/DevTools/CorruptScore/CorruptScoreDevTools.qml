@@ -23,7 +23,7 @@ import QtQuick
 
 import Muse.Ui
 import Muse.UiComponents
-import MuseScore.Engraving
+import DBScore.Engraving
 
 Rectangle {
     color: ui.theme.backgroundSecondaryColor

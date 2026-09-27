@@ -86,7 +86,7 @@ set(MUSESCORE_REVISION "" CACHE STRING "Build revision")
 # DBScore: keep the musescore.com service compiled so cloud-dependent services
 # (e.g. "Convert file to score") don't crash at startup. All user-facing
 # musescore.com UI (account, learn, publish, cloud scores) is removed separately.
-set(MUSE_MODULE_CLOUD_MUSESCORECOM ON CACHE BOOL "Enable MuseScore.com account" FORCE)
+set(MUSE_MODULE_CLOUD_DBSCORECLOUD ON CACHE BOOL "Enable DB Score cloud account" FORCE)
 
 include(${MUSE_FRAMEWORK_SRC_PATH}/cmake/MuseDeclareOptions.cmake)
 

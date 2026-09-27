@@ -27,7 +27,7 @@ import QtQuick.Controls
 
 import Muse.Ui
 import Muse.UiComponents
-import MuseScore.Braille
+import DBScore.Braille
 
 StyledFlickable {
     id: root

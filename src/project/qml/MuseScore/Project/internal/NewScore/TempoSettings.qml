@@ -25,8 +25,8 @@ import QtQuick.Layouts
 
 import Muse.Ui
 import Muse.UiComponents
-import MuseScore.Project
-import MuseScore.NotationScene
+import DBScore.Project
+import DBScore.NotationScene
 
 PopupButton {
     id: root

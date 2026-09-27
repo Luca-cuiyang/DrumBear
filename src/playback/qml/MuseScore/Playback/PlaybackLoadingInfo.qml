@@ -23,7 +23,7 @@
 import QtQuick
 import QtQuick.Layouts
 
-import MuseScore.Playback
+import DBScore.Playback
 import Muse.UiComponents
 
 RowLayout {

@@ -23,7 +23,7 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 
-import MuseScore.PropertiesPanel
+import DBScore.PropertiesPanel
 import Muse.UiComponents
 
 import "../../../common"

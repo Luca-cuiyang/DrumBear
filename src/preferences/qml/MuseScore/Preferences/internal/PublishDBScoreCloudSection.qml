@@ -29,22 +29,22 @@ BaseSection {
 
     title: qsTrc("preferences", "Publish to drumbearai.com")
 
-    property alias alsoShareAudioCom: alsoShareAudioComCheckBox.checked
+    property alias alsoShareDBScoreAudio: alsoShareDBScoreAudioCheckBox.checked
 
-    signal alsoShareAudioComChangeRequested(bool share)
+    signal alsoShareDBScoreAudioChangeRequested(bool share)
 
     CheckBox {
-        id: alsoShareAudioComCheckBox
+        id: alsoShareDBScoreAudioCheckBox
 
         width: parent.width
 
         text: qsTrc("preferences", "Always prompt to share on DB Score after publishing to drumbearai.com")
 
-        navigation.name: "AlsoShareAudioComCheckBox"
+        navigation.name: "AlsoShareDBScoreAudioCheckBox"
         navigation.panel: root.navigation
 
         onClicked: {
-            root.alsoShareAudioComChangeRequested(!checked)
+            root.alsoShareDBScoreAudioChangeRequested(!checked)
         }
     }
 }

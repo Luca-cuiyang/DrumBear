@@ -47,7 +47,7 @@ struct ProjectMeta
     QPixmap thumbnail;
 
     QString source;
-    QString audioComUrl;
+    QString dbScoreAudioUrl;
     QString platform;
     QString musescoreVersion;
     int musescoreRevision = 0;
@@ -76,7 +76,7 @@ struct ProjectMeta
         equal &= thumbnail.toImage() == other.thumbnail.toImage();
 
         equal &= source == other.source;
-        equal &= audioComUrl == other.audioComUrl;
+        equal &= dbScoreAudioUrl == other.dbScoreAudioUrl;
         equal &= platform == other.platform;
         equal &= musescoreVersion == other.musescoreVersion;
         equal &= musescoreRevision == other.musescoreRevision;
@@ -115,7 +115,7 @@ inline const QString PLATFORM_TAG("platform");
 // https://github.com/musescore/MuseScore/issues/17561
 inline const QString SOURCE_TAG("source");
 inline const QString SOURCE_REVISION_ID_TAG("sourceRevisionId");
-inline const QString AUDIO_COM_URL_TAG("audioComUrl");
+inline const QString AUDIO_COM_URL_TAG("dbScoreAudioUrl");
 
 inline bool isStandardTag(const QString& tag)
 {

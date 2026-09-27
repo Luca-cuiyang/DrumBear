@@ -26,7 +26,7 @@ import QtQuick
 
 import Muse.Ui
 import Muse.UiComponents
-import MuseScore.Playback
+import DBScore.Playback
 
 MixerPanelSection {
     id: root

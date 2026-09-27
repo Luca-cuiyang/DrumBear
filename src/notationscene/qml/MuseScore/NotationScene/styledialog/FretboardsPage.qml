@@ -25,7 +25,7 @@ import QtQuick.Controls
 
 import Muse.Ui
 import Muse.UiComponents
-import MuseScore.NotationScene
+import DBScore.NotationScene
 
 StyledFlickable {
     id: root

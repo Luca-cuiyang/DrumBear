@@ -21,7 +21,7 @@
 muse_create_qml_module(palette_qml STUB FOR palette)
 
 qt_add_qml_module(palette_qml
-    URI MuseScore.Palette
+    URI DBScore.Palette
     VERSION 1.0
     QML_FILES
         PalettesPanel.qml

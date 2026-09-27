@@ -34,8 +34,8 @@
 #include "interactive/iinteractive.h"
 #include "interactive/iplatforminteractive.h"
 #include "context/iglobalcontext.h"
-#include "cloud/musescorecom/imusescorecomservice.h"
-#include "cloud/audiocom/iaudiocomservice.h"
+#include "cloud/dbscorecloud/idbscorecloudservice.h"
+#include "cloud/dbscoreaudio/idbscoreaudioservice.h"
 #include "io/ifilesystem.h"
 #include "notation/inotationconfiguration.h"
 #include "progress.h"
@@ -54,8 +54,8 @@ public:
     muse::GlobalInject<IProjectConfiguration> configuration;
     muse::GlobalInject<notation::INotationConfiguration> notationConfiguration;
     muse::GlobalInject<muse::io::IFileSystem> fileSystem;
-    muse::GlobalInject<muse::cloud::IMuseScoreComService> museScoreComService;
-    muse::GlobalInject<muse::cloud::IAudioComService> audioComService;
+    muse::GlobalInject<muse::cloud::IDBScoreCloudService> dbScoreCloudService;
+    muse::GlobalInject<muse::cloud::IDBScoreAudioService> dbScoreAudioService;
     muse::GlobalInject<muse::IPlatformInteractive> platformInteractive;
     muse::ContextInject<IRecentFilesController> recentFilesController = { this };
     muse::ContextInject<IExportProjectScenario> exportProjectScenario = { this };
@@ -151,9 +151,9 @@ private:
                                                             SaveMode saveMode);
 
     muse::async::Promise<muse::Ret> shareAudio(const AudioFile& existingAudio);
-    muse::async::Promise<muse::Ret> uploadAudioToAudioCom(const AudioFile& audio, const INotationProjectPtr& project,
+    muse::async::Promise<muse::Ret> uploadAudioToDBScoreAudio(const AudioFile& audio, const INotationProjectPtr& project,
                                                           const CloudAudioInfo& info);
-    muse::async::Promise<muse::Ret> alsoShareAudioCom(const AudioFile& audio);
+    muse::async::Promise<muse::Ret> alsoShareDBScoreAudio(const AudioFile& audio);
 
     muse::async::Promise<muse::Ret> askAudioGenerationSettings() const;
     muse::async::Promise<muse::RetVal<bool> > needGenerateAudio(bool isPublic) const;
@@ -164,7 +164,7 @@ private:
     void closeUploadProgressDialog();
 
     muse::async::Promise<muse::Ret> uploadProject(const CloudProjectInfo& info, const AudioFile& audio, bool openEditUrl, bool publishMode);
-    muse::async::Promise<muse::Ret> uploadAudioToMuseScoreCom(const AudioFile& audio, const QUrl& sourceUrl, const QUrl& urlToOpen,
+    muse::async::Promise<muse::Ret> uploadAudioToDBScoreCloud(const AudioFile& audio, const QUrl& sourceUrl, const QUrl& urlToOpen,
                                                               bool isFirstSave, bool publishMode);
 
     muse::async::Promise<muse::Ret> onUploadFinished(const QUrl& urlToOpen, bool isFirstSave, const AudioFile& audio, bool publishMode);

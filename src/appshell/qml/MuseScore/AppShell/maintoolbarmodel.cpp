@@ -26,9 +26,9 @@
 
 using namespace mu::appshell;
 
-static const QString HOME_PAGE("musescore://home");
-static const QString NOTATION_PAGE("musescore://notation");
-static const QString DEVTOOLS_PAGE("musescore://devtools");
+static const QString HOME_PAGE("dbscore://home");
+static const QString NOTATION_PAGE("dbscore://notation");
+static const QString DEVTOOLS_PAGE("dbscore://devtools");
 
 static const QString TITLE_KEY("title");
 static const QString URI_KEY("uri");

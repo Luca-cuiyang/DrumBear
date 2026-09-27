@@ -23,7 +23,7 @@
 import QtQuick
 
 import Muse.Ui
-import MuseScore.NotationScene
+import DBScore.NotationScene
 
 Item {
     id: root

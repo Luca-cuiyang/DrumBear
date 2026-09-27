@@ -21,7 +21,7 @@
 muse_create_qml_module(appshell_qml FOR appshell)
 
 qt_add_qml_module(appshell_qml
-    URI MuseScore.AppShell
+    URI DBScore.AppShell
     VERSION 1.0
     SOURCES
         aboutmodel.cpp

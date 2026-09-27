@@ -97,10 +97,10 @@ set_target_properties(MuseScoreQuickLookPreviewExtension PROPERTIES
 )
 
 install(TARGETS MuseScoreQuickLookPreviewExtension
-    BUNDLE DESTINATION mscore.app/Contents/PlugIns
+    BUNDLE DESTINATION dbscore.app/Contents/PlugIns
 )
 
-set(the_appex_path "${CMAKE_INSTALL_PREFIX}/mscore.app/Contents/PlugIns/MuseScoreQuickLookPreviewExtension.appex")
+set(the_appex_path "${CMAKE_INSTALL_PREFIX}/dbscore.app/Contents/PlugIns/MuseScoreQuickLookPreviewExtension.appex")
 
 # Platform plugin is loaded by Qt at runtime, rather than as a linked framework.
 # Due to sandboxing, this does not work if the plugin is outside the .appex

@@ -244,36 +244,36 @@ muse::async::Channel<int> ProjectConfigurationStub::autoSaveIntervalChanged() co
     return ch;
 }
 
-bool ProjectConfigurationStub::alsoShareAudioCom() const
+bool ProjectConfigurationStub::alsoShareDBScoreAudio() const
 {
     return false;
 }
 
-void ProjectConfigurationStub::setAlsoShareAudioCom(bool)
+void ProjectConfigurationStub::setAlsoShareDBScoreAudio(bool)
 {
 }
 
-muse::async::Channel<bool> ProjectConfigurationStub::alsoShareAudioComChanged() const
+muse::async::Channel<bool> ProjectConfigurationStub::alsoShareDBScoreAudioChanged() const
 {
     static muse::async::Channel<bool> ch;
     return ch;
 }
 
-bool ProjectConfigurationStub::showAlsoShareAudioComDialog() const
+bool ProjectConfigurationStub::showAlsoShareDBScoreAudioDialog() const
 {
     return false;
 }
 
-void ProjectConfigurationStub::setShowAlsoShareAudioComDialog(bool)
+void ProjectConfigurationStub::setShowAlsoShareDBScoreAudioDialog(bool)
 {
 }
 
-bool ProjectConfigurationStub::hasAskedAlsoShareAudioCom() const
+bool ProjectConfigurationStub::hasAskedAlsoShareDBScoreAudio() const
 {
     return false;
 }
 
-void ProjectConfigurationStub::setHasAskedAlsoShareAudioCom(bool)
+void ProjectConfigurationStub::setHasAskedAlsoShareDBScoreAudio(bool)
 {
 }
 

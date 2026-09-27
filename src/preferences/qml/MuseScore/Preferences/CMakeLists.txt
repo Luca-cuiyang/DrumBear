@@ -23,7 +23,7 @@ muse_create_qml_module(preferences_qml FOR preferences)
 target_link_libraries(preferences_qml PRIVATE Qt::Core5Compat)
 
 qt_add_qml_module(preferences_qml
-    URI MuseScore.Preferences
+    URI DBScore.Preferences
     VERSION 1.0
     SOURCES
         advancedpreferencesmodel.cpp
@@ -117,7 +117,7 @@ qt_add_qml_module(preferences_qml
         internal/PreferencesButtonsPanel.qml
         internal/PreferencesMenu.qml
         internal/ProgramStartSection.qml
-        internal/PublishMuseScoreComSection.qml
+        internal/PublishDBScoreCloudSection.qml
         internal/RemoteControlSection.qml
         internal/SaveToCloudSection.qml
         internal/ScrollPagesSection.qml

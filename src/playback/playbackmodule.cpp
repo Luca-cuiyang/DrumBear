@@ -61,7 +61,7 @@ void PlaybackModule::resolveImports()
 {
     auto ir = globalIoc()->resolve<muse::interactive::IInteractiveUriRegister>(mname);
     if (ir) {
-        ir->registerQmlUri(Uri("musescore://playback/soundprofiles"), "MuseScore.Playback", "SoundProfilesDialog");
+        ir->registerQmlUri(Uri("dbscore://playback/soundprofiles"), "DBScore.Playback", "SoundProfilesDialog");
     }
 
     auto cr = globalIoc()->resolve<muse::rcommand::ICommandsRegister>(mname);

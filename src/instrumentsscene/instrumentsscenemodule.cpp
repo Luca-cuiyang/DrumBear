@@ -50,7 +50,7 @@ void InstrumentsSceneModule::resolveImports()
 {
     auto ir = globalIoc()->resolve<interactive::IInteractiveUriRegister>(mname);
     if (ir) {
-        ir->registerQmlUri(Uri("musescore://instruments/select"), "MuseScore.InstrumentsScene", "InstrumentsDialog");
+        ir->registerQmlUri(Uri("dbscore://instruments/select"), "DBScore.InstrumentsScene", "InstrumentsDialog");
     }
 
     auto cr = globalIoc()->resolve<muse::rcommand::ICommandsRegister>(mname);

@@ -56,7 +56,7 @@ muse::async::Promise<Ret> StartupScenario::runOnSplashScreen()
 
 void StartupScenario::runAfterSplashScreen()
 {
-    interactive()->open("musescore://notation").onResolve(this, [this](const Val&) {
+    interactive()->open("dbscore://notation").onResolve(this, [this](const Val&) {
         m_startupCompleted = true;
     });
 }

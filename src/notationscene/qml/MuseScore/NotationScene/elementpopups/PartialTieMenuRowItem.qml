@@ -25,7 +25,7 @@ import QtQuick.Window
 
 import Muse.Ui
 import Muse.UiComponents
-import MuseScore.NotationScene
+import DBScore.NotationScene
 
 ListItemBlank {
     id: rowDelegate

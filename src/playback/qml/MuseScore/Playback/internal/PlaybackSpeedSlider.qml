@@ -26,7 +26,7 @@ import QtQuick.Layouts
 import Muse.UiComponents
 import Muse.Ui
 
-import MuseScore.Playback
+import DBScore.Playback
 
 RowLayout {
     id: root

@@ -26,10 +26,10 @@ import QtQuick.Layouts
 import Muse.Ui 1.0
 import Muse.UiComponents
 
-import MuseScore.NotationScene 1.0
-import MuseScore.Palette 1.0
-import MuseScore.InstrumentsScene 1.0
-import MuseScore.PropertiesPanel
+import DBScore.NotationScene 1.0
+import DBScore.Palette 1.0
+import DBScore.InstrumentsScene 1.0
+import DBScore.PropertiesPanel
 
 Item {
 

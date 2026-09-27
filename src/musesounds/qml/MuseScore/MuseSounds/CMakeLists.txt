@@ -1,7 +1,7 @@
 muse_create_qml_module(musesounds_qml FOR musesounds)
 
 qt_add_qml_module(musesounds_qml
-    URI MuseScore.MuseSounds
+    URI DBScore.MuseSounds
     VERSION 1.0
     SOURCES
         musesoundslistmodel.cpp

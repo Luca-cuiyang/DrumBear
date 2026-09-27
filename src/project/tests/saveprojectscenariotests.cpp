@@ -33,9 +33,9 @@
 #include "cloud/clouderrors.h"
 #include "cloud/qml/Muse/Cloud/enums.h"
 
-#include "cloud/tests/mocks/audiocomservicemock.h"
+#include "cloud/tests/mocks/dbscoreaudioservicemock.h"
 #include "cloud/tests/mocks/authorizationservicemock.h"
-#include "cloud/tests/mocks/musescorecomservicemock.h"
+#include "cloud/tests/mocks/dbscorecloudservicemock.h"
 #include "context/tests/mocks/globalcontextmock.h"
 #include "global/tests/mocks/filesystemmock.h"
 #include "interactive/tests/mocks/interactivemock.h"
@@ -71,8 +71,8 @@ protected:
         m_configuration = std::make_shared<NiceMock<ProjectConfigurationMock> >();
         m_fileSystem = std::make_shared<NiceMock<io::FileSystemMock> >();
         m_notationConfiguration = std::make_shared<NiceMock<notation::NotationConfigurationMock> >();
-        m_museScoreComService = std::make_shared<NiceMock<cloud::MuseScoreComServiceMock> >();
-        m_audioComService = std::make_shared<NiceMock<cloud::AudioComServiceMock> >();
+        m_dbScoreCloudService = std::make_shared<NiceMock<cloud::DBScoreCloudServiceMock> >();
+        m_dbScoreAudioService = std::make_shared<NiceMock<cloud::DBScoreAudioServiceMock> >();
         m_authorization = std::make_shared<NiceMock<cloud::AuthorizationServiceMock> >();
         m_platformInteractive = std::make_shared<NiceMock<PlatformInteractiveMock> >();
         m_recentFiles = std::make_shared<NiceMock<RecentFilesControllerMock> >();
@@ -84,8 +84,8 @@ protected:
         m_scenario->configuration.set(m_configuration);
         m_scenario->fileSystem.set(m_fileSystem);
         m_scenario->notationConfiguration.set(m_notationConfiguration);
-        m_scenario->museScoreComService.set(m_museScoreComService);
-        m_scenario->audioComService.set(m_audioComService);
+        m_scenario->dbScoreCloudService.set(m_dbScoreCloudService);
+        m_scenario->dbScoreAudioService.set(m_dbScoreAudioService);
         m_scenario->platformInteractive.set(m_platformInteractive);
         m_scenario->recentFilesController.set(m_recentFiles);
         m_scenario->exportProjectScenario.set(m_exportScenario);
@@ -102,8 +102,8 @@ protected:
         ON_CALL(*m_project, masterNotation()).WillByDefault(Return(m_masterNotation));
         ON_CALL(*m_masterNotation, notation()).WillByDefault(Return(m_notation));
         ON_CALL(*m_notation, interaction()).WillByDefault(Return(m_interaction));
-        ON_CALL(*m_museScoreComService, authorization()).WillByDefault(Return(m_authorization));
-        ON_CALL(*m_audioComService, authorization()).WillByDefault(Return(m_authorization));
+        ON_CALL(*m_dbScoreCloudService, authorization()).WillByDefault(Return(m_authorization));
+        ON_CALL(*m_dbScoreAudioService, authorization()).WillByDefault(Return(m_authorization));
 
         // A healthy score that saves successfully, unless a test says otherwise.
         ON_CALL(*m_project, canSave()).WillByDefault(Return(make_ok()));
@@ -120,7 +120,7 @@ protected:
 
         // A publish also uploads the rendered audio; hand it a progress of its own,
         // and let it finish successfully from a deferred call, after the caller has subscribed.
-        ON_CALL(*m_museScoreComService, uploadAudio(_, _, _))
+        ON_CALL(*m_dbScoreCloudService, uploadAudio(_, _, _))
         .WillByDefault([](DevicePtr, const QString&, const QUrl&) {
             auto progress = std::make_shared<Progress>();
             async::Async::call(nullptr, [progress]() {
@@ -271,9 +271,9 @@ protected:
         ON_CALL(*m_authorization, checkCloudIsAvailable()).WillByDefault([] { return resolvedPromise(make_ok()); });
 
         // The server says nothing about the score, so the flow falls back to what it already knows.
-        ON_CALL(*m_museScoreComService, downloadScoreInfo(::testing::An<const QUrl&>()))
+        ON_CALL(*m_dbScoreCloudService, downloadScoreInfo(::testing::An<const QUrl&>()))
         .WillByDefault([] { return resolvedPromise(RetVal<cloud::ScoreInfo>()); });
-        ON_CALL(*m_museScoreComService, downloadScoreInfo(::testing::An<int>()))
+        ON_CALL(*m_dbScoreCloudService, downloadScoreInfo(::testing::An<int>()))
         .WillByDefault([] { return resolvedPromise(RetVal<cloud::ScoreInfo>()); });
         givenSignedIn();
 
@@ -295,7 +295,7 @@ protected:
     //! NOTE The result is delivered from a deferred call, after `uploadProject` has subscribed to the progress.
     void givenUploadFinishesWith(const Ret& ret, const ValMap& result, std::function<void()> alsoDo = nullptr)
     {
-        ON_CALL(*m_museScoreComService, uploadScore(_, _, _, _, _))
+        ON_CALL(*m_dbScoreCloudService, uploadScore(_, _, _, _, _))
         .WillByDefault([ret, result, alsoDo](DevicePtr, const QString&, cloud::Visibility, const QUrl&, int) {
             auto progress = std::make_shared<Progress>();
             async::Async::call(nullptr, [progress, ret, result, alsoDo]() {
@@ -323,8 +323,8 @@ protected:
     std::shared_ptr<ProjectConfigurationMock> m_configuration;
     std::shared_ptr<io::FileSystemMock> m_fileSystem;
     std::shared_ptr<notation::NotationConfigurationMock> m_notationConfiguration;
-    std::shared_ptr<cloud::MuseScoreComServiceMock> m_museScoreComService;
-    std::shared_ptr<cloud::AudioComServiceMock> m_audioComService;
+    std::shared_ptr<cloud::DBScoreCloudServiceMock> m_dbScoreCloudService;
+    std::shared_ptr<cloud::DBScoreAudioServiceMock> m_dbScoreAudioService;
     std::shared_ptr<cloud::AuthorizationServiceMock> m_authorization;
     std::shared_ptr<PlatformInteractiveMock> m_platformInteractive;
     std::shared_ptr<RecentFilesControllerMock> m_recentFiles;
@@ -554,7 +554,7 @@ TEST_F(SaveProjectScenarioTests, ShareAudio_NoOpenScore_IsRefusedInsteadOfCrashi
 
     //! [THEN] Nothing is asked and nothing is uploaded
     EXPECT_CALL(*m_interactive, open(IsSaveToCloudDialog())).Times(0);
-    EXPECT_CALL(*m_audioComService, uploadAudio(_, _, _, _, _, _)).Times(0);
+    EXPECT_CALL(*m_dbScoreAudioService, uploadAudio(_, _, _, _, _, _)).Times(0);
 
     //! [WHEN] Sharing the audio anyway, as the menu allows...
     Ret ret = await(m_scenario->shareAudio());
@@ -895,7 +895,7 @@ TEST_F(SaveProjectScenarioTests, SaveProjectToCloud_CloudUnreachable_SavesLocall
 
     //! [THEN] The score is written to disk and nothing is uploaded
     EXPECT_CALL(*m_project, save(io::path_t("cloud.mscz"), SaveMode::Save, true)).Times(1);
-    EXPECT_CALL(*m_museScoreComService, uploadScore(_, _, _, _, _)).Times(0);
+    EXPECT_CALL(*m_dbScoreCloudService, uploadScore(_, _, _, _, _)).Times(0);
 
     //! [WHEN] Saving it to the cloud...
     Ret ret = saveProjectToCloud(CloudProjectInfo());
@@ -947,7 +947,7 @@ TEST_F(SaveProjectScenarioTests, SaveProjectToCloud_UserChoosesToSaveLocallyInst
     //! [THEN] The score goes to the chosen local file, the preference is remembered, and nothing is uploaded
     EXPECT_CALL(*m_project, save(io::path_t("instead.mscz"), SaveMode::Save, true)).Times(1);
     EXPECT_CALL(*m_configuration, setLastUsedSaveLocationType(SaveLocationType::Local)).Times(1);
-    EXPECT_CALL(*m_museScoreComService, uploadScore(_, _, _, _, _)).Times(0);
+    EXPECT_CALL(*m_dbScoreCloudService, uploadScore(_, _, _, _, _)).Times(0);
 
     //! [WHEN] Saving it to the cloud...
     Ret ret = saveProjectToCloud(CloudProjectInfo());
@@ -983,7 +983,7 @@ TEST_F(SaveProjectScenarioTests, SaveProjectToCloud_NotLoggedIn_WritesNothing)
 
     //! [THEN] Nothing is written and nothing is uploaded
     EXPECT_CALL(*m_project, save(_, _, _)).Times(0);
-    EXPECT_CALL(*m_museScoreComService, uploadScore(_, _, _, _, _)).Times(0);
+    EXPECT_CALL(*m_dbScoreCloudService, uploadScore(_, _, _, _, _)).Times(0);
 
     //! [WHEN] Saving it to the cloud...
     Ret ret = saveProjectToCloud(CloudProjectInfo());
@@ -1030,7 +1030,7 @@ TEST_F(SaveProjectScenarioTests, SaveProjectToCloud_ScoreWentPublicOnTheWeb_Asks
     cloud::ScoreInfo remote;
     remote.title = "Renamed on the web";
     remote.visibility = cloud::Visibility::Public;
-    ON_CALL(*m_museScoreComService, downloadScoreInfo(sourceUrl))
+    ON_CALL(*m_dbScoreCloudService, downloadScoreInfo(sourceUrl))
     .WillByDefault([remote] { return resolvedPromise(RetVal<cloud::ScoreInfo>::make_ok(remote)); });
 
     //! [GIVEN] ...and a user who declines the warning
@@ -1039,7 +1039,7 @@ TEST_F(SaveProjectScenarioTests, SaveProjectToCloud_ScoreWentPublicOnTheWeb_Asks
 
     //! [THEN] Nothing is written and nothing is uploaded
     EXPECT_CALL(*m_project, save(_, _, _)).Times(0);
-    EXPECT_CALL(*m_museScoreComService, uploadScore(_, _, _, _, _)).Times(0);
+    EXPECT_CALL(*m_dbScoreCloudService, uploadScore(_, _, _, _, _)).Times(0);
 
     //! [WHEN] Saving it to the cloud...
     CloudProjectInfo info;
@@ -1053,7 +1053,7 @@ TEST_F(SaveProjectScenarioTests, SaveProjectToCloud_RemoteInfoUnavailable_KeepsT
     const QUrl sourceUrl("score-42");
 
     givenReachableCloud();
-    ON_CALL(*m_museScoreComService, downloadScoreInfo(sourceUrl))
+    ON_CALL(*m_dbScoreCloudService, downloadScoreInfo(sourceUrl))
     .WillByDefault([] { return resolvedPromise(RetVal<cloud::ScoreInfo>(make_ret(Ret::Code::InternalError))); });
 
     CloudProjectInfo info;
@@ -1091,7 +1091,7 @@ TEST_F(SaveProjectScenarioTests, SaveProjectToCloud_UploadSucceeds_CountsTheSave
     });
 
     //! [THEN] The score is uploaded once, under the name and visibility it carries
-    EXPECT_CALL(*m_museScoreComService,
+    EXPECT_CALL(*m_dbScoreCloudService,
                 uploadScore(_, QString("Symphony"), cloud::Visibility::Private, QUrl("score-99"), 0)).Times(1);
 
     //! [WHEN] Saving it to the cloud...
@@ -1136,7 +1136,7 @@ TEST_F(SaveProjectScenarioTests, SaveProjectToCloud_ProjectCannotBeSerialised_Do
     ON_CALL(*m_project, writeToDevice(_)).WillByDefault(Return(make_ret(Ret::Code::InternalError)));
 
     //! [THEN] Nothing is uploaded
-    EXPECT_CALL(*m_museScoreComService, uploadScore(_, _, _, _, _)).Times(0);
+    EXPECT_CALL(*m_dbScoreCloudService, uploadScore(_, _, _, _, _)).Times(0);
 
     //! [WHEN] Saving it to the cloud...
     CloudProjectInfo info;
@@ -1152,7 +1152,7 @@ TEST_F(SaveProjectScenarioTests, SaveProjectToCloud_AudioCannotBeRendered_DoesNo
     ON_CALL(*m_exportScenario, exportScores(_, _, _, _)).WillByDefault(Return(false));
 
     //! [THEN] Nothing is uploaded, because a public score without audio has no web playback
-    EXPECT_CALL(*m_museScoreComService, uploadScore(_, _, _, _, _)).Times(0);
+    EXPECT_CALL(*m_dbScoreCloudService, uploadScore(_, _, _, _, _)).Times(0);
 
     //! [WHEN] Saving it to the cloud...
     CloudProjectInfo info;
@@ -1177,7 +1177,7 @@ TEST_F(SaveProjectScenarioTests, SaveProjectToCloud_AlreadyUploading_DoesNotStar
     });
 
     //! [THEN] Only one upload is started
-    EXPECT_CALL(*m_museScoreComService, uploadScore(_, _, _, _, _)).Times(1);
+    EXPECT_CALL(*m_dbScoreCloudService, uploadScore(_, _, _, _, _)).Times(1);
 
     //! [WHEN] Saving it to the cloud...
     CloudProjectInfo info;
@@ -1226,7 +1226,7 @@ TEST_F(SaveProjectScenarioTests, SaveProjectToCloud_ConflictRetry_LeavesTheFirst
     const ProgressPtr retriedUpload = std::make_shared<Progress>();
     const auto started = std::make_shared<int>(0);
 
-    ON_CALL(*m_museScoreComService, uploadScore(_, _, _, _, _))
+    ON_CALL(*m_dbScoreCloudService, uploadScore(_, _, _, _, _))
     .WillByDefault([firstUpload, retriedUpload, started](DevicePtr, const QString&, cloud::Visibility, const QUrl&, int) {
         const bool isFirst = (*started)++ == 0;
         const ProgressPtr progress = isFirst ? firstUpload : retriedUpload;
@@ -1248,7 +1248,7 @@ TEST_F(SaveProjectScenarioTests, SaveProjectToCloud_ConflictRetry_LeavesTheFirst
     .WillByDefault([] { return dialogResult(PUBLISH_AS_NEW_SCORE_BTN_ID); });
 
     //! [THEN] Both uploads are started, and the conflict is reported exactly once
-    EXPECT_CALL(*m_museScoreComService, uploadScore(_, _, _, _, _)).Times(2);
+    EXPECT_CALL(*m_dbScoreCloudService, uploadScore(_, _, _, _, _)).Times(2);
     EXPECT_CALL(*m_interactive, warning(_, _, _, _, _, _)).Times(1);
 
     //! [WHEN] Saving it to the cloud...
@@ -1395,7 +1395,7 @@ TEST_F(SaveProjectScenarioTests, SaveProjectToCloud_AlreadySignedIn_DoesNotAskTo
     //! [THEN] The login dialog is not shown, and the upload goes ahead
     EXPECT_CALL(*m_interactive, open(_)).Times(::testing::AnyNumber());
     EXPECT_CALL(*m_interactive, open(IsLoginDialog())).Times(0);
-    EXPECT_CALL(*m_museScoreComService,
+    EXPECT_CALL(*m_dbScoreCloudService,
                 uploadScore(_, QString(), cloud::Visibility::Private, QUrl("score-99"), 0)).Times(1);
 
     //! [WHEN] Saving to the cloud...
@@ -1414,7 +1414,7 @@ TEST_F(SaveProjectScenarioTests, Publish_AudioCannotBeRendered_ReportsFailure)
     //! [THEN] The export of the current score is attempted and fails, and nothing is uploaded
     EXPECT_CALL(*m_exportScenario, exportScores(notation::INotationPtrList { m_notation }, _,
                                                 INotationWriter::UnitType::PER_PART, false)).WillOnce(Return(false));
-    EXPECT_CALL(*m_museScoreComService, uploadScore(_, _, _, _, _)).Times(0);
+    EXPECT_CALL(*m_dbScoreCloudService, uploadScore(_, _, _, _, _)).Times(0);
 
     //! [WHEN] Publishing...
     Ret ret = await(m_scenario->publish());
@@ -1449,7 +1449,7 @@ TEST_F(SaveProjectScenarioTests, Publish_EverythingSucceeds_ReportsSuccess)
     givenUploadFinishesWith(make_ok(), ValMap());
 
     //! [THEN] The score is uploaded as a new one, under the name given in the dialog
-    EXPECT_CALL(*m_museScoreComService,
+    EXPECT_CALL(*m_dbScoreCloudService,
                 uploadScore(_, QString("Published score"), cloud::Visibility::Private, QUrl(), 0)).Times(1);
 
     //! [WHEN] Publishing...
@@ -1471,7 +1471,7 @@ TEST_F(SaveProjectScenarioTests, Publish_UserChoosesToSaveLocallyInstead_WritesT
     //! [THEN] The score goes to the chosen local file, the preference is remembered, and nothing is published
     EXPECT_CALL(*m_project, save(io::path_t("instead.mscz"), SaveMode::Save, true)).Times(1);
     EXPECT_CALL(*m_configuration, setLastUsedSaveLocationType(SaveLocationType::Local)).Times(1);
-    EXPECT_CALL(*m_museScoreComService, uploadScore(_, _, _, _, _)).Times(0);
+    EXPECT_CALL(*m_dbScoreCloudService, uploadScore(_, _, _, _, _)).Times(0);
 
     //! [WHEN] Publishing...
     Ret ret = await(m_scenario->publish());
@@ -1491,7 +1491,7 @@ TEST_F(SaveProjectScenarioTests, Publish_LocalPathCancelled_WritesNothing)
 
     //! [THEN] Nothing is written anywhere and nothing is published
     EXPECT_CALL(*m_project, save(_, _, _)).Times(0);
-    EXPECT_CALL(*m_museScoreComService, uploadScore(_, _, _, _, _)).Times(0);
+    EXPECT_CALL(*m_dbScoreCloudService, uploadScore(_, _, _, _, _)).Times(0);
 
     //! [WHEN] Publishing...
     Ret ret = await(m_scenario->publish());

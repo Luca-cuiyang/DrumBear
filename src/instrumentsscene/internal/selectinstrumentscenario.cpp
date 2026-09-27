@@ -61,7 +61,7 @@ muse::async::Promise<InstrumentTemplate> SelectInstrumentsScenario::selectInstru
 muse::async::Promise<PartInstrumentListScoreOrder> SelectInstrumentsScenario::selectInstruments(const ValMap& params) const
 {
     return async::make_promise<PartInstrumentListScoreOrder>([this, params](auto resolve, auto reject) {
-        static const Uri SELECT_INSTRUMENT_URI = Uri("musescore://instruments/select");
+        static const Uri SELECT_INSTRUMENT_URI = Uri("dbscore://instruments/select");
         if (interactive()->isOpened(SELECT_INSTRUMENT_URI).val) {
             Ret ret = muse::make_ret(Ret::Code::Cancel);
             return reject(ret.code(), ret.text());

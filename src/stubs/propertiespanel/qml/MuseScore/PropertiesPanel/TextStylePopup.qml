@@ -22,7 +22,7 @@
 import QtQuick
 
 import Muse.UiComponents
-import MuseScore.NotationScene
+import DBScore.NotationScene
 
 AbstractElementPopup {
     id: root

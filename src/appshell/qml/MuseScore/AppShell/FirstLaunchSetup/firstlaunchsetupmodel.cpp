@@ -32,9 +32,9 @@ FirstLaunchSetupModel::FirstLaunchSetupModel(QObject* parent)
     : QObject(parent), muse::Contextable(muse::iocCtxForQmlObject(this))
 {
     m_pages = {
-        Page { "ThemesPage.qml", "musescore://notation" },
-        Page { "PlaybackPage.qml", "musescore://notation" },
-        Page { "TutorialsPage.qml", "musescore://home?section=learn" }
+        Page { "ThemesPage.qml", "dbscore://notation" },
+        Page { "PlaybackPage.qml", "dbscore://notation" },
+        Page { "TutorialsPage.qml", "dbscore://home?section=learn" }
     };
 }
 

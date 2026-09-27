@@ -28,7 +28,7 @@ import Muse.Ui
 import Muse.UiComponents
 import Muse.UiComponents.LegacyTreeView
 
-import MuseScore.InstrumentsScene
+import DBScore.InstrumentsScene
 
 FocusableControl {
     id: root

@@ -28,9 +28,9 @@ import QtQuick.Controls
 
 import Muse.Ui
 import Muse.UiComponents
-import MuseScore.NotationScene
-import MuseScore.Braille
-import MuseScore.Playback
+import DBScore.NotationScene
+import DBScore.Braille
+import DBScore.Playback
 
 import "internal"
 

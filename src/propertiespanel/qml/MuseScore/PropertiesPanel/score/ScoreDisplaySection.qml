@@ -23,7 +23,7 @@ import QtQuick
 import QtQuick.Layouts
 
 import Muse.UiComponents
-import MuseScore.PropertiesPanel
+import DBScore.PropertiesPanel
 
 import "../common"
 

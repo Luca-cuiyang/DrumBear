@@ -25,7 +25,7 @@ import QtQuick.Window
 
 import Muse.Ui
 import Muse.UiComponents
-import MuseScore.AppShell
+import DBScore.AppShell
 
 import "../"
 

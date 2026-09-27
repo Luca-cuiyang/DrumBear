@@ -28,8 +28,8 @@ import QtQuick.Layouts
 import Muse.Ui
 import Muse.UiComponents
 
-import MuseScore.NotationScene
-import MuseScore.Playback
+import DBScore.NotationScene
+import DBScore.Playback
 
 import "internal/SoundFlag"
 

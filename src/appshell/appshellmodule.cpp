@@ -70,15 +70,15 @@ void AppShellModule::resolveImports()
 {
     auto ir = globalIoc()->resolve<muse::interactive::IInteractiveUriRegister>(mname);
     if (ir) {
-        ir->registerPageUri(Uri("musescore://home"));
-        ir->registerPageUri(Uri("musescore://notation"));
-        ir->registerPageUri(Uri("musescore://sequencer"));
-        ir->registerPageUri(Uri("musescore://devtools"));
+        ir->registerPageUri(Uri("dbscore://home"));
+        ir->registerPageUri(Uri("dbscore://notation"));
+        ir->registerPageUri(Uri("dbscore://sequencer"));
+        ir->registerPageUri(Uri("dbscore://devtools"));
 
-        ir->registerQmlUri(Uri("musescore://about/musescore"), "MuseScore.AppShell", "AboutDialog");
-        ir->registerQmlUri(Uri("musescore://about/musicxml"), "MuseScore.AppShell", "AboutMusicXMLDialog");
-        ir->registerQmlUri(Uri("musescore://welcomedialog"), "MuseScore.AppShell", "WelcomeDialog");
-        ir->registerQmlUri(Uri("musescore://firstLaunchSetup"), "MuseScore.AppShell", "FirstLaunchSetupDialog");
+        ir->registerQmlUri(Uri("dbscore://about/dbscore"), "DBScore.AppShell", "AboutDialog");
+        ir->registerQmlUri(Uri("dbscore://about/musicxml"), "DBScore.AppShell", "AboutMusicXMLDialog");
+        ir->registerQmlUri(Uri("dbscore://welcomedialog"), "DBScore.AppShell", "WelcomeDialog");
+        ir->registerQmlUri(Uri("dbscore://firstLaunchSetup"), "DBScore.AppShell", "FirstLaunchSetupDialog");
     }
 
     auto cr = globalIoc()->resolve<muse::rcommand::ICommandsRegister>(mname);

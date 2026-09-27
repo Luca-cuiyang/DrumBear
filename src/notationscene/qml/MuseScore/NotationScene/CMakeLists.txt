@@ -29,7 +29,7 @@ else()
 endif()
 
 qt_add_qml_module(notationscene_qml
-    URI MuseScore.NotationScene
+    URI DBScore.NotationScene
     VERSION 1.0
     SOURCES
         abstractelementpopupmodel.cpp

@@ -46,7 +46,7 @@ using namespace mu::engraving;
 using namespace mu::engraving::compat;
 using namespace muse;
 
-static const Uri MIGRATION_DIALOG_URI("musescore://project/migration");
+static const Uri MIGRATION_DIALOG_URI("dbscore://project/migration");
 static const io::path_t LELAND_STYLE_PATH(":/engraving/styles/migration-306-style-Leland.mss");
 static const io::path_t EDWIN_STYLE_PATH(":/engraving/styles/migration-306-style-Edwin.mss");
 

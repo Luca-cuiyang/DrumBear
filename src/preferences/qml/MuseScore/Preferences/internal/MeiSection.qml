@@ -26,7 +26,7 @@ import Muse.UiComponents
 BaseSection {
     id: root
 
-    //: MEI refers to a file format that can be imported and exported in MuseScore. It stands for Music Encoding Initiative.
+    //: MEI refers to a file format that can be imported and exported in DBScore. It stands for Music Encoding Initiative.
     title: qsTrc("preferences", "MEI")
 
     property alias meiImportLayout: meiImportLayoutBox.checked

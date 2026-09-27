@@ -208,7 +208,7 @@ bool OpenProjectScenario::isUrlSupported(const QUrl& url) const
         return isFileSupported(muse::io::path_t(url));
     }
 
-    if (url.scheme() == MUSESCORE_URL_SCHEME) {
+    if (url.scheme() == DBSCORE_URL_SCHEME) {
         if (url.host() == OPEN_SCORE_URL_HOSTNAME) {
             return true;
         }
@@ -270,7 +270,7 @@ Promise<Ret> OpenProjectScenario::openProject(const ProjectFile& file)
         return openProject(file.path(), file.displayNameOverride);
     }
 
-    if (file.url.scheme() == MUSESCORE_URL_SCHEME) {
+    if (file.url.scheme() == DBSCORE_URL_SCHEME) {
         return openMuseScoreUrl(file.url);
     }
 
@@ -314,7 +314,7 @@ Promise<Ret> OpenProjectScenario::openProject(const muse::io::path_t& givenPath,
 
         //! Step 5. If it's a cloud project, download the latest version
         if (configuration()->isCloudProject(actualPath) && !configuration()->isLegacyCloudProject(actualPath)) {
-            return museScoreComService()->authorization()->checkCloudIsAvailable()
+            return dbScoreCloudService()->authorization()->checkCloudIsAvailable()
                    .then<Ret>(this, [this, actualPath, displayNameOverride](const Ret& isCloudAvailable, auto resolve) {
                 if (isCloudAvailable) {
                     downloadAndOpenCloudProject(configuration()->cloudScoreIdFromPath(actualPath))
@@ -544,7 +544,7 @@ Promise<Ret> OpenProjectScenario::doDownloadAndOpenCloudProject(int scoreId, con
         return downloadCloudProject(scoreId, localPath, hash, secret, CloudProjectInfo(), isOwner);
     }
 
-    return museScoreComService()->downloadScoreInfo(scoreId)
+    return dbScoreCloudService()->downloadScoreInfo(scoreId)
            .then<Ret>(this, [this, scoreId, localPath, hash, secret, isOwner](const RetVal<muse::cloud::ScoreInfo>& scoreInfo,
                                                                               auto resolve) {
         if (!scoreInfo.ret) {
@@ -594,7 +594,7 @@ Promise<Ret> OpenProjectScenario::downloadCloudProject(int scoreId, const muse::
         }
 
         m_projectBeingDownloaded.scoreId = scoreId;
-        m_projectBeingDownloaded.progress = museScoreComService()->downloadScore(scoreId, projectData, hash, secret);
+        m_projectBeingDownloaded.progress = dbScoreCloudService()->downloadScore(scoreId, projectData, hash, secret);
 
         m_projectBeingDownloaded.progress->finished().onReceive(this, [this, localPath, info, isOwner, resolve](const ProgressResult& res) {
             m_projectBeingDownloaded = {};
@@ -621,13 +621,13 @@ Promise<Ret> OpenProjectScenario::downloadCloudProject(int scoreId, const muse::
 Promise<Ret> OpenProjectScenario::openMuseScoreUrl(const QUrl& url)
 {
     if (url.host() == OPEN_SCORE_URL_HOSTNAME) {
-        return openScoreFromMuseScoreCom(url);
+        return openScoreFromDBScoreCloud(url);
     }
 
     return resolvedPromise(make_ret(Err::UnsupportedUrl));
 }
 
-Promise<Ret> OpenProjectScenario::openScoreFromMuseScoreCom(const QUrl& url)
+Promise<Ret> OpenProjectScenario::openScoreFromDBScoreCloud(const QUrl& url)
 {
     if (isBusy(BusyStatus::Downloading)) {
         // TODO: instead of ignoring the open request, queue it?
@@ -649,7 +649,7 @@ Promise<Ret> OpenProjectScenario::openScoreFromMuseScoreCom(const QUrl& url)
             }
 
             // Check if user is owner
-            museScoreComService()->downloadScoreInfo(scoreId)
+            dbScoreCloudService()->downloadScoreInfo(scoreId)
             .onResolve(this, [this, url, scoreId, resolve](const RetVal<muse::cloud::ScoreInfo>& scoreInfo) {
                 if (!scoreInfo.ret) {
                     LOGE() << "Error while downloading score info: " << scoreInfo.ret.toString();
@@ -659,7 +659,7 @@ Promise<Ret> OpenProjectScenario::openScoreFromMuseScoreCom(const QUrl& url)
                     return;
                 }
 
-                openScoreFromMuseScoreCom(url, scoreId, scoreInfo.val).onResolve(this, [resolve](const Ret& ret) {
+                openScoreFromDBScoreCloud(url, scoreId, scoreInfo.val).onResolve(this, [resolve](const Ret& ret) {
                     (void)resolve(ret);
                 });
             });
@@ -669,10 +669,10 @@ Promise<Ret> OpenProjectScenario::openScoreFromMuseScoreCom(const QUrl& url)
     });
 }
 
-Promise<Ret> OpenProjectScenario::openScoreFromMuseScoreCom(const QUrl& url, int scoreId, const muse::cloud::ScoreInfo& scoreInfo)
+Promise<Ret> OpenProjectScenario::openScoreFromDBScoreCloud(const QUrl& url, int scoreId, const muse::cloud::ScoreInfo& scoreInfo)
 {
     return async::make_promise<Ret>([this, url, scoreId, scoreInfo](auto resolve) {
-        bool isOwner = QString::number(scoreInfo.owner.id) == museScoreComService()->authorization()->accountInfo().id;
+        bool isOwner = QString::number(scoreInfo.owner.id) == dbScoreCloudService()->authorization()->accountInfo().id;
 
         // If yes, score will be opened as regular cloud score; check if not yet opened
         if (isOwner) {
@@ -928,7 +928,7 @@ async::Promise<io::path_t> OpenProjectScenario::selectScoreOpeningFile() const
 
 Promise<RetVal<Val> > OpenProjectScenario::ensureAuthorization() const
 {
-    bool userAuthorized = museScoreComService()->authorization()->userAuthorized().val;
+    bool userAuthorized = dbScoreCloudService()->authorization()->userAuthorized().val;
 
     if (userAuthorized) {
         return resolvedPromise(RetVal<Val>::make_ok(Val()));
@@ -938,7 +938,7 @@ Promise<RetVal<Val> > OpenProjectScenario::ensureAuthorization() const
 
     UriQuery query("muse://cloud/requireauthorization");
     query.addParam("text", Val(dialogText));
-    query.addParam("cloudCode", Val(muse::cloud::MUSESCORE_COM_CLOUD_CODE));
+    query.addParam("cloudCode", Val(muse::cloud::DBSCORE_CLOUD_CODE));
     query.addParam("publishingScore", Val(false));
     return openDialog(query);
 }

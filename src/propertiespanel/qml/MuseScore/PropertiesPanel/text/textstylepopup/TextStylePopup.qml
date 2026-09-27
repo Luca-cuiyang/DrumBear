@@ -25,8 +25,8 @@ import QtQuick.Layouts
 import Muse.Ui
 import Muse.UiComponents
 
-import MuseScore.PropertiesPanel
-import MuseScore.NotationScene
+import DBScore.PropertiesPanel
+import DBScore.NotationScene
 
 import "../../common"
 

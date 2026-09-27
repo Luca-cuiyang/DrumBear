@@ -23,7 +23,7 @@ import QtQuick 2.15
 
 import Muse.Ui 1.0
 import Muse.UiComponents
-import MuseScore.AppShell 1.0
+import DBScore.AppShell 1.0
 
 Item {
     id: root

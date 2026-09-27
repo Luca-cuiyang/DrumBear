@@ -766,7 +766,7 @@ const InstrumentTemplate* combinedTemplateSearch(const Instrument& instrument)
     // * We don't consider aliases (e.g. we look for "Violoncello" but not "Double Bass").
     static constexpr int TRACK_NAME_WEIGHT = 128;
     static constexpr int LONG_NAME_WEIGHT = 64;
-    static constexpr int SHORT_NAME_WEIGHT = 16; // Not standardized outside MuseScore.
+    static constexpr int SHORT_NAME_WEIGHT = 16; // Not standardized outside DBScore.
     static constexpr int TRAIT_NAME_WEIGHT = 4; // More reliable than transposition interval.
 
     // Also search over these parameters, which don't depend on the language.

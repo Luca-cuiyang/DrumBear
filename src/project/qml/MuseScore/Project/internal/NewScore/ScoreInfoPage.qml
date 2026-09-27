@@ -24,7 +24,7 @@ import QtQuick.Layouts
 
 import Muse.Ui
 import Muse.UiComponents
-import MuseScore.Project
+import DBScore.Project
 
 Item {
     id: root

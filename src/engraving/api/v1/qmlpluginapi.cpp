@@ -302,7 +302,7 @@ bool PluginAPI::writeScore(Score* s, const QString& name, const QString& ext)
 ///   \param noninteractive Can be used to avoid a "save
 ///   changes" dialog on closing a score that is either
 ///   imported or was created with an older version of
-///   MuseScore.
+///   DBScore.
 //---------------------------------------------------------
 
 apiv1::Score* PluginAPI::readScore(const QString& name, bool noninteractive)

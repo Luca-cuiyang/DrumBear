@@ -785,7 +785,7 @@ void MnxExporter::appendGrace(mnx::sequence::SequenceContent content, ExportCont
 
         auto mnxGrace = content.appendGrace();
         mnxGrace.set_slash(slash);
-        /// @todo Grace note playback type has no obvious mapping from MuseScore. Revisit as appropriate.
+        /// @todo Grace note playback type has no obvious mapping from DBScore. Revisit as appropriate.
 
         std::vector<ChordRest*> graceChordRests;
         graceChordRests.reserve(end - start);

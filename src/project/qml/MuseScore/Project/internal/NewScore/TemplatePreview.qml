@@ -22,8 +22,8 @@
 import QtQuick
 
 import Muse.UiComponents
-import MuseScore.Project
-import MuseScore.NotationScene
+import DBScore.Project
+import DBScore.NotationScene
 
 Item {
     id: root

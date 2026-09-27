@@ -26,7 +26,7 @@ import Muse.Ui
 import Muse.UiComponents
 import Muse.GraphicalEffects
 
-import MuseScore.AppShell
+import DBScore.AppShell
 
 StyledDialogView {
     id: root

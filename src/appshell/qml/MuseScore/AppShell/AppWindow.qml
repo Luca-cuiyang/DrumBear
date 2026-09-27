@@ -28,7 +28,7 @@ import Muse.Shortcuts
 import Muse.Toast
 import Muse.Tours
 
-import MuseScore.AppShell
+import DBScore.AppShell
 
 ApplicationWindow {
     id: root
