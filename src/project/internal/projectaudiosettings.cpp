@@ -243,6 +243,27 @@ void ProjectAudioSettings::removeTrackParams(const InstrumentTrackId& partId)
     }
 }
 
+const AudioTrackSettings& ProjectAudioSettings::audioTrackSettings() const
+{
+    return m_audioTrackSettings;
+}
+
+void ProjectAudioSettings::setAudioTrackSettings(const AudioTrackSettings& settings)
+{
+    if (m_audioTrackSettings == settings) {
+        return;
+    }
+
+    m_audioTrackSettings = settings;
+    m_audioTrackSettingsChanged.notify();
+    m_settingsChanged.notify();
+}
+
+muse::async::Notification ProjectAudioSettings::audioTrackSettingsChanged() const
+{
+    return m_audioTrackSettingsChanged;
+}
+
 const SoundProfileName& ProjectAudioSettings::activeSoundProfile() const
 {
     return m_activeSoundProfileName;
@@ -305,6 +326,10 @@ Ret ProjectAudioSettings::read(const engraving::MscReader& reader)
         m_trackOutputParamsMap.emplace(id, std::move(outParams));
     }
 
+    if (rootObj.contains("audioTrack")) {
+        m_audioTrackSettings = audioTrackSettingsFromJson(rootObj.value("audioTrack").toObject());
+    }
+
     m_activeSoundProfileName = rootObj.value("activeSoundProfile").toString();
     if (m_activeSoundProfileName.empty()) {
         m_activeSoundProfileName = playbackConfig()->defaultProfileForNewProjects();
@@ -335,6 +360,9 @@ Ret ProjectAudioSettings::write(engraving::MscWriter& writer, notation::INotatio
     }
 
     rootObj["tracks"] = tracksArray;
+    if (m_audioTrackSettings.isValid()) {
+        rootObj["audioTrack"] = audioTrackSettingsToJson(m_audioTrackSettings);
+    }
     rootObj["activeSoundProfile"] = m_activeSoundProfileName.toQString();
 
     QByteArray json = QJsonDocument(rootObj).toJson();
@@ -346,6 +374,7 @@ Ret ProjectAudioSettings::write(engraving::MscWriter& writer, notation::INotatio
 void ProjectAudioSettings::makeDefault()
 {
     m_activeSoundProfileName = playbackConfig()->defaultProfileForNewProjects();
+    m_audioTrackSettings = AudioTrackSettings();
 }
 
 AudioInputParams ProjectAudioSettings::inputParamsFromJson(const QJsonObject& object) const
@@ -642,4 +671,30 @@ QJsonObject ProjectAudioSettings::buildTrackObject(notation::INotationSoloMuteSt
     }
 
     return result;
+}
+
+QJsonObject ProjectAudioSettings::audioTrackSettingsToJson(const AudioTrackSettings& settings) const
+{
+    QJsonObject result;
+    result.insert("filePath", settings.filePath.toQString());
+    result.insert("startOffset", settings.startOffset.to_double());
+    result.insert("clipStart", settings.clipStart.to_double());
+    result.insert("clipEnd", settings.clipEnd.to_double());
+    result.insert("volume", settings.volume.to_double());
+    result.insert("muted", settings.muted);
+    result.insert("tempoSync", settings.tempoSync);
+    return result;
+}
+
+AudioTrackSettings ProjectAudioSettings::audioTrackSettingsFromJson(const QJsonObject& object) const
+{
+    AudioTrackSettings settings;
+    settings.filePath = muse::io::path_t(object.value("filePath").toString());
+    settings.startOffset = muse::secs_t(object.value("startOffset").toDouble(0.0));
+    settings.clipStart = muse::secs_t(object.value("clipStart").toDouble(0.0));
+    settings.clipEnd = muse::secs_t(object.value("clipEnd").toDouble(0.0));
+    settings.volume = muse::audio::volume_db_t(object.value("volume").toDouble(0.0));
+    settings.muted = object.value("muted").toBool(false);
+    settings.tempoSync = object.value("tempoSync").toBool(true);
+    return settings;
 }

@@ -67,6 +67,10 @@ public:
 
     void removeTrackParams(const engraving::InstrumentTrackId& partId) override;
 
+    const AudioTrackSettings& audioTrackSettings() const override;
+    void setAudioTrackSettings(const AudioTrackSettings& settings) override;
+    muse::async::Notification audioTrackSettingsChanged() const override;
+
     const playback::SoundProfileName& activeSoundProfile() const override;
     void setActiveSoundProfile(const playback::SoundProfileName& profileName) override;
 
@@ -112,6 +116,8 @@ private:
 
     QJsonObject buildAuxObject(muse::audio::aux_channel_idx_t index, const AudioOutputParams& params) const;
     QJsonObject buildTrackObject(notation::INotationSoloMuteStatePtr masterSoloMuteStatePtr, const engraving::InstrumentTrackId& id) const;
+    QJsonObject audioTrackSettingsToJson(const AudioTrackSettings& settings) const;
+    AudioTrackSettings audioTrackSettingsFromJson(const QJsonObject& object) const;
 
     AudioOutputParams m_masterOutputParams;
 
@@ -121,9 +127,11 @@ private:
 
     std::unordered_map<engraving::InstrumentTrackId, AudioInputParams> m_trackInputParamsMap;
     std::unordered_map<engraving::InstrumentTrackId, AudioOutputParams> m_trackOutputParamsMap;
+    AudioTrackSettings m_audioTrackSettings;
 
     muse::async::Notification m_settingsChanged;
     muse::async::Channel<engraving::InstrumentTrackId> m_trackInputParamsChanged;
+    muse::async::Notification m_audioTrackSettingsChanged;
 
     mu::playback::SoundProfileName m_activeSoundProfileName;
 };

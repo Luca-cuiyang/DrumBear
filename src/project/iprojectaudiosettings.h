@@ -27,12 +27,36 @@
 #include "async/notification.h"
 #include "audio/common/audiotypes.h"
 #include "engraving/types/types.h"
+#include "global/io/path.h"
 #include "playback/playbacktypes.h"
 #include "notation/inotationsolomutestate.h"
 
 namespace mu::project {
 using AudioInputParams = muse::audio::AudioInputParams;
 using TrackInputParamsMap = std::unordered_map<engraving::InstrumentTrackId, AudioInputParams>;
+
+struct AudioTrackSettings {
+    muse::io::path_t filePath;
+    muse::secs_t startOffset = 0.0;   //! score time (seconds) at which the audio starts playing
+    muse::secs_t clipStart = 0.0;     //! crop start within the audio file (seconds)
+    muse::secs_t clipEnd = 0.0;       //! crop end within the audio file (seconds); 0 means until the end
+    muse::audio::volume_db_t volume = 0.f;
+    bool muted = false;
+    bool tempoSync = true;
+
+    bool isValid() const { return !filePath.empty(); }
+
+    bool operator==(const AudioTrackSettings& other) const
+    {
+        return filePath == other.filePath
+               && muse::is_equal(startOffset, other.startOffset)
+               && muse::is_equal(clipStart, other.clipStart)
+               && muse::is_equal(clipEnd, other.clipEnd)
+               && muse::is_equal(volume, other.volume)
+               && muted == other.muted
+               && tempoSync == other.tempoSync;
+    }
+};
 
 //! NOTE This model (structure) is not used in the audio module, there are other models.
 struct AudioOutputParams {
@@ -110,6 +134,10 @@ public:
     virtual muse::async::Channel<muse::audio::aux_channel_idx_t, SoloMuteState> auxSoloMuteStateChanged() const = 0;
 
     virtual void removeTrackParams(const engraving::InstrumentTrackId& trackId) = 0;
+
+    virtual const AudioTrackSettings& audioTrackSettings() const = 0;
+    virtual void setAudioTrackSettings(const AudioTrackSettings& settings) = 0;
+    virtual muse::async::Notification audioTrackSettingsChanged() const = 0;
 
     virtual const playback::SoundProfileName& activeSoundProfile() const = 0;
     virtual void setActiveSoundProfile(const playback::SoundProfileName& profileName) = 0;
