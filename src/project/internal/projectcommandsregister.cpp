@@ -57,6 +57,13 @@ static const std::vector<CommandInfo> s_commandInfos = {
         Decoration(IconCode::Code::OPEN_FILE)
     },
     CommandInfo{
+        PROJECT_AUDIO_TRACK_COMMAND,
+        TranslatableString("project", "Accompaniment &track…"),
+        TranslatableString("project", "Add an audio accompaniment track"),
+        InputSchema(),
+        Decoration(IconCode::Code::WAVEFORM)
+    },
+    CommandInfo{
         PROJECT_CLOSE_COMMAND,
         TranslatableString("project", "&Close"),
         TranslatableString("project", "Close the project"),

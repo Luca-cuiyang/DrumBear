@@ -9753,6 +9753,14 @@ followed by dashes</source>
         <source>Se&amp;lection filter</source>
         <translation>过滤器 (&amp;L)</translation>
     </message>
+    <message>
+        <source>Accompaniment &amp;track…</source>
+        <translation>伴奏轨(&amp;T)…</translation>
+    </message>
+    <message>
+        <source>Accompaniment track</source>
+        <translation>伴奏轨</translation>
+    </message>
 </context>
 <context>
     <name>appshell</name>
@@ -35376,6 +35384,46 @@ failed: %2</source>
         <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="70"/>
         <source>Audio.com URL</source>
         <translation>Audio.com URL</translation>
+    </message>
+    <message>
+        <source>Accompaniment &amp;track…</source>
+        <translation>伴奏轨(&amp;T)…</translation>
+    </message>
+    <message>
+        <source>Add an audio accompaniment track</source>
+        <translation>添加音频伴奏轨</translation>
+    </message>
+    <message>
+        <source>Accompaniment track</source>
+        <translation>伴奏轨</translation>
+    </message>
+    <message>
+        <source>No audio track selected</source>
+        <translation>尚未选择音频轨</translation>
+    </message>
+    <message>
+        <source>Choose…</source>
+        <translation>选择…</translation>
+    </message>
+    <message>
+        <source>Choose audio track</source>
+        <translation>选择音频轨</translation>
+    </message>
+    <message>
+        <source>Start offset</source>
+        <translation>起始偏移</translation>
+    </message>
+    <message>
+        <source>Clip start</source>
+        <translation>裁剪起点</translation>
+    </message>
+    <message>
+        <source>Clip end</source>
+        <translation>裁剪终点</translation>
+    </message>
+    <message>
+        <source>Follow score tempo</source>
+        <translation>跟随谱面速度</translation>
     </message>
 </context>
 <context>

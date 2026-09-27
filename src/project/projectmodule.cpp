@@ -93,6 +93,7 @@ void ProjectModule::resolveImports()
         ir->registerQmlUri(Uri("dbscore://project/upload/progress"), "DBScore.Project", "UploadProgressDialog");
         ir->registerQmlUri(Uri("dbscore://project/upload/success"), "DBScore.Project", "ProjectUploadedDialog");
         ir->registerQmlUri(Uri("dbscore://project/audiogenerationsettings"), "DBScore.Project", "AudioGenerationSettingsDialog");
+        ir->registerQmlUri(Uri("dbscore://project/audiotrack"), "DBScore.Project", "AudioTrackDialog");
         ir->registerQmlUri(Uri("dbscore://project/convert/selectfiles"), "DBScore.Project", "ConvertFileToScoreDialog");
         ir->registerQmlUri(Uri("dbscore://project/convert/processing"), "DBScore.Project", "ConvertFileProcessingDialog");
     }

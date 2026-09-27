@@ -113,6 +113,8 @@ private:
 
     muse::Ret convertFileToScore();
 
+    muse::Ret openAudioTrackSettings();
+
     muse::Ret clearRecentScores();
 
     muse::Ret continueLastSession();

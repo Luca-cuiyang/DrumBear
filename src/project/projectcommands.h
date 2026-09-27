@@ -28,6 +28,7 @@ namespace mu::project {
 inline static const muse::rcommand::Command PROJECT_NEW_COMMAND("command://project/new");
 inline static const muse::rcommand::Command PROJECT_OPEN_COMMAND("command://project/open");
 inline static const muse::rcommand::Command PROJECT_IMPORT_AUDIO_TO_SCORE_COMMAND("command://project/import-audio-to-score");
+inline static const muse::rcommand::Command PROJECT_AUDIO_TRACK_COMMAND("command://project/audio-track");
 inline static const muse::rcommand::Command PROJECT_CLOSE_COMMAND("command://project/close");
 
 inline static const muse::rcommand::Command PROJECT_SAVE_COMMAND("command://project/save");

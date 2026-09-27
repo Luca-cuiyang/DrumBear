@@ -45,6 +45,13 @@ const UiActionList ProjectUiActions::m_actions = {
              TranslatableString("action", "Import Audio to Score"),
              IconCode::Code::OPEN_FILE
              ),
+    UiAction("file-audio-track",
+             mu::context::UiCtxAny,
+             mu::context::CTX_ANY,
+             TranslatableString("action", "Accompaniment &track…"),
+             TranslatableString("action", "Accompaniment track"),
+             IconCode::Code::WAVEFORM
+             ),
     UiAction("file-new",
              mu::context::UiCtxAny,
              mu::context::CTX_ANY,

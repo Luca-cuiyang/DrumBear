@@ -75,6 +75,7 @@ void ProjectActionsController::init()
     d->onRequest(this, PROJECT_NEW_COMMAND, [this]() { return newProject(); });
     d->onRequest(this, PROJECT_OPEN_COMMAND, [this](const rcommand::Params& params) { return openProject(params); });
     d->onRequest(this, PROJECT_IMPORT_AUDIO_TO_SCORE_COMMAND, [this]() { return importAudioToScore(); });
+    d->onRequest(this, PROJECT_AUDIO_TRACK_COMMAND, [this]() { return openAudioTrackSettings(); });
     d->onRequest(this, PROJECT_CLOSE_COMMAND, [this]() { return closeProject(); });
 
     d->onRequest(this, PROJECT_SAVE_COMMAND, [this]() { return runAsync(saveProject(SaveMode::Save)); });
@@ -100,6 +101,7 @@ void ProjectActionsController::init()
             { "file-new", PROJECT_NEW_COMMAND, {} },
             { "file-open", PROJECT_OPEN_COMMAND, openArgs },
             { "file-import-audio-to-score", PROJECT_IMPORT_AUDIO_TO_SCORE_COMMAND, {} },
+            { "file-audio-track", PROJECT_AUDIO_TRACK_COMMAND, {} },
             { "file-close", PROJECT_CLOSE_COMMAND, {} },
             { "file-save", PROJECT_SAVE_COMMAND, {} },
             { "file-save-as", PROJECT_SAVE_AS_COMMAND, {} },
@@ -412,6 +414,15 @@ muse::Ret ProjectActionsController::exportScore()
     static const Uri EXPORT_URI("dbscore://project/export");
     if (!interactive()->isOpened(EXPORT_URI).val) {
         interactive()->open(EXPORT_URI);
+    }
+    return make_ok();
+}
+
+muse::Ret ProjectActionsController::openAudioTrackSettings()
+{
+    static const Uri AUDIO_TRACK_URI("dbscore://project/audiotrack");
+    if (!interactive()->isOpened(AUDIO_TRACK_URI).val) {
+        interactive()->open(AUDIO_TRACK_URI);
     }
     return make_ok();
 }

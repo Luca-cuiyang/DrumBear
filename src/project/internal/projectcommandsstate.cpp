@@ -43,6 +43,7 @@ static std::map<Command, PCondition> PROJECT_COMMAND_CONDITIONS = {
     { PROJECT_NEW_COMMAND, PCondition::Any },
     { PROJECT_OPEN_COMMAND, PCondition::Any },
     { PROJECT_IMPORT_AUDIO_TO_SCORE_COMMAND, PCondition::Any },
+    { PROJECT_AUDIO_TRACK_COMMAND, PCondition::Any },
     { PROJECT_CLOSE_COMMAND, PCondition::NotBusy },
     { PROJECT_SAVE_COMMAND, PCondition::NeedSave },
     { PROJECT_SAVE_AS_COMMAND, PCondition::NotBusy },
