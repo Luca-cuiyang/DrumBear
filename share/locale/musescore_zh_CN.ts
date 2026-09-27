@@ -9773,6 +9773,34 @@ followed by dashes</source>
         <source>Show search</source>
         <translation>显示搜索</translation>
     </message>
+    <message>
+        <source>Note input by note name</source>
+        <translation>按音名输入音符</translation>
+    </message>
+    <message>
+        <source>Note input by duration</source>
+        <translation>按时值输入音符</translation>
+    </message>
+    <message>
+        <source>Manage extensions</source>
+        <translation>管理扩展</translation>
+    </message>
+    <message>
+        <source>Manage &amp;extensions</source>
+        <translation>管理扩展 (&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;Master palette…</source>
+        <translation>主面板 (&amp;M)…</translation>
+    </message>
+    <message>
+        <source>&amp;Multiinstances</source>
+        <translation>多实例 (&amp;M)</translation>
+    </message>
+    <message>
+        <source>Multiinstances</source>
+        <translation>多实例</translation>
+    </message>
 </context>
 <context>
     <name>appshell</name>
@@ -10335,6 +10363,10 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
         <source>&amp;Diagnostics</source>
         <translation>诊断 (&amp;D)</translation>
     </message>
+    <message>
+        <source>&amp;Testflow</source>
+        <translation>测试流 (&amp;T)</translation>
+    </message>
 </context>
 <context>
     <name>appshell/menu/edit</name>
@@ -10398,6 +10430,10 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
         <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="431"/>
         <source>&amp;Plugins</source>
         <translation>插件 (&amp;P)</translation>
+    </message>
+    <message>
+        <source>E&amp;xtensions</source>
+        <translation>扩展 (&amp;X)</translation>
     </message>
 </context>
 <context>
@@ -30706,6 +30742,10 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
         <translation>自定义套组</translation>
     </message>
     <message>
+        <source>&amp;Master palette…</source>
+        <translation>主面板 (&amp;M)…</translation>
+    </message>
+    <message>
         <location filename="../../src/palette/qml/MuseScore/Palette/internal/AddPalettesPopup.qml" line="67"/>
         <source>More palettes</source>
         <translation>更多面板</translation>
@@ -33825,6 +33865,14 @@ failed: %2</source>
         <location filename="../../src/playback/qml/MuseScore/Playback/soundprofilesmodel.cpp" line="165"/>
         <source>Sound flags may be reset, but staff text will remain. This action can’t be undone.</source>
         <translation>这可能会重置音色标志，但会保留谱表文本。此操作不能撤销。</translation>
+    </message>
+    <message>
+        <source>Reload playback cache</source>
+        <translation>重新加载播放缓存</translation>
+    </message>
+    <message>
+        <source>Clear online sounds cache</source>
+        <translation>清除在线音色缓存</translation>
     </message>
 </context>
 <context>
@@ -39290,6 +39338,13 @@ failed: %2</source>
     <message>
         <source>Restore default layout</source>
         <translation>恢复默认布局</translation>
+    </message>
+</context>
+<context>
+    <name>multiwindows</name>
+    <message>
+        <source>Multiinstances</source>
+        <translation>多实例</translation>
     </message>
 </context>
 </TS>
