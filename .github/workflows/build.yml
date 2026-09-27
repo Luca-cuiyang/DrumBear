@@ -82,18 +82,36 @@ jobs:
         shell: bash
         run: bash ./buildscripts/ci/macos/build.sh -n "$BUILD_NUMBER"
 
-      - name: Package (zip)
+      - name: Package (DMG + zip)
         shell: bash
         run: |
           cd applebuild
           APP=$(ls -d *.app | head -1)
           echo "Packaging: $APP"
-          # Ad-hoc code sign so macOS does not report the app as "damaged"
+
+          # Ad-hoc code sign everything, deepest first, so macOS treats the app
+          # as "unidentified developer" (Open Anyway) rather than "damaged".
+          find "$APP/Contents/Frameworks" -name "*.dylib" -exec codesign --force --sign - {} \; 2>/dev/null || true
+          find "$APP/Contents/PlugIns" -name "*.dylib" -exec codesign --force --sign - {} \; 2>/dev/null || true
+          find "$APP" -name "*.appex" -exec codesign --force --sign - {} \; 2>/dev/null || true
           codesign --force --deep --sign - "$APP"
+          codesign --verify --deep --strict "$APP" && echo "signature OK" || echo "signature verification warning"
+
+          # Create a drag-to-Applications DMG (preserves the signature reliably).
+          STAGING="dmg-staging"
+          rm -rf "$STAGING"
+          mkdir -p "$STAGING"
+          cp -R "$APP" "$STAGING/"
+          ln -s /Applications "$STAGING/Applications"
+          hdiutil create -volname "DB Score" -srcfolder "$STAGING" -ov -format UDZO "../DBScore-macOS-universal.dmg"
+
+          # Also keep a zip for users who prefer it.
           ditto -c -k --keepParent "$APP" "../DBScore-macOS-universal.zip"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: DBScore-macOS-universal
-          path: DBScore-macOS-universal.zip
+          path: |
+            DBScore-macOS-universal.dmg
+            DBScore-macOS-universal.zip
