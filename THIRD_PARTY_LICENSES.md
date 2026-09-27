@@ -58,7 +58,7 @@
 | --- | --- |
 | `muse/framework/global/thirdparty/` | kors_async、kors_logger、kors_modularity、kors_msgpack、kors_profiler、kors_rpcqueue、sg14 |
 | `muse/framework/audio/thirdparty/` | fluidsynth、moodycamel、stb |
-| `muse/framework/audio/engine/internal/codecs/thirdparty/` | dr_flac、dr_mp3（公共领域 / MIT-0） |
+| `muse/framework/audio/engine/internal/codecs/thirdparty/` | dr_flac、dr_mp3（公共领域 / MIT-0）、minimp4（CC0） |
 | `muse/framework/media/thirdparty/` | ffmpeg |
 | `muse/framework/dockwindow/thirdparty/` | KDDockWidgets |
 | `src/engraving/thirdparty/` | dtl、intervaltree |
