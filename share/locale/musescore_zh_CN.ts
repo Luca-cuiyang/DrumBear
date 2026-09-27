@@ -34791,6 +34791,22 @@ failed: %2</source>
         <translation>导入音频文件并将其转录成乐谱</translation>
     </message>
     <message>
+        <source>Audio files</source>
+        <translation>音频文件</translation>
+    </message>
+    <message>
+        <source>Audio to Score</source>
+        <translation>音频转乐谱</translation>
+    </message>
+    <message>
+        <source>Converting audio…</source>
+        <translation>正在转谱…</translation>
+    </message>
+    <message>
+        <source>Could not convert the selected audio into a score.</source>
+        <translation>无法将所选音频转换为乐谱。</translation>
+    </message>
+    <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="129"/>
         <source>You don’t have any online scores yet</source>
         <translation>您尚无任何在线乐谱</translation>

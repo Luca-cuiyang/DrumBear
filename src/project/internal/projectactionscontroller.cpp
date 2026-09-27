@@ -441,11 +441,11 @@ muse::Ret ProjectActionsController::importAudioToScore()
 
     int progressPercent = 0;
     QTimer* progressTimer = new QTimer();
-    progressTimer->setInterval(700);
+    progressTimer->setInterval(1500);
     QObject::connect(progressTimer, &QTimer::timeout, [progress, progressPercent]() mutable {
-        if (progressPercent < 90) {
-            progressPercent += 5;
-            progress.progress(progressPercent, 100, "Converting audio…");
+        if (progressPercent < 80) {
+            progressPercent += 1;
+            progress.progress(progressPercent, 100, muse::trc("project", "Converting audio…"));
         }
     });
     progressTimer->start();
