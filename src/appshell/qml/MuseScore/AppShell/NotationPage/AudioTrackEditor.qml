@@ -35,6 +35,7 @@ Item {
     required property AudioTrackSettingsModel audioModel
 
     property double timeRange: audioModel.duration > 0 ? audioModel.duration : 600
+    property string bpmInput: ""
     property color timelineBg: "#1f1f1f"
     property color clipColor: "#3a3a3a"
     property color clipBorder: "#2f80ed"
@@ -42,6 +43,13 @@ Item {
     property color waveActive: "#7db8ff"
     property color waveInactive: "#5a5a5a"
     property color playheadColor: "#ff5252"
+
+    function formatTime(secs) {
+        var s = Math.max(0, secs)
+        var m = Math.floor(s / 60)
+        var sec = (s % 60).toFixed(2)
+        return (m < 10 ? "0" : "") + m + ":" + (sec < 10 ? "0" : "") + sec
+    }
 
     ColumnLayout {
         anchors.fill: parent
@@ -312,6 +320,16 @@ Item {
                     color: root.playheadColor
                     visible: audioModel.playbackPosition >= 0 && audioModel.hasTrack
 
+                    Text {
+                        id: playheadTime
+
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.bottom: parent.top
+                        text: root.formatTime(audioModel.playbackPosition)
+                        color: root.playheadColor
+                        font.pixelSize: 10
+                    }
+
                     Canvas {
                         id: playheadHandle
 
@@ -337,6 +355,7 @@ Item {
                         target: audioModel
                         function onPlaybackPositionChanged() {
                             playhead.x = (audioModel.playbackPosition - timeline.viewStart) * timeline.pxPerSec
+                            playheadTime.text = root.formatTime(audioModel.playbackPosition)
                         }
                     }
                 }
@@ -448,18 +467,30 @@ Item {
                 StyledTextLabel { text: audioModel.startOffset.toFixed(2) + " s" }
             }
 
-            StyledTextLabel { text: qsTrc("project", "Speed") }
+            StyledTextLabel { text: qsTrc("project", "BPM") }
             RowLayout {
                 Layout.fillWidth: true
-                StyledSlider {
-                    Layout.fillWidth: true
-                    value: audioModel.speed
-                    from: 0.25
-                    to: 2.0
-                    stepSize: 0.05
-                    onMoved: { audioModel.setSpeed(value); audioModel.apply() }
+                TextInputField {
+                    Layout.preferredWidth: 120
+                    currentText: bpmInput
+                    onTextChanged: function(newText) {
+                        bpmInput = newText
+                        var v = parseFloat(newText)
+                        if (!isNaN(v) && v > 0) {
+                            audioModel.setBpm(v)
+                        }
+                    }
                 }
-                StyledTextLabel { text: audioModel.speed.toFixed(2) + "×" }
+                FlatButton {
+                    text: qsTrc("project", "Tap")
+                    onClicked: audioModel.tapTempo()
+                }
+                StyledTextLabel {
+                    text: qsTrc("project", "Measured") + " " + audioModel.measuredBpm.toFixed(3)
+                }
+                StyledTextLabel {
+                    text: audioModel.speed.toFixed(3) + "×"
+                }
             }
 
             StyledTextLabel { text: qsTrc("project", "Volume") }
@@ -476,33 +507,6 @@ Item {
                 StyledTextLabel { text: audioModel.volumeDb.toFixed(1) + " dB" }
             }
 
-            StyledTextLabel { text: qsTrc("project", "Fade in") }
-            RowLayout {
-                Layout.fillWidth: true
-                StyledSlider {
-                    Layout.fillWidth: true
-                    value: audioModel.clips.length > 0 ? audioModel.clips[0].fadeIn : 0
-                    from: 0
-                    to: timeRange
-                    stepSize: 0.01
-                    onMoved: { audioModel.setClipFade(0, value, audioModel.clips.length > 0 ? audioModel.clips[0].fadeOut : 0) }
-                }
-                StyledTextLabel { text: (audioModel.clips.length > 0 ? audioModel.clips[0].fadeIn : 0).toFixed(2) + " s" }
-            }
-
-            StyledTextLabel { text: qsTrc("project", "Fade out") }
-            RowLayout {
-                Layout.fillWidth: true
-                StyledSlider {
-                    Layout.fillWidth: true
-                    value: audioModel.clips.length > 0 ? audioModel.clips[0].fadeOut : 0
-                    from: 0
-                    to: timeRange
-                    stepSize: 0.01
-                    onMoved: { audioModel.setClipFade(0, audioModel.clips.length > 0 ? audioModel.clips[0].fadeIn : 0, value) }
-                }
-                StyledTextLabel { text: (audioModel.clips.length > 0 ? audioModel.clips[0].fadeOut : 0).toFixed(2) + " s" }
-            }
         }
 
         CheckBox {

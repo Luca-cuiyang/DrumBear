@@ -24,6 +24,7 @@
 
 #include <QObject>
 #include <QVariantList>
+#include <QElapsedTimer>
 #include <qqmlintegration.h>
 
 #include "context/iglobalcontext.h"
@@ -52,6 +53,7 @@ class AudioTrackSettingsModel : public QObject, public muse::Contextable, public
     Q_PROPERTY(QVariantList waveformPeaks READ waveformPeaks NOTIFY waveformPeaksChanged)
     Q_PROPERTY(double playbackPosition READ playbackPosition NOTIFY playbackPositionChanged)
     Q_PROPERTY(QVariantList clips READ clips NOTIFY clipsChanged)
+    Q_PROPERTY(double measuredBpm READ measuredBpm NOTIFY measuredBpmChanged)
 
 public:
     explicit AudioTrackSettingsModel(QObject* parent = nullptr);
@@ -69,6 +71,7 @@ public:
     QVariantList waveformPeaks() const;
     double playbackPosition() const;
     QVariantList clips() const;
+    double measuredBpm() const;
 
     Q_INVOKABLE void setStartOffset(double value);
     Q_INVOKABLE void setClipStart(double value);
@@ -93,6 +96,8 @@ public:
     Q_INVOKABLE void setClipVolume(int index, double volume);
     Q_INVOKABLE void setClipMuted(int index, bool muted);
     Q_INVOKABLE void setClipFade(int index, double fadeIn, double fadeOut);
+    Q_INVOKABLE void tapTempo();
+    Q_INVOKABLE void setBpm(double bpm);
 
 signals:
     void filePathChanged();
@@ -108,6 +113,7 @@ signals:
     void waveformPeaksChanged();
     void playbackPositionChanged();
     void clipsChanged();
+    void measuredBpmChanged();
 
 private:
     IProjectAudioSettingsPtr audioSettings() const;
@@ -128,6 +134,9 @@ private:
     bool m_settingsSubscribed = false;
     bool m_playbackSubscribed = false;
     QVariantList m_clips;
+    double m_measuredBpm = 0.0;
+    QElapsedTimer m_tapTimer;
+    QList<qint64> m_tapTimes;
 };
 }
 

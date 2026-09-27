@@ -35613,6 +35613,14 @@ failed: %2</source>
         <source>Fade out</source>
         <translation>淡出</translation>
     </message>
+    <message>
+        <source>Tap</source>
+        <translation>测速</translation>
+    </message>
+    <message>
+        <source>Measured</source>
+        <translation>测速结果</translation>
+    </message>
 </context>
 <context>
     <name>project/cloud</name>

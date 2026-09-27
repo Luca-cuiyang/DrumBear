@@ -371,6 +371,7 @@ double AudioTrackSettingsModel::duration() const { return m_duration; }
 QVariantList AudioTrackSettingsModel::waveformPeaks() const { return m_waveformPeaks; }
 double AudioTrackSettingsModel::playbackPosition() const { return m_playbackPosition; }
 QVariantList AudioTrackSettingsModel::clips() const { return m_clips; }
+double AudioTrackSettingsModel::measuredBpm() const { return m_measuredBpm; }
 
 void AudioTrackSettingsModel::setStartOffset(double value) { if (!m_settings.clips.empty()) { m_settings.clips[0].startOffset = muse::secs_t(value); } emit startOffsetChanged(); updateClipsList(); }
 void AudioTrackSettingsModel::setClipStart(double value) { if (!m_settings.clips.empty()) { m_settings.clips[0].clipStart = muse::secs_t(value); } emit clipStartChanged(); updateClipsList(); }
@@ -497,4 +498,47 @@ void AudioTrackSettingsModel::setClipFade(int index, double fadeIn, double fadeO
     m_settings.clips[index].fadeOut = muse::secs_t(fadeOut);
     updateClipsList();
     apply();
+}
+
+void AudioTrackSettingsModel::tapTempo()
+{
+    if (!m_tapTimer.isValid()) {
+        m_tapTimer.start();
+        m_tapTimes.clear();
+        m_tapTimes.append(m_tapTimer.elapsed());
+        return;
+    }
+
+    m_tapTimes.append(m_tapTimer.elapsed());
+    if (m_tapTimes.size() > 4) {
+        m_tapTimes.removeFirst();
+    }
+
+    if (m_tapTimes.size() < 2) {
+        return;
+    }
+
+    double sum = 0.0;
+    for (int i = 1; i < m_tapTimes.size(); ++i) {
+        sum += m_tapTimes[i] - m_tapTimes[i - 1];
+    }
+    const double avgMs = sum / (m_tapTimes.size() - 1);
+    if (avgMs <= 0.0) {
+        return;
+    }
+
+    m_measuredBpm = 60000.0 / avgMs;
+    emit measuredBpmChanged();
+}
+
+void AudioTrackSettingsModel::setBpm(double bpm)
+{
+    if (m_settings.clips.empty() || bpm <= 0.0 || m_measuredBpm <= 0.0) {
+        return;
+    }
+
+    m_settings.clips[0].speed = float(bpm / m_measuredBpm);
+    updateClipsList();
+    apply();
+    emit speedChanged();
 }
