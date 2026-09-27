@@ -68,13 +68,13 @@ public:
     QVariantList waveformPeaks() const;
     double playbackPosition() const;
 
-    void setStartOffset(double value);
-    void setClipStart(double value);
-    void setClipEnd(double value);
-    void setVolumeDb(double value);
-    void setMuted(bool value);
-    void setTempoSync(bool value);
-    void setSpeed(double value);
+    Q_INVOKABLE void setStartOffset(double value);
+    Q_INVOKABLE void setClipStart(double value);
+    Q_INVOKABLE void setClipEnd(double value);
+    Q_INVOKABLE void setVolumeDb(double value);
+    Q_INVOKABLE void setMuted(bool value);
+    Q_INVOKABLE void setTempoSync(bool value);
+    Q_INVOKABLE void setSpeed(double value);
 
     Q_INVOKABLE void load();
     Q_INVOKABLE void chooseFile();

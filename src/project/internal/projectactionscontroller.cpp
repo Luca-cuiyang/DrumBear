@@ -420,10 +420,7 @@ muse::Ret ProjectActionsController::exportScore()
 
 muse::Ret ProjectActionsController::openAudioTrackSettings()
 {
-    static const Uri AUDIO_TRACK_URI("dbscore://project/audiotrack");
-    if (!interactive()->isOpened(AUDIO_TRACK_URI).val) {
-        interactive()->open(AUDIO_TRACK_URI);
-    }
+    dispatcher()->dispatch("dock-set-open", ActionData::make_arg2<QString, bool>(QStringLiteral("audioTrackPanel"), true));
     return make_ok();
 }
 
