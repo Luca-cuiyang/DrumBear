@@ -47,6 +47,14 @@ DockPage {
 
     property NotationPageModel pageModel: NotationPageModel {}
 
+    AudioTrackSettingsModel {
+        id: audioModel
+
+        Component.onCompleted: {
+            Qt.callLater(audioModel.load)
+        }
+    }
+
     property NavigationSection noteInputKeyNavSec: NavigationSection {
         name: "NoteInputSection"
         order: 2
@@ -508,14 +516,6 @@ DockPage {
             dropDestinations: root.horizontalPanelDropDestinations
 
             navigationSection: root.navigationPanelSec(audioTrackPanel.location)
-
-            AudioTrackSettingsModel {
-                id: audioModel
-
-                Component.onCompleted: {
-                    audioModel.load()
-                }
-            }
 
             AudioTrackEditor {
                 audioModel: audioModel

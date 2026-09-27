@@ -175,7 +175,6 @@ bool computeMp3Peaks(const QString& path, double& duration, QVariantList& peaks,
 AudioTrackSettingsModel::AudioTrackSettingsModel(QObject* parent)
     : QObject(parent), muse::Contextable(muse::iocCtxForQmlObject(this))
 {
-    subscribeOnPlayback();
 }
 
 void AudioTrackSettingsModel::load()
@@ -184,6 +183,8 @@ void AudioTrackSettingsModel::load()
     if (!settings) {
         return;
     }
+
+    subscribeOnPlayback();
 
     if (!m_settingsSubscribed) {
         settings->audioTrackSettingsChanged().onNotify(this, [this]() {
@@ -200,11 +201,16 @@ void AudioTrackSettingsModel::load()
 
 void AudioTrackSettingsModel::subscribeOnPlayback()
 {
+    if (m_playbackSubscribed) {
+        return;
+    }
+
     const context::IPlaybackStatePtr state = globalContext()->playbackState();
     if (!state) {
         return;
     }
 
+    m_playbackSubscribed = true;
     m_playbackPosition = state->playbackPosition().to_double();
     state->playbackPositionChanged().onReceive(this, [this](muse::audio::secs_t position) {
         m_playbackPosition = position.to_double();

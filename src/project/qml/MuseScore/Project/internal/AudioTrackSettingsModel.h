@@ -112,6 +112,7 @@ private:
     QVariantList m_waveformPeaks;
     double m_playbackPosition = 0.0;
     bool m_settingsSubscribed = false;
+    bool m_playbackSubscribed = false;
 };
 }
 
