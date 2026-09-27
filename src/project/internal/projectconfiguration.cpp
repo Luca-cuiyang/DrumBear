@@ -642,23 +642,23 @@ QUrl ProjectConfiguration::supportForumUrl() const
 {
     if (languagesService()->currentLanguage().code.startsWith("en")) {
         // The English support forum
-        return QUrl("https://musescore.org/forum/6");
+        return QUrl("https://drumbearai.com/forum/6");
     }
 
     // The general forum page, where the support forum is linked at the top
     // (except in English; there you have the Announcements forum)
-    return QUrl("https://musescore.org/forum");
+    return QUrl("https://drumbearai.com/forum");
 }
 
 QUrl ProjectConfiguration::dotComBugReportUrl() const
 {
     // The general .com bug report page
-    return QUrl("https://musescore.com/groups/bug-reports");
+    return QUrl("https://drumbearai.com/groups/bug-reports");
 }
 
 QUrl ProjectConfiguration::scoreUploadingGuidelinesUrl() const
 {
-    return QUrl("https://musescore.com/score-uploading-guidelines");
+    return QUrl("https://drumbearai.com/score-uploading-guidelines");
 }
 
 bool ProjectConfiguration::openDetailedProjectUploadedDialog() const

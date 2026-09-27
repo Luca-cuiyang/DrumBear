@@ -1095,7 +1095,7 @@ static void adjustPlacement(EngravingItem* e)
             if (disableAutoplace) {
                 a->setAutoplace(false);
             }
-            // needed for https://musescore.org/en/node/281312
+            // needed for https://drumbearai.com/en/node/281312
             // ideally we would rebase and calculate new offset
             // but this may not be possible
             // since original offset is relative to system

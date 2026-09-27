@@ -437,7 +437,7 @@ bool Lyrics::setProperty(Pid propertyId, const PropertyValue& v)
             // TODO: after inserting a measure,
             // endTick info is wrong.
             // Somehow we need to fix this.
-            // See https://musescore.org/en/node/285304 and https://musescore.org/en/node/311289
+            // See https://drumbearai.com/en/node/285304 and https://drumbearai.com/en/node/311289
             ecr = score()->findCR(endTick(), track());
             if (ecr) {
                 ecr->setMelismaEnd(false);

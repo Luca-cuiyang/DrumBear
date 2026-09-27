@@ -27,7 +27,7 @@ import Muse.UiComponents
 BaseSection {
     id: root
 
-    title: qsTrc("preferences", "Publish to MuseScore.com")
+    title: qsTrc("preferences", "Publish to drumbearai.com")
 
     property alias alsoShareAudioCom: alsoShareAudioComCheckBox.checked
 
@@ -38,7 +38,7 @@ BaseSection {
 
         width: parent.width
 
-        text: qsTrc("preferences", "Always prompt to share on Audio.com after publishing to MuseScore.com")
+        text: qsTrc("preferences", "Always prompt to share on DB Score after publishing to drumbearai.com")
 
         navigation.name: "AlsoShareAudioComCheckBox"
         navigation.panel: root.navigation

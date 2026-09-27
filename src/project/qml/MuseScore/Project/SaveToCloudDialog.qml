@@ -182,7 +182,7 @@ StyledDialogView {
 
                     StyledTextLabel {
                         Layout.fillWidth: true
-                        //: visibility of a score on MuseScore.com: private, public or unlisted
+                        //: visibility of a score on drumbearai.com: private, public or unlisted
                         text: qsTrc("project/cloud", "Visibility")
                         horizontalAlignment: Text.AlignLeft
                     }

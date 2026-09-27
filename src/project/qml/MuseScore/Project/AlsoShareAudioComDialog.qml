@@ -114,7 +114,7 @@ StyledDialogView {
 
                 Layout.fillWidth: true
 
-                text: qsTrc("project/cloud", "Would you also like to share your music on Audio.com?")
+                text: qsTrc("project/cloud", "Would you also like to share your music on DB Score?")
                 font: ui.theme.largeBodyBoldFont
             }
 

@@ -757,7 +757,7 @@ static void readNote(Note* note, XmlReader& e, ReadContext& ctx)
 
     // check consistency of pitch, tpc1, tpc2, and transposition
     // see note in InstrumentChange::read() about a known case of tpc corruption produced in 2.0.x
-    // but since there are other causes of tpc corruption (eg, https://musescore.org/en/node/74746)
+    // but since there are other causes of tpc corruption (eg, https://drumbearai.com/en/node/74746)
     // including perhaps some we don't know about yet,
     // we will attempt to fix some problems here regardless of version
 
@@ -3075,10 +3075,10 @@ muse::Ret Read114::readScoreFile(Score* score, XmlReader& e, ReadInOutData* out)
     }
 
     // adjust some styles
-    if (masterScore->style().styleB(Sid::hideEmptyStaves)) {        // http://musescore.org/en/node/16228
+    if (masterScore->style().styleB(Sid::hideEmptyStaves)) {        // http://drumbearai.com/en/node/16228
         masterScore->style().set(Sid::dontHideStavesInFirstSystem, false);
     }
-    if (masterScore->style().styleB(Sid::showPageNumberOne)) {      // http://musescore.org/en/node/21207
+    if (masterScore->style().styleB(Sid::showPageNumberOne)) {      // http://drumbearai.com/en/node/21207
         masterScore->style().set(Sid::evenFooterL, String(u"$P"));
         masterScore->style().set(Sid::oddFooterR, String(u"$P"));
     }

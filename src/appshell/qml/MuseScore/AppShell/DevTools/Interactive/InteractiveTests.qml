@@ -174,9 +174,9 @@ Rectangle {
             width: 200
             navigation.panel: navPanel
             navigation.row: 6
-            text: "Open musescore.com"
+            text: "Open drumbearai.com"
             onClicked: {
-                api.launcher.openUrl("https://musescore.com/")
+                api.launcher.openUrl("https://drumbearai.com/")
             }
         }
 

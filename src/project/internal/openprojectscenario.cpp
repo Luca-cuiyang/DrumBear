@@ -109,48 +109,48 @@ static std::string cloudStatusCodeErrorMessage(const Ret& ret, bool withHelp = f
 
     switch (ret.code()) {
     case int(cloud::Err::Status400_InvalidRequest):
-        //: %1 will be replaced with the error code that MuseScore.com returned; this might contain english text
+        //: %1 will be replaced with the error code that drumbearai.com returned; this might contain english text
         //: that is deliberately not translated
-        message = muse::qtrc("project/cloud", "MuseScore.com returned an error code: %1.")
+        message = muse::qtrc("project/cloud", "drumbearai.com returned an error code: %1.")
                   .arg("400 Invalid request").toStdString();
         break;
     case int(cloud::Err::Status401_AuthorizationRequired):
-        //: %1 will be replaced with the error code that MuseScore.com returned; this might contain english text
+        //: %1 will be replaced with the error code that drumbearai.com returned; this might contain english text
         //: that is deliberately not translated
-        message = muse::qtrc("project/cloud", "MuseScore.com returned an error code: %1.")
+        message = muse::qtrc("project/cloud", "drumbearai.com returned an error code: %1.")
                   .arg("401 Authorization required").toStdString();
         break;
     case int(cloud::Err::Status422_ValidationFailed):
-        //: %1 will be replaced with the error code that MuseScore.com returned; this might contain english text
+        //: %1 will be replaced with the error code that drumbearai.com returned; this might contain english text
         //: that is deliberately not translated
-        message = muse::qtrc("project/cloud", "MuseScore.com returned an error code: %1.")
+        message = muse::qtrc("project/cloud", "drumbearai.com returned an error code: %1.")
                   .arg("422 Validation failed").toStdString();
         break;
     case int(cloud::Err::Status429_RateLimitExceeded):
-        //: %1 will be replaced with the error code that MuseScore.com returned; this might contain english text
+        //: %1 will be replaced with the error code that drumbearai.com returned; this might contain english text
         //: that is deliberately not translated
-        message = muse::qtrc("project/cloud", "MuseScore.com returned an error code: %1.")
+        message = muse::qtrc("project/cloud", "drumbearai.com returned an error code: %1.")
                   .arg("429 Rate limit exceeded").toStdString();
         break;
     case int(cloud::Err::Status500_InternalServerError):
-        //: %1 will be replaced with the error code that MuseScore.com returned; this might contain english text
+        //: %1 will be replaced with the error code that drumbearai.com returned; this might contain english text
         //: that is deliberately not translated
-        message = muse::qtrc("project/cloud", "MuseScore.com returned an error code: %1.")
+        message = muse::qtrc("project/cloud", "drumbearai.com returned an error code: %1.")
                   .arg("500 Internal server error").toStdString();
         break;
     case int(cloud::Err::UnknownStatusCode): {
         if (const auto status = ret.data<int>("status", -1); status != -1) {
-            //: %1 will be replaced with the error code that MuseScore.com returned, which is a number.
-            message = muse::qtrc("project/cloud", "MuseScore.com returned an unknown error code: %1.")
+            //: %1 will be replaced with the error code that drumbearai.com returned, which is a number.
+            message = muse::qtrc("project/cloud", "drumbearai.com returned an unknown error code: %1.")
                       .arg(status).toStdString();
         } else {
-            message = muse::trc("project/cloud", "MuseScore.com returned an unknown error code.");
+            message = muse::trc("project/cloud", "drumbearai.com returned an unknown error code.");
         }
     } break;
     }
 
     if (withHelp) {
-        message += "\n\n" + muse::trc("project/cloud", "Please try again later, or get help for this problem on MuseScore.com.");
+        message += "\n\n" + muse::trc("project/cloud", "Please try again later, or get help for this problem on drumbearai.com.");
     }
 
     return message;
@@ -169,7 +169,7 @@ void OpenProjectScenario::showCloudOpenError(const Ret& ret) const
         message = muse::trc("project/cloud", "The file could not be downloaded to your disk.");
         break;
     case int(cloud::Err::Status403_AccountNotActivated):
-        message = muse::trc("project/cloud", "Your MuseScore.com account needs to be verified first. "
+        message = muse::trc("project/cloud", "Your drumbearai.com account needs to be verified first. "
                                              "Please activate your account via the link in the activation email.");
         break;
     case int(cloud::Err::Status403_NotOwner):
@@ -190,9 +190,9 @@ void OpenProjectScenario::showCloudOpenError(const Ret& ret) const
         break;
 
     case int(cloud::Err::NetworkError):
-        message = muse::mtrc("project/cloud", "Could not connect to <a href=\"%1\">MuseScore.com</a>. "
+        message = muse::mtrc("project/cloud", "Could not connect to <a href=\"%1\">drumbearai.com</a>. "
                                               "Please check your internet connection or try again later.")
-                  .arg(u"https://musescore.com").toStdString();
+                  .arg(u"https://drumbearai.com").toStdString();
         break;
     default:
         message = muse::trc("project/cloud", "Please try again later.");
@@ -825,8 +825,8 @@ void OpenProjectScenario::warnFileTooNew(const muse::io::path_t& filepath)
 {
     interactive()->error(muse::qtrc("project", "Cannot read file %1").arg(io::toNativeSeparators(filepath).toQString()).toStdString(),
                          muse::mtrc("project", "This file was saved using a newer version of MuseScore Studio. "
-                                               "Please visit <a href=\"%1\">MuseScore.org</a> to obtain the latest version.")
-                         .arg(u"https://musescore.org").toStdString());
+                                               "Please visit <a href=\"%1\">drumbearai.com</a> to obtain the latest version.")
+                         .arg(u"https://drumbearai.com").toStdString());
 }
 
 Promise<bool> OpenProjectScenario::askIfUserAgreesToOpenCorruptedProject(const String& projectName, const std::string& errorText)
@@ -851,7 +851,7 @@ void OpenProjectScenario::warnProjectCriticallyCorrupted(const String& projectNa
 {
     std::string title = muse::mtrc("project", "File “%1” is corrupted and cannot be opened").arg(projectName).toStdString();
     IInteractive::Text text;
-    text.text = muse::trc("project", "Get help for this issue on MuseScore.org.");
+    text.text = muse::trc("project", "Get help for this issue on drumbearai.com.");
     text.detailedText = errorText;
 
     IInteractive::ButtonData getHelpBtn(IInteractive::Button::CustomButton, muse::trc("project", "Get help"), true /*accent*/);
@@ -934,7 +934,7 @@ Promise<RetVal<Val> > OpenProjectScenario::ensureAuthorization() const
         return resolvedPromise(RetVal<Val>::make_ok(Val()));
     }
 
-    const std::string dialogText = muse::trc("project/save", "Log in or create a free account on MuseScore.com to open this score.");
+    const std::string dialogText = muse::trc("project/save", "Log in or create a free account on drumbearai.com to open this score.");
 
     UriQuery query("muse://cloud/requireauthorization");
     query.addParam("text", Val(dialogText));

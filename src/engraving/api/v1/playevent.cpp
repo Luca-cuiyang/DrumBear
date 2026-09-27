@@ -83,7 +83,7 @@ void PlayEvent::setOntime(int v)
         return;                                       // Value hasn't changed so no need to do more.
     }
     // Note that onTime can be negative so a note can play earlier.
-    // See: https://musescore.org/en/node/74651
+    // See: https://drumbearai.com/en/node/74651
     if (v < -2 * mu::engraving::NoteEvent::NOTE_LENGTH || v > 2 * mu::engraving::NoteEvent::NOTE_LENGTH) {
         LOGW("PluginAPI::PlayEvent::setOntime: Invalid value.");
         return;

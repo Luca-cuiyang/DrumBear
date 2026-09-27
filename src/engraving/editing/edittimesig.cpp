@@ -655,7 +655,7 @@ void EditTimeSig::removeTimeSig(Transaction& tx, Score* score, TimeSig* ts)
     // but this would leave us no means of detecting that we have measures in a local timesig
     // in cases where we try deleting the local time sig
     // known bug: this means we do not correctly detect non-empty measures when deleting global timesig change after a local one
-    // see http://musescore.org/en/node/51596
+    // see http://drumbearai.com/en/node/51596
     // Delete the time sig segment from the root score, we will rewriteMeasures from it
     // since it contains all the music while the part doesn't
     Score* rScore = score->masterScore();

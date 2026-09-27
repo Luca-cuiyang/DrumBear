@@ -258,7 +258,7 @@ bool ExportMidi::write(QIODevice* device, bool midiExpandRepeats, bool exportRPN
                     track.insert(0, MidiEvent(ME_CONTROLLER, channel, CTRL_RESET_ALL_CTRL, 0));
                     // We need this to get the correct pitch of bends
                     // Hidden under preferences because some software
-                    // crashes when receiving RPNs: https://musescore.org/en/node/37431
+                    // crashes when receiving RPNs: https://drumbearai.com/en/node/37431
                     if (channel != 9 && exportRPNs) {
                         // set pitch bend sensitivity to 12 semitones:
                         track.insert(0, MidiEvent(ME_CONTROLLER, channel, CTRL_LRPN, 0));

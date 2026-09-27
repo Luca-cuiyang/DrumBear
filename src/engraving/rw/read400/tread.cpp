@@ -4101,7 +4101,7 @@ void TRead::read(TimeSig* s, XmlReader& e, ReadContext& ctx)
     stretch.reduce();
 
     // HACK: handle time signatures from scores before 3.5 differently on some special occasions.
-    // See https://musescore.org/node/308139.
+    // See https://drumbearai.com/node/308139.
     String version = s->score()->mscoreVersion();
     if (!version.isEmpty() && (version >= u"3.0") && (version < u"3.5")) {
         if ((timeSigType == TimeSigType::NORMAL) && !numeratorString.isEmpty() && denominatorString.isEmpty()) {

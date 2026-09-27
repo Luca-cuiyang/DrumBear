@@ -1678,7 +1678,7 @@ void Note::setupAfterRead(const Fraction& ctxTick, bool pasteMode)
 
     // check consistency of pitch, tpc1, tpc2, and transposition
     // see note in InstrumentChange::read() about a known case of tpc corruption produced in 2.0.x
-    // but since there are other causes of tpc corruption (eg, https://musescore.org/en/node/74746)
+    // but since there are other causes of tpc corruption (eg, https://drumbearai.com/en/node/74746)
     // including perhaps some we don't know about yet,
     // we will attempt to fix some problems here regardless of version
 

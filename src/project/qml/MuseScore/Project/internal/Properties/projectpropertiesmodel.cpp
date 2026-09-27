@@ -70,7 +70,7 @@ void ProjectPropertiesModel::load()
         { CREATION_DATE_TAG, muse::qtrc("project", "Creation date"), m_projectMetaInfo.creationDate.toString(), true },
         { PLATFORM_TAG, muse::qtrc("project", "Platform"), m_projectMetaInfo.platform, true },
         { SOURCE_TAG, muse::qtrc("project", "Source"), m_projectMetaInfo.source, true },
-        { AUDIO_COM_URL_TAG, muse::qtrc("project", "Audio.com URL"), m_projectMetaInfo.audioComUrl, true }
+        { AUDIO_COM_URL_TAG, muse::qtrc("project", "DB Score URL"), m_projectMetaInfo.audioComUrl, true }
     };
 
     for (const QString& propertyName : additionalProperties.keys()) {

@@ -159,7 +159,7 @@ StyledDialogView {
 
                             Layout.fillWidth: true
 
-                            text: qsTrc("project", "Publish your finished scores on MuseScore.com")
+                            text: qsTrc("project", "Publish your finished scores on drumbearai.com")
                             font: ui.theme.largeBodyBoldFont
                             horizontalAlignment: Text.AlignLeft
                             wrapMode: Text.Wrap

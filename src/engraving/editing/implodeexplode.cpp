@@ -341,7 +341,7 @@ bool ImplodeExplode::implode(Score* score)
                 }
             }
             // TODO - use first voice that actually has a note and implode remaining voices on it?
-            // see https://musescore.org/en/node/174111
+            // see https://drumbearai.com/en/node/174111
             else if (dst) {
                 // destination track has something, but it isn't a chord
                 // remove rests from other voices if in "voice mode"

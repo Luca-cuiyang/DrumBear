@@ -101,7 +101,7 @@ void TimeSignaturePropertiesDialog::classBegin()
     Fraction nominal = m_editedTimeSig->sig() / m_editedTimeSig->stretch();
     nominal.reduce();
 
-    // TODO: fix https://musescore.org/en/node/42341
+    // TODO: fix https://drumbearai.com/en/node/42341
     // for now, editing of actual (local) time sig is disabled in dialog
     // but more importantly, the dialog should make it clear that this is "local" change only
     // and not normally the right way to add 7/4 to a score

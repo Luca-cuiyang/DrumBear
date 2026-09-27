@@ -2276,7 +2276,7 @@ bool Measure::hasVoices(staff_idx_t staffIdx, Fraction stick, Fraction len, bool
     Staff* st = score()->staff(staffIdx);
     if (st->isTabStaff(stick)) {
         // TODO: tab staves use different rules for stem direction etc
-        // see for example https://musescore.org/en/node/308371
+        // see for example https://drumbearai.com/en/node/308371
         // we should consider coming up with a more comprehensive solution
         // but for now, we are forcing measures on tab staves to be consider as a whole -
         // either they have voices or not

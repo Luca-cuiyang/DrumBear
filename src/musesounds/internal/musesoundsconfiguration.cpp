@@ -89,8 +89,8 @@ UriQuery MuseSoundsConfiguration::soundPageUri(const muse::String& soundCode) co
 QUrl MuseSoundsConfiguration::checkForMuseSoundsUpdateUrl() const
 {
     return !getSoundsTestMode()
-           ? QUrl("https://updates.musescore.org/feed/musesounds.latest.xml")
-           : QUrl("https://updates.musescore.org/feed/musesounds.latest.test.xml");
+           ? QUrl("https://updates.drumbearai.com/feed/musesounds.latest.xml")
+           : QUrl("https://updates.drumbearai.com/feed/musesounds.latest.test.xml");
 }
 
 QUrl MuseSoundsConfiguration::checkForMuseSamplerUpdateUrl() const

@@ -724,7 +724,7 @@ void Selection::updateSelectedElements()
         if (s2 && s2->measure()->isMMRest()) {
             s2 = s2->prev1MM(); // HACK
         }
-        // These hacks are needed to prevent https://musescore.org/node/173381.
+        // These hacks are needed to prevent https://drumbearai.com/node/173381.
         // This should exclude any segments belonging to MM-rest range from the selection.
         if (s1 && s2 && s1->tick() + s1->ticks() > s2->tick()) {
             // can happen with MM rests as tick2measure returns only the first segment for them.

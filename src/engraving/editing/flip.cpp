@@ -246,7 +246,7 @@ void Flip::flip(Transaction&, Score* score)
                    || e->isHammerOnPullOffText()) {
             e->undoChangeProperty(Pid::AUTOPLACE, true);
             // TODO: undoChangeProperty() should probably do this directly
-            // see https://musescore.org/en/node/281432
+            // see https://drumbearai.com/en/node/281432
             EngravingItem* ee = toEngravingItem(e->propertyDelegate(Pid::PLACEMENT));
             if (!ee) {
                 ee = e;
