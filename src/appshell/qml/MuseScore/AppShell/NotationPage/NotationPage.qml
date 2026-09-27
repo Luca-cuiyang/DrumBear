@@ -487,6 +487,34 @@ DockPage {
         },
 
         DockPanel {
+            id: audioTrackPanel
+
+            objectName: "audioTrackPanel"
+            title: qsTrc("appshell", "Audio accompaniment track")
+
+            height: 200
+            minimumHeight: root.horizontalPanelMinHeight
+            maximumHeight: root.horizontalPanelMaxHeight
+
+            minimumWidth: root.panelMinDimension
+            maximumWidth: root.panelMaxDimension
+
+            groupName: root.horizontalPanelsGroup
+
+            visible: true
+            location: Location.Bottom
+
+            dropDestinations: root.horizontalPanelDropDestinations
+
+            navigationSection: root.navigationPanelSec(audioTrackPanel.location)
+
+            AudioTrackEditor {
+                navigationSection: audioTrackPanel.navigationSection
+                contentNavigationPanelOrderStart: audioTrackPanel.contentNavigationPanelOrderStart
+            }
+        },
+
+        DockPanel {
             id: timelinePanel
 
             objectName: root.pageModel.timelinePanelName()

@@ -9810,6 +9810,10 @@ followed by dashes</source>
         <translation>主页菜单</translation>
     </message>
     <message>
+        <source>Audio accompaniment track</source>
+        <translation>音频伴奏轨</translation>
+    </message>
+    <message>
         <location filename="../../src/appshell/qml/MuseScore/AppShell/HomePage/HomeMenu.qml" line="91"/>
         <source>Scores</source>
         <translation>乐谱</translation>
@@ -33874,6 +33878,34 @@ failed: %2</source>
         <source>Clear online sounds cache</source>
         <translation>清除在线音色缓存</translation>
     </message>
+    <message>
+        <source>Play</source>
+        <translation>播放</translation>
+    </message>
+    <message>
+        <source>Play the current score</source>
+        <translation>播放当前乐谱</translation>
+    </message>
+    <message>
+        <source>Rewind</source>
+        <translation>回退</translation>
+    </message>
+    <message>
+        <source>Loop toggle</source>
+        <translation>循环开关</translation>
+    </message>
+    <message>
+        <source>Toggle loop playback</source>
+        <translation>切换循环播放</translation>
+    </message>
+    <message>
+        <source>Metronome toggle</source>
+        <translation>节拍器开关</translation>
+    </message>
+    <message>
+        <source>Toggle metronome playback</source>
+        <translation>切换节拍器播放</translation>
+    </message>
 </context>
 <context>
     <name>preferences</name>
@@ -35540,6 +35572,26 @@ failed: %2</source>
     <message>
         <source>Continue last session</source>
         <translation>继续上次会话</translation>
+    </message>
+    <message>
+        <source>Volume</source>
+        <translation>音量</translation>
+    </message>
+    <message>
+        <source>Mute</source>
+        <translation>静音</translation>
+    </message>
+    <message>
+        <source>Speed</source>
+        <translation>速度</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>移除</translation>
+    </message>
+    <message>
+        <source>Convert…</source>
+        <translation>转换…</translation>
     </message>
 </context>
 <context>
@@ -39345,6 +39397,33 @@ failed: %2</source>
     <message>
         <source>Multiinstances</source>
         <translation>多实例</translation>
+    </message>
+</context>
+<context>
+    <name>appshell/welcome</name>
+    <message>
+        <source>Welcome to DB Score</source>
+        <translation>欢迎使用 DB Score</translation>
+    </message>
+    <message>
+        <source>DB Score is a free, open source music notation software, forked from MuseScore Studio and licensed under GPL-3.0.</source>
+        <translation>DB Score 是一款免费、开源的制谱软件，派生自 MuseScore Studio，遵循 GPL-3.0 许可。</translation>
+    </message>
+    <message>
+        <source>Learn more</source>
+        <translation>了解更多</translation>
+    </message>
+    <message>
+        <source>Create, play and print</source>
+        <translation>创作、播放与打印</translation>
+    </message>
+    <message>
+        <source>Compose with an easy-to-use editor, hear your score in real time, and export to PDF, audio, MIDI and MusicXML.</source>
+        <translation>使用易用的编辑器进行创作，实时聆听乐谱，并可导出为 PDF、音频、MIDI 和 MusicXML。</translation>
+    </message>
+    <message>
+        <source>Open handbook</source>
+        <translation>打开手册</translation>
     </message>
 </context>
 </TS>

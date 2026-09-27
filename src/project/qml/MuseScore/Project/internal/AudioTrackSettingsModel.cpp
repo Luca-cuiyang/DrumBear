@@ -271,6 +271,7 @@ void AudioTrackSettingsModel::notifyAll()
     emit volumeDbChanged();
     emit mutedChanged();
     emit tempoSyncChanged();
+    emit speedChanged();
     emit hasTrackChanged();
     emit durationChanged();
     emit waveformPeaksChanged();
@@ -283,6 +284,7 @@ double AudioTrackSettingsModel::clipEnd() const { return m_settings.clipEnd.to_d
 double AudioTrackSettingsModel::volumeDb() const { return m_settings.volume.to_double(); }
 bool AudioTrackSettingsModel::muted() const { return m_settings.muted; }
 bool AudioTrackSettingsModel::tempoSync() const { return m_settings.tempoSync; }
+double AudioTrackSettingsModel::speed() const { return m_settings.speed; }
 bool AudioTrackSettingsModel::hasTrack() const { return m_settings.isValid(); }
 double AudioTrackSettingsModel::duration() const { return m_duration; }
 QVariantList AudioTrackSettingsModel::waveformPeaks() const { return m_waveformPeaks; }
@@ -293,3 +295,4 @@ void AudioTrackSettingsModel::setClipEnd(double value) { m_settings.clipEnd = mu
 void AudioTrackSettingsModel::setVolumeDb(double value) { m_settings.volume = muse::audio::volume_db_t(value); emit volumeDbChanged(); }
 void AudioTrackSettingsModel::setMuted(bool value) { m_settings.muted = value; emit mutedChanged(); }
 void AudioTrackSettingsModel::setTempoSync(bool value) { m_settings.tempoSync = value; emit tempoSyncChanged(); }
+void AudioTrackSettingsModel::setSpeed(double value) { m_settings.speed = float(value); emit speedChanged(); }

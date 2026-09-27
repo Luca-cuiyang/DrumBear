@@ -71,6 +71,7 @@ qt_add_qml_module(appshell_qml
         HomePage/HomePage.qml
         HomePage/PluginsPage.qml
         MainToolBar.qml
+        NotationPage/AudioTrackEditor.qml
         NotationPage/NotationPage.qml
         NotationPage/NotationStatusBar.qml
         NotationReviewPage/NotationReviewPage.qml

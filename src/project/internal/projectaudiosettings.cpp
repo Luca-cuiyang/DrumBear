@@ -683,6 +683,7 @@ QJsonObject ProjectAudioSettings::audioTrackSettingsToJson(const AudioTrackSetti
     result.insert("volume", settings.volume.to_double());
     result.insert("muted", settings.muted);
     result.insert("tempoSync", settings.tempoSync);
+    result.insert("speed", settings.speed);
     return result;
 }
 
@@ -696,5 +697,6 @@ AudioTrackSettings ProjectAudioSettings::audioTrackSettingsFromJson(const QJsonO
     settings.volume = muse::audio::volume_db_t(object.value("volume").toDouble(0.0));
     settings.muted = object.value("muted").toBool(false);
     settings.tempoSync = object.value("tempoSync").toBool(true);
+    settings.speed = object.value("speed").toDouble(1.0);
     return settings;
 }

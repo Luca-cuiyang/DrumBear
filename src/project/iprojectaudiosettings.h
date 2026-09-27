@@ -43,6 +43,7 @@ struct AudioTrackSettings {
     muse::audio::volume_db_t volume = 0.f;
     bool muted = false;
     bool tempoSync = true;
+    float speed = 1.f;
 
     bool isValid() const { return !filePath.empty(); }
 
@@ -54,7 +55,8 @@ struct AudioTrackSettings {
                && muse::is_equal(clipEnd, other.clipEnd)
                && muse::is_equal(volume, other.volume)
                && muted == other.muted
-               && tempoSync == other.tempoSync;
+               && tempoSync == other.tempoSync
+               && muse::is_equal(speed, other.speed);
     }
 };
 

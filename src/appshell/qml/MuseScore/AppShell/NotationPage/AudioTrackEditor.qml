@@ -26,14 +26,11 @@ import Muse.Ui
 import Muse.UiComponents
 import DBScore.Project
 
-StyledDialogView {
+Item {
     id: root
 
-    contentHeight: 600
-    contentWidth: 640
-    margins: 20
-
-    objectName: "AudioTrackDialog"
+    property NavigationSection navigationSection: null
+    property int contentNavigationPanelOrderStart: 0
 
     AudioTrackSettingsModel {
         id: audioModel
@@ -46,29 +43,22 @@ StyledDialogView {
     property double timeRange: audioModel.duration > 0 ? audioModel.duration : 600
 
     ColumnLayout {
-        id: content
-
         anchors.fill: parent
-        spacing: 16
-
-        StyledTextLabel {
-            text: qsTrc("project", "Accompaniment track")
-            font: ui.theme.largeBodyBoldFont
-        }
+        anchors.margins: 12
+        spacing: 8
 
         RowLayout {
             Layout.fillWidth: true
-            spacing: 12
 
             StyledTextLabel {
-                Layout.fillWidth: true
-                text: audioModel.hasTrack ? audioModel.filePath : qsTrc("project", "No audio track selected")
-                elide: Text.ElideMiddle
-                wrapMode: Text.NoWrap
+                text: qsTrc("project", "Accompaniment track")
+                font: ui.theme.bodyBoldFont
             }
 
+            Item { Layout.fillWidth: true }
+
             FlatButton {
-                text: qsTrc("project", "Choose…")
+                text: qsTrc("project", "Choose audio track")
 
                 onClicked: {
                     audioModel.chooseFile()
@@ -89,7 +79,7 @@ StyledDialogView {
             id: waveCanvas
 
             Layout.fillWidth: true
-            Layout.preferredHeight: 120
+            Layout.preferredHeight: 72
 
             onPaint: {
                 var ctx = getContext("2d")
@@ -129,8 +119,8 @@ StyledDialogView {
         GridLayout {
             Layout.fillWidth: true
             columns: 2
-            columnSpacing: 20
-            rowSpacing: 12
+            columnSpacing: 16
+            rowSpacing: 6
 
             StyledTextLabel { text: qsTrc("project", "Start offset") }
             RowLayout {
@@ -141,7 +131,7 @@ StyledDialogView {
                     from: 0
                     to: timeRange
                     stepSize: 0.01
-                    onMoved: { audioModel.setStartOffset(value) }
+                    onMoved: { audioModel.setStartOffset(value); audioModel.apply() }
                 }
                 StyledTextLabel { text: audioModel.startOffset.toFixed(2) + " s" }
             }
@@ -155,7 +145,7 @@ StyledDialogView {
                     from: 0
                     to: timeRange
                     stepSize: 0.01
-                    onMoved: { audioModel.setClipStart(value) }
+                    onMoved: { audioModel.setClipStart(value); audioModel.apply() }
                 }
                 StyledTextLabel { text: audioModel.clipStart.toFixed(2) + " s" }
             }
@@ -169,23 +159,9 @@ StyledDialogView {
                     from: 0
                     to: timeRange
                     stepSize: 0.01
-                    onMoved: { audioModel.setClipEnd(value) }
+                    onMoved: { audioModel.setClipEnd(value); audioModel.apply() }
                 }
                 StyledTextLabel { text: (audioModel.clipEnd > 0 ? audioModel.clipEnd : timeRange).toFixed(2) + " s" }
-            }
-
-            StyledTextLabel { text: qsTrc("project", "Volume") }
-            RowLayout {
-                Layout.fillWidth: true
-                StyledSlider {
-                    Layout.fillWidth: true
-                    value: audioModel.volumeDb
-                    from: -60
-                    to: 12
-                    stepSize: 0.5
-                    onMoved: { audioModel.setVolumeDb(value) }
-                }
-                StyledTextLabel { text: audioModel.volumeDb.toFixed(1) + " dB" }
             }
 
             StyledTextLabel { text: qsTrc("project", "Speed") }
@@ -197,58 +173,30 @@ StyledDialogView {
                     from: 0.25
                     to: 2.0
                     stepSize: 0.05
-                    onMoved: { audioModel.setSpeed(value) }
+                    onMoved: { audioModel.setSpeed(value); audioModel.apply() }
                 }
                 StyledTextLabel { text: audioModel.speed.toFixed(2) + "×" }
             }
-        }
 
-        RowLayout {
-            Layout.fillWidth: true
-            spacing: 24
-
-            CheckBox {
-                text: qsTrc("project", "Mute")
-                checked: audioModel.muted
-                onCheckedChanged: { audioModel.setMuted(checked) }
-            }
-
-            CheckBox {
-                text: qsTrc("project", "Follow score tempo")
-                checked: audioModel.tempoSync
-                onCheckedChanged: { audioModel.setTempoSync(checked) }
-            }
-        }
-
-        Item { Layout.fillHeight: true }
-
-        SeparatorLine {
-            Layout.fillWidth: true
-        }
-
-        RowLayout {
-            Layout.fillWidth: true
-
-            Item { Layout.fillWidth: true }
-
-            FlatButton {
-                text: qsTrc("global", "Cancel")
-
-                onClicked: {
-                    root.reject()
+            StyledTextLabel { text: qsTrc("project", "Volume") }
+            RowLayout {
+                Layout.fillWidth: true
+                StyledSlider {
+                    Layout.fillWidth: true
+                    value: audioModel.volumeDb
+                    from: -60
+                    to: 12
+                    stepSize: 0.5
+                    onMoved: { audioModel.setVolumeDb(value); audioModel.apply() }
                 }
+                StyledTextLabel { text: audioModel.volumeDb.toFixed(1) + " dB" }
             }
+        }
 
-            FlatButton {
-                accentButton: true
-                text: qsTrc("global", "OK")
-
-                onClicked: {
-                    audioModel.apply()
-                    root.ret = { "errcode": 0 }
-                    root.hide()
-                }
-            }
+        CheckBox {
+            text: qsTrc("project", "Mute")
+            checked: audioModel.muted
+            onCheckedChanged: { audioModel.setMuted(checked); audioModel.apply() }
         }
     }
 }

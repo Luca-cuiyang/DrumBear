@@ -45,6 +45,7 @@ class AudioTrackSettingsModel : public QObject, public muse::Contextable
     Q_PROPERTY(double volumeDb READ volumeDb WRITE setVolumeDb NOTIFY volumeDbChanged)
     Q_PROPERTY(bool muted READ muted WRITE setMuted NOTIFY mutedChanged)
     Q_PROPERTY(bool tempoSync READ tempoSync WRITE setTempoSync NOTIFY tempoSyncChanged)
+    Q_PROPERTY(double speed READ speed WRITE setSpeed NOTIFY speedChanged)
     Q_PROPERTY(bool hasTrack READ hasTrack NOTIFY hasTrackChanged)
     Q_PROPERTY(double duration READ duration NOTIFY durationChanged)
     Q_PROPERTY(QVariantList waveformPeaks READ waveformPeaks NOTIFY waveformPeaksChanged)
@@ -59,6 +60,7 @@ public:
     double volumeDb() const;
     bool muted() const;
     bool tempoSync() const;
+    double speed() const;
     bool hasTrack() const;
     double duration() const;
     QVariantList waveformPeaks() const;
@@ -69,6 +71,7 @@ public:
     void setVolumeDb(double value);
     void setMuted(bool value);
     void setTempoSync(bool value);
+    void setSpeed(double value);
 
     Q_INVOKABLE void load();
     Q_INVOKABLE void chooseFile();
@@ -83,6 +86,7 @@ signals:
     void volumeDbChanged();
     void mutedChanged();
     void tempoSyncChanged();
+    void speedChanged();
     void hasTrackChanged();
     void durationChanged();
     void waveformPeaksChanged();

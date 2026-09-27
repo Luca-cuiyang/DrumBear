@@ -1345,7 +1345,7 @@ void PlaybackController::addAudioTrack(const AudioTrackSettings& settings, const
     trackParams.soundTrack.startOffset = settings.startOffset;
     trackParams.soundTrack.clipStart = settings.clipStart;
     trackParams.soundTrack.clipEnd = settings.clipEnd;
-    trackParams.soundTrack.speed = settings.tempoSync ? 1.f : 1.f;
+    trackParams.soundTrack.speed = settings.speed;
 
     uint64_t playbackKey = notationPlaybackKey();
 
