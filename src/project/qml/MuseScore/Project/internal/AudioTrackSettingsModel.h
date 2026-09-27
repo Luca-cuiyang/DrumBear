@@ -29,6 +29,7 @@
 #include "context/iglobalcontext.h"
 #include "interactive/iinteractive.h"
 #include "modularity/ioc.h"
+#include "rcommand/icommanddispatcher.h"
 
 #include "project/iprojectaudiosettings.h"
 
@@ -79,6 +80,7 @@ public:
     Q_INVOKABLE void chooseFile();
     Q_INVOKABLE void apply();
     Q_INVOKABLE void remove();
+    Q_INVOKABLE void seek(double seconds);
 
 signals:
     void filePathChanged();
@@ -102,6 +104,7 @@ private:
 
     muse::ContextInject<context::IGlobalContext> globalContext = { this };
     muse::ContextInject<muse::IInteractive> interactive = { this };
+    muse::ContextInject<muse::rcommand::ICommandDispatcher> commandDispatcher = { this };
 
     AudioTrackSettings m_settings;
     double m_duration = 0.0;

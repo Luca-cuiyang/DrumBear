@@ -36,6 +36,10 @@ Item {
 
     property double timeRange: audioModel.duration > 0 ? audioModel.duration : 600
 
+    function snapTime(seconds) {
+        return Math.round(seconds * 10) / 10
+    }
+
     ColumnLayout {
         anchors.fill: parent
         anchors.margins: 12
@@ -49,23 +53,29 @@ Item {
                 font: ui.theme.bodyBoldFont
             }
 
+            FlatButton {
+                text: "-"
+                enabled: audioModel.hasTrack
+                onClicked: timeline.zoomOut()
+            }
+
+            FlatButton {
+                text: "+"
+                enabled: audioModel.hasTrack
+                onClicked: timeline.zoomIn()
+            }
+
             Item { Layout.fillWidth: true }
 
             FlatButton {
                 text: qsTrc("project", "Choose audio track")
-
-                onClicked: {
-                    audioModel.chooseFile()
-                }
+                onClicked: audioModel.chooseFile()
             }
 
             FlatButton {
                 text: qsTrc("project", "Remove")
                 enabled: audioModel.hasTrack
-
-                onClicked: {
-                    audioModel.remove()
-                }
+                onClicked: audioModel.remove()
             }
         }
 
@@ -77,7 +87,25 @@ Item {
 
             clip: true
 
-            property double pxPerSec: width / timeRange
+            property double viewStart: 0
+            property double viewDuration: timeRange
+            property double pxPerSec: width > 0 ? width / viewDuration : 0
+
+            function clampView() {
+                viewStart = Math.max(0, Math.min(timeRange - viewDuration, viewStart))
+            }
+
+            function zoomIn() {
+                var center = viewStart + viewDuration / 2
+                viewDuration = Math.max(0.1, viewDuration / 1.5)
+                viewStart = Math.max(0, Math.min(timeRange - viewDuration, center - viewDuration / 2))
+            }
+
+            function zoomOut() {
+                var center = viewStart + viewDuration / 2
+                viewDuration = Math.min(timeRange, viewDuration * 1.5)
+                viewStart = Math.max(0, Math.min(timeRange - viewDuration, center - viewDuration / 2))
+            }
 
             Canvas {
                 id: rulerCanvas
@@ -89,13 +117,14 @@ Item {
                 onPaint: {
                     var ctx = getContext("2d")
                     ctx.clearRect(0, 0, width, height)
-                    ctx.fillStyle = "#6f6f6f"
-                    ctx.strokeStyle = "#6f6f6f"
+                    ctx.strokeStyle = "#8a8a8a"
+                    ctx.fillStyle = "#8a8a8a"
                     ctx.font = "10px sans-serif"
 
-                    var step = timeRange > 30 ? 10 : (timeRange > 10 ? 5 : 1)
-                    for (var s = 0; s <= timeRange; s += step) {
-                        var x = s * timeline.pxPerSec
+                    var step = timeline.viewDuration > 30 ? 10 : (timeline.viewDuration > 10 ? 5 : 1)
+                    var first = Math.floor(timeline.viewStart / step) * step
+                    for (var s = first; s <= timeline.viewStart + timeline.viewDuration; s += step) {
+                        var x = (s - timeline.viewStart) * timeline.pxPerSec
                         ctx.beginPath()
                         ctx.moveTo(x, height - 6)
                         ctx.lineTo(x, height)
@@ -126,17 +155,20 @@ Item {
                     }
 
                     var n = peaks.length
-                    var barWidth = Math.max(1, width / n)
-                    var clipStartFrac = audioModel.duration > 0 ? audioModel.clipStart / audioModel.duration : 0
-                    var clipEndFrac = audioModel.duration > 0
-                                      ? (audioModel.clipEnd > 0 ? audioModel.clipEnd / audioModel.duration : 1)
-                                      : 1
+                    var dur = audioModel.duration > 0 ? audioModel.duration : timeRange
+                    var firstIdx = Math.max(0, Math.floor(timeline.viewStart / dur * n))
+                    var lastIdx = Math.min(n, Math.ceil((timeline.viewStart + timeline.viewDuration) / dur * n))
 
-                    for (var i = 0; i < n; ++i) {
-                        var frac = i / n
+                    for (var i = firstIdx; i < lastIdx; ++i) {
+                        var t = i / n * dur
+                        var x = (t - timeline.viewStart) * timeline.pxPerSec
+                        var barWidth = Math.max(1, timeline.pxPerSec * (dur / n) - 1)
+                        var frac = t / dur
+                        var clipStartFrac = audioModel.clipStart / dur
+                        var clipEndFrac = audioModel.clipEnd > 0 ? audioModel.clipEnd / dur : 1
                         var amp = Math.max(1, peaks[i] * mid)
                         ctx.fillStyle = (frac >= clipStartFrac && frac <= clipEndFrac) ? "#2f80ed" : "#6f6f6f"
-                        ctx.fillRect(i * barWidth, mid - amp, Math.max(1, barWidth - 1), amp * 2)
+                        ctx.fillRect(x, mid - amp, barWidth, amp * 2)
                     }
                 }
 
@@ -146,12 +178,31 @@ Item {
                     function onClipStartChanged() { waveCanvas.requestPaint() }
                     function onClipEndChanged() { waveCanvas.requestPaint() }
                 }
+
+                MouseArea {
+                    anchors.fill: parent
+
+                    function seekAt(mouseX) {
+                        var t = timeline.viewStart + mouseX / timeline.pxPerSec
+                        audioModel.seek(Math.max(0, t))
+                    }
+
+                    onClicked: function(mouse) {
+                        seekAt(mouse.x)
+                    }
+
+                    onPositionChanged: function(mouse) {
+                        if (pressed) {
+                            seekAt(mouse.x)
+                        }
+                    }
+                }
             }
 
             Rectangle {
                 id: playhead
 
-                x: audioModel.playbackPosition * timeline.pxPerSec
+                x: (audioModel.playbackPosition - timeline.viewStart) * timeline.pxPerSec
                 y: rulerCanvas.height
                 width: 1
                 height: waveCanvas.height
@@ -161,7 +212,7 @@ Item {
                 Connections {
                     target: audioModel
                     function onPlaybackPositionChanged() {
-                        playhead.x = audioModel.playbackPosition * timeline.pxPerSec
+                        playhead.x = (audioModel.playbackPosition - timeline.viewStart) * timeline.pxPerSec
                     }
                 }
             }
@@ -169,7 +220,7 @@ Item {
             Rectangle {
                 id: clipStartHandle
 
-                x: 0
+                x: (audioModel.clipStart - timeline.viewStart) * timeline.pxPerSec
                 y: rulerCanvas.height
                 width: 8
                 height: waveCanvas.height
@@ -177,12 +228,8 @@ Item {
 
                 Connections {
                     target: audioModel
-                    function onClipStartChanged() {
-                        clipStartHandle.x = audioModel.clipStart * timeline.pxPerSec
-                    }
-                    function onDurationChanged() {
-                        clipStartHandle.x = audioModel.clipStart * timeline.pxPerSec
-                    }
+                    function onClipStartChanged() { clipStartHandle.x = (audioModel.clipStart - timeline.viewStart) * timeline.pxPerSec }
+                    function onDurationChanged() { clipStartHandle.x = (audioModel.clipStart - timeline.viewStart) * timeline.pxPerSec }
                 }
 
                 MouseArea {
@@ -194,19 +241,18 @@ Item {
                     drag.maximumX: clipEndHandle.x - clipStartHandle.width
 
                     onPositionChanged: {
-                        audioModel.setClipStart(clipStartHandle.x / timeline.pxPerSec)
+                        var t = timeline.viewStart + clipStartHandle.x / timeline.pxPerSec
+                        audioModel.setClipStart(root.snapTime(Math.max(0, t)))
                     }
 
-                    onReleased: {
-                        audioModel.apply()
-                    }
+                    onReleased: audioModel.apply()
                 }
             }
 
             Rectangle {
                 id: clipEndHandle
 
-                x: timeline.width
+                x: ((audioModel.clipEnd > 0 ? audioModel.clipEnd : timeRange) - timeline.viewStart) * timeline.pxPerSec
                 y: rulerCanvas.height
                 width: 8
                 height: waveCanvas.height
@@ -215,13 +261,13 @@ Item {
                 Connections {
                     target: audioModel
                     function onClipEndChanged() {
-                        clipEndHandle.x = (audioModel.clipEnd > 0 ? audioModel.clipEnd : timeRange) * timeline.pxPerSec
+                        clipEndHandle.x = ((audioModel.clipEnd > 0 ? audioModel.clipEnd : timeRange) - timeline.viewStart) * timeline.pxPerSec
                     }
                     function onDurationChanged() {
-                        clipEndHandle.x = (audioModel.clipEnd > 0 ? audioModel.clipEnd : timeRange) * timeline.pxPerSec
+                        clipEndHandle.x = ((audioModel.clipEnd > 0 ? audioModel.clipEnd : timeRange) - timeline.viewStart) * timeline.pxPerSec
                     }
                     function onHasTrackChanged() {
-                        clipEndHandle.x = (audioModel.clipEnd > 0 ? audioModel.clipEnd : timeRange) * timeline.pxPerSec
+                        clipEndHandle.x = ((audioModel.clipEnd > 0 ? audioModel.clipEnd : timeRange) - timeline.viewStart) * timeline.pxPerSec
                     }
                 }
 
@@ -234,13 +280,25 @@ Item {
                     drag.maximumX: timeline.width - clipEndHandle.width
 
                     onPositionChanged: {
-                        audioModel.setClipEnd(clipEndHandle.x / timeline.pxPerSec)
+                        var t = timeline.viewStart + clipEndHandle.x / timeline.pxPerSec
+                        audioModel.setClipEnd(root.snapTime(Math.min(timeRange, t)))
                     }
 
-                    onReleased: {
-                        audioModel.apply()
-                    }
+                    onReleased: audioModel.apply()
                 }
+            }
+        }
+
+        StyledSlider {
+            Layout.fillWidth: true
+            value: timeline.viewStart
+            from: 0
+            to: Math.max(0, timeRange - timeline.viewDuration)
+            stepSize: 0.01
+            onMoved: {
+                timeline.viewStart = value
+                rulerCanvas.requestPaint()
+                waveCanvas.requestPaint()
             }
         }
 

@@ -249,6 +249,12 @@ void AudioTrackSettingsModel::remove()
     notifyAll();
 }
 
+void AudioTrackSettingsModel::seek(double seconds)
+{
+    commandDispatcher()->dispatch(muse::rcommand::Command("command://playback/rewind"),
+                                  muse::rcommand::Params({ { "position", muse::Val(seconds) } }));
+}
+
 IProjectAudioSettingsPtr AudioTrackSettingsModel::audioSettings() const
 {
     const project::INotationProjectPtr project = globalContext()->currentProject();
