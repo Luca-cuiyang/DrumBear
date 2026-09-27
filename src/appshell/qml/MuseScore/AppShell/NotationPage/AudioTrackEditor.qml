@@ -35,14 +35,17 @@ Item {
     required property AudioTrackSettingsModel audioModel
 
     property double timeRange: audioModel.duration > 0 ? audioModel.duration : 600
-
-    function snapTime(seconds) {
-        return Math.round(seconds * 10) / 10
-    }
+    property color timelineBg: "#1f1f1f"
+    property color clipColor: "#3a3a3a"
+    property color clipBorder: "#2f80ed"
+    property color accent: "#2f80ed"
+    property color waveActive: "#7db8ff"
+    property color waveInactive: "#5a5a5a"
+    property color playheadColor: "#ff5252"
 
     ColumnLayout {
         anchors.fill: parent
-        anchors.margins: 12
+        anchors.margins: 10
         spacing: 8
 
         RowLayout {
@@ -79,212 +82,280 @@ Item {
             }
         }
 
-        Item {
-            id: timeline
+        Rectangle {
+            id: timelineBg
 
             Layout.fillWidth: true
-            Layout.preferredHeight: 112
+            Layout.preferredHeight: 128
 
+            color: timelineBg
+            radius: 8
             clip: true
 
-            property double viewStart: 0
-            property double viewDuration: timeRange
-            property double pxPerSec: width > 0 ? width / viewDuration : 0
+            Item {
+                id: timeline
 
-            function clampView() {
-                viewStart = Math.max(0, Math.min(timeRange - viewDuration, viewStart))
-            }
+                anchors.fill: parent
+                anchors.margins: 8
 
-            function zoomIn() {
-                var center = viewStart + viewDuration / 2
-                viewDuration = Math.max(0.1, viewDuration / 1.5)
-                viewStart = Math.max(0, Math.min(timeRange - viewDuration, center - viewDuration / 2))
-            }
+                property double viewStart: 0
+                property double viewDuration: timeRange
+                property double pxPerSec: width > 0 ? width / viewDuration : 0
 
-            function zoomOut() {
-                var center = viewStart + viewDuration / 2
-                viewDuration = Math.min(timeRange, viewDuration * 1.5)
-                viewStart = Math.max(0, Math.min(timeRange - viewDuration, center - viewDuration / 2))
-            }
-
-            Canvas {
-                id: rulerCanvas
-
-                anchors.top: parent.top
-                width: parent.width
-                height: 20
-
-                onPaint: {
-                    var ctx = getContext("2d")
-                    ctx.clearRect(0, 0, width, height)
-                    ctx.strokeStyle = "#8a8a8a"
-                    ctx.fillStyle = "#8a8a8a"
-                    ctx.font = "10px sans-serif"
-
-                    var step = timeline.viewDuration > 30 ? 10 : (timeline.viewDuration > 10 ? 5 : 1)
-                    var first = Math.floor(timeline.viewStart / step) * step
-                    for (var s = first; s <= timeline.viewStart + timeline.viewDuration; s += step) {
-                        var x = (s - timeline.viewStart) * timeline.pxPerSec
-                        ctx.beginPath()
-                        ctx.moveTo(x, height - 6)
-                        ctx.lineTo(x, height)
-                        ctx.stroke()
-                        ctx.fillText(s + "s", x + 2, height - 8)
-                    }
-                }
-            }
-
-            Canvas {
-                id: waveCanvas
-
-                anchors.top: rulerCanvas.bottom
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.bottom: parent.bottom
-
-                onPaint: {
-                    var ctx = getContext("2d")
-                    ctx.clearRect(0, 0, width, height)
-
-                    var mid = height / 2
-                    var peaks = audioModel.waveformPeaks
-                    if (!peaks || peaks.length === 0) {
-                        ctx.fillStyle = "#4d4d4d"
-                        ctx.fillRect(0, mid - 1, width, 2)
-                        return
-                    }
-
-                    var n = peaks.length
-                    var dur = audioModel.duration > 0 ? audioModel.duration : timeRange
-                    var firstIdx = Math.max(0, Math.floor(timeline.viewStart / dur * n))
-                    var lastIdx = Math.min(n, Math.ceil((timeline.viewStart + timeline.viewDuration) / dur * n))
-
-                    for (var i = firstIdx; i < lastIdx; ++i) {
-                        var t = i / n * dur
-                        var x = (t - timeline.viewStart) * timeline.pxPerSec
-                        var barWidth = Math.max(1, timeline.pxPerSec * (dur / n) - 1)
-                        var frac = t / dur
-                        var clipStartFrac = audioModel.clipStart / dur
-                        var clipEndFrac = audioModel.clipEnd > 0 ? audioModel.clipEnd / dur : 1
-                        var amp = Math.max(1, peaks[i] * mid)
-                        ctx.fillStyle = (frac >= clipStartFrac && frac <= clipEndFrac) ? "#2f80ed" : "#6f6f6f"
-                        ctx.fillRect(x, mid - amp, barWidth, amp * 2)
-                    }
+                function clampView() {
+                    viewStart = Math.max(0, Math.min(timeRange - viewDuration, viewStart))
                 }
 
-                Connections {
-                    target: audioModel
-                    function onWaveformPeaksChanged() { waveCanvas.requestPaint() }
-                    function onClipStartChanged() { waveCanvas.requestPaint() }
-                    function onClipEndChanged() { waveCanvas.requestPaint() }
+                function zoomIn() {
+                    var center = viewStart + viewDuration / 2
+                    viewDuration = Math.max(0.1, viewDuration / 1.5)
+                    viewStart = Math.max(0, Math.min(timeRange - viewDuration, center - viewDuration / 2))
                 }
 
-                MouseArea {
-                    anchors.fill: parent
+                function zoomOut() {
+                    var center = viewStart + viewDuration / 2
+                    viewDuration = Math.min(timeRange, viewDuration * 1.5)
+                    viewStart = Math.max(0, Math.min(timeRange - viewDuration, center - viewDuration / 2))
+                }
 
-                    function seekAt(mouseX) {
-                        var t = timeline.viewStart + mouseX / timeline.pxPerSec
-                        audioModel.seek(Math.max(0, t))
-                    }
+                Canvas {
+                    id: rulerCanvas
 
-                    onClicked: function(mouse) {
-                        seekAt(mouse.x)
-                    }
+                    anchors.top: parent.top
+                    width: parent.width
+                    height: 22
 
-                    onPositionChanged: function(mouse) {
-                        if (pressed) {
-                            seekAt(mouse.x)
+                    onPaint: {
+                        var ctx = getContext("2d")
+                        ctx.clearRect(0, 0, width, height)
+                        ctx.strokeStyle = "#7a7a7a"
+                        ctx.fillStyle = "#b7b7b7"
+                        ctx.font = "10px sans-serif"
+
+                        var step = timeline.viewDuration > 30 ? 10 : (timeline.viewDuration > 10 ? 5 : 1)
+                        var first = Math.floor(timeline.viewStart / step) * step
+                        for (var s = first; s <= timeline.viewStart + timeline.viewDuration; s += step) {
+                            var x = (s - timeline.viewStart) * timeline.pxPerSec
+                            ctx.beginPath()
+                            ctx.moveTo(x, height - 7)
+                            ctx.lineTo(x, height)
+                            ctx.stroke()
+                            ctx.fillText(s + "s", x + 2, height - 9)
                         }
                     }
                 }
-            }
 
-            Rectangle {
-                id: playhead
+                Canvas {
+                    id: waveCanvas
 
-                x: (audioModel.playbackPosition - timeline.viewStart) * timeline.pxPerSec
-                y: rulerCanvas.height
-                width: 1
-                height: waveCanvas.height
-                color: "#ff5252"
-                visible: audioModel.playbackPosition >= 0 && audioModel.hasTrack
+                    anchors.top: rulerCanvas.bottom
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.bottom: parent.bottom
 
-                Connections {
-                    target: audioModel
-                    function onPlaybackPositionChanged() {
-                        playhead.x = (audioModel.playbackPosition - timeline.viewStart) * timeline.pxPerSec
+                    onPaint: {
+                        var ctx = getContext("2d")
+                        ctx.clearRect(0, 0, width, height)
+
+                        var dur = audioModel.duration > 0 ? audioModel.duration : timeRange
+                        var clipStart = audioModel.clipStart
+                        var clipEnd = audioModel.clipEnd > 0 ? audioModel.clipEnd : dur
+
+                        // Clip body
+                        var clipX = (audioModel.startOffset - timeline.viewStart) * timeline.pxPerSec
+                        var clipW = (clipEnd - clipStart) * timeline.pxPerSec
+                        if (clipW < 2) clipW = 2
+
+                        ctx.fillStyle = root.clipColor
+                        ctx.strokeStyle = root.clipBorder
+                        ctx.lineWidth = 1
+                        var clipY = 6
+                        var clipH = height - 12
+                        ctx.fillRect(clipX, clipY, clipW, clipH)
+                        ctx.strokeRect(clipX + 0.5, clipY + 0.5, clipW - 1, clipH - 1)
+
+                        // Clip title
+                        ctx.fillStyle = "#ffffff"
+                        ctx.font = "11px sans-serif"
+                        ctx.fillText(qsTrc("project", "Audio"), clipX + 8, clipY + 14)
+
+                        // Waveform inside the clip
+                        var peaks = audioModel.waveformPeaks
+                        if (peaks && peaks.length > 0) {
+                            var n = peaks.length
+                            var mid = clipY + clipH / 2
+                            var firstIdx = Math.max(0, Math.floor(clipStart / dur * n))
+                            var lastIdx = Math.min(n, Math.ceil(clipEnd / dur * n))
+
+                            for (var i = firstIdx; i < lastIdx; ++i) {
+                                var t = i / n * dur
+                                var x = clipX + (t - clipStart) * timeline.pxPerSec
+                                var barWidth = Math.max(1, timeline.pxPerSec * (dur / n) - 1)
+                                var amp = Math.max(1, peaks[i] * (clipH / 2 - 8))
+                                ctx.fillStyle = root.waveActive
+                                ctx.fillRect(x, mid - amp, barWidth, amp * 2)
+                            }
+                        } else {
+                            ctx.fillStyle = root.waveInactive
+                            ctx.fillRect(clipX + 4, clipY + clipH / 2 - 1, Math.max(0, clipW - 8), 2)
+                        }
+
+                        // Out-of-clip waveform hint
+                        if (peaks && peaks.length > 0) {
+                            var n2 = peaks.length
+                            var viewEnd = timeline.viewStart + timeline.viewDuration
+                            var vFirst = Math.max(0, Math.floor(timeline.viewStart / dur * n2))
+                            var vLast = Math.min(n2, Math.ceil(viewEnd / dur * n2))
+                            for (var j = vFirst; j < vLast; ++j) {
+                                var tt = j / n2 * dur
+                                if (tt >= clipStart && tt <= clipEnd) continue
+                                var xx = (tt - timeline.viewStart) * timeline.pxPerSec
+                                var bw = Math.max(1, timeline.pxPerSec * (dur / n2) - 1)
+                                var amp2 = Math.max(1, peaks[j] * (clipH / 2 - 8))
+                                ctx.fillStyle = root.waveInactive
+                                ctx.fillRect(xx, clipY + clipH / 2 - amp2, bw, amp2 * 2)
+                            }
+                        }
+                    }
+
+                    Connections {
+                        target: audioModel
+                        function onWaveformPeaksChanged() { waveCanvas.requestPaint() }
+                        function onClipStartChanged() { waveCanvas.requestPaint() }
+                        function onClipEndChanged() { waveCanvas.requestPaint() }
+                        function onStartOffsetChanged() { waveCanvas.requestPaint() }
+                    }
+
+                    MouseArea {
+                        anchors.fill: parent
+
+                        function seekAt(mouseX) {
+                            var t = timeline.viewStart + mouseX / timeline.pxPerSec
+                            audioModel.seek(Math.max(0, t))
+                        }
+
+                        onClicked: function(mouse) {
+                            seekAt(mouse.x)
+                        }
+
+                        onPositionChanged: function(mouse) {
+                            if (pressed) {
+                                seekAt(mouse.x)
+                            }
+                        }
                     }
                 }
-            }
 
-            Rectangle {
-                id: clipStartHandle
+                // Playhead
+                Rectangle {
+                    id: playhead
 
-                x: (audioModel.clipStart - timeline.viewStart) * timeline.pxPerSec
-                y: rulerCanvas.height
-                width: 8
-                height: waveCanvas.height
-                color: "#2f80ed"
+                    x: (audioModel.playbackPosition - timeline.viewStart) * timeline.pxPerSec
+                    y: rulerCanvas.height
+                    width: 1
+                    height: timeline.height - rulerCanvas.height
+                    color: root.playheadColor
+                    visible: audioModel.playbackPosition >= 0 && audioModel.hasTrack
 
-                Connections {
-                    target: audioModel
-                    function onClipStartChanged() { clipStartHandle.x = (audioModel.clipStart - timeline.viewStart) * timeline.pxPerSec }
-                    function onDurationChanged() { clipStartHandle.x = (audioModel.clipStart - timeline.viewStart) * timeline.pxPerSec }
-                }
+                    Canvas {
+                        id: playheadHandle
 
-                MouseArea {
-                    anchors.fill: parent
-                    cursorShape: Qt.SizeHorCursor
-                    drag.target: clipStartHandle
-                    drag.axis: Drag.XAxis
-                    drag.minimumX: 0
-                    drag.maximumX: clipEndHandle.x - clipStartHandle.width
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.bottom: parent.bottom
+                        width: 12
+                        height: 12
 
-                    onPositionChanged: {
-                        var t = timeline.viewStart + clipStartHandle.x / timeline.pxPerSec
-                        audioModel.setClipStart(audioModel.snapToBeat(Math.max(0, t)))
+                        onPaint: {
+                            var ctx = getContext("2d")
+                            ctx.clearRect(0, 0, width, height)
+                            ctx.fillStyle = root.playheadColor
+                            ctx.beginPath()
+                            ctx.moveTo(0, 0)
+                            ctx.lineTo(width, 0)
+                            ctx.lineTo(width / 2, height)
+                            ctx.closePath()
+                            ctx.fill()
+                        }
                     }
 
-                    onReleased: audioModel.apply()
-                }
-            }
-
-            Rectangle {
-                id: clipEndHandle
-
-                x: ((audioModel.clipEnd > 0 ? audioModel.clipEnd : timeRange) - timeline.viewStart) * timeline.pxPerSec
-                y: rulerCanvas.height
-                width: 8
-                height: waveCanvas.height
-                color: "#2f80ed"
-
-                Connections {
-                    target: audioModel
-                    function onClipEndChanged() {
-                        clipEndHandle.x = ((audioModel.clipEnd > 0 ? audioModel.clipEnd : timeRange) - timeline.viewStart) * timeline.pxPerSec
-                    }
-                    function onDurationChanged() {
-                        clipEndHandle.x = ((audioModel.clipEnd > 0 ? audioModel.clipEnd : timeRange) - timeline.viewStart) * timeline.pxPerSec
-                    }
-                    function onHasTrackChanged() {
-                        clipEndHandle.x = ((audioModel.clipEnd > 0 ? audioModel.clipEnd : timeRange) - timeline.viewStart) * timeline.pxPerSec
+                    Connections {
+                        target: audioModel
+                        function onPlaybackPositionChanged() {
+                            playhead.x = (audioModel.playbackPosition - timeline.viewStart) * timeline.pxPerSec
+                        }
                     }
                 }
 
-                MouseArea {
-                    anchors.fill: parent
-                    cursorShape: Qt.SizeHorCursor
-                    drag.target: clipEndHandle
-                    drag.axis: Drag.XAxis
-                    drag.minimumX: clipStartHandle.x + clipStartHandle.width
-                    drag.maximumX: timeline.width - clipEndHandle.width
+                // Clip start crop handle
+                Rectangle {
+                    id: clipStartHandle
 
-                    onPositionChanged: {
-                        var t = timeline.viewStart + clipEndHandle.x / timeline.pxPerSec
-                        audioModel.setClipEnd(audioModel.snapToBeat(Math.min(timeRange, t)))
+                    x: (audioModel.startOffset - timeline.viewStart) * timeline.pxPerSec
+                    y: rulerCanvas.height + 6
+                    width: 10
+                    height: timeline.height - rulerCanvas.height - 12
+                    color: root.clipBorder
+                    radius: 2
+
+                    Connections {
+                        target: audioModel
+                        function onClipStartChanged() { clipStartHandle.x = (audioModel.startOffset - timeline.viewStart) * timeline.pxPerSec }
+                        function onStartOffsetChanged() { clipStartHandle.x = (audioModel.startOffset - timeline.viewStart) * timeline.pxPerSec }
                     }
 
-                    onReleased: audioModel.apply()
+                    MouseArea {
+                        anchors.fill: parent
+                        cursorShape: Qt.SizeHorCursor
+                        drag.target: clipStartHandle
+                        drag.axis: Drag.XAxis
+                        drag.minimumX: 0
+                        drag.maximumX: clipEndHandle.x - clipStartHandle.width
+
+                        onPositionChanged: {
+                            var t = timeline.viewStart + clipStartHandle.x / timeline.pxPerSec
+                            audioModel.setClipStart(audioModel.snapToBeat(Math.max(0, t)))
+                        }
+                        onReleased: audioModel.apply()
+                    }
+                }
+
+                // Clip end crop handle
+                Rectangle {
+                    id: clipEndHandle
+
+                    x: ((audioModel.startOffset + (audioModel.clipEnd > 0 ? audioModel.clipEnd : timeRange) - audioModel.clipStart) - timeline.viewStart) * timeline.pxPerSec
+                    y: rulerCanvas.height + 6
+                    width: 10
+                    height: timeline.height - rulerCanvas.height - 12
+                    color: root.clipBorder
+                    radius: 2
+
+                    Connections {
+                        target: audioModel
+                        function onClipEndChanged() {
+                            var dur = audioModel.duration > 0 ? audioModel.duration : timeRange
+                            clipEndHandle.x = (audioModel.startOffset + (audioModel.clipEnd > 0 ? audioModel.clipEnd : dur) - audioModel.clipStart - timeline.viewStart) * timeline.pxPerSec
+                        }
+                        function onStartOffsetChanged() {
+                            var dur = audioModel.duration > 0 ? audioModel.duration : timeRange
+                            clipEndHandle.x = (audioModel.startOffset + (audioModel.clipEnd > 0 ? audioModel.clipEnd : dur) - audioModel.clipStart - timeline.viewStart) * timeline.pxPerSec
+                        }
+                    }
+
+                    MouseArea {
+                        anchors.fill: parent
+                        cursorShape: Qt.SizeHorCursor
+                        drag.target: clipEndHandle
+                        drag.axis: Drag.XAxis
+                        drag.minimumX: clipStartHandle.x + clipStartHandle.width
+                        drag.maximumX: timeline.width - clipEndHandle.width
+
+                        onPositionChanged: {
+                            var t = timeline.viewStart + clipEndHandle.x / timeline.pxPerSec + audioModel.clipStart - audioModel.startOffset
+                            audioModel.setClipEnd(audioModel.snapToBeat(Math.min(timeRange, t)))
+                        }
+                        onReleased: audioModel.apply()
+                    }
                 }
             }
         }

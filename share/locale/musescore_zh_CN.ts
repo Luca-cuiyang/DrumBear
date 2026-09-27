@@ -35593,6 +35593,10 @@ failed: %2</source>
         <source>Convert…</source>
         <translation>转换…</translation>
     </message>
+    <message>
+        <source>Audio</source>
+        <translation>音频</translation>
+    </message>
 </context>
 <context>
     <name>project/cloud</name>
