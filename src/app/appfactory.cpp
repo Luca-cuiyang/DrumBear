@@ -363,6 +363,8 @@ std::shared_ptr<muse::IApplication> AppFactory::newGuiApp(const std::shared_ptr<
     app->addModule(new muse::vst::VSTModule());
     app->addModule(new muse::media::MediaModule());
 
+    app->addModule(new muse::languages::LanguagesModule());
+
 // modules
 #ifdef MUE_BUILD_APPSHELL_MODULE
     app->addModule(new mu::appshell::AppShellModule());
@@ -425,7 +427,6 @@ std::shared_ptr<muse::IApplication> AppFactory::newGuiApp(const std::shared_ptr<
     app->addModule(new mu::propertiespanel::PropertiesPanelModule());
     app->addModule(new mu::instrumentsscene::InstrumentsSceneModule());
     app->addModule(new muse::extensions::ExtensionsModule());
-    app->addModule(new muse::languages::LanguagesModule());
     app->addModule(new muse::mi::MultiWindowsModule());
     app->addModule(new mu::musesounds::MuseSoundsModule());
     app->addModule(new mu::notation::NotationModule());
