@@ -39,7 +39,7 @@ Item {
     property double audioDuration: audioModel.duration > 0 ? audioModel.duration : 0
     property double scoreDuration: audioModel.scoreDuration > 0 ? audioModel.scoreDuration : 0
     property double contentDuration: Math.max(audioDuration, scoreDuration)
-    property double padding: 30
+    property double padding: Math.max(60, contentDuration * 0.5)
     property double timeRange: contentDuration + padding * 2
 
     property color timelineBg: "#1f1f1f"
@@ -69,9 +69,6 @@ Item {
                 text: qsTrc("project", "Audio alignment")
                 font: ui.theme.bodyBoldFont
             }
-
-            FlatButton { text: "-"; onClicked: timeline.zoomOut() }
-            FlatButton { text: "+"; onClicked: timeline.zoomIn() }
 
             Item { Layout.fillWidth: true }
 
@@ -195,19 +192,6 @@ Item {
                         function onScoreDurationChanged() { scoreGridCanvas.requestPaint() }
                     }
 
-                    // Drag to move the whole score grid
-                    MouseArea {
-                        anchors.fill: parent
-                        cursorShape: Qt.OpenHandCursor
-                        drag.target: scoreTrack
-                        drag.axis: Drag.XAxis
-                        drag.minimumX: -timeline.width
-                        drag.maximumX: timeline.width
-                        onPositionChanged: {
-                            var t = timeline.viewStart + scoreTrack.x / timeline.pxPerSec
-                            audioModel.setScoreOffset(t)
-                        }
-                    }
                 }
 
                 // Audio waveform track
