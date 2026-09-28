@@ -334,6 +334,15 @@ AudioTrackSettingsModel::AudioTrackSettingsModel(QObject* parent)
 
 void AudioTrackSettingsModel::load()
 {
+    if (!m_projectSubscribed) {
+        globalContext()->currentProjectChanged().onNotify(this, [this]() {
+            load();
+        });
+        m_projectSubscribed = true;
+    }
+
+    subscribeOnPlayback();
+
     const IProjectAudioSettingsPtr settings = audioSettings();
     if (!settings) {
         return;

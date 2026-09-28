@@ -140,6 +140,7 @@ private:
     double m_playbackPosition = 0.0;
     bool m_settingsSubscribed = false;
     bool m_playbackSubscribed = false;
+    bool m_projectSubscribed = false;
     QVariantList m_clips;
     double m_measuredBpm = 0.0;
     double m_originalBpm = 0.0;
