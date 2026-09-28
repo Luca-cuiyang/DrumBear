@@ -367,83 +367,19 @@ Item {
                     Connections {
                         target: audioModel
                         function onPlaybackPositionChanged() {
-                            playhead.x = (audioModel.playbackPosition - timeline.viewStart) * timeline.pxPerSec
-                            playheadTime.text = root.formatTime(audioModel.playbackPosition)
+                            var p = audioModel.playbackPosition
+                            if (p > timeline.viewStart + timeline.viewDuration * 0.85) {
+                                timeline.viewStart = Math.min(timeRange - timeline.viewDuration, p - timeline.viewDuration * 0.85)
+                            } else if (p < timeline.viewStart) {
+                                timeline.viewStart = Math.max(0, p)
+                            }
+                            rulerCanvas.requestPaint()
+                            waveCanvas.requestPaint()
                         }
                     }
                 }
 
-                // Clip start crop handle
-                Rectangle {
-                    id: clipStartHandle
-
-                    x: (audioModel.startOffset - timeline.viewStart) * timeline.pxPerSec
-                    y: rulerCanvas.height + 6
-                    width: 10
-                    height: timeline.height - rulerCanvas.height - 12
-                    color: root.clipBorder
-                    radius: 2
-
-                    Connections {
-                        target: audioModel
-                        function onClipStartChanged() { clipStartHandle.x = (audioModel.startOffset - timeline.viewStart) * timeline.pxPerSec }
-                        function onStartOffsetChanged() { clipStartHandle.x = (audioModel.startOffset - timeline.viewStart) * timeline.pxPerSec }
-                    }
-
-                    MouseArea {
-                        anchors.fill: parent
-                        cursorShape: Qt.SizeHorCursor
-                        drag.target: clipStartHandle
-                        drag.axis: Drag.XAxis
-                        drag.minimumX: 0
-                        drag.maximumX: clipEndHandle.x - clipStartHandle.width
-
-                        onPositionChanged: {
-                            var t = timeline.viewStart + clipStartHandle.x / timeline.pxPerSec
-                            audioModel.setClipStart(audioModel.snapToBeat(Math.max(0, t)))
-                        }
-                        onReleased: audioModel.apply()
-                    }
-                }
-
-                // Clip end crop handle
-                Rectangle {
-                    id: clipEndHandle
-
-                    x: ((audioModel.startOffset + (audioModel.clipEnd > 0 ? audioModel.clipEnd : timeRange) - audioModel.clipStart) - timeline.viewStart) * timeline.pxPerSec
-                    y: rulerCanvas.height + 6
-                    width: 10
-                    height: timeline.height - rulerCanvas.height - 12
-                    color: root.clipBorder
-                    radius: 2
-
-                    Connections {
-                        target: audioModel
-                        function onClipEndChanged() {
-                            var dur = audioModel.duration > 0 ? audioModel.duration : timeRange
-                            clipEndHandle.x = (audioModel.startOffset + (audioModel.clipEnd > 0 ? audioModel.clipEnd : dur) - audioModel.clipStart - timeline.viewStart) * timeline.pxPerSec
-                        }
-                        function onStartOffsetChanged() {
-                            var dur = audioModel.duration > 0 ? audioModel.duration : timeRange
-                            clipEndHandle.x = (audioModel.startOffset + (audioModel.clipEnd > 0 ? audioModel.clipEnd : dur) - audioModel.clipStart - timeline.viewStart) * timeline.pxPerSec
-                        }
-                    }
-
-                    MouseArea {
-                        anchors.fill: parent
-                        cursorShape: Qt.SizeHorCursor
-                        drag.target: clipEndHandle
-                        drag.axis: Drag.XAxis
-                        drag.minimumX: clipStartHandle.x + clipStartHandle.width
-                        drag.maximumX: timeline.width - clipEndHandle.width
-
-                        onPositionChanged: {
-                            var t = timeline.viewStart + clipEndHandle.x / timeline.pxPerSec + audioModel.clipStart - audioModel.startOffset
-                            audioModel.setClipEnd(audioModel.snapToBeat(Math.min(timeRange, t)))
-                        }
-                        onReleased: audioModel.apply()
-                    }
-                }
+                // Clip crop handles removed; crop is adjusted through trim/split as needed.
             }
         }
 
