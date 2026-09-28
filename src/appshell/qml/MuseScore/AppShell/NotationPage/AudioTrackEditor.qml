@@ -153,7 +153,20 @@ Item {
                         ctx.font = "10px sans-serif"
 
                         var step = timeline.viewDuration > 30 ? 10 : (timeline.viewDuration > 10 ? 5 : 1)
+                        var subStep = step / 5
                         var first = Math.floor(timeline.viewStart / step) * step
+
+                        // Minor ticks
+                        var firstMinor = Math.floor(timeline.viewStart / subStep) * subStep
+                        for (var ms = firstMinor; ms <= timeline.viewStart + timeline.viewDuration; ms += subStep) {
+                            var mx = (ms - timeline.viewStart) * timeline.pxPerSec
+                            ctx.beginPath()
+                            ctx.moveTo(mx, height - 3)
+                            ctx.lineTo(mx, height)
+                            ctx.stroke()
+                        }
+
+                        // Major ticks and labels
                         for (var s = first; s <= timeline.viewStart + timeline.viewDuration; s += step) {
                             var x = (s - timeline.viewStart) * timeline.pxPerSec
                             ctx.beginPath()
@@ -314,9 +327,9 @@ Item {
                     id: playhead
 
                     x: (audioModel.playbackPosition - timeline.viewStart) * timeline.pxPerSec
-                    y: rulerCanvas.height
+                    y: 0
                     width: 1
-                    height: timeline.height - rulerCanvas.height
+                    height: timeline.height
                     color: root.playheadColor
                     visible: audioModel.playbackPosition >= 0 && audioModel.hasTrack
 
@@ -452,20 +465,6 @@ Item {
             columns: 2
             columnSpacing: 16
             rowSpacing: 6
-
-            StyledTextLabel { text: qsTrc("project", "Start offset") }
-            RowLayout {
-                Layout.fillWidth: true
-                StyledSlider {
-                    Layout.fillWidth: true
-                    value: audioModel.startOffset
-                    from: 0
-                    to: timeRange
-                    stepSize: 0.01
-                    onMoved: { audioModel.setStartOffset(value); audioModel.apply() }
-                }
-                StyledTextLabel { text: audioModel.startOffset.toFixed(2) + " s" }
-            }
 
             StyledTextLabel { text: qsTrc("project", "BPM") }
             RowLayout {
