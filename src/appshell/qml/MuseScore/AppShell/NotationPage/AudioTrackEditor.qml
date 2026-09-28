@@ -475,15 +475,20 @@ Item {
                     currentText: bpmInput
                     onTextChanged: function(newText) {
                         bpmInput = newText
-                        var v = parseFloat(newText)
-                        if (!isNaN(v) && v > 0) {
-                            audioModel.setBpm(v)
-                        }
                     }
                 }
                 FlatButton {
                     text: qsTrc("project", "Tap")
                     onClicked: audioModel.tapTempo()
+                }
+                FlatButton {
+                    text: qsTrc("project", "Apply")
+                    onClicked: {
+                        var v = parseFloat(bpmInput)
+                        if (!isNaN(v) && v > 0) {
+                            audioModel.setBpm(v)
+                        }
+                    }
                 }
                 StyledTextLabel {
                     text: qsTrc("project", "Measured") + " " + audioModel.measuredBpm.toFixed(3)

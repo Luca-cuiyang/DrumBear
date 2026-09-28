@@ -35621,6 +35621,10 @@ failed: %2</source>
         <source>Measured</source>
         <translation>测速结果</translation>
     </message>
+    <message>
+        <source>Apply</source>
+        <translation>确定</translation>
+    </message>
 </context>
 <context>
     <name>project/cloud</name>
