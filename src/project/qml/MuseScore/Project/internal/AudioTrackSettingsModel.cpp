@@ -170,6 +170,161 @@ bool computeMp3Peaks(const QString& path, double& duration, QVariantList& peaks,
 
     return true;
 }
+
+bool decodeWavMono(const QString& path, std::vector<float>& mono, unsigned int& sampleRate)
+{
+    QFile file(path);
+    if (!file.open(QIODevice::ReadOnly)) {
+        return false;
+    }
+
+    const QByteArray bytes = file.readAll();
+    if (bytes.size() < 44 || bytes.left(4) != "RIFF" || bytes.mid(8, 4) != "WAVE") {
+        return false;
+    }
+
+    int pos = 12;
+    int audioFormat = 0;
+    int channels = 0;
+    int bitsPerSample = 0;
+    int dataSize = 0;
+    int dataOffset = 0;
+
+    while (pos + 8 <= bytes.size()) {
+        const QByteArray id = bytes.mid(pos, 4);
+        const int size = int(bytes[pos + 4] & 0xff) | (int(bytes[pos + 5] & 0xff) << 8)
+                         | (int(bytes[pos + 6] & 0xff) << 16) | (int(bytes[pos + 7] & 0xff) << 24);
+        if (id == "fmt ") {
+            audioFormat = int(bytes[pos + 8] & 0xff) | (int(bytes[pos + 9] & 0xff) << 8);
+            channels = int(bytes[pos + 10] & 0xff) | (int(bytes[pos + 11] & 0xff) << 8);
+            sampleRate = int(bytes[pos + 12] & 0xff) | (int(bytes[pos + 13] & 0xff) << 8)
+                         | (int(bytes[pos + 14] & 0xff) << 16) | (int(bytes[pos + 15] & 0xff) << 24);
+            bitsPerSample = int(bytes[pos + 22] & 0xff) | (int(bytes[pos + 23] & 0xff) << 8);
+            pos += 8 + size + (size & 1);
+        } else if (id == "data") {
+            dataSize = size;
+            dataOffset = pos + 8;
+            break;
+        } else {
+            pos += 8 + size + (size & 1);
+        }
+    }
+
+    if (audioFormat != 1 || channels <= 0 || sampleRate == 0 || bitsPerSample <= 0 || dataSize <= 0) {
+        return false;
+    }
+
+    const int bytesPerSample = bitsPerSample / 8;
+    const int frames = dataSize / (channels * bytesPerSample);
+    if (frames <= 0) {
+        return false;
+    }
+
+    const char* data = bytes.constData() + dataOffset;
+    mono.resize(frames);
+    for (int f = 0; f < frames; ++f) {
+        float acc = 0.f;
+        for (int c = 0; c < channels; ++c) {
+            const unsigned char* p = reinterpret_cast<const unsigned char*>(data + (f * channels + c) * bytesPerSample);
+            float v = 0.f;
+            if (bitsPerSample == 16) {
+                short s = short(p[0]) | (short(p[1]) << 8);
+                v = float(s) / 32768.f;
+            } else if (bitsPerSample == 8) {
+                v = (float(p[0]) / 255.f) * 2.f - 1.f;
+            } else {
+                continue;
+            }
+            acc += v;
+        }
+        mono[f] = acc / channels;
+    }
+    return true;
+}
+
+bool decodeMp3Mono(const QString& path, std::vector<float>& mono, unsigned int& sampleRate)
+{
+    drmp3 mp3;
+    if (!drmp3_init_file(&mp3, path.toUtf8().constData(), nullptr)) {
+        return false;
+    }
+
+    const uint64_t frames = drmp3_get_pcm_frame_count(&mp3);
+    if (frames == 0 || mp3.channels == 0 || mp3.sampleRate == 0) {
+        drmp3_uninit(&mp3);
+        return false;
+    }
+
+    std::vector<float> interleaved(frames * mp3.channels);
+    const uint64_t read = drmp3_read_pcm_frames_f32(&mp3, frames, interleaved.data());
+    sampleRate = mp3.sampleRate;
+    drmp3_uninit(&mp3);
+
+    if (read != frames) {
+        return false;
+    }
+
+    mono.resize(frames);
+    for (uint64_t f = 0; f < frames; ++f) {
+        float acc = 0.f;
+        for (unsigned int c = 0; c < mp3.channels; ++c) {
+            acc += interleaved[f * mp3.channels + c];
+        }
+        mono[f] = acc / mp3.channels;
+    }
+    return true;
+}
+
+double detectBpm(const std::vector<float>& mono, unsigned int sampleRate)
+{
+    if (mono.empty() || sampleRate == 0) {
+        return 0.0;
+    }
+
+    const unsigned int hop = std::max<unsigned int>(1, sampleRate / 50);
+    std::vector<float> env;
+    env.reserve(mono.size() / hop + 1);
+    for (size_t i = 0; i + hop <= mono.size(); i += hop) {
+        float e = 0.f;
+        for (size_t j = i; j < i + hop; ++j) {
+            e += mono[j] * mono[j];
+        }
+        env.push_back(std::sqrt(e / hop));
+    }
+
+    if (env.size() < 16) {
+        return 0.0;
+    }
+
+    std::vector<float> onset(env.size(), 0.f);
+    for (size_t i = 1; i < env.size(); ++i) {
+        onset[i] = std::max(0.f, env[i] - env[i - 1]);
+    }
+
+    const int minLag = std::max(1, int(50 * 60 / 200));  // 200 BPM
+    const int maxLag = std::min<int>(int(onset.size() - 1), int(50 * 60 / 60)); // 60 BPM
+    double bestBpm = 120.0;
+    double bestScore = -1.0;
+
+    for (int lag = minLag; lag <= maxLag; ++lag) {
+        double corr = 0.0;
+        int n = 0;
+        for (int i = 0; i + lag < int(onset.size()); ++i) {
+            corr += double(onset[i]) * double(onset[i + lag]);
+            ++n;
+        }
+        if (n == 0) {
+            continue;
+        }
+        corr /= n;
+        if (corr > bestScore) {
+            bestScore = corr;
+            bestBpm = 60.0 * 50.0 / lag;
+        }
+    }
+
+    return bestBpm;
+}
 }
 
 AudioTrackSettingsModel::AudioTrackSettingsModel(QObject* parent)
@@ -502,32 +657,31 @@ void AudioTrackSettingsModel::setClipFade(int index, double fadeIn, double fadeO
 
 void AudioTrackSettingsModel::tapTempo()
 {
-    if (!m_tapTimer.isValid()) {
-        m_tapTimer.start();
-        m_tapTimes.clear();
-        m_tapTimes.append(m_tapTimer.elapsed());
+    const AudioClipSettings* clip = firstClip();
+    if (!clip || clip->filePath.empty()) {
         return;
     }
 
-    m_tapTimes.append(m_tapTimer.elapsed());
-    if (m_tapTimes.size() > 4) {
-        m_tapTimes.removeFirst();
+    std::vector<float> mono;
+    unsigned int sampleRate = 0;
+    const QString path = clip->filePath.toQString();
+
+    if (path.endsWith(".mp3", Qt::CaseInsensitive)) {
+        if (!decodeMp3Mono(path, mono, sampleRate)) {
+            return;
+        }
+    } else {
+        if (!decodeWavMono(path, mono, sampleRate)) {
+            return;
+        }
     }
 
-    if (m_tapTimes.size() < 2) {
+    const double bpm = detectBpm(mono, sampleRate);
+    if (bpm <= 0.0) {
         return;
     }
 
-    double sum = 0.0;
-    for (int i = 1; i < m_tapTimes.size(); ++i) {
-        sum += m_tapTimes[i] - m_tapTimes[i - 1];
-    }
-    const double avgMs = sum / (m_tapTimes.size() - 1);
-    if (avgMs <= 0.0) {
-        return;
-    }
-
-    m_measuredBpm = 60000.0 / avgMs;
+    m_measuredBpm = bpm;
     emit measuredBpmChanged();
 }
 
