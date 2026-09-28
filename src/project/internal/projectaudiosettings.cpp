@@ -691,6 +691,7 @@ QJsonObject ProjectAudioSettings::audioTrackSettingsToJson(const AudioTrackSetti
         clipsArray.append(clipObj);
     }
     result.insert("clips", clipsArray);
+    result.insert("scoreOffset", settings.scoreOffset.to_double());
     return result;
 }
 
@@ -699,6 +700,7 @@ AudioTrackSettings ProjectAudioSettings::audioTrackSettingsFromJson(const QJsonO
     AudioTrackSettings settings;
 
     if (object.contains("clips")) {
+        settings.scoreOffset = muse::secs_t(object.value("scoreOffset").toDouble(0.0));
         const QJsonArray clipsArray = object.value("clips").toArray();
         for (const QJsonValue& value : clipsArray) {
             const QJsonObject clipObj = value.toObject();

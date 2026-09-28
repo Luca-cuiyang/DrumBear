@@ -35625,6 +35625,10 @@ failed: %2</source>
         <source>Apply</source>
         <translation>确定</translation>
     </message>
+    <message>
+        <source>Audio alignment</source>
+        <translation>音频对齐</translation>
+    </message>
 </context>
 <context>
     <name>project/cloud</name>

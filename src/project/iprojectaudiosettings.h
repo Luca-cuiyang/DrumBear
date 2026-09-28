@@ -65,12 +65,13 @@ struct AudioClipSettings {
 
 struct AudioTrackSettings {
     std::vector<AudioClipSettings> clips;
+    muse::secs_t scoreOffset = 0.0;   //! timeline offset applied to the score beat grid
 
     bool isValid() const { return !clips.empty(); }
 
     bool operator==(const AudioTrackSettings& other) const
     {
-        return clips == other.clips;
+        return clips == other.clips && muse::is_equal(scoreOffset, other.scoreOffset);
     }
 };
 

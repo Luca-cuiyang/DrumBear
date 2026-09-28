@@ -54,6 +54,8 @@ class AudioTrackSettingsModel : public QObject, public muse::Contextable, public
     Q_PROPERTY(double playbackPosition READ playbackPosition NOTIFY playbackPositionChanged)
     Q_PROPERTY(QVariantList clips READ clips NOTIFY clipsChanged)
     Q_PROPERTY(double measuredBpm READ measuredBpm NOTIFY measuredBpmChanged)
+    Q_PROPERTY(double scoreOffset READ scoreOffset WRITE setScoreOffset NOTIFY scoreOffsetChanged)
+    Q_PROPERTY(double scoreDuration READ scoreDuration NOTIFY scoreDurationChanged)
 
 public:
     explicit AudioTrackSettingsModel(QObject* parent = nullptr);
@@ -72,6 +74,8 @@ public:
     double playbackPosition() const;
     QVariantList clips() const;
     double measuredBpm() const;
+    double scoreOffset() const;
+    double scoreDuration() const;
 
     Q_INVOKABLE void setStartOffset(double value);
     Q_INVOKABLE void setClipStart(double value);
@@ -98,6 +102,7 @@ public:
     Q_INVOKABLE void setClipFade(int index, double fadeIn, double fadeOut);
     Q_INVOKABLE void tapTempo();
     Q_INVOKABLE void setBpm(double bpm);
+    Q_INVOKABLE void setScoreOffset(double offset);
 
 signals:
     void filePathChanged();
@@ -114,6 +119,8 @@ signals:
     void playbackPositionChanged();
     void clipsChanged();
     void measuredBpmChanged();
+    void scoreOffsetChanged();
+    void scoreDurationChanged();
 
 private:
     IProjectAudioSettingsPtr audioSettings() const;
@@ -135,6 +142,7 @@ private:
     bool m_playbackSubscribed = false;
     QVariantList m_clips;
     double m_measuredBpm = 0.0;
+    double m_originalBpm = 0.0;
     QElapsedTimer m_tapTimer;
     QList<qint64> m_tapTimes;
 };

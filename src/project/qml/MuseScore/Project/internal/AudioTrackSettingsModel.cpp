@@ -511,6 +511,7 @@ void AudioTrackSettingsModel::notifyAll()
     emit durationChanged();
     emit waveformPeaksChanged();
     emit clipsChanged();
+    emit scoreOffsetChanged();
 }
 
 QString AudioTrackSettingsModel::filePath() const { const AudioClipSettings* c = firstClip(); return c ? c->filePath.toQString() : QString(); }
@@ -526,7 +527,18 @@ double AudioTrackSettingsModel::duration() const { return m_duration; }
 QVariantList AudioTrackSettingsModel::waveformPeaks() const { return m_waveformPeaks; }
 double AudioTrackSettingsModel::playbackPosition() const { return m_playbackPosition; }
 QVariantList AudioTrackSettingsModel::clips() const { return m_clips; }
-double AudioTrackSettingsModel::measuredBpm() const { return m_measuredBpm; }
+double AudioTrackSettingsModel::measuredBpm() const
+{
+    const AudioClipSettings* clip = firstClip();
+    const double speed = clip ? clip->speed : 1.0;
+    return m_originalBpm * speed;
+}
+double AudioTrackSettingsModel::scoreOffset() const { return m_settings.scoreOffset.to_double(); }
+double AudioTrackSettingsModel::scoreDuration() const
+{
+    const notation::IMasterNotationPtr master = globalContext()->currentMasterNotation();
+    return (master && master->playback()) ? master->playback()->totalPlayTime().to_double() : 0.0;
+}
 
 void AudioTrackSettingsModel::setStartOffset(double value) { if (!m_settings.clips.empty()) { m_settings.clips[0].startOffset = muse::secs_t(value); } emit startOffsetChanged(); updateClipsList(); }
 void AudioTrackSettingsModel::setClipStart(double value) { if (!m_settings.clips.empty()) { m_settings.clips[0].clipStart = muse::secs_t(value); } emit clipStartChanged(); updateClipsList(); }
@@ -681,18 +693,26 @@ void AudioTrackSettingsModel::tapTempo()
         return;
     }
 
-    m_measuredBpm = bpm;
+    m_originalBpm = bpm;
     emit measuredBpmChanged();
 }
 
 void AudioTrackSettingsModel::setBpm(double bpm)
 {
-    if (m_settings.clips.empty() || bpm <= 0.0 || m_measuredBpm <= 0.0) {
+    if (m_settings.clips.empty() || bpm <= 0.0 || m_originalBpm <= 0.0) {
         return;
     }
 
-    m_settings.clips[0].speed = float(bpm / m_measuredBpm);
+    m_settings.clips[0].speed = float(bpm / m_originalBpm);
     updateClipsList();
     apply();
     emit speedChanged();
+    emit measuredBpmChanged();
+}
+
+void AudioTrackSettingsModel::setScoreOffset(double offset)
+{
+    m_settings.scoreOffset = muse::secs_t(offset);
+    apply();
+    emit scoreOffsetChanged();
 }

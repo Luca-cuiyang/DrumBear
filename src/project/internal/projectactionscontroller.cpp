@@ -43,6 +43,7 @@
 #include "notation/inotationselection.h"
 
 #include "inotationproject.h"
+#include "iprojectaudiosettings.h"
 
 #include "../projectcommands.h"
 #include "rcommand/actiontocommand.h"
@@ -420,7 +421,27 @@ muse::Ret ProjectActionsController::exportScore()
 
 muse::Ret ProjectActionsController::openAudioTrackSettings()
 {
-    dispatcher()->dispatch("dock-set-open", ActionData::make_arg2<QString, bool>(QStringLiteral("audioTrackPanel"), true));
+    const std::vector<std::string> filter {
+        muse::trc("project", "Audio files") + " (*.mp3 *.wav *.m4a *.aac *.flac *.ogg *.aiff *.aif)"
+    };
+
+    const muse::io::path_t path = interactive()->selectOpeningFileSync(muse::trc("project", "Choose audio track"), "", filter);
+    if (path.empty()) {
+        return make_ret(Ret::Code::Cancel);
+    }
+
+    const project::INotationProjectPtr project = globalContext()->currentProject();
+    if (!project) {
+        return make_ret(Ret::Code::UnknownError);
+    }
+
+    AudioTrackSettings settings = project->audioSettings()->audioTrackSettings();
+    AudioClipSettings clip;
+    clip.filePath = path;
+    settings.clips.clear();
+    settings.clips.push_back(clip);
+    project->audioSettings()->setAudioTrackSettings(settings);
+
     return make_ok();
 }
 
