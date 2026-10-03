@@ -102,6 +102,7 @@ public:
     Q_INVOKABLE void setClipFade(int index, double fadeIn, double fadeOut);
     Q_INVOKABLE void tapTempo();
     Q_INVOKABLE void setBpm(double bpm);
+    Q_INVOKABLE void resetSpeed();
     Q_INVOKABLE void setScoreOffset(double offset);
 
 signals:

@@ -23,10 +23,12 @@
 
 #include <algorithm>
 #include <cmath>
+#include <thread>
 #include <vector>
 
 #include <QFile>
 #include <QFileInfo>
+#include <QPointer>
 
 #include "log.h"
 #include "notation/imasternotation.h"
@@ -336,6 +338,10 @@ void AudioTrackSettingsModel::load()
 {
     if (!m_projectSubscribed) {
         globalContext()->currentProjectChanged().onNotify(this, [this]() {
+            //! NOTE: A new project means a new ProjectAudioSettings instance and a new
+            //! playback state, so the previous subscriptions must be rebuilt.
+            m_settingsSubscribed = false;
+            m_playbackSubscribed = false;
             load();
         });
         m_projectSubscribed = true;
@@ -357,9 +363,20 @@ void AudioTrackSettingsModel::load()
         m_settingsSubscribed = true;
     }
 
+    const QString previousPath = firstClip() ? firstClip()->filePath.toQString() : QString();
+
     m_settings = settings->audioTrackSettings();
-    m_duration = 0.0;
-    updateWaveform();
+
+    //! NOTE: re-read the waveform only when the source file actually changed. For
+    //! speed/volume/mute changes the source length and peaks are unchanged, and only
+    //! the effective (stretched) length below changes.
+    const AudioClipSettings* clip = firstClip();
+    const QString newPath = clip ? clip->filePath.toQString() : QString();
+    if (newPath != previousPath) {
+        m_duration = 0.0;
+        updateWaveform();
+    }
+
     notifyAll();
 }
 
@@ -380,6 +397,15 @@ void AudioTrackSettingsModel::subscribeOnPlayback()
         m_playbackPosition = position.to_double();
         emit playbackPositionChanged();
     });
+
+    //! NOTE: keep the score grid track in sync with the score's actual total play time
+    //! (e.g. when measures are added/removed the score gets longer/shorter).
+    const notation::IMasterNotationPtr master = globalContext()->currentMasterNotation();
+    if (master && master->playback()) {
+        master->playback()->totalPlayTimeChanged().onReceive(this, [this](muse::audio::secs_t) {
+            emit scoreDurationChanged();
+        });
+    }
 }
 
 void AudioTrackSettingsModel::chooseFile()
@@ -480,30 +506,45 @@ void AudioTrackSettingsModel::updateWaveform()
 {
     m_waveformPeaks.clear();
     m_duration = 0.0;
+    emit waveformPeaksChanged();
+    emit durationChanged();
 
     const AudioClipSettings* clip = firstClip();
     if (!clip || clip->filePath.empty()) {
         return;
     }
 
-    double duration = 0.0;
-    QVariantList peaks;
     const QString path = clip->filePath.toQString();
-    if (path.endsWith(".wav", Qt::CaseInsensitive) || path.endsWith(".aiff", Qt::CaseInsensitive)
-        || path.endsWith(".aif", Qt::CaseInsensitive)) {
-        if (!computeWavPeaks(path, duration, peaks)) {
-            peaks.clear();
-        }
-    } else if (path.endsWith(".mp3", Qt::CaseInsensitive)) {
-        if (!computeMp3Peaks(path, duration, peaks)) {
-            peaks.clear();
-        }
-    }
 
-    if (!peaks.isEmpty()) {
-        m_duration = duration;
-        m_waveformPeaks = peaks;
-    }
+    //! NOTE: waveform peaks are computed off the UI thread so that importing a large
+    //! audio file does not freeze the interface. The result is posted back to the UI thread.
+    QPointer<AudioTrackSettingsModel> self(this);
+    std::thread([self, path]() {
+        double duration = 0.0;
+        QVariantList peaks;
+        bool ok = false;
+
+        if (path.endsWith(".wav", Qt::CaseInsensitive) || path.endsWith(".aiff", Qt::CaseInsensitive)
+            || path.endsWith(".aif", Qt::CaseInsensitive)) {
+            ok = computeWavPeaks(path, duration, peaks);
+        } else if (path.endsWith(".mp3", Qt::CaseInsensitive)) {
+            ok = computeMp3Peaks(path, duration, peaks);
+        }
+
+        if (!ok || !self) {
+            return;
+        }
+
+        QMetaObject::invokeMethod(self.data(), [self, duration, peaks]() {
+            if (!self) {
+                return;
+            }
+            self->m_duration = duration;
+            self->m_waveformPeaks = peaks;
+            emit self->durationChanged();
+            emit self->waveformPeaksChanged();
+        }, Qt::QueuedConnection);
+    }).detach();
 }
 
 void AudioTrackSettingsModel::notifyAll()
@@ -532,7 +573,14 @@ bool AudioTrackSettingsModel::muted() const { const AudioClipSettings* c = first
 bool AudioTrackSettingsModel::tempoSync() const { return false; }
 double AudioTrackSettingsModel::speed() const { const AudioClipSettings* c = firstClip(); return c ? c->speed : 1.0; }
 bool AudioTrackSettingsModel::hasTrack() const { return m_settings.isValid(); }
-double AudioTrackSettingsModel::duration() const { return m_duration; }
+double AudioTrackSettingsModel::duration() const
+{
+    //! NOTE: m_duration is the source file length; the audible/visible length is the
+    //! source length divided by the current time-stretch speed.
+    const AudioClipSettings* clip = firstClip();
+    const double s = (clip && clip->speed > 0.01f) ? clip->speed : 1.0;
+    return m_duration / s;
+}
 QVariantList AudioTrackSettingsModel::waveformPeaks() const { return m_waveformPeaks; }
 double AudioTrackSettingsModel::playbackPosition() const { return m_playbackPosition; }
 QVariantList AudioTrackSettingsModel::clips() const { return m_clips; }
@@ -708,11 +756,26 @@ void AudioTrackSettingsModel::tapTempo()
 
 void AudioTrackSettingsModel::setBpm(double bpm)
 {
-    if (m_settings.clips.empty() || bpm <= 0.0 || m_originalBpm <= 0.0) {
+    if (m_settings.clips.empty() || !std::isfinite(bpm) || bpm <= 0.0
+        || !std::isfinite(m_originalBpm) || m_originalBpm <= 0.0) {
         return;
     }
 
-    m_settings.clips[0].speed = float(bpm / m_originalBpm);
+    const double speed = std::clamp(bpm / m_originalBpm, 0.25, 4.0);
+    m_settings.clips[0].speed = float(speed);
+    updateClipsList();
+    apply();
+    emit speedChanged();
+    emit measuredBpmChanged();
+}
+
+void AudioTrackSettingsModel::resetSpeed()
+{
+    if (m_settings.clips.empty()) {
+        return;
+    }
+
+    m_settings.clips[0].speed = 1.0f;
     updateClipsList();
     apply();
     emit speedChanged();

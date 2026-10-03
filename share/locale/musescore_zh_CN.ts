@@ -35626,6 +35626,10 @@ failed: %2</source>
         <translation>确定</translation>
     </message>
     <message>
+        <source>Original speed</source>
+        <translation>原速</translation>
+    </message>
+    <message>
         <source>Audio alignment</source>
         <translation>音频对齐</translation>
     </message>
@@ -39462,4 +39466,2308 @@ failed: %2</source>
         <translation>打开手册</translation>
     </message>
 </context>
+        <context>
+        <name>propertiespanel</name>
+        <message>
+            <source>15ma alta</source>
+            <translation>倍高八度</translation>
+        </message>
+        <message>
+            <source>15ma bassa</source>
+            <translation>倍低八度</translation>
+        </message>
+        <message>
+            <source>22ma alta</source>
+            <translation>三倍高八度</translation>
+        </message>
+        <message>
+            <source>22ma bassa</source>
+            <translation>三倍低八度</translation>
+        </message>
+        <message>
+            <source>4-shape (Walker)</source>
+            <translation>4形（Walker）</translation>
+        </message>
+        <message>
+            <source>7-shape (Aikin)</source>
+            <translation>7形（Aikin）</translation>
+        </message>
+        <message>
+            <source>7-shape (Funk)</source>
+            <translation>7形（Funk）</translation>
+        </message>
+        <message>
+            <source>7-shape (Walker)</source>
+            <translation>7形（Walker）</translation>
+        </message>
+        <message>
+            <source>8va alta</source>
+            <translation>高八度</translation>
+        </message>
+        <message>
+            <source>8va bassa</source>
+            <translation>低八度</translation>
+        </message>
+        <message>
+            <source>A tempo</source>
+            <translation>回原速</translation>
+        </message>
+        <message>
+            <source>Abbreviated name</source>
+            <translation>缩写名称</translation>
+        </message>
+        <message>
+            <source>Abbreviated staff label</source>
+            <translation>缩写谱表标签</translation>
+        </message>
+        <message>
+            <source>Above</source>
+            <translation>上方</translation>
+        </message>
+        <message>
+            <source>Above staff</source>
+            <translation>谱表之上</translation>
+        </message>
+        <message>
+            <source>Accelerate</source>
+            <translation>增速</translation>
+        </message>
+        <message>
+            <source>Accidental</source>
+            <translation>变音号</translation>
+        </message>
+        <message>
+            <source>Accidental visibility</source>
+            <translation>变音号可见性</translation>
+        </message>
+        <message>
+            <source>Add chord symbols to your score and they’ll automatically appear in the legend.</source>
+            <translation>向您的乐谱添加和弦符号，随后它们将自动出现在您的图例中</translation>
+        </message>
+        <message>
+            <source>Add fretboard diagram</source>
+            <translation>添加品格图</translation>
+        </message>
+        <message>
+            <source>Add symbols</source>
+            <translation>添加符号</translation>
+        </message>
+        <message>
+            <source>Additional text style controls</source>
+            <translation>附加文本样式控件</translation>
+        </message>
+        <message>
+            <source>Aeolian</source>
+            <translation>伊奥利亚调式</translation>
+        </message>
+        <message>
+            <source>After</source>
+            <translation>后</translation>
+        </message>
+        <message>
+            <source>Align baseline</source>
+            <translation>基线对齐</translation>
+        </message>
+        <message>
+            <source>Align baseline of text to reference point</source>
+            <translation>将文本基线与基准点对齐</translation>
+        </message>
+        <message>
+            <source>Align bottom</source>
+            <translation>底端对齐</translation>
+        </message>
+        <message>
+            <source>Align bottom edge of text to reference point</source>
+            <translation>将文本底部与基准点对齐</translation>
+        </message>
+        <message>
+            <source>Align center</source>
+            <translation>居中</translation>
+        </message>
+        <message>
+            <source>Align horizontal center of legend to reference point</source>
+            <translation>将图例的水平中心与基准点对齐</translation>
+        </message>
+        <message>
+            <source>Align horizontal center of text to reference point</source>
+            <translation>将文本的水平中心与基准点对齐</translation>
+        </message>
+        <message>
+            <source>Align left</source>
+            <translation>左对齐</translation>
+        </message>
+        <message>
+            <source>Align left edge of legend to reference point</source>
+            <translation>将图例左侧与基准点对齐</translation>
+        </message>
+        <message>
+            <source>Align left edge of text to reference point</source>
+            <translation>文本左侧与基准点对齐</translation>
+        </message>
+        <message>
+            <source>Align middle</source>
+            <translation>中线对齐</translation>
+        </message>
+        <message>
+            <source>Align right</source>
+            <translation>右对齐</translation>
+        </message>
+        <message>
+            <source>Align right edge of legend to reference point</source>
+            <translation>图例右侧与基准点对齐</translation>
+        </message>
+        <message>
+            <source>Align right edge of text to reference point</source>
+            <translation>将文本右侧与基准点对齐</translation>
+        </message>
+        <message>
+            <source>Align symbol with barline</source>
+            <translation>符号与小节线对齐</translation>
+        </message>
+        <message>
+            <source>Align top</source>
+            <translation>顶端对齐</translation>
+        </message>
+        <message>
+            <source>Align top edge of text to reference point</source>
+            <translation>将文本顶部与基准点对齐</translation>
+        </message>
+        <message>
+            <source>Align vertical center of text to reference point</source>
+            <translation>将文本的垂直中心与基准点对齐</translation>
+        </message>
+        <message>
+            <source>Align with other rests in the same voice</source>
+            <translation>与同声部中其他休止符对齐</translation>
+        </message>
+        <message>
+            <source>Align with preceding dynamic</source>
+            <translation>对齐前一个力度记号</translation>
+        </message>
+        <message>
+            <source>Alignment</source>
+            <translation>对齐方式</translation>
+        </message>
+        <message>
+            <source>Alignment with adjacent dynamics</source>
+            <translation>与相邻力度记号对齐</translation>
+        </message>
+        <message>
+            <source>Alignment with adjacent tempo text</source>
+            <translation>与相邻的速度文本对齐</translation>
+        </message>
+        <message>
+            <source>Alignment with notehead</source>
+            <translation>与符头对齐</translation>
+        </message>
+        <message>
+            <source>All</source>
+            <translation>全部</translation>
+        </message>
+        <message>
+            <source>All voices on instrument</source>
+            <translation>乐器的所有声部</translation>
+        </message>
+        <message>
+            <source>All voices on this staff only</source>
+            <translation>仅此谱表的所有声部</translation>
+        </message>
+        <message>
+            <source>Allow diagonal</source>
+            <translation>允许斜置</translation>
+        </message>
+        <message>
+            <source>Always display an accidental</source>
+            <translation>变音号常显</translation>
+        </message>
+        <message>
+            <source>Ambitus</source>
+            <translation>音域</translation>
+        </message>
+        <message>
+            <source>Amount</source>
+            <translation>数量</translation>
+        </message>
+        <message>
+            <source>Appearance</source>
+            <translation>外观</translation>
+        </message>
+        <message>
+            <source>Arpeggio</source>
+            <translation>琶音</translation>
+        </message>
+        <message>
+            <source>Arrange</source>
+            <translation>排列</translation>
+        </message>
+        <message>
+            <source>Asterisk</source>
+            <translation>星号</translation>
+        </message>
+        <message>
+            <source>Augmented</source>
+            <translation>增</translation>
+        </message>
+        <message>
+            <source>Augmented second</source>
+            <translation>增二度</translation>
+        </message>
+        <message>
+            <source>Auto</source>
+            <translation>自动</translation>
+        </message>
+        <message>
+            <source>Auto (diatonic)</source>
+            <translation>自动（全音）</translation>
+        </message>
+        <message>
+            <source>Auto-place</source>
+            <translation>自动排布</translation>
+        </message>
+        <message>
+            <source>Automatically hide all empty staves</source>
+            <translation>自动隐藏所有空谱表</translation>
+        </message>
+        <message>
+            <source>Avoid barlines</source>
+            <translation>避开小节线</translation>
+        </message>
+        <message>
+            <source>BPM</source>
+            <translation>拍/分</translation>
+        </message>
+        <message>
+            <source>Backwards</source>
+            <translation>上移一层</translation>
+        </message>
+        <message>
+            <source>Barline</source>
+            <translation>小节线</translation>
+        </message>
+        <message>
+            <source>Barré</source>
+            <translation>食指横按</translation>
+        </message>
+        <message>
+            <source>Bass note scale</source>
+            <translation>低音音符缩放</translation>
+        </message>
+        <message>
+            <source>Beam</source>
+            <translation>符杠</translation>
+        </message>
+        <message>
+            <source>Beam direction</source>
+            <translation>符杠方向</translation>
+        </message>
+        <message>
+            <source>Beam height</source>
+            <translation>符杠高度</translation>
+        </message>
+        <message>
+            <source>Beam type</source>
+            <translation>符杠类型</translation>
+        </message>
+        <message>
+            <source>Before</source>
+            <translation>前</translation>
+        </message>
+        <message>
+            <source>Beginning text</source>
+            <translation>起始文本</translation>
+        </message>
+        <message>
+            <source>Below</source>
+            <translation>下方</translation>
+        </message>
+        <message>
+            <source>Bend/dive</source>
+            <translation>弯音/潜音</translation>
+        </message>
+        <message>
+            <source>Black keys</source>
+            <translation>黑键</translation>
+        </message>
+        <message>
+            <source>Bold</source>
+            <translation>粗体</translation>
+        </message>
+        <message>
+            <source>Border</source>
+            <translation>边框</translation>
+        </message>
+        <message>
+            <source>Both</source>
+            <translation>两者</translation>
+        </message>
+        <message>
+            <source>Bottom note</source>
+            <translation>底部音符</translation>
+        </message>
+        <message>
+            <source>Bottom padding</source>
+            <translation>下内距</translation>
+        </message>
+        <message>
+            <source>Bracket</source>
+            <translation>直连谱号</translation>
+        </message>
+        <message>
+            <source>Bracket type</source>
+            <translation>括号类型</translation>
+        </message>
+        <message>
+            <source>Brackets</source>
+            <translation>连谱号</translation>
+        </message>
+        <message>
+            <source>Break beam left</source>
+            <translation>断开左侧符杠</translation>
+        </message>
+        <message>
+            <source>Break inner beams (16th)</source>
+            <translation>断开内侧符杠（16分）</translation>
+        </message>
+        <message>
+            <source>Break inner beams (8th)</source>
+            <translation>断开内侧符杠（8分）</translation>
+        </message>
+        <message>
+            <source>Breaths &amp; pauses</source>
+            <translation>呼吸与停顿</translation>
+        </message>
+        <message>
+            <source>Brevis</source>
+            <translation>二全音符</translation>
+        </message>
+        <message>
+            <source>Center between staves</source>
+            <translation>谱表间居中</translation>
+        </message>
+        <message>
+            <source>Center on notehead</source>
+            <translation>居中到符头</translation>
+        </message>
+        <message>
+            <source>Chord</source>
+            <translation>和弦</translation>
+        </message>
+        <message>
+            <source>Chord bracket</source>
+            <translation>和弦括号</translation>
+        </message>
+        <message>
+            <source>Chord symbol</source>
+            <translation>和弦符号</translation>
+        </message>
+        <message>
+            <source>Chords</source>
+            <translation>和弦</translation>
+        </message>
+        <message>
+            <source>Chords per row</source>
+            <translation>和弦每行</translation>
+        </message>
+        <message>
+            <source>Chromatic</source>
+            <translation>半音</translation>
+        </message>
+        <message>
+            <source>Circle</source>
+            <translation>圆形</translation>
+        </message>
+        <message>
+            <source>Clearance for notation</source>
+            <translation>记谱预留空间</translation>
+        </message>
+        <message>
+            <source>Clearance for notation above</source>
+            <translation>上方记谱预留空间</translation>
+        </message>
+        <message>
+            <source>Clearance for notation below</source>
+            <translation>下方记谱预留空间</translation>
+        </message>
+        <message>
+            <source>Clef</source>
+            <translation>谱号</translation>
+        </message>
+        <message>
+            <source>Click to add or remove points</source>
+            <translation>单击以添加或移除节点</translation>
+        </message>
+        <message>
+            <source>Close</source>
+            <translation>关闭</translation>
+        </message>
+        <message>
+            <source>Color</source>
+            <translation>颜色</translation>
+        </message>
+        <message>
+            <source>Column</source>
+            <translation>层次</translation>
+        </message>
+        <message>
+            <source>Column gap</source>
+            <translation>列间距</translation>
+        </message>
+        <message>
+            <source>Combine with voices that share the same stem direction</source>
+            <translation>合并符干方向相同的声部</translation>
+        </message>
+        <message>
+            <source>Configure grid</source>
+            <translation>设置网格线</translation>
+        </message>
+        <message>
+            <source>Continue at</source>
+            <translation>继续于</translation>
+        </message>
+        <message>
+            <source>Corner radius</source>
+            <translation>圆角半径</translation>
+        </message>
+        <message>
+            <source>Create a page containing only the selected measure(s)</source>
+            <translation>创建仅包含所选小节的页面</translation>
+        </message>
+        <message>
+            <source>Create a system containing only the selected measure(s)</source>
+            <translation>创建一个只包含选定小节的谱行组</translation>
+        </message>
+        <message>
+            <source>Crescendo</source>
+            <translation>渐强</translation>
+        </message>
+        <message>
+            <source>Cross</source>
+            <translation>叉形</translation>
+        </message>
+        <message>
+            <source>Cue note visibility</source>
+            <translation>小型音符可见性</translation>
+        </message>
+        <message>
+            <source>Cue size</source>
+            <translation>缩小化元素</translation>
+        </message>
+        <message>
+            <source>Custom</source>
+            <translation>自定义</translation>
+        </message>
+        <message>
+            <source>Customize bend</source>
+            <translation>自定义弯音</translation>
+        </message>
+        <message>
+            <source>Customize dive</source>
+            <translation>自定义潜音</translation>
+        </message>
+        <message>
+            <source>Dash</source>
+            <translation>虚线</translation>
+        </message>
+        <message>
+            <source>Dashed</source>
+            <translation>虚线</translation>
+        </message>
+        <message>
+            <source>Dashed barline</source>
+            <translation>虚小节线</translation>
+        </message>
+        <message>
+            <source>Decelerate</source>
+            <translation>降速</translation>
+        </message>
+        <message>
+            <source>Default</source>
+            <translation>默认</translation>
+        </message>
+        <message>
+            <source>Default (Diatonic)</source>
+            <translation>默认（全音）</translation>
+        </message>
+        <message>
+            <source>Delete selected measures</source>
+            <translation>删除所选小节</translation>
+        </message>
+        <message>
+            <source>Diagram scale</source>
+            <translation>图例缩放</translation>
+        </message>
+        <message>
+            <source>Diatonic</source>
+            <translation>全音</translation>
+        </message>
+        <message>
+            <source>Diminished</source>
+            <translation>减</translation>
+        </message>
+        <message>
+            <source>Diminuendo</source>
+            <translation>渐弱</translation>
+        </message>
+        <message>
+            <source>Dip</source>
+            <translation>沾音</translation>
+        </message>
+        <message>
+            <source>Direction</source>
+            <translation>方向</translation>
+        </message>
+        <message>
+            <source>Display brackets, clefs and key signatures in the next measure</source>
+            <translation>在下一小节显示连谱号、谱号和调号</translation>
+        </message>
+        <message>
+            <source>Dive</source>
+            <translation>潜音</translation>
+        </message>
+        <message>
+            <source>Do not stack modifiers</source>
+            <translation>不要堆叠修饰符</translation>
+        </message>
+        <message>
+            <source>Don’t hide empty staves in first system</source>
+            <translation>不隐藏首排谱行组的空谱表</translation>
+        </message>
+        <message>
+            <source>Dorian</source>
+            <translation>多利安调式</translation>
+        </message>
+        <message>
+            <source>Dotted</source>
+            <translation>点状线</translation>
+        </message>
+        <message>
+            <source>Dotted barline</source>
+            <translation>点状小节线</translation>
+        </message>
+        <message>
+            <source>Double barline</source>
+            <translation>双小节线</translation>
+        </message>
+        <message>
+            <source>Down</source>
+            <translation>下</translation>
+        </message>
+        <message>
+            <source>Drop two</source>
+            <translation>Drop 2</translation>
+        </message>
+        <message>
+            <source>Duration</source>
+            <translation>时值</translation>
+        </message>
+        <message>
+            <source>Duration dot position</source>
+            <translation>附点位置</translation>
+        </message>
+        <message>
+            <source>Ease in</source>
+            <translation>缓入</translation>
+        </message>
+        <message>
+            <source>Ease out</source>
+            <translation>缓出</translation>
+        </message>
+        <message>
+            <source>Easing method</source>
+            <translation>变化曲线</translation>
+        </message>
+        <message>
+            <source>Edit strings</source>
+            <translation>编辑弦</translation>
+        </message>
+        <message>
+            <source>Empty staves visibility</source>
+            <translation>空谱表可见性</translation>
+        </message>
+        <message>
+            <source>End arrow height</source>
+            <translation>末端箭头高度</translation>
+        </message>
+        <message>
+            <source>End arrow width</source>
+            <translation>末端箭头宽度</translation>
+        </message>
+        <message>
+            <source>End hook height</source>
+            <translation>末端钩高</translation>
+        </message>
+        <message>
+            <source>End point</source>
+            <translation>终点</translation>
+        </message>
+        <message>
+            <source>End text</source>
+            <translation>末端文本</translation>
+        </message>
+        <message>
+            <source>Exclude from parts</source>
+            <translation>从分谱中排除</translation>
+        </message>
+        <message>
+            <source>Exclude from score</source>
+            <translation>从乐谱中排除</translation>
+        </message>
+        <message>
+            <source>Exclude from vertical alignment</source>
+            <translation>从垂直对齐中排除</translation>
+        </message>
+        <message>
+            <source>Feathered beams</source>
+            <translation>发散式符杠</translation>
+        </message>
+        <message>
+            <source>Feathering left</source>
+            <translation>左分散度</translation>
+        </message>
+        <message>
+            <source>Feathering right</source>
+            <translation>右分散度</translation>
+        </message>
+        <message>
+            <source>Fermata</source>
+            <translation>延音记号</translation>
+        </message>
+        <message>
+            <source>Fermatas</source>
+            <translation>延音记号</translation>
+        </message>
+        <message>
+            <source>Fifth</source>
+            <translation>五度</translation>
+        </message>
+        <message>
+            <source>Fill color</source>
+            <translation>填充颜色</translation>
+        </message>
+        <message>
+            <source>Filled arrow</source>
+            <translation>填充箭头</translation>
+        </message>
+        <message>
+            <source>Final barline</source>
+            <translation>终止小节线</translation>
+        </message>
+        <message>
+            <source>Finger for string %1</source>
+            <translation>弦%1指法</translation>
+        </message>
+        <message>
+            <source>Flag</source>
+            <translation>符尾</translation>
+        </message>
+        <message>
+            <source>Flag offset</source>
+            <translation>符尾偏移</translation>
+        </message>
+        <message>
+            <source>Flag style</source>
+            <translation>符尾样式</translation>
+        </message>
+        <message>
+            <source>Follow written tempo</source>
+            <translation>依照谱面速度</translation>
+        </message>
+        <message>
+            <source>Font</source>
+            <translation>字体</translation>
+        </message>
+        <message>
+            <source>Font size</source>
+            <translation>字号</translation>
+        </message>
+        <message>
+            <source>Force horizontal</source>
+            <translation>强制放平符杠</translation>
+        </message>
+        <message>
+            <source>Formatting</source>
+            <translation>排版标记</translation>
+        </message>
+        <message>
+            <source>Forwards</source>
+            <translation>下移一层</translation>
+        </message>
+        <message>
+            <source>Four note</source>
+            <translation>四音</translation>
+        </message>
+        <message>
+            <source>Fourth</source>
+            <translation>四度</translation>
+        </message>
+        <message>
+            <source>Frame</source>
+            <translation>框体</translation>
+        </message>
+        <message>
+            <source>Frame settings</source>
+            <translation>框体设置</translation>
+        </message>
+        <message>
+            <source>Frames</source>
+            <translation>框体</translation>
+        </message>
+        <message>
+            <source>Fret number</source>
+            <translation>品格数量</translation>
+        </message>
+        <message>
+            <source>Fretboard diagram</source>
+            <translation>品格图</translation>
+        </message>
+        <message>
+            <source>Fretboard diagram legend</source>
+            <translation>品格图图例</translation>
+        </message>
+        <message>
+            <source>Fretted instruments</source>
+            <translation>有品乐器</translation>
+        </message>
+        <message>
+            <source>Gap</source>
+            <translation>间隔</translation>
+        </message>
+        <message>
+            <source>Gap between text and line</source>
+            <translation>文本和线条间距</translation>
+        </message>
+        <message>
+            <source>Gap to staff/frames</source>
+            <translation>到谱表/框体的间距</translation>
+        </message>
+        <message>
+            <source>Gap to staff/frames above</source>
+            <translation>到上方谱表/框体的间距</translation>
+        </message>
+        <message>
+            <source>Gap to staff/frames below</source>
+            <translation>到下方谱表/框体的间距</translation>
+        </message>
+        <message>
+            <source>General</source>
+            <translation>通用</translation>
+        </message>
+        <message>
+            <source>Generate clefs</source>
+            <translation>生成谱号</translation>
+        </message>
+        <message>
+            <source>Generate key signatures</source>
+            <translation>生成调号</translation>
+        </message>
+        <message>
+            <source>Generate time signatures</source>
+            <translation>生成拍号</translation>
+        </message>
+        <message>
+            <source>German pitch names</source>
+            <translation>德式音名</translation>
+        </message>
+        <message>
+            <source>German pitch names, no accidentals</source>
+            <translation>德式音名，无变音号</translation>
+        </message>
+        <message>
+            <source>Glissando</source>
+            <translation>滑音</translation>
+        </message>
+        <message>
+            <source>Hairpin</source>
+            <translation>楔形力度记号</translation>
+        </message>
+        <message>
+            <source>Half</source>
+            <translation>2分音符</translation>
+        </message>
+        <message>
+            <source>Hammer-on/pull-off</source>
+            <translation>击弦/勾弦</translation>
+        </message>
+        <message>
+            <source>Head</source>
+            <translation>符头</translation>
+        </message>
+        <message>
+            <source>Heavy barline</source>
+            <translation>粗小节线</translation>
+        </message>
+        <message>
+            <source>Heavy double barline</source>
+            <translation>粗双小节线</translation>
+        </message>
+        <message>
+            <source>Height</source>
+            <translation>高</translation>
+        </message>
+        <message>
+            <source>Height (new system)</source>
+            <translation>高度（新谱行组）</translation>
+        </message>
+        <message>
+            <source>Hide</source>
+            <translation>隐藏</translation>
+        </message>
+        <message>
+            <source>Hide courtesy clefs and signatures</source>
+            <translation>隐藏提示谱号和记号</translation>
+        </message>
+        <message>
+            <source>Hide empty staves</source>
+            <translation>隐藏空谱表</translation>
+        </message>
+        <message>
+            <source>Hide notehead</source>
+            <translation>隐藏符头</translation>
+        </message>
+        <message>
+            <source>Hold line</source>
+            <translation>和弦线</translation>
+        </message>
+        <message>
+            <source>Hook length</source>
+            <translation>挂钩长度</translation>
+        </message>
+        <message>
+            <source>Hooked 45°</source>
+            <translation>45度折钩</translation>
+        </message>
+        <message>
+            <source>Hooked 90°</source>
+            <translation>直角折钩</translation>
+        </message>
+        <message>
+            <source>Hooked 90° T-style</source>
+            <translation>90度丁字折钩</translation>
+        </message>
+        <message>
+            <source>Hooks</source>
+            <translation>挂钩位置</translation>
+        </message>
+        <message>
+            <source>Horizontal</source>
+            <translation>水平</translation>
+        </message>
+        <message>
+            <source>Horizontal alignment buttons</source>
+            <translation>水平对齐按钮</translation>
+        </message>
+        <message>
+            <source>Horizontal frame</source>
+            <translation>水平框</translation>
+        </message>
+        <message>
+            <source>Horizontal order</source>
+            <translation>水平顺序</translation>
+        </message>
+        <message>
+            <source>Horizontally center text box to barline</source>
+            <translation>向小节线水平居中文本框</translation>
+        </message>
+        <message>
+            <source>Horizontally center text box to note/rest</source>
+            <translation>向音符或休止符水平居中文本框</translation>
+        </message>
+        <message>
+            <source>Horizontally center text box within frame</source>
+            <translation>在框体内垂直居中文本框</translation>
+        </message>
+        <message>
+            <source>Horizontally center text within its bounding box</source>
+            <translation>在边界框内水平居中文本</translation>
+        </message>
+        <message>
+            <source>Image</source>
+            <translation>图像</translation>
+        </message>
+        <message>
+            <source>Image height</source>
+            <translation>图像高度</translation>
+        </message>
+        <message>
+            <source>Image width</source>
+            <translation>图像宽度</translation>
+        </message>
+        <message>
+            <source>Indent first system of new section</source>
+            <translation>缩进新乐章的首个谱行</translation>
+        </message>
+        <message>
+            <source>Insert measures</source>
+            <translation>插入小节</translation>
+        </message>
+        <message>
+            <source>Insert special characters</source>
+            <translation>插入特殊字符</translation>
+        </message>
+        <message>
+            <source>Inside</source>
+            <translation>内</translation>
+        </message>
+        <message>
+            <source>Instrument / Staff properties</source>
+            <translation>乐器/谱表属性</translation>
+        </message>
+        <message>
+            <source>Instrument names</source>
+            <translation>乐器名称</translation>
+        </message>
+        <message>
+            <source>Interpretation</source>
+            <translation>演绎风格</translation>
+        </message>
+        <message>
+            <source>Interval</source>
+            <translation>音程</translation>
+        </message>
+        <message>
+            <source>Interval above</source>
+            <translation>上方音程</translation>
+        </message>
+        <message>
+            <source>Interval below</source>
+            <translation>下方音程</translation>
+        </message>
+        <message>
+            <source>Inverted dip</source>
+            <translation>逆沾音</translation>
+        </message>
+        <message>
+            <source>Invisible</source>
+            <translation>不可见元素</translation>
+        </message>
+        <message>
+            <source>Invisible elements</source>
+            <translation>不可见元素</translation>
+        </message>
+        <message>
+            <source>Invisible staff lines</source>
+            <translation>隐藏谱线</translation>
+        </message>
+        <message>
+            <source>Ionian</source>
+            <translation>爱奥尼亚调式</translation>
+        </message>
+        <message>
+            <source>Italic</source>
+            <translation>斜体</translation>
+        </message>
+        <message>
+            <source>Jazz</source>
+            <translation>爵士</translation>
+        </message>
+        <message>
+            <source>Join beams</source>
+            <translation>联结符杠</translation>
+        </message>
+        <message>
+            <source>Jump</source>
+            <translation>跳转</translation>
+        </message>
+        <message>
+            <source>Jump to</source>
+            <translation>跳转至</translation>
+        </message>
+        <message>
+            <source>Justify</source>
+            <translation>两端对齐</translation>
+        </message>
+        <message>
+            <source>Justify text to fill the available width</source>
+            <translation>拉伸文本以填充到可用宽度</translation>
+        </message>
+        <message>
+            <source>Keep measures on the selected page(s) together and prevent them from reflowing to the next page</source>
+            <translation>将所选页面上的小节保持在一起，防止其回流到下一页</translation>
+        </message>
+        <message>
+            <source>Keep measures on the selected system(s) together and prevent them from reflowing to the next system</source>
+            <translation>将所选谱行的小节放在一行，并防止它们被挤到下一个谱行</translation>
+        </message>
+        <message>
+            <source>Key signature</source>
+            <translation>调号</translation>
+        </message>
+        <message>
+            <source>Label</source>
+            <translation>标签</translation>
+        </message>
+        <message>
+            <source>Laissez vibrer</source>
+            <translation>放任号</translation>
+        </message>
+        <message>
+            <source>Laissez vibrer placement</source>
+            <translation>放任号位置</translation>
+        </message>
+        <message>
+            <source>Leading space</source>
+            <translation>前导空间</translation>
+        </message>
+        <message>
+            <source>Left</source>
+            <translation>左</translation>
+        </message>
+        <message>
+            <source>Left (start) repeat barline</source>
+            <translation>左（起始）反复小节线</translation>
+        </message>
+        <message>
+            <source>Left gap</source>
+            <translation>左间距</translation>
+        </message>
+        <message>
+            <source>Left padding</source>
+            <translation>左内距</translation>
+        </message>
+        <message>
+            <source>Left-align text box to barline</source>
+            <translation>向小节线左对齐文本框</translation>
+        </message>
+        <message>
+            <source>Left-align text box to note/rest</source>
+            <translation>向音符或休止符左对齐文本框</translation>
+        </message>
+        <message>
+            <source>Left-align text box within frame</source>
+            <translation>在框体内左对齐文本框</translation>
+        </message>
+        <message>
+            <source>Left-align text within its bounding box</source>
+            <translation>在边界框内左对齐文本</translation>
+        </message>
+        <message>
+            <source>Length</source>
+            <translation>长度</translation>
+        </message>
+        <message>
+            <source>Line arrow</source>
+            <translation>线型箭头</translation>
+        </message>
+        <message>
+            <source>Line distance</source>
+            <translation>谱线距离</translation>
+        </message>
+        <message>
+            <source>Line end</source>
+            <translation>线尾</translation>
+        </message>
+        <message>
+            <source>Line spacing</source>
+            <translation>行距</translation>
+        </message>
+        <message>
+            <source>Line spacing:</source>
+            <translation>行距：</translation>
+        </message>
+        <message>
+            <source>Line start</source>
+            <translation>线头</translation>
+        </message>
+        <message>
+            <source>Line style</source>
+            <translation>线条样式</translation>
+        </message>
+        <message>
+            <source>Line thickness</source>
+            <translation>线条粗细</translation>
+        </message>
+        <message>
+            <source>Line type</source>
+            <translation>线条类型</translation>
+        </message>
+        <message>
+            <source>Literal</source>
+            <translation>原样</translation>
+        </message>
+        <message>
+            <source>Lock</source>
+            <translation>锁定</translation>
+        </message>
+        <message>
+            <source>Lock selected page(s)</source>
+            <translation>锁定所选页面</translation>
+        </message>
+        <message>
+            <source>Lock selected system(s)</source>
+            <translation>锁定所选谱行</translation>
+        </message>
+        <message>
+            <source>Lock/unlock selected page(s)</source>
+            <translation>锁定/解锁所选页面</translation>
+        </message>
+        <message>
+            <source>Lock/unlock selected system(s)</source>
+            <translation>锁定/解锁所选谱行</translation>
+        </message>
+        <message>
+            <source>Locrian</source>
+            <translation>洛克里亚调式</translation>
+        </message>
+        <message>
+            <source>Long name</source>
+            <translation>全称</translation>
+        </message>
+        <message>
+            <source>Lydian</source>
+            <translation>利迪亚调式</translation>
+        </message>
+        <message>
+            <source>Lyrics</source>
+            <translation>唱词</translation>
+        </message>
+        <message>
+            <source>Lyrics line</source>
+            <translation>唱词行</translation>
+        </message>
+        <message>
+            <source>Major</source>
+            <translation>大调</translation>
+        </message>
+        <message>
+            <source>Major second</source>
+            <translation>大二度</translation>
+        </message>
+        <message>
+            <source>Make line to asterisk visible</source>
+            <translation>显示到星号的线</translation>
+        </message>
+        <message>
+            <source>Marker</source>
+            <translation>标记</translation>
+        </message>
+        <message>
+            <source>Marker type</source>
+            <translation>记号类型</translation>
+        </message>
+        <message>
+            <source>Marker type:</source>
+            <translation>记号类型：</translation>
+        </message>
+        <message>
+            <source>Mask over clefs, key and time signatures</source>
+            <translation>遮盖谱号、调号和拍号</translation>
+        </message>
+        <message>
+            <source>Measure repeat</source>
+            <translation>小节反复号</translation>
+        </message>
+        <message>
+            <source>Measure width</source>
+            <translation>小节宽度</translation>
+        </message>
+        <message>
+            <source>Measures</source>
+            <translation>小节</translation>
+        </message>
+        <message>
+            <source>Menu for “%1”</source>
+            <translation>“%1” 菜单</translation>
+        </message>
+        <message>
+            <source>Midpoint</source>
+            <translation>中点</translation>
+        </message>
+        <message>
+            <source>Minimum distance</source>
+            <translation>最小距离</translation>
+        </message>
+        <message>
+            <source>Minimum length</source>
+            <translation>最小长度</translation>
+        </message>
+        <message>
+            <source>Minor</source>
+            <translation>小调</translation>
+        </message>
+        <message>
+            <source>Minor second</source>
+            <translation>小二度</translation>
+        </message>
+        <message>
+            <source>Mixolydian</source>
+            <translation>混合利迪亚调式</translation>
+        </message>
+        <message>
+            <source>Mode</source>
+            <translation>模式</translation>
+        </message>
+        <message>
+            <source>Move cross-staff beam</source>
+            <translation>移动跨谱表符杠</translation>
+        </message>
+        <message>
+            <source>Move down</source>
+            <translation>向下移动</translation>
+        </message>
+        <message>
+            <source>Move measure(s) to next system</source>
+            <translation>将小节移至下一谱行组</translation>
+        </message>
+        <message>
+            <source>Move measure(s) to previous system</source>
+            <translation>将小节移至上一谱行组</translation>
+        </message>
+        <message>
+            <source>Move measures across systems</source>
+            <translation>跨谱行移动小节</translation>
+        </message>
+        <message>
+            <source>Move system(s) to next page</source>
+            <translation>将谱行移至下一页</translation>
+        </message>
+        <message>
+            <source>Move system(s) to previous page</source>
+            <translation>将谱行移至上一页</translation>
+        </message>
+        <message>
+            <source>Move systems across pages</source>
+            <translation>跨页移动谱行</translation>
+        </message>
+        <message>
+            <source>Move up</source>
+            <translation>向上移动</translation>
+        </message>
+        <message>
+            <source>Multimeasure rest</source>
+            <translation>多节休止符</translation>
+        </message>
+        <message>
+            <source>Multiple dots</source>
+            <translation>单弦多点</translation>
+        </message>
+        <message>
+            <source>New page from selection</source>
+            <translation>从所选内容新建页面</translation>
+        </message>
+        <message>
+            <source>New system from selection</source>
+            <translation>从所选内容新建谱行</translation>
+        </message>
+        <message>
+            <source>Next</source>
+            <translation>下一步</translation>
+        </message>
+        <message>
+            <source>Niente circle</source>
+            <translation>无响度圈记号</translation>
+        </message>
+        <message>
+            <source>No beam</source>
+            <translation>无符杠</translation>
+        </message>
+        <message>
+            <source>None</source>
+            <translation>无</translation>
+        </message>
+        <message>
+            <source>Normal</source>
+            <translation>常规线条</translation>
+        </message>
+        <message>
+            <source>Normal notehead</source>
+            <translation>常规符头</translation>
+        </message>
+        <message>
+            <source>Notation</source>
+            <translation>记谱</translation>
+        </message>
+        <message>
+            <source>Note</source>
+            <translation>音符</translation>
+        </message>
+        <message>
+            <source>Note direction</source>
+            <translation>符头方向</translation>
+        </message>
+        <message>
+            <source>Note-anchored line</source>
+            <translation>音符锚索</translation>
+        </message>
+        <message>
+            <source>Notehead duration</source>
+            <translation>符头时值</translation>
+        </message>
+        <message>
+            <source>Notehead offset</source>
+            <translation>符头偏移</translation>
+        </message>
+        <message>
+            <source>Notehead parentheses</source>
+            <translation>符头圆括号</translation>
+        </message>
+        <message>
+            <source>Notehead scheme</source>
+            <translation>符头方案</translation>
+        </message>
+        <message>
+            <source>Notehead type</source>
+            <translation>符头类型</translation>
+        </message>
+        <message>
+            <source>Notehead with parentheses</source>
+            <translation>带圆括号符头</translation>
+        </message>
+        <message>
+            <source>Notes</source>
+            <translation>音符</translation>
+        </message>
+        <message>
+            <source>Number</source>
+            <translation>连音数</translation>
+        </message>
+        <message>
+            <source>Number of lines</source>
+            <translation>谱线数量</translation>
+        </message>
+        <message>
+            <source>Number of measures to insert:</source>
+            <translation>插入小节数量：</translation>
+        </message>
+        <message>
+            <source>Number offset</source>
+            <translation>号码偏移</translation>
+        </message>
+        <message>
+            <source>Number position</source>
+            <translation>数字位置</translation>
+        </message>
+        <message>
+            <source>Number type</source>
+            <translation>数字类型</translation>
+        </message>
+        <message>
+            <source>Octave</source>
+            <translation>八度</translation>
+        </message>
+        <message>
+            <source>Off</source>
+            <translation>关</translation>
+        </message>
+        <message>
+            <source>Offset</source>
+            <translation>偏移</translation>
+        </message>
+        <message>
+            <source>On</source>
+            <translation>开</translation>
+        </message>
+        <message>
+            <source>On staff</source>
+            <translation>在谱表内</translation>
+        </message>
+        <message>
+            <source>Orientation</source>
+            <translation>方向</translation>
+        </message>
+        <message>
+            <source>Ornament</source>
+            <translation>装饰音记号</translation>
+        </message>
+        <message>
+            <source>Ottava</source>
+            <translation>八度号</translation>
+        </message>
+        <message>
+            <source>Outside</source>
+            <translation>外</translation>
+        </message>
+        <message>
+            <source>Override visual duration</source>
+            <translation>覆盖谱面时值</translation>
+        </message>
+        <message>
+            <source>Override written tempo</source>
+            <translation>覆盖谱面速度</translation>
+        </message>
+        <message>
+            <source>Padding</source>
+            <translation>内距</translation>
+        </message>
+        <message>
+            <source>Page</source>
+            <translation>页面</translation>
+        </message>
+        <message>
+            <source>Page margins</source>
+            <translation>页边距</translation>
+        </message>
+        <message>
+            <source>Page settings</source>
+            <translation>页面设置</translation>
+        </message>
+        <message>
+            <source>Parentheses</source>
+            <translation>圆括号</translation>
+        </message>
+        <message>
+            <source>Partial lyrics line</source>
+            <translation>部分歌词行</translation>
+        </message>
+        <message>
+            <source>Pause before new section starts</source>
+            <translation>在新乐章前暂停</translation>
+        </message>
+        <message>
+            <source>Pause time</source>
+            <translation>暂停时长</translation>
+        </message>
+        <message>
+            <source>Pedal</source>
+            <translation>踏板符号</translation>
+        </message>
+        <message>
+            <source>Perfect</source>
+            <translation>纯</translation>
+        </message>
+        <message>
+            <source>Phrygian</source>
+            <translation>弗里几亚调式</translation>
+        </message>
+        <message>
+            <source>Pitch names</source>
+            <translation>音名</translation>
+        </message>
+        <message>
+            <source>Pitch names, no accidentals</source>
+            <translation>音名，无变音号</translation>
+        </message>
+        <message>
+            <source>Placement</source>
+            <translation>定位</translation>
+        </message>
+        <message>
+            <source>Play</source>
+            <translation>播放</translation>
+        </message>
+        <message>
+            <source>Play count</source>
+            <translation>播放计数</translation>
+        </message>
+        <message>
+            <source>Play count text</source>
+            <translation>演奏计数文本</translation>
+        </message>
+        <message>
+            <source>Play repeats</source>
+            <translation>播放反复记号</translation>
+        </message>
+        <message>
+            <source>Play until</source>
+            <translation>播放至</translation>
+        </message>
+        <message>
+            <source>Playback</source>
+            <translation>播放</translation>
+        </message>
+        <message>
+            <source>Portamento</source>
+            <translation>滑音</translation>
+        </message>
+        <message>
+            <source>Position</source>
+            <translation>位置</translation>
+        </message>
+        <message>
+            <source>Position relative to barline</source>
+            <translation>相对小节线位置</translation>
+        </message>
+        <message>
+            <source>Press Enter to start editing</source>
+            <translation>按下回车Enter以开始编辑</translation>
+        </message>
+        <message>
+            <source>Previous</source>
+            <translation>上一个</translation>
+        </message>
+        <message>
+            <source>Quarter</source>
+            <translation>4分音符</translation>
+        </message>
+        <message>
+            <source>Ratio</source>
+            <translation>比率</translation>
+        </message>
+        <message>
+            <source>Rectangle</source>
+            <translation>长方形</translation>
+        </message>
+        <message>
+            <source>Release (Down)</source>
+            <translation>释放（下）</translation>
+        </message>
+        <message>
+            <source>Release (Up)</source>
+            <translation>释放（上）</translation>
+        </message>
+        <message>
+            <source>Repeat list</source>
+            <translation>反复列表</translation>
+        </message>
+        <message>
+            <source>Repeat style</source>
+            <translation>反复记号样式</translation>
+        </message>
+        <message>
+            <source>Reset</source>
+            <translation>重置</translation>
+        </message>
+        <message>
+            <source>Reset chord list</source>
+            <translation>重置和弦列表</translation>
+        </message>
+        <message>
+            <source>Reset measure numbers for new section</source>
+            <translation>新乐章重置小节号</translation>
+        </message>
+        <message>
+            <source>Reset property to default value</source>
+            <translation>将属性重置为默认值</translation>
+        </message>
+        <message>
+            <source>Reset stacking order to default</source>
+            <translation>重置堆叠顺序为默认</translation>
+        </message>
+        <message>
+            <source>Reset to default</source>
+            <translation>重置为默认</translation>
+        </message>
+        <message>
+            <source>Reset “%1” to default value</source>
+            <translation>重置“%1”为默认值</translation>
+        </message>
+        <message>
+            <source>Rest</source>
+            <translation>休止符</translation>
+        </message>
+        <message>
+            <source>Return</source>
+            <translation>返回</translation>
+        </message>
+        <message>
+            <source>Reverse final barline</source>
+            <translation>翻转最终小节线</translation>
+        </message>
+        <message>
+            <source>Right</source>
+            <translation>右</translation>
+        </message>
+        <message>
+            <source>Right (end) repeat barline</source>
+            <translation>右（终止）反复小节线</translation>
+        </message>
+        <message>
+            <source>Right and left (end/start) repeat barline</source>
+            <translation>右与左（终止/起始）反复小节线</translation>
+        </message>
+        <message>
+            <source>Right gap</source>
+            <translation>右间距</translation>
+        </message>
+        <message>
+            <source>Right padding</source>
+            <translation>右内距</translation>
+        </message>
+        <message>
+            <source>Right-align text box to barline</source>
+            <translation>向小节线右对齐文本框</translation>
+        </message>
+        <message>
+            <source>Right-align text box to note/rest</source>
+            <translation>向音符或休止符右对齐文本框</translation>
+        </message>
+        <message>
+            <source>Right-align text box within frame</source>
+            <translation>在框体内右对齐文本框</translation>
+        </message>
+        <message>
+            <source>Right-align text within its bounding box</source>
+            <translation>在边界框内右对齐文本</translation>
+        </message>
+        <message>
+            <source>Root only</source>
+            <translation>仅根音</translation>
+        </message>
+        <message>
+            <source>Rotation</source>
+            <translation>旋转</translation>
+        </message>
+        <message>
+            <source>Row gap</source>
+            <translation>行间距</translation>
+        </message>
+        <message>
+            <source>Save as default style for this score</source>
+            <translation>保存为此乐谱的默认样式</translation>
+        </message>
+        <message>
+            <source>Scale</source>
+            <translation>缩放</translation>
+        </message>
+        <message>
+            <source>Scale to frame size</source>
+            <translation>缩放到框体尺寸</translation>
+        </message>
+        <message>
+            <source>Scale with staff size</source>
+            <translation>与谱表大小一起缩放</translation>
+        </message>
+        <message>
+            <source>Score and part synchronization</source>
+            <translation>总谱和分谱同步化</translation>
+        </message>
+        <message>
+            <source>Score appearance</source>
+            <translation>乐谱外观</translation>
+        </message>
+        <message>
+            <source>Second</source>
+            <translation>二度</translation>
+        </message>
+        <message>
+            <source>Section break</source>
+            <translation>分节符</translation>
+        </message>
+        <message>
+            <source>Set as staff default</source>
+            <translation>设为谱表默认样式</translation>
+        </message>
+        <message>
+            <source>Set specific tempo</source>
+            <translation>设置特定速度</translation>
+        </message>
+        <message>
+            <source>Set to verse</source>
+            <translation>设置到段落</translation>
+        </message>
+        <message>
+            <source>Settings</source>
+            <translation>设置</translation>
+        </message>
+        <message>
+            <source>Seventh</source>
+            <translation>七度</translation>
+        </message>
+        <message>
+            <source>Short 1</source>
+            <translation>I型短延线</translation>
+        </message>
+        <message>
+            <source>Short 2</source>
+            <translation>II型短延线</translation>
+        </message>
+        <message>
+            <source>Show</source>
+            <translation>显示</translation>
+        </message>
+        <message>
+            <source>Show any alteration</source>
+            <translation>显示任何变化</translation>
+        </message>
+        <message>
+            <source>Show barlines</source>
+            <translation>显示小节线</translation>
+        </message>
+        <message>
+            <source>Show bracket</source>
+            <translation>显示括号</translation>
+        </message>
+        <message>
+            <source>Show brackets when spanning a single staff</source>
+            <translation>显示延伸到单个谱表的连谱号</translation>
+        </message>
+        <message>
+            <source>Show courtesy clef</source>
+            <translation>显示提示谱号</translation>
+        </message>
+        <message>
+            <source>Show courtesy key signature</source>
+            <translation>显示提示调号</translation>
+        </message>
+        <message>
+            <source>Show courtesy time signature</source>
+            <translation>显示提示拍号</translation>
+        </message>
+        <message>
+            <source>Show empty staves</source>
+            <translation>显示空谱表</translation>
+        </message>
+        <message>
+            <source>Show fingerings</source>
+            <translation>显示指法</translation>
+        </message>
+        <message>
+            <source>Show ledger lines</source>
+            <translation>显示加线</translation>
+        </message>
+        <message>
+            <source>Show less</source>
+            <translation>显示更少</translation>
+        </message>
+        <message>
+            <source>Show line</source>
+            <translation>显示线条</translation>
+        </message>
+        <message>
+            <source>Show more</source>
+            <translation>显示更多</translation>
+        </message>
+        <message>
+            <source>Show number</source>
+            <translation>显示数字</translation>
+        </message>
+        <message>
+            <source>Show numbers only</source>
+            <translation>仅显示数字</translation>
+        </message>
+        <message>
+            <source>Show nut</source>
+            <translation>显示上弦枕</translation>
+        </message>
+        <message>
+            <source>Show options for hiding empty staves</source>
+            <translation>显示隐藏空谱表的选项</translation>
+        </message>
+        <message>
+            <source>Show stem slash</source>
+            <translation>显示符干斜线</translation>
+        </message>
+        <message>
+            <source>Show text</source>
+            <translation>显示文本</translation>
+        </message>
+        <message>
+            <source>Single barline</source>
+            <translation>单小节线</translation>
+        </message>
+        <message>
+            <source>Six note</source>
+            <translation>六音</translation>
+        </message>
+        <message>
+            <source>Sixth</source>
+            <translation>六度</translation>
+        </message>
+        <message>
+            <source>Size</source>
+            <translation>大小</translation>
+        </message>
+        <message>
+            <source>Slur</source>
+            <translation>圆滑线</translation>
+        </message>
+        <message>
+            <source>Small accidental</source>
+            <translation>小变音号</translation>
+        </message>
+        <message>
+            <source>Small notehead</source>
+            <translation>小符头</translation>
+        </message>
+        <message>
+            <source>Snap to grid</source>
+            <translation>吸附于网格</translation>
+        </message>
+        <message>
+            <source>Snap to next</source>
+            <translation>吸附至下一个</translation>
+        </message>
+        <message>
+            <source>Snap to previous</source>
+            <translation>吸附至上一个</translation>
+        </message>
+        <message>
+            <source>Solfege fixed Do</source>
+            <translation>固定调唱名</translation>
+        </message>
+        <message>
+            <source>Solfege movable Do</source>
+            <translation>移调后唱名</translation>
+        </message>
+        <message>
+            <source>Solfège fixed do</source>
+            <translation>固定调唱名</translation>
+        </message>
+        <message>
+            <source>Solfège movable do</source>
+            <translation>首调唱名</translation>
+        </message>
+        <message>
+            <source>Sound flags</source>
+            <translation>音色标志</translation>
+        </message>
+        <message>
+            <source>Spacer</source>
+            <translation>行距符</translation>
+        </message>
+        <message>
+            <source>Span</source>
+            <translation>管辖范围</translation>
+        </message>
+        <message>
+            <source>Span from</source>
+            <translation>延伸起点</translation>
+        </message>
+        <message>
+            <source>Span presets</source>
+            <translation>连谱号预设样式：</translation>
+        </message>
+        <message>
+            <source>Span to</source>
+            <translation>延伸终点</translation>
+        </message>
+        <message>
+            <source>Span to next staff</source>
+            <translation>延至下一谱表</translation>
+        </message>
+        <message>
+            <source>Spread delay</source>
+            <translation>琶音时程</translation>
+        </message>
+        <message>
+            <source>Square</source>
+            <translation>辅助连谱号</translation>
+        </message>
+        <message>
+            <source>Staff label</source>
+            <translation>谱表标签</translation>
+        </message>
+        <message>
+            <source>Staff line color</source>
+            <translation>谱线颜色</translation>
+        </message>
+        <message>
+            <source>Staff text properties</source>
+            <translation>谱表文本属性</translation>
+        </message>
+        <message>
+            <source>Staff type changes</source>
+            <translation>谱表类型更换</translation>
+        </message>
+        <message>
+            <source>Start arrow height</source>
+            <translation>始端箭头高度</translation>
+        </message>
+        <message>
+            <source>Start arrow width</source>
+            <translation>始端箭头宽度</translation>
+        </message>
+        <message>
+            <source>Start hook height</source>
+            <translation>起点钩高</translation>
+        </message>
+        <message>
+            <source>Start new section with long instrument names</source>
+            <translation>新乐章开头显示乐器全名</translation>
+        </message>
+        <message>
+            <source>Start on upper note</source>
+            <translation>从上方音符开始</translation>
+        </message>
+        <message>
+            <source>Start point</source>
+            <translation>起点</translation>
+        </message>
+        <message>
+            <source>Stem</source>
+            <translation>符干</translation>
+        </message>
+        <message>
+            <source>Stem direction</source>
+            <translation>符干方向</translation>
+        </message>
+        <message>
+            <source>Stem offset</source>
+            <translation>符干偏移</translation>
+        </message>
+        <message>
+            <source>Stemless</source>
+            <translation>无符干</translation>
+        </message>
+        <message>
+            <source>Step offset</source>
+            <translation>音级偏移</translation>
+        </message>
+        <message>
+            <source>Straight</source>
+            <translation>直线</translation>
+        </message>
+        <message>
+            <source>Strikethrough</source>
+            <translation>删除线</translation>
+        </message>
+        <message>
+            <source>Strings</source>
+            <translation>弦乐器</translation>
+        </message>
+        <message>
+            <source>Style</source>
+            <translation>样式</translation>
+        </message>
+        <message>
+            <source>Style (between notes)</source>
+            <translation>样式（音符之间）</translation>
+        </message>
+        <message>
+            <source>Style settings</source>
+            <translation>样式设置</translation>
+        </message>
+        <message>
+            <source>Style/appearance</source>
+            <translation>样式/外观</translation>
+        </message>
+        <message>
+            <source>Subscript</source>
+            <translation>下标</translation>
+        </message>
+        <message>
+            <source>Subscript buttons</source>
+            <translation>订阅按钮</translation>
+        </message>
+        <message>
+            <source>Superscript</source>
+            <translation>上标</translation>
+        </message>
+        <message>
+            <source>Symbol</source>
+            <translation>符号</translation>
+        </message>
+        <message>
+            <source>Symbol size</source>
+            <translation>符号尺寸</translation>
+        </message>
+        <message>
+            <source>Synchronize with main score</source>
+            <translation>与主乐谱同步</translation>
+        </message>
+        <message>
+            <source>System</source>
+            <translation>谱行组</translation>
+        </message>
+        <message>
+            <source>System &amp; page layout</source>
+            <translation>谱行与页面布局</translation>
+        </message>
+        <message>
+            <source>Tablature staff layout</source>
+            <translation>指法谱版面</translation>
+        </message>
+        <message>
+            <source>Tapping</source>
+            <translation>点弦</translation>
+        </message>
+        <message>
+            <source>Tempo</source>
+            <translation>速度符号</translation>
+        </message>
+        <message>
+            <source>Tempo change</source>
+            <translation>速度变化</translation>
+        </message>
+        <message>
+            <source>Tempo primo</source>
+            <translation>初始速度</translation>
+        </message>
+        <message>
+            <source>Text</source>
+            <translation>文本</translation>
+        </message>
+        <message>
+            <source>Text frame</source>
+            <translation>文本框</translation>
+        </message>
+        <message>
+            <source>Text line</source>
+            <translation>文本线性记号</translation>
+        </message>
+        <message>
+            <source>Text scale</source>
+            <translation>文本缩放</translation>
+        </message>
+        <message>
+            <source>Text style</source>
+            <translation>文本样式</translation>
+        </message>
+        <message>
+            <source>Text style buttons</source>
+            <translation>文本样式按钮</translation>
+        </message>
+        <message>
+            <source>Text style settings buttons</source>
+            <translation>文本样式设置按钮</translation>
+        </message>
+        <message>
+            <source>Text when continuing to a new system</source>
+            <translation>在新谱行连续处的文本</translation>
+        </message>
+        <message>
+            <source>Thickness</source>
+            <translation>粗细</translation>
+        </message>
+        <message>
+            <source>Third</source>
+            <translation>三度</translation>
+        </message>
+        <message>
+            <source>This is set as the default style for this score</source>
+            <translation>已设为本乐谱默认样式</translation>
+        </message>
+        <message>
+            <source>Three note</source>
+            <translation>三音和弦</translation>
+        </message>
+        <message>
+            <source>Tick 1</source>
+            <translation>I型撇式</translation>
+        </message>
+        <message>
+            <source>Tick 2</source>
+            <translation>II型撇式</translation>
+        </message>
+        <message>
+            <source>Tie</source>
+            <translation>延音线</translation>
+        </message>
+        <message>
+            <source>Tie (partial)</source>
+            <translation>延音线（局部）</translation>
+        </message>
+        <message>
+            <source>Tie placement</source>
+            <translation>延音线位置</translation>
+        </message>
+        <message>
+            <source>Time signature</source>
+            <translation>拍号</translation>
+        </message>
+        <message>
+            <source>Time signature properties</source>
+            <translation>拍号属性</translation>
+        </message>
+        <message>
+            <source>Time stretch</source>
+            <translation>时长拉伸</translation>
+        </message>
+        <message>
+            <source>Time: %2, value: %3</source>
+            <translation>拍：%2，值：%3</translation>
+        </message>
+        <message>
+            <source>To back</source>
+            <translation>移至底层</translation>
+        </message>
+        <message>
+            <source>To front</source>
+            <translation>移至顶层</translation>
+        </message>
+        <message>
+            <source>Top note</source>
+            <translation>顶部音符</translation>
+        </message>
+        <message>
+            <source>Top padding</source>
+            <translation>上内距</translation>
+        </message>
+        <message>
+            <source>Traditional</source>
+            <translation>传统</translation>
+        </message>
+        <message>
+            <source>Traditional alternative</source>
+            <translation>传统可选项</translation>
+        </message>
+        <message>
+            <source>Tremolo bar</source>
+            <translation>摇把颤音</translation>
+        </message>
+        <message>
+            <source>Tremolo bar type</source>
+            <translation>摇把颤音类型：</translation>
+        </message>
+        <message>
+            <source>Tremolo line</source>
+            <translation>震音线</translation>
+        </message>
+        <message>
+            <source>Tremolos</source>
+            <translation>震音</translation>
+        </message>
+        <message>
+            <source>Triangle</source>
+            <translation>三角形</translation>
+        </message>
+        <message>
+            <source>Tuning (cents)</source>
+            <translation>调音（音分）</translation>
+        </message>
+        <message>
+            <source>Tuplet</source>
+            <translation>连音</translation>
+        </message>
+        <message>
+            <source>Type</source>
+            <translation>类型</translation>
+        </message>
+        <message>
+            <source>Underline</source>
+            <translation>下划线</translation>
+        </message>
+        <message>
+            <source>Unison</source>
+            <translation>一度</translation>
+        </message>
+        <message>
+            <source>Unknown</source>
+            <translation>未知</translation>
+        </message>
+        <message>
+            <source>Unlock selected page(s)</source>
+            <translation>解锁所选页面</translation>
+        </message>
+        <message>
+            <source>Unlock selected system(s)</source>
+            <translation>解锁所选谱行</translation>
+        </message>
+        <message>
+            <source>Until the end of the attached duration</source>
+            <translation>到所附音符的时值结束为止</translation>
+        </message>
+        <message>
+            <source>Until the end of the measure</source>
+            <translation>到小节末为止</translation>
+        </message>
+        <message>
+            <source>Until the next chord symbol</source>
+            <translation>到下个和弦符号为止</translation>
+        </message>
+        <message>
+            <source>Up</source>
+            <translation>上</translation>
+        </message>
+        <message>
+            <source>Update to match the notes on the staff</source>
+            <translation>更新以匹配谱表上的音符</translation>
+        </message>
+        <message>
+            <source>Use staff space units</source>
+            <translation>使用谱表行间距值</translation>
+        </message>
+        <message>
+            <source>Use text centering</source>
+            <translation>使用文本居中</translation>
+        </message>
+        <message>
+            <source>Velocity</source>
+            <translation>力度</translation>
+        </message>
+        <message>
+            <source>Vertical</source>
+            <translation>垂直</translation>
+        </message>
+        <message>
+            <source>Vertical alignment buttons</source>
+            <translation>垂直对齐按钮</translation>
+        </message>
+        <message>
+            <source>Vertical frame</source>
+            <translation>垂直框</translation>
+        </message>
+        <message>
+            <source>Vibrato</source>
+            <translation>揉颤音</translation>
+        </message>
+        <message>
+            <source>Vibrato sawtooth</source>
+            <translation>揉颤音锯齿线</translation>
+        </message>
+        <message>
+            <source>Vibrato sawtooth wide</source>
+            <translation>宽揉颤音锯齿线</translation>
+        </message>
+        <message>
+            <source>Vibrato wide</source>
+            <translation>宽揉颤音线</translation>
+        </message>
+        <message>
+            <source>Visible</source>
+            <translation>可见</translation>
+        </message>
+        <message>
+            <source>Visible frets</source>
+            <translation>可见品格</translation>
+        </message>
+        <message>
+            <source>Voice 1</source>
+            <translation>声部1</translation>
+        </message>
+        <message>
+            <source>Voice 2</source>
+            <translation>声部2</translation>
+        </message>
+        <message>
+            <source>Voice 3</source>
+            <translation>声部3</translation>
+        </message>
+        <message>
+            <source>Voice 4</source>
+            <translation>声部4</translation>
+        </message>
+        <message>
+            <source>Voice assignment</source>
+            <translation>声部指派</translation>
+        </message>
+        <message>
+            <source>Voicing</source>
+            <translation>和弦排列</translation>
+        </message>
+        <message>
+            <source>Volta</source>
+            <translation>跳跃号</translation>
+        </message>
+        <message>
+            <source>Wavy</source>
+            <translation>波浪线</translation>
+        </message>
+        <message>
+            <source>Where to insert measures:</source>
+            <translation>何处插入小节：</translation>
+        </message>
+        <message>
+            <source>White keys</source>
+            <translation>白键</translation>
+        </message>
+        <message>
+            <source>Whole</source>
+            <translation>全音符</translation>
+        </message>
+        <message>
+            <source>Wide</source>
+            <translation>宽</translation>
+        </message>
+        <message>
+            <source>Wide dashed</source>
+            <translation>长虚线</translation>
+        </message>
+        <message>
+            <source>Width</source>
+            <translation>宽</translation>
+        </message>
+        <message>
+            <source>You have multiple brackets selected. Select a single bracket to edit its settings.</source>
+            <translation>您选中了多个连谱号。请选择其一以编辑其设置。</translation>
+        </message>
+        <message>
+            <source>You have multiple fretboard diagrams selected. Select a single diagram to edit its settings.</source>
+            <translation>您选中了多个品格图。请选择其一以编辑其设置。</translation>
+        </message>
+        <message>
+            <source>You have multiple tremolo bars selected. Select a single one to edit its settings.</source>
+            <translation>您选中了多个颤音。请选择其一以编辑其设置。</translation>
+        </message>
+    </context>
+
 </TS>

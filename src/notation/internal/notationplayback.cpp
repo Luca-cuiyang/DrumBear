@@ -59,6 +59,7 @@ NotationPlayback::NotationPlayback(IGetScore* getScore,
 {
     m_notationChanged.onReceive(this, [this](const muse::RectF&) {
         updateLoopBoundaries();
+        updateTotalPlayTime();
     });
 }
 

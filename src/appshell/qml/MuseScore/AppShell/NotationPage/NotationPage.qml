@@ -55,6 +55,24 @@ DockPage {
         }
     }
 
+    //! NOTE: audioTrackPanel is a DockPanel whose content is lazily loaded only while it is
+    //! visible, so this observer must live outside the panel itself. The dock panel is shown
+    //! and hidden with open()/close() (not just QML `visible`), matching how the View menu
+    //! toggles other dock panels.
+    Connections {
+        target: audioModel
+
+        function onHasTrackChanged() {
+            Qt.callLater(function() {
+                if (audioModel.hasTrack) {
+                    audioTrackPanel.open()
+                } else {
+                    audioTrackPanel.close()
+                }
+            })
+        }
+    }
+
     property NavigationSection noteInputKeyNavSec: NavigationSection {
         name: "NoteInputSection"
         order: 2
@@ -510,7 +528,8 @@ DockPage {
 
             groupName: root.horizontalPanelsGroup
 
-            visible: audioModel.hasTrack
+            //! NOTE: hidden by default; shown only after "File -> Import accompaniment track..."
+            visible: false
             location: Location.Bottom
 
             dropDestinations: root.horizontalPanelDropDestinations

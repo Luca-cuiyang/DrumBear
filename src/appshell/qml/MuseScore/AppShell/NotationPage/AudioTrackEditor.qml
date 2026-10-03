@@ -49,6 +49,10 @@ Item {
     property color waveActive: "#7db8ff"
     property color waveInactive: "#5a5a5a"
     property color playheadColor: "#ff5252"
+    property color rulerColor: "#9a9a9a"
+    property color rulerTextColor: "#c0c0c0"
+    property color scoreGridColor: "#f0a030"
+    property color scoreGridTextColor: "#ffc060"
 
     function formatTime(secs) {
         var s = Math.max(0, secs)
@@ -61,28 +65,6 @@ Item {
         anchors.fill: parent
         anchors.margins: 10
         spacing: 8
-
-        RowLayout {
-            Layout.fillWidth: true
-
-            StyledTextLabel {
-                text: qsTrc("project", "Audio alignment")
-                font: ui.theme.bodyBoldFont
-            }
-
-            Item { Layout.fillWidth: true }
-
-            FlatButton {
-                text: qsTrc("project", "Choose audio track")
-                onClicked: audioModel.chooseFile()
-            }
-
-            FlatButton {
-                text: qsTrc("project", "Remove")
-                enabled: audioModel.hasTrack
-                onClicked: audioModel.remove()
-            }
-        }
 
         Rectangle {
             id: timelineBg
@@ -115,6 +97,23 @@ Item {
                     viewStart = Math.max(0, Math.min(timeRange - viewDuration, c - viewDuration / 2))
                 }
 
+                function seekAt(mouseX) {
+                    var t = viewStart + mouseX / pxPerSec
+                    audioModel.seek(Math.max(0, t))
+                }
+
+                //! NOTE: click (or scrub) anywhere on the timeline to move the playhead,
+                //! like a video editor. The clip and playhead drag areas below are on top,
+                //! so they keep their own drag behaviour.
+                MouseArea {
+                    id: timelineSeekArea
+                    anchors.fill: parent
+                    cursorShape: Qt.PointingHandCursor
+                    hoverEnabled: true
+                    onPressed: function(mouse) { timeline.seekAt(mouse.x) }
+                    onPositionChanged: function(mouse) { if (pressed) timeline.seekAt(mouse.x) }
+                }
+
                 Canvas {
                     id: rulerCanvas
                     anchors.top: parent.top
@@ -124,8 +123,8 @@ Item {
                     onPaint: {
                         var ctx = getContext("2d")
                         ctx.clearRect(0, 0, width, height)
-                        ctx.strokeStyle = "#7a7a7a"
-                        ctx.fillStyle = "#b7b7b7"
+                        ctx.strokeStyle = root.rulerColor
+                        ctx.fillStyle = root.rulerTextColor
                         ctx.font = "10px sans-serif"
 
                         var step = timeline.viewDuration > 30 ? 10 : (timeline.viewDuration > 10 ? 5 : 1)
@@ -169,8 +168,8 @@ Item {
                             ctx.clearRect(0, 0, width, height)
                             if (scoreDuration <= 0) return
 
-                            ctx.strokeStyle = "#4a4a4a"
-                            ctx.fillStyle = "#8a8a8a"
+                            ctx.strokeStyle = root.scoreGridColor
+                            ctx.fillStyle = root.scoreGridTextColor
                             ctx.font = "9px sans-serif"
                             var step = scoreDuration > 30 ? 5 : (scoreDuration > 10 ? 2 : 1)
                             var start = audioModel.scoreOffset
@@ -253,16 +252,6 @@ Item {
                             function onDurationChanged() { waveCanvas.requestPaint() }
                         }
 
-                        // Scrub / seek
-                        MouseArea {
-                            anchors.fill: parent
-                            function seekAt(mouseX) {
-                                var t = timeline.viewStart + mouseX / timeline.pxPerSec
-                                audioModel.seek(Math.max(0, t))
-                            }
-                            onClicked: function(mouse) { seekAt(mouse.x) }
-                            onPositionChanged: function(mouse) { if (pressed) seekAt(mouse.x) }
-                        }
                     }
 
                     // Drag the audio clip to move it
@@ -288,10 +277,13 @@ Item {
                             drag.axis: Drag.XAxis
                             drag.minimumX: 0
                             drag.maximumX: timeline.width - clipDragArea.width
+                            onClicked: function(mouse) {
+                                var pos = mapToItem(timeline, mouse.x, mouse.y)
+                                timeline.seekAt(pos.x)
+                            }
                             onPositionChanged: {
                                 var t = timeline.viewStart + clipDragArea.x / timeline.pxPerSec
                                 audioModel.setStartOffset(Math.max(0, t))
-                                audioModel.apply()
                             }
                             onReleased: audioModel.apply()
                         }
@@ -349,20 +341,27 @@ Item {
                             waveCanvas.requestPaint()
                         }
                     }
-                }
-            }
-        }
 
-        StyledSlider {
-            Layout.fillWidth: true
-            value: timeline.viewStart
-            from: 0
-            to: Math.max(0, timeRange - timeline.viewDuration)
-            stepSize: 0.01
-            onMoved: {
-                timeline.viewStart = value
-                rulerCanvas.requestPaint()
-                waveCanvas.requestPaint()
+                    //! NOTE: grab anywhere along the playhead line and drag left/right to scrub
+                    //! the playback position manually.
+                    MouseArea {
+                        id: playheadDragArea
+                        x: -9
+                        width: 18
+                        height: parent.height
+                        cursorShape: Qt.SplitHCursor
+                        hoverEnabled: true
+
+                        function seekAt(mouseX, mouseY) {
+                            var pos = mapToItem(timeline, mouseX, mouseY)
+                            var t = timeline.viewStart + pos.x / timeline.pxPerSec
+                            audioModel.seek(Math.max(0, t))
+                        }
+
+                        onPressed: function(mouse) { seekAt(mouse.x, mouse.y) }
+                        onPositionChanged: function(mouse) { if (pressed) seekAt(mouse.x, mouse.y) }
+                    }
+                }
             }
         }
 
@@ -388,14 +387,13 @@ Item {
                         if (!isNaN(v) && v > 0) audioModel.setBpm(v)
                     }
                 }
-                StyledTextLabel { text: qsTrc("project", "Measured") + " " + audioModel.measuredBpm.toFixed(3) }
-            }
-
-            StyledTextLabel { text: qsTrc("project", "Volume") }
-            RowLayout {
-                Layout.fillWidth: true
+                FlatButton {
+                    text: qsTrc("project", "Original speed")
+                    onClicked: audioModel.resetSpeed()
+                }
+                StyledTextLabel { text: qsTrc("project", "Volume") }
                 StyledSlider {
-                    Layout.fillWidth: true
+                    Layout.preferredWidth: 140
                     value: audioModel.volumeDb
                     from: -60
                     to: 12
@@ -403,13 +401,21 @@ Item {
                     onMoved: { audioModel.setVolumeDb(value); audioModel.apply() }
                 }
                 StyledTextLabel { text: audioModel.volumeDb.toFixed(1) + " dB" }
-            }
-        }
+                StyledTextLabel { text: qsTrc("project", "Measured") + " " + audioModel.measuredBpm.toFixed(3) }
 
-        CheckBox {
-            text: qsTrc("project", "Mute")
-            checked: audioModel.muted
-            onCheckedChanged: { audioModel.setMuted(checked); audioModel.apply() }
+                Item { Layout.fillWidth: true }
+
+                FlatButton {
+                    text: qsTrc("project", "Choose audio track")
+                    onClicked: audioModel.chooseFile()
+                }
+
+                FlatButton {
+                    text: qsTrc("project", "Remove")
+                    enabled: audioModel.hasTrack
+                    onClicked: audioModel.remove()
+                }
+            }
         }
     }
 }
