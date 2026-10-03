@@ -31,6 +31,7 @@
 #include "interactive/iinteractive.h"
 #include "modularity/ioc.h"
 #include "rcommand/icommanddispatcher.h"
+#include "async/asyncable.h"
 
 #include "project/iprojectaudiosettings.h"
 
