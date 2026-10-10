@@ -34,6 +34,9 @@
 #include "async/asyncable.h"
 
 #include "project/iprojectaudiosettings.h"
+#include "playback/iplaybackcontroller.h"
+#include "notation/inotationconfiguration.h"
+#include "audio/main/iplayback.h"
 
 namespace mu::project {
 class AudioTrackSettingsModel : public QObject, public muse::Contextable, public muse::async::Asyncable
@@ -57,6 +60,13 @@ class AudioTrackSettingsModel : public QObject, public muse::Contextable, public
     Q_PROPERTY(double measuredBpm READ measuredBpm NOTIFY measuredBpmChanged)
     Q_PROPERTY(double scoreOffset READ scoreOffset WRITE setScoreOffset NOTIFY scoreOffsetChanged)
     Q_PROPERTY(double scoreDuration READ scoreDuration NOTIFY scoreDurationChanged)
+    Q_PROPERTY(double fadeIn READ fadeIn WRITE setFadeIn NOTIFY fadeInChanged)
+    Q_PROPERTY(double fadeOut READ fadeOut WRITE setFadeOut NOTIFY fadeOutChanged)
+    Q_PROPERTY(QVariantList scoreBeatGrid READ scoreBeatGrid NOTIFY scoreBeatGridChanged)
+    Q_PROPERTY(bool scoreMuted READ scoreMuted NOTIFY scoreMutedChanged)
+    Q_PROPERTY(bool metronomeEnabled READ metronomeEnabled NOTIFY metronomeEnabledChanged)
+    Q_PROPERTY(double masterVolumeDb READ masterVolumeDb WRITE setMasterVolumeDb NOTIFY masterVolumeDbChanged)
+    Q_PROPERTY(double scoreVolumeDb READ scoreVolumeDb WRITE setScoreVolumeDb NOTIFY scoreVolumeDbChanged)
 
 public:
     explicit AudioTrackSettingsModel(QObject* parent = nullptr);
@@ -77,6 +87,13 @@ public:
     double measuredBpm() const;
     double scoreOffset() const;
     double scoreDuration() const;
+    double fadeIn() const;
+    double fadeOut() const;
+    QVariantList scoreBeatGrid() const;
+    bool scoreMuted() const;
+    bool metronomeEnabled() const;
+    double masterVolumeDb() const;
+    double scoreVolumeDb() const;
 
     Q_INVOKABLE void setStartOffset(double value);
     Q_INVOKABLE void setClipStart(double value);
@@ -88,6 +105,7 @@ public:
 
     Q_INVOKABLE void load();
     Q_INVOKABLE void chooseFile();
+    Q_INVOKABLE void replaceFile();
     Q_INVOKABLE void apply();
     Q_INVOKABLE void remove();
     Q_INVOKABLE void seek(double seconds);
@@ -105,6 +123,12 @@ public:
     Q_INVOKABLE void setBpm(double bpm);
     Q_INVOKABLE void resetSpeed();
     Q_INVOKABLE void setScoreOffset(double offset);
+    Q_INVOKABLE void setFadeIn(double value);
+    Q_INVOKABLE void setFadeOut(double value);
+    Q_INVOKABLE void toggleMetronome();
+    Q_INVOKABLE void toggleScoreMute();
+    Q_INVOKABLE void setMasterVolumeDb(double value);
+    Q_INVOKABLE void setScoreVolumeDb(double value);
 
 signals:
     void filePathChanged();
@@ -123,18 +147,29 @@ signals:
     void measuredBpmChanged();
     void scoreOffsetChanged();
     void scoreDurationChanged();
+    void fadeInChanged();
+    void fadeOutChanged();
+    void scoreBeatGridChanged();
+    void scoreMutedChanged();
+    void metronomeEnabledChanged();
+    void masterVolumeDbChanged();
+    void scoreVolumeDbChanged();
 
 private:
     IProjectAudioSettingsPtr audioSettings() const;
     void updateWaveform();
     void subscribeOnPlayback();
     void updateClipsList();
+    void updateScoreBeatGrid();
     const AudioClipSettings* firstClip() const;
     void notifyAll();
 
     muse::ContextInject<context::IGlobalContext> globalContext = { this };
     muse::ContextInject<muse::IInteractive> interactive = { this };
     muse::ContextInject<muse::rcommand::ICommandDispatcher> commandDispatcher = { this };
+    muse::ContextInject<playback::IPlaybackController> playbackController = { this };
+    muse::ContextInject<muse::audio::IPlayback> playback = { this };
+    muse::GlobalInject<notation::INotationConfiguration> notationConfiguration;
 
     AudioTrackSettings m_settings;
     double m_duration = 0.0;
@@ -148,6 +183,13 @@ private:
     double m_originalBpm = 0.0;
     QElapsedTimer m_tapTimer;
     QList<qint64> m_tapTimes;
+    QVariantList m_scoreBeatGrid;
+    bool m_scoreMuted = false;
+    bool m_metronomeEnabled = false;
+    double m_scoreVolumeDb = 0.0;
+    double m_masterVolumeDb = 0.0;
+    bool m_volumeInitialized = false;
+    bool m_prevHasTrack = false;
 };
 }
 

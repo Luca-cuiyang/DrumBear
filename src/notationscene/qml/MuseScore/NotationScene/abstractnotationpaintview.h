@@ -272,6 +272,7 @@ private:
     void onPlayingChanged();
     void updatePlaybackCursorInterpolated();
     void movePlaybackCursor(muse::midi::tick_t tick);
+    void refreshPlaybackCursorStyle();
     bool shouldAdjustCanvasVerticallyDuringPlayback(const muse::RectF& cursorRect);
 
     void onPlaybackCursorRectChanged();
@@ -333,6 +334,7 @@ private:
     QQuickItem* m_playbackCursorItem = nullptr;
 
     muse::secs_t m_lastPlaybackPosition = 0.;
+    muse::midi::tick_t m_lastCursorTick = 0;
     qint64 m_lastPlaybackPositionUpdateTimeNs = 0;
     QTimer m_updatePlaybackCursorInterpolatedTimer;
     QElapsedTimer m_elapsedTimer;

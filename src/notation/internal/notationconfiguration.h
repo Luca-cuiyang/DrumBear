@@ -96,6 +96,16 @@ public:
     QColor loopMarkerColor() const override;
     int cursorOpacity() const override;
 
+    double playbackCursorThickness() const override;
+    double playbackCursorOpacity() const override;
+    double playbackCursorLength() const override;
+
+    void setPlaybackCursorColor(const QColor& color) override;
+    void setPlaybackCursorThickness(double thickness) override;
+    void setPlaybackCursorOpacity(double opacity) override;
+    void setPlaybackCursorLength(double length) override;
+    muse::async::Notification playbackCursorStyleChanged() const override;
+
     bool thinNoteInputCursor() const override;
 
     QColor selectionColor(engraving::voice_idx_t voiceIndex = 0) const override;
@@ -282,5 +292,6 @@ private:
 
     muse::async::Notification m_isAutomaticallyPanEnabledChanged;
     muse::async::Notification m_isCountInEnabledChanged;
+    muse::async::Notification m_playbackCursorStyleChanged;
 };
 }

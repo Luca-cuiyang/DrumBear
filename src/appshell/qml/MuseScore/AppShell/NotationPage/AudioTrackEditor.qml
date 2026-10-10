@@ -1,23 +1,9 @@
 /*
  * SPDX-License-Identifier: GPL-3.0-only
  * MuseScore-Studio-CLA-applies
- *
- * MuseScore Studio
- * Music Composition & Notation
- *
  * Copyright (C) 2026 DB Score contributors
- *
  * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License version 3 as
- * published by the Free Software Foundation.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ * it under the terms of the GNU General Public License version 3 as published by the Free Software Foundation.
  */
 import QtQuick
 import QtQuick.Layouts
@@ -38,382 +24,754 @@ Item {
 
     property double audioDuration: audioModel.duration > 0 ? audioModel.duration : 0
     property double scoreDuration: audioModel.scoreDuration > 0 ? audioModel.scoreDuration : 0
-    property double contentDuration: Math.max(audioDuration, scoreDuration)
-    property double padding: Math.max(60, contentDuration * 0.5)
-    property double timeRange: contentDuration + padding * 2
+    property double totalDuration: Math.max(audioDuration, scoreDuration) + 30.0
 
-    property color timelineBg: "#1f1f1f"
-    property color clipColor: "#3a3a3a"
-    property color clipBorder: "#2f80ed"
-    property color accent: "#2f80ed"
-    property color waveActive: "#7db8ff"
-    property color waveInactive: "#5a5a5a"
-    property color playheadColor: "#ff5252"
-    property color rulerColor: "#9a9a9a"
-    property color rulerTextColor: "#c0c0c0"
-    property color scoreGridColor: "#f0a030"
-    property color scoreGridTextColor: "#ffc060"
+    //! NOTE: 缩放比例以「乐谱轨长度」为固定基准，导入音频后不改变整体缩放，
+    //! 否则音频变长会让 totalDuration 变大、同样的 zoom 显示更多时间，视觉上像被缩小了。
+    property double zoomBaseDuration: scoreDuration + 30.0
+
+    property real zoom: 3.5
+    property real scrollSec: 0.0
+    property real visibleDuration: Math.max(1.0, zoomBaseDuration / zoom)
+    property real maxScroll: Math.max(0.0, totalDuration - visibleDuration)
+
+    property color scoreColor: "#32584B"
+    property color audioColor: "#9E5242"
+    //! NOTE: 播放指针样式可调（颜色/粗细），仅影响外观，不影响任何功能与同步逻辑。
+    property string playheadColor: "#59BA54"
+    property real playheadThickness: 1.0
+    property var playheadColors: ["#59BA54", "#2F6FED", "#06B6D4", "#E11D48", "#F59E0B", "#111827"]
+    property color dimColor: Qt.rgba(0.55, 0.60, 0.57, 0.35)
+    property bool prevHasTrack: false
+
+    function pad2(n) {
+        return (n < 10 ? "0" : "") + n
+    }
 
     function formatTime(secs) {
         var s = Math.max(0, secs)
         var m = Math.floor(s / 60)
-        var sec = (s % 60).toFixed(2)
-        return (m < 10 ? "0" : "") + m + ":" + (sec < 10 ? "0" : "") + sec
+        var sec = Math.floor(s % 60)
+        var cs = Math.round((s - Math.floor(s)) * 100)
+        if (cs >= 100) {
+            cs = 0
+            sec += 1
+        }
+        return pad2(m) + ":" + pad2(sec) + "." + pad2(cs)
+    }
+
+    function niceStep(x) {
+        if (x <= 0) {
+            return 1
+        }
+        var p = Math.pow(10, Math.floor(Math.log(x) / Math.LN10))
+        var r = x / p
+        var m = r < 1.5 ? 1 : (r < 3.5 ? 2 : (r < 7.5 ? 5 : 10))
+        return m * p
+    }
+
+    function repaintTimeline() {
+        if (rulerCanvas) { rulerCanvas.requestPaint() }
+        if (scoreGridCanvas) { scoreGridCanvas.requestPaint() }
+        if (waveCanvas) { waveCanvas.requestPaint() }
+    }
+
+    onZoomChanged: repaintTimeline()
+    onScrollSecChanged: repaintTimeline()
+
+    Connections {
+        target: audioModel
+        function onHasTrackChanged() {
+            if (audioModel.hasTrack && !prevHasTrack) {
+                scrollSec = 0.0
+            }
+            prevHasTrack = audioModel.hasTrack
+        }
     }
 
     ColumnLayout {
         anchors.fill: parent
         anchors.margins: 10
-        spacing: 8
+        spacing: 6
+
+        RowLayout {
+            Layout.fillWidth: true
+            spacing: 8
+
+            FlatButton { text: "选择音频"; onClicked: audioModel.chooseFile() }
+            FlatButton { text: "替换音频"; enabled: audioModel.hasTrack; onClicked: audioModel.replaceFile() }
+            FlatButton { text: "移除伴奏轨"; enabled: audioModel.hasTrack; onClicked: audioModel.remove() }
+            FlatButton {
+                text: audioModel.metronomeEnabled ? "✓ 节拍器" : "节拍器"
+                accentButton: audioModel.metronomeEnabled
+                onClicked: audioModel.toggleMetronome()
+            }
+            FlatButton {
+                text: "音频测速"
+                enabled: audioModel.hasTrack
+                onClicked: audioModel.tapTempo()
+            }
+            StyledTextLabel {
+                text: audioModel.measuredBpm > 0 ? (audioModel.measuredBpm.toFixed(2) + " BPM") : ""
+                visible: audioModel.measuredBpm > 0
+            }
+        }
+
+        RowLayout {
+            Layout.fillWidth: true
+            spacing: 8
+
+            StyledTextLabel { text: "乐谱音量" }
+            StyledSlider {
+                id: scoreVolumeSlider
+                Layout.preferredWidth: 120
+                from: -60
+                to: 12
+                stepSize: 0.5
+                onMoved: audioModel.setScoreVolumeDb(value)
+
+                Component.onCompleted: scoreVolumeSlider.value = audioModel.scoreVolumeDb
+                Connections {
+                    target: audioModel
+                    function onScoreVolumeDbChanged() { scoreVolumeSlider.value = audioModel.scoreVolumeDb }
+                }
+            }
+
+            StyledTextLabel { text: "伴奏轨音量" }
+            StyledSlider {
+                id: accompanimentVolumeSlider
+                Layout.preferredWidth: 120
+                from: -60
+                to: 12
+                stepSize: 0.5
+                onMoved: { audioModel.setVolumeDb(value); audioModel.apply() }
+
+                Component.onCompleted: accompanimentVolumeSlider.value = audioModel.volumeDb
+                Connections {
+                    target: audioModel
+                    function onVolumeDbChanged() { accompanimentVolumeSlider.value = audioModel.volumeDb }
+                }
+            }
+
+            StyledTextLabel { text: "总音量" }
+            StyledSlider {
+                id: masterVolumeSlider
+                Layout.preferredWidth: 120
+                from: -60
+                to: 12
+                stepSize: 0.5
+                onMoved: audioModel.setMasterVolumeDb(value)
+
+                Component.onCompleted: masterVolumeSlider.value = audioModel.masterVolumeDb
+                Connections {
+                    target: audioModel
+                    function onMasterVolumeDbChanged() { masterVolumeSlider.value = audioModel.masterVolumeDb }
+                }
+            }
+        }
+
+        RowLayout {
+            Layout.fillWidth: true
+            spacing: 6
+
+            StyledTextLabel { text: "设置时间线" }
+
+            Repeater {
+                model: root.playheadColors
+                Rectangle {
+                    width: 16
+                    height: 16
+                    radius: 3
+                    color: modelData
+                    border.width: modelData === root.playheadColor ? 2 : 1
+                    border.color: modelData === root.playheadColor ? "#333333" : "#C9CFCA"
+
+                    MouseArea {
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        onClicked: root.playheadColor = modelData
+                    }
+                }
+            }
+
+            StyledTextLabel { text: "粗细" }
+            StyledSlider {
+                Layout.preferredWidth: 72
+                from: 1
+                to: 6
+                stepSize: 0.5
+                value: root.playheadThickness
+                onMoved: root.playheadThickness = value
+            }
+        }
+
+        RowLayout {
+            Layout.fillWidth: true
+            spacing: 8
+            StyledTextLabel { text: "播放位置" }
+            StyledSlider {
+                Layout.fillWidth: true
+                value: audioModel.playbackPosition
+                from: 0
+                to: Math.max(1, totalDuration)
+                onMoved: audioModel.seek(value)
+            }
+            StyledTextLabel { text: "轨道缩放" }
+            StyledSlider {
+                id: zoomSlider
+                Layout.preferredWidth: 150
+                from: 1.0
+                to: 6
+                stepSize: 0.02
+                onMoved: {
+                    zoom = value
+                    if (scrollSec > maxScroll) {
+                        scrollSec = maxScroll
+                    }
+                }
+
+                Component.onCompleted: zoomSlider.value = zoom
+                Connections {
+                    target: root
+                    function onZoomChanged() { zoomSlider.value = zoom }
+                }
+            }
+            StyledTextLabel { text: Math.round((zoom - 1.0) * 20.0) + "%" }
+        }
 
         Rectangle {
-            id: timelineBg
-
             Layout.fillWidth: true
-            Layout.preferredHeight: 150
-            color: timelineBg
-            radius: 8
+            Layout.fillHeight: true
+            color: "#F5F7F4"
+            radius: 6
             clip: true
 
-            Item {
-                id: timeline
-
+            Row {
                 anchors.fill: parent
-                anchors.margins: 8
 
-                property double viewStart: 0
-                property double viewDuration: timeRange
-                property double pxPerSec: width > 0 ? width / viewDuration : 0
+                // 左侧轨道名标签
+                Column {
+                    width: 86
+                    height: parent.height
 
-                function zoomIn() {
-                    var c = viewStart + viewDuration / 2
-                    viewDuration = Math.max(1, viewDuration / 1.5)
-                    viewStart = Math.max(0, Math.min(timeRange - viewDuration, c - viewDuration / 2))
-                }
+                    Rectangle {
+                        width: parent.width
+                        height: 22
+                        color: "transparent"
+                    }
+                    Rectangle {
+                        width: parent.width
+                        height: (parent.height - 22) / 2
+                        color: Qt.rgba(83 / 255, 105 / 255, 93 / 255, 0.14)
+                        border.color: "#D9E0DA"
 
-                function zoomOut() {
-                    var c = viewStart + viewDuration / 2
-                    viewDuration = Math.min(timeRange, viewDuration * 1.5)
-                    viewStart = Math.max(0, Math.min(timeRange - viewDuration, c - viewDuration / 2))
-                }
+                        Column {
+                            anchors.centerIn: parent
+                            spacing: 5
 
-                function seekAt(mouseX) {
-                    var t = viewStart + mouseX / pxPerSec
-                    audioModel.seek(Math.max(0, t))
-                }
+                            Text {
+                                anchors.horizontalCenter: parent.horizontalCenter
+                                text: "乐谱轨"
+                                color: root.scoreColor
+                                font.pixelSize: 11
+                                font.bold: true
+                            }
 
-                //! NOTE: click (or scrub) anywhere on the timeline to move the playhead,
-                //! like a video editor. The clip and playhead drag areas below are on top,
-                //! so they keep their own drag behaviour.
-                MouseArea {
-                    id: timelineSeekArea
-                    anchors.fill: parent
-                    cursorShape: Qt.PointingHandCursor
-                    hoverEnabled: true
-                    onPressed: function(mouse) { timeline.seekAt(mouse.x) }
-                    onPositionChanged: function(mouse) { if (pressed) timeline.seekAt(mouse.x) }
-                }
+                            Rectangle {
+                                anchors.horizontalCenter: parent.horizontalCenter
+                                width: 60
+                                height: 22
+                                radius: 4
+                                color: audioModel.scoreMuted ? root.scoreColor : "transparent"
+                                border.width: 1
+                                border.color: root.scoreColor
 
-                Canvas {
-                    id: rulerCanvas
-                    anchors.top: parent.top
-                    width: parent.width
-                    height: 24
+                                Text {
+                                    anchors.centerIn: parent
+                                    text: audioModel.scoreMuted ? "✓ 静音" : "静音"
+                                    color: audioModel.scoreMuted ? "#FFFFFF" : root.scoreColor
+                                    font.pixelSize: 11
+                                }
 
-                    onPaint: {
-                        var ctx = getContext("2d")
-                        ctx.clearRect(0, 0, width, height)
-                        ctx.strokeStyle = root.rulerColor
-                        ctx.fillStyle = root.rulerTextColor
-                        ctx.font = "10px sans-serif"
-
-                        var step = timeline.viewDuration > 30 ? 10 : (timeline.viewDuration > 10 ? 5 : 1)
-                        var subStep = step / 5
-                        var firstMinor = Math.floor(timeline.viewStart / subStep) * subStep
-                        for (var ms = firstMinor; ms <= timeline.viewStart + timeline.viewDuration; ms += subStep) {
-                            var mx = (ms - timeline.viewStart) * timeline.pxPerSec
-                            ctx.beginPath()
-                            ctx.moveTo(mx, height - 3)
-                            ctx.lineTo(mx, height)
-                            ctx.stroke()
+                                MouseArea {
+                                    anchors.fill: parent
+                                    cursorShape: Qt.PointingHandCursor
+                                    onClicked: audioModel.toggleScoreMute()
+                                }
+                            }
                         }
+                    }
+                    Rectangle {
+                        width: parent.width
+                        height: (parent.height - 22) / 2
+                        color: Qt.rgba(158 / 255, 82 / 255, 66 / 255, 0.14)
+                        border.color: "#D9E0DA"
 
-                        var first = Math.floor(timeline.viewStart / step) * step
-                        for (var s = first; s <= timeline.viewStart + timeline.viewDuration; s += step) {
-                            var x = (s - timeline.viewStart) * timeline.pxPerSec
-                            ctx.beginPath()
-                            ctx.moveTo(x, height - 8)
-                            ctx.lineTo(x, height)
-                            ctx.stroke()
-                            ctx.fillText(s + "s", x + 2, height - 10)
+                        Column {
+                            anchors.centerIn: parent
+                            spacing: 5
+
+                            Text {
+                                anchors.horizontalCenter: parent.horizontalCenter
+                                text: "音频轨"
+                                color: root.audioColor
+                                font.pixelSize: 11
+                                font.bold: true
+                            }
+
+                            Rectangle {
+                                anchors.horizontalCenter: parent.horizontalCenter
+                                width: 60
+                                height: 22
+                                radius: 4
+                                color: audioModel.muted ? root.audioColor : "transparent"
+                                border.width: 1
+                                border.color: root.audioColor
+                                opacity: audioModel.hasTrack ? 1.0 : 0.4
+
+                                Text {
+                                    anchors.centerIn: parent
+                                    text: audioModel.muted ? "✓ 静音" : "静音"
+                                    color: audioModel.muted ? "#FFFFFF" : root.audioColor
+                                    font.pixelSize: 11
+                                }
+
+                                MouseArea {
+                                    anchors.fill: parent
+                                    cursorShape: Qt.PointingHandCursor
+                                    enabled: audioModel.hasTrack
+                                    onClicked: {
+                                        audioModel.setMuted(!audioModel.muted)
+                                        audioModel.apply()
+                                    }
+                                }
+                            }
                         }
                     }
                 }
 
-                // Score beat grid track
-                Rectangle {
-                    id: scoreTrack
-                    anchors.top: rulerCanvas.bottom
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                    height: 36
-                    color: "#242424"
+                // 右侧时间线内容
+                Item {
+                    id: timeline
+                    width: parent.width - 86
+                    height: parent.height
+
+                    property double pxPerSec: width > 0 ? width / visibleDuration : 0
+                    function xAt(t) { return (t - scrollSec) * pxPerSec }
+                    function tAt(x) { return scrollSec + x / pxPerSec }
+                    //! NOTE: 时间线 x 对应的是「绝对时间」；乐谱本地播放时间 = 绝对时间 - scoreOffset。
+                    //! 点击落点要换算成乐谱时间再 seek，否则乐谱轨被拖动后，播放头会落在点击点之后。
+                    function seekToX(x) { audioModel.seek(Math.max(0, tAt(x) - audioModel.scoreOffset)) }
+                    //! NOTE: 触控板双指左右滑动 / 鼠标横向滚轮，横向滚动整条音轨。
+                    function scrollByWheel(wheel) {
+                        var dx = 0.0
+                        if (Math.abs(wheel.pixelDelta.x) >= 1.0) {
+                            dx = wheel.pixelDelta.x
+                        } else if (Math.abs(wheel.angleDelta.x) >= 1.0) {
+                            dx = wheel.angleDelta.x / 120.0 * 80.0
+                        } else {
+                            return false
+                        }
+                        var dSec = dx / pxPerSec
+                        scrollSec = Math.max(0.0, Math.min(maxScroll, scrollSec - dSec))
+                        return true
+                    }
+
+                    MouseArea {
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        onPressed: function(mouse) { timeline.seekToX(mouse.x) }
+                        onPositionChanged: function(mouse) { if (pressed) { timeline.seekToX(mouse.x) } }
+                        onWheel: function(wheel) { wheel.accepted = timeline.scrollByWheel(wheel) }
+                    }
 
                     Canvas {
-                        id: scoreGridCanvas
-                        anchors.fill: parent
-
+                        id: rulerCanvas
+                        anchors.top: parent.top
+                        anchors.left: parent.left
+                        anchors.right: parent.right
+                        height: 22
                         onPaint: {
                             var ctx = getContext("2d")
                             ctx.clearRect(0, 0, width, height)
-                            if (scoreDuration <= 0) return
-
-                            ctx.strokeStyle = root.scoreGridColor
-                            ctx.fillStyle = root.scoreGridTextColor
+                            var range = visibleDuration
+                            var pxPerSec = timeline.pxPerSec
+                            var minorStep = root.niceStep(8 / Math.max(0.001, pxPerSec))
+                            var majorStep = root.niceStep(64 / Math.max(0.001, pxPerSec))
+                            if (majorStep < minorStep) {
+                                majorStep = minorStep
+                            }
+                            ctx.strokeStyle = "#9BA39D"
+                            ctx.fillStyle = "#9BA39D"
                             ctx.font = "9px sans-serif"
-                            var step = scoreDuration > 30 ? 5 : (scoreDuration > 10 ? 2 : 1)
-                            var start = audioModel.scoreOffset
-                            var end = start + scoreDuration
-                            for (var s = Math.ceil(start); s <= end; s += step) {
-                                var x = (s - timeline.viewStart) * timeline.pxPerSec
+                            var firstMinor = Math.ceil(scrollSec / minorStep) * minorStep
+                            for (var ms = firstMinor; ms <= scrollSec + range; ms += minorStep) {
+                                var mx = timeline.xAt(ms)
                                 ctx.beginPath()
-                                ctx.moveTo(x, 0)
+                                ctx.moveTo(mx, height - 4)
+                                ctx.lineTo(mx, height)
+                                ctx.stroke()
+                            }
+                            var first = Math.ceil(scrollSec / majorStep) * majorStep
+                            for (var s = first; s <= scrollSec + range; s += majorStep) {
+                                var x = timeline.xAt(s)
+                                ctx.beginPath()
+                                ctx.moveTo(x, height - 8)
                                 ctx.lineTo(x, height)
                                 ctx.stroke()
-                                ctx.fillText(s + "s", x + 2, 10)
+                                ctx.fillText(root.formatTime(s), x + 2, height - 9)
                             }
                         }
                     }
 
-                    Connections {
-                        target: audioModel
-                        function onScoreOffsetChanged() { scoreGridCanvas.requestPaint() }
-                        function onScoreDurationChanged() { scoreGridCanvas.requestPaint() }
+                    Rectangle {
+                        id: scoreTrack
+                        anchors.top: rulerCanvas.bottom
+                        anchors.left: parent.left
+                        anchors.right: parent.right
+                        height: (parent.height - rulerCanvas.height) / 2
+                        color: "transparent"
+
+                        Canvas {
+                            id: scoreGridCanvas
+                            anchors.fill: parent
+                            //! 【固定不变式 · 永不可改】
+                            //! 乐谱轨的每一条竖线 = 对应小节的第一拍（强拍）。
+                            //! 无论是否导入音频、无论轨道如何缩放/拖动，竖线都必须与播放头完全同步。
+                            //! 竖线 x 时间 == 该小节第一拍的实际播放时间（含重复展开 + 速度）。
+                            onPaint: {
+                                var ctx = getContext("2d")
+                                ctx.clearRect(0, 0, width, height)
+                                var grid = audioModel.scoreBeatGrid
+                                for (var i = 0; i < grid.length; ++i) {
+                                    var item = grid[i]
+                                    if (!item.isDownbeat) {
+                                        continue
+                                    }
+                                    var x = timeline.xAt(item.time + audioModel.scoreOffset)
+                                    if (x < -1 || x > width + 1) {
+                                        continue
+                                    }
+                                    ctx.strokeStyle = root.scoreColor
+                                    ctx.lineWidth = 3
+                                    ctx.beginPath()
+                                    ctx.moveTo(x, 0)
+                                    ctx.lineTo(x, height)
+                                    ctx.stroke()
+                                }
+                                ctx.lineWidth = 1
+                            }
+                        }
+
+                        Connections {
+                            target: audioModel
+                            function onScoreBeatGridChanged() { scoreGridCanvas.requestPaint() }
+                            function onScoreDurationChanged() { scoreGridCanvas.requestPaint() }
+                            function onScoreOffsetChanged() { scoreGridCanvas.requestPaint() }
+                        }
+
+                        // 乐谱轨整段左右拖动
+                        Rectangle {
+                            id: scoreBlock
+                            x: timeline.xAt(audioModel.scoreOffset)
+                            y: 4
+                            width: Math.max(20, timeline.pxPerSec * Math.max(1, audioModel.scoreDuration))
+                            height: parent.height - 8
+                            color: "transparent"
+
+                            MouseArea {
+                                anchors.fill: parent
+                                cursorShape: Qt.OpenHandCursor
+                                property double pressX: 0
+                                property bool moved: false
+                                onPressed: function(mouse) { pressX = mouse.x; moved = false }
+                                onPositionChanged: function(mouse) {
+                                    if (pressed) {
+                                        var dx = mouse.x - pressX
+                                        if (Math.abs(dx) > 3) {
+                                            moved = true
+                                        }
+                                        if (moved) {
+                                            var d = dx / timeline.pxPerSec
+                                            audioModel.setScoreOffset(Math.max(0, audioModel.scoreOffset + d))
+                                        }
+                                    }
+                                }
+                                onReleased: {
+                                    if (moved) {
+                                        audioModel.apply()
+                                    }
+                                }
+                                onClicked: function(mouse) {
+                                    if (!moved) {
+                                        var pos = mapToItem(timeline, mouse.x, mouse.y)
+                                        timeline.seekToX(pos.x)
+                                    }
+                                }
+                                onWheel: function(wheel) { wheel.accepted = timeline.scrollByWheel(wheel) }
+                            }
+                        }
                     }
 
-                }
+                    Rectangle {
+                        id: audioTrack
+                        anchors.top: scoreTrack.bottom
+                        anchors.left: parent.left
+                        anchors.right: parent.right
+                        anchors.bottom: parent.bottom
+                        color: "transparent"
 
-                // Audio waveform track
-                Rectangle {
-                    id: audioTrack
-                    anchors.top: scoreTrack.bottom
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                    anchors.bottom: parent.bottom
-                    color: "#1b1b1b"
+                        Text {
+                            anchors.centerIn: parent
+                            text: "导入音频文件，与乐谱对齐"
+                            color: "#9BA39D"
+                            visible: !audioModel.hasTrack
+                        }
 
-                    Canvas {
-                        id: waveCanvas
-                        anchors.fill: parent
-
-                        onPaint: {
-                            var ctx = getContext("2d")
-                            ctx.clearRect(0, 0, width, height)
-
-                            var dur = audioModel.duration > 0 ? audioModel.duration : 1
-                            var clipX = (audioModel.startOffset - timeline.viewStart) * timeline.pxPerSec
-                            var clipW = dur * timeline.pxPerSec
-                            if (clipW < 2) clipW = 2
-
-                            var clipY = 6
-                            var clipH = height - 12
-                            ctx.fillStyle = root.clipColor
-                            ctx.strokeStyle = root.clipBorder
-                            ctx.lineWidth = 1
-                            ctx.fillRect(clipX, clipY, clipW, clipH)
-                            ctx.strokeRect(clipX + 0.5, clipY + 0.5, clipW - 1, clipH - 1)
-
-                            ctx.fillStyle = "#ffffff"
-                            ctx.font = "11px sans-serif"
-                            ctx.fillText(qsTrc("project", "Audio"), clipX + 8, clipY + 14)
-
-                            var peaks = audioModel.waveformPeaks
-                            if (peaks && peaks.length > 0) {
-                                var n = peaks.length
-                                var mid = clipY + clipH / 2
-                                for (var i = 0; i < n; ++i) {
-                                    var t = i / n * dur
-                                    var x = clipX + t * timeline.pxPerSec
-                                    var bw = Math.max(1, timeline.pxPerSec * (dur / n) - 1)
-                                    var amp = Math.max(1, peaks[i] * (clipH / 2 - 8))
-                                    ctx.fillStyle = root.waveActive
-                                    ctx.fillRect(x, mid - amp, bw, amp * 2)
+                        Canvas {
+                            id: waveCanvas
+                            anchors.fill: parent
+                            onPaint: {
+                                var ctx = getContext("2d")
+                                ctx.clearRect(0, 0, width, height)
+                                if (!audioModel.hasTrack) {
+                                    return
                                 }
-                            } else {
-                                ctx.fillStyle = root.waveInactive
-                                ctx.fillRect(clipX + 4, clipY + clipH / 2 - 1, Math.max(0, clipW - 8), 2)
+                                var dur = audioModel.duration > 0 ? audioModel.duration : 1
+                                var cs = Math.max(0, audioModel.clipStart)
+                                var ce = audioModel.clipEnd > 0 ? audioModel.clipEnd : dur
+                                if (ce < cs) {
+                                    ce = cs
+                                }
+                                var clipLen = ce - cs
+                                var x0 = timeline.xAt(audioModel.startOffset)
+                                var x1 = timeline.xAt(audioModel.startOffset + clipLen)
+                                var mid = height / 2
+                                var peaks = audioModel.waveformPeaks
+                                if (peaks && peaks.length > 0) {
+                                    var n = peaks.length
+                                    var halfH = height / 2 - 4
+                                    for (var i = 0; i < n; ++i) {
+                                        var t = i / n * dur
+                                        var inClip = (t >= cs && t <= ce)
+                                        if (!inClip) {
+                                            continue
+                                        }
+                                        var x = timeline.xAt(audioModel.startOffset + (t - cs))
+                                        var bw = Math.max(1, timeline.pxPerSec * (dur / n))
+                                        var item = peaks[i]
+                                        var minV = item.min
+                                        var maxV = item.max
+                                        var y1 = mid - maxV * halfH
+                                        var y2 = mid - minV * halfH
+                                        if (y2 < y1) {
+                                            var tmpY = y1
+                                            y1 = y2
+                                            y2 = tmpY
+                                        }
+                                        ctx.fillStyle = root.audioColor
+                                        ctx.fillRect(x, y1, bw, Math.max(1, y2 - y1))
+                                    }
+                                } else {
+                                    ctx.fillStyle = root.audioColor
+                                    ctx.fillRect(x0, mid - 1, Math.max(0, x1 - x0), 2)
+                                }
                             }
                         }
 
                         Connections {
                             target: audioModel
                             function onWaveformPeaksChanged() { waveCanvas.requestPaint() }
-                            function onStartOffsetChanged() { waveCanvas.requestPaint() }
                             function onDurationChanged() { waveCanvas.requestPaint() }
+                            function onStartOffsetChanged() { waveCanvas.requestPaint() }
+                            function onClipStartChanged() { waveCanvas.requestPaint() }
+                            function onClipEndChanged() { waveCanvas.requestPaint() }
                         }
 
+                        // 整段拖动（对齐）
+                        Rectangle {
+                            id: clipBody
+                            x: timeline.xAt(audioModel.startOffset)
+                            y: 6
+                            width: Math.max(20, timeline.pxPerSec * ((audioModel.clipEnd > 0 ? audioModel.clipEnd : audioDuration) - Math.max(0, audioModel.clipStart)))
+                            height: parent.height - 12
+                            color: "transparent"
+                            visible: audioModel.hasTrack
+
+                            MouseArea {
+                                anchors.fill: parent
+                                cursorShape: Qt.OpenHandCursor
+                                property double pressX: 0
+                                property bool moved: false
+                                onPressed: function(mouse) { pressX = mouse.x; moved = false }
+                                onPositionChanged: function(mouse) {
+                                    if (pressed) {
+                                        var dx = mouse.x - pressX
+                                        if (Math.abs(dx) > 3) {
+                                            moved = true
+                                        }
+                                        if (moved) {
+                                            var d = dx / timeline.pxPerSec
+                                            audioModel.setStartOffset(Math.max(0, audioModel.startOffset + d))
+                                        }
+                                    }
+                                }
+                                onReleased: {
+                                    if (moved) {
+                                        audioModel.apply()
+                                    }
+                                }
+                                onClicked: function(mouse) {
+                                    if (!moved) {
+                                        var pos = mapToItem(timeline, mouse.x, mouse.y)
+                                        timeline.seekToX(pos.x)
+                                    }
+                                }
+                                onWheel: function(wheel) { wheel.accepted = timeline.scrollByWheel(wheel) }
+                            }
+                        }
+
+                        // 裁剪开头把手
+                        Rectangle {
+                            id: leftTrim
+                            x: timeline.xAt(audioModel.startOffset)
+                            y: 6
+                            width: 8
+                            height: parent.height - 12
+                            color: root.audioColor
+                            visible: audioModel.hasTrack
+
+                            MouseArea {
+                                anchors.fill: parent
+                                cursorShape: Qt.SplitHCursor
+                                property double startClip: 0
+                                property double startOff: 0
+                                onPressed: function(mouse) {
+                                    startClip = Math.max(0, audioModel.clipStart)
+                                    startOff = Math.max(0, audioModel.startOffset)
+                                }
+                                onPositionChanged: function(mouse) {
+                                    if (pressed) {
+                                        var d = mouse.x / timeline.pxPerSec
+                                        audioModel.setClipStart(Math.max(0, startClip + d))
+                                        audioModel.setStartOffset(Math.max(0, startOff + d))
+                                    }
+                                }
+                                onReleased: audioModel.apply()
+                                onWheel: function(wheel) { wheel.accepted = timeline.scrollByWheel(wheel) }
+                            }
+                        }
+
+                        // 裁剪结尾把手
+                        Rectangle {
+                            id: rightTrim
+                            x: timeline.xAt(audioModel.startOffset + ((audioModel.clipEnd > 0 ? audioModel.clipEnd : audioDuration) - Math.max(0, audioModel.clipStart)))
+                            y: 6
+                            width: 8
+                            height: parent.height - 12
+                            color: root.audioColor
+                            visible: audioModel.hasTrack
+
+                            MouseArea {
+                                anchors.fill: parent
+                                cursorShape: Qt.SplitHCursor
+                                property double startEnd: 0
+                                onPressed: function(mouse) {
+                                    startEnd = audioModel.clipEnd > 0 ? audioModel.clipEnd : audioDuration
+                                }
+                                onPositionChanged: function(mouse) {
+                                    if (pressed) {
+                                        var d = mouse.x / timeline.pxPerSec
+                                        audioModel.setClipEnd(Math.max(0, startEnd + d))
+                                    }
+                                }
+                                onReleased: audioModel.apply()
+                                onWheel: function(wheel) { wheel.accepted = timeline.scrollByWheel(wheel) }
+                            }
+                        }
                     }
 
-                    // Drag the audio clip to move it
                     Rectangle {
-                        id: clipDragArea
-                        x: (audioModel.startOffset - timeline.viewStart) * timeline.pxPerSec
-                        y: 6
-                        width: Math.max(10, audioModel.duration * timeline.pxPerSec)
-                        height: parent.height - 12
-                        color: "transparent"
-                        visible: audioModel.hasTrack
-
-                        Connections {
-                            target: audioModel
-                            function onStartOffsetChanged() { clipDragArea.x = (audioModel.startOffset - timeline.viewStart) * timeline.pxPerSec }
-                            function onDurationChanged() { clipDragArea.width = Math.max(10, audioModel.duration * timeline.pxPerSec) }
-                        }
-
-                        MouseArea {
-                            anchors.fill: parent
-                            cursorShape: Qt.OpenHandCursor
-                            drag.target: clipDragArea
-                            drag.axis: Drag.XAxis
-                            drag.minimumX: 0
-                            drag.maximumX: timeline.width - clipDragArea.width
-                            onClicked: function(mouse) {
-                                var pos = mapToItem(timeline, mouse.x, mouse.y)
-                                timeline.seekAt(pos.x)
-                            }
-                            onPositionChanged: {
-                                var t = timeline.viewStart + clipDragArea.x / timeline.pxPerSec
-                                audioModel.setStartOffset(Math.max(0, t))
-                            }
-                            onReleased: audioModel.apply()
-                        }
-                    }
-                }
-
-                // Playhead spanning ruler + both tracks
-                Rectangle {
-                    id: playhead
-                    x: (audioModel.playbackPosition - timeline.viewStart) * timeline.pxPerSec
-                    y: 0
-                    width: 1
-                    height: timeline.height
-                    color: root.playheadColor
-                    visible: audioModel.playbackPosition >= 0
-
-                    Text {
-                        id: playheadTime
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        anchors.bottom: parent.top
-                        text: root.formatTime(audioModel.playbackPosition)
+                        id: playhead
+                        x: timeline.xAt(audioModel.playbackPosition + audioModel.scoreOffset) - width / 2
+                        width: Math.max(1, root.playheadThickness)
+                        height: timeline.height
+                        y: 0
                         color: root.playheadColor
-                        font.pixelSize: 10
-                    }
-
-                    Canvas {
-                        id: playheadHandle
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        anchors.top: parent.top
-                        width: 12
-                        height: 12
-                        onPaint: {
-                            var ctx = getContext("2d")
-                            ctx.clearRect(0, 0, width, height)
-                            ctx.fillStyle = root.playheadColor
-                            ctx.beginPath()
-                            ctx.moveTo(0, 0)
-                            ctx.lineTo(width, 0)
-                            ctx.lineTo(width / 2, height)
-                            ctx.closePath()
-                            ctx.fill()
-                        }
-                    }
-
-                    Connections {
-                        target: audioModel
-                        function onPlaybackPositionChanged() {
-                            var p = audioModel.playbackPosition
-                            if (p > timeline.viewStart + timeline.viewDuration * 0.85) {
-                                timeline.viewStart = Math.min(timeRange - timeline.viewDuration, p - timeline.viewDuration * 0.85)
-                            } else if (p < timeline.viewStart) {
-                                timeline.viewStart = Math.max(0, p)
-                            }
-                            rulerCanvas.requestPaint()
-                            waveCanvas.requestPaint()
-                        }
-                    }
-
-                    //! NOTE: grab anywhere along the playhead line and drag left/right to scrub
-                    //! the playback position manually.
-                    MouseArea {
-                        id: playheadDragArea
-                        x: -9
-                        width: 18
-                        height: parent.height
-                        cursorShape: Qt.SplitHCursor
-                        hoverEnabled: true
-
-                        function seekAt(mouseX, mouseY) {
-                            var pos = mapToItem(timeline, mouseX, mouseY)
-                            var t = timeline.viewStart + pos.x / timeline.pxPerSec
-                            audioModel.seek(Math.max(0, t))
-                        }
-
-                        onPressed: function(mouse) { seekAt(mouse.x, mouse.y) }
-                        onPositionChanged: function(mouse) { if (pressed) seekAt(mouse.x, mouse.y) }
+                        visible: audioModel.playbackPosition >= 0
                     }
                 }
             }
         }
 
-        GridLayout {
+        Item {
+            id: scrollBar
             Layout.fillWidth: true
-            columns: 2
-            columnSpacing: 16
-            rowSpacing: 6
+            Layout.preferredHeight: 14
 
-            StyledTextLabel { text: qsTrc("project", "BPM") }
-            RowLayout {
-                Layout.fillWidth: true
-                TextInputField {
-                    Layout.preferredWidth: 120
-                    currentText: bpmInput
-                    onTextChanged: function(newText) { bpmInput = newText }
-                }
-                FlatButton { text: qsTrc("project", "Tap"); onClicked: audioModel.tapTempo() }
-                FlatButton {
-                    text: qsTrc("project", "Apply")
-                    onClicked: {
-                        var v = parseFloat(bpmInput)
-                        if (!isNaN(v) && v > 0) audioModel.setBpm(v)
+            //! NOTE: 横条宽度 = 可视窗口占总时长的比例，与轨道缩放联动。
+            //! 全部装下时铺满整条；缩放越大（看得越少）横条越短。
+            property double ratio: Math.min(1.0, Math.max(0.0, visibleDuration / totalDuration))
+            property double minBarWidth: Math.min(24.0, width)
+            property double barWidth: ratio >= 1.0 ? width : Math.max(minBarWidth, width * ratio)
+            property double travel: Math.max(0.0, width - barWidth)
+            property double barX: maxScroll > 0.0
+                                  ? (Math.max(0.0, Math.min(maxScroll, scrollSec)) / maxScroll) * travel
+                                  : 0.0
+
+            // 滑轨底槽
+            Rectangle {
+                anchors.verticalCenter: parent.verticalCenter
+                width: parent.width
+                height: 4
+                radius: 2
+                color: "#E0E5E2"
+            }
+
+            // 点击底槽空白处：跳到点击位置（与之前 Slider 行为一致）
+            MouseArea {
+                anchors.fill: parent
+                cursorShape: Qt.PointingHandCursor
+
+                function jumpTo(x) {
+                    if (scrollBar.travel <= 0) {
+                        return
                     }
-                }
-                FlatButton {
-                    text: qsTrc("project", "Original speed")
-                    onClicked: audioModel.resetSpeed()
-                }
-                StyledTextLabel { text: qsTrc("project", "Volume") }
-                StyledSlider {
-                    Layout.preferredWidth: 140
-                    value: audioModel.volumeDb
-                    from: -60
-                    to: 12
-                    stepSize: 0.5
-                    onMoved: { audioModel.setVolumeDb(value); audioModel.apply() }
-                }
-                StyledTextLabel { text: audioModel.volumeDb.toFixed(1) + " dB" }
-                StyledTextLabel { text: qsTrc("project", "Measured") + " " + audioModel.measuredBpm.toFixed(3) }
-
-                Item { Layout.fillWidth: true }
-
-                FlatButton {
-                    text: qsTrc("project", "Choose audio track")
-                    onClicked: audioModel.chooseFile()
+                    var t = Math.max(0.0, Math.min(scrollBar.travel, x - scrollBar.barWidth / 2))
+                    scrollSec = (t / scrollBar.travel) * maxScroll
                 }
 
-                FlatButton {
-                    text: qsTrc("project", "Remove")
-                    enabled: audioModel.hasTrack
-                    onClicked: audioModel.remove()
+                onPressed: function(mouse) { jumpTo(mouse.x) }
+                onPositionChanged: function(mouse) { if (pressed) { jumpTo(mouse.x) } }
+            }
+
+            // 可短可长的横条
+            Rectangle {
+                id: scrollThumb
+                x: scrollBar.barX
+                anchors.verticalCenter: parent.verticalCenter
+                width: scrollBar.barWidth
+                height: 12
+                radius: 6
+                color: "#8B9A92"
+
+                MouseArea {
+                    anchors.fill: parent
+                    cursorShape: Qt.OpenHandCursor
+                    property double dragStartX: 0
+                    property double dragStartScroll: 0
+
+                    onPressed: function(mouse) {
+                        dragStartX = mouse.x
+                        dragStartScroll = scrollSec
+                    }
+                    onPositionChanged: function(mouse) {
+                        if (pressed && scrollBar.travel > 0) {
+                            var dx = mouse.x - dragStartX
+                            var dSec = (dx / scrollBar.travel) * maxScroll
+                            scrollSec = Math.max(0.0, Math.min(maxScroll, dragStartScroll + dSec))
+                        }
+                    }
                 }
             }
         }

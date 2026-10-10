@@ -30,7 +30,7 @@
 			<true/>
 			<key>QLSupportedContentTypes</key>
 			<array>
-				<string>app.dbscore.mscz</string>
+				<string>app.dbscore.db</string>
 				<string>app.dbscore.mscx</string>
 				<string>app.dbscore.mscs</string>
 			</array>

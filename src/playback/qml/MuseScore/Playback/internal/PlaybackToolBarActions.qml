@@ -221,7 +221,7 @@ Item {
 
                 transparent: !root.isPopupOpened
 
-                toolTipTitle: qsTrc("playback", "Speed")
+                toolTipTitle: "速度"
 
                 navigation.panel: root.navPanel
                 navigation.order: measureAndBeatFields.navigationOrderEnd + 1

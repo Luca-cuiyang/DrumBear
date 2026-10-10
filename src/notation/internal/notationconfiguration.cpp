@@ -60,6 +60,11 @@ static const Settings::Key USE_NOTE_INPUT_CURSOR_IN_INPUT_BY_DURATION(module_nam
 
 static const Settings::Key THIN_NOTE_INPUT_CURSOR(module_name, "ui/canvas/thinNoteInputCursor");
 
+static const Settings::Key PLAYBACK_CURSOR_COLOR(module_name, "ui/canvas/playbackCursorColor");
+static const Settings::Key PLAYBACK_CURSOR_THICKNESS(module_name, "ui/canvas/playbackCursorThickness");
+static const Settings::Key PLAYBACK_CURSOR_OPACITY(module_name, "ui/canvas/playbackCursorOpacity");
+static const Settings::Key PLAYBACK_CURSOR_LENGTH(module_name, "ui/canvas/playbackCursorLength");
+
 static const Settings::Key SELECTION_PROXIMITY(module_name, "ui/canvas/misc/selectionProximity");
 
 static const Settings::Key DEFAULT_ZOOM_TYPE(module_name, "ui/canvas/zoomDefaultType");
@@ -211,6 +216,24 @@ void NotationConfiguration::init()
     });
 
     settings()->setDefaultValue(THIN_NOTE_INPUT_CURSOR, Val(false)); // accessible via DevTools/Settings
+
+    settings()->setDefaultValue(PLAYBACK_CURSOR_COLOR, Val(QColor("#F57C00")));
+    settings()->setDefaultValue(PLAYBACK_CURSOR_THICKNESS, Val(0.4));
+    settings()->setDefaultValue(PLAYBACK_CURSOR_OPACITY, Val(0.7));
+    settings()->setDefaultValue(PLAYBACK_CURSOR_LENGTH, Val(1.0));
+
+    settings()->valueChanged(PLAYBACK_CURSOR_COLOR).onReceive(nullptr, [this](const Val&) {
+        m_playbackCursorStyleChanged.notify();
+    });
+    settings()->valueChanged(PLAYBACK_CURSOR_THICKNESS).onReceive(nullptr, [this](const Val&) {
+        m_playbackCursorStyleChanged.notify();
+    });
+    settings()->valueChanged(PLAYBACK_CURSOR_OPACITY).onReceive(nullptr, [this](const Val&) {
+        m_playbackCursorStyleChanged.notify();
+    });
+    settings()->valueChanged(PLAYBACK_CURSOR_LENGTH).onReceive(nullptr, [this](const Val&) {
+        m_playbackCursorStyleChanged.notify();
+    });
 
     settings()->setDefaultValue(FOREGROUND_WALLPAPER_PATH, Val());
     settings()->valueChanged(FOREGROUND_WALLPAPER_PATH).onReceive(nullptr, [this](const Val&) {
@@ -608,9 +631,47 @@ int NotationConfiguration::borderWidth() const
 
 QColor NotationConfiguration::playbackCursorColor() const
 {
-    QColor color = selectionColor();
-    color.setAlpha(178);
-    return color;
+    return settings()->value(PLAYBACK_CURSOR_COLOR).toQColor();
+}
+
+double NotationConfiguration::playbackCursorThickness() const
+{
+    return settings()->value(PLAYBACK_CURSOR_THICKNESS).toDouble();
+}
+
+double NotationConfiguration::playbackCursorOpacity() const
+{
+    return settings()->value(PLAYBACK_CURSOR_OPACITY).toDouble();
+}
+
+double NotationConfiguration::playbackCursorLength() const
+{
+    return settings()->value(PLAYBACK_CURSOR_LENGTH).toDouble();
+}
+
+void NotationConfiguration::setPlaybackCursorColor(const QColor& color)
+{
+    settings()->setSharedValue(PLAYBACK_CURSOR_COLOR, Val(color));
+}
+
+void NotationConfiguration::setPlaybackCursorThickness(double thickness)
+{
+    settings()->setSharedValue(PLAYBACK_CURSOR_THICKNESS, Val(thickness));
+}
+
+void NotationConfiguration::setPlaybackCursorOpacity(double opacity)
+{
+    settings()->setSharedValue(PLAYBACK_CURSOR_OPACITY, Val(opacity));
+}
+
+void NotationConfiguration::setPlaybackCursorLength(double length)
+{
+    settings()->setSharedValue(PLAYBACK_CURSOR_LENGTH, Val(length));
+}
+
+muse::async::Notification NotationConfiguration::playbackCursorStyleChanged() const
+{
+    return m_playbackCursorStyleChanged;
 }
 
 int NotationConfiguration::cursorOpacity() const

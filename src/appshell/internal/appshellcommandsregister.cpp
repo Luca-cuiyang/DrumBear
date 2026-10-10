@@ -177,6 +177,13 @@ static const std::vector<CommandInfo> s_commandInfos = {
         Decoration(rcommand::Checkable::Yes)
         ),
     CommandInfo(
+        DOCK_TOGGLE_AUDIO_TRACK_COMMAND,
+        TranslatableString("action", "音频伴奏轨"),
+        TranslatableString("action", "显示/隐藏音频伴奏轨"),
+        InputSchema(),
+        Decoration(rcommand::Checkable::Yes)
+        ),
+    CommandInfo(
         DOCK_TOGGLE_PIANO_KEYBOARD_COMMAND,
         TranslatableString("action", "Piano &keyboard"),
         TranslatableString("action", "Show/hide piano keyboard"),

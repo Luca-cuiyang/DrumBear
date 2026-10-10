@@ -32,188 +32,188 @@ using namespace mu::playback;
 static const std::vector<CommandInfo> s_commandInfos = {
     CommandInfo{
         PLAY_TOGGLE_COMMAND,
-        TranslatableString("playback", "Play toggle"),
-        TranslatableString("playback", "Toggle playback of current score"),
+        TranslatableString("playback", "播放/暂停"),
+        TranslatableString("playback", "播放或暂停当前乐谱"),
         InputSchema(),
         Decoration(IconCode::Code::PLAY)
     },
     CommandInfo{
         PLAY_COMMAND,
-        TranslatableString("playback", "Play"),
-        TranslatableString("playback", "Play the current score"),
+        TranslatableString("playback", "播放"),
+        TranslatableString("playback", "播放当前乐谱"),
         InputSchema(),
         Decoration(IconCode::Code::PLAY)
     },
     CommandInfo{
         PLAY_SELECTION_COMMAND,
-        TranslatableString("playback", "Play from selection"),
-        TranslatableString("playback", "Play from selection"),
+        TranslatableString("playback", "从选段播放"),
+        TranslatableString("playback", "从选段播放"),
         InputSchema(),
         Decoration(IconCode::Code::PLAY)
     },
     CommandInfo{
         PAUSE_COMMAND,
-        TranslatableString("playback", "Pause"),
-        TranslatableString("playback", "Pause playback"),
+        TranslatableString("playback", "暂停"),
+        TranslatableString("playback", "暂停播放"),
         InputSchema(),
         Decoration(IconCode::Code::PAUSE)
     },
     CommandInfo{
         PAUSE_AND_SELECT_COMMAND,
-        TranslatableString("playback", "Pause and select"),
-        TranslatableString("playback", "Pause and select playback position"),
+        TranslatableString("playback", "暂停并选择"),
+        TranslatableString("playback", "暂停并选择播放位置"),
         InputSchema(),
         Decoration(IconCode::Code::PAUSE)
     },
     CommandInfo{
         STOP_COMMAND,
-        TranslatableString("playback", "Stop"),
-        TranslatableString("playback", "Stop playback"),
+        TranslatableString("playback", "停止"),
+        TranslatableString("playback", "停止播放"),
         InputSchema(),
         Decoration(IconCode::Code::STOP)
     },
     CommandInfo{
         REWIND_COMMAND,
-        TranslatableString("playback", "Rewind"),
-        TranslatableString("playback", "Rewind"),
-        InputSchema({ { "position", Arg(DataType::Float, u"Playback position in seconds", Val(0)) } }),
+        TranslatableString("playback", "回退"),
+        TranslatableString("playback", "回退"),
+        InputSchema({ { "position", Arg(DataType::Float, u"播放位置（秒）", Val(0)) } }),
         Decoration(IconCode::Code::REWIND)
     },
     CommandInfo{
         LOOP_TOGGLE_COMMAND,
-        TranslatableString("playback", "Loop toggle"),
-        TranslatableString("playback", "Toggle loop playback"),
+        TranslatableString("playback", "循环播放"),
+        TranslatableString("playback", "开启或关闭循环播放"),
         InputSchema(),
         Decoration(IconCode::Code::LOOP, rcommand::Checkable::Yes)
     },
 
     CommandInfo{
         LOOP_IN_COMMAND,
-        TranslatableString("playback", "Loop in"),
-        TranslatableString("playback", "Set loop marker left"),
+        TranslatableString("playback", "循环起点"),
+        TranslatableString("playback", "设置循环左标记"),
         InputSchema(),
         Decoration(IconCode::Code::LOOP_IN)
     },
     CommandInfo{
         LOOP_OUT_COMMAND,
-        TranslatableString("playback", "Loop out"),
-        TranslatableString("playback", "Set loop marker right"),
+        TranslatableString("playback", "循环终点"),
+        TranslatableString("playback", "设置循环右标记"),
         InputSchema(),
         Decoration(IconCode::Code::LOOP_OUT)
     },
     CommandInfo{
         METRONOME_TOGGLE_COMMAND,
-        TranslatableString("playback", "Metronome toggle"),
-        TranslatableString("playback", "Toggle metronome playback"),
+        TranslatableString("playback", "节拍器"),
+        TranslatableString("playback", "开启或关闭节拍器"),
         InputSchema(),
         Decoration(IconCode::Code::METRONOME, rcommand::Checkable::Yes)
     },
     CommandInfo{
         OPEN_PLAYBACK_SETUP_COMMAND,
-        TranslatableString("playback", "Playback setup"),
-        TranslatableString("playback", "Show playback setup"),
+        TranslatableString("playback", "播放设置"),
+        TranslatableString("playback", "显示播放设置"),
         InputSchema(),
         Decoration(IconCode::Code::NONE)
     },
     CommandInfo{
         MIDI_TOGGLE_COMMAND,
-        TranslatableString("playback", "MIDI toggle"),
-        TranslatableString("playback", "Toggle MIDI input"),
+        TranslatableString("playback", "MIDI 输入"),
+        TranslatableString("playback", "开启或关闭 MIDI 输入"),
         InputSchema(),
         Decoration(IconCode::Code::MIDI_INPUT, rcommand::Checkable::Yes)
     },
     CommandInfo{
         MIDI_INPUT_WRITTEN_PITCH_COMMAND,
-        TranslatableString("playback", "Written pitch"),
-        TranslatableString("playback", "Input written pitch"),
+        TranslatableString("playback", "记谱音高"),
+        TranslatableString("playback", "按记谱音高输入"),
         InputSchema(),
         Decoration(IconCode::Code::NONE, rcommand::Checkable::Yes)
     },
     CommandInfo{
         MIDI_INPUT_SOUNDING_PITCH_COMMAND,
-        TranslatableString("playback", "Sounding pitch"),
-        TranslatableString("playback", "Input sounding pitch"),
+        TranslatableString("playback", "实际音高"),
+        TranslatableString("playback", "按实际音高输入"),
         InputSchema(),
         Decoration(IconCode::Code::NONE, rcommand::Checkable::Yes)
     },
     CommandInfo{
         REPEATS_TOGGLE_COMMAND,
-        TranslatableString("playback", "Play repeats"),
-        TranslatableString("playback", "Toggle play repeats"),
+        TranslatableString("playback", "播放反复"),
+        TranslatableString("playback", "开启或关闭播放反复"),
         InputSchema(),
         Decoration(IconCode::Code::PLAY_REPEATS, rcommand::Checkable::Yes)
     },
     CommandInfo{
         CHORDSYMBOLS_TOGGLE_COMMAND,
-        TranslatableString("playback", "Play chord symbols"),
-        TranslatableString("playback", "Toggle play chord symbols"),
+        TranslatableString("playback", "播放和弦符号"),
+        TranslatableString("playback", "开启或关闭播放和弦符号"),
         InputSchema(),
         Decoration(IconCode::Code::CHORD_SYMBOL, rcommand::Checkable::Yes)
     },
     CommandInfo{
         HEAR_PLAYBACK_WHEN_EDITING_TOGGLE_COMMAND,
-        TranslatableString("playback", "Hear playback when editing"),
-        TranslatableString("playback", "Toggle hear playback when editing"),
+        TranslatableString("playback", "编辑时试听"),
+        TranslatableString("playback", "开启或关闭编辑时试听"),
         InputSchema(),
         Decoration(IconCode::Code::AUDIO, rcommand::Checkable::Yes)
     },
     CommandInfo{
         PAN_TOGGLE_COMMAND,
-        TranslatableString("playback", "Pan score automatically"),
-        TranslatableString("playback", "Toggle pan score automatically during playback"),
+        TranslatableString("playback", "播放时自动平移乐谱"),
+        TranslatableString("playback", "开启或关闭播放时自动平移乐谱"),
         InputSchema(),
         Decoration(IconCode::Code::PAN_SCORE, rcommand::Checkable::Yes)
     },
     CommandInfo{
         COUNTIN_TOGGLE_COMMAND,
-        TranslatableString("playback", "Count-in when playing"),
-        TranslatableString("playback", "Toggle count-in when playing"),
+        TranslatableString("playback", "播放前数拍"),
+        TranslatableString("playback", "开启或关闭播放前数拍"),
         InputSchema(),
         Decoration(IconCode::Code::COUNT_IN, rcommand::Checkable::Yes)
     },
     CommandInfo{
         CLEAR_ONLINESOUNDS_CACHE_COMMAND,
-        TranslatableString("playback", "Clear online sounds cache"),
-        TranslatableString("playback", "Clear online sounds cache"),
+        TranslatableString("playback", "清除在线音色缓存"),
+        TranslatableString("playback", "清除在线音色缓存"),
         InputSchema(),
         Decoration(IconCode::Code::NONE)
     },
     CommandInfo{
         PROCESS_ONLINESOUNDS_COMMAND,
-        TranslatableString("playback", "Process online sounds"),
-        TranslatableString("playback", "Process online sounds"),
+        TranslatableString("playback", "处理在线音色"),
+        TranslatableString("playback", "处理在线音色"),
         InputSchema(),
         Decoration(IconCode::Code::NONE)
     },
     CommandInfo{
         RELOAD_PLAYBACK_CACHE_COMMAND,
-        TranslatableString("playback", "Reload playback cache"),
-        TranslatableString("playback", "Reload playback cache"),
+        TranslatableString("playback", "重新加载播放缓存"),
+        TranslatableString("playback", "重新加载播放缓存"),
         InputSchema(),
         Decoration(IconCode::Code::NONE)
     },
 
     CommandInfo{
         TOGGLE_MIXER_SECTION_COMMAND,
-        TranslatableString("playback", "Toggle mixer section"),
-        TranslatableString("playback", "Toggle mixer section"),
+        TranslatableString("playback", "切换混音器分区"),
+        TranslatableString("playback", "切换混音器分区"),
         InputSchema({
             { "section",
-              Arg(DataType::String, u"Mixer section (labels, sound, audio-fx, balance, volume, fader, mute-and-solo, title)") } }),
+              Arg(DataType::String, u"混音器分区（标签、音色、音频效果、声像、音量、推子、静音与独奏、标题）") } }),
         Decoration()
     },
     CommandInfo{
         TOGGLE_AUX_SEND_COMMAND,
-        TranslatableString("playback", "Toggle aux send"),
-        TranslatableString("playback", "Toggle aux send"),
-        InputSchema({ { "auxsend-index", Arg(DataType::Integer, u"Aux send index") } }),
+        TranslatableString("playback", "切换辅助发送"),
+        TranslatableString("playback", "切换辅助发送"),
+        InputSchema({ { "auxsend-index", Arg(DataType::Integer, u"辅助发送索引") } }),
         Decoration()
     },
     CommandInfo{
         TOGGLE_AUX_CHANNEL_COMMAND,
-        TranslatableString("playback", "Toggle aux channel"),
-        TranslatableString("playback", "Toggle aux channel"),
-        InputSchema({ { "auxchannel-index", Arg(DataType::Integer, u"Aux channel index") } }),
+        TranslatableString("playback", "切换辅助通道"),
+        TranslatableString("playback", "切换辅助通道"),
+        InputSchema({ { "auxchannel-index", Arg(DataType::Integer, u"辅助通道索引") } }),
         Decoration()
     }
 };

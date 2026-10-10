@@ -33,6 +33,15 @@ StyledPopupView {
 
     property PlaybackToolBarModel playbackModel: null
 
+    property var cursorColors: ["#F57C00", "#0065BF", "#E53935", "#00BCD4", "#E91E63", "#333333"]
+
+    function isCursorColorSelected(hex) {
+        if (!root.playbackModel) {
+            return false
+        }
+        return root.playbackModel.playbackCursorColor.toString().toUpperCase() === hex
+    }
+
     contentWidth: contentColumn.implicitWidth
     contentHeight: contentColumn.implicitHeight
 
@@ -40,7 +49,7 @@ StyledPopupView {
         id: navPanel
         name: "PlaybackSpeedPopup"
         section: root.navigationSection
-        accessible.name: qsTrc("playback", "Playback speed popup")
+        accessible.name: "播放设置"
     }
 
     ColumnLayout {
@@ -49,7 +58,7 @@ StyledPopupView {
 
         StyledTextLabel {
             Layout.fillWidth: true
-            text: qsTrc("playback", "Speed")
+            text: "速度"
             horizontalAlignment: Text.AlignLeft
         }
 
@@ -67,7 +76,7 @@ StyledPopupView {
                 decimals: 0
 
                 navigation.panel: navPanel
-                navigation.accessible.name: qsTrc("playback", "Speed")
+                navigation.accessible.name: "速度"
 
                 onValueEdited: function(newValue) {
                     root.playbackModel.tempoMultiplier = newValue / 100
@@ -88,6 +97,78 @@ StyledPopupView {
                 onMoved: {
                     root.playbackModel.tempoMultiplier = value
                 }
+            }
+        }
+
+        StyledTextLabel {
+            Layout.fillWidth: true
+            text: "播放指针"
+            horizontalAlignment: Text.AlignLeft
+        }
+
+        RowLayout {
+            spacing: 8
+
+            StyledTextLabel { text: "颜色" }
+
+            Repeater {
+                model: root.cursorColors
+                Rectangle {
+                    width: 16
+                    height: 16
+                    radius: 3
+                    color: modelData
+                    border.width: root.isCursorColorSelected(modelData) ? 2 : 1
+                    border.color: root.isCursorColorSelected(modelData) ? "#333333" : "#C9CFCA"
+
+                    MouseArea {
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        onClicked: root.playbackModel.setPlaybackCursorColor(modelData)
+                    }
+                }
+            }
+        }
+
+        RowLayout {
+            spacing: 8
+
+            StyledTextLabel { text: "长短" }
+            StyledSlider {
+                Layout.preferredWidth: 160
+                from: 0.2
+                to: 1.0
+                stepSize: 0.01
+                value: root.playbackModel.playbackCursorLength
+                onMoved: root.playbackModel.setPlaybackCursorLength(value)
+            }
+        }
+
+        RowLayout {
+            spacing: 8
+
+            StyledTextLabel { text: "粗细" }
+            StyledSlider {
+                Layout.preferredWidth: 160
+                from: 0.15
+                to: 1.0
+                stepSize: 0.01
+                value: root.playbackModel.playbackCursorThickness
+                onMoved: root.playbackModel.setPlaybackCursorThickness(value)
+            }
+        }
+
+        RowLayout {
+            spacing: 8
+
+            StyledTextLabel { text: "透明度" }
+            StyledSlider {
+                Layout.preferredWidth: 160
+                from: 0.15
+                to: 1.0
+                stepSize: 0.01
+                value: root.playbackModel.playbackCursorOpacity
+                onMoved: root.playbackModel.setPlaybackCursorOpacity(value)
             }
         }
     }

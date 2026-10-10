@@ -50,6 +50,11 @@ class PlaybackToolBarModel : public muse::uicomponents::AbstractMenuModel
     Q_PROPERTY(QVariant tempo READ tempo NOTIFY tempoChanged)
     Q_PROPERTY(qreal tempoMultiplier READ tempoMultiplier WRITE setTempoMultiplier NOTIFY tempoChanged)
 
+    Q_PROPERTY(QColor playbackCursorColor READ playbackCursorColor WRITE setPlaybackCursorColor NOTIFY playbackCursorStyleChanged)
+    Q_PROPERTY(qreal playbackCursorThickness READ playbackCursorThickness WRITE setPlaybackCursorThickness NOTIFY playbackCursorStyleChanged)
+    Q_PROPERTY(qreal playbackCursorOpacity READ playbackCursorOpacity WRITE setPlaybackCursorOpacity NOTIFY playbackCursorStyleChanged)
+    Q_PROPERTY(qreal playbackCursorLength READ playbackCursorLength WRITE setPlaybackCursorLength NOTIFY playbackCursorStyleChanged)
+
     QML_ELEMENT
 
     muse::GlobalInject<notation::INotationConfiguration> notationConfiguration;
@@ -74,6 +79,11 @@ public:
     QVariant tempo() const;
     qreal tempoMultiplier() const;
 
+    QColor playbackCursorColor() const;
+    qreal playbackCursorThickness() const;
+    qreal playbackCursorOpacity() const;
+    qreal playbackCursorLength() const;
+
     Q_INVOKABLE void load() override;
 
 public slots:
@@ -83,6 +93,10 @@ public slots:
     void setMeasureNumber(int measureNumber);
     void setBeatNumber(int beatNumber);
     void setTempoMultiplier(qreal multiplier);
+    void setPlaybackCursorColor(const QColor& color);
+    void setPlaybackCursorThickness(qreal thickness);
+    void setPlaybackCursorOpacity(qreal opacity);
+    void setPlaybackCursorLength(qreal length);
 
 signals:
     void isToolbarFloatingChanged(bool floating);
@@ -90,6 +104,7 @@ signals:
     void maxPlayTimeChanged();
     void playPositionChanged();
     void tempoChanged();
+    void playbackCursorStyleChanged();
 
 private:
     void setupConnections();

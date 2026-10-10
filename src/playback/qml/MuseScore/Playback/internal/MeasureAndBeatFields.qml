@@ -74,7 +74,7 @@ Item {
                 navigation.panel: root.navigationPanel
                 navigation.order: root.navigationOrderStart
                 navigation.name: "measure"
-                accessible.name: qsTrc("playback", "Measure", "Measure number")
+                accessible.name: qsTrc("playback", "小节", "小节号")
 
                 onValueEdited: function(newValue) {
                     root.measureNumberEdited(newValue)
@@ -107,7 +107,7 @@ Item {
                 navigation.panel: root.navigationPanel
                 navigation.order: root.navigationOrderStart + 1
                 navigation.name: "beat"
-                accessible.name: qsTrc("playback", "Beat", "Beat number")
+                accessible.name: qsTrc("playback", "拍", "拍号")
 
                 onValueEdited: function(newValue) {
                     root.beatNumberEdited(newValue)

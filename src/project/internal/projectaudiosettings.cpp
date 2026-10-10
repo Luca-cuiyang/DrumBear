@@ -25,6 +25,9 @@
 #include <QJsonDocument>
 #include <QJsonArray>
 #include <QJsonObject>
+#include <QFile>
+#include <QFileInfo>
+#include <QDir>
 
 #include "types/bytearray.h"
 
@@ -58,6 +61,19 @@ static void doCompatibilityConversions(AudioResourceMeta& meta)
             meta.id = museUID.toStdString();
         }
     }
+}
+
+static QString extractBundledAudioToCache(const QString& name, const muse::ByteArray& data)
+{
+    QString cacheDir = QDir::temp().filePath("DBScoreAudioTrack");
+    QDir().mkpath(cacheDir);
+    QString filePath = cacheDir + "/" + name;
+    QFile file(filePath);
+    if (file.open(QIODevice::WriteOnly)) {
+        file.write(data.toQByteArrayNoCopy());
+        file.close();
+    }
+    return filePath;
 }
 
 bool ProjectAudioSettings::hasAnyAudioSettings() const
@@ -327,7 +343,28 @@ Ret ProjectAudioSettings::read(const engraving::MscReader& reader)
     }
 
     if (rootObj.contains("audioTrack")) {
-        m_audioTrackSettings = audioTrackSettingsFromJson(rootObj.value("audioTrack").toObject());
+        QJsonObject audioTrackObj = rootObj.value("audioTrack").toObject();
+        m_audioTrackSettings = audioTrackSettingsFromJson(audioTrackObj);
+
+        const QJsonArray clipsArray = audioTrackObj.value("clips").toArray();
+        for (int i = 0; i < clipsArray.size() && i < int(m_audioTrackSettings.clips.size()); ++i) {
+            const QString bundledName = clipsArray[i].toObject().value("bundledAudio").toString();
+            if (bundledName.isEmpty()) {
+                continue;
+            }
+
+            AudioClipSettings& clip = m_audioTrackSettings.clips[i];
+            const QString originalPath = clip.filePath.toQString();
+            if (!originalPath.isEmpty() && QFile::exists(originalPath)) {
+                //! NOTE: original file is still on disk, so keep using it instead of the copy.
+                continue;
+            }
+
+            const muse::ByteArray data = reader.readAudioFile(muse::String::fromQString(bundledName));
+            if (!data.empty()) {
+                clip.filePath = muse::io::path_t(extractBundledAudioToCache(bundledName, data));
+            }
+        }
     }
 
     m_activeSoundProfileName = rootObj.value("activeSoundProfile").toString();
@@ -361,7 +398,23 @@ Ret ProjectAudioSettings::write(engraving::MscWriter& writer, notation::INotatio
 
     rootObj["tracks"] = tracksArray;
     if (m_audioTrackSettings.isValid()) {
-        rootObj["audioTrack"] = audioTrackSettingsToJson(m_audioTrackSettings);
+        QJsonObject audioTrackObj = audioTrackSettingsToJson(m_audioTrackSettings);
+        QJsonArray clipsArray = audioTrackObj.value("clips").toArray();
+        for (int i = 0; i < clipsArray.size(); ++i) {
+            QJsonObject clipObj = clipsArray[i].toObject();
+            const QString path = clipObj.value("filePath").toString();
+            QFile file(path);
+            if (!path.isEmpty() && file.open(QIODevice::ReadOnly)) {
+                const QByteArray data = file.readAll();
+                file.close();
+                const QString baseName = QFileInfo(path).fileName();
+                writer.addAudioFile(muse::String::fromQString(baseName), muse::ByteArray::fromQByteArrayNoCopy(data));
+                clipObj.insert("bundledAudio", baseName);
+                clipsArray[i] = clipObj;
+            }
+        }
+        audioTrackObj["clips"] = clipsArray;
+        rootObj["audioTrack"] = audioTrackObj;
     }
     rootObj["activeSoundProfile"] = m_activeSoundProfileName.toQString();
 

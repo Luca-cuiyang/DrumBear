@@ -216,6 +216,11 @@ ByteArray MscReader::readImageFile(const String& fileName) const
     return fileData(u"Pictures/" + fileName);
 }
 
+ByteArray MscReader::readAudioFile(const String& fileName) const
+{
+    return fileData(u"AudioTrack/" + fileName);
+}
+
 std::vector<String> MscReader::imageFileNames() const
 {
     if (!reader()->isContainer()) {

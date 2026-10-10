@@ -9,14 +9,14 @@
 
 	<key>UTExportedTypeDeclarations</key>
 	<array>
-		<!-- MuseScore documents -->
+		<!-- DB Score documents -->
 		<dict>
 			<key>UTTypeIdentifier</key>
-			<string>org.dbscore.mscz</string>
+			<string>org.dbscore.db</string>
 			<key>UTTypeDescription</key>
 			<string>DB Score File</string>
 			<key>UTTypeIconFile</key>
-			<string>MsczIcon.icns</string>
+			<string>DbIcon.icns</string>
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.data</string>
@@ -26,11 +26,11 @@
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
-					<string>mscz</string>
+					<string>db</string>
 				</array>
 				<key>public.mime-type</key>
 				<array>
-					<string>application/x-musescore</string>
+					<string>application/x-dbscore</string>
 				</array>
 			</dict>
 		</dict>
@@ -40,7 +40,7 @@
 			<key>UTTypeDescription</key>
 			<string>DB Score Uncompressed File</string>
 			<key>UTTypeIconFile</key>
-			<string>MscxIcon.icns</string>
+			<string>DbIcon.icns</string>
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.data</string>
@@ -54,7 +54,7 @@
 				</array>
 				<key>public.mime-type</key>
 				<array>
-					<string>application/x-musescore+xml</string>
+					<string>application/x-dbscore+xml</string>
 				</array>
 			</dict>
 		</dict>
@@ -76,17 +76,17 @@
 				</array>
 				<key>public.mime-type</key>
 				<array>
-					<string>application/x-musescore+xml</string>
+					<string>application/x-dbscore+xml</string>
 				</array>
 			</dict>
 		</dict>
 		<dict>
 			<key>UTTypeIdentifier</key>
-			<string>org.dbscore.mscz,</string>
+			<string>org.dbscore.db,</string>
 			<key>UTTypeDescription</key>
 			<string>DB Score Backup File</string>
 			<key>UTTypeIconFile</key>
-			<string>MsczIcon.icns</string>
+			<string>DbIcon.icns</string>
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.data</string>
@@ -96,11 +96,11 @@
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
-					<string>mscz~</string>
+					<string>db~</string>
 				</array>
 				<key>public.mime-type</key>
 				<array>
-					<string>application/x-musescore</string>
+					<string>application/x-dbscore</string>
 				</array>
 			</dict>
 		</dict>
@@ -111,14 +111,14 @@
 			<key>CFBundleTypeName</key>
 			<string>DB Score File</string>
 			<key>CFBundleTypeIconFile</key>
-			<string>MsczIcon.icns</string>
+			<string>DbIcon.icns</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>org.dbscore.mscz</string>
+				<string>org.dbscore.db</string>
 			</array>
 			<key>CFBundleTypeExtensions</key>
 			<array>
-				<string>mscz</string>
+				<string>db</string>
 			</array>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
@@ -131,7 +131,7 @@
 			<key>CFBundleTypeName</key>
 			<string>DB Score Uncompressed File</string>
 			<key>CFBundleTypeIconFile</key>
-			<string>MscxIcon.icns</string>
+			<string>DbIcon.icns</string>
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>org.dbscore.mscx</string>
@@ -169,14 +169,14 @@
 			<key>CFBundleTypeName</key>
 			<string>DB Score Backup File</string>
 			<key>CFBundleTypeIconFile</key>
-			<string>MsczIcon.icns</string>
+			<string>DbIcon.icns</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>org.dbscore.mscz,</string>
+				<string>org.dbscore.db,</string>
 			</array>
 			<key>CFBundleTypeExtensions</key>
 			<array>
-				<string>mscz,</string>
+				<string>db,</string>
 			</array>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
@@ -189,7 +189,7 @@
 			<key>CFBundleTypeName</key>
 			<string>DB Score Uncompressed Backup File</string>
 			<key>CFBundleTypeIconFile</key>
-			<string>MscxIcon.icns</string>
+			<string>DbIcon.icns</string>
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>org.dbscore.mscx,</string>
@@ -558,10 +558,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>org.musescore.musescore.musescoreurl</string>
+			<string>org.dbscore.dbscoreurl</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>musescore</string>
+				<string>dbscore</string>
 			</array>
 		</dict>
 	</array>

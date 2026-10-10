@@ -143,7 +143,8 @@ Ret NotationProject::load(const muse::io::path_t& path, const OpenParams& openPa
         return ret;
     }
 
-    bool treatAsImported = (m_masterNotation->mscVersion() < 400 && !isCloudProject()) || format == MSCZ_BACKUP;
+    bool treatAsImported = (m_masterNotation->mscVersion() < 400 && !isCloudProject())
+                           || format == MSCZ_BACKUP || format == MSCZ_LEGACY_BACKUP;
 
     listenIfNeedSaveChanges();
     setNeedSave(treatAsImported);

@@ -63,6 +63,7 @@ void NotationModule::resolveImports()
     if (writers) {
         writers->reg({ "spos" }, std::make_shared<PositionsWriter>(PositionsWriter::ElementType::SEGMENT));
         writers->reg({ "mpos" }, std::make_shared<PositionsWriter>(PositionsWriter::ElementType::MEASURE));
+        writers->reg({ "db" }, std::make_shared<MscNotationWriter>(engraving::MscIoMode::Zip));
         writers->reg({ "mscz" }, std::make_shared<MscNotationWriter>(engraving::MscIoMode::Zip));
         writers->reg({ "mscx" }, std::make_shared<MscNotationWriter>(engraving::MscIoMode::Dir));
     }

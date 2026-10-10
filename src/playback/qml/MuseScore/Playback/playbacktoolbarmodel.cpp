@@ -132,7 +132,7 @@ void PlaybackToolBarModel::updateActions()
         }
     }
 
-    MenuItem* settingsItem = makeMenu(TranslatableString("action", "Playback settings"), settingsItems);
+    MenuItem* settingsItem = makeMenu(TranslatableString("action", "播放设置"), settingsItems);
     settingsItem->setIcon(ui::IconCode::Code::SETTINGS_COG);
     result << settingsItem;
 
@@ -146,7 +146,7 @@ MenuItem* PlaybackToolBarModel::makeInputPitchMenu()
         makeMenuItem(MIDI_INPUT_SOUNDING_PITCH_COMMAND),
     };
 
-    MenuItem* menu = makeMenu(muse::TranslatableString("playback", "MIDI input pitch"), items);
+    MenuItem* menu = makeMenu(muse::TranslatableString("playback", "MIDI 输入音高"), items);
     menu->setIcon(ui::IconCode::Code::MUSIC_NOTES);
     return menu;
 }
@@ -345,4 +345,64 @@ QVariant PlaybackToolBarModel::tempo() const
 qreal PlaybackToolBarModel::tempoMultiplier() const
 {
     return playbackController()->tempoMultiplier();
+}
+
+QColor PlaybackToolBarModel::playbackCursorColor() const
+{
+    return notationConfiguration()->playbackCursorColor();
+}
+
+qreal PlaybackToolBarModel::playbackCursorThickness() const
+{
+    return notationConfiguration()->playbackCursorThickness();
+}
+
+qreal PlaybackToolBarModel::playbackCursorOpacity() const
+{
+    return notationConfiguration()->playbackCursorOpacity();
+}
+
+qreal PlaybackToolBarModel::playbackCursorLength() const
+{
+    return notationConfiguration()->playbackCursorLength();
+}
+
+void PlaybackToolBarModel::setPlaybackCursorColor(const QColor& color)
+{
+    if (color == playbackCursorColor()) {
+        return;
+    }
+
+    notationConfiguration()->setPlaybackCursorColor(color);
+    emit playbackCursorStyleChanged();
+}
+
+void PlaybackToolBarModel::setPlaybackCursorThickness(qreal thickness)
+{
+    if (muse::RealIsEqual(thickness, playbackCursorThickness())) {
+        return;
+    }
+
+    notationConfiguration()->setPlaybackCursorThickness(thickness);
+    emit playbackCursorStyleChanged();
+}
+
+void PlaybackToolBarModel::setPlaybackCursorOpacity(qreal opacity)
+{
+    if (muse::RealIsEqual(opacity, playbackCursorOpacity())) {
+        return;
+    }
+
+    notationConfiguration()->setPlaybackCursorOpacity(opacity);
+    emit playbackCursorStyleChanged();
+}
+
+void PlaybackToolBarModel::setPlaybackCursorLength(qreal length)
+{
+    if (muse::RealIsEqual(length, playbackCursorLength())) {
+        return;
+    }
+
+    notationConfiguration()->setPlaybackCursorLength(length);
+    emit playbackCursorStyleChanged();
 }

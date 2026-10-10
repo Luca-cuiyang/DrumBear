@@ -29,6 +29,15 @@ done
 
 APP_PATH=applebuild/dbscore.app
 
+# Idempotent deployment: move away any QML dirs left by a previous run so that
+# macdeployqt can deploy cleanly and the rename below always succeeds.
+STALE_DEPLOY=$(mktemp -d)
+for _qdir in qml qml_mu; do
+    if [ -e "${APP_PATH}/Contents/Resources/${_qdir}" ]; then
+        mv "${APP_PATH}/Contents/Resources/${_qdir}" "${STALE_DEPLOY}/${_qdir}"
+    fi
+done
+
 echo "otool -L pre-macdeployqt"
 otool -L ${APP_PATH}/Contents/MacOS/dbscore
 
@@ -104,7 +113,15 @@ if $DO_SIGN; then
         rm -f "$APP_ZIP"
     fi
 else
-    echo "Skipping code signing"
+    #! NOTE: 没有 Developer ID 证书时，也必须做 ad-hoc 签名。
+    #! 否则 Apple Silicon 上未签名的 Qt 插件会被内核以
+    #! “Code Signature Invalid” 杀死，导致安装后打开即“意外退出”。
+    echo "Ad-hoc code signing (no Developer ID)"
+    find "${APP_PATH}/Contents/PlugIns" -name "*.dylib" -exec codesign --force --sign - {} \;
+    find "${APP_PATH}/Contents/Frameworks" -maxdepth 1 -name "*.framework" -exec codesign --force --sign - {} \;
+    find "${APP_PATH}/Contents/Frameworks" -maxdepth 1 -name "*.dylib" -exec codesign --force --sign - {} \;
+    codesign --force --sign - "${APP_PATH}/Contents/MacOS/museupdater"
+    codesign --force --deep --sign - "${APP_PATH}"
 fi
 
 ################################################################
@@ -127,12 +144,6 @@ DEV=$(echo "${ATTACH_OUTPUT}" | head -n1 | awk '{print $1}')
 
 # copy in the application bundle
 cp -Rp ${APP_PATH} "${VOLUME}/${APP_NAME}.app"
-
-# Copy in background image
-echo "Copy in background image"
-BACKGROUND=buildscripts/packaging/macOS/musescore-dmg-background.tiff
-mkdir -p "${VOLUME}/Pictures"
-cp ${BACKGROUND} "${VOLUME}/Pictures/background.tiff"
 
 # Add symlink to Applications folder
 echo "Add symlink to Applications folder"
@@ -159,7 +170,6 @@ tell application "Finder"
         close
         set position of item "Applications" to {439, 200}
         open
-        set background picture of the icon view options of container window to file "background.tiff" of folder "Pictures"
         set the bounds of the container window to {0, 0, 589, 435}
         update without registering applications
         delay 5 -- sync
@@ -168,8 +178,6 @@ tell application "Finder"
     delay 5 -- sync
 end tell
 EOF
-
-mv "${VOLUME}/Pictures" "${VOLUME}/.Pictures"
 
 echo "Unmount"
 for i in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20; do

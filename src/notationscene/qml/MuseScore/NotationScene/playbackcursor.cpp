@@ -52,15 +52,20 @@ static double systemBottomY(const Score* score, const System* system)
     return systemBottomY;
 }
 
-static RectF calculateRect(double x, const Score* score, const System* system, double systemBottomY)
+static RectF calculateRect(double x, const Score* score, const System* system, double systemBottomY,
+                           double thickness, double length)
 {
     const double spatium = score->style().spatium();
+    const double fullTop = system->staffCanvasYpage(0) - 3.0 * spatium;
+    const double fullHeight = systemBottomY + 6.0 * spatium;
+    const double height = fullHeight * length;
+    const double top = fullTop + (fullHeight - height) / 2.0;
 
     return RectF {
         x - spatium,
-        system->staffCanvasYpage(0) - 3.0 * spatium,
-        0.4 * spatium,
-        systemBottomY + 6.0 * spatium
+        top,
+        thickness * spatium,
+        height
     };
 }
 
@@ -70,7 +75,9 @@ void PlaybackCursor::paint(muse::draw::Painter* painter)
         return;
     }
 
-    painter->fillRect(m_rect, color());
+    QColor cursorColor = color();
+    cursorColor.setAlphaF(configuration()->playbackCursorOpacity());
+    painter->fillRect(m_rect, cursorColor);
 }
 
 void PlaybackCursor::setNotation(INotationPtr notation)
@@ -119,11 +126,13 @@ muse::RectF PlaybackCursor::resolveCursorRectByTick(int _tick) const
     };
 
     const Fraction tick = Fraction::fromTicks(_tick);
+    const double thickness = configuration()->playbackCursorThickness();
+    const double length = configuration()->playbackCursorLength();
 
     if (m_cache.segment && tick >= m_cache.segmentStartTick && tick < m_cache.segmentEndTick) {
         const double x = interpolateXByTicks(_tick, m_cache.segmentStartTick.ticks(), m_cache.segmentEndTick.ticks(),
                                              m_cache.segmentStartX, m_cache.segmentEndX);
-        return calculateRect(x, score, m_cache.system, m_cache.systemBottomY);
+        return calculateRect(x, score, m_cache.system, m_cache.systemBottomY, thickness, length);
     }
 
     const Measure* measure = nullptr;
@@ -189,7 +198,7 @@ muse::RectF PlaybackCursor::resolveCursorRectByTick(int _tick) const
 
         const double x = interpolateXByTicks(_tick, segmentStartTick.ticks(), segmentEndTick.ticks(),
                                              segmentStartX, segmentEndX);
-        return calculateRect(x, score, system, m_cache.systemBottomY);
+        return calculateRect(x, score, system, m_cache.systemBottomY, thickness, length);
     }
 
     m_cache.clear();

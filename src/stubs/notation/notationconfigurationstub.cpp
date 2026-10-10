@@ -183,6 +183,42 @@ QColor NotationConfigurationStub::playbackCursorColor() const
     return QColor();
 }
 
+double NotationConfigurationStub::playbackCursorThickness() const
+{
+    return 0.4;
+}
+
+double NotationConfigurationStub::playbackCursorOpacity() const
+{
+    return 0.7;
+}
+
+double NotationConfigurationStub::playbackCursorLength() const
+{
+    return 1.0;
+}
+
+void NotationConfigurationStub::setPlaybackCursorColor(const QColor&)
+{
+}
+
+void NotationConfigurationStub::setPlaybackCursorThickness(double)
+{
+}
+
+void NotationConfigurationStub::setPlaybackCursorOpacity(double)
+{
+}
+
+void NotationConfigurationStub::setPlaybackCursorLength(double)
+{
+}
+
+muse::async::Notification NotationConfigurationStub::playbackCursorStyleChanged() const
+{
+    return muse::async::Notification();
+}
+
 QColor NotationConfigurationStub::loopMarkerColor() const
 {
     return QColor();

@@ -47,12 +47,30 @@ DockPage {
 
     property NotationPageModel pageModel: NotationPageModel {}
 
+    //! NOTE: 打开软件时默认不自动打开音频伴奏轨；仅当用户在本会话中导入音频后才自动打开。
+    property bool audioTrackInitialLoad: true
+
+    Timer {
+        id: startupGuardTimer
+        interval: 1500
+        repeat: false
+        onTriggered: audioTrackInitialLoad = false
+    }
+
     AudioTrackSettingsModel {
         id: audioModel
 
         Component.onCompleted: {
             Qt.callLater(audioModel.load)
         }
+    }
+
+    Component.onCompleted: {
+        startupGuardTimer.start()
+        //! 启动时强制关闭音频伴奏轨，覆盖可能残留的工作区状态（防止“默认打开”）。
+        Qt.callLater(function() {
+            audioTrackPanel.close()
+        })
     }
 
     //! NOTE: audioTrackPanel is a DockPanel whose content is lazily loaded only while it is
@@ -64,7 +82,11 @@ DockPage {
 
         function onHasTrackChanged() {
             Qt.callLater(function() {
-                if (audioModel.hasTrack) {
+                if (audioTrackInitialLoad) {
+                    //! 启动阶段：始终保持关闭，不自动弹出。
+                    audioTrackPanel.close()
+                } else if (audioModel.hasTrack) {
+                    audioTrackPanel.setFloating(false)
                     audioTrackPanel.open()
                 } else {
                     audioTrackPanel.close()
@@ -115,6 +137,11 @@ DockPage {
 
     onInited: {
         Qt.callLater(pageModel.init)
+        //! 页面初始化（工作区布局恢复）完成后，再次强制关闭音频伴奏轨，
+        //! 防止用户上次打开过音频轨后，其可见状态被保存并在启动时被恢复。
+        Qt.callLater(function() {
+            audioTrackPanel.close()
+        })
     }
 
     readonly property int verticalPanelDefaultWidth: 300
@@ -517,9 +544,9 @@ DockPage {
             id: audioTrackPanel
 
             objectName: "audioTrackPanel"
-            title: qsTrc("appshell", "Audio accompaniment track")
+            title: qsTrc("appshell", "音频伴奏轨")
 
-            height: 200
+            height: 300
             minimumHeight: root.horizontalPanelMinHeight
             maximumHeight: root.horizontalPanelMaxHeight
 

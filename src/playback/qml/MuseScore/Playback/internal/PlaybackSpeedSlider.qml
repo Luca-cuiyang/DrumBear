@@ -42,7 +42,7 @@ RowLayout {
         Layout.fillWidth: true
         Layout.fillHeight: true
 
-        text: qsTrc("playback", "Speed")
+        text: "速度"
         font: ui.theme.largeBodyFont
         horizontalAlignment: Text.AlignLeft
     }
@@ -61,7 +61,7 @@ RowLayout {
 
         navigation.panel: root.navigationPanel
         navigation.order: root.navigationOrderStart
-        navigation.accessible.name: qsTrc("playback", "Speed")
+        navigation.accessible.name: "速度"
 
         onValueEdited: function(newValue) {
             root.playbackModel.tempoMultiplier = newValue / 100

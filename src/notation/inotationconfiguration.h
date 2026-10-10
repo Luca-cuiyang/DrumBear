@@ -96,6 +96,16 @@ public:
     virtual QColor loopMarkerColor() const = 0;
     virtual int cursorOpacity() const = 0;
 
+    virtual double playbackCursorThickness() const = 0;
+    virtual double playbackCursorOpacity() const = 0;
+    virtual double playbackCursorLength() const = 0;
+
+    virtual void setPlaybackCursorColor(const QColor& color) = 0;
+    virtual void setPlaybackCursorThickness(double thickness) = 0;
+    virtual void setPlaybackCursorOpacity(double opacity) = 0;
+    virtual void setPlaybackCursorLength(double length) = 0;
+    virtual muse::async::Notification playbackCursorStyleChanged() const = 0;
+
     virtual bool thinNoteInputCursor() const = 0;
 
     virtual QColor selectionColor(engraving::voice_idx_t voiceIndex = 0) const = 0;

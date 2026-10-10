@@ -1498,8 +1498,8 @@ Promise<RetVal<muse::io::path_t> > SaveProjectScenario::askLocalPath(INotationPr
     muse::io::path_t defaultPath = configuration()->defaultSavingFilePath(project, filenameAddition);
 
     std::vector<std::string> filter {
-        muse::trc("project", "MuseScore file") + " (*.mscz)",
-        muse::trc("project", "Uncompressed MuseScore folder [experimental]")
+        muse::trc("project", "DB Score 文件") + " (*.db)",
+        muse::trc("project", "未压缩 DB Score 文件夹 [实验性]")
 #ifdef Q_OS_MAC
         + " (*)"
 #else

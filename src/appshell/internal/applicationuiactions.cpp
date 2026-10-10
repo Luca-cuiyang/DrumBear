@@ -193,6 +193,13 @@ const UiActionList ApplicationUiActions::m_actions = {
              IconCode::Code::MIXER,
              ui::Checkable::Yes
              ),
+    UiAction("toggle-audio-track",
+             mu::context::UiCtxProjectOpened,
+             mu::context::CTX_ANY,
+             TranslatableString("action", "音频伴奏轨"),
+             TranslatableString("action", "显示/隐藏音频伴奏轨"),
+             ui::Checkable::Yes
+             ),
     UiAction("toggle-piano-keyboard",
              mu::context::UiCtxProjectOpened,
              mu::context::CTX_ANY,
@@ -340,6 +347,7 @@ const QMap<ActionCode, DockName>& ApplicationUiActions::toggleDockActions()
 
         { "toggle-timeline", TIMELINE_PANEL_NAME },
         { "toggle-mixer", MIXER_PANEL_NAME },
+        { "toggle-audio-track", AUDIO_TRACK_PANEL_NAME },
         { "toggle-piano-keyboard", PIANO_KEYBOARD_PANEL_NAME },
         { TOGGLE_PERCUSSION_PANEL_ACTION_CODE, PERCUSSION_PANEL_NAME },
 

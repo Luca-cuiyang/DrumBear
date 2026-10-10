@@ -71,7 +71,7 @@ static const Settings::Key SHOW_CLOUD_IS_NOT_AVAILABLE_WARNING(module_name, "pro
 static const Settings::Key DISABLE_VERSION_CHECKING(module_name, "project/disableVersionChecking");
 static const Settings::Key CREATE_BACKUP_BEFORE_SAVING(module_name, "project/createBackupBeforeSaving");
 
-static const std::string DEFAULT_FILE_SUFFIX(".mscz");
+static const std::string DEFAULT_FILE_SUFFIX(".db");
 
 ProjectConfiguration::ProjectConfiguration(const muse::modularity::ContextPtr& iocCtx)
     : muse::Contextable(iocCtx)

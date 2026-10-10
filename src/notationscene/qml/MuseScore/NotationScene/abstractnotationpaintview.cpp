@@ -113,6 +113,9 @@ void AbstractNotationPaintView::load()
     m_notationAutomationController = std::make_unique<NotationAutomationController>(m_automationLinesContainer, iocContext());
     m_playbackCursor = std::make_unique<PlaybackCursor>(iocContext());
     m_playbackCursor->setVisible(false);
+    notationConfiguration()->playbackCursorStyleChanged().onNotify(this, [this]() {
+        refreshPlaybackCursorStyle();
+    });
     m_noteInputCursor = std::make_unique<NoteInputCursor>(iocContext(), notationConfiguration()->thinNoteInputCursor());
     m_ruler = std::make_unique<NotationRuler>(iocContext());
 
@@ -1605,6 +1608,8 @@ void AbstractNotationPaintView::movePlaybackCursor(muse::midi::tick_t tick)
 {
     TRACEFUNC;
 
+    m_lastCursorTick = tick;
+
     RectF oldCursorRect = m_playbackCursor->rect();
     m_playbackCursor->move(tick);
     const RectF& newCursorRect = m_playbackCursor->rect();
@@ -1629,6 +1634,24 @@ void AbstractNotationPaintView::movePlaybackCursor(muse::midi::tick_t tick)
                 return;
             }
         }
+    }
+}
+
+void AbstractNotationPaintView::refreshPlaybackCursorStyle()
+{
+    if (m_playbackCursorItem) {
+        m_playbackCursorItem->setProperty("color", notationConfiguration()->playbackCursorColor());
+        m_playbackCursorItem->setProperty("opacity", notationConfiguration()->playbackCursorOpacity());
+    }
+
+    if (!m_playbackCursor->visible()) {
+        return;
+    }
+
+    const RectF oldRect = m_playbackCursor->rect();
+    m_playbackCursor->move(m_lastCursorTick);
+    if (m_playbackCursor->rect() != oldRect) {
+        onPlaybackCursorRectChanged();
     }
 }
 
@@ -1774,6 +1797,7 @@ void AbstractNotationPaintView::setPlaybackCursorItem(QQuickItem* cursor)
         m_playbackCursorItem->setVisible(globalContext()->playbackState()->isPlaying());
         m_playbackCursorItem->setEnabled(false); // ignore mouse & keyboard events
         m_playbackCursorItem->setProperty("color", notationConfiguration()->playbackCursorColor());
+        m_playbackCursorItem->setProperty("opacity", notationConfiguration()->playbackCursorOpacity());
 
         connect(m_playbackCursorItem, &QObject::destroyed, this, [this]() {
             m_playbackCursorItem = nullptr;
