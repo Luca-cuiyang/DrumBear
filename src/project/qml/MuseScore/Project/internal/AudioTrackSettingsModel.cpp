@@ -649,6 +649,11 @@ double detectBpm(const std::vector<float>& mono, unsigned int sampleRate)
 AudioTrackSettingsModel::AudioTrackSettingsModel(QObject* parent)
     : QObject(parent), muse::Contextable(muse::iocCtxForQmlObject(this))
 {
+    if (authorization()) {
+        authorization()->stateChanged().onNotify(this, [this]() {
+            emit proAccessChanged();
+        });
+    }
 }
 
 void AudioTrackSettingsModel::load()
@@ -734,8 +739,37 @@ void AudioTrackSettingsModel::subscribeOnPlayback()
     }
 }
 
+bool AudioTrackSettingsModel::hasProAccess() const
+{
+    return authorization() && authorization()->hasProAccess();
+}
+
+bool AudioTrackSettingsModel::ensureProAccess()
+{
+    if (hasProAccess()) {
+        return true;
+    }
+
+    auto result = interactive()->questionSync(
+        muse::trc("project", "会员功能"),
+        muse::trc("project", "导入音频并与曲谱AI对齐是会员专属功能。\n请激活会员后使用（含3天免费试用）。"),
+        { muse::IInteractive::Button::Ok, muse::IInteractive::Button::Cancel },
+        muse::IInteractive::Button::Ok);
+
+    if (result.standardButton() != muse::IInteractive::Button::Ok) {
+        return false;
+    }
+
+    interactive()->open("dbscore://account");
+    return false;
+}
+
 void AudioTrackSettingsModel::chooseFile()
 {
+    if (!ensureProAccess()) {
+        return;
+    }
+
     const std::vector<std::string> filter {
         muse::trc("project", "Audio files") + " (*.mp3 *.wav *.m4a *.aac *.flac *.ogg *.aiff *.aif)"
     };
@@ -763,6 +797,10 @@ void AudioTrackSettingsModel::chooseFile()
 
 void AudioTrackSettingsModel::replaceFile()
 {
+    if (!ensureProAccess()) {
+        return;
+    }
+
     const std::vector<std::string> filter {
         muse::trc("project", "Audio files") + " (*.mp3 *.wav *.m4a *.aac *.flac *.ogg *.aiff *.aif)"
     };

@@ -76,6 +76,34 @@ INotationInteractionPtr SaveProjectScenario::currentInteraction() const
     return project->masterNotation()->notation()->interaction();
 }
 
+bool SaveProjectScenario::ensureCanSaveProFeatures(const INotationProjectPtr& project)
+{
+    if (!project || !project->audioSettings()) {
+        return true;
+    }
+
+    bool hasAudioTrack = project->audioSettings()->audioTrackSettings().isValid();
+    if (!hasAudioTrack) {
+        return true;
+    }
+
+    if (authorization() && authorization()->hasProAccess()) {
+        return true;
+    }
+
+    auto result = interactive()->questionSync(
+        muse::trc("project", "会员功能"),
+        muse::trc("project", "保存带音频的动态.dbscore工程是会员专属功能。\n请激活会员后使用（含3天免费试用）。"),
+        { muse::IInteractive::Button::Ok, muse::IInteractive::Button::Cancel },
+        muse::IInteractive::Button::Ok);
+
+    if (result.standardButton() == muse::IInteractive::Button::Ok) {
+        interactive()->open("dbscore://account");
+    }
+
+    return false;
+}
+
 bool SaveProjectScenario::isBusy(BusyStatus status) const
 {
     return m_busyStatuses.contains(status);
@@ -375,6 +403,10 @@ Promise<Ret> SaveProjectScenario::saveProjectLocally(const muse::io::path_t& fil
     INotationProjectPtr project = currentNotationProject();
     if (!project) {
         return resolvedPromise(make_ret(Err::NoProjectError));
+    }
+
+    if (!ensureCanSaveProFeatures(project)) {
+        return resolvedPromise(make_ret(Ret::Code::Cancel));
     }
 
     Ret ret = project->save(filePath, saveMode, createBackup);

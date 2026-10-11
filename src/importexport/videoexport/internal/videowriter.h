@@ -40,6 +40,7 @@
 
 #include "project/inotationwriter.h"
 #include "project/inotationwritersregister.h"
+#include "cloud/dbscoreauthorization/idbscoreauthorizationservice.h"
 
 class QImage;
 
@@ -55,6 +56,7 @@ class VideoWriter : public project::INotationWriter, public muse::Contextable, p
     muse::GlobalInject<muse::IApplication> application;
     muse::GlobalInject<muse::media::IVideoEncoderResolver> videoEncodeResolver;
     muse::GlobalInject<project::INotationWritersRegister> writers;
+    muse::GlobalInject<muse::cloud::IDbScoreAuthorizationService> authorization;
     muse::ContextInject<context::IGlobalContext> globalContext = { this };
 
 public:
@@ -101,6 +103,8 @@ private:
 
     bool generateTrailingFrames(muse::media::IVideoEncoderPtr encoder, muse::draw::Painter& painter, QImage& frame,
                                 const Config& config);
+
+    void drawWatermark(muse::draw::Painter& painter, QImage& frame, const Config& config);
 
     struct ScoreRestoreData
     {

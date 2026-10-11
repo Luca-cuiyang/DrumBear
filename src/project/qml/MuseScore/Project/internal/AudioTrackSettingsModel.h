@@ -37,6 +37,7 @@
 #include "playback/iplaybackcontroller.h"
 #include "notation/inotationconfiguration.h"
 #include "audio/main/iplayback.h"
+#include "cloud/dbscoreauthorization/idbscoreauthorizationservice.h"
 
 namespace mu::project {
 class AudioTrackSettingsModel : public QObject, public muse::Contextable, public muse::async::Asyncable
@@ -67,6 +68,7 @@ class AudioTrackSettingsModel : public QObject, public muse::Contextable, public
     Q_PROPERTY(bool metronomeEnabled READ metronomeEnabled NOTIFY metronomeEnabledChanged)
     Q_PROPERTY(double masterVolumeDb READ masterVolumeDb WRITE setMasterVolumeDb NOTIFY masterVolumeDbChanged)
     Q_PROPERTY(double scoreVolumeDb READ scoreVolumeDb WRITE setScoreVolumeDb NOTIFY scoreVolumeDbChanged)
+    Q_PROPERTY(bool hasProAccess READ hasProAccess NOTIFY proAccessChanged)
 
 public:
     explicit AudioTrackSettingsModel(QObject* parent = nullptr);
@@ -94,6 +96,7 @@ public:
     bool metronomeEnabled() const;
     double masterVolumeDb() const;
     double scoreVolumeDb() const;
+    bool hasProAccess() const;
 
     Q_INVOKABLE void setStartOffset(double value);
     Q_INVOKABLE void setClipStart(double value);
@@ -154,6 +157,7 @@ signals:
     void metronomeEnabledChanged();
     void masterVolumeDbChanged();
     void scoreVolumeDbChanged();
+    void proAccessChanged();
 
 private:
     IProjectAudioSettingsPtr audioSettings() const;
@@ -163,6 +167,7 @@ private:
     void updateScoreBeatGrid();
     const AudioClipSettings* firstClip() const;
     void notifyAll();
+    bool ensureProAccess();
 
     muse::ContextInject<context::IGlobalContext> globalContext = { this };
     muse::ContextInject<muse::IInteractive> interactive = { this };
@@ -170,6 +175,7 @@ private:
     muse::ContextInject<playback::IPlaybackController> playbackController = { this };
     muse::ContextInject<muse::audio::IPlayback> playback = { this };
     muse::GlobalInject<notation::INotationConfiguration> notationConfiguration;
+    muse::GlobalInject<muse::cloud::IDbScoreAuthorizationService> authorization;
 
     AudioTrackSettings m_settings;
     double m_duration = 0.0;

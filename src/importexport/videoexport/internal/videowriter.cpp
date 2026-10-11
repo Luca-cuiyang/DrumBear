@@ -565,6 +565,7 @@ bool VideoWriter::generateLeadingFrames(muse::media::IVideoEncoderPtr encoder, I
             painter.drawText(subtitleRect, AlignCenter, TextWordWrap, subtitle);
         }
 
+        drawWatermark(painter, frame, config);
         encoder->encodeImage(frame);
     }
 
@@ -589,6 +590,7 @@ bool VideoWriter::generateTrailingFrames(muse::media::IVideoEncoderPtr encoder, 
         }
 
         painter.fillRect(frameRect, Color::BLACK);
+        drawWatermark(painter, frame, config);
         encoder->encodeImage(frame);
     }
 
@@ -843,8 +845,36 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
 
         painter.restore();
 
+        drawWatermark(painter, frame, config);
         encoder->encodeImage(frame);
     }
 
     return true;
+}
+
+void VideoWriter::drawWatermark(muse::draw::Painter& painter, QImage& frame, const Config& config)
+{
+    if (!authorization() || authorization()->hasProAccess()) {
+        return;
+    }
+
+    muse::RectF frameRect = muse::RectF::fromQRectF(QRectF(frame.rect()));
+
+    const double basePixelSize = 28.0;
+    const double pixelSize = basePixelSize * config.height / 1080.0;
+    const double pointSize = pixelSize * 72.0 / engraving::DPI;
+
+    Font font(Font::FontFamily(u"Muse Sans"), Font::Type::Text);
+    font.setPointSizeF(pointSize);
+    font.setWeight(Font::Weight::Medium);
+
+    const double margin = frameRect.width() * 0.02;
+    muse::RectF textRect(0.0, frameRect.height() - pixelSize * 2.0 - margin,
+                         frameRect.width() - margin, pixelSize * 2.0);
+
+    painter.save();
+    painter.setFont(font);
+    painter.setPen(Color(255, 255, 255, 120));
+    painter.drawText(textRect, AlignRight | AlignBottom, TextDontClip, u"鼓乐熊AI · DB Score");
+    painter.restore();
 }

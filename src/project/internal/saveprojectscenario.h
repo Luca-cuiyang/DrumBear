@@ -36,6 +36,7 @@
 #include "context/iglobalcontext.h"
 #include "cloud/dbscorecloud/idbscorecloudservice.h"
 #include "cloud/dbscoreaudio/idbscoreaudioservice.h"
+#include "cloud/dbscoreauthorization/idbscoreauthorizationservice.h"
 #include "io/ifilesystem.h"
 #include "notation/inotationconfiguration.h"
 #include "progress.h"
@@ -56,6 +57,7 @@ public:
     muse::GlobalInject<muse::io::IFileSystem> fileSystem;
     muse::GlobalInject<muse::cloud::IDBScoreCloudService> dbScoreCloudService;
     muse::GlobalInject<muse::cloud::IDBScoreAudioService> dbScoreAudioService;
+    muse::GlobalInject<muse::cloud::IDbScoreAuthorizationService> authorization;
     muse::GlobalInject<muse::IPlatformInteractive> platformInteractive;
     muse::ContextInject<IRecentFilesController> recentFilesController = { this };
     muse::ContextInject<IExportProjectScenario> exportProjectScenario = { this };
@@ -97,6 +99,7 @@ private:
 
     INotationProjectPtr currentNotationProject() const;
     notation::INotationInteractionPtr currentInteraction() const;
+    bool ensureCanSaveProFeatures(const INotationProjectPtr& project);
 
     void setBusy(BusyStatus status, bool isBusy);
     muse::async::Promise<muse::Ret> runIfNotBusy(BusyStatus status, const std::function<muse::async::Promise<muse::Ret>()>& flow);
