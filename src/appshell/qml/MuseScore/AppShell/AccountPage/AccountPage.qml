@@ -28,6 +28,8 @@ DockPage {
             accountModel.refresh()
         } else if (root.currentPage === 2) {
             accountModel.loadOrders()
+        } else if (root.currentPage === 4) {
+            accountModel.loadScores()
         } else if (root.currentPage === 6) {
             accountModel.loadPoints()
         } else if (root.currentPage === 7) {
@@ -594,17 +596,41 @@ DockPage {
                 Item {
                     PageFrame {
                         title: qsTrc("appshell", "我的乐谱")
+
+                        StyledTextLabel {
+                            visible: accountModel.scoresList.length === 0
+                            text: qsTrc("appshell", "暂无云端乐谱，发布乐谱后会显示在这里。")
+                            font: ui.theme.bodyFont
+                            opacity: 0.7
+                        }
+
                         PageCard {
                             ColumnLayout {
-                                spacing: 8
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "云端乐谱即将上线")
-                                    font: ui.theme.largeBodyFont
-                                }
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "发布到云端的乐谱会显示在这里。")
-                                    font: ui.theme.bodyFont
-                                    opacity: 0.7
+                                spacing: 0
+
+                                Repeater {
+                                    model: accountModel.scoresList
+
+                                    delegate: RowLayout {
+                                        width: parent ? parent.width : 0
+                                        height: 48
+                                        spacing: 12
+
+                                        StyledTextLabel {
+                                            Layout.fillWidth: true
+                                            text: modelData.title || modelData.name || ""
+                                            font: ui.theme.bodyFont
+                                            elide: Text.ElideMiddle
+                                        }
+
+                                        StyledTextLabel {
+                                            text: modelData.visibility === "private"
+                                                  ? qsTrc("appshell", "私密")
+                                                  : qsTrc("appshell", "公开")
+                                            font: ui.theme.bodyFont
+                                            opacity: 0.7
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -795,10 +821,44 @@ DockPage {
                                     text: qsTrc("appshell", "客服邮箱：support@drumbearai.com")
                                     font: ui.theme.bodyFont
                                 }
+                            }
+                        }
+
+                        PageCard {
+                            ColumnLayout {
+                                spacing: 10
+
                                 StyledTextLabel {
-                                    text: qsTrc("appshell", "意见反馈功能对接中，可先通过邮箱联系我们。")
+                                    text: qsTrc("appshell", "意见反馈")
+                                    font: ui.theme.largeBodyBoldFont
+                                }
+
+                                TextField {
+                                    id: feedbackContact
+                                    Layout.fillWidth: true
+                                    placeholderText: qsTrc("appshell", "联系方式（选填）")
+                                }
+
+                                TextArea {
+                                    id: feedbackContent
+                                    Layout.fillWidth: true
+                                    height: 100
+                                    placeholderText: qsTrc("appshell", "请描述你的问题或建议…")
+                                }
+
+                                StyledTextLabel {
+                                    visible: accountModel.lastError.length > 0
+                                    text: accountModel.lastError
+                                    color: ui.theme.accentColor
                                     font: ui.theme.bodyFont
-                                    opacity: 0.7
+                                    wrapMode: Text.WordWrap
+                                }
+
+                                FlatButton {
+                                    text: qsTrc("appshell", "提交反馈")
+                                    accentButton: true
+                                    enabled: !accountModel.busy
+                                    onClicked: accountModel.submitFeedback(feedbackContent.text, feedbackContact.text)
                                 }
                             }
                         }
