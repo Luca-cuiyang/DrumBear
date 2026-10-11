@@ -90,14 +90,18 @@ DockPage {
                                     spacing: 6
 
                                     StyledTextLabel {
-                                        text: accountModel.memberType === "standard"
-                                              ? qsTrc("appshell", "正式会员")
-                                              : (accountModel.hasProAccess ? qsTrc("appshell", "免费试用中") : qsTrc("appshell", "未激活"))
+                                        text: accountModel.phoneLoggedIn
+                                              ? (accountModel.phoneNickname.length > 0 ? accountModel.phoneNickname : accountModel.phoneMasked)
+                                              : (accountModel.memberType === "standard"
+                                                 ? qsTrc("appshell", "正式会员")
+                                                 : (accountModel.hasProAccess ? qsTrc("appshell", "免费试用中") : qsTrc("appshell", "未登录")))
                                         font: ui.theme.largeBodyBoldFont
                                     }
 
                                     StyledTextLabel {
-                                        text: qsTrc("appshell", "设备标识：") + accountModel.deviceId
+                                        text: accountModel.phoneLoggedIn
+                                              ? qsTrc("appshell", "手机号：") + accountModel.phoneMasked
+                                              : qsTrc("appshell", "设备标识：") + accountModel.deviceId
                                         font: ui.theme.bodyFont
                                         elide: Text.ElideMiddle
                                     }
@@ -157,6 +161,68 @@ DockPage {
                                 FlatButton {
                                     text: qsTrc("appshell", "去续费")
                                     onClicked: accountModel.openPurchasePage()
+                                }
+                            }
+                        }
+
+                        // 手机号登录区（主力登录方式）
+                        Rectangle {
+                            visible: !accountModel.phoneLoggedIn
+                            Layout.fillWidth: true
+                            height: 96
+                            radius: 10
+                            color: ui.theme.backgroundSecondaryColor
+
+                            ColumnLayout {
+                                anchors.fill: parent
+                                anchors.margins: 12
+                                spacing: 8
+
+                                StyledTextLabel {
+                                    text: qsTrc("appshell", "手机号登录（注册即送3天免费试用）")
+                                    font: ui.theme.largeBodyBoldFont
+                                }
+
+                                RowLayout {
+                                    Layout.fillWidth: true
+                                    spacing: 10
+
+                                    StyledTextLabel {
+                                        text: qsTrc("appshell", "手机号")
+                                        font: ui.theme.bodyFont
+                                    }
+
+                                    TextField {
+                                        id: phoneField
+                                        Layout.fillWidth: true
+                                        placeholderText: qsTrc("appshell", "请输入手机号")
+                                        inputMethodHints: Qt.ImhDigitsOnly
+                                    }
+
+                                    StyledTextLabel {
+                                        text: qsTrc("appshell", "验证码")
+                                        font: ui.theme.bodyFont
+                                    }
+
+                                    TextField {
+                                        id: codeField
+                                        Layout.fillWidth: true
+                                        placeholderText: qsTrc("appshell", "6位验证码")
+                                        inputMethodHints: Qt.ImhDigitsOnly
+                                    }
+
+                                    FlatButton {
+                                        text: qsTrc("appshell", "获取验证码")
+                                        enabled: !accountModel.busy
+                                        onClicked: accountModel.sendCode(phoneField.text)
+                                    }
+
+                                    FlatButton {
+                                        text: qsTrc("appshell", "登录")
+                                        accentButton: true
+                                        enabled: !accountModel.busy
+                                        onClicked: accountModel.loginByPhone(phoneField.text, codeField.text)
+                                    }
                                 }
                             }
                         }
@@ -260,7 +326,14 @@ DockPage {
 
                             FlatButton {
                                 text: qsTrc("appshell", "清除授权")
+                                visible: !accountModel.phoneLoggedIn
                                 onClicked: accountModel.clearLicense()
+                            }
+
+                            FlatButton {
+                                text: qsTrc("appshell", "退出登录")
+                                visible: accountModel.phoneLoggedIn
+                                onClicked: accountModel.logout()
                             }
                         }
 
