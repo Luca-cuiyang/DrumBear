@@ -30,7 +30,7 @@ import Muse.Dock
 import Muse.Interactive
 import Muse.Ui
 import Muse.UiComponents
-import Muse.Cloud
+import Muse.Cloud as Cloud
 import DBScore.AppShell
 
 import "./HomePage"
@@ -46,7 +46,7 @@ DockWindow {
 
     property int sendCooldown: 0
 
-    DbScoreAccountModel {
+    Cloud.DbScoreAccountModel {
         id: accountModel
     }
 
