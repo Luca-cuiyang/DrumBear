@@ -54,6 +54,10 @@ DockPage {
         id: recordsModel
     }
 
+    ScoresPageModel {
+        id: scoresPageModel
+    }
+
     Timer {
         id: cooldownTimer
         interval: 1000
@@ -589,6 +593,12 @@ DockPage {
                                     height: 56
                                     color: "transparent"
 
+                                    MouseArea {
+                                        anchors.fill: parent
+                                        cursorShape: Qt.PointingHandCursor
+                                        onClicked: scoresPageModel.openScore(score.path, score.name)
+                                    }
+
                                     RowLayout {
                                         anchors.fill: parent
                                         anchors.margins: 8
@@ -727,6 +737,12 @@ DockPage {
                                         width: parent ? parent.width : 0
                                         height: 44
                                         spacing: 12
+
+                                        MouseArea {
+                                            anchors.fill: parent
+                                            cursorShape: Qt.PointingHandCursor
+                                            onClicked: scoresPageModel.openScore(score.path, score.name)
+                                        }
 
                                         StyledTextLabel {
                                             Layout.fillWidth: true
