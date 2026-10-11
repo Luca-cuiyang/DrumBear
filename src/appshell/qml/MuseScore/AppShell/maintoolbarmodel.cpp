@@ -30,6 +30,7 @@ static const QString HOME_PAGE("dbscore://home");
 static const QString NOTATION_PAGE("dbscore://notation");
 static const QString NOTATION_REVIEW_PAGE("dbscore://notation/review");
 static const QString DEVTOOLS_PAGE("dbscore://devtools");
+static const QString ACCOUNT_PAGE("dbscore://account");
 
 static const QString TITLE_KEY("title");
 static const QString URI_KEY("uri");
@@ -103,6 +104,7 @@ void MainToolBarModel::load()
     m_items.clear();
     m_items << buildItem(muse::qtrc("appshell", "Home"), HOME_PAGE, m_currentUri);
     m_items << buildItem(muse::qtrc("appshell", "Score"), NOTATION_PAGE, m_currentUri);
+    m_items << buildItem(muse::qtrc("appshell", "账户中心"), ACCOUNT_PAGE, m_currentUri);
 
     if (globalConfiguration()->devModeEnabled()) {
         m_items << buildItem(muse::qtrc("appshell", "DevTools"), DEVTOOLS_PAGE, m_currentUri);

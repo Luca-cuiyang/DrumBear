@@ -75,6 +75,7 @@ void AppShellModule::resolveImports()
         ir->registerPageUri(Uri("dbscore://notation/review"));
         ir->registerPageUri(Uri("dbscore://sequencer"));
         ir->registerPageUri(Uri("dbscore://devtools"));
+        ir->registerPageUri(Uri("dbscore://account"));
 
         ir->registerQmlUri(Uri("dbscore://about/dbscore"), "DBScore.AppShell", "AboutDialog");
         ir->registerQmlUri(Uri("dbscore://about/musicxml"), "DBScore.AppShell", "AboutMusicXMLDialog");

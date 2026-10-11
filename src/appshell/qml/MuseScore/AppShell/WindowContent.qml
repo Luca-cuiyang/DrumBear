@@ -34,6 +34,7 @@ import "./HomePage"
 import "./NotationPage"
 import "./NotationReviewPage"
 import "./DevTools"
+import "./AccountPage"
 
 DockWindow {
     id: root
@@ -109,6 +110,8 @@ DockWindow {
             topToolbarKeyNavSec: topToolbarKeyNavSec
         },
 
-        DevToolsPage {}
+        DevToolsPage {},
+
+        AccountPage {}
     ]
 }
