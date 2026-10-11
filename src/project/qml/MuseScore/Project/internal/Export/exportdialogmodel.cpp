@@ -645,6 +645,21 @@ ExportDialogModel::ViewMode ExportDialogModel::viewMode() const
     return videoExportConfiguration()->viewMode();
 }
 
+bool ExportDialogModel::smoothPageTransitions() const
+{
+    return videoExportConfiguration()->smoothPageTransitions();
+}
+
+void ExportDialogModel::setSmoothPageTransitions(bool value)
+{
+    if (value == videoExportConfiguration()->smoothPageTransitions()) {
+        return;
+    }
+
+    videoExportConfiguration()->setSmoothPageTransitions(value);
+    emit smoothPageTransitionsChanged(value);
+}
+
 bool ExportDialogModel::isFFmpegAvailable() const
 {
 #ifdef MUE_BUILD_IMPEXP_VIDEOEXPORT_MODULE

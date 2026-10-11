@@ -58,6 +58,9 @@ public:
 
     virtual double trailingSec() const = 0;
     virtual void setTrailingSec(std::optional<double> trailingSec) = 0;
+
+    virtual bool smoothPageTransitions() const = 0;
+    virtual void setSmoothPageTransitions(std::optional<bool> value) = 0;
 };
 }
 

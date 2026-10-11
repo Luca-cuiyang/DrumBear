@@ -82,6 +82,7 @@ private:
         float trailingSec = 3.;
         double canvasDpi = 300.0;
         ViewMode viewMode = ViewMode::PageFull;
+        bool smoothPageTransitions = false;
         muse::PointF moveToCenter;
     };
 

@@ -235,6 +235,7 @@ VideoWriter::Config VideoWriter::makeConfig() const
     cfg.trailingSec = configuration()->trailingSec();
 
     cfg.viewMode = configuration()->viewMode();
+    cfg.smoothPageTransitions = configuration()->smoothPageTransitions();
 
     return cfg;
 }
@@ -587,6 +588,48 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
     PlaybackCursor cursor(iocContext());
     cursor.setNotation(notation);
 
+    const double TRANSITION_SEC = 1.3;
+
+    //! NOTE: INotationPlayback only exposes secToTick, so invert it once per page
+    //! boundary (binary search) to know at which time each page ends.
+    auto tickToSec = [&](tick_t targetTick, float maxSec) -> float {
+        float lo = 0.0f;
+        float hi = maxSec;
+        for (int i = 0; i < 40; ++i) {
+            float mid = 0.5f * (lo + hi);
+            tick_t t = playback->secToTick(mid);
+            if (t < targetTick) {
+                lo = mid;
+            } else {
+                hi = mid;
+            }
+        }
+        return hi;
+    };
+
+    std::vector<float> pageEndTimeSec(pages.size(), 0.0f);
+    if (config.smoothPageTransitions) {
+        for (size_t i = 0; i < pages.size(); ++i) {
+            pageEndTimeSec[i] = tickToSec(pages[i]->endTick().ticks(), totalPlayTimeSec);
+        }
+    }
+
+    auto paintPage = [&](const Page* page, const muse::PointF& extraOffset) {
+        INotationPainting::Options opt;
+        opt.fromPage = static_cast<int>(page->pageNumber());
+        opt.toPage = opt.fromPage;
+        opt.deviceDpi = config.canvasDpi;
+
+        painter.save();
+        painter.translate(extraOffset);
+        painting->paintPrint(&painter, opt);
+        painter.restore();
+    };
+
+    auto easeInOut = [](double p) {
+        return p * p * (3.0 - 2.0 * p);
+    };
+
     for (int f = 0; f < scoreFrameCount; f++) {
         if (m_abort) {
             m_writeRet = make_ret(muse::Ret::Code::Cancel);
@@ -613,25 +656,51 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
             continue;
         }
 
-        INotationPainting::Options opt;
-        opt.fromPage = static_cast<int>(page->pageNumber());
-        opt.toPage = opt.fromPage;
-        opt.deviceDpi = config.canvasDpi;
-
         painter.fillRect(frameRect, Color::BLACK);
 
         painter.save();
         painter.translate(config.moveToCenter);
 
-        painting->paintPrint(&painter, opt);
+        const Page* nextPage = nullptr;
+        double easedProgress = 0.0;
+        bool inTransition = false;
 
-        cursor.move(tick);
+        if (config.smoothPageTransitions) {
+            int pageIndex = static_cast<int>(page->pageNumber());
+            if (pageIndex + 1 < static_cast<int>(pages.size())) {
+                const Page* candidateNextPage = pages.at(pageIndex + 1);
+                if (candidateNextPage->firstMeasure()) {
+                    float endTimeSec = pageEndTimeSec[pageIndex];
+                    float startTimeSec = endTimeSec - static_cast<float>(TRANSITION_SEC);
+                    if (currentTimeSec >= startTimeSec && currentTimeSec < endTimeSec) {
+                        nextPage = candidateNextPage;
+                        double p = (static_cast<double>(currentTimeSec) - startTimeSec) / TRANSITION_SEC;
+                        p = p < 0.0 ? 0.0 : (p > 1.0 ? 1.0 : p);
+                        easedProgress = easeInOut(p);
+                        inTransition = true;
+                    }
+                }
+            }
+        }
 
-        muse::RectF cursorRect = cursor.rect();
-        muse::PointF pagePos = page->pos();
-        muse::RectF cursorAbsRect = cursorRect.translated(-pagePos);
+        if (inTransition && nextPage) {
+            muse::PointF delta = nextPage->pos() - page->pos();
+            muse::PointF outOffset(-delta.x() * easedProgress, -delta.y() * easedProgress);
+            muse::PointF inOffset(delta.x() * (1.0 - easedProgress), delta.y() * (1.0 - easedProgress));
 
-        painter.fillRect(cursorAbsRect, cursor.effectiveColor());
+            paintPage(page, outOffset);
+            paintPage(nextPage, inOffset);
+
+            cursor.move(tick);
+            muse::RectF cursorRect = cursor.rect().translated(-page->pos()).translated(outOffset);
+            painter.fillRect(cursorRect, cursor.effectiveColor());
+        } else {
+            paintPage(page, muse::PointF());
+
+            cursor.move(tick);
+            muse::RectF cursorRect = cursor.rect().translated(-page->pos());
+            painter.fillRect(cursorRect, cursor.effectiveColor());
+        }
 
         painter.restore();
 

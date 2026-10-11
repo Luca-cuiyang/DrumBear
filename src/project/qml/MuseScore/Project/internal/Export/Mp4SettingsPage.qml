@@ -160,6 +160,22 @@ ExportSettingsPage {
                 }
             }
 
+            CheckBox {
+                width: parent.width
+                text: qsTrc("project/export", "开启跨页平滑过渡")
+
+                navigation.name: "SmoothPageTransitionsCheckbox"
+                navigation.panel: root.navigationPanel
+                navigation.row: videoResolutionDropdown.navigation.row + 4
+
+                checked: root.model ? root.model.smoothPageTransitions : false
+                onClicked: {
+                    if (root.model) {
+                        root.model.smoothPageTransitions = !checked
+                    }
+                }
+            }
+
             StyledTextLabel {
                 width: parent.width
                 text: qsTrc("project/export", "Each selected part will be exported as a separate video file.")
