@@ -23,6 +23,18 @@ DockPage {
     property int currentPage: 0
     property int sendCooldown: 0
 
+    onCurrentPageChanged: {
+        if (root.currentPage === 0 || root.currentPage === 1) {
+            accountModel.refresh()
+        } else if (root.currentPage === 2) {
+            accountModel.loadOrders()
+        } else if (root.currentPage === 6) {
+            accountModel.loadPoints()
+        } else if (root.currentPage === 7) {
+            accountModel.loadInvite()
+        }
+    }
+
     DbScoreAccountModel {
         id: accountModel
     }
@@ -465,24 +477,54 @@ DockPage {
                 Item {
                     PageFrame {
                         title: qsTrc("appshell", "订单记录")
+
+                        StyledTextLabel {
+                            visible: accountModel.ordersList.length === 0
+                            text: qsTrc("appshell", "暂无订单记录")
+                            font: ui.theme.bodyFont
+                            opacity: 0.7
+                        }
+
                         PageCard {
                             ColumnLayout {
-                                spacing: 8
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "暂无订单记录")
-                                    font: ui.theme.largeBodyFont
-                                }
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "开通会员后，订单记录会显示在这里。")
-                                    font: ui.theme.bodyFont
-                                    opacity: 0.7
-                                }
-                                FlatButton {
-                                    text: qsTrc("appshell", "开通会员")
-                                    accentButton: true
-                                    onClicked: accountModel.openPurchasePage()
+                                spacing: 0
+
+                                Repeater {
+                                    model: accountModel.ordersList
+
+                                    delegate: RowLayout {
+                                        width: parent ? parent.width : 0
+                                        height: 48
+                                        spacing: 12
+
+                                        StyledTextLabel {
+                                            Layout.fillWidth: true
+                                            text: modelData.planName || modelData.orderNo || ""
+                                            font: ui.theme.bodyFont
+                                            elide: Text.ElideMiddle
+                                        }
+
+                                        StyledTextLabel {
+                                            text: "¥" + ((modelData.amountCents || 0) / 100).toFixed(2)
+                                            font: ui.theme.bodyFont
+                                        }
+
+                                        StyledTextLabel {
+                                            text: modelData.status === "paid" ? qsTrc("appshell", "已支付")
+                                                  : modelData.status === "pending" ? qsTrc("appshell", "待支付")
+                                                  : qsTrc("appshell", "已取消")
+                                            font: ui.theme.bodyFont
+                                            opacity: 0.7
+                                        }
+                                    }
                                 }
                             }
+                        }
+
+                        FlatButton {
+                            text: qsTrc("appshell", "开通会员")
+                            accentButton: true
+                            onClicked: accountModel.openPurchasePage()
                         }
                     }
                 }
@@ -593,14 +635,34 @@ DockPage {
                     PageFrame {
                         title: qsTrc("appshell", "积分中心")
                         PageCard {
-                            ColumnLayout {
-                                spacing: 8
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "积分功能即将上线")
-                                    font: ui.theme.largeBodyFont
+                            RowLayout {
+                                spacing: 16
+
+                                ColumnLayout {
+                                    spacing: 4
+                                    StyledTextLabel {
+                                        text: qsTrc("appshell", "当前积分")
+                                        font: ui.theme.bodyFont
+                                        opacity: 0.7
+                                    }
+                                    StyledTextLabel {
+                                        text: accountModel.pointsBalance
+                                        font: ui.theme.titleBoldFont
+                                    }
+                                }
+
+                                Item { Layout.fillWidth: true }
+
+                                FlatButton {
+                                    visible: !accountModel.todayCheckedIn
+                                    text: qsTrc("appshell", "每日签到")
+                                    accentButton: true
+                                    enabled: !accountModel.busy
+                                    onClicked: accountModel.checkIn()
                                 }
                                 StyledTextLabel {
-                                    text: qsTrc("appshell", "签到、积分明细会显示在这里。")
+                                    visible: accountModel.todayCheckedIn
+                                    text: qsTrc("appshell", "今日已签到")
                                     font: ui.theme.bodyFont
                                     opacity: 0.7
                                 }
@@ -614,7 +676,7 @@ DockPage {
                         title: qsTrc("appshell", "推广赚佣")
                         PageCard {
                             ColumnLayout {
-                                spacing: 8
+                                spacing: 10
                                 StyledTextLabel {
                                     text: qsTrc("appshell", "邀请好友，赚取 15% 佣金")
                                     font: ui.theme.largeBodyBoldFont
@@ -624,10 +686,41 @@ DockPage {
                                     font: ui.theme.bodyFont
                                     wrapMode: Text.WordWrap
                                 }
+
                                 StyledTextLabel {
-                                    text: qsTrc("appshell", "邀请码、佣金余额将在登录后显示，接口对接中。")
+                                    visible: !accountModel.phoneLoggedIn
+                                    text: qsTrc("appshell", "登录后查看你的邀请码和佣金。")
                                     font: ui.theme.bodyFont
                                     opacity: 0.7
+                                }
+
+                                ColumnLayout {
+                                    visible: accountModel.phoneLoggedIn
+                                    spacing: 6
+
+                                    StyledTextLabel {
+                                        text: qsTrc("appshell", "邀请码：") + accountModel.inviteCode
+                                        font: ui.theme.bodyFont
+                                    }
+                                    StyledTextLabel {
+                                        text: qsTrc("appshell", "佣金余额：¥") + (accountModel.commissionBalanceCents / 100).toFixed(2)
+                                        font: ui.theme.bodyFont
+                                    }
+                                    StyledTextLabel {
+                                        text: qsTrc("appshell", "累计赚取：¥") + (accountModel.totalEarnedCents / 100).toFixed(2)
+                                        font: ui.theme.bodyFont
+                                    }
+                                    StyledTextLabel {
+                                        text: qsTrc("appshell", "已邀请好友：") + accountModel.inviteeCount + qsTrc("appshell", " 人")
+                                        font: ui.theme.bodyFont
+                                    }
+                                }
+
+                                FlatButton {
+                                    visible: accountModel.phoneLoggedIn && accountModel.inviteUrl.length > 0
+                                    text: qsTrc("appshell", "复制邀请链接")
+                                    accentButton: true
+                                    onClicked: accountModel.copyText(accountModel.inviteUrl)
                                 }
                             }
                         }
