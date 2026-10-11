@@ -23,7 +23,6 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
-import QtQuick.Controls
 
 import Muse.Ui
 import Muse.UiComponents
@@ -32,8 +31,8 @@ import DBScore.AppShell
 Item {
     id: root
 
-    width: radioButtonList.width + accountEntry.width + 40
-    height: Math.max(radioButtonList.height, accountEntry.height)
+    width: radioButtonList.width
+    height: radioButtonList.height
 
     property alias navigation: navPanel
 
@@ -69,8 +68,6 @@ Item {
 
     RadioButtonGroup {
         id: radioButtonList
-        anchors.left: parent.left
-        anchors.verticalCenter: parent.verticalCenter
         spacing: 0
 
         model: toolBarModel
@@ -101,23 +98,6 @@ Item {
             onToggled: {
                 root.selected(uri)
             }
-        }
-    }
-
-    FlatButton {
-        id: accountEntry
-
-        anchors.right: parent.right
-        anchors.verticalCenter: parent.verticalCenter
-
-        text: qsTrc("appshell", "👤 登录")
-        accentButton: false
-
-        ToolTip.visible: accountEntry.hovered
-        ToolTip.text: qsTrc("appshell", "点击进入账户中心")
-
-        onClicked: {
-            root.select("dbscore://account")
         }
     }
 }

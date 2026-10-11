@@ -140,9 +140,20 @@ DockPage {
                                     }
 
                                     StyledTextLabel {
-                                        text: root.loggedIn ? "138****0000" : qsTrc("appshell", "点击右上角登录")
+                                        text: root.loggedIn ? "138****0000" : qsTrc("appshell", "点击右侧登录按钮登录")
                                         font: ui.theme.bodyFont
                                     }
+                                }
+
+                                Item {
+                                    Layout.fillWidth: true
+                                }
+
+                                FlatButton {
+                                    visible: !root.loggedIn
+                                    text: qsTrc("appshell", "登录")
+                                    accentButton: true
+                                    onClicked: loginDialog.open()
                                 }
                             }
                         }
