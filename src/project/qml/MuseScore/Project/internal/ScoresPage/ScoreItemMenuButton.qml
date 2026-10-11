@@ -64,9 +64,9 @@ FlatButton {
 
     readonly property string revealInFileBrowserTitle: {
         switch (Qt.platform.os) {
-        case "windows": return qsTrc("project", "Show in Explorer")
-        case "osx": return qsTrc("project", "Show in Finder")
-        default: return qsTrc("project", "Show in File Manager")
+        case "windows": return qsTrc("project", "在资源管理器中显示")
+        case "osx": return qsTrc("project", "在访达中显示")
+        default: return qsTrc("project", "在文件管理器中显示")
         }
     }
 
@@ -76,18 +76,18 @@ FlatButton {
         }
 
         let result = [
-            { id: "open", title: qsTrc("project", "Open") }
+            { id: "open", title: qsTrc("project", "打开") }
         ]
 
         if (root.isCloud) {
-            result.push({ id: "view-online", title: qsTrc("project", "View online"), icon: IconCode.OPEN_LINK })
+            result.push({ id: "view-online", title: qsTrc("project", "在线查看"), icon: IconCode.OPEN_LINK })
         } else {
             result.push({ id: "reveal-in-file-browser", title: root.revealInFileBrowserTitle })
         }
 
         if (root.showRemoveFromRecentFiles) {
             result.push({}) // separator
-            result.push({ id: "remove-from-recent-files", title: qsTrc("project", "Remove from recent files list") })
+            result.push({ id: "remove-from-recent-files", title: qsTrc("project", "从最近文件列表移除") })
         }
 
         return result

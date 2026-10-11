@@ -129,7 +129,7 @@ ScoresView {
 
                     //: Stands for "Last time that this score was modified".
                     //: Used as the header of this column in the scores list.
-                    header: qsTrc("project", "Modified")
+                    header: qsTrc("project", "修改时间")
 
                     width: function (parentWidth) {
                         let parentWidthExclusingSpacing = parentWidth - list.columns.length * list.view.columnSpacing;
@@ -168,7 +168,7 @@ ScoresView {
 
                 ScoresListView.ColumnItem {
                     id: sizeColumn
-                    header: qsTrc("global", "Size", "file size")
+                    header: qsTrc("global", "大小", "file size")
 
                     width: function (parentWidth) {
                         let parentWidthExclusingSpacing = parentWidth - list.columns.length * list.view.columnSpacing;
@@ -189,7 +189,7 @@ ScoresView {
                                 row: navigationRow
                                 column: navigationColumnStart
                                 enabled: sizeLabel.visible && sizeLabel.enabled && !sizeLabel.isEmpty
-                                accessible.name: sizeColumn.header + ": " + (Boolean(score.fileSize) ? score.fileSize : qsTrc("global", "Unknown"))
+                                accessible.name: sizeColumn.header + ": " + (Boolean(score.fileSize) ? score.fileSize : qsTrc("global", "未知"))
                                 accessible.role: MUAccessible.StaticText
 
                                 onActiveChanged: {
