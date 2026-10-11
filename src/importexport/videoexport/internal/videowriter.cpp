@@ -21,6 +21,7 @@
  */
 #include "videowriter.h"
 
+#include <algorithm>
 #include <cmath>
 
 #include <QPainter>
@@ -417,6 +418,18 @@ void VideoWriter::doGenerate(muse::media::IVideoEncoderPtr encoder, INotationPtr
         m_isCompleted = true;
     };
 
+    //! NOTE: Smooth page transitions scroll vertically through the page systems, so the
+    //! page must be rendered at "fit width" scale (it may be taller than the frame) rather
+    //! than the default "fit whole page" scale. This only affects the video export path.
+    if (actualConfig.smoothPageTransitions && actualConfig.viewMode == ViewMode::PageFull) {
+        const PageList& pages = notation->elements()->pages();
+        if (!pages.empty()) {
+            double scaleX = actualConfig.width / pages.front()->width();
+            actualConfig.canvasDpi = scaleX * engraving::DPI;
+            actualConfig.moveToCenter = muse::PointF(0.0, 0.0);
+        }
+    }
+
     // Setup painting
     QImage frame(actualConfig.width, actualConfig.height, QImage::Format_RGB32);
     frame.setDotsPerMeterX(std::lrint((actualConfig.canvasDpi * 1000) / engraving::INCH));
@@ -590,47 +603,63 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
 
     const double TRANSITION_SEC = 1.3;
 
-    //! NOTE: INotationPlayback only exposes secToTick, so invert it once per page
-    //! boundary (binary search) to know at which time each page ends.
-    auto tickToSec = [&](tick_t targetTick, float maxSec) -> float {
-        float lo = 0.0f;
-        float hi = maxSec;
-        for (int i = 0; i < 40; ++i) {
-            float mid = 0.5f * (lo + hi);
-            tick_t t = playback->secToTick(mid);
-            if (t < targetTick) {
-                lo = mid;
-            } else {
-                hi = mid;
-            }
-        }
-        return hi;
-    };
+    const bool smooth = config.smoothPageTransitions
+                        && config.viewMode == ViewMode::PageFull
+                        && !pages.empty();
 
-    std::vector<float> pageEndTimeSec(pages.size(), 0.0f);
-    if (config.smoothPageTransitions) {
-        for (size_t i = 0; i < pages.size(); ++i) {
-            pageEndTimeSec[i] = tickToSec(pages[i]->endTick().ticks(), totalPlayTimeSec);
+    //! NOTE: In smooth mode we scroll vertically through the page systems. Collect the
+    //! global canvas Y of every system top and the total content height once up front.
+    std::vector<double> systemTopY;
+    double totalHeightCanvas = 0.0;
+    double frameHCanvas = 0.0;
+    if (smooth) {
+        for (const Page* p : pages) {
+            for (const System* system : p->systems()) {
+                systemTopY.push_back(system->canvasPos().y());
+            }
+            totalHeightCanvas = std::max(totalHeightCanvas, p->pos().y() + p->height());
         }
+        std::sort(systemTopY.begin(), systemTopY.end());
+
+        double scaleX = config.width / pages.front()->width();
+        frameHCanvas = config.height / scaleX;
     }
 
-    //! NOTE: Do NOT wrap paintPrint in save()/restore(). paintPrint installs the page
-    //! viewport/window transform, and restore() would undo it, breaking the cursor draw
-    //! that follows. We only translate (and translate back) so the viewport transform
-    //! remains active for the cursor fillRect below.
-    auto paintPageAt = [&](const Page* page, const muse::PointF& extraOffset) {
+    //! NOTE: Scroll state persists across frames. Each small scroll is animated with an
+    //! ease-in-out over TRANSITION_SEC and stays still otherwise.
+    double viewTop = 0.0;
+    bool scrollAnimating = false;
+    double scrollAnimFrom = 0.0;
+    double scrollAnimTo = 0.0;
+    double scrollAnimStartSec = 0.0;
+
+    auto easeInOut = [](double p) {
+        return p * p * (3.0 - 2.0 * p);
+    };
+
+    //! NOTE: Do NOT wrap paintPrint in save()/restore(); paintPrint installs the page
+    //! viewport/window transform, and restore() would undo it, breaking the cursor draw.
+    auto paintPageAt = [&](const Page* page, double offsetX, double offsetY) {
         INotationPainting::Options opt;
         opt.fromPage = static_cast<int>(page->pageNumber());
         opt.toPage = opt.fromPage;
         opt.deviceDpi = config.canvasDpi;
 
-        painter.translate(extraOffset.x(), extraOffset.y());
+        painter.translate(offsetX, offsetY);
         painting->paintPrint(&painter, opt);
-        painter.translate(-extraOffset.x(), -extraOffset.y());
+        painter.translate(-offsetX, -offsetY);
     };
 
-    auto easeInOut = [](double p) {
-        return p * p * (3.0 - 2.0 * p);
+    auto systemIndexAt = [&](double y) -> int {
+        int idx = -1;
+        for (int i = 0; i < static_cast<int>(systemTopY.size()); ++i) {
+            if (systemTopY[i] <= y) {
+                idx = i;
+            } else {
+                break;
+            }
+        }
+        return idx;
     };
 
     for (int f = 0; f < scoreFrameCount; f++) {
@@ -662,43 +691,74 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
         painter.fillRect(frameRect, Color::BLACK);
 
         painter.save();
-        painter.translate(config.moveToCenter);
 
-        const Page* nextPage = nullptr;
-        double easedProgress = 0.0;
-        bool inTransition = false;
+        if (smooth) {
+            cursor.move(tick);
+            muse::RectF cursorRect = cursor.rect();
+            double cursorY = cursorRect.center().y();
 
-        if (config.smoothPageTransitions) {
-            int pageIndex = static_cast<int>(page->pageNumber());
-            if (pageIndex + 1 < static_cast<int>(pages.size())) {
-                const Page* candidateNextPage = pages.at(pageIndex + 1);
-                if (candidateNextPage->firstMeasure()) {
-                    float endTimeSec = pageEndTimeSec[pageIndex];
-                    float startTimeSec = endTimeSec - static_cast<float>(TRANSITION_SEC);
-                    if (currentTimeSec >= startTimeSec && currentTimeSec < endTimeSec) {
-                        nextPage = candidateNextPage;
-                        double p = (static_cast<double>(currentTimeSec) - startTimeSec) / TRANSITION_SEC;
-                        p = p < 0.0 ? 0.0 : (p > 1.0 ? 1.0 : p);
-                        easedProgress = easeInOut(p);
-                        inTransition = true;
-                    }
+            //! NOTE: Find the first/last visible system indices and the cursor's system.
+            int firstIdx = -1;
+            for (int i = 0; i < static_cast<int>(systemTopY.size()); ++i) {
+                if (systemTopY[i] + 1.0 >= viewTop) {
+                    firstIdx = i;
+                    break;
                 }
             }
-        }
 
-        if (inTransition && nextPage) {
-            muse::PointF delta = nextPage->pos() - page->pos();
-            muse::PointF outOffset(-delta.x() * easedProgress, -delta.y() * easedProgress);
-            muse::PointF inOffset(delta.x() * (1.0 - easedProgress), delta.y() * (1.0 - easedProgress));
+            int lastIdx = firstIdx;
+            for (int i = firstIdx; i < static_cast<int>(systemTopY.size()); ++i) {
+                if (systemTopY[i] < viewTop + frameHCanvas) {
+                    lastIdx = i;
+                } else {
+                    break;
+                }
+            }
 
-            paintPageAt(page, outOffset);
-            paintPageAt(nextPage, inOffset);
+            int cursorIdx = systemIndexAt(cursorY);
+            int lastSystemIdx = static_cast<int>(systemTopY.size()) - 1;
 
-            cursor.move(tick);
-            muse::RectF cursorRect = cursor.rect().translated(-page->pos()).translated(outOffset);
+            //! NOTE: Scroll up by exactly one real system height when the cursor reaches the
+            //! last one or two visible systems and there is still content below.
+            if (!scrollAnimating && firstIdx >= 0 && cursorIdx >= lastIdx - 1
+                && lastIdx < lastSystemIdx) {
+                double target = systemTopY[firstIdx + 1];
+                double maxTop = std::max(0.0, totalHeightCanvas - frameHCanvas);
+                target = std::min(target, maxTop);
+                if (target > viewTop + 1e-3) {
+                    scrollAnimFrom = viewTop;
+                    scrollAnimTo = target;
+                    scrollAnimStartSec = currentTimeSec;
+                    scrollAnimating = true;
+                }
+            }
+
+            if (scrollAnimating) {
+                double p = (static_cast<double>(currentTimeSec) - scrollAnimStartSec) / TRANSITION_SEC;
+                if (p >= 1.0) {
+                    viewTop = scrollAnimTo;
+                    scrollAnimating = false;
+                } else {
+                    viewTop = scrollAnimFrom + (scrollAnimTo - scrollAnimFrom) * easeInOut(p);
+                }
+            }
+
+            //! NOTE: Render every page intersecting the viewport (one page normally, two
+            //! while crossing a page boundary), shifted up by the scroll offset.
+            painter.translate(0.0, -viewTop);
+            for (const Page* p : pages) {
+                double pageTop = p->pos().y();
+                double pageBottom = pageTop + p->height();
+                if (pageBottom < viewTop || pageTop > viewTop + frameHCanvas) {
+                    continue;
+                }
+                paintPageAt(p, p->pos().x(), p->pos().y());
+            }
+
             painter.fillRect(cursorRect, cursor.effectiveColor());
         } else {
-            paintPageAt(page, muse::PointF());
+            painter.translate(config.moveToCenter);
+            paintPageAt(page, 0.0, 0.0);
 
             cursor.move(tick);
             muse::RectF cursorRect = cursor.rect().translated(-page->pos());
