@@ -610,22 +610,59 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
 
     const bool smooth = config.smoothPageTransitions && !pages.empty();
 
-    //! NOTE: Build an explicit vertical layout of pages, independent of the underlying
-    //! canvas orientation, so vertical scrolling works for both paged and continuous views.
-    std::vector<double> pageVertTop(pages.size(), 0.0);
+    //! NOTE: In smooth mode, stitch pages together by their system content (uniform line
+    //! spacing, no page margins) so the video reads as one continuous score.
+    std::vector<double> pageRenderOffset(pages.size(), 0.0);
+    std::vector<double> pageContentTop(pages.size(), 0.0);
+    std::vector<double> pageContentHeight(pages.size(), 0.0);
     double scale = config.canvasDpi / engraving::DPI;
     double frameWidthCanvas = config.width / scale;
     double frameHeightCanvas = config.height / scale;
     double totalHeightCanvas = 0.0;
 
     if (smooth) {
-        double y = 0.0;
+        std::vector<double> contentTop(pages.size(), 0.0);
+        std::vector<double> contentBottom(pages.size(), 0.0);
+        double lineGap = 0.0;
+        int gapCount = 0;
+
         for (size_t i = 0; i < pages.size(); ++i) {
             const Page* p = pages[i];
-            pageVertTop[i] = y;
-            y += p->height();
+            const std::vector<System*>& systems = p->systems();
+            if (systems.empty()) {
+                continue;
+            }
+
+            contentTop[i] = systems.front()->pagePos().y();
+            contentBottom[i] = systems.back()->pagePos().y() + systems.back()->height();
+
+            for (size_t k = 1; k < systems.size(); ++k) {
+                lineGap += systems[k]->pagePos().y()
+                           - (systems[k - 1]->pagePos().y() + systems[k - 1]->height());
+                ++gapCount;
+            }
         }
-        totalHeightCanvas = y;
+
+        if (gapCount > 0) {
+            lineGap /= static_cast<double>(gapCount);
+        }
+
+        double y = 0.0;
+        for (size_t i = 0; i < pages.size(); ++i) {
+            if (pages[i]->systems().empty()) {
+                pageRenderOffset[i] = y;
+                pageContentTop[i] = y;
+                pageContentHeight[i] = 0.0;
+                continue;
+            }
+
+            pageRenderOffset[i] = y - contentTop[i];
+            pageContentTop[i] = y;
+            pageContentHeight[i] = contentBottom[i] - contentTop[i];
+            y += pageContentHeight[i] + lineGap;
+        }
+
+        totalHeightCanvas = y - lineGap;
     }
 
     //! NOTE: Camera keeps the playback cursor vertically centered. The value is smoothed
@@ -639,6 +676,7 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
         opt.fromPage = static_cast<int>(page->pageNumber());
         opt.toPage = opt.fromPage;
         opt.deviceDpi = config.canvasDpi;
+        opt.printPageBackground = !smooth;
 
         painter.translate(offsetX, offsetY);
         painting->paintPrint(&painter, opt);
@@ -671,7 +709,7 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
             continue;
         }
 
-        painter.fillRect(frameRect, Color::BLACK);
+        painter.fillRect(frameRect, smooth ? Color::WHITE : Color::BLACK);
 
         painter.save();
 
@@ -680,7 +718,7 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
             muse::RectF cursorRect = cursor.rect();
 
             int pageIdx = static_cast<int>(page->pageNumber());
-            double cursorVertY = pageVertTop[pageIdx] + (cursorRect.y() - page->pos().y());
+            double cursorVertY = pageRenderOffset[pageIdx] + (cursorRect.y() - page->pos().y());
 
             //! NOTE: Keep the cursor vertically centered. Smoothly glide the camera toward
             //! that target so the page moves gently instead of jumping frequently.
@@ -696,13 +734,13 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
             painter.translate(0.0, -viewTop);
             for (size_t i = 0; i < pages.size(); ++i) {
                 const Page* p = pages[i];
-                double pageTop = pageVertTop[i];
-                double pageBottom = pageTop + p->height();
+                double pageTop = pageContentTop[i];
+                double pageBottom = pageTop + pageContentHeight[i];
                 if (pageBottom < viewTop || pageTop > viewTop + frameHeightCanvas) {
                     continue;
                 }
                 double centeringX = 0.5 * (frameWidthCanvas - p->width());
-                paintPageAt(p, centeringX, pageVertTop[i]);
+                paintPageAt(p, centeringX, pageRenderOffset[i]);
             }
 
             double cursorCenteringX = 0.5 * (frameWidthCanvas - page->width());
