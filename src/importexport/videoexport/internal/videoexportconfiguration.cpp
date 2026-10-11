@@ -26,15 +26,16 @@ using namespace mu::iex::videoexport;
 static const ViewMode DEFAULT_VIEW_MODE = ViewMode::PageFull;
 static const bool DEFAULT_SHOW_PIANO = false;
 static const PianoPosition DEFAULT_PIANO_POSITION = PianoPosition::Bottom;
-static const std::string DEFAULT_RESOLUTION = "4k_16x9";
+static const std::string DEFAULT_RESOLUTION = "1080p_16x9";
 static const int DEFAULT_CUSTOM_WIDTH = 1920;
 static const int DEFAULT_CUSTOM_HEIGHT = 1080;
 static const int DEFAULT_FPS = 24;
 static const double DEFAULT_LEADING_SEC = 3.0;
 static const double DEFAULT_TRAILING_SECONDS = 3.0;
 static const bool DEFAULT_SMOOTH_PAGE_TRANSITIONS = false;
+static const bool DEFAULT_INCLUDE_AUDIO = true;
 
-static const std::vector<std::string> AVAILABLE_RESOLUTIONS = { "4k_16x9", "4k_9x16", "custom" };
+static const std::vector<std::string> AVAILABLE_RESOLUTIONS = { "1080p_16x9", "2k_16x9", "1080p_9x16", "2k_9x16" };
 
 ViewMode VideoExportConfiguration::viewMode() const
 {
@@ -139,4 +140,14 @@ bool VideoExportConfiguration::smoothPageTransitions() const
 void VideoExportConfiguration::setSmoothPageTransitions(std::optional<bool> value)
 {
     m_smoothPageTransitions = value;
+}
+
+bool VideoExportConfiguration::includeAudio() const
+{
+    return m_includeAudio ? m_includeAudio.value() : DEFAULT_INCLUDE_AUDIO;
+}
+
+void VideoExportConfiguration::setIncludeAudio(std::optional<bool> value)
+{
+    m_includeAudio = value;
 }

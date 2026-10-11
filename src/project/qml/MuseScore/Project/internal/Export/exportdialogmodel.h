@@ -88,6 +88,8 @@ class ExportDialogModel : public QAbstractListModel, public QQmlParserStatus, pu
     Q_PROPERTY(ViewMode viewMode READ viewMode WRITE setViewMode NOTIFY viewModeChanged FINAL)
     Q_PROPERTY(bool smoothPageTransitions READ smoothPageTransitions WRITE setSmoothPageTransitions
                NOTIFY smoothPageTransitionsChanged)
+    Q_PROPERTY(bool includeAccompanimentAudio READ includeAccompanimentAudio WRITE setIncludeAccompanimentAudio
+               NOTIFY includeAccompanimentAudioChanged)
 
     Q_PROPERTY(int sampleRate READ sampleRate WRITE setSampleRate NOTIFY sampleRateChanged)
     Q_PROPERTY(int bitRate READ bitRate WRITE setBitRate NOTIFY bitRateChanged)
@@ -197,6 +199,9 @@ public:
     bool smoothPageTransitions() const;
     void setSmoothPageTransitions(bool value);
 
+    bool includeAccompanimentAudio() const;
+    void setIncludeAccompanimentAudio(bool value);
+
     Q_INVOKABLE QList<int> availableSampleRates() const;
     int sampleRate() const;
     void setSampleRate(int sampleRate);
@@ -276,6 +281,7 @@ signals:
     void customVideoHeightChanged(int height);
     void viewModeChanged(ViewMode v);
     void smoothPageTransitionsChanged(bool value);
+    void includeAccompanimentAudioChanged(bool value);
 
     void availableSampleRatesChanged();
     void sampleRateChanged(int sampleRate);

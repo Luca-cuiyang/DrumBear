@@ -66,6 +66,9 @@ public:
 
     virtual bool smoothPageTransitions() const = 0;
     virtual void setSmoothPageTransitions(std::optional<bool> value) = 0;
+
+    virtual bool includeAudio() const = 0;
+    virtual void setIncludeAudio(std::optional<bool> value) = 0;
 };
 }
 

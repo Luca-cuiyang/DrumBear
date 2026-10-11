@@ -61,6 +61,9 @@ public:
     bool smoothPageTransitions() const override;
     void setSmoothPageTransitions(std::optional<bool> value) override;
 
+    bool includeAudio() const override;
+    void setIncludeAudio(std::optional<bool> value) override;
+
 private:
     std::optional<ViewMode> m_viewMode = std::nullopt;
     std::optional<bool> m_showPiano = std::nullopt;
@@ -72,6 +75,7 @@ private:
     std::optional<double> m_leadingSec = std::nullopt;
     std::optional<double> m_trailingSec = std::nullopt;
     std::optional<bool> m_smoothPageTransitions = std::nullopt;
+    std::optional<bool> m_includeAudio = std::nullopt;
 };
 }
 

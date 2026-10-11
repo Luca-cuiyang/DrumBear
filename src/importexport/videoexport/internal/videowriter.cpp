@@ -106,7 +106,7 @@ muse::Ret VideoWriter::write(INotationPtr notation, muse::io::IODevice& device, 
         return make_ret(muse::Ret::Code::InternalError);
     }
 
-    bool withAudio = muse::value(options, OptionKey::WITH_AUDIO, muse::Val(true)).toBool();
+    bool withAudio = muse::value(options, OptionKey::WITH_AUDIO, muse::Val(configuration()->includeAudio())).toBool();
 
     Config cfg = makeConfig();
 
@@ -191,15 +191,18 @@ VideoWriter::Config VideoWriter::makeConfig() const
     cfg.fps = configuration()->fps();
 
     std::string resolution = configuration()->resolution();
-    if (resolution == "4k_16x9") {
-        cfg.width = 3840;
-        cfg.height = 2160;
-    } else if (resolution == "4k_9x16") {
+    if (resolution == "1080p_16x9") {
+        cfg.width = 1920;
+        cfg.height = 1080;
+    } else if (resolution == "2k_16x9") {
+        cfg.width = 2560;
+        cfg.height = 1440;
+    } else if (resolution == "1080p_9x16") {
+        cfg.width = 1080;
+        cfg.height = 1920;
+    } else if (resolution == "2k_9x16") {
         cfg.width = 1440;
         cfg.height = 2560;
-    } else if (resolution == "custom") {
-        cfg.width = std::max(16, configuration()->customWidth());
-        cfg.height = std::max(16, configuration()->customHeight());
     } else if (resolution == "1080p") {
         cfg.width = 1920;
         cfg.height = 1080;
