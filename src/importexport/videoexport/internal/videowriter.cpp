@@ -329,6 +329,13 @@ std::optional<VideoWriter::ScoreRestoreData> VideoWriter::prepareScore(INotation
         score->setShowVBox(false);
     }
 
+    if (config.smoothPageTransitions) {
+        //! NOTE: Vertical scrolling stitches pages together; hide page headers/footers so
+        //! page numbers and running text do not appear between the joined pages.
+        score->style().set(engraving::Sid::showHeader, false);
+        score->style().set(engraving::Sid::showFooter, false);
+    }
+
     score->doLayout();
 
     PageList pages = notation->elements()->pages();
@@ -601,22 +608,11 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
     PlaybackCursor cursor(iocContext());
     cursor.setNotation(notation);
 
-    const double TRANSITION_SEC = 1.3;
-
     const bool smooth = config.smoothPageTransitions && !pages.empty();
 
-    //! NOTE: Build an explicit vertical layout of pages and systems, independent of the
-    //! underlying canvas orientation, so vertical scrolling works for both paged and
-    //! continuous/flexible view modes.
+    //! NOTE: Build an explicit vertical layout of pages, independent of the underlying
+    //! canvas orientation, so vertical scrolling works for both paged and continuous views.
     std::vector<double> pageVertTop(pages.size(), 0.0);
-    struct SystemVert {
-        double top = 0.0;
-        double height = 0.0;
-        tick_t startTick = 0;
-        tick_t endTick = 0;
-    };
-    std::vector<SystemVert> systemsVert;
-
     double scale = config.canvasDpi / engraving::DPI;
     double frameWidthCanvas = config.width / scale;
     double frameHeightCanvas = config.height / scale;
@@ -630,31 +626,11 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
             y += p->height();
         }
         totalHeightCanvas = y;
-
-        for (size_t i = 0; i < pages.size(); ++i) {
-            const Page* p = pages[i];
-            for (const System* system : p->systems()) {
-                SystemVert sv;
-                sv.top = pageVertTop[i] + system->pagePos().y();
-                sv.height = system->height();
-                sv.startTick = system->tick().ticks();
-                sv.endTick = system->endTick().ticks();
-                systemsVert.push_back(sv);
-            }
-        }
     }
 
-    //! NOTE: Scroll state persists across frames. Each small scroll is animated with an
-    //! ease-in-out over TRANSITION_SEC and stays still otherwise.
+    //! NOTE: Camera keeps the playback cursor vertically centered. The value is smoothed
+    //! frame by frame in the render loop so the page glides instead of jumping.
     double viewTop = 0.0;
-    bool scrollAnimating = false;
-    double scrollAnimFrom = 0.0;
-    double scrollAnimTo = 0.0;
-    double scrollAnimStartSec = 0.0;
-
-    auto easeInOut = [](double p) {
-        return p * p * (3.0 - 2.0 * p);
-    };
 
     //! NOTE: Do NOT wrap paintPrint in save()/restore(); paintPrint installs the page
     //! viewport/window transform, and restore() would undo it, breaking the cursor draw.
@@ -706,63 +682,14 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
             int pageIdx = static_cast<int>(page->pageNumber());
             double cursorVertY = pageVertTop[pageIdx] + (cursorRect.y() - page->pos().y());
 
-            //! NOTE: Find the cursor's logical system by tick (never by visible page rows).
-            int cursorSysIdx = -1;
-            for (int i = 0; i < static_cast<int>(systemsVert.size()); ++i) {
-                if (tick >= systemsVert[i].startTick && tick < systemsVert[i].endTick) {
-                    cursorSysIdx = i;
-                    break;
-                }
-            }
-            if (cursorSysIdx < 0 && !systemsVert.empty()) {
-                cursorSysIdx = static_cast<int>(systemsVert.size()) - 1;
-            }
+            //! NOTE: Keep the cursor vertically centered. Smoothly glide the camera toward
+            //! that target so the page moves gently instead of jumping frequently.
+            double maxTop = std::max(0.0, totalHeightCanvas - frameHeightCanvas);
+            double targetViewTop = cursorVertY - 0.5 * frameHeightCanvas;
+            targetViewTop = std::min(std::max(0.0, targetViewTop), maxTop);
 
-            double viewBottom = viewTop + frameHeightCanvas;
-
-            int firstVisibleIdx = -1;
-            for (int i = 0; i < static_cast<int>(systemsVert.size()); ++i) {
-                if (systemsVert[i].top + systemsVert[i].height >= viewTop) {
-                    firstVisibleIdx = i;
-                    break;
-                }
-            }
-
-            int lastVisibleIdx = firstVisibleIdx;
-            for (int i = firstVisibleIdx; i < static_cast<int>(systemsVert.size()); ++i) {
-                if (systemsVert[i].top < viewBottom) {
-                    lastVisibleIdx = i;
-                } else {
-                    break;
-                }
-            }
-
-            int lastSystemIdx = static_cast<int>(systemsVert.size()) - 1;
-
-            //! NOTE: Scroll up by one real system height when the cursor reaches the last one
-            //! or two visible systems and there is still content below.
-            if (!scrollAnimating && firstVisibleIdx >= 0 && cursorSysIdx >= lastVisibleIdx - 1
-                && lastVisibleIdx < lastSystemIdx) {
-                double target = systemsVert[firstVisibleIdx + 1].top;
-                double maxTop = std::max(0.0, totalHeightCanvas - frameHeightCanvas);
-                target = std::min(target, maxTop);
-                if (target > viewTop + 1e-3) {
-                    scrollAnimFrom = viewTop;
-                    scrollAnimTo = target;
-                    scrollAnimStartSec = currentTimeSec;
-                    scrollAnimating = true;
-                }
-            }
-
-            if (scrollAnimating) {
-                double p = (static_cast<double>(currentTimeSec) - scrollAnimStartSec) / TRANSITION_SEC;
-                if (p >= 1.0) {
-                    viewTop = scrollAnimTo;
-                    scrollAnimating = false;
-                } else {
-                    viewTop = scrollAnimFrom + (scrollAnimTo - scrollAnimFrom) * easeInOut(p);
-                }
-            }
+            double smoothing = 1.0 - std::exp(-1.0 / (static_cast<double>(config.fps) * 0.25));
+            viewTop += (targetViewTop - viewTop) * smoothing;
 
             //! NOTE: Render every page intersecting the vertical viewport (one page normally,
             //! two while crossing a page boundary), shifted up by the scroll offset.
