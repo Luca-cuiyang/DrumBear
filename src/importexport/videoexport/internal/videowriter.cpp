@@ -780,7 +780,7 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
 
             double cursorCenteringX = 0.5 * (frameWidthCanvas - page->width());
             muse::RectF cursorDrawRect(cursorCenteringX + (cursorRect.x() - page->pos().x()),
-                                       cursorVertY - viewTop,
+                                       cursorVertY,
                                        cursorRect.width(), cursorRect.height());
             painter.fillRect(cursorDrawRect, cursor.effectiveColor());
         } else {
