@@ -209,6 +209,25 @@ DockPage {
                             accentButton: root.currentPage === 10
                             onClicked: root.currentPage = 10
                         }
+                        FlatButton {
+                            width: parent.width
+                            text: qsTrc("appshell", "软件更新")
+                            accentButton: root.currentPage === 11
+                            onClicked: root.currentPage = 11
+                        }
+
+                        Rectangle {
+                            width: parent.width
+                            height: 1
+                            color: ui.theme.strokeColor
+                        }
+
+                        FlatButton {
+                            width: parent.width
+                            text: qsTrc("appshell", "设置")
+                            accentButton: root.currentPage === 12
+                            onClicked: root.currentPage = 12
+                        }
                     }
                 }
             }
@@ -687,6 +706,132 @@ DockPage {
                                     text: qsTrc("appshell", "意见反馈功能对接中，可先通过邮箱联系我们。")
                                     font: ui.theme.bodyFont
                                     opacity: 0.7
+                                }
+                            }
+                        }
+                    }
+                }
+
+                Item {
+                    PageFrame {
+                        title: qsTrc("appshell", "软件更新")
+
+                        PageCard {
+                            ColumnLayout {
+                                spacing: 10
+
+                                StyledTextLabel {
+                                    text: qsTrc("appshell", "当前版本：") + accountModel.currentVersion
+                                    font: ui.theme.bodyFont
+                                }
+
+                                StyledTextLabel {
+                                    visible: accountModel.latestVersion.length > 0
+                                    text: qsTrc("appshell", "最新版本：") + accountModel.latestVersion
+                                    font: ui.theme.bodyFont
+                                }
+
+                                StyledTextLabel {
+                                    visible: accountModel.updateNotes.length > 0
+                                    text: accountModel.updateNotes
+                                    font: ui.theme.bodyFont
+                                    opacity: 0.8
+                                    wrapMode: Text.WordWrap
+                                }
+
+                                StyledTextLabel {
+                                    visible: accountModel.lastError.length > 0
+                                    text: accountModel.lastError
+                                    color: ui.theme.accentColor
+                                    font: ui.theme.bodyFont
+                                    wrapMode: Text.WordWrap
+                                }
+
+                                RowLayout {
+                                    spacing: 10
+
+                                    FlatButton {
+                                        text: qsTrc("appshell", "检查更新")
+                                        enabled: !accountModel.busy
+                                        onClicked: accountModel.checkForUpdate()
+                                    }
+
+                                    FlatButton {
+                                        visible: accountModel.updateAvailable
+                                        text: qsTrc("appshell", "下载安装包")
+                                        accentButton: true
+                                        onClicked: accountModel.openUpdateDownload()
+                                    }
+                                }
+                            }
+                        }
+
+                        PageCard {
+                            ColumnLayout {
+                                spacing: 8
+                                StyledTextLabel {
+                                    text: qsTrc("appshell", "如何更新")
+                                    font: ui.theme.largeBodyBoldFont
+                                }
+                                StyledTextLabel {
+                                    text: qsTrc("appshell", "点击“检查更新”，如有新版本，点击“下载安装包”下载后手动安装即可。")
+                                    font: ui.theme.bodyFont
+                                    opacity: 0.7
+                                    wrapMode: Text.WordWrap
+                                }
+                            }
+                        }
+                    }
+                }
+
+                Item {
+                    PageFrame {
+                        title: qsTrc("appshell", "设置")
+
+                        PageCard {
+                            ColumnLayout {
+                                spacing: 10
+
+                                StyledTextLabel {
+                                    text: qsTrc("appshell", "关于软件")
+                                    font: ui.theme.largeBodyBoldFont
+                                }
+                                StyledTextLabel {
+                                    text: qsTrc("appshell", "当前版本：") + accountModel.currentVersion
+                                    font: ui.theme.bodyFont
+                                }
+                                StyledTextLabel {
+                                    text: qsTrc("appshell", "DB Score 制谱大师")
+                                    font: ui.theme.bodyFont
+                                    opacity: 0.7
+                                }
+                            }
+                        }
+
+                        PageCard {
+                            ColumnLayout {
+                                spacing: 10
+
+                                StyledTextLabel {
+                                    text: qsTrc("appshell", "账号")
+                                    font: ui.theme.largeBodyBoldFont
+                                }
+
+                                FlatButton {
+                                    text: qsTrc("appshell", "刷新授权")
+                                    onClicked: accountModel.refresh()
+                                }
+
+                                FlatButton {
+                                    visible: accountModel.phoneLoggedIn
+                                    text: qsTrc("appshell", "退出登录")
+                                    onClicked: accountModel.logout()
+                                }
+
+                                FlatButton {
+                                    visible: !accountModel.phoneLoggedIn
+                                    text: qsTrc("appshell", "清除授权")
+                                    onClicked: accountModel.clearLicense()
                                 }
                             }
                         }
