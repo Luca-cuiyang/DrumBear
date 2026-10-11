@@ -67,56 +67,142 @@ DockPage {
                         font: ui.theme.titleBoldFont
                     }
 
-                    // 账号信息卡
+                    // 账号 / 登录 一体化卡片
                     Rectangle {
                         Layout.fillWidth: true
-                        height: 92
                         radius: 12
                         color: ui.theme.backgroundSecondaryColor
 
-                        RowLayout {
+                        ColumnLayout {
                             anchors.fill: parent
-                            anchors.margins: 18
-                            spacing: 16
+                            anchors.margins: 20
+                            spacing: 14
 
-                            Rectangle {
-                                width: 56
-                                height: 56
-                                radius: 28
-                                color: ui.theme.accentColor
+                            // —— 已登录状态 ——
+                            RowLayout {
+                                visible: accountModel.phoneLoggedIn
+                                Layout.fillWidth: true
+                                spacing: 16
 
-                                StyledTextLabel {
-                                    anchors.centerIn: parent
-                                    text: accountModel.phoneLoggedIn ? "🎵" : "👤"
-                                    font: ui.theme.largeBodyFont
+                                Rectangle {
+                                    width: 56
+                                    height: 56
+                                    radius: 28
+                                    color: ui.theme.accentColor
+
+                                    StyledTextLabel {
+                                        anchors.centerIn: parent
+                                        text: "🎵"
+                                        font: ui.theme.largeBodyFont
+                                    }
+                                }
+
+                                ColumnLayout {
+                                    spacing: 4
+
+                                    StyledTextLabel {
+                                        text: accountModel.phoneNickname.length > 0
+                                              ? accountModel.phoneNickname
+                                              : accountModel.phoneMasked
+                                        font: ui.theme.largeBodyBoldFont
+                                    }
+
+                                    StyledTextLabel {
+                                        text: accountModel.phoneMasked
+                                        font: ui.theme.bodyFont
+                                        opacity: 0.7
+                                    }
+                                }
+
+                                Item { Layout.fillWidth: true }
+
+                                FlatButton {
+                                    text: qsTrc("appshell", "退出登录")
+                                    onClicked: accountModel.logout()
                                 }
                             }
 
+                            // —— 未登录状态：手机号登录 ——
                             ColumnLayout {
-                                spacing: 4
+                                visible: !accountModel.phoneLoggedIn
+                                Layout.fillWidth: true
+                                spacing: 12
 
                                 StyledTextLabel {
-                                    text: accountModel.phoneLoggedIn
-                                          ? (accountModel.phoneNickname.length > 0 ? accountModel.phoneNickname : accountModel.phoneMasked)
-                                          : qsTrc("appshell", "未登录")
+                                    text: qsTrc("appshell", "手机号登录")
                                     font: ui.theme.largeBodyBoldFont
                                 }
 
                                 StyledTextLabel {
-                                    text: accountModel.phoneLoggedIn
-                                          ? accountModel.phoneMasked
-                                          : qsTrc("appshell", "登录后开启会员与云服务")
+                                    text: qsTrc("appshell", "未注册手机号将自动注册，注册即送3天免费试用")
                                     font: ui.theme.bodyFont
                                     opacity: 0.7
                                 }
-                            }
 
-                            Item { Layout.fillWidth: true }
+                                RowLayout {
+                                    Layout.fillWidth: true
+                                    spacing: 10
 
-                            FlatButton {
-                                visible: accountModel.phoneLoggedIn
-                                text: qsTrc("appshell", "退出登录")
-                                onClicked: accountModel.logout()
+                                    StyledTextLabel {
+                                        text: qsTrc("appshell", "手机号")
+                                        font: ui.theme.bodyFont
+                                    }
+
+                                    TextField {
+                                        id: phoneField
+                                        Layout.preferredWidth: 190
+                                        placeholderText: qsTrc("appshell", "请输入手机号")
+                                        inputMethodHints: Qt.ImhDigitsOnly
+                                    }
+
+                                    StyledTextLabel {
+                                        text: qsTrc("appshell", "验证码")
+                                        font: ui.theme.bodyFont
+                                    }
+
+                                    TextField {
+                                        id: codeField
+                                        Layout.preferredWidth: 130
+                                        placeholderText: qsTrc("appshell", "6位验证码")
+                                        inputMethodHints: Qt.ImhDigitsOnly
+                                    }
+
+                                    FlatButton {
+                                        text: root.sendCooldown > 0
+                                              ? (root.sendCooldown + qsTrc("appshell", "s 后重发"))
+                                              : qsTrc("appshell", "获取验证码")
+                                        enabled: !accountModel.busy && root.sendCooldown === 0
+                                        onClicked: {
+                                            accountModel.sendCode(phoneField.text)
+                                            root.sendCooldown = 60
+                                        }
+                                    }
+
+                                    FlatButton {
+                                        text: qsTrc("appshell", "登录 / 注册")
+                                        accentButton: true
+                                        enabled: !accountModel.busy
+                                        onClicked: accountModel.loginByPhone(phoneField.text, codeField.text)
+                                    }
+                                }
+
+                                StyledTextLabel {
+                                    visible: accountModel.lastError.length > 0
+                                    Layout.fillWidth: true
+                                    text: accountModel.lastError
+                                    color: ui.theme.accentColor
+                                    font: ui.theme.bodyFont
+                                    wrapMode: Text.WordWrap
+                                }
+
+                                StyledTextLabel {
+                                    visible: accountModel.sendCodeMessage.length > 0
+                                    Layout.fillWidth: true
+                                    text: accountModel.sendCodeMessage
+                                    color: ui.theme.fontPrimaryColor
+                                    font: ui.theme.bodyFont
+                                    wrapMode: Text.WordWrap
+                                }
                             }
                         }
                     }
@@ -124,7 +210,7 @@ DockPage {
                     // 会员状态卡
                     Rectangle {
                         Layout.fillWidth: true
-                        height: 86
+                        height: 84
                         radius: 12
                         color: ui.theme.backgroundSecondaryColor
 
@@ -137,7 +223,7 @@ DockPage {
                                 spacing: 6
 
                                 StyledTextLabel {
-                                    text: accountModel.hasProAccess ? qsTrc("appshell", "当前权益") : qsTrc("appshell", "会员状态")
+                                    text: qsTrc("appshell", "会员状态")
                                     font: ui.theme.bodyFont
                                     opacity: 0.7
                                 }
@@ -151,15 +237,15 @@ DockPage {
                             Item { Layout.fillWidth: true }
 
                             FlatButton {
-                                visible: !accountModel.hasProAccess
+                                visible: accountModel.licenseState !== 3
                                 text: qsTrc("appshell", "开通会员 ¥199/年")
                                 accentButton: true
                                 onClicked: accountModel.openPurchasePage()
                             }
 
                             FlatButton {
-                                visible: accountModel.hasProAccess
-                                text: qsTrc("appshell", "续费")
+                                visible: accountModel.licenseState === 3
+                                text: qsTrc("appshell", "续费 ¥199/年")
                                 accentButton: true
                                 onClicked: accountModel.openPurchasePage()
                             }
@@ -179,102 +265,10 @@ DockPage {
                         StyledTextLabel {
                             anchors.centerIn: parent
                             text: accountModel.licenseState === 4
-                                  ? qsTrc("appshell", "⚠️ 会员已过期，增值功能已锁定，请续费恢复。")
+                                  ? qsTrc("appshell", "⚠️ 会员已过期，增值功能已锁定，请开通会员恢复。")
                                   : qsTrc("appshell", "🟠 会员将于 ") + accountModel.expireAtText
                                     + qsTrc("appshell", " 到期，请及时续费。")
                             font: ui.theme.bodyFont
-                        }
-                    }
-
-                    // 手机号登录卡
-                    Rectangle {
-                        visible: !accountModel.phoneLoggedIn
-                        Layout.fillWidth: true
-                        height: 148
-                        radius: 12
-                        color: ui.theme.backgroundSecondaryColor
-
-                        ColumnLayout {
-                            anchors.fill: parent
-                            anchors.margins: 18
-                            spacing: 12
-
-                            StyledTextLabel {
-                                text: qsTrc("appshell", "手机号登录")
-                                font: ui.theme.largeBodyBoldFont
-                            }
-
-                            StyledTextLabel {
-                                text: qsTrc("appshell", "注册即送3天免费试用，未注册手机号将自动注册")
-                                font: ui.theme.bodyFont
-                                opacity: 0.7
-                            }
-
-                            RowLayout {
-                                Layout.fillWidth: true
-                                spacing: 10
-
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "手机号")
-                                    font: ui.theme.bodyFont
-                                }
-
-                                TextField {
-                                    id: phoneField
-                                    Layout.preferredWidth: 180
-                                    placeholderText: qsTrc("appshell", "请输入手机号")
-                                    inputMethodHints: Qt.ImhDigitsOnly
-                                }
-
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "验证码")
-                                    font: ui.theme.bodyFont
-                                }
-
-                                TextField {
-                                    id: codeField
-                                    Layout.preferredWidth: 130
-                                    placeholderText: qsTrc("appshell", "6位验证码")
-                                    inputMethodHints: Qt.ImhDigitsOnly
-                                }
-
-                                FlatButton {
-                                    text: root.sendCooldown > 0
-                                          ? (root.sendCooldown + qsTrc("appshell", "s 后重发"))
-                                          : qsTrc("appshell", "获取验证码")
-                                    enabled: !accountModel.busy && root.sendCooldown === 0
-                                    onClicked: {
-                                        console.log("AccountPage: sendCode clicked, phone=" + phoneField.text)
-                                        accountModel.sendCode(phoneField.text)
-                                        root.sendCooldown = 60
-                                    }
-                                }
-
-                                FlatButton {
-                                    text: qsTrc("appshell", "登录 / 注册")
-                                    accentButton: true
-                                    enabled: !accountModel.busy
-                                    onClicked: accountModel.loginByPhone(phoneField.text, codeField.text)
-                                }
-                            }
-
-                            StyledTextLabel {
-                                visible: accountModel.lastError.length > 0
-                                Layout.fillWidth: true
-                                text: accountModel.lastError
-                                color: ui.theme.accentColor
-                                font: ui.theme.bodyFont
-                                wrapMode: Text.WordWrap
-                            }
-
-                            StyledTextLabel {
-                                visible: accountModel.sendCodeMessage.length > 0
-                                Layout.fillWidth: true
-                                text: accountModel.sendCodeMessage
-                                color: ui.theme.fontPrimaryColor
-                                font: ui.theme.bodyFont
-                                wrapMode: Text.WordWrap
-                            }
                         }
                     }
 
@@ -335,7 +329,7 @@ DockPage {
                         }
                     }
 
-                    // 底部操作
+                    // 底部
                     RowLayout {
                         Layout.fillWidth: true
                         spacing: 12
