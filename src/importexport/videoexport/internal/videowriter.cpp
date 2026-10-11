@@ -614,16 +614,19 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
         }
     }
 
-    auto paintPage = [&](const Page* page, const muse::PointF& extraOffset) {
+    //! NOTE: Do NOT wrap paintPrint in save()/restore(). paintPrint installs the page
+    //! viewport/window transform, and restore() would undo it, breaking the cursor draw
+    //! that follows. We only translate (and translate back) so the viewport transform
+    //! remains active for the cursor fillRect below.
+    auto paintPageAt = [&](const Page* page, const muse::PointF& extraOffset) {
         INotationPainting::Options opt;
         opt.fromPage = static_cast<int>(page->pageNumber());
         opt.toPage = opt.fromPage;
         opt.deviceDpi = config.canvasDpi;
 
-        painter.save();
-        painter.translate(extraOffset);
+        painter.translate(extraOffset.x(), extraOffset.y());
         painting->paintPrint(&painter, opt);
-        painter.restore();
+        painter.translate(-extraOffset.x(), -extraOffset.y());
     };
 
     auto easeInOut = [](double p) {
@@ -688,14 +691,14 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
             muse::PointF outOffset(-delta.x() * easedProgress, -delta.y() * easedProgress);
             muse::PointF inOffset(delta.x() * (1.0 - easedProgress), delta.y() * (1.0 - easedProgress));
 
-            paintPage(page, outOffset);
-            paintPage(nextPage, inOffset);
+            paintPageAt(page, outOffset);
+            paintPageAt(nextPage, inOffset);
 
             cursor.move(tick);
             muse::RectF cursorRect = cursor.rect().translated(-page->pos()).translated(outOffset);
             painter.fillRect(cursorRect, cursor.effectiveColor());
         } else {
-            paintPage(page, muse::PointF());
+            paintPageAt(page, muse::PointF());
 
             cursor.move(tick);
             muse::RectF cursorRect = cursor.rect().translated(-page->pos());

@@ -22,6 +22,8 @@
 
 #include "playbackcursor.h"
 
+#include <cmath>
+
 #include "draw/painter.h"
 
 #include "engraving/dom/measure.h"
@@ -224,7 +226,18 @@ const muse::RectF& PlaybackCursor::rect() const
 QColor PlaybackCursor::effectiveColor() const
 {
     QColor cursorColor = color();
-    cursorColor.setAlphaF(configuration()->playbackCursorOpacity());
+    if (!cursorColor.isValid()) {
+        //! 兜底：读取失败/为空时使用默认橙色，绝不能让光标消失。
+        cursorColor = QColor("#F57C00");
+    }
+
+    double opacity = configuration()->playbackCursorOpacity();
+    if (!std::isfinite(opacity) || opacity <= 0.0 || opacity > 1.0) {
+        //! 兜底：透明度异常时使用 100% 不透明。
+        opacity = 1.0;
+    }
+
+    cursorColor.setAlphaF(opacity);
     return cursorColor;
 }
 
