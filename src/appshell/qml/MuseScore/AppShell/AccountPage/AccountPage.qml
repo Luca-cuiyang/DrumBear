@@ -30,8 +30,11 @@ DockPage {
             accountModel.loadOrders()
         } else if (root.currentPage === 3) {
             accountModel.loadProjects()
+            recentProjectsModel.load()
         } else if (root.currentPage === 4) {
             accountModel.loadScores()
+        } else if (root.currentPage === 5) {
+            recordsModel.load()
         } else if (root.currentPage === 6) {
             accountModel.loadInvite()
         } else if (root.currentPage === 11) {
@@ -41,6 +44,14 @@ DockPage {
 
     DbScoreAccountModel {
         id: accountModel
+    }
+
+    RecentScoresModel {
+        id: recentProjectsModel
+    }
+
+    RecentScoresModel {
+        id: recordsModel
     }
 
     Timer {
@@ -565,10 +576,6 @@ DockPage {
                         }
 
                         PageCard {
-                            RecentScoresModel {
-                                id: recentProjectsModel
-                            }
-
                             ListView {
                                 id: projectsList
                                 model: recentProjectsModel
@@ -603,7 +610,6 @@ DockPage {
                                 }
                             }
 
-                            Component.onCompleted: recentProjectsModel.load()
                         }
 
                         PageCard {
@@ -700,10 +706,6 @@ DockPage {
                         title: qsTrc("appshell", "制谱记录")
 
                         PageCard {
-                            RecentScoresModel {
-                                id: recordsModel
-                            }
-
                             ColumnLayout {
                                 spacing: 6
 
@@ -742,7 +744,6 @@ DockPage {
                                 }
                             }
 
-                            Component.onCompleted: recordsModel.load()
                         }
                     }
                 }
