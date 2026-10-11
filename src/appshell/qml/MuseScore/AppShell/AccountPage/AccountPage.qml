@@ -30,8 +30,6 @@ DockPage {
             accountModel.loadOrders()
         } else if (root.currentPage === 3) {
             accountModel.loadInvite()
-        } else if (root.currentPage === 8) {
-            accountModel.loadNotifications()
         }
     }
 
@@ -178,27 +176,15 @@ DockPage {
                         }
                         FlatButton {
                             width: parent.width
-                            text: qsTrc("appshell", "帮助中心")
+                            text: qsTrc("appshell", "联系客服")
                             accentButton: root.currentPage === 5
                             onClicked: root.currentPage = 5
                         }
                         FlatButton {
                             width: parent.width
-                            text: qsTrc("appshell", "联系客服")
+                            text: qsTrc("appshell", "软件更新")
                             accentButton: root.currentPage === 6
                             onClicked: root.currentPage = 6
-                        }
-                        FlatButton {
-                            width: parent.width
-                            text: qsTrc("appshell", "软件更新")
-                            accentButton: root.currentPage === 7
-                            onClicked: root.currentPage = 7
-                        }
-                        FlatButton {
-                            width: parent.width
-                            text: qsTrc("appshell", "通知中心")
-                            accentButton: root.currentPage === 8
-                            onClicked: root.currentPage = 8
                         }
 
                         Rectangle {
@@ -210,8 +196,8 @@ DockPage {
                         FlatButton {
                             width: parent.width
                             text: qsTrc("appshell", "设置")
-                            accentButton: root.currentPage === 9
-                            onClicked: root.currentPage = 9
+                            accentButton: root.currentPage === 7
+                            onClicked: root.currentPage = 7
                         }
                     }
                 }
@@ -602,24 +588,6 @@ DockPage {
                     }
                 }
 
-                Item {
-                    PageFrame {
-                        title: qsTrc("appshell", "帮助中心")
-                        PageCard {
-                            ColumnLayout {
-                                spacing: 10
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "常见问题")
-                                    font: ui.theme.largeBodyBoldFont
-                                }
-                                StyledTextLabel { text: qsTrc("appshell", "· 如何激活会员？"); font: ui.theme.bodyFont }
-                                StyledTextLabel { text: qsTrc("appshell", "· 手机号无法登录怎么办？"); font: ui.theme.bodyFont }
-                                StyledTextLabel { text: qsTrc("appshell", "· 如何导出无水印视频？"); font: ui.theme.bodyFont }
-                                StyledTextLabel { text: qsTrc("appshell", "· 导入的音频如何与乐谱对齐？"); font: ui.theme.bodyFont }
-                            }
-                        }
-                    }
-                }
 
                 Item {
                     PageFrame {
@@ -749,57 +717,6 @@ DockPage {
                                     font: ui.theme.bodyFont
                                     opacity: 0.7
                                     wrapMode: Text.WordWrap
-                                }
-                            }
-                        }
-                    }
-                }
-
-                Item {
-                    PageFrame {
-                        title: qsTrc("appshell", "通知中心")
-
-                        StyledTextLabel {
-                            visible: accountModel.notificationsList.length === 0
-                            text: qsTrc("appshell", "暂无通知")
-                            font: ui.theme.bodyFont
-                            opacity: 0.7
-                        }
-
-                        PageCard {
-                            ColumnLayout {
-                                spacing: 0
-
-                                Repeater {
-                                    model: accountModel.notificationsList
-
-                                    delegate: ColumnLayout {
-                                        required property var modelData
-                                        width: parent ? parent.width : 0
-                                        spacing: 4
-
-                                        StyledTextLabel {
-                                            Layout.fillWidth: true
-                                            text: modelData.title || ""
-                                            font: ui.theme.bodyFont
-                                            elide: Text.ElideMiddle
-                                        }
-
-                                        StyledTextLabel {
-                                            Layout.fillWidth: true
-                                            text: modelData.content || ""
-                                            font: ui.theme.bodyFont
-                                            opacity: 0.7
-                                            wrapMode: Text.WordWrap
-                                            maximumLineCount: 2
-                                        }
-
-                                        Rectangle {
-                                            Layout.fillWidth: true
-                                            height: 1
-                                            color: ui.theme.strokeColor
-                                        }
-                                    }
                                 }
                             }
                         }
