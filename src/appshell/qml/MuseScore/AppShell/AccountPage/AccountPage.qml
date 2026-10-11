@@ -33,10 +33,8 @@ DockPage {
         } else if (root.currentPage === 4) {
             accountModel.loadScores()
         } else if (root.currentPage === 6) {
-            accountModel.loadPoints()
-        } else if (root.currentPage === 7) {
             accountModel.loadInvite()
-        } else if (root.currentPage === 12) {
+        } else if (root.currentPage === 11) {
             accountModel.loadNotifications()
         }
     }
@@ -190,21 +188,15 @@ DockPage {
                         }
                         FlatButton {
                             width: parent.width
-                            text: qsTrc("appshell", "积分中心")
+                            text: qsTrc("appshell", "推广赚佣")
                             accentButton: root.currentPage === 6
                             onClicked: root.currentPage = 6
                         }
                         FlatButton {
                             width: parent.width
-                            text: qsTrc("appshell", "推广赚佣")
+                            text: qsTrc("appshell", "软件分享")
                             accentButton: root.currentPage === 7
                             onClicked: root.currentPage = 7
-                        }
-                        FlatButton {
-                            width: parent.width
-                            text: qsTrc("appshell", "软件分享")
-                            accentButton: root.currentPage === 8
-                            onClicked: root.currentPage = 8
                         }
 
                         StyledTextLabel {
@@ -218,26 +210,26 @@ DockPage {
                         FlatButton {
                             width: parent.width
                             text: qsTrc("appshell", "帮助中心")
+                            accentButton: root.currentPage === 8
+                            onClicked: root.currentPage = 8
+                        }
+                        FlatButton {
+                            width: parent.width
+                            text: qsTrc("appshell", "联系客服")
                             accentButton: root.currentPage === 9
                             onClicked: root.currentPage = 9
                         }
                         FlatButton {
                             width: parent.width
-                            text: qsTrc("appshell", "联系客服")
+                            text: qsTrc("appshell", "软件更新")
                             accentButton: root.currentPage === 10
                             onClicked: root.currentPage = 10
                         }
                         FlatButton {
                             width: parent.width
-                            text: qsTrc("appshell", "软件更新")
+                            text: qsTrc("appshell", "通知中心")
                             accentButton: root.currentPage === 11
                             onClicked: root.currentPage = 11
-                        }
-                        FlatButton {
-                            width: parent.width
-                            text: qsTrc("appshell", "通知中心")
-                            accentButton: root.currentPage === 12
-                            onClicked: root.currentPage = 12
                         }
 
                         Rectangle {
@@ -249,8 +241,8 @@ DockPage {
                         FlatButton {
                             width: parent.width
                             text: qsTrc("appshell", "设置")
-                            accentButton: root.currentPage === 13
-                            onClicked: root.currentPage = 13
+                            accentButton: root.currentPage === 12
+                            onClicked: root.currentPage = 12
                         }
                     }
                 }
@@ -751,46 +743,6 @@ DockPage {
                             }
 
                             Component.onCompleted: recordsModel.load()
-                        }
-                    }
-                }
-
-                Item {
-                    PageFrame {
-                        title: qsTrc("appshell", "积分中心")
-                        PageCard {
-                            RowLayout {
-                                spacing: 16
-
-                                ColumnLayout {
-                                    spacing: 4
-                                    StyledTextLabel {
-                                        text: qsTrc("appshell", "当前积分")
-                                        font: ui.theme.bodyFont
-                                        opacity: 0.7
-                                    }
-                                    StyledTextLabel {
-                                        text: accountModel.pointsBalance
-                                        font: ui.theme.titleBoldFont
-                                    }
-                                }
-
-                                Item { Layout.fillWidth: true }
-
-                                FlatButton {
-                                    visible: !accountModel.todayCheckedIn
-                                    text: qsTrc("appshell", "每日签到")
-                                    accentButton: true
-                                    enabled: !accountModel.busy
-                                    onClicked: accountModel.checkIn()
-                                }
-                                StyledTextLabel {
-                                    visible: accountModel.todayCheckedIn
-                                    text: qsTrc("appshell", "今日已签到")
-                                    font: ui.theme.bodyFont
-                                    opacity: 0.7
-                                }
-                            }
                         }
                     }
                 }
