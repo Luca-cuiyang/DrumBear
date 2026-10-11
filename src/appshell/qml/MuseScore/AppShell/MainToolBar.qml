@@ -23,6 +23,7 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
+import QtQuick.Controls
 
 import Muse.Ui
 import Muse.UiComponents
