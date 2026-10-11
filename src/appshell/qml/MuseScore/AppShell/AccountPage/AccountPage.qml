@@ -89,8 +89,8 @@ DockPage {
 
                             StyledTextLabel {
                                 anchors.centerIn: parent
-                                text: accountModel.phoneLoggedIn ? "🎵" : "👤"
-                                font: ui.theme.largeBodyFont
+                                text: accountModel.phoneLoggedIn ? accountModel.avatarLetter : "👤"
+                                font: ui.theme.largeBodyBoldFont
                             }
                         }
 
@@ -353,8 +353,8 @@ DockPage {
                                     color: ui.theme.accentColor
                                     StyledTextLabel {
                                         anchors.centerIn: parent
-                                        text: "🎵"
-                                        font: ui.theme.largeBodyFont
+                                        text: accountModel.avatarLetter
+                                        font: ui.theme.titleBoldFont
                                     }
                                 }
 
@@ -407,7 +407,7 @@ DockPage {
                                 }
                                 FlatButton {
                                     visible: accountModel.licenseState === 3
-                                    text: qsTrc("appshell", "续费 ¥199/年")
+                                    text: qsTrc("appshell", "会员续费 ¥199/年")
                                     accentButton: true
                                     onClicked: accountModel.openPurchasePage()
                                 }
@@ -444,7 +444,7 @@ DockPage {
                                 }
                                 FlatButton {
                                     visible: accountModel.licenseState === 3
-                                    text: qsTrc("appshell", "续费 ¥199/年")
+                                    text: qsTrc("appshell", "会员续费 ¥199/年")
                                     accentButton: true
                                     onClicked: accountModel.openPurchasePage()
                                 }
@@ -467,19 +467,30 @@ DockPage {
                         }
 
                         PageCard {
-                            RowLayout {
-                                spacing: 10
-                                StyledTextLabel { text: qsTrc("appshell", "激活码"); font: ui.theme.bodyFont }
-                                TextField {
-                                    id: licenseCodeField
-                                    Layout.fillWidth: true
-                                    placeholderText: qsTrc("appshell", "线下购买的用户在此输入激活码")
+                            ColumnLayout {
+                                spacing: 8
+                                RowLayout {
+                                    spacing: 10
+                                    StyledTextLabel { text: qsTrc("appshell", "激活码"); font: ui.theme.bodyFont }
+                                    TextField {
+                                        id: licenseCodeField
+                                        Layout.fillWidth: true
+                                        placeholderText: qsTrc("appshell", "线下购买的用户在此输入激活码")
+                                    }
+                                    FlatButton {
+                                        text: qsTrc("appshell", "激活")
+                                        accentButton: true
+                                        enabled: !accountModel.busy
+                                        onClicked: accountModel.activate(licenseCodeField.text)
+                                    }
                                 }
-                                FlatButton {
-                                    text: qsTrc("appshell", "激活")
-                                    accentButton: true
-                                    enabled: !accountModel.busy
-                                    onClicked: accountModel.activate(licenseCodeField.text)
+
+                                StyledTextLabel {
+                                    visible: accountModel.activationMessage.length > 0
+                                    text: accountModel.activationMessage
+                                    color: ui.theme.fontPrimaryColor
+                                    font: ui.theme.bodyFont
+                                    wrapMode: Text.WordWrap
                                 }
                             }
                         }
