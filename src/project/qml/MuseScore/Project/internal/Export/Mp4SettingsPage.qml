@@ -162,7 +162,7 @@ ExportSettingsPage {
 
             CheckBox {
                 width: parent.width
-                text: qsTrc("project/export", "开启跨页平滑过渡")
+                text: qsTrc("project/export", "开启跨页垂直滑动")
 
                 navigation.name: "SmoothPageTransitionsCheckbox"
                 navigation.panel: root.navigationPanel

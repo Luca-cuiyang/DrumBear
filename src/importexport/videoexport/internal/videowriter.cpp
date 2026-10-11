@@ -668,6 +668,7 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
     //! NOTE: Camera keeps the playback cursor vertically centered. The value is smoothed
     //! frame by frame in the render loop so the page glides instead of jumping.
     double viewTop = 0.0;
+    double viewVel = 0.0;
 
     //! NOTE: Do NOT wrap paintPrint in save()/restore(); paintPrint installs the page
     //! viewport/window transform, and restore() would undo it, breaking the cursor draw.
@@ -726,8 +727,17 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
             double targetViewTop = cursorVertY - 0.5 * frameHeightCanvas;
             targetViewTop = std::min(std::max(0.0, targetViewTop), maxTop);
 
-            double smoothing = 1.0 - std::exp(-1.0 / (static_cast<double>(config.fps) * 0.25));
-            viewTop += (targetViewTop - viewTop) * smoothing;
+            //! NOTE: Critically damped smooth-damp gives a natural, silky glide toward the
+            //! centered target without overshoot or per-frame stepping.
+            double dt = 1.0 / static_cast<double>(config.fps);
+            const double smoothTime = 0.35;
+            double omega = 2.0 / smoothTime;
+            double x = omega * dt;
+            double exp = 1.0 / (1.0 + x + 0.48 * x * x + 0.235 * x * x * x);
+            double change = viewTop - targetViewTop;
+            double temp = (viewVel + omega * change) * dt;
+            viewVel = (viewVel - omega * temp) * exp;
+            viewTop = targetViewTop + (change + temp) * exp;
 
             //! NOTE: Render every page intersecting the vertical viewport (one page normally,
             //! two while crossing a page boundary), shifted up by the scroll offset.
