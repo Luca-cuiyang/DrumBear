@@ -50,6 +50,8 @@ qt_add_qml_module(appshell_qml
         AboutDialog.qml
         AboutMusicXMLDialog.qml
         AccountPage/AccountPage.qml
+        AccountPage/PageFrame.qml
+        AccountPage/PageCard.qml
         AppWindow.qml
         DevTools/CorruptScore/CorruptScoreDevTools.qml
         DevTools/CrashHandler/CrashHandlerDevTools.qml
