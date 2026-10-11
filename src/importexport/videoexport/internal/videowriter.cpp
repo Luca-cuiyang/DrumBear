@@ -194,15 +194,21 @@ VideoWriter::Config VideoWriter::makeConfig() const
     if (resolution == "1080p_16x9") {
         cfg.width = 1920;
         cfg.height = 1080;
-    } else if (resolution == "2k_16x9") {
-        cfg.width = 2560;
-        cfg.height = 1440;
     } else if (resolution == "1080p_9x16") {
         cfg.width = 1080;
         cfg.height = 1920;
+    } else if (resolution == "2k_16x9") {
+        cfg.width = 2560;
+        cfg.height = 1440;
     } else if (resolution == "2k_9x16") {
         cfg.width = 1440;
         cfg.height = 2560;
+    } else if (resolution == "4k_16x9") {
+        cfg.width = 3840;
+        cfg.height = 2160;
+    } else if (resolution == "4k_9x16") {
+        cfg.width = 2160;
+        cfg.height = 3840;
     } else if (resolution == "1080p") {
         cfg.width = 1920;
         cfg.height = 1080;

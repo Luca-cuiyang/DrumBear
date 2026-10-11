@@ -598,10 +598,12 @@ QVariantList ExportDialogModel::availableVideoResolutions() const
         result << obj;
     };
 
-    add(muse::qtrc("project/export", "1080P-16:9（1920 × 1080）"), "1080p_16x9", false);
-    add(muse::qtrc("project/export", "2K-16:9（2560 × 1440）"), "2k_16x9", false);
-    add(muse::qtrc("project/export", "1080P-9:16（1080 × 1920）"), "1080p_9x16", false);
-    add(muse::qtrc("project/export", "2K-9:16（1440 × 2560）"), "2k_9x16", false);
+    add(muse::qtrc("project/export", "1080P-横屏(16:9)（1920 × 1080）"), "1080p_16x9", false);
+    add(muse::qtrc("project/export", "1080P-竖屏(9:16)（1080 × 1920）"), "1080p_9x16", false);
+    add(muse::qtrc("project/export", "2K-横屏(16:9)（2560 × 1440）"), "2k_16x9", false);
+    add(muse::qtrc("project/export", "2K-竖屏(9:16)（1440 × 2560）"), "2k_9x16", false);
+    add(muse::qtrc("project/export", "4K-横屏(16:9)（3840 × 2160）"), "4k_16x9", false);
+    add(muse::qtrc("project/export", "4K-竖屏(9:16)（2160 × 3840）"), "4k_9x16", false);
 
     return result;
 }
