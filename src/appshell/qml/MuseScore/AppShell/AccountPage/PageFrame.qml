@@ -18,6 +18,7 @@ Flickable {
 
     default property alias content: contentColumn.data
 
+    anchors.fill: parent
     contentWidth: width
     contentHeight: contentColumn.implicitHeight + 56
     clip: true
