@@ -244,6 +244,7 @@ DockPage {
                                           : qsTrc("appshell", "获取验证码")
                                     enabled: !accountModel.busy && root.sendCooldown === 0
                                     onClicked: {
+                                        console.log("AccountPage: sendCode clicked, phone=" + phoneField.text)
                                         accountModel.sendCode(phoneField.text)
                                         root.sendCooldown = 60
                                     }
