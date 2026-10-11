@@ -449,8 +449,8 @@ void VideoWriter::doGenerate(muse::media::IVideoEncoderPtr encoder, INotationPtr
         return;
     }
 
-    // Add "Made with MuseScore"
-    if (!generateTrailingFrames(encoder, actualConfig)) {
+    // Add trailing black frames (no "Made with MuseScore" branding)
+    if (!generateTrailingFrames(encoder, painter, frame, actualConfig)) {
         return;
     }
 
@@ -536,17 +536,26 @@ bool VideoWriter::generateLeadingFrames(muse::media::IVideoEncoderPtr encoder, I
     return true;
 }
 
-bool VideoWriter::generateTrailingFrames(muse::media::IVideoEncoderPtr encoder, const Config& config)
+bool VideoWriter::generateTrailingFrames(muse::media::IVideoEncoderPtr encoder, muse::draw::Painter& painter, QImage& frame,
+                                         const Config& config)
 {
     int trailingFrameCount = static_cast<int>(config.trailingSec * config.fps);
     if (trailingFrameCount <= 0) {
         return true;
     }
 
-    static const muse::io::path_t RESOURCE_PATH = ":/videoexport/internal/resources/video_made_with.mp4";
-    muse::ByteArray videoData = fileSystem()->readFile(RESOURCE_PATH).val;
+    muse::RectF frameRect = muse::RectF::fromQRectF(QRectF(frame.rect()));
 
-    encoder->encodeVideo(videoData, trailingFrameCount);
+    for (int f = 0; f < trailingFrameCount; f++) {
+        if (m_abort) {
+            m_writeRet = make_ret(muse::Ret::Code::Cancel);
+            m_progress.finish(m_writeRet);
+            return false;
+        }
+
+        painter.fillRect(frameRect, Color::BLACK);
+        encoder->encodeImage(frame);
+    }
 
     return true;
 }
@@ -574,8 +583,6 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
         }
         return nullptr;
     };
-
-    const Color CURSOR_COLOR = Color(2, 109, 203, 127);
 
     PlaybackCursor cursor(iocContext());
     cursor.setNotation(notation);
@@ -624,7 +631,7 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
         muse::PointF pagePos = page->pos();
         muse::RectF cursorAbsRect = cursorRect.translated(-pagePos);
 
-        painter.fillRect(cursorAbsRect, CURSOR_COLOR);
+        painter.fillRect(cursorAbsRect, cursor.effectiveColor());
 
         painter.restore();
 

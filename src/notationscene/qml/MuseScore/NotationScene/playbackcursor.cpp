@@ -221,6 +221,13 @@ const muse::RectF& PlaybackCursor::rect() const
     return m_rect;
 }
 
+QColor PlaybackCursor::effectiveColor() const
+{
+    QColor cursorColor = color();
+    cursorColor.setAlphaF(configuration()->playbackCursorOpacity());
+    return cursorColor;
+}
+
 QColor PlaybackCursor::color() const
 {
     return configuration()->playbackCursorColor();

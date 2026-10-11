@@ -98,7 +98,8 @@ private:
     bool generateScoreFrames(muse::media::IVideoEncoderPtr encoder, notation::INotationPtr notation, muse::draw::Painter& painter,
                              QImage& frame, const Config& config, float totalPlayTimeSec, int leadingFrameCount, int totalFrameCount);
 
-    bool generateTrailingFrames(muse::media::IVideoEncoderPtr encoder, const Config& config);
+    bool generateTrailingFrames(muse::media::IVideoEncoderPtr encoder, muse::draw::Painter& painter, QImage& frame,
+                                const Config& config);
 
     struct ScoreRestoreData
     {

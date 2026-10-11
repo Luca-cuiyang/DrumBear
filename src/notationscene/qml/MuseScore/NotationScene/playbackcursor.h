@@ -51,6 +51,7 @@ public:
     void setVisible(bool arg);
 
     const muse::RectF& rect() const;
+    QColor effectiveColor() const;
 
 private:
     QColor color() const;
