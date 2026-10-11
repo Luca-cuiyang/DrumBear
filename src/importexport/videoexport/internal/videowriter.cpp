@@ -603,26 +603,45 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
 
     const double TRANSITION_SEC = 1.3;
 
-    const bool smooth = config.smoothPageTransitions
-                        && config.viewMode == ViewMode::PageFull
-                        && !pages.empty();
+    const bool smooth = config.smoothPageTransitions && !pages.empty();
 
-    //! NOTE: In smooth mode we scroll vertically through the page systems. Collect the
-    //! global canvas Y of every system top and the total content height once up front.
-    std::vector<double> systemTopY;
+    //! NOTE: Build an explicit vertical layout of pages and systems, independent of the
+    //! underlying canvas orientation, so vertical scrolling works for both paged and
+    //! continuous/flexible view modes.
+    std::vector<double> pageVertTop(pages.size(), 0.0);
+    struct SystemVert {
+        double top = 0.0;
+        double height = 0.0;
+        tick_t startTick = 0;
+        tick_t endTick = 0;
+    };
+    std::vector<SystemVert> systemsVert;
+
+    double scale = config.canvasDpi / engraving::DPI;
+    double frameWidthCanvas = config.width / scale;
+    double frameHeightCanvas = config.height / scale;
     double totalHeightCanvas = 0.0;
-    double frameHCanvas = 0.0;
-    if (smooth) {
-        for (const Page* p : pages) {
-            for (const System* system : p->systems()) {
-                systemTopY.push_back(system->canvasPos().y());
-            }
-            totalHeightCanvas = std::max(totalHeightCanvas, p->pos().y() + p->height());
-        }
-        std::sort(systemTopY.begin(), systemTopY.end());
 
-        double scaleX = config.width / pages.front()->width();
-        frameHCanvas = config.height / scaleX;
+    if (smooth) {
+        double y = 0.0;
+        for (size_t i = 0; i < pages.size(); ++i) {
+            const Page* p = pages[i];
+            pageVertTop[i] = y;
+            y += p->height();
+        }
+        totalHeightCanvas = y;
+
+        for (size_t i = 0; i < pages.size(); ++i) {
+            const Page* p = pages[i];
+            for (const System* system : p->systems()) {
+                SystemVert sv;
+                sv.top = pageVertTop[i] + system->pagePos().y();
+                sv.height = system->height();
+                sv.startTick = system->tick().ticks();
+                sv.endTick = system->endTick().ticks();
+                systemsVert.push_back(sv);
+            }
+        }
     }
 
     //! NOTE: Scroll state persists across frames. Each small scroll is animated with an
@@ -648,18 +667,6 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
         painter.translate(offsetX, offsetY);
         painting->paintPrint(&painter, opt);
         painter.translate(-offsetX, -offsetY);
-    };
-
-    auto systemIndexAt = [&](double y) -> int {
-        int idx = -1;
-        for (int i = 0; i < static_cast<int>(systemTopY.size()); ++i) {
-            if (systemTopY[i] <= y) {
-                idx = i;
-            } else {
-                break;
-            }
-        }
-        return idx;
     };
 
     for (int f = 0; f < scoreFrameCount; f++) {
@@ -695,35 +702,49 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
         if (smooth) {
             cursor.move(tick);
             muse::RectF cursorRect = cursor.rect();
-            double cursorY = cursorRect.center().y();
 
-            //! NOTE: Find the first/last visible system indices and the cursor's system.
-            int firstIdx = -1;
-            for (int i = 0; i < static_cast<int>(systemTopY.size()); ++i) {
-                if (systemTopY[i] + 1.0 >= viewTop) {
-                    firstIdx = i;
+            int pageIdx = static_cast<int>(page->pageNumber());
+            double cursorVertY = pageVertTop[pageIdx] + (cursorRect.y() - page->pos().y());
+
+            //! NOTE: Find the cursor's logical system by tick (never by visible page rows).
+            int cursorSysIdx = -1;
+            for (int i = 0; i < static_cast<int>(systemsVert.size()); ++i) {
+                if (tick >= systemsVert[i].startTick && tick < systemsVert[i].endTick) {
+                    cursorSysIdx = i;
+                    break;
+                }
+            }
+            if (cursorSysIdx < 0 && !systemsVert.empty()) {
+                cursorSysIdx = static_cast<int>(systemsVert.size()) - 1;
+            }
+
+            double viewBottom = viewTop + frameHeightCanvas;
+
+            int firstVisibleIdx = -1;
+            for (int i = 0; i < static_cast<int>(systemsVert.size()); ++i) {
+                if (systemsVert[i].top + systemsVert[i].height >= viewTop) {
+                    firstVisibleIdx = i;
                     break;
                 }
             }
 
-            int lastIdx = firstIdx;
-            for (int i = firstIdx; i < static_cast<int>(systemTopY.size()); ++i) {
-                if (systemTopY[i] < viewTop + frameHCanvas) {
-                    lastIdx = i;
+            int lastVisibleIdx = firstVisibleIdx;
+            for (int i = firstVisibleIdx; i < static_cast<int>(systemsVert.size()); ++i) {
+                if (systemsVert[i].top < viewBottom) {
+                    lastVisibleIdx = i;
                 } else {
                     break;
                 }
             }
 
-            int cursorIdx = systemIndexAt(cursorY);
-            int lastSystemIdx = static_cast<int>(systemTopY.size()) - 1;
+            int lastSystemIdx = static_cast<int>(systemsVert.size()) - 1;
 
-            //! NOTE: Scroll up by exactly one real system height when the cursor reaches the
-            //! last one or two visible systems and there is still content below.
-            if (!scrollAnimating && firstIdx >= 0 && cursorIdx >= lastIdx - 1
-                && lastIdx < lastSystemIdx) {
-                double target = systemTopY[firstIdx + 1];
-                double maxTop = std::max(0.0, totalHeightCanvas - frameHCanvas);
+            //! NOTE: Scroll up by one real system height when the cursor reaches the last one
+            //! or two visible systems and there is still content below.
+            if (!scrollAnimating && firstVisibleIdx >= 0 && cursorSysIdx >= lastVisibleIdx - 1
+                && lastVisibleIdx < lastSystemIdx) {
+                double target = systemsVert[firstVisibleIdx + 1].top;
+                double maxTop = std::max(0.0, totalHeightCanvas - frameHeightCanvas);
                 target = std::min(target, maxTop);
                 if (target > viewTop + 1e-3) {
                     scrollAnimFrom = viewTop;
@@ -743,19 +764,25 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
                 }
             }
 
-            //! NOTE: Render every page intersecting the viewport (one page normally, two
-            //! while crossing a page boundary), shifted up by the scroll offset.
+            //! NOTE: Render every page intersecting the vertical viewport (one page normally,
+            //! two while crossing a page boundary), shifted up by the scroll offset.
             painter.translate(0.0, -viewTop);
-            for (const Page* p : pages) {
-                double pageTop = p->pos().y();
+            for (size_t i = 0; i < pages.size(); ++i) {
+                const Page* p = pages[i];
+                double pageTop = pageVertTop[i];
                 double pageBottom = pageTop + p->height();
-                if (pageBottom < viewTop || pageTop > viewTop + frameHCanvas) {
+                if (pageBottom < viewTop || pageTop > viewTop + frameHeightCanvas) {
                     continue;
                 }
-                paintPageAt(p, p->pos().x(), p->pos().y());
+                double centeringX = 0.5 * (frameWidthCanvas - p->width());
+                paintPageAt(p, centeringX, pageVertTop[i]);
             }
 
-            painter.fillRect(cursorRect, cursor.effectiveColor());
+            double cursorCenteringX = 0.5 * (frameWidthCanvas - page->width());
+            muse::RectF cursorDrawRect(cursorCenteringX + (cursorRect.x() - page->pos().x()),
+                                       cursorVertY - viewTop,
+                                       cursorRect.width(), cursorRect.height());
+            painter.fillRect(cursorDrawRect, cursor.effectiveColor());
         } else {
             painter.translate(config.moveToCenter);
             paintPageAt(page, 0.0, 0.0);
