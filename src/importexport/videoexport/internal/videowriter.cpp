@@ -776,7 +776,13 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
 
             if (!scrollAnimating && firstVisibleIdx >= 0 && cursorSysIdx >= 0
                 && cursorSysIdx >= lastVisibleIdx - 1 && lastVisibleIdx < lastSystemIdx) {
-                double target = systemsVert[firstVisibleIdx + 1].top;
+                //! NOTE: Adapt the scroll distance to how many systems fit on screen.
+                //! Portrait canvases show many systems, so glide several lines at once;
+                //! landscape canvases show fewer, so glide fewer lines.
+                int visibleCount = lastVisibleIdx - firstVisibleIdx + 1;
+                int scrollCount = std::max(1, visibleCount / 2);
+                int targetIdx = std::min(firstVisibleIdx + scrollCount, lastSystemIdx);
+                double target = systemsVert[targetIdx].top;
                 double maxTop = std::max(0.0, totalHeightCanvas - frameHeightCanvas);
                 target = std::min(target, maxTop);
                 if (target > viewTop + 1e-3) {
