@@ -265,6 +265,15 @@ DockPage {
                                 font: ui.theme.bodyFont
                                 wrapMode: Text.WordWrap
                             }
+
+                            StyledTextLabel {
+                                visible: accountModel.sendCodeMessage.length > 0
+                                Layout.fillWidth: true
+                                text: accountModel.sendCodeMessage
+                                color: ui.theme.fontPrimaryColor
+                                font: ui.theme.bodyFont
+                                wrapMode: Text.WordWrap
+                            }
                         }
                     }
 
