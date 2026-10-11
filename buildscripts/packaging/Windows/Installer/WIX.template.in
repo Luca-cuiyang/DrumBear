@@ -18,7 +18,7 @@
 
     <Product Id="$(var.CPACK_WIX_PRODUCT_GUID)"
         Name="$(var.ProdName)"
-        Language="1033"
+        Language="2052"
         Version="$(var.CPACK_PACKAGE_VERSION)"
         Manufacturer="$(var.CPACK_PACKAGE_VENDOR)"
         UpgradeCode="$(var.CPACK_WIX_UPGRADE_GUID)">
@@ -32,7 +32,7 @@
 
         <MajorUpgrade
             AllowSameVersionUpgrades="yes"
-            DowngradeErrorMessage="A later version of [ProductName] is already installed. Setup will now exit." />
+            DowngradeErrorMessage="检测到已安装更新版本的 [ProductName]，安装程序即将退出。" />
 
         <WixVariable Id="WixUILicenseRtf" Value="$(var.CPACK_WIX_LICENSE_RTF)" />
         <Property Id="WIXUI_INSTALLDIR" Value="INSTALL_ROOT" />
@@ -53,8 +53,8 @@
         <WixVariable Id="WixUIDialogBmp" Value="$(var.CPACK_WIX_UI_DIALOG)" />
         <?endif?>
 
-        <Property Id='ARPHELPLINK'>https://musescore.org</Property>
-        <Property Id='ARPURLINFOABOUT'>https://musescore.org</Property>
+        <Property Id='ARPHELPLINK'>https://drumbearai.com</Property>
+        <Property Id='ARPURLINFOABOUT'>https://drumbearai.com</Property>
         <!-- Properties from CMake -->
         <?include "properties.wxi"?>
 
@@ -66,7 +66,7 @@
                 Event="DoAction"
                 Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
         </UI>
-        <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch $(var.ProdName)" />
+        <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="启动 $(var.ProdName)" />
         <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOX" Value="1" />
         <Property Id="WixShellExecTarget" Value="[INSTALL_ROOT]bin\$(var.ExeName)" />
         <CustomAction Id="LaunchApplication" BinaryKey="WixCA" DllEntry="WixShellExec" Impersonate="yes" />
@@ -113,22 +113,22 @@
 
                 <!-- File associations -->
                 <RegistryKey Key="FileAssociations">
-                    <RegistryValue Name=".mscz" Value="MuseScore.mscz.$(var.ProgIdSuffix)" Type="string" />
-                    <RegistryValue Name=".mscx" Value="MuseScore.mscx.$(var.ProgIdSuffix)" Type="string" />
-                    <RegistryValue Name=".mscs" Value="MuseScore.mscs.$(var.ProgIdSuffix)" Type="string" />
-                    <RegistryValue Name=".mscz~" Value="MuseScore.mscz.$(var.ProgIdSuffix)" Type="string" />
+                    <RegistryValue Name=".db" Value="DBScore.db.$(var.ProgIdSuffix)" Type="string" />
+                    <RegistryValue Name=".mscx" Value="DBScore.mscx.$(var.ProgIdSuffix)" Type="string" />
+                    <RegistryValue Name=".mscs" Value="DBScore.mscs.$(var.ProgIdSuffix)" Type="string" />
+                    <RegistryValue Name=".db~" Value="DBScore.db.$(var.ProgIdSuffix)" Type="string" />
                     <!-- TODO: Add other file types here too? -->
                 </RegistryKey>
 
                 <!-- MIME associations -->
                 <RegistryKey Key="MIMEAssociations">
-                    <RegistryValue Name="application/x-musescore" Value="MuseScore.mscz.$(var.ProgIdSuffix)" Type="string" />
-                    <RegistryValue Name="application/x-musescore+xml" Value="MuseScore.mscx.$(var.ProgIdSuffix)" Type="string" />
+                    <RegistryValue Name="application/x-dbscore" Value="DBScore.db.$(var.ProgIdSuffix)" Type="string" />
+                    <RegistryValue Name="application/x-dbscore+xml" Value="DBScore.mscx.$(var.ProgIdSuffix)" Type="string" />
                 </RegistryKey>
 
                 <!-- URL associations -->
                 <RegistryKey Key="UrlAssociations">
-                    <RegistryValue Name="musescore" Value="MuseScore.Url.musescore.$(var.ProgIdSuffix)" Type="string" />
+                    <RegistryValue Name="dbscore" Value="DBScore.Url.dbscore.$(var.ProgIdSuffix)" Type="string" />
                 </RegistryKey>
 
                 <!-- Open verb (TODO: this entry does not seem to be mentioned anywhere in the documentation, so does it make sense?) -->
@@ -146,10 +146,10 @@
             <!-- Extend to the "open with" list + Win7 jump menu pinning  -->
             <RegistryKey Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\Applications\$(var.ExeKey)">
                 <RegistryKey Key="SupportedTypes">
-                    <RegistryValue Name=".mscz" Value="" Type="string" />
+                    <RegistryValue Name=".db" Value="" Type="string" />
                     <RegistryValue Name=".mscx" Value="" Type="string" />
                     <RegistryValue Name=".mscs" Value="" Type="string" />
-                    <RegistryValue Name=".mscz~" Value="" Type="string" />
+                    <RegistryValue Name=".db~" Value="" Type="string" />
                     <RegistryValue Name=".xml" Value="" Type="string" />
                     <RegistryValue Name=".musicxml" Value="" Type="string" />
                     <RegistryValue Name=".mxl" Value="" Type="string" />
@@ -185,86 +185,86 @@
             <!-- Register ProgIDs -->
             <!-- Instead of using WiX's/MSI's ProgId functionality, we use the registry directly for more control -->
             <!-- MSCZ -->
-            <RegistryKey Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\MuseScore.mscz.$(var.ProgIdSuffix)">
-                <RegistryValue Value="MuseScore File" Type="string" />
+            <RegistryKey Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\DBScore.db.$(var.ProgIdSuffix)">
+                <RegistryValue Value="DB Score 文件" Type="string" />
                 <RegistryValue Key="DefaultIcon" Value="[INSTALL_ROOT]bin\$(var.ExeName),1" Type="string" />
                 <RegistryValue Key="shell\open\command" Value="&quot;[INSTALL_ROOT]bin\$(var.ExeName)&quot; &quot;%1&quot;" Type="string" />
             </RegistryKey>
             <?ifndef MUSE_APP_IS_PRERELEASE?>
-            <RegistryValue Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\MuseScore.mscz\CurVer" Value="MuseScore.mscz.$(var.ProgIdSuffix)" Type="string" />
+            <RegistryValue Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\DBScore.db\CurVer" Value="DBScore.db.$(var.ProgIdSuffix)" Type="string" />
             <?endif?>
 
-            <RegistryKey Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\.mscz">
+            <RegistryKey Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\.db">
                 <?ifndef MUSE_APP_IS_PRERELEASE?>
-                <RegistryValue Value="MuseScore.mscz.$(var.ProgIdSuffix)" Type="string" />
+                <RegistryValue Value="DBScore.db.$(var.ProgIdSuffix)" Type="string" />
                 <?endif?>
-                <RegistryValue Name="Content Type" Value="application/x-musescore" Type="string" />
+                <RegistryValue Name="Content Type" Value="application/x-dbscore" Type="string" />
             </RegistryKey>
 
             <!-- MSCX -->
-            <RegistryKey Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\MuseScore.mscx.$(var.ProgIdSuffix)">
-                <RegistryValue Value="MuseScore Uncompressed File" Type="string" />
+            <RegistryKey Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\DBScore.mscx.$(var.ProgIdSuffix)">
+                <RegistryValue Value="DB Score 未压缩文件" Type="string" />
                 <RegistryValue Key="DefaultIcon" Value="[INSTALL_ROOT]bin\$(var.ExeName),2" Type="string" />
                 <RegistryValue Key="shell\open\command" Value="&quot;[INSTALL_ROOT]bin\$(var.ExeName)&quot; &quot;%1&quot;" Type="string" />
             </RegistryKey>
             <?ifndef MUSE_APP_IS_PRERELEASE?>
-            <RegistryValue Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\MuseScore.mscx\CurVer" Value="MuseScore.mscx.$(var.ProgIdSuffix)" Type="string" />
+            <RegistryValue Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\DBScore.mscx\CurVer" Value="DBScore.mscx.$(var.ProgIdSuffix)" Type="string" />
             <?endif?>
 
             <RegistryKey Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\.mscx">
                 <?ifndef MUSE_APP_IS_PRERELEASE?>
-                <RegistryValue Value="MuseScore.mscx.$(var.ProgIdSuffix)" Type="string" />
+                <RegistryValue Value="DBScore.mscx.$(var.ProgIdSuffix)" Type="string" />
                 <?endif?>
-                <RegistryValue Name="Content Type" Value="application/x-musescore+xml" Type="string" />
+                <RegistryValue Name="Content Type" Value="application/x-dbscore+xml" Type="string" />
             </RegistryKey>
 
             <!-- MSCS -->
-            <RegistryKey Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\MuseScore.mscs.$(var.ProgIdSuffix)">
-                <RegistryValue Value="MuseScore Uncompressed File" Type="string" />
+            <RegistryKey Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\DBScore.mscs.$(var.ProgIdSuffix)">
+                <RegistryValue Value="DB Score 未压缩文件" Type="string" />
                 <RegistryValue Key="DefaultIcon" Value="[INSTALL_ROOT]bin\$(var.ExeName),1" Type="string" />
                 <RegistryValue Key="shell\open\command" Value="&quot;[INSTALL_ROOT]bin\$(var.ExeName)&quot; &quot;%1&quot;" Type="string" />
             </RegistryKey>
             <?ifndef MUSE_APP_IS_PRERELEASE?>
-            <RegistryValue Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\MuseScore.mscs\CurVer" Value="MuseScore.mscs.$(var.ProgIdSuffix)" Type="string" />
+            <RegistryValue Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\DBScore.mscs\CurVer" Value="DBScore.mscs.$(var.ProgIdSuffix)" Type="string" />
             <?endif?>
 
             <RegistryKey Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\.mscs">
                 <?ifndef MUSE_APP_IS_PRERELEASE?>
-                <RegistryValue Value="MuseScore.mscs.$(var.ProgIdSuffix)" Type="string" />
+                <RegistryValue Value="DBScore.mscs.$(var.ProgIdSuffix)" Type="string" />
                 <?endif?>
-                <RegistryValue Name="Content Type" Value="application/x-musescore+xml" Type="string" />
+                <RegistryValue Name="Content Type" Value="application/x-dbscore+xml" Type="string" />
             </RegistryKey>
 
             <!-- MSCZ~ -->
-            <RegistryKey Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\MuseScore.mscz~.$(var.ProgIdSuffix)">
-                <RegistryValue Value="MuseScore Backup File" Type="string" />
+            <RegistryKey Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\DBScore.db~.$(var.ProgIdSuffix)">
+                <RegistryValue Value="DB Score 备份文件" Type="string" />
                 <RegistryValue Key="DefaultIcon" Value="[INSTALL_ROOT]bin\$(var.ExeName),1" Type="string" />
                 <RegistryValue Key="shell\open\command" Value="&quot;[INSTALL_ROOT]bin\$(var.ExeName)&quot; &quot;%1&quot;" Type="string" />
             </RegistryKey>
             <?ifndef MUSE_APP_IS_PRERELEASE?>
-            <RegistryValue Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\MuseScore.mscz~\CurVer" Value="MuseScore.mscz~.$(var.ProgIdSuffix)" Type="string" />
+            <RegistryValue Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\DBScore.db~\CurVer" Value="DBScore.db~.$(var.ProgIdSuffix)" Type="string" />
             <?endif?>
 
-            <RegistryKey Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\.mscz~">
+            <RegistryKey Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\.db~">
                 <?ifndef MUSE_APP_IS_PRERELEASE?>
-                <RegistryValue Value="MuseScore.mscz~.$(var.ProgIdSuffix)" Type="string" />
+                <RegistryValue Value="DBScore.db~.$(var.ProgIdSuffix)" Type="string" />
                 <?endif?>
-                <RegistryValue Name="Content Type" Value="application/x-musescore+xml" Type="string" />
+                <RegistryValue Name="Content Type" Value="application/x-dbscore+xml" Type="string" />
             </RegistryKey>
 
             <!-- musescore URL scheme -->
-            <RegistryKey Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\MuseScore.Url.musescore.$(var.ProgIdSuffix)">
-                <RegistryValue Value="MuseScore URL" Type="string" />
+            <RegistryKey Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\DBScore.Url.dbscore.$(var.ProgIdSuffix)">
+                <RegistryValue Value="DB Score 链接" Type="string" />
                 <RegistryValue Key="DefaultIcon" Value="[INSTALL_ROOT]bin\$(var.ExeName),1" Type="string" />
                 <RegistryValue Key="shell\open\command" Value="&quot;[INSTALL_ROOT]bin\$(var.ExeName)&quot; &quot;%1&quot;" Type="string" />
             </RegistryKey>
             <?ifndef MUSE_APP_IS_PRERELEASE?>
-            <RegistryValue Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\MuseScore.Url.musescore\CurVer" Value="MuseScore.Url.musescore.$(var.ProgIdSuffix)" Type="string" />
+            <RegistryValue Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\DBScore.Url.dbscore\CurVer" Value="DBScore.Url.dbscore.$(var.ProgIdSuffix)" Type="string" />
             <?endif?>
 
-            <RegistryKey Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\musescore">
+            <RegistryKey Root="$(var.RegistryRoot)" Key="SOFTWAREClassesdbscore">
                 <RegistryValue Name="URL Protocol" Value="" Type="string" />
-                <RegistryValue Value="URL:MuseScore URL" Type="string" />
+                <RegistryValue Value="URL:DB Score 链接" Type="string" />
             </RegistryKey>
         </Component>
 

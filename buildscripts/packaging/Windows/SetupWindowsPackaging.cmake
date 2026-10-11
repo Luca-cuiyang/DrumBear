@@ -68,11 +68,13 @@ endif()
 message(STATUS "[SetupWindowsPackaging.cmake] CPACK_WIX_UPGRADE_GUID: ${CPACK_WIX_UPGRADE_GUID}")
 
 set(CPACK_WIX_LICENSE_RTF "${PROJECT_SOURCE_DIR}/buildscripts/packaging/Windows/Installer/LICENSE.rtf")
-set(CPACK_WIX_PRODUCT_ICON "${PROJECT_SOURCE_DIR}/share/icons/AppIcon/MS4_AppIcon.ico")
+set(CPACK_WIX_PRODUCT_ICON "${PROJECT_SOURCE_DIR}/share/icons/DbIcon/DbIcon.ico")
 set(CPACK_WIX_UI_BANNER "${PROJECT_SOURCE_DIR}/buildscripts/packaging/Windows/Installer/installer_banner_wix.png")
 set(CPACK_WIX_UI_DIALOG "${PROJECT_SOURCE_DIR}/buildscripts/packaging/Windows/Installer/installer_background_wix.png")
 set(CPACK_WIX_PROGRAM_MENU_FOLDER "${MUSE_APP_NAME_HUMAN_READABLE} ${MUSE_APP_VERSION_MAJOR}")
 set(CPACK_WIX_EXTENSIONS "WixUtilExtension")
+#! 安装界面使用简体中文（WixUIExtension 内置 zh-CN）
+set(CPACK_WIX_CULTURES "zh-CN")
 
 # Extra CPack variables
 list(APPEND CPACK_WIX_CANDLE_EXTRA_FLAGS
