@@ -44,6 +44,11 @@ public:
     void setResolution(std::optional<std::string> resolution) override;
     const std::vector<std::string>& availableResolutions() const override;
 
+    int customWidth() const override;
+    void setCustomWidth(std::optional<int> width) override;
+    int customHeight() const override;
+    void setCustomHeight(std::optional<int> height) override;
+
     int fps() const override;
     void setFps(std::optional<int> fps) override;
 
@@ -61,6 +66,8 @@ private:
     std::optional<bool> m_showPiano = std::nullopt;
     std::optional<PianoPosition> m_pianoPosition = std::nullopt;
     std::optional<std::string> m_resolution = std::nullopt;
+    std::optional<int> m_customWidth = std::nullopt;
+    std::optional<int> m_customHeight = std::nullopt;
     std::optional<int> m_fps = std::nullopt;
     std::optional<double> m_leadingSec = std::nullopt;
     std::optional<double> m_trailingSec = std::nullopt;

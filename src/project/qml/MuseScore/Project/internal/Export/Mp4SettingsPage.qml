@@ -113,25 +113,81 @@ ExportSettingsPage {
 
             ExportOptionItem {
                 id: videoResolutionLabel
-                text: qsTrc("project/export", "Video resolution")
+                text: qsTrc("project/export", "视频分辨率")
 
-                StyledDropdown {
-                    id: videoResolutionDropdown
-                    Layout.preferredWidth: 126
+                RowLayout {
+                    width: parent.width
+                    spacing: 8
 
-                    navigation.name: "VideoResolutionDropdown"
-                    navigation.panel: root.navigationPanel
-                    navigation.row: audioSection.navigationOrderEnd + 1
-                    navigation.accessible.name: videoResolutionLabel.text + " " + currentText
+                    StyledDropdown {
+                        id: videoResolutionDropdown
+                        Layout.preferredWidth: 280
 
-                    model: root.model ? root.model.availableVideoResolutions().map(function(res) {
-                        return { text: res, value: res }
-                    }) : []
+                        navigation.name: "VideoResolutionDropdown"
+                        navigation.panel: root.navigationPanel
+                        navigation.row: audioSection.navigationOrderEnd + 1
+                        navigation.accessible.name: videoResolutionLabel.text + " " + currentText
 
-                    currentIndex: root.model ? indexOfValue(root.model.videoResolution) : -1
+                        model: root.model ? root.model.availableVideoResolutions() : []
 
-                    onActivated: function(index, value) {
-                        root.model.videoResolution = value
+                        currentIndex: root.model ? indexOfValue(root.model.videoResolution) : -1
+
+                        onActivated: function(index, value) {
+                            root.model.videoResolution = value
+                        }
+                    }
+
+                    IncrementalPropertyControl {
+                        id: customWidthInput
+                        visible: root.model ? root.model.isCustomVideoResolution : false
+                        Layout.preferredWidth: 110
+
+                        currentValue: root.model ? root.model.customVideoWidth : 0
+                        minValue: 16
+                        maxValue: 7680
+                        step: 1
+                        decimals: 0
+                        measureUnitsSymbol: "px"
+
+                        navigation.name: "CustomWidthInput"
+                        navigation.panel: root.navigationPanel
+                        navigation.row: audioSection.navigationOrderEnd + 2
+                        navigation.accessible.name: qsTrc("project/export", "自定义宽度") + " " + String(currentValue)
+
+                        onValueEdited: function(newValue) {
+                            if (root.model) {
+                                root.model.customVideoWidth = newValue
+                            }
+                        }
+                    }
+
+                    StyledTextLabel {
+                        text: "×"
+                        visible: customWidthInput.visible
+                    }
+
+                    IncrementalPropertyControl {
+                        id: customHeightInput
+                        visible: root.model ? root.model.isCustomVideoResolution : false
+                        Layout.preferredWidth: 110
+
+                        currentValue: root.model ? root.model.customVideoHeight : 0
+                        minValue: 16
+                        maxValue: 7680
+                        step: 1
+                        decimals: 0
+                        measureUnitsSymbol: "px"
+
+                        navigation.name: "CustomHeightInput"
+                        navigation.panel: root.navigationPanel
+                        navigation.row: audioSection.navigationOrderEnd + 3
+                        navigation.accessible.name: qsTrc("project/export", "自定义高度") + " " + String(currentValue)
+
+                        onValueEdited: function(newValue) {
+                            if (root.model) {
+                                root.model.customVideoHeight = newValue
+                            }
+                        }
                     }
                 }
             }

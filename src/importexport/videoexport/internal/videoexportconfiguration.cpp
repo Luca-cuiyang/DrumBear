@@ -26,13 +26,15 @@ using namespace mu::iex::videoexport;
 static const ViewMode DEFAULT_VIEW_MODE = ViewMode::PageFull;
 static const bool DEFAULT_SHOW_PIANO = false;
 static const PianoPosition DEFAULT_PIANO_POSITION = PianoPosition::Bottom;
-static const std::string DEFAULT_RESOLUTION = "1080p";
+static const std::string DEFAULT_RESOLUTION = "4k_16x9";
+static const int DEFAULT_CUSTOM_WIDTH = 1920;
+static const int DEFAULT_CUSTOM_HEIGHT = 1080;
 static const int DEFAULT_FPS = 24;
 static const double DEFAULT_LEADING_SEC = 3.0;
 static const double DEFAULT_TRAILING_SECONDS = 3.0;
 static const bool DEFAULT_SMOOTH_PAGE_TRANSITIONS = false;
 
-static const std::vector<std::string> AVAILABLE_RESOLUTIONS = { "2160p", "1440p", "1080p" };
+static const std::vector<std::string> AVAILABLE_RESOLUTIONS = { "4k_16x9", "4k_9x16", "custom" };
 
 ViewMode VideoExportConfiguration::viewMode() const
 {
@@ -77,6 +79,26 @@ void VideoExportConfiguration::setResolution(std::optional<std::string> resoluti
 const std::vector<std::string>& VideoExportConfiguration::availableResolutions() const
 {
     return AVAILABLE_RESOLUTIONS;
+}
+
+int VideoExportConfiguration::customWidth() const
+{
+    return m_customWidth ? m_customWidth.value() : DEFAULT_CUSTOM_WIDTH;
+}
+
+void VideoExportConfiguration::setCustomWidth(std::optional<int> width)
+{
+    m_customWidth = width;
+}
+
+int VideoExportConfiguration::customHeight() const
+{
+    return m_customHeight ? m_customHeight.value() : DEFAULT_CUSTOM_HEIGHT;
+}
+
+void VideoExportConfiguration::setCustomHeight(std::optional<int> height)
+{
+    m_customHeight = height;
 }
 
 int VideoExportConfiguration::fps() const

@@ -50,6 +50,11 @@ public:
     virtual void setResolution(std::optional<std::string> resolution) = 0;
     virtual const std::vector<std::string>& availableResolutions() const = 0;
 
+    virtual int customWidth() const = 0;
+    virtual void setCustomWidth(std::optional<int> width) = 0;
+    virtual int customHeight() const = 0;
+    virtual void setCustomHeight(std::optional<int> height) = 0;
+
     virtual int fps() const = 0;
     virtual void setFps(std::optional<int> fps) = 0;
 

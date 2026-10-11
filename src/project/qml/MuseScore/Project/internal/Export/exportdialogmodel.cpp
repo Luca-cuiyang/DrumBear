@@ -586,13 +586,22 @@ void ExportDialogModel::setSvgIllustratorCompat(bool compat)
     emit svgIllustratorCompatChanged(compat);
 }
 
-QStringList ExportDialogModel::availableVideoResolutions() const
+QVariantList ExportDialogModel::availableVideoResolutions() const
 {
-    const std::vector<std::string>& resolutions = videoExportConfiguration()->availableResolutions();
-    QStringList result;
-    for (const std::string& res : resolutions) {
-        result << QString::fromStdString(res);
-    }
+    QVariantList result;
+
+    auto add = [&](const QString& text, const QString& value, bool isCustom) {
+        QVariantMap obj;
+        obj["text"] = text;
+        obj["value"] = value;
+        obj["isCustom"] = isCustom;
+        result << obj;
+    };
+
+    add(muse::qtrc("project/export", "4K-16:9 横屏（3840 × 2160）"), "4k_16x9", false);
+    add(muse::qtrc("project/export", "4K-9:16 竖屏（1440 × 2560）"), "4k_9x16", false);
+    add(muse::qtrc("project/export", "自定义（自由输入宽、高像素）"), "custom", true);
+
     return result;
 }
 
@@ -609,6 +618,41 @@ void ExportDialogModel::setVideoResolution(const QString& resolution)
 
     videoExportConfiguration()->setResolution(resolution.toStdString());
     emit videoResolutionChanged(resolution);
+}
+
+bool ExportDialogModel::isCustomVideoResolution() const
+{
+    return videoExportConfiguration()->resolution() == "custom";
+}
+
+int ExportDialogModel::customVideoWidth() const
+{
+    return videoExportConfiguration()->customWidth();
+}
+
+void ExportDialogModel::setCustomVideoWidth(int width)
+{
+    if (width <= 0 || width == customVideoWidth()) {
+        return;
+    }
+
+    videoExportConfiguration()->setCustomWidth(width);
+    emit customVideoWidthChanged(width);
+}
+
+int ExportDialogModel::customVideoHeight() const
+{
+    return videoExportConfiguration()->customHeight();
+}
+
+void ExportDialogModel::setCustomVideoHeight(int height)
+{
+    if (height <= 0 || height == customVideoHeight()) {
+        return;
+    }
+
+    videoExportConfiguration()->setCustomHeight(height);
+    emit customVideoHeightChanged(height);
 }
 
 QVariantList ExportDialogModel::availableViewModes() const

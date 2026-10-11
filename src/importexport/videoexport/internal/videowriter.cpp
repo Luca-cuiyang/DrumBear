@@ -191,12 +191,15 @@ VideoWriter::Config VideoWriter::makeConfig() const
     cfg.fps = configuration()->fps();
 
     std::string resolution = configuration()->resolution();
-    if (resolution == "2160p") {
+    if (resolution == "4k_16x9") {
         cfg.width = 3840;
         cfg.height = 2160;
-    } else if (resolution == "1440p") {
-        cfg.width = 2560;
-        cfg.height = 1440;
+    } else if (resolution == "4k_9x16") {
+        cfg.width = 1440;
+        cfg.height = 2560;
+    } else if (resolution == "custom") {
+        cfg.width = std::max(16, configuration()->customWidth());
+        cfg.height = std::max(16, configuration()->customHeight());
     } else if (resolution == "1080p") {
         cfg.width = 1920;
         cfg.height = 1080;
@@ -350,7 +353,9 @@ std::optional<VideoWriter::ScoreRestoreData> VideoWriter::prepareScore(INotation
     if (config.viewMode == ViewMode::PageFull) {
         double scaleX = config.width / page->width();
         double scaleY = config.height / page->height();
-        double scale = std::min(scaleX, scaleY);
+        //! NOTE: Cover (not fit) so the page fills the whole canvas without black bars;
+        //! the overflow (page margins) is cropped by the frame.
+        double scale = std::max(scaleX, scaleY);
         config.canvasDpi = scale * engraving::DPI;
         config.moveToCenter = muse::PointF(0.5 * (config.width / scale - page->width()), 0.5 * (config.height / scale - page->height()));
         return result;
@@ -615,6 +620,11 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
     std::vector<double> pageRenderOffset(pages.size(), 0.0);
     std::vector<double> pageContentTop(pages.size(), 0.0);
     std::vector<double> pageContentHeight(pages.size(), 0.0);
+    struct SystemVert {
+        double top = 0.0;
+        double height = 0.0;
+    };
+    std::vector<SystemVert> systemsVert;
     double scale = config.canvasDpi / engraving::DPI;
     double frameWidthCanvas = config.width / scale;
     double frameHeightCanvas = config.height / scale;
@@ -659,16 +669,27 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
             pageRenderOffset[i] = y - contentTop[i];
             pageContentTop[i] = y;
             pageContentHeight[i] = contentBottom[i] - contentTop[i];
+
+            for (const System* system : pages[i]->systems()) {
+                SystemVert sv;
+                sv.top = pageRenderOffset[i] + system->pagePos().y();
+                sv.height = system->height();
+                systemsVert.push_back(sv);
+            }
+
             y += pageContentHeight[i] + lineGap;
         }
 
         totalHeightCanvas = y - lineGap;
     }
 
-    //! NOTE: Camera keeps the playback cursor vertically centered. The value is smoothed
-    //! frame by frame in the render loop so the page glides instead of jumping.
+    //! NOTE: Discrete vertical scroll: when the cursor reaches 1-2 system heights from the
+    //! bottom, glide up by one system height (ease-in-out), then stay still.
     double viewTop = 0.0;
-    double viewVel = 0.0;
+    bool scrollAnimating = false;
+    double scrollAnimFrom = 0.0;
+    double scrollAnimTo = 0.0;
+    double scrollAnimStartSec = 0.0;
 
     //! NOTE: Do NOT wrap paintPrint in save()/restore(); paintPrint installs the page
     //! viewport/window transform, and restore() would undo it, breaking the cursor draw.
@@ -721,23 +742,61 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
             int pageIdx = static_cast<int>(page->pageNumber());
             double cursorVertY = pageRenderOffset[pageIdx] + (cursorRect.y() - page->pos().y());
 
-            //! NOTE: Keep the cursor vertically centered. Smoothly glide the camera toward
-            //! that target so the page moves gently instead of jumping frequently.
-            double maxTop = std::max(0.0, totalHeightCanvas - frameHeightCanvas);
-            double targetViewTop = cursorVertY - 0.5 * frameHeightCanvas;
-            targetViewTop = std::min(std::max(0.0, targetViewTop), maxTop);
+            //! NOTE: Discrete vertical scroll. Trigger when the cursor is within the last
+            //! one or two visible systems, then ease-in-out up by one real system height.
+            int cursorSysIdx = -1;
+            for (int i = 0; i < static_cast<int>(systemsVert.size()); ++i) {
+                if (cursorVertY >= systemsVert[i].top) {
+                    cursorSysIdx = i;
+                } else {
+                    break;
+                }
+            }
 
-            //! NOTE: Critically damped smooth-damp gives a natural, silky glide toward the
-            //! centered target without overshoot or per-frame stepping.
-            double dt = 1.0 / static_cast<double>(config.fps);
-            const double smoothTime = 0.35;
-            double omega = 2.0 / smoothTime;
-            double x = omega * dt;
-            double exp = 1.0 / (1.0 + x + 0.48 * x * x + 0.235 * x * x * x);
-            double change = viewTop - targetViewTop;
-            double temp = (viewVel + omega * change) * dt;
-            viewVel = (viewVel - omega * temp) * exp;
-            viewTop = targetViewTop + (change + temp) * exp;
+            double viewBottom = viewTop + frameHeightCanvas;
+
+            int firstVisibleIdx = -1;
+            for (int i = 0; i < static_cast<int>(systemsVert.size()); ++i) {
+                if (systemsVert[i].top + systemsVert[i].height >= viewTop) {
+                    firstVisibleIdx = i;
+                    break;
+                }
+            }
+
+            int lastVisibleIdx = firstVisibleIdx;
+            for (int i = firstVisibleIdx; i < static_cast<int>(systemsVert.size()); ++i) {
+                if (systemsVert[i].top < viewBottom) {
+                    lastVisibleIdx = i;
+                } else {
+                    break;
+                }
+            }
+
+            int lastSystemIdx = static_cast<int>(systemsVert.size()) - 1;
+
+            if (!scrollAnimating && firstVisibleIdx >= 0 && cursorSysIdx >= 0
+                && cursorSysIdx >= lastVisibleIdx - 1 && lastVisibleIdx < lastSystemIdx) {
+                double target = systemsVert[firstVisibleIdx + 1].top;
+                double maxTop = std::max(0.0, totalHeightCanvas - frameHeightCanvas);
+                target = std::min(target, maxTop);
+                if (target > viewTop + 1e-3) {
+                    scrollAnimFrom = viewTop;
+                    scrollAnimTo = target;
+                    scrollAnimStartSec = currentTimeSec;
+                    scrollAnimating = true;
+                }
+            }
+
+            if (scrollAnimating) {
+                double p = (static_cast<double>(currentTimeSec) - scrollAnimStartSec) / 1.3;
+                if (p >= 1.0) {
+                    viewTop = scrollAnimTo;
+                    scrollAnimating = false;
+                } else {
+                    double e = p * p * (3.0 - 2.0 * p);
+                    viewTop = scrollAnimFrom + (scrollAnimTo - scrollAnimFrom) * e;
+                }
+            }
 
             //! NOTE: Render every page intersecting the vertical viewport (one page normally,
             //! two while crossing a page boundary), shifted up by the scroll offset.
