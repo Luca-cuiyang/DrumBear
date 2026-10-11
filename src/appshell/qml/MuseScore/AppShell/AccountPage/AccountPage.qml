@@ -28,12 +28,16 @@ DockPage {
             accountModel.refresh()
         } else if (root.currentPage === 2) {
             accountModel.loadOrders()
+        } else if (root.currentPage === 3) {
+            accountModel.loadProjects()
         } else if (root.currentPage === 4) {
             accountModel.loadScores()
         } else if (root.currentPage === 6) {
             accountModel.loadPoints()
         } else if (root.currentPage === 7) {
             accountModel.loadInvite()
+        } else if (root.currentPage === 12) {
+            accountModel.loadNotifications()
         }
     }
 
@@ -229,6 +233,12 @@ DockPage {
                             accentButton: root.currentPage === 11
                             onClicked: root.currentPage = 11
                         }
+                        FlatButton {
+                            width: parent.width
+                            text: qsTrc("appshell", "通知中心")
+                            accentButton: root.currentPage === 12
+                            onClicked: root.currentPage = 12
+                        }
 
                         Rectangle {
                             width: parent.width
@@ -239,8 +249,8 @@ DockPage {
                         FlatButton {
                             width: parent.width
                             text: qsTrc("appshell", "设置")
-                            accentButton: root.currentPage === 12
-                            onClicked: root.currentPage = 12
+                            accentButton: root.currentPage === 13
+                            onClicked: root.currentPage = 13
                         }
                     }
                 }
@@ -590,6 +600,47 @@ DockPage {
 
                             Component.onCompleted: recentProjectsModel.load()
                         }
+
+                        PageCard {
+                            ColumnLayout {
+                                spacing: 8
+
+                                StyledTextLabel {
+                                    text: qsTrc("appshell", "云端备份")
+                                    font: ui.theme.largeBodyBoldFont
+                                }
+
+                                StyledTextLabel {
+                                    visible: accountModel.projectsList.length === 0
+                                    text: qsTrc("appshell", "暂无云端备份的工程。")
+                                    font: ui.theme.bodyFont
+                                    opacity: 0.7
+                                }
+
+                                Repeater {
+                                    model: accountModel.projectsList
+
+                                    delegate: RowLayout {
+                                        width: parent ? parent.width : 0
+                                        height: 44
+                                        spacing: 12
+
+                                        StyledTextLabel {
+                                            Layout.fillWidth: true
+                                            text: modelData.name || ""
+                                            font: ui.theme.bodyFont
+                                            elide: Text.ElideMiddle
+                                        }
+
+                                        StyledTextLabel {
+                                            text: modelData.size ? (modelData.size / 1048576).toFixed(1) + " MB" : ""
+                                            font: ui.theme.bodyFont
+                                            opacity: 0.6
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
 
@@ -640,19 +691,50 @@ DockPage {
                 Item {
                     PageFrame {
                         title: qsTrc("appshell", "制谱记录")
+
                         PageCard {
+                            RecentScoresModel {
+                                id: recordsModel
+                            }
+
                             ColumnLayout {
-                                spacing: 8
+                                spacing: 6
+
                                 StyledTextLabel {
-                                    text: qsTrc("appshell", "制谱统计")
+                                    text: qsTrc("appshell", "最近制谱")
                                     font: ui.theme.largeBodyBoldFont
                                 }
+
                                 StyledTextLabel {
-                                    text: qsTrc("appshell", "你的制谱记录和统计会显示在这里。")
+                                    text: qsTrc("appshell", "累计制谱数量：") + recordsModel.rowCount
                                     font: ui.theme.bodyFont
-                                    opacity: 0.7
+                                }
+
+                                Repeater {
+                                    model: recordsModel
+
+                                    delegate: RowLayout {
+                                        width: parent ? parent.width : 0
+                                        height: 44
+                                        spacing: 12
+
+                                        StyledTextLabel {
+                                            Layout.fillWidth: true
+                                            text: score.name || score.path || ""
+                                            font: ui.theme.bodyFont
+                                            elide: Text.ElideMiddle
+                                        }
+
+                                        StyledTextLabel {
+                                            text: score.timeSinceModified || ""
+                                            font: ui.theme.bodyFont
+                                            opacity: 0.6
+                                        }
+                                    }
                                 }
                             }
+
+                            Component.onCompleted: recordsModel.load()
                         }
                     }
                 }
@@ -931,6 +1013,56 @@ DockPage {
                                     font: ui.theme.bodyFont
                                     opacity: 0.7
                                     wrapMode: Text.WordWrap
+                                }
+                            }
+                        }
+                    }
+                }
+
+                Item {
+                    PageFrame {
+                        title: qsTrc("appshell", "通知中心")
+
+                        StyledTextLabel {
+                            visible: accountModel.notificationsList.length === 0
+                            text: qsTrc("appshell", "暂无通知")
+                            font: ui.theme.bodyFont
+                            opacity: 0.7
+                        }
+
+                        PageCard {
+                            ColumnLayout {
+                                spacing: 0
+
+                                Repeater {
+                                    model: accountModel.notificationsList
+
+                                    delegate: ColumnLayout {
+                                        width: parent ? parent.width : 0
+                                        spacing: 4
+
+                                        StyledTextLabel {
+                                            Layout.fillWidth: true
+                                            text: modelData.title || ""
+                                            font: ui.theme.bodyFont
+                                            elide: Text.ElideMiddle
+                                        }
+
+                                        StyledTextLabel {
+                                            Layout.fillWidth: true
+                                            text: modelData.content || ""
+                                            font: ui.theme.bodyFont
+                                            opacity: 0.7
+                                            wrapMode: Text.WordWrap
+                                            maximumLineCount: 2
+                                        }
+
+                                        Rectangle {
+                                            Layout.fillWidth: true
+                                            height: 1
+                                            color: ui.theme.strokeColor
+                                        }
+                                    }
                                 }
                             }
                         }
