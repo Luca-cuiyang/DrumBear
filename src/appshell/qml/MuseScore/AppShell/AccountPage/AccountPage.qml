@@ -129,6 +129,38 @@ DockPage {
                             }
                         }
 
+                        // 到期提醒（licenseState: 3=Active 正式会员, 4=Expired 已过期）
+                        Rectangle {
+                            visible: (accountModel.licenseState === 3 && accountModel.daysUntilExpiry <= 7)
+                                     || accountModel.licenseState === 4
+                            Layout.fillWidth: true
+                            height: 64
+                            radius: 10
+                            color: ui.theme.accentColor
+                            opacity: 0.9
+
+                            RowLayout {
+                                anchors.fill: parent
+                                anchors.margins: 12
+                                spacing: 10
+
+                                StyledTextLabel {
+                                    Layout.fillWidth: true
+                                    text: accountModel.licenseState === 4
+                                          ? qsTrc("appshell", "⚠️会员已过期，增值功能已锁定，请续费恢复使用。")
+                                          : qsTrc("appshell", "🟠会员即将于 ") + accountModel.expireAtText
+                                            + qsTrc("appshell", " 到期，请及时续费。")
+                                    font: ui.theme.bodyFont
+                                    wrapMode: Text.WordWrap
+                                }
+
+                                FlatButton {
+                                    text: qsTrc("appshell", "去续费")
+                                    onClicked: accountModel.openPurchasePage()
+                                }
+                            }
+                        }
+
                         // 激活码输入区
                         Rectangle {
                             Layout.fillWidth: true
