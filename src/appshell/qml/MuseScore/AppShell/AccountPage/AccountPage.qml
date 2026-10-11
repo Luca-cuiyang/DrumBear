@@ -11,6 +11,7 @@ import QtQuick.Layouts
 import Muse.Ui
 import Muse.UiComponents
 import Muse.Dock
+import Muse.Cloud
 
 DockPage {
     id: root
@@ -20,6 +21,10 @@ DockPage {
 
     property int previewStatus: 0
     property bool loggedIn: true
+
+    DbScoreAccountModel {
+        id: accountModel
+    }
 
     function statusText() {
         switch (previewStatus) {
@@ -167,9 +172,65 @@ DockPage {
 
                             StyledTextLabel {
                                 anchors.centerIn: parent
-                                text: root.statusText()
+                                text: accountModel.statusText
                                 font: ui.theme.largeBodyFont
                             }
+                        }
+
+                        // 激活码输入区
+                        Rectangle {
+                            Layout.fillWidth: true
+                            height: 72
+                            radius: 10
+                            color: ui.theme.backgroundSecondaryColor
+
+                            RowLayout {
+                                anchors.fill: parent
+                                anchors.margins: 12
+                                spacing: 10
+
+                                StyledTextLabel {
+                                    text: qsTrc("appshell", "激活码")
+                                    font: ui.theme.bodyFont
+                                }
+
+                                TextField {
+                                    id: licenseCodeField
+                                    Layout.fillWidth: true
+                                    placeholderText: qsTrc("appshell", "请输入激活码")
+                                }
+
+                                FlatButton {
+                                    text: qsTrc("appshell", "激活")
+                                    accentButton: true
+                                    enabled: !accountModel.busy
+                                    onClicked: accountModel.activate(licenseCodeField.text)
+                                }
+
+                                FlatButton {
+                                    text: qsTrc("appshell", "刷新授权")
+                                    enabled: !accountModel.busy
+                                    onClicked: accountModel.refresh()
+                                }
+                            }
+                        }
+
+                        // 错误提示
+                        StyledTextLabel {
+                            visible: accountModel.lastError.length > 0
+                            Layout.fillWidth: true
+                            text: accountModel.lastError
+                            color: ui.theme.accentColor
+                            font: ui.theme.bodyFont
+                            wrapMode: Text.WordWrap
+                        }
+
+                        // 授权信息
+                        StyledTextLabel {
+                            Layout.fillWidth: true
+                            text: qsTrc("appshell", "设备标识：") + accountModel.deviceId
+                            font: ui.theme.bodyFont
+                            opacity: 0.6
                         }
 
                         // 会员专属权益
@@ -204,18 +265,18 @@ DockPage {
 
                             FlatButton {
                                 text: qsTrc("appshell", "刷新授权")
-                                onClicked: refreshToast.open()
+                                onClicked: accountModel.refresh()
                             }
 
                             FlatButton {
                                 text: qsTrc("appshell", "去续费")
                                 accentButton: true
-                                onClicked: renewToast.open()
+                                onClicked: accountModel.openPurchasePage()
                             }
 
                             FlatButton {
-                                text: qsTrc("appshell", "退出登录")
-                                onClicked: logoutToast.open()
+                                text: qsTrc("appshell", "清除授权")
+                                onClicked: accountModel.clearLicense()
                             }
                         }
 
