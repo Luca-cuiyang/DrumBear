@@ -148,12 +148,10 @@ void StartupScenario::runAfterSplashScreen()
 
     m_startupCompleted = true;
 
-    StartupModeType modeType = StartupModeType::StartEmpty;
-    if (multiwindowsProvider()->isFirstWindow() && sessionsManager()->hasProjectsForRestore()) {
-        modeType = StartupModeType::Recovery;
-    } else {
-        modeType = resolveStartupModeType();
-    }
+    //! NOTE: DB Score always starts on the configured startup page (default: Home).
+    //! We intentionally do not auto-restore the previous session on launch, so the
+    //! app consistently opens to the Home page after closing and reopening.
+    StartupModeType modeType = resolveStartupModeType();
 
     const Uri& startupUri = startupPageUri(modeType);
     auto promise = interactive()->open(startupUri);
