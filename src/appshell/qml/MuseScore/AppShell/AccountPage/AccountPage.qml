@@ -62,14 +62,30 @@ DockPage {
                         font: ui.theme.bodyFont
                     }
 
-                    Repeater {
-                        model: ["试用中", "试用将到期", "正式会员", "即将到期", "已过期"]
-
-                        FlatButton {
-                            text: modelData
-                            accentButton: root.previewStatus === index
-                            onClicked: root.previewStatus = index
-                        }
+                    FlatButton {
+                        text: qsTrc("appshell", "试用中")
+                        accentButton: root.previewStatus === 0
+                        onClicked: root.previewStatus = 0
+                    }
+                    FlatButton {
+                        text: qsTrc("appshell", "试用将到期")
+                        accentButton: root.previewStatus === 1
+                        onClicked: root.previewStatus = 1
+                    }
+                    FlatButton {
+                        text: qsTrc("appshell", "正式会员")
+                        accentButton: root.previewStatus === 2
+                        onClicked: root.previewStatus = 2
+                    }
+                    FlatButton {
+                        text: qsTrc("appshell", "即将到期")
+                        accentButton: root.previewStatus === 3
+                        onClicked: root.previewStatus = 3
+                    }
+                    FlatButton {
+                        text: qsTrc("appshell", "已过期")
+                        accentButton: root.previewStatus === 4
+                        onClicked: root.previewStatus = 4
                     }
 
                     FlatButton {
@@ -162,20 +178,11 @@ DockPage {
                                     font: ui.theme.largeBodyBoldFont
                                 }
 
-                                Repeater {
-                                    model: [
-                                        "✅导入音频并与曲谱AI对齐",
-                                        "✅生成并导出动态.dbscore工程文件",
-                                        "✅批量导出MP4视频（1080P/2K/4K多种分辨率）",
-                                        "✅无水印输出文件",
-                                        "✅免费享受后续版本功能更新"
-                                    ]
-
-                                    StyledTextLabel {
-                                        text: modelData
-                                        font: ui.theme.bodyFont
-                                    }
-                                }
+                                StyledTextLabel { text: qsTrc("appshell", "✅导入音频并与曲谱AI对齐"); font: ui.theme.bodyFont }
+                                StyledTextLabel { text: qsTrc("appshell", "✅生成并导出动态.dbscore工程文件"); font: ui.theme.bodyFont }
+                                StyledTextLabel { text: qsTrc("appshell", "✅批量导出MP4视频（1080P/2K/4K多种分辨率）"); font: ui.theme.bodyFont }
+                                StyledTextLabel { text: qsTrc("appshell", "✅无水印输出文件"); font: ui.theme.bodyFont }
+                                StyledTextLabel { text: qsTrc("appshell", "✅免费享受后续版本功能更新"); font: ui.theme.bodyFont }
                             }
                         }
 
