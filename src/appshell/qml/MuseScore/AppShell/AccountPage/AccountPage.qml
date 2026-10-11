@@ -505,6 +505,7 @@ DockPage {
                                     model: accountModel.ordersList
 
                                     delegate: RowLayout {
+                                        required property var modelData
                                         width: parent ? parent.width : 0
                                         height: 48
                                         spacing: 12
@@ -573,6 +574,7 @@ DockPage {
                                 clip: true
 
                                 delegate: Rectangle {
+                                    required property var score
                                     width: ListView.view.width
                                     height: 56
                                     color: "transparent"
@@ -621,6 +623,7 @@ DockPage {
                                     model: accountModel.projectsList
 
                                     delegate: RowLayout {
+                                        required property var modelData
                                         width: parent ? parent.width : 0
                                         height: 44
                                         spacing: 12
@@ -663,6 +666,7 @@ DockPage {
                                     model: accountModel.scoresList
 
                                     delegate: RowLayout {
+                                        required property var modelData
                                         width: parent ? parent.width : 0
                                         height: 48
                                         spacing: 12
@@ -714,6 +718,7 @@ DockPage {
                                     model: recordsModel
 
                                     delegate: RowLayout {
+                                        required property var score
                                         width: parent ? parent.width : 0
                                         height: 44
                                         spacing: 12
@@ -1038,6 +1043,7 @@ DockPage {
                                     model: accountModel.notificationsList
 
                                     delegate: ColumnLayout {
+                                        required property var modelData
                                         width: parent ? parent.width : 0
                                         spacing: 4
 
