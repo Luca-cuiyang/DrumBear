@@ -29,33 +29,14 @@ DockPage {
         } else if (root.currentPage === 2) {
             accountModel.loadOrders()
         } else if (root.currentPage === 3) {
-            accountModel.loadProjects()
-            recentProjectsModel.load()
-        } else if (root.currentPage === 4) {
-            accountModel.loadScores()
-        } else if (root.currentPage === 5) {
-            recordsModel.load()
-        } else if (root.currentPage === 6) {
             accountModel.loadInvite()
-        } else if (root.currentPage === 11) {
+        } else if (root.currentPage === 8) {
             accountModel.loadNotifications()
         }
     }
 
     DbScoreAccountModel {
         id: accountModel
-    }
-
-    RecentScoresModel {
-        id: recentProjectsModel
-    }
-
-    RecentScoresModel {
-        id: recordsModel
-    }
-
-    ScoresPageModel {
-        id: scoresPageModel
     }
 
     Timer {
@@ -167,33 +148,6 @@ DockPage {
                         }
 
                         StyledTextLabel {
-                            text: qsTrc("appshell", "作品")
-                            font: ui.theme.bodyFont
-                            opacity: 0.5
-                            leftPadding: 8
-                            topPadding: 10
-                            bottomPadding: 4
-                        }
-                        FlatButton {
-                            width: parent.width
-                            text: qsTrc("appshell", "我的工程")
-                            accentButton: root.currentPage === 3
-                            onClicked: root.currentPage = 3
-                        }
-                        FlatButton {
-                            width: parent.width
-                            text: qsTrc("appshell", "我的乐谱")
-                            accentButton: root.currentPage === 4
-                            onClicked: root.currentPage = 4
-                        }
-                        FlatButton {
-                            width: parent.width
-                            text: qsTrc("appshell", "制谱记录")
-                            accentButton: root.currentPage === 5
-                            onClicked: root.currentPage = 5
-                        }
-
-                        StyledTextLabel {
                             text: qsTrc("appshell", "成长")
                             font: ui.theme.bodyFont
                             opacity: 0.5
@@ -204,14 +158,14 @@ DockPage {
                         FlatButton {
                             width: parent.width
                             text: qsTrc("appshell", "推广赚佣")
-                            accentButton: root.currentPage === 6
-                            onClicked: root.currentPage = 6
+                            accentButton: root.currentPage === 3
+                            onClicked: root.currentPage = 3
                         }
                         FlatButton {
                             width: parent.width
                             text: qsTrc("appshell", "软件分享")
-                            accentButton: root.currentPage === 7
-                            onClicked: root.currentPage = 7
+                            accentButton: root.currentPage === 4
+                            onClicked: root.currentPage = 4
                         }
 
                         StyledTextLabel {
@@ -225,26 +179,26 @@ DockPage {
                         FlatButton {
                             width: parent.width
                             text: qsTrc("appshell", "帮助中心")
-                            accentButton: root.currentPage === 8
-                            onClicked: root.currentPage = 8
+                            accentButton: root.currentPage === 5
+                            onClicked: root.currentPage = 5
                         }
                         FlatButton {
                             width: parent.width
                             text: qsTrc("appshell", "联系客服")
-                            accentButton: root.currentPage === 9
-                            onClicked: root.currentPage = 9
+                            accentButton: root.currentPage === 6
+                            onClicked: root.currentPage = 6
                         }
                         FlatButton {
                             width: parent.width
                             text: qsTrc("appshell", "软件更新")
-                            accentButton: root.currentPage === 10
-                            onClicked: root.currentPage = 10
+                            accentButton: root.currentPage === 7
+                            onClicked: root.currentPage = 7
                         }
                         FlatButton {
                             width: parent.width
                             text: qsTrc("appshell", "通知中心")
-                            accentButton: root.currentPage === 11
-                            onClicked: root.currentPage = 11
+                            accentButton: root.currentPage === 8
+                            onClicked: root.currentPage = 8
                         }
 
                         Rectangle {
@@ -256,8 +210,8 @@ DockPage {
                         FlatButton {
                             width: parent.width
                             text: qsTrc("appshell", "设置")
-                            accentButton: root.currentPage === 12
-                            onClicked: root.currentPage = 12
+                            accentButton: root.currentPage === 9
+                            onClicked: root.currentPage = 9
                         }
                     }
                 }
@@ -560,209 +514,6 @@ DockPage {
                     }
                 }
 
-                Item {
-                    PageFrame {
-                        title: qsTrc("appshell", "我的工程")
-
-                        PageCard {
-                            ColumnLayout {
-                                spacing: 8
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "本地工程")
-                                    font: ui.theme.largeBodyBoldFont
-                                }
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "以下是你最近打开过的工程文件。")
-                                    font: ui.theme.bodyFont
-                                    opacity: 0.7
-                                }
-                            }
-                        }
-
-                        PageCard {
-                            ListView {
-                                id: projectsList
-                                model: recentProjectsModel
-                                width: parent.width
-                                implicitHeight: Math.min(420, projectsList.count * 56)
-                                clip: true
-
-                                delegate: Rectangle {
-                                    required property var score
-                                    width: ListView.view.width
-                                    height: 56
-                                    color: "transparent"
-
-                                    MouseArea {
-                                        anchors.fill: parent
-                                        cursorShape: Qt.PointingHandCursor
-                                        onClicked: scoresPageModel.openScore(score.path, score.name)
-                                    }
-
-                                    RowLayout {
-                                        anchors.fill: parent
-                                        anchors.margins: 8
-                                        spacing: 12
-
-                                        StyledTextLabel {
-                                            Layout.fillWidth: true
-                                            text: score.name || score.path || ""
-                                            font: ui.theme.bodyFont
-                                            elide: Text.ElideMiddle
-                                        }
-
-                                        StyledTextLabel {
-                                            text: score.timeSinceModified || ""
-                                            font: ui.theme.bodyFont
-                                            opacity: 0.6
-                                        }
-                                    }
-                                }
-                            }
-
-                        }
-
-                        PageCard {
-                            ColumnLayout {
-                                spacing: 8
-
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "云端备份")
-                                    font: ui.theme.largeBodyBoldFont
-                                }
-
-                                StyledTextLabel {
-                                    visible: accountModel.projectsList.length === 0
-                                    text: qsTrc("appshell", "暂无云端备份的工程。")
-                                    font: ui.theme.bodyFont
-                                    opacity: 0.7
-                                }
-
-                                Repeater {
-                                    model: accountModel.projectsList
-
-                                    delegate: RowLayout {
-                                        required property var modelData
-                                        width: parent ? parent.width : 0
-                                        height: 44
-                                        spacing: 12
-
-                                        StyledTextLabel {
-                                            Layout.fillWidth: true
-                                            text: modelData.name || ""
-                                            font: ui.theme.bodyFont
-                                            elide: Text.ElideMiddle
-                                        }
-
-                                        StyledTextLabel {
-                                            text: modelData.size ? (modelData.size / 1048576).toFixed(1) + " MB" : ""
-                                            font: ui.theme.bodyFont
-                                            opacity: 0.6
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                Item {
-                    PageFrame {
-                        title: qsTrc("appshell", "我的乐谱")
-
-                        StyledTextLabel {
-                            visible: accountModel.scoresList.length === 0
-                            text: qsTrc("appshell", "暂无云端乐谱，发布乐谱后会显示在这里。")
-                            font: ui.theme.bodyFont
-                            opacity: 0.7
-                        }
-
-                        PageCard {
-                            ColumnLayout {
-                                spacing: 0
-
-                                Repeater {
-                                    model: accountModel.scoresList
-
-                                    delegate: RowLayout {
-                                        required property var modelData
-                                        width: parent ? parent.width : 0
-                                        height: 48
-                                        spacing: 12
-
-                                        StyledTextLabel {
-                                            Layout.fillWidth: true
-                                            text: modelData.title || modelData.name || ""
-                                            font: ui.theme.bodyFont
-                                            elide: Text.ElideMiddle
-                                        }
-
-                                        StyledTextLabel {
-                                            text: modelData.visibility === "private"
-                                                  ? qsTrc("appshell", "私密")
-                                                  : qsTrc("appshell", "公开")
-                                            font: ui.theme.bodyFont
-                                            opacity: 0.7
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                Item {
-                    PageFrame {
-                        title: qsTrc("appshell", "制谱记录")
-
-                        PageCard {
-                            ColumnLayout {
-                                spacing: 6
-
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "最近制谱")
-                                    font: ui.theme.largeBodyBoldFont
-                                }
-
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "累计制谱数量：") + recordsModel.rowCount
-                                    font: ui.theme.bodyFont
-                                }
-
-                                Repeater {
-                                    model: recordsModel
-
-                                    delegate: RowLayout {
-                                        required property var score
-                                        width: parent ? parent.width : 0
-                                        height: 44
-                                        spacing: 12
-
-                                        MouseArea {
-                                            anchors.fill: parent
-                                            cursorShape: Qt.PointingHandCursor
-                                            onClicked: scoresPageModel.openScore(score.path, score.name)
-                                        }
-
-                                        StyledTextLabel {
-                                            Layout.fillWidth: true
-                                            text: score.name || score.path || ""
-                                            font: ui.theme.bodyFont
-                                            elide: Text.ElideMiddle
-                                        }
-
-                                        StyledTextLabel {
-                                            text: score.timeSinceModified || ""
-                                            font: ui.theme.bodyFont
-                                            opacity: 0.6
-                                        }
-                                    }
-                                }
-                            }
-
-                        }
-                    }
-                }
 
                 Item {
                     PageFrame {

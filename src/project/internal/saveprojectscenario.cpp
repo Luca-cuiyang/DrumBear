@@ -196,19 +196,13 @@ Promise<Ret> SaveProjectScenario::saveProject(SaveMode saveMode, SaveLocationTyp
         }
 
         const bool isExistingSave = saveMode == SaveMode::Save && !project->isNewlyCreated();
-        const bool wantNewCloudSave = saveLocationType == SaveLocationType::Cloud && !project->isCloudProject();
-        if (isExistingSave && !wantNewCloudSave) {
-            // Under these conditions, we can save without asking...
-            SaveLocation location;
-            if (project->isCloudProject()) {
-                location = SaveLocation(SaveLocationType::Cloud, project->cloudInfo());
-            } else {
-                location = SaveLocation(SaveLocationType::Local);
-            }
-            return saveProjectAt(location, saveMode, force);
+        if (isExistingSave) {
+            // 默认直接保存到本地
+            return saveProjectAt(SaveLocation(SaveLocationType::Local), saveMode, force);
         }
 
-        return askSaveLocation(project, saveMode, saveLocationType)
+        // 新文件：直接本地文件选择器，不再弹“本地/云端”选择
+        return askSaveLocation(project, saveMode, SaveLocationType::Local)
                .then<Ret>(this, [this, saveMode, force](const RetVal<SaveLocation>& response, auto resolve) {
             if (!response.ret) {
                 LOGE() << response.ret.toString();
