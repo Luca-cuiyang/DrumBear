@@ -41770,4 +41770,120 @@ failed: %2</source>
         </message>
     </context>
 
+    <context>
+        <name>engraving/stafftypes</name>
+        <message>
+            <source>Standard</source>
+            <translation>标准</translation>
+        </message>
+        <message>
+            <source>Jianpu</source>
+            <translation>简谱</translation>
+        </message>
+        <message>
+            <source>Perc. 1 line</source>
+            <translation>单线鼓谱</translation>
+        </message>
+        <message>
+            <source>Perc. 2 lines</source>
+            <translation>二线鼓谱</translation>
+        </message>
+        <message>
+            <source>Perc. 3 lines</source>
+            <translation>三线鼓谱</translation>
+        </message>
+        <message>
+            <source>Perc. 5 lines</source>
+            <translation>五线鼓谱</translation>
+        </message>
+        <message>
+            <source>Tab. 6-str. simple</source>
+            <translation>6弦简易指法谱</translation>
+        </message>
+        <message>
+            <source>Tab. 6-str. common</source>
+            <translation>6弦常用指法谱</translation>
+        </message>
+        <message>
+            <source>Tab. 6-str. full</source>
+            <translation>6弦完整指法谱</translation>
+        </message>
+        <message>
+            <source>Tab. 4-str. simple</source>
+            <translation>4弦简易指法谱</translation>
+        </message>
+        <message>
+            <source>Tab. 4-str. common</source>
+            <translation>4弦常用指法谱</translation>
+        </message>
+        <message>
+            <source>Tab. 4-str. full</source>
+            <translation>4弦完整指法谱</translation>
+        </message>
+        <message>
+            <source>Tab. 5-str. simple</source>
+            <translation>5弦简易指法谱</translation>
+        </message>
+        <message>
+            <source>Tab. 5-str. common</source>
+            <translation>5弦常用指法谱</translation>
+        </message>
+        <message>
+            <source>Tab. 5-str. full</source>
+            <translation>5弦完整指法谱</translation>
+        </message>
+        <message>
+            <source>Tab. ukulele</source>
+            <translation>尤克里里指法谱</translation>
+        </message>
+        <message>
+            <source>Tab. balalaika</source>
+            <translation>巴拉莱卡琴指法谱</translation>
+        </message>
+        <message>
+            <source>Tab. dulcimer</source>
+            <translation>扬琴指法谱</translation>
+        </message>
+        <message>
+            <source>Tab. 6-str. Italian</source>
+            <translation>意大利6弦指法谱</translation>
+        </message>
+        <message>
+            <source>Tab. 6-str. French</source>
+            <translation>法国6弦指法谱</translation>
+        </message>
+        <message>
+            <source>Tab. 7-str. common</source>
+            <translation>7弦常用指法谱</translation>
+        </message>
+        <message>
+            <source>Tab. 8-str. common</source>
+            <translation>8弦常用指法谱</translation>
+        </message>
+        <message>
+            <source>Tab. 9-str. common</source>
+            <translation>9弦常用指法谱</translation>
+        </message>
+        <message>
+            <source>Tab. 10-str. common</source>
+            <translation>10弦常用指法谱</translation>
+        </message>
+        <message>
+            <source>Tab. 7-str. simple</source>
+            <translation>7弦简易指法谱</translation>
+        </message>
+        <message>
+            <source>Tab. 8-str. simple</source>
+            <translation>8弦简易指法谱</translation>
+        </message>
+        <message>
+            <source>Tab. 9-str. simple</source>
+            <translation>9弦简易指法谱</translation>
+        </message>
+        <message>
+            <source>Tab. 10-str. simple</source>
+            <translation>10弦简易指法谱</translation>
+        </message>
+    </context>
+
 </TS>

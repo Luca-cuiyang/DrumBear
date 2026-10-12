@@ -1775,7 +1775,7 @@ void ChordLayout::layoutOctaveDots(Chord* item, LayoutContext& ctx)
 
     const StaffType* st = staff->staffTypeForElement(item);
     double height = st->jianpuBoxH() * item->magS();
-    int baseOctave = 3; // Default base octave for Jianpu is C3
+    int baseOctave = 4; // 中音 1 = C4（中央C）无点，符合 GB/T 46845-2025 简谱八度基准
 
     for (Note* note : item->notes()) {
         int dots = 0;
