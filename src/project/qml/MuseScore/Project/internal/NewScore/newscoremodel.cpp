@@ -33,6 +33,8 @@
 #include "engraving/dom/stafftype.h"
 #include "engraving/types/fraction.h"
 #include "notation/imasternotation.h"
+#include "notation/inotation.h"
+#include "notation/inotationundostack.h"
 #include "notation/inotationparts.h"
 
 using namespace mu::project;
@@ -105,11 +107,18 @@ bool NewScoreModel::createJianpuScore()
     // 将谱表类型设为简谱（首调）
     auto score = project->masterNotation()->masterScore();
     auto parts = project->masterNotation()->parts();
+    auto undoStack = project->masterNotation()->notation()->undoStack();
+    if (undoStack) {
+        undoStack->lock();
+    }
     for (engraving::staff_idx_t i = 0; i < score->nstaves(); ++i) {
         engraving::Staff* staff = score->staff(i);
         if (staff) {
             parts->setStaffType(staff->id(), engraving::StaffTypes::JIANPU);
         }
+    }
+    if (undoStack) {
+        undoStack->unlock();
     }
 
     globalContext()->setCurrentProject(project);
