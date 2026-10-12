@@ -36,6 +36,8 @@
 #include "engraving/dom/sig.h"
 #include "engraving/dom/staff.h"
 #include "engraving/dom/stafftype.h"
+#include "engraving/dom/pitchspelling.h"
+#include "engraving/dom/input.h"
 #include "engraving/types/fraction.h"
 #include "engraving/editing/noteinput.h"
 
@@ -590,6 +592,14 @@ void NotationActionController::init()
     registerCommand(TOGGLE_AUTOMATION_COMMAND, &Controller::toggleAutomation);
     registerCommandWithParams(SELECT_AUTOMATION_TYPE_COMMAND, &Controller::selectAutomationType);
     registerCommand(CREATE_JIANPU_LINKED_STAFF_COMMAND, &Controller::createJianpuLinkedStaff);
+    registerCommand(JIANPU_INPUT_0_COMMAND, [this]() { addJianpuDigit(0); });
+    registerCommand(JIANPU_INPUT_1_COMMAND, [this]() { addJianpuDigit(1); });
+    registerCommand(JIANPU_INPUT_2_COMMAND, [this]() { addJianpuDigit(2); });
+    registerCommand(JIANPU_INPUT_3_COMMAND, [this]() { addJianpuDigit(3); });
+    registerCommand(JIANPU_INPUT_4_COMMAND, [this]() { addJianpuDigit(4); });
+    registerCommand(JIANPU_INPUT_5_COMMAND, [this]() { addJianpuDigit(5); });
+    registerCommand(JIANPU_INPUT_6_COMMAND, [this]() { addJianpuDigit(6); });
+    registerCommand(JIANPU_INPUT_7_COMMAND, [this]() { addJianpuDigit(7); });
 
     // TAB
     registerCommand(SET_DURATION_WHOLE_TAB_COMMAND, [this]() { setDuration(DurationType::V_WHOLE); });
@@ -1064,6 +1074,14 @@ void NotationActionController::init()
             { "hammer-on-pull-off", ADD_HAMMER_ON_PULL_OFF_COMMAND, {} },
             { "toggle-automation", TOGGLE_AUTOMATION_COMMAND, {} },
             { "create-jianpu-linked-staff", CREATE_JIANPU_LINKED_STAFF_COMMAND, {} },
+            { "jianpu-input-0", JIANPU_INPUT_0_COMMAND, {} },
+            { "jianpu-input-1", JIANPU_INPUT_1_COMMAND, {} },
+            { "jianpu-input-2", JIANPU_INPUT_2_COMMAND, {} },
+            { "jianpu-input-3", JIANPU_INPUT_3_COMMAND, {} },
+            { "jianpu-input-4", JIANPU_INPUT_4_COMMAND, {} },
+            { "jianpu-input-5", JIANPU_INPUT_5_COMMAND, {} },
+            { "jianpu-input-6", JIANPU_INPUT_6_COMMAND, {} },
+            { "jianpu-input-7", JIANPU_INPUT_7_COMMAND, {} },
             { "string-up", GOTO_STRING_ABOVE_COMMAND, {} },
             { "string-down", GOTO_STRING_BELOW_COMMAND, {} },
             { "move-up", MOVE_UP_COMMAND, {} },
@@ -3315,6 +3333,48 @@ void NotationActionController::createJianpuLinkedStaff()
             delete linkedStaff;
         }
     }
+}
+
+void NotationActionController::addJianpuDigit(int digit)
+{
+    TRACEFUNC;
+
+    if (digit < 0 || digit > 7) {
+        return;
+    }
+
+    // 0 = 休止符，行为与现有「0」键一致（切换休止符模式）
+    if (digit == 0) {
+        toggleRest();
+        return;
+    }
+
+    engraving::Score* score = currentNotationScore();
+    if (!score) {
+        return;
+    }
+
+    const engraving::InputState& is = score->inputState();
+    if (!is.isValid()) {
+        return;
+    }
+
+    engraving::staff_idx_t staffIdx = is.track() / engraving::VOICES;
+    const engraving::Staff* staff = score->staff(staffIdx);
+    if (!staff) {
+        return;
+    }
+
+    // 首调换算：数字 1-7 → 调内音级 → 音名（复用现有 addNote，自动应用调号与八度）
+    engraving::Key key = staff->keySigEvent(is.tick()).key();
+    int tpc = engraving::function2Tpc(muse::String::number(digit), key);
+    if (tpc == engraving::Tpc::TPC_INVALID) {
+        return;
+    }
+
+    int step = engraving::tpc2step(tpc);
+    NoteName noteName = static_cast<NoteName>(step);
+    addNote(noteName, NoteAddingMode::NextChord);
 }
 
 muse::Ret NotationActionController::selectAutomationType(const muse::rcommand::Params& params)
