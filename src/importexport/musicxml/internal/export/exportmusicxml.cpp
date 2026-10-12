@@ -382,7 +382,7 @@ private:
     int findTrill(const Trill* tl) const;
     void chord(Chord* chord, staff_idx_t staff, const std::vector<Lyrics*>& ll, bool useDrumset);
     void rest(Rest* chord, staff_idx_t staff, const std::vector<Lyrics*>& ll);
-    void clef(staff_idx_t staff, const ClefType ct, const String& extraAttributes = u"");
+    void clef(staff_idx_t staff, const ClefType ct, const String& extraAttributes = u"", bool isJianpu = false);
     void timesig(const TimeSig* tsig, staff_idx_t staff);
     void keysig(const KeySig* ks, ClefType ct, staff_idx_t staff = 0);
     void barlineLeft(const Measure* const m, const track_idx_t track);
@@ -2578,7 +2578,7 @@ static const MusicXmlClefInfo findClefInfoByType(const ClefType& v)
     return *it;
 }
 
-void ExportMusicXml::clef(staff_idx_t staff, const ClefType ct, const String& extraAttributes)
+void ExportMusicXml::clef(staff_idx_t staff, const ClefType ct, const String& extraAttributes, bool isJianpu)
 {
     clefDebug("ExportMusicXml::clef(staff %zu, clef %hhd)", staff, ct);
 
@@ -2589,6 +2589,13 @@ void ExportMusicXml::clef(staff_idx_t staff, const ClefType ct, const String& ex
     tagName += extraAttributes;
     m_attr.doAttr(m_xml, true);
     m_xml.startElementRaw(tagName);
+
+    if (isJianpu) {
+        // MusicXML 4.0 简谱谱号：<sign>jianpu</sign>，无 line / octave-change
+        m_xml.tag("sign", u"jianpu");
+        m_xml.endElement();
+        return;
+    }
 
     MusicXmlClefInfo info = findClefInfoByType(ct);
 
@@ -7643,24 +7650,30 @@ void ExportMusicXml::exportDefaultClef(const Part* const part, const Measure* co
                 track_idx_t track = partStartTrack + VOICES * i;
 
                 if (clefSeg->element(track) == nullptr) {
-                    ClefType ct { ClefType::G };
-                    String stafftype;
-                    switch (part->staff(i)->staffType(Fraction(0, 1))->group()) {
-                    case StaffGroup::TAB:
-                        ct = ClefType::TAB;
-                        stafftype = u"tab";
-                        break;
-                    case StaffGroup::STANDARD:
-                        ct = ClefType::G;
-                        stafftype = u"std";
-                        break;
-                    case StaffGroup::PERCUSSION:
-                        ct = ClefType::PERC;
-                        stafftype = u"perc";
-                        break;
+                    const Staff* staff = part->staff(i);
+                    if (staff->isJianpuStaff(Fraction(0, 1))) {
+                        LOGD("no clef found in first measure track %zu (stafftype jianpu)", track);
+                        clef(sstaff, ClefType::G, u" print-object=\"no\"", true);
+                    } else {
+                        ClefType ct { ClefType::G };
+                        String stafftype;
+                        switch (staff->staffType(Fraction(0, 1))->group()) {
+                        case StaffGroup::TAB:
+                            ct = ClefType::TAB;
+                            stafftype = u"tab";
+                            break;
+                        case StaffGroup::STANDARD:
+                            ct = ClefType::G;
+                            stafftype = u"std";
+                            break;
+                        case StaffGroup::PERCUSSION:
+                            ct = ClefType::PERC;
+                            stafftype = u"perc";
+                            break;
+                        }
+                        LOGD("no clef found in first measure track %zu (stafftype %s)", track, muPrintable(stafftype));
+                        clef(sstaff, ct, u" print-object=\"no\"");
                     }
-                    LOGD("no clef found in first measure track %zu (stafftype %s)", track, muPrintable(stafftype));
-                    clef(sstaff, ct, u" print-object=\"no\"");
                 }
             }
         }
@@ -7739,7 +7752,8 @@ void ExportMusicXml::findAndExportClef(const Measure* const m, const int staves,
                         || (cle->staff() && !cle->staff()->staffType(cle->tick())->genClef())) {
                         clefAttr += u" print-object=\"no\"";
                     }
-                    clef(sstaff, cle->clefType(), clefAttr);
+                    bool isJianpu = cle->staff() && cle->staff()->isJianpuStaff(cle->tick());
+                    clef(sstaff, cle->clefType(), clefAttr, isJianpu);
                 } else {
                     clefDebug("exportxml: clef not exported");
                 }
