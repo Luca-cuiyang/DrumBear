@@ -306,6 +306,21 @@ StyledPopupView {
                 }
             }
 
+            FlatButton {
+                width: parent.width
+
+                navigation.panel: root.navigationPanel
+                navigation.row: 27
+
+                text: qsTrc("layoutpanel/staffsettingspopup", "转简谱（创建关联简谱谱表）")
+                accentButton: true
+
+                onClicked: {
+                    settingsModel.createJianpuLinkedStaff()
+                    root.close()
+                }
+            }
+
             StyledTextLabel {
                 width: parent.width
 
