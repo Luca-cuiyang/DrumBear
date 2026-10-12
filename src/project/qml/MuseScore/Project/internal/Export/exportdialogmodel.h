@@ -44,6 +44,8 @@
 #include "importexport/lyricsexport/ilyricsexportconfiguration.h"
 #include "importexport/mnx/imnxconfiguration.h"
 
+#include "cloud/dbscoreauthorization/idbscoreauthorizationservice.h"
+
 #include "iexportprojectscenario.h"
 #include "inotationwritersregister.h"
 #include "iprojectconfiguration.h"
@@ -117,6 +119,8 @@ class ExportDialogModel : public QAbstractListModel, public QQmlParserStatus, pu
     Q_PROPERTY(bool isFFmpegAvailable READ isFFmpegAvailable NOTIFY isFFmpegAvailableChanged)
     Q_PROPERTY(QString ffmpegDir READ ffmpegDir WRITE setFFmpegDir NOTIFY ffmpegDirChanged)
 
+    Q_PROPERTY(bool mp4ExportLocked READ mp4ExportLocked NOTIFY mp4ExportLockedChanged)
+
     QML_ELEMENT
 
     muse::GlobalInject<iex::musicxml::IMusicXmlConfiguration> musicXmlConfiguration;
@@ -130,6 +134,7 @@ class ExportDialogModel : public QAbstractListModel, public QQmlParserStatus, pu
     muse::GlobalInject<iex::imagesexport::IImagesExportConfiguration> imageExportConfiguration;
     muse::GlobalInject<INotationWritersRegister> writers;
     muse::GlobalInject<muse::media::IVideoEncoderResolver> videoEncoderResolver;
+    muse::GlobalInject<muse::cloud::IDbScoreAuthorizationService> authorization;
     muse::ContextInject<muse::IInteractive> interactive = { this };
     muse::ContextInject<context::IGlobalContext> context = { this };
     muse::ContextInject<IExportProjectScenario> exportProjectScenario = { this };
@@ -257,6 +262,9 @@ public:
     QString ffmpegDir() const;
     void setFFmpegDir(const QString& dir);
 
+    bool mp4ExportLocked() const;
+    Q_INVOKABLE void openMembershipPage();
+
     Q_INVOKABLE void updateExportInfo();
 
 signals:
@@ -308,6 +316,8 @@ signals:
 
     void isFFmpegAvailableChanged();
     void ffmpegDirChanged();
+
+    void mp4ExportLockedChanged();
 
 private:
     void classBegin() override;

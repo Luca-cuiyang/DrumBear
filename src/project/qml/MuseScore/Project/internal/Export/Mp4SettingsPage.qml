@@ -30,13 +30,55 @@ ExportSettingsPage {
     id: root
 
     property bool isFFmpegAvailable: Boolean(root.model) && root.model.isFFmpegAvailable
+    readonly property bool mp4ExportLocked: Boolean(root.model) && root.model.mp4ExportLocked
 
-    isExportAvailable: root.isFFmpegAvailable
+    isExportAvailable: root.isFFmpegAvailable && !root.mp4ExportLocked
 
     Loader {
         width: parent.width
 
-        sourceComponent: root.isFFmpegAvailable ? videoSettingsComp : ffmpegMissingComp
+        sourceComponent: root.mp4ExportLocked ? lockedComp
+                         : root.isFFmpegAvailable ? videoSettingsComp
+                         : ffmpegMissingComp
+    }
+
+    Component {
+        id: lockedComp
+
+        Column {
+            width: parent.width
+            spacing: 16
+
+            StyledTextLabel {
+                width: parent.width
+                text: qsTrc("project/export", "导出 MP4 视频需要开通会员")
+                font: ui.theme.bodyBoldFont
+                horizontalAlignment: Text.AlignHCenter
+            }
+
+            StyledTextLabel {
+                width: parent.width
+                text: qsTrc("project/export", "免费试用与已到期会员不支持导出 MP4 视频。开通年度会员后即可导出动态乐谱视频。")
+                horizontalAlignment: Text.AlignLeft
+                wrapMode: Text.WordWrap
+            }
+
+            FlatButton {
+                width: parent.width
+                text: qsTrc("project/export", "开通会员")
+                accentButton: true
+
+                navigation.name: "ExportOpenMembership"
+                navigation.panel: root.navigationPanel
+                navigation.row: root.navigationOrder
+
+                onClicked: {
+                    if (root.model) {
+                        root.model.openMembershipPage()
+                    }
+                }
+            }
+        }
     }
 
     Component {

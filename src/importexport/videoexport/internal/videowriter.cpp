@@ -101,6 +101,10 @@ bool VideoWriter::supportsUnitType(UnitType unitType) const
 
 muse::Ret VideoWriter::write(INotationPtr notation, muse::io::IODevice& device, const Options& options)
 {
+    if (!authorization() || !authorization()->hasProAccess()) {
+        return make_ret(muse::Ret::Code::UnknownError, std::string("导出 MP4 视频需要开通会员"));
+    }
+
     std::string filePath = device.meta("file_path");
     IF_ASSERT_FAILED(!filePath.empty()) {
         return make_ret(muse::Ret::Code::InternalError);

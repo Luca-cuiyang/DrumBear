@@ -24,8 +24,10 @@
 
 #include <algorithm>
 
+#include <QDesktopServices>
 #include <QItemSelectionModel>
 #include <QTimer>
+#include <QUrl>
 
 #include "notation/iexcerptnotation.h" // IWYU pragma: keep
 #include "notation/imasternotation.h"
@@ -154,6 +156,12 @@ void ExportDialogModel::classBegin()
 void ExportDialogModel::init()
 {
     TRACEFUNC;
+
+    if (authorization()) {
+        authorization()->stateChanged().onNotify(this, [this]() {
+            emit mp4ExportLockedChanged();
+        });
+    }
 
     const ExportInfo& info = exportProjectScenario()->exportInfo();
     if (info.id.isEmpty()) {
@@ -303,6 +311,28 @@ bool ExportDialogModel::isFormatSelected(const QString& formatSuffix) const
     return m_selectedExportType.suffixes.contains(formatSuffix);
 }
 
+bool ExportDialogModel::mp4ExportLocked() const
+{
+    if (!isFormatSelected("mp4")) {
+        return false;
+    }
+
+    if (!authorization()) {
+        return true;
+    }
+
+    // 试用期会员与正式会员（在有效期内）都可导出 MP4；
+    // 试用到期、会员过期、停用、未登录才锁定。
+    return !authorization()->hasProAccess();
+}
+
+void ExportDialogModel::openMembershipPage()
+{
+    if (authorization()) {
+        QDesktopServices::openUrl(QUrl(authorization()->purchasePageUrl()));
+    }
+}
+
 int ExportDialogModel::selectionLength() const
 {
     return m_selectionModel->selectedIndexes().size();
@@ -327,6 +357,7 @@ void ExportDialogModel::setExportType(const ExportType& type)
     m_selectedExportType = type;
 
     emit selectedExportTypeChanged(type.toMap());
+    emit mp4ExportLockedChanged();
     emit availableSampleFormatsChanged();
     emit selectedSampleFormatChanged();
 
@@ -421,6 +452,13 @@ void ExportDialogModel::setUnitType(UnitType unitType)
 
 bool ExportDialogModel::exportScores()
 {
+    if (mp4ExportLocked()) {
+        interactive()->infoSync(
+            muse::trc("project/export", "无法导出视频"),
+            muse::trc("project/export", "导出 MP4 视频需要开通会员。开通年度会员后即可导出动态乐谱视频。"));
+        return false;
+    }
+
     INotationPtrList notations;
 
     for (const QModelIndex& index : m_selectionModel->selectedIndexes()) {
