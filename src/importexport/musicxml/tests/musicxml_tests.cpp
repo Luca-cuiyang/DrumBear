@@ -29,6 +29,8 @@
 #include "engraving/dom/jump.h"
 #include "engraving/dom/marker.h"
 #include "engraving/dom/masterscore.h"
+#include "engraving/dom/staff.h"
+#include "engraving/types/fraction.h"
 
 #include "settings.h"
 #include "importexport/musicxml/imusicxmlconfiguration.h"
@@ -1518,4 +1520,27 @@ TEST_F(MusicXml_Tests, jianpuExportWritesJianpuClef)
     EXPECT_NE(content.find("<sign>jianpu</sign>"), std::string::npos);
 
     delete score;
+}
+
+// 自检：导出带 jianpu 谱号的 MusicXML 后重新导入，谱表应被识别为简谱
+TEST_F(MusicXml_Tests, jianpuRoundTripImportsAsJianpuStaff)
+{
+    MScore::debugMode = true;
+
+    MasterScore* score = ScoreRW::readScore(u"data/jianpuGmajor.mscx");
+    ASSERT_TRUE(score);
+    score->doLayout();
+
+    String outName = u"jianpuGmajor_roundtrip.xml";
+    ASSERT_TRUE(saveXml(score, outName));
+    delete score;
+
+    MasterScore* reimported = readScore(outName, true);
+    ASSERT_TRUE(reimported);
+
+    const Staff* staff = reimported->staff(0);
+    ASSERT_TRUE(staff);
+    EXPECT_TRUE(staff->isJianpuStaff(Fraction(0, 1)));
+
+    delete reimported;
 }

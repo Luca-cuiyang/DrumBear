@@ -262,6 +262,7 @@ Promise<Ret> OpenProjectScenario::openProject(const ProjectFile& file)
     if (file.isNull()) {
         return selectScoreOpeningFile().then<Ret>(this, [this](const io::path_t& askedPath, auto resolve) {
             if (askedPath.empty()) {
+                m_importMidiAsJianpu = false;
                 return resolve(make_ret(Ret::Code::Cancel));
             }
 
@@ -312,6 +313,9 @@ Promise<Ret> OpenProjectScenario::openProject(const muse::io::path_t& givenPath,
         if (globalContext()->currentProject()) {
             QStringList args;
             args << actualPath.toQString();
+
+            // 新窗口不会继承本次「导入 MIDI 为简谱」的一次性标记，这里重置以免污染当前窗口的下一次打开
+            m_importMidiAsJianpu = false;
 
             if (!displayNameOverride.isEmpty()) {
                 args << "--score-display-name-override" << displayNameOverride;
@@ -415,6 +419,9 @@ Promise<Ret> OpenProjectScenario::doOpenProject(const muse::io::path_t& filePath
     TRACEFUNC;
 
     return loadProject(filePath).then<Ret>(this, [this, filePath](const RetVal<INotationProjectPtr>& rv, auto resolve) {
+        const bool importAsJianpu = m_importMidiAsJianpu;
+        m_importMidiAsJianpu = false;
+
         if (!rv.ret) {
             return resolve(rv.ret);
         }
@@ -428,14 +435,16 @@ Promise<Ret> OpenProjectScenario::doOpenProject(const muse::io::path_t& filePath
 
         globalContext()->setCurrentProject(project);
 
-        if (m_importMidiAsJianpu) {
-            m_importMidiAsJianpu = false;
+        if (importAsJianpu) {
             auto score = project->masterNotation()->masterScore();
             auto parts = project->masterNotation()->parts();
             for (engraving::staff_idx_t i = 0; i < score->nstaves(); ++i) {
                 engraving::Staff* staff = score->staff(i);
                 if (staff) {
-                    parts->setStaffType(staff->id(), engraving::StaffTypes::JIANPU);
+                    // 只把音高型谱表（五线谱）转成简谱，跳过打击乐等非音高谱表
+                    if (staff->staffType(engraving::Fraction(0, 1))->group() == engraving::StaffGroup::STANDARD) {
+                        parts->setStaffType(staff->id(), engraving::StaffTypes::JIANPU);
+                    }
                 }
             }
         }

@@ -29,6 +29,7 @@
 #include "modularity/ioc.h"
 #include "iprojectconfiguration.h"
 #include "project/iprojectcreator.h"
+#include "project/iopenprojectscenario.h"
 #include "actions/iactionsdispatcher.h"
 #include "interactive/iplatforminteractive.h"
 #include "notation/iinstrumentsrepository.h"
@@ -49,6 +50,7 @@ class ScoresPageModel : public QObject, public muse::Contextable, public muse::a
     muse::GlobalInject<IProjectCreator> notationCreator;
     muse::GlobalInject<muse::IPlatformInteractive> platformInteractive;
     muse::GlobalInject<notation::IInstrumentsRepository> instrumentsRepository;
+    muse::ContextInject<IOpenProjectScenario> openProjectScenario = { this };
     muse::ContextInject<muse::actions::IActionsDispatcher> dispatcher = { this };
     muse::ContextInject<context::IGlobalContext> globalContext = { this };
 

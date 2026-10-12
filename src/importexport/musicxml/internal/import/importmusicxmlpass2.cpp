@@ -6282,6 +6282,10 @@ void MusicXmlParserPass2::clef(const String& partId, Measure* measure, const Fra
     } else if (c == u"TAB") {
         clef = ClefType::TAB;
         st= StaffTypes::TAB_DEFAULT;
+    } else if (c == u"jianpu") {
+        // MusicXML 4.0 简谱谱号：无实际谱号图形，仅把谱表类型设为简谱
+        clef = ClefType::G;
+        st = StaffTypes::JIANPU;
     } else {
         LOGD("clef: unknown clef <sign=%s line=%d oct ch=%d>", muPrintable(c), line, i);      // TODO
     }
