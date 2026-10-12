@@ -2262,7 +2262,7 @@ const UiActionList NotationUiActions::s_actions = {
              mu::context::CTX_NOTATION_OPENED,
              TranslatableString("action", "简谱输入"),
              TranslatableString("action", "切换简谱数字输入模式"),
-             IconCode::Code::NONE,
+             IconCode::Code::NOTE_HEAD_QUARTER,
              Checkable::Yes
              ),
     UiAction("note-input-realtime-auto",

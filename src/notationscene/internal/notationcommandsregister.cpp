@@ -297,7 +297,7 @@ static const std::vector<CommandInfo> s_commandInfos = {
         TranslatableString("action", "简谱输入"),
         TranslatableString("action", "切换简谱数字输入模式"),
         InputSchema(),
-        Decoration(IconCode::Code::NONE, rcommand::Checkable::Yes)
+        Decoration(IconCode::Code::NOTE_HEAD_QUARTER, rcommand::Checkable::Yes)
     },
     CommandInfo{
         TOGGLE_NOTE_INPUT_REALTIME_AUTO_COMMAND,
