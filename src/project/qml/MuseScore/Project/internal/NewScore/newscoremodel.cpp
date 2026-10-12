@@ -28,6 +28,13 @@
 
 #include "types/projectcreateoptions.h"
 
+#include "engraving/dom/masterscore.h"
+#include "engraving/dom/staff.h"
+#include "engraving/dom/stafftype.h"
+#include "engraving/types/fraction.h"
+#include "notation/imasternotation.h"
+#include "notation/inotationparts.h"
+
 using namespace mu::project;
 using namespace mu::notation;
 using namespace muse;
@@ -67,6 +74,45 @@ bool NewScoreModel::createScore(const QVariant& info)
     bool isScoreCreatedFromInstruments = options.templatePath.empty();
     updatePreferredScoreCreationMode(isScoreCreatedFromInstruments);
 
+    return true;
+}
+
+bool NewScoreModel::createJianpuScore()
+{
+    ProjectCreateOptions options;
+    options.title = muse::qtrc("project", "简谱");
+
+    ScoreCreateOptions& scoreOptions = options.scoreOptions;
+    scoreOptions.withTempo = false;
+    scoreOptions.globalTimesig = engraving::Fraction(4, 4);
+    scoreOptions.timesigType = engraving::TimeSigType::NORMAL;
+    scoreOptions.key = engraving::Key::C;
+    scoreOptions.totalMeasures = 32;
+
+    PartInstrument pi;
+    pi.instrumentTemplate = instrumentsRepository()->instrumentTemplate(u"voice");
+    pi.isExistingPart = false;
+    pi.isSoloist = false;
+    scoreOptions.parts << pi;
+
+    auto project = notationCreator()->newProject(iocContext());
+    Ret ret = project->createNew(options);
+    if (!ret) {
+        LOGE() << ret.toString();
+        return false;
+    }
+
+    // 将谱表类型设为简谱（首调）
+    auto score = project->masterNotation()->masterScore();
+    auto parts = project->masterNotation()->parts();
+    for (engraving::staff_idx_t i = 0; i < score->nstaves(); ++i) {
+        engraving::Staff* staff = score->staff(i);
+        if (staff) {
+            parts->setStaffType(staff->id(), engraving::StaffTypes::JIANPU);
+        }
+    }
+
+    globalContext()->setCurrentProject(project);
     return true;
 }
 

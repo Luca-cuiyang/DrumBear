@@ -50,6 +50,7 @@ public:
 
     Q_INVOKABLE QString preferredScoreCreationMode() const;
     Q_INVOKABLE bool createScore(const QVariant& info);
+    Q_INVOKABLE bool createJianpuScore();
 
 private:
     project::ProjectCreateOptions parseOptions(const QVariantMap& info) const;
