@@ -1284,6 +1284,38 @@
         <translation>文本样式</translation>
     </message>
     <message>
+        <source>Jianpu</source>
+        <translation>简谱</translation>
+    </message>
+    <message>
+        <source>Vertical distance:</source>
+        <translation>上下间距：</translation>
+    </message>
+    <message>
+        <source>Octave dot radius:</source>
+        <translation>高低音点大小：</translation>
+    </message>
+    <message>
+        <source>Octave dot distance:</source>
+        <translation>高低音点间距：</translation>
+    </message>
+    <message>
+        <source>Diminution beam thickness:</source>
+        <translation>减时线粗细：</translation>
+    </message>
+    <message>
+        <source>Diminution beam distance:</source>
+        <translation>减时线间距：</translation>
+    </message>
+    <message>
+        <source>Diminution beam placement:</source>
+        <translation>减时线位置：</translation>
+    </message>
+    <message>
+        <source>Duration line thickness:</source>
+        <translation>时长线粗细：</translation>
+    </message>
+    <message>
         <location filename="../../src/notationscene/widgets/editstyle.ui" line="304"/>
         <source>Musical symbols font:</source>
         <translation>音乐记号字体：</translation>
