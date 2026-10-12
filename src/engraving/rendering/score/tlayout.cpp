@@ -3543,6 +3543,15 @@ static String jianpuTonicName(Key key)
     return names[idx];
 }
 
+static String jianpuDigitFromFunction(const String& accName, const String& stepName)
+{
+    // 首调简谱的变化音用 ♭/♯ 前缀：如 ♭7、♯4、♭♭3、♯♯5
+    String accidental = accName;
+    accidental.replace(u'b', u'♭');
+    accidental.replace(u'#', u'♯');
+    return accidental + stepName;
+}
+
 void TLayout::layoutKeySig(const KeySig* item, KeySig::LayoutData* ldata, const LayoutConfiguration& conf)
 {
     LAYOUT_CALL_ITEM(item);
@@ -4253,7 +4262,7 @@ void TLayout::layoutNote(const Note* item, Note::LayoutData* ldata)
         KeySigEvent ks = st->keySigEvent(item->chord()->tick());
         String accName, stepName;
         tpc2Function(item->tpc(), ks.key(), accName, stepName);
-        const_cast<Note*>(item)->setJianpuDigit(String(u"%1").arg(stepName));
+        const_cast<Note*>(item)->setJianpuDigit(jianpuDigitFromFunction(accName, stepName));
 
         double width = item->headWidth();
         double height = jianpu->jianpuBoxH() * item->magS();
@@ -4908,7 +4917,7 @@ void TLayout::layoutShadowNote(ShadowNote* item, LayoutContext& ctx)
                     String accName, stepName;
                     KeySigEvent ks = staff->keySigEvent(item->tick());
                     tpc2Function(tpc, ks.key(), accName, stepName);
-                    item->setJianpuDigit(String(u"%1").arg(stepName));
+                    item->setJianpuDigit(jianpuDigitFromFunction(accName, stepName));
 
                     Interval transpose = item->part()->instrument(item->tick())->transpose();
                     int alteration = static_cast<int>(tpc2alter(tpc));
