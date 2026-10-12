@@ -2929,6 +2929,13 @@ static const std::vector<CommandInfo> s_commandInfos = {
         Decoration(IconCode::Code::AUTOMATION, rcommand::Checkable::Yes)
     },
     CommandInfo {
+        CREATE_JIANPU_LINKED_STAFF_COMMAND,
+        TranslatableString("action", "转简谱"),
+        TranslatableString("action", "为当前谱表创建关联简谱谱表"),
+        InputSchema(),
+        Decoration(IconCode::Code::NONE, rcommand::Checkable::No)
+    },
+    CommandInfo {
         SELECT_AUTOMATION_TYPE_COMMAND,
         TranslatableString::untranslatable("Automation type"),
         TranslatableString::untranslatable("Select automation type"),

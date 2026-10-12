@@ -55,6 +55,7 @@ static const ActionCode SHOW_IRREGULAR_CODE("show-irregular");
 
 static const ActionCode TOGGLE_CONCERT_PITCH_CODE("concert-pitch");
 static const ActionCode TOGGLE_AUTOMATION_CODE("toggle-automation");
+static const ActionCode CREATE_JIANPU_LINKED_STAFF_CODE("create-jianpu-linked-staff");
 
 // avoid translation duplication
 
@@ -2711,6 +2712,14 @@ const UiActionList NotationUiActions::s_actions = {
              TranslatableString("action", "Toggle automation"),
              IconCode::Code::AUTOMATION,
              Checkable::Yes
+             ),
+    UiAction(CREATE_JIANPU_LINKED_STAFF_CODE,
+             mu::context::UiCtxProjectOpened,
+             mu::context::CTX_NOTATION_OPENED,
+             TranslatableString("action", "转简谱"),
+             TranslatableString("action", "为当前谱表创建关联简谱谱表"),
+             IconCode::Code::NONE,
+             Checkable::No
              ),
 };
 

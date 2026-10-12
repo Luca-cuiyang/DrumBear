@@ -269,6 +269,7 @@ private:
 
     void toggleAutomation();
     muse::Ret selectAutomationType(const muse::rcommand::Params& params);
+    void createJianpuLinkedStaff();
 
     // commands
     void registerCommand(const muse::rcommand::Command&, std::function<void()>);
