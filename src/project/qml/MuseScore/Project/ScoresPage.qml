@@ -284,6 +284,19 @@ FocusScope {
             }
 
             FlatButton {
+                navigation.name: "NewJianpuScore"
+                navigation.panel: navBottomPanel
+                navigation.column: 2
+
+                text: qsTrc("project", "新建简谱")
+                accentButton: true
+
+                onClicked: {
+                    scoresPageModel.createJianpuScore()
+                }
+            }
+
+            FlatButton {
                 navigation.name: "ConvertFileToScore"
                 navigation.panel: navBottomPanel
                 navigation.column: 3

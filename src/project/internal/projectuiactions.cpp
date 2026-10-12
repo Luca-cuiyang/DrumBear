@@ -52,6 +52,13 @@ const UiActionList ProjectUiActions::m_actions = {
              TranslatableString("action", "导入 MIDI 并生成简谱谱表"),
              IconCode::Code::OPEN_FILE
              ),
+    UiAction("file-export-musicxml",
+             mu::context::UiCtxAny,
+             mu::context::CTX_ANY,
+             TranslatableString("action", "导出简谱 &MusicXML…"),
+             TranslatableString("action", "导出为 MusicXML（简谱谱表带 jianpu 谱号）"),
+             IconCode::Code::SAVE
+             ),
     UiAction("file-audio-track",
              mu::context::UiCtxAny,
              mu::context::CTX_ANY,

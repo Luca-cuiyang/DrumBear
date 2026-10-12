@@ -41,6 +41,8 @@
 #include "notation/imasternotation.h"
 #include "notation/inotationinteraction.h"
 #include "notation/inotationselection.h"
+#include "engraving/dom/masterscore.h"
+#include "importexport/musicxml/internal/export/exportmusicxml.h"
 
 #include "inotationproject.h"
 #include "iprojectaudiosettings.h"
@@ -77,6 +79,7 @@ void ProjectActionsController::init()
     d->onRequest(this, PROJECT_OPEN_COMMAND, [this](const rcommand::Params& params) { return openProject(params); });
     d->onRequest(this, PROJECT_IMPORT_AUDIO_TO_SCORE_COMMAND, [this]() { return importAudioToScore(); });
     d->onRequest(this, PROJECT_IMPORT_MIDI_AS_JIANPU_COMMAND, [this]() { return importMidiAsJianpu(); });
+    d->onRequest(this, PROJECT_EXPORT_MUSICXML_COMMAND, [this]() { return exportMusicXml(); });
     d->onRequest(this, PROJECT_AUDIO_TRACK_COMMAND, [this]() { return openAudioTrackSettings(); });
     d->onRequest(this, PROJECT_CLOSE_COMMAND, [this]() { return closeProject(); });
 
@@ -104,6 +107,7 @@ void ProjectActionsController::init()
             { "file-open", PROJECT_OPEN_COMMAND, openArgs },
             { "file-import-audio-to-score", PROJECT_IMPORT_AUDIO_TO_SCORE_COMMAND, {} },
             { "file-import-midi-as-jianpu", PROJECT_IMPORT_MIDI_AS_JIANPU_COMMAND, {} },
+            { "file-export-musicxml", PROJECT_EXPORT_MUSICXML_COMMAND, {} },
             { "file-audio-track", PROJECT_AUDIO_TRACK_COMMAND, {} },
             { "file-close", PROJECT_CLOSE_COMMAND, {} },
             { "file-save", PROJECT_SAVE_COMMAND, {} },
@@ -284,6 +288,34 @@ muse::Ret ProjectActionsController::importMidiAsJianpu()
 {
     openProjectScenario()->setImportMidiAsJianpu(true);
     return runAsync(openProjectScenario()->openProject(ProjectFile()));
+}
+
+muse::Ret ProjectActionsController::exportMusicXml()
+{
+    auto project = globalContext()->currentProject();
+    if (!project) {
+        return make_ret(Ret::Code::UnknownError, std::string("当前没有打开的乐谱"));
+    }
+
+    auto score = project->masterNotation()->masterScore();
+    if (!score) {
+        return make_ret(Ret::Code::UnknownError, std::string("无法读取当前乐谱"));
+    }
+
+    std::vector<std::string> filter {
+        muse::trc("project", "MusicXML files") + " (*.musicxml *.xml)"
+    };
+
+    muse::io::path_t path = interactive()->selectSavingFileSync(muse::trc("project", "导出简谱 MusicXML"), "", filter);
+    if (path.empty()) {
+        return make_ret(Ret::Code::Cancel);
+    }
+
+    if (!mu::iex::musicxml::saveXml(score, path.toString())) {
+        return make_ret(Ret::Code::InternalError, std::string("导出 MusicXML 失败"));
+    }
+
+    return make_ok();
 }
 
 bool ProjectActionsController::isProjectOpened(const muse::io::path_t& scorePath) const

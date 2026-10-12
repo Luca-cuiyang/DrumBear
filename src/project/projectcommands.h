@@ -29,6 +29,7 @@ inline static const muse::rcommand::Command PROJECT_NEW_COMMAND("command://proje
 inline static const muse::rcommand::Command PROJECT_OPEN_COMMAND("command://project/open");
 inline static const muse::rcommand::Command PROJECT_IMPORT_AUDIO_TO_SCORE_COMMAND("command://project/import-audio-to-score");
 inline static const muse::rcommand::Command PROJECT_IMPORT_MIDI_AS_JIANPU_COMMAND("command://project/import-midi-as-jianpu");
+inline static const muse::rcommand::Command PROJECT_EXPORT_MUSICXML_COMMAND("command://project/export-musicxml");
 inline static const muse::rcommand::Command PROJECT_AUDIO_TRACK_COMMAND("command://project/audio-track");
 inline static const muse::rcommand::Command PROJECT_CLOSE_COMMAND("command://project/close");
 

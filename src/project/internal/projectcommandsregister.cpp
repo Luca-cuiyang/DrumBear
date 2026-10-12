@@ -64,6 +64,13 @@ static const std::vector<CommandInfo> s_commandInfos = {
         Decoration(IconCode::Code::OPEN_FILE)
     },
     CommandInfo{
+        PROJECT_EXPORT_MUSICXML_COMMAND,
+        TranslatableString("project", "导出简谱 &MusicXML…"),
+        TranslatableString("project", "将当前乐谱导出为 MusicXML（简谱谱表带 jianpu 谱号）"),
+        InputSchema(),
+        Decoration(IconCode::Code::SAVE)
+    },
+    CommandInfo{
         PROJECT_AUDIO_TRACK_COMMAND,
         TranslatableString("project", "Import accompaniment &track…"),
         TranslatableString("project", "Import an audio accompaniment track"),
