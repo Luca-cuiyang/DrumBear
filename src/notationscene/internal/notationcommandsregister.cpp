@@ -293,6 +293,13 @@ static const std::vector<CommandInfo> s_commandInfos = {
         Decoration(IconCode::Code::RE_PITCH, rcommand::Checkable::Yes)
     },
     CommandInfo{
+        TOGGLE_NOTE_INPUT_JIANPU_COMMAND,
+        TranslatableString("action", "简谱输入"),
+        TranslatableString("action", "切换简谱数字输入模式"),
+        InputSchema(),
+        Decoration(IconCode::Code::NONE, rcommand::Checkable::Yes)
+    },
+    CommandInfo{
         TOGGLE_NOTE_INPUT_REALTIME_AUTO_COMMAND,
         TranslatableString("action", "Real-time (metronome)"),
         TranslatableString("action", "Toggle note input mode: real-time (metronome)"),
