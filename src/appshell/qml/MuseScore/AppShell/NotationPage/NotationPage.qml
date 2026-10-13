@@ -47,22 +47,6 @@ DockPage {
 
     property NotationPageModel pageModel: NotationPageModel {}
 
-    //! NOTE: 打开软件时默认不自动打开音频伴奏轨；仅当用户在本会话中导入音频后才自动打开。
-    property bool audioTrackInitialLoad: true
-
-    Timer {
-        id: startupGuardTimer
-        interval: 2500
-        repeat: false
-        onTriggered: {
-            audioTrackInitialLoad = false
-            //! 工作区布局恢复可能发生在页面初始化之后，再兜底关闭一次
-            Qt.callLater(function() {
-                pageModel.setDockOpen("audioTrackPanel", false)
-            })
-        }
-    }
-
     AudioTrackSettingsModel {
         id: audioModel
 
@@ -71,36 +55,15 @@ DockPage {
         }
     }
 
+    //! 【固定逻辑 · 永不可改】
+    //! 音频伴奏轨面板只有两个入口能打开：
+    //!   1) 文件 → 导入伴奏轨（C++ 里导入成功后 dock-set-open(true)）
+    //!   2) 顶部「音频伴奏轨」按钮（dock-toggle 命令）
+    //! 新建乐谱 / 打开软件时，默认必须关闭，不能自动弹出。
     Component.onCompleted: {
-        startupGuardTimer.start()
-        //! 启动时强制关闭音频伴奏轨，覆盖可能残留的工作区状态（防止“默认打开”）。
         Qt.callLater(function() {
             pageModel.setDockOpen("audioTrackPanel", false)
         })
-    }
-
-    //! NOTE: audioTrackPanel is a DockPanel whose content is lazily loaded only while it is
-    //! visible, so this observer must live outside the panel itself. The dock panel is shown
-    //! and hidden with open()/close() (not just QML `visible`), matching how the View menu
-    //! toggles other dock panels.
-    Connections {
-        target: audioModel
-
-        function onHasTrackChanged() {
-            Qt.callLater(function() {
-                //! 打开已含伴奏轨的乐谱时不自动弹出；只有用户手动导入/替换音频才打开。
-                if (audioTrackInitialLoad || !audioModel.hasTrack) {
-                    pageModel.setDockOpen("audioTrackPanel", false)
-                }
-            })
-        }
-
-        function onAudioImported() {
-            Qt.callLater(function() {
-                audioTrackPanel.setFloating(false)
-                pageModel.setDockOpen("audioTrackPanel", true)
-            })
-        }
     }
 
     property NavigationSection noteInputKeyNavSec: NavigationSection {

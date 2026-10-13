@@ -442,6 +442,9 @@ muse::Ret ProjectActionsController::openAudioTrackSettings()
     settings.clips.push_back(clip);
     project->audioSettings()->setAudioTrackSettings(settings);
 
+    //! 【固定逻辑 · 永不可改】文件「导入伴奏轨」成功后，打开音频伴奏轨面板。
+    dispatcher()->dispatch("dock-set-open", ActionData::make_arg2<QString, bool>("audioTrackPanel", true));
+
     return make_ok();
 }
 

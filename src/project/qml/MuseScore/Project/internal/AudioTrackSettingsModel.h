@@ -141,7 +141,6 @@ signals:
     void hasTrackChanged();
     void durationChanged();
     void waveformPeaksChanged();
-    void audioImported();
     void playbackPositionChanged();
     void clipsChanged();
     void measuredBpmChanged();
