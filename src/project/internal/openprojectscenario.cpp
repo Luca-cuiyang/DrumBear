@@ -507,16 +507,6 @@ Ret OpenProjectScenario::finishOpening()
 
 Uri OpenProjectScenario::resolveNotationPageUri() const
 {
-    INotationProjectPtr project = globalContext()->currentProject();
-    if (!project || !project->cloudInfo().isValid()) {
-        return NOTATION_PAGE_URI;
-    }
-
-    int scoreId = static_cast<int>(muse::cloud::idFromCloudUrl(project->cloudInfo().sourceUrl).toUint64());
-    if (convertFileToScoreScenario()->isAwaitingReview(scoreId)) {
-        return NOTATION_REVIEW_PAGE_URI;
-    }
-
     return NOTATION_PAGE_URI;
 }
 

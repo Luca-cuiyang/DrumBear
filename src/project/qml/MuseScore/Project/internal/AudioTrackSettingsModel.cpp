@@ -639,6 +639,7 @@ void AudioTrackSettingsModel::setMasterVolumeDb(double value)
     if (settings) {
         AudioOutputParams params = settings->masterAudioOutputParams();
         params.volume = muse::audio::volume_db_t(value);
+        settings->setMasterAudioOutputParams(params);
         playback()->setMasterControlParams(params.control());
     }
     emit masterVolumeDbChanged();
@@ -661,8 +662,11 @@ void AudioTrackSettingsModel::setScoreVolumeDb(double value)
             }
             AudioOutputParams params = settings->trackOutputParams(pair.first);
             params.volume = muse::audio::volume_db_t(value);
+            settings->setTrackOutputParams(pair.first, params, false);
             playback()->setControlParams(pair.second, params.control());
         }
+        //! 标记工程为未保存（音量调整需持久化）
+        settings->settingsChanged().notify();
     }
 
     emit scoreVolumeDbChanged();

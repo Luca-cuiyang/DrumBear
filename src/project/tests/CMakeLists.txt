@@ -21,8 +21,6 @@
 set(MODULE_TEST project_test)
 
 set(MODULE_TEST_SRC
-    ${CMAKE_CURRENT_LIST_DIR}/mocks/convertfiletoscorescenariomock.h
-    ${CMAKE_CURRENT_LIST_DIR}/mocks/convertfiletoscoreservicemock.h
     ${CMAKE_CURRENT_LIST_DIR}/mocks/exportprojectscenariomock.h
     ${CMAKE_CURRENT_LIST_DIR}/mocks/mscmetareadermock.h
     ${CMAKE_CURRENT_LIST_DIR}/mocks/notationprojectmock.h

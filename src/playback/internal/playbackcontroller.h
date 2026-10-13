@@ -229,6 +229,7 @@ private:
     void addAuxTrack(muse::audio::aux_channel_idx_t index, bool projectHadNoAudioSettings, const TrackAddFinished& onFinished);
     void addAudioTrack(const project::AudioTrackSettings& settings, const TrackAddFinished& onFinished, bool trackLoading = true);
     void removeAudioTrack();
+    void applyAudioTrackControl(const project::AudioTrackSettings& settings);
 
     void setTrackActivity(const engraving::InstrumentTrackId& instrumentTrackId, const bool isActive);
     project::AudioOutputParams trackOutputParams(const engraving::InstrumentTrackId& instrumentTrackId) const;
@@ -273,6 +274,7 @@ private:
     AuxTrackIdMap m_auxTrackIdMap;
     std::vector<muse::audio::TrackId> m_audioTrackIds;
     std::vector<std::shared_ptr<muse::io::File> > m_audioTrackFiles;
+    project::AudioTrackSettings m_lastAppliedAudioTrackSettings;
 
     std::unordered_map<engraving::InstrumentTrackId, muse::audio::ControlParams> m_automatedControlParamsCache;
 

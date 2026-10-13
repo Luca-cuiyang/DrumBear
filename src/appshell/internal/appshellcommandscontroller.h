@@ -41,7 +41,6 @@
 #include "multiwindows/imultiwindowsprovider.h"
 #include "project/iopenprojectscenario.h"
 #include "project/icloseprojectscenario.h"
-#include "project/iconvertfiletoscorescenario.h"
 #include "update/iappupdateservice.h"
 #include "audio/main/isoundfontinstallscenario.h"
 #include "istartupscenario.h"
@@ -73,7 +72,6 @@ class AppshellCommandsController : public QObject, public IAppshellCommandsContr
     muse::ContextInject<muse::IInteractive> interactive = { this };
     muse::ContextInject<project::IOpenProjectScenario> openProjectScenario = { this };
     muse::ContextInject<project::ICloseProjectScenario> closeProjectScenario = { this };
-    muse::ContextInject<project::IConvertFileToScoreScenario> convertFileToScoreScenario = { this };
     muse::ContextInject<muse::update::IAppUpdateService> appUpdateService = { this };
     muse::ContextInject<muse::audio::ISoundFontInstallScenario> soundFontInstallScenario = { this };
     muse::ContextInject<IStartupScenario> startupScenario = { this };
@@ -103,8 +101,7 @@ private:
         Unknown = 0,
         ProjectFile,
         SoundFont,
-        Extension,
-        ConvertibleFile
+        Extension
     };
 
     bool eventFilter(QObject* watched, QEvent* event) override;

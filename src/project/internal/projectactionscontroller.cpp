@@ -88,7 +88,6 @@ void ProjectActionsController::init()
     d->onRequest(this, PROJECT_SAVE_AT_COMMAND, [this](const rcommand::Params& params) { return runAsync(saveProjectAt(params)); });
 
     d->onRequest(this, PROJECT_EXPORT_COMMAND, [this]() { return exportScore(); });
-    d->onRequest(this, PROJECT_CONVERT_TO_SCORE_COMMAND, [this]() { return convertFileToScore(); });
 
     d->onRequest(this, PROJECT_PRINT_COMMAND, [this]() { return printScore(); });
     d->onRequest(this, PROJECT_CLEAR_RECENT_COMMAND, [this]() { return clearRecentScores(); });
@@ -110,7 +109,6 @@ void ProjectActionsController::init()
             { "file-save-selection", PROJECT_SAVE_SELECTION_COMMAND, {} },
             { "file-save-at", PROJECT_SAVE_AT_COMMAND, make_conv({ { "path", param<io::path_t> } }) },
             { "file-export", PROJECT_EXPORT_COMMAND, {} },
-            { "file-convert-to-score", PROJECT_CONVERT_TO_SCORE_COMMAND, {} },
             { "export", PROJECT_EXPORT_COMMAND, {} },
             { "print", PROJECT_PRINT_COMMAND, {} },
             { "clear-recent", PROJECT_CLEAR_RECENT_COMMAND, {} },
@@ -241,7 +239,6 @@ bool ProjectActionsController::canReceiveAction(const ActionCode& code) const
         static const std::unordered_set<ActionCode> DONT_REQUIRE_OPEN_PROJECT {
             "file-new",
             "file-open",
-            "file-convert-to-score",
             "continue-last-session",
             "clear-recent",
         };
@@ -380,12 +377,6 @@ async::Promise<Ret> ProjectActionsController::saveProject(SaveMode saveMode, Sav
 async::Promise<Ret> ProjectActionsController::saveProjectAt(const muse::rcommand::Params& params)
 {
     return saveProjectScenario()->saveProjectAt(params);
-}
-
-muse::Ret ProjectActionsController::convertFileToScore()
-{
-    convertFileToScoreScenario()->convertFiles();
-    return make_ok();
 }
 
 muse::Ret ProjectActionsController::clearRecentScores()

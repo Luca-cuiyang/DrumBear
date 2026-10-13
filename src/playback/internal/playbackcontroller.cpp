@@ -61,6 +61,29 @@ using namespace mu::project;
 
 static const muse::Uri NOTATION_REVIEW_PAGE_URI("dbscore://notation/review");
 
+static bool sameAudioTrackStructure(const AudioTrackSettings& a, const AudioTrackSettings& b)
+{
+    if (a.clips.size() != b.clips.size()) {
+        return false;
+    }
+
+    for (size_t i = 0; i < a.clips.size(); ++i) {
+        const AudioClipSettings& ca = a.clips[i];
+        const AudioClipSettings& cb = b.clips[i];
+        if (ca.filePath != cb.filePath
+            || !muse::is_equal(ca.startOffset, cb.startOffset)
+            || !muse::is_equal(ca.clipStart, cb.clipStart)
+            || !muse::is_equal(ca.clipEnd, cb.clipEnd)
+            || !muse::is_equal(ca.speed, cb.speed)
+            || !muse::is_equal(ca.fadeIn, cb.fadeIn)
+            || !muse::is_equal(ca.fadeOut, cb.fadeOut)) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
 static AudioOutputParams makeReverbOutputParams()
 {
     AudioFxParams reverbParams;
@@ -1331,6 +1354,7 @@ void PlaybackController::addAudioTrack(const AudioTrackSettings& settings, const
         return;
     }
 
+    m_lastAppliedAudioTrackSettings = settings;
     uint64_t playbackKey = notationPlaybackKey();
 
     for (const AudioClipSettings& clip : settings.clips) {
@@ -1385,6 +1409,23 @@ void PlaybackController::removeAudioTrack()
     }
     m_audioTrackIds.clear();
     m_audioTrackFiles.clear();
+    m_lastAppliedAudioTrackSettings = AudioTrackSettings();
+}
+
+void PlaybackController::applyAudioTrackControl(const AudioTrackSettings& settings)
+{
+    if (settings.clips.empty() || m_audioTrackIds.empty()) {
+        return;
+    }
+
+    const AudioClipSettings& clip = settings.clips.front();
+    muse::audio::ControlParams params;
+    params.volume = clip.volume;
+    params.muted = clip.muted;
+
+    for (muse::audio::TrackId trackId : m_audioTrackIds) {
+        playback()->setControlParams(trackId, params);
+    }
 }
 
 void PlaybackController::setTrackActivity(const engraving::InstrumentTrackId& instrumentTrackId, const bool isActive)
@@ -1768,8 +1809,16 @@ void PlaybackController::setupTracks()
     });
 
     audioSettings()->audioTrackSettingsChanged().onNotify(this, [this]() {
-        removeAudioTrack();
         const AudioTrackSettings settings = audioSettings()->audioTrackSettings();
+        if (sameAudioTrackStructure(m_lastAppliedAudioTrackSettings, settings) && !m_audioTrackIds.empty()) {
+            //! 仅音量/静音变化：实时更新控制参数，不重建音轨，
+            //! 避免播放中断、指针晃动和拖动音量时的卡顿。
+            applyAudioTrackControl(settings);
+            m_lastAppliedAudioTrackSettings = settings;
+            return;
+        }
+
+        removeAudioTrack();
         if (settings.isValid()) {
             addAudioTrack(settings, []() {}, false);
         }

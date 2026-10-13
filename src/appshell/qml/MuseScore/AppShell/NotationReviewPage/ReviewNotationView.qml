@@ -41,18 +41,4 @@ Item {
         readOnly: true
     }
 
-    ReviewScoreQualityPanel {
-        id: reviewPanel
-
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: 16
-
-        z: 100
-
-        navigationSection: root.navigationSection
-        navigationOrderStart: notationView.navigationOrderEnd + 1
-
-        onCloseRequested: reviewPanel.visible = false
-    }
 }
