@@ -718,6 +718,98 @@
         <source>Apply and go to next staff</source>
         <translation>应用并前往下一谱表</translation>
     </message>
+        <message>
+            <source>Abbreviated group name:</source>
+            <translation>缩写组名：</translation>
+        </message>
+        <message>
+            <source>Abbreviated individual name</source>
+            <translation>缩写独立名称</translation>
+        </message>
+        <message>
+            <source>Abbreviated instrument name:</source>
+            <translation>缩写乐器名：</translation>
+        </message>
+        <message>
+            <source>Allow group name</source>
+            <translation>允许组名</translation>
+        </message>
+        <message>
+            <source>Full group name:</source>
+            <translation>完整组名：</translation>
+        </message>
+        <message>
+            <source>Full individual name:</source>
+            <translation>完整独立名称：</translation>
+        </message>
+        <message>
+            <source>Full instrument name:</source>
+            <translation>完整乐器名：</translation>
+        </message>
+        <message>
+            <source>Full name</source>
+            <translation>完整名称</translation>
+        </message>
+        <message>
+            <source>Group name:</source>
+            <translation>组名：</translation>
+        </message>
+        <message>
+            <source>Instrument &amp; Staff properties</source>
+            <translation>乐器与谱表属性</translation>
+        </message>
+        <message>
+            <source>Instrument name</source>
+            <translation>乐器名</translation>
+        </message>
+        <message>
+            <source>Instrument properties</source>
+            <translation>乐器属性</translation>
+        </message>
+        <message>
+            <source>Number:</source>
+            <translation>编号：</translation>
+        </message>
+        <message>
+            <source>On abbreviated name</source>
+            <translation>缩写名称上</translation>
+        </message>
+        <message>
+            <source>On long name</source>
+            <translation>长名称上</translation>
+        </message>
+        <message>
+            <source>Pitch properties</source>
+            <translation>音高属性</translation>
+        </message>
+        <message>
+            <source>Show number:</source>
+            <translation>显示编号：</translation>
+        </message>
+        <message>
+            <source>Show only instrument number</source>
+            <translation>仅显示乐器编号</translation>
+        </message>
+        <message>
+            <source>Show transposition:</source>
+            <translation>显示移调：</translation>
+        </message>
+        <message>
+            <source>Staff label:</source>
+            <translation>谱表标签：</translation>
+        </message>
+        <message>
+            <source>Transposition label:</source>
+            <translation>移调标签：</translation>
+        </message>
+        <message>
+            <source>Use custom individual name:</source>
+            <translation>使用自定义独立名称：</translation>
+        </message>
+        <message>
+            <source>When grouped:</source>
+            <translation>分组时：</translation>
+        </message>
 </context>
 <context>
     <name>EditStaffType</name>
@@ -4018,6 +4110,66 @@ followed by dashes</source>
         <source>Show number ‘1’</source>
         <translation>显示数字“1”</translation>
     </message>
+        <message>
+            <source>Allow overlap with page margin</source>
+            <translation>允许与页边距重叠</translation>
+        </message>
+        <message>
+            <source>Dashed barline dash length:</source>
+            <translation>虚线小节线线段长度：</translation>
+        </message>
+        <message>
+            <source>Dashed barline gap length:</source>
+            <translation>虚线小节线间隙长度：</translation>
+        </message>
+        <message>
+            <source>Dashed barline thickness:</source>
+            <translation>虚线小节线粗细：</translation>
+        </message>
+        <message>
+            <source>Distance to instrument names:</source>
+            <translation>到乐器名的距离：</translation>
+        </message>
+        <message>
+            <source>Distance to other group brackets:</source>
+            <translation>到其他分组括号的距离：</translation>
+        </message>
+        <message>
+            <source>Group brackets</source>
+            <translation>分组括号</translation>
+        </message>
+        <message>
+            <source>Overlap</source>
+            <translation>重叠</translation>
+        </message>
+        <message>
+            <source>Reset &apos;Dashed barline dash length&apos; value</source>
+            <translation>重置“虚线小节线线段长度”的值</translation>
+        </message>
+        <message>
+            <source>Reset &apos;Dashed barline gap length&apos; value</source>
+            <translation>重置“虚线小节线间隙长度”的值</translation>
+        </message>
+        <message>
+            <source>Reset &apos;Dashed barline thickness&apos; value</source>
+            <translation>重置“虚线小节线粗细”的值</translation>
+        </message>
+        <message>
+            <source>Stave sharing</source>
+            <translation>谱表共享</translation>
+        </message>
+        <message>
+            <source>Text alignment relative to bracket:</source>
+            <translation>文本相对括号的对齐：</translation>
+        </message>
+        <message>
+            <source>Text orientation:</source>
+            <translation>文本方向：</translation>
+        </message>
+        <message>
+            <source>Text position:</source>
+            <translation>文本位置：</translation>
+        </message>
 </context>
 <context>
     <name>FontStyleSelect</name>
@@ -4297,6 +4449,10 @@ followed by dashes</source>
         <source>Apply and go to next measure</source>
         <translation>应用并前往下一小节</translation>
     </message>
+        <message>
+            <source>Exclude from measure numbering</source>
+            <translation>排除在小节编号之外</translation>
+        </message>
 </context>
 <context>
     <name>NoteGroups</name>
@@ -9801,6 +9957,482 @@ followed by dashes</source>
         <source>Multiinstances</source>
         <translation>多实例</translation>
     </message>
+        <message>
+            <source>&amp;Grid size…</source>
+            <translation>网格大小…</translation>
+        </message>
+        <message>
+            <source>About Qt</source>
+            <translation>关于 Qt</translation>
+        </message>
+        <message>
+            <source>Accessibility statement</source>
+            <translation>无障碍声明</translation>
+        </message>
+        <message>
+            <source>Add beam: auto</source>
+            <translation>添加符杠：自动</translation>
+        </message>
+        <message>
+            <source>Add beam: none</source>
+            <translation>添加符杠：无</translation>
+        </message>
+        <message>
+            <source>Add dip</source>
+            <translation>添加下弯音</translation>
+        </message>
+        <message>
+            <source>Add dive</source>
+            <translation>添加俯冲音</translation>
+        </message>
+        <message>
+            <source>Add drum note</source>
+            <translation>添加鼓音符</translation>
+        </message>
+        <message>
+            <source>Add grace note bend</source>
+            <translation>添加装饰音弯音</translation>
+        </message>
+        <message>
+            <source>Add next measure to selection</source>
+            <translation>将下一小节加入选择</translation>
+        </message>
+        <message>
+            <source>Add note</source>
+            <translation>添加音符</translation>
+        </message>
+        <message>
+            <source>Add ornament: turn up</source>
+            <translation>添加装饰音：上回音</translation>
+        </message>
+        <message>
+            <source>Add pre-bend</source>
+            <translation>添加预弯音</translation>
+        </message>
+        <message>
+            <source>Add pre-dive</source>
+            <translation>添加预俯冲</translation>
+        </message>
+        <message>
+            <source>Add previous measure to selection</source>
+            <translation>将上一小节加入选择</translation>
+        </message>
+        <message>
+            <source>Add scoop</source>
+            <translation>添加上滑音</translation>
+        </message>
+        <message>
+            <source>Add slight bend</source>
+            <translation>添加轻微弯音</translation>
+        </message>
+        <message>
+            <source>Add standard bend</source>
+            <translation>添加标准弯音</translation>
+        </message>
+        <message>
+            <source>Add to selection: beginning of score</source>
+            <translation>加入选择：乐谱开头</translation>
+        </message>
+        <message>
+            <source>Add to selection: beginning of system</source>
+            <translation>加入选择：行首</translation>
+        </message>
+        <message>
+            <source>Add to selection: end of score</source>
+            <translation>加入选择：乐谱结尾</translation>
+        </message>
+        <message>
+            <source>Add to selection: end of system</source>
+            <translation>加入选择：行尾</translation>
+        </message>
+        <message>
+            <source>Add to selection: next measure</source>
+            <translation>加入选择：下一小节</translation>
+        </message>
+        <message>
+            <source>Add to selection: previous measure</source>
+            <translation>加入选择：上一小节</translation>
+        </message>
+        <message>
+            <source>Add/remove page lock</source>
+            <translation>添加/移除页面锁定</translation>
+        </message>
+        <message>
+            <source>Ask for help</source>
+            <translation>寻求帮助</translation>
+        </message>
+        <message>
+            <source>Beam selected range</source>
+            <translation>对选择范围添加符杠</translation>
+        </message>
+        <message>
+            <source>Cancel the current notation operation</source>
+            <translation>取消当前记谱操作</translation>
+        </message>
+        <message>
+            <source>Context menu of selection</source>
+            <translation>选择的右键菜单</translation>
+        </message>
+        <message>
+            <source>Copy the current notation element</source>
+            <translation>复制当前记谱元素</translation>
+        </message>
+        <message>
+            <source>Create page from selection</source>
+            <translation>从选择创建页面</translation>
+        </message>
+        <message>
+            <source>Cut the current notation element</source>
+            <translation>剪切当前记谱元素</translation>
+        </message>
+        <message>
+            <source>Decrease dynamics</source>
+            <translation>减弱力度</translation>
+        </message>
+        <message>
+            <source>Decrease selected dynamics</source>
+            <translation>减弱所选力度</translation>
+        </message>
+        <message>
+            <source>Delete the current notation element</source>
+            <translation>删除当前记谱元素</translation>
+        </message>
+        <message>
+            <source>Diagnostic: Check for score corruptions</source>
+            <translation>诊断：检查乐谱损坏</translation>
+        </message>
+        <message>
+            <source>Diagnostic: Color element shapes</source>
+            <translation>诊断：给元素形状上色</translation>
+        </message>
+        <message>
+            <source>Diagnostic: Color segment shapes</source>
+            <translation>诊断：给片段形状上色</translation>
+        </message>
+        <message>
+            <source>Diagnostic: Mark corrupted measures</source>
+            <translation>诊断：标记损坏小节</translation>
+        </message>
+        <message>
+            <source>Diagnostic: Mark empty staff</source>
+            <translation>诊断：标记空谱表</translation>
+        </message>
+        <message>
+            <source>Diagnostic: Redraw the view</source>
+            <translation>诊断：重绘视图</translation>
+        </message>
+        <message>
+            <source>Diagnostic: Show Skylines</source>
+            <translation>诊断：显示轮廓线</translation>
+        </message>
+        <message>
+            <source>Diagnostic: Show element bounding rects</source>
+            <translation>诊断：显示元素外接矩形</translation>
+        </message>
+        <message>
+            <source>Diagnostic: Show element masks</source>
+            <translation>诊断：显示元素遮罩</translation>
+        </message>
+        <message>
+            <source>Diagnostic: Show gap rests</source>
+            <translation>诊断：显示间隙休止符</translation>
+        </message>
+        <message>
+            <source>Diagnostic: Show line attach points</source>
+            <translation>诊断：显示线条附着点</translation>
+        </message>
+        <message>
+            <source>Diagnostic: Show origin and combined</source>
+            <translation>诊断：显示原始与合并</translation>
+        </message>
+        <message>
+            <source>Diagnostic: Show segment shapes</source>
+            <translation>诊断：显示片段形状</translation>
+        </message>
+        <message>
+            <source>Diagnostic: Show system bounding rects</source>
+            <translation>诊断：显示系统外接矩形</translation>
+        </message>
+        <message>
+            <source>Display floating view</source>
+            <translation>显示浮动视图</translation>
+        </message>
+        <message>
+            <source>Edit next text element</source>
+            <translation>编辑下一个文本元素</translation>
+        </message>
+        <message>
+            <source>Edit next word</source>
+            <translation>编辑下一个词</translation>
+        </message>
+        <message>
+            <source>Edit previous text element</source>
+            <translation>编辑上一个文本元素</translation>
+        </message>
+        <message>
+            <source>Edit strings…</source>
+            <translation>编辑琴弦…</translation>
+        </message>
+        <message>
+            <source>Enter tuplet</source>
+            <translation>输入连音</translation>
+        </message>
+        <message>
+            <source>Get location</source>
+            <translation>获取位置</translation>
+        </message>
+        <message>
+            <source>Go to edit next notation text element</source>
+            <translation>编辑下一个记谱文本元素</translation>
+        </message>
+        <message>
+            <source>Go to edit next notation word</source>
+            <translation>编辑下一个记谱词</translation>
+        </message>
+        <message>
+            <source>Go to edit previous notation text element</source>
+            <translation>编辑上一个记谱文本元素</translation>
+        </message>
+        <message>
+            <source>Go to next notation element</source>
+            <translation>转到下一个记谱元素</translation>
+        </message>
+        <message>
+            <source>Go to next notation element quickly</source>
+            <translation>快速转到下一个记谱元素</translation>
+        </message>
+        <message>
+            <source>Go to previous notation element</source>
+            <translation>转到上一个记谱元素</translation>
+        </message>
+        <message>
+            <source>Go to previous notation element quickly</source>
+            <translation>快速转到上一个记谱元素</translation>
+        </message>
+        <message>
+            <source>Grid size</source>
+            <translation>网格大小</translation>
+        </message>
+        <message>
+            <source>Increase dynamics</source>
+            <translation>增强力度</translation>
+        </message>
+        <message>
+            <source>Increase selected dynamics</source>
+            <translation>增强所选力度</translation>
+        </message>
+        <message>
+            <source>Instrument / Staff properties…</source>
+            <translation>乐器 / 谱表属性…</translation>
+        </message>
+        <message>
+            <source>Mark empty staff</source>
+            <translation>标记空谱表</translation>
+        </message>
+        <message>
+            <source>Move left</source>
+            <translation>向左移动</translation>
+        </message>
+        <message>
+            <source>Move left quickly</source>
+            <translation>快速向左移动</translation>
+        </message>
+        <message>
+            <source>Move measure to next page</source>
+            <translation>将小节移到下一页</translation>
+        </message>
+        <message>
+            <source>Move measure to previous page</source>
+            <translation>将小节移到上一页</translation>
+        </message>
+        <message>
+            <source>Move right</source>
+            <translation>向右移动</translation>
+        </message>
+        <message>
+            <source>Move right quickly</source>
+            <translation>快速向右移动</translation>
+        </message>
+        <message>
+            <source>Move system to next page</source>
+            <translation>将系统移到下一页</translation>
+        </message>
+        <message>
+            <source>Move system to previous page</source>
+            <translation>将系统移到上一页</translation>
+        </message>
+        <message>
+            <source>Next segment element</source>
+            <translation>下一个片段元素</translation>
+        </message>
+        <message>
+            <source>Notes in chord</source>
+            <translation>和弦中的音符</translation>
+        </message>
+        <message>
+            <source>Open context menu of selection</source>
+            <translation>打开选择的右键菜单</translation>
+        </message>
+        <message>
+            <source>Open selection options</source>
+            <translation>打开选择选项</translation>
+        </message>
+        <message>
+            <source>Paste the current notation element</source>
+            <translation>粘贴当前记谱元素</translation>
+        </message>
+        <message>
+            <source>Piano keyboard: Set number of keys</source>
+            <translation>钢琴键盘：设置琴键数量</translation>
+        </message>
+        <message>
+            <source>Pitch down</source>
+            <translation>降低音高</translation>
+        </message>
+        <message>
+            <source>Pitch down octave</source>
+            <translation>降低一个八度</translation>
+        </message>
+        <message>
+            <source>Pitch down the current note</source>
+            <translation>降低当前音符音高</translation>
+        </message>
+        <message>
+            <source>Pitch down the current note by an octave</source>
+            <translation>将当前音符降低一个八度</translation>
+        </message>
+        <message>
+            <source>Pitch up</source>
+            <translation>升高音高</translation>
+        </message>
+        <message>
+            <source>Pitch up octave</source>
+            <translation>升高一个八度</translation>
+        </message>
+        <message>
+            <source>Pitch up the current note</source>
+            <translation>升高当前音符音高</translation>
+        </message>
+        <message>
+            <source>Pitch up the current note by an octave</source>
+            <translation>将当前音符升高一个八度</translation>
+        </message>
+        <message>
+            <source>Previous segment element</source>
+            <translation>上一个片段元素</translation>
+        </message>
+        <message>
+            <source>Redo the last notation operation</source>
+            <translation>重做上一次记谱操作</translation>
+        </message>
+        <message>
+            <source>Select items by target</source>
+            <translation>按目标选择元素</translation>
+        </message>
+        <message>
+            <source>Select next segment element</source>
+            <translation>选择下一个片段元素</translation>
+        </message>
+        <message>
+            <source>Select notes in chord</source>
+            <translation>选择和弦中的音符</translation>
+        </message>
+        <message>
+            <source>Select previous segment element</source>
+            <translation>选择上一个片段元素</translation>
+        </message>
+        <message>
+            <source>Select to beginning of system</source>
+            <translation>选择到行首</translation>
+        </message>
+        <message>
+            <source>Select to end of system</source>
+            <translation>选择到行尾</translation>
+        </message>
+        <message>
+            <source>Selection options</source>
+            <translation>选择选项</translation>
+        </message>
+        <message>
+            <source>Set duration: breve</source>
+            <translation>设置时值：倍全音符</translation>
+        </message>
+        <message>
+            <source>Set number of keys for piano keyboard</source>
+            <translation>设置钢琴键盘琴键数量</translation>
+        </message>
+        <message>
+            <source>Show Skylines</source>
+            <translation>显示轮廓线</translation>
+        </message>
+        <message>
+            <source>Show both origin and combined staves</source>
+            <translation>同时显示原始与合并谱表</translation>
+        </message>
+        <message>
+            <source>Show element bounding rects</source>
+            <translation>显示元素外接矩形</translation>
+        </message>
+        <message>
+            <source>Show line attach points</source>
+            <translation>显示线条附着点</translation>
+        </message>
+        <message>
+            <source>Show origin and combined</source>
+            <translation>显示原始与合并</translation>
+        </message>
+        <message>
+            <source>Show system bounding rects</source>
+            <translation>显示系统外接矩形</translation>
+        </message>
+        <message>
+            <source>Show tuplet configure</source>
+            <translation>显示连音配置</translation>
+        </message>
+        <message>
+            <source>Toggle automation</source>
+            <translation>切换自动化</translation>
+        </message>
+        <message>
+            <source>Toggle bold</source>
+            <translation>切换加粗</translation>
+        </message>
+        <message>
+            <source>Toggle italic</source>
+            <translation>切换斜体</translation>
+        </message>
+        <message>
+            <source>Toggle note input mode by duration</source>
+            <translation>按时值输入音符模式</translation>
+        </message>
+        <message>
+            <source>Toggle note input mode by note name</source>
+            <translation>按音名输入音符模式</translation>
+        </message>
+        <message>
+            <source>Toggle strike</source>
+            <translation>切换删除线</translation>
+        </message>
+        <message>
+            <source>Toggle turn up</source>
+            <translation>切换上回音</translation>
+        </message>
+        <message>
+            <source>Toggle underline</source>
+            <translation>切换下划线</translation>
+        </message>
+        <message>
+            <source>Undo the last notation operation</source>
+            <translation>撤销上一次记谱操作</translation>
+        </message>
+        <message>
+            <source>View redraw</source>
+            <translation>重绘视图</translation>
+        </message>
+        <message>
+            <source>Zoom to percent</source>
+            <translation>缩放到百分比</translation>
+        </message>
 </context>
 <context>
     <name>appshell</name>
@@ -13971,6 +14603,50 @@ Fret %1 on strings %2</source>
         <source>Staff text</source>
         <translation>谱表文本</translation>
     </message>
+        <message>
+            <source>Displayed default color</source>
+            <translation>显示默认颜色</translation>
+        </message>
+        <message>
+            <source>Displayed default color when score colors are inverted</source>
+            <translation>乐谱颜色反转时显示的默认颜色</translation>
+        </message>
+        <message>
+            <source>Group bracket</source>
+            <translation>分组括号</translation>
+        </message>
+        <message>
+            <source>Page lock(s)</source>
+            <translation>页面锁定</translation>
+        </message>
+        <message>
+            <source>Shared part(s)</source>
+            <translation>共享声部</translation>
+        </message>
+        <message>
+            <source>Stave sharing label</source>
+            <translation>谱表共享标签</translation>
+        </message>
+        <message>
+            <source>Stave sharing label(s)</source>
+            <translation>谱表共享标签</translation>
+        </message>
+        <message>
+            <source>page lock(s)</source>
+            <translation>页面锁定</translation>
+        </message>
+        <message>
+            <source>shared part(s)</source>
+            <translation>共享声部</translation>
+        </message>
+        <message>
+            <source>stave sharing label(s)</source>
+            <translation>谱表共享标签</translation>
+        </message>
+        <message>
+            <source>Voice</source>
+            <translation>声部</translation>
+        </message>
 </context>
 <context>
     <name>engraving/bagpipeembellishment</name>
@@ -14856,6 +15532,10 @@ Fret %1 on strings %2</source>
         <source>No bracket</source>
         <translation>无括号</translation>
     </message>
+        <message>
+            <source>Group</source>
+            <translation>分组</translation>
+        </message>
 </context>
 <context>
     <name>engraving/cleftype</name>
@@ -18144,6 +18824,42 @@ Fret %1 on strings %2</source>
         <source>reflect transposition</source>
         <translation>反映移调</translation>
     </message>
+        <message>
+            <source>exclude from numbering</source>
+            <translation>排除在编号之外</translation>
+        </message>
+        <message>
+            <source>group bracket show bracket</source>
+            <translation>分组括号显示括号</translation>
+        </message>
+        <message>
+            <source>group bracket show text</source>
+            <translation>分组括号显示文本</translation>
+        </message>
+        <message>
+            <source>mask slur/tie</source>
+            <translation>遮盖连音线/延音线</translation>
+        </message>
+        <message>
+            <source>measure number offset</source>
+            <translation>小节编号偏移</translation>
+        </message>
+        <message>
+            <source>shared part enabled</source>
+            <translation>已启用共享声部</translation>
+        </message>
+        <message>
+            <source>staff long name</source>
+            <translation>谱表长名称</translation>
+        </message>
+        <message>
+            <source>staff short name</source>
+            <translation>谱表短名称</translation>
+        </message>
+        <message>
+            <source>text angle</source>
+            <translation>文本角度</translation>
+        </message>
 </context>
 <context>
     <name>engraving/scoreorder</name>
@@ -20518,6 +21234,22 @@ Fret %1 on strings %2</source>
         <source>64th between notes</source>
         <translation>64分多音震音</translation>
     </message>
+        <message>
+            <source>128th between notes</source>
+            <translation>音符之间 128 分</translation>
+        </message>
+        <message>
+            <source>128th through stem</source>
+            <translation>穿过符干的 128 分</translation>
+        </message>
+        <message>
+            <source>256th between notes</source>
+            <translation>音符之间 256 分</translation>
+        </message>
+        <message>
+            <source>256th through stem</source>
+            <translation>穿过符干的 256 分</translation>
+        </message>
 </context>
 <context>
     <name>engraving/trilltype</name>
@@ -26712,6 +27444,10 @@ pickup measure</source>
         <extracomment>%1 is the system markings list, %2 is the last system marking name to add to list</extracomment>
         <translation>%1 和 %2</translation>
     </message>
+        <message>
+            <source>Enable stave sharing</source>
+            <translation>启用谱表共享</translation>
+        </message>
 </context>
 <context>
     <name>layoutpanel/instrumentsettingspopup</name>
@@ -26765,6 +27501,10 @@ pickup measure</source>
         <source>Reset all formatting</source>
         <translation>重置所有格式</translation>
     </message>
+        <message>
+            <source>Abbreviated instrument name</source>
+            <translation>缩写乐器名</translation>
+        </message>
 </context>
 <context>
     <name>layoutpanel/staffsettingspopup</name>
@@ -29850,6 +30590,14 @@ In addition, Mastering DB Score features a supportive community of musicians, wi
         <source>Minimum hanging tie length:</source>
         <translation>最小悬浮延音线长度：</translation>
     </message>
+        <message>
+            <source>Mask slurs over clefs, key and time signatures</source>
+            <translation>连音线遮盖谱号、调号和拍号</translation>
+        </message>
+        <message>
+            <source>Mask ties over clefs, key and time signatures</source>
+            <translation>延音线遮盖谱号、调号和拍号</translation>
+        </message>
 </context>
 <context>
     <name>notation/editstyle/timesignatures</name>
@@ -30504,6 +31252,14 @@ In addition, Mastering DB Score features a supportive community of musicians, wi
         <source>The instrument name is invalid.</source>
         <translation>乐器名称无效。</translation>
     </message>
+        <message>
+            <source>Custom group names cannot be empty.</source>
+            <translation>自定义组名不能为空。</translation>
+        </message>
+        <message>
+            <source>Invalid group name</source>
+            <translation>无效组名</translation>
+        </message>
 </context>
 <context>
     <name>notation/stafftextproperties</name>
@@ -31969,6 +32725,42 @@ failed: %2</source>
         <source>Unicode symbols</source>
         <translation>Unicode字符</translation>
     </message>
+        <message>
+            <source>&amp;Customize kit…</source>
+            <translation>自定义鼓组套件…</translation>
+        </message>
+        <message>
+            <source>&amp;Special characters…</source>
+            <translation>特殊字符…</translation>
+        </message>
+        <message>
+            <source>&amp;Time signature properties…</source>
+            <translation>拍号属性…</translation>
+        </message>
+        <message>
+            <source>Open customize kit</source>
+            <translation>打开自定义鼓组套件</translation>
+        </message>
+        <message>
+            <source>Open special characters</source>
+            <translation>打开特殊字符</translation>
+        </message>
+        <message>
+            <source>Open time signature properties</source>
+            <translation>打开拍号属性</translation>
+        </message>
+        <message>
+            <source>Toggle allow reordering palettes by dragging</source>
+            <translation>切换允许拖动排序面板</translation>
+        </message>
+        <message>
+            <source>Toggle open only one palette at a time</source>
+            <translation>切换一次只打开一个面板</translation>
+        </message>
+        <message>
+            <source>Toggle single click to open a palette</source>
+            <translation>切换单击打开面板</translation>
+        </message>
 </context>
 <context>
     <name>palette/unicodeRanges</name>
@@ -33906,6 +34698,62 @@ failed: %2</source>
         <source>Toggle metronome playback</source>
         <translation>切换节拍器播放</translation>
     </message>
+        <message>
+            <source>Count-in when playing</source>
+            <translation>播放时预备拍</translation>
+        </message>
+        <message>
+            <source>Loop in</source>
+            <translation>循环入点</translation>
+        </message>
+        <message>
+            <source>Loop out</source>
+            <translation>循环出点</translation>
+        </message>
+        <message>
+            <source>MIDI toggle</source>
+            <translation>MIDI 开关</translation>
+        </message>
+        <message>
+            <source>Play toggle</source>
+            <translation>播放开关</translation>
+        </message>
+        <message>
+            <source>Show playback setup</source>
+            <translation>显示播放设置</translation>
+        </message>
+        <message>
+            <source>Toggle aux channel</source>
+            <translation>切换辅助通道</translation>
+        </message>
+        <message>
+            <source>Toggle aux send</source>
+            <translation>切换辅助发送</translation>
+        </message>
+        <message>
+            <source>Toggle count-in when playing</source>
+            <translation>切换播放预备拍</translation>
+        </message>
+        <message>
+            <source>Toggle mixer section</source>
+            <translation>切换混音器区域</translation>
+        </message>
+        <message>
+            <source>Toggle pan score automatically during playback</source>
+            <translation>切换播放时自动平移乐谱</translation>
+        </message>
+        <message>
+            <source>Toggle play chord symbols</source>
+            <translation>切换播放和弦符号</translation>
+        </message>
+        <message>
+            <source>Toggle play repeats</source>
+            <translation>切换播放反复</translation>
+        </message>
+        <message>
+            <source>Toggle playback of current score</source>
+            <translation>切换播放当前乐谱</translation>
+        </message>
 </context>
 <context>
     <name>preferences</name>
@@ -34861,6 +35709,14 @@ failed: %2</source>
         <source>Use warmer instrument sound (MS Basic/SoundFont only)</source>
         <translation>使用更柔和的乐器音色（仅限 MS Basic 和声音字体）</translation>
     </message>
+        <message>
+            <source>Engraving color</source>
+            <translation>制谱颜色</translation>
+        </message>
+        <message>
+            <source>Page color</source>
+            <translation>页面颜色</translation>
+        </message>
 </context>
 <context>
     <name>preferences/score</name>
@@ -35633,6 +36489,102 @@ failed: %2</source>
         <source>Audio alignment</source>
         <translation>音频对齐</translation>
     </message>
+        <message>
+            <source>BB files [experimental]</source>
+            <translation>BB 文件 [实验性]</translation>
+        </message>
+        <message>
+            <source>Bagpipe Music Writer files [experimental]</source>
+            <translation>Bagpipe Music Writer 文件 [实验性]</translation>
+        </message>
+        <message>
+            <source>Close the project</source>
+            <translation>关闭工程</translation>
+        </message>
+        <message>
+            <source>Continue the last session</source>
+            <translation>继续上次会话</translation>
+        </message>
+        <message>
+            <source>Create a new project</source>
+            <translation>新建工程</translation>
+        </message>
+        <message>
+            <source>Export the project</source>
+            <translation>导出工程</translation>
+        </message>
+        <message>
+            <source>Import the PDF file</source>
+            <translation>导入 PDF 文件</translation>
+        </message>
+        <message>
+            <source>Import the audio file to the score</source>
+            <translation>将音频文件导入乐谱</translation>
+        </message>
+        <message>
+            <source>MNX files [experimental]</source>
+            <translation>MNX 文件 [实验性]</translation>
+        </message>
+        <message>
+            <source>Open a project</source>
+            <translation>打开工程</translation>
+        </message>
+        <message>
+            <source>Overture / Score Writer files [experimental]</source>
+            <translation>Overture / Score Writer 文件 [实验性]</translation>
+        </message>
+        <message>
+            <source>Power Tab Editor files [experimental]</source>
+            <translation>Power Tab Editor 文件 [实验性]</translation>
+        </message>
+        <message>
+            <source>Print the project</source>
+            <translation>打印工程</translation>
+        </message>
+        <message>
+            <source>Publish the project to drumbearai.com</source>
+            <translation>将工程发布到 drumbearai.com</translation>
+        </message>
+        <message>
+            <source>Save a copy of the project</source>
+            <translation>保存工程副本</translation>
+        </message>
+        <message>
+            <source>Save the project</source>
+            <translation>保存工程</translation>
+        </message>
+        <message>
+            <source>Save the project as</source>
+            <translation>工程另存为</translation>
+        </message>
+        <message>
+            <source>Save the project at</source>
+            <translation>工程保存到</translation>
+        </message>
+        <message>
+            <source>Save the project to cloud</source>
+            <translation>保存工程到云端</translation>
+        </message>
+        <message>
+            <source>Save the selection of the project</source>
+            <translation>保存工程中的选择</translation>
+        </message>
+        <message>
+            <source>Share the project on Audio.com</source>
+            <translation>在 Audio.com 分享工程</translation>
+        </message>
+        <message>
+            <source>TablEdit files [experimental]</source>
+            <translation>TablEdit 文件 [实验性]</translation>
+        </message>
+        <message>
+            <source>Uncompressed DB Score folder [experimental]</source>
+            <translation>未压缩 DB Score 文件夹 [实验性]</translation>
+        </message>
+        <message>
+            <source>Uncompressed DB Score folders [experimental]</source>
+            <translation>未压缩 DB Score 文件夹 [实验性]</translation>
+        </message>
 </context>
 <context>
     <name>project/cloud</name>
@@ -39270,6 +40222,58 @@ failed: %2</source>
         <source>Migrate project</source>
         <translation>迁移项目</translation>
     </message>
+        <message>
+            <source>Apply page lock to selection</source>
+            <translation>对选择应用页面锁定</translation>
+        </message>
+        <message>
+            <source>Beam selected</source>
+            <translation>对选择添加符杠</translation>
+        </message>
+        <message>
+            <source>Disable shared staff</source>
+            <translation>禁用共享谱表</translation>
+        </message>
+        <message>
+            <source>Edit automation points</source>
+            <translation>编辑自动化点</translation>
+        </message>
+        <message>
+            <source>Enable shared staff</source>
+            <translation>启用共享谱表</translation>
+        </message>
+        <message>
+            <source>Enter full measure rest</source>
+            <translation>输入全小节休止符</translation>
+        </message>
+        <message>
+            <source>Remove empty text</source>
+            <translation>删除空文本</translation>
+        </message>
+        <message>
+            <source>Set duration</source>
+            <translation>设置时值</translation>
+        </message>
+        <message>
+            <source>Set instrument custom group name</source>
+            <translation>设置乐器自定义组名</translation>
+        </message>
+        <message>
+            <source>Set instrument number</source>
+            <translation>设置乐器编号</translation>
+        </message>
+        <message>
+            <source>Toggle dots</source>
+            <translation>切换附点</translation>
+        </message>
+        <message>
+            <source>Toggle stave sharing</source>
+            <translation>切换谱表共享</translation>
+        </message>
+        <message>
+            <source>Transpose harmony</source>
+            <translation>移调和声</translation>
+        </message>
 </context>
 <context>
     <name>update</name>
@@ -41770,4 +42774,189 @@ failed: %2</source>
         </message>
     </context>
 
+    <context>
+        <name>notation/editstyle/instrumentnames</name>
+        <message>
+            <source>Abbreviated names</source>
+            <translation>缩写名称</translation>
+        </message>
+        <message>
+            <source>Add trailing dot</source>
+            <translation>添加附点</translation>
+        </message>
+        <message>
+            <source>Align combined instrument numerals</source>
+            <translation>对齐合并乐器编号</translation>
+        </message>
+        <message>
+            <source>Alignment of names and group brackets</source>
+            <translation>名称与分组括号的对齐</translation>
+        </message>
+        <message>
+            <source>Always follow voice assignment</source>
+            <translation>始终遵循声部分配</translation>
+        </message>
+        <message>
+            <source>Custom:</source>
+            <translation>自定义：</translation>
+        </message>
+        <message>
+            <source>Do not restate</source>
+            <translation>不重申</translation>
+        </message>
+        <message>
+            <source>Enable group names for</source>
+            <translation>为以下对象启用组名</translation>
+        </message>
+        <message>
+            <source>Exclude brackets</source>
+            <translation>排除括号</translation>
+        </message>
+        <message>
+            <source>Group names</source>
+            <translation>组名</translation>
+        </message>
+        <message>
+            <source>Horizontally, up to</source>
+            <translation>水平方向，最多</translation>
+        </message>
+        <message>
+            <source>Include brackets</source>
+            <translation>包含括号</translation>
+        </message>
+        <message>
+            <source>Instrument name: center / Staff label: center</source>
+            <translation>乐器名：居中 / 谱表标签：居中</translation>
+        </message>
+        <message>
+            <source>Instrument name: center / Staff label: right-align</source>
+            <translation>乐器名：居中 / 谱表标签：右对齐</translation>
+        </message>
+        <message>
+            <source>Instrument name: left-align / Staff label: right-align</source>
+            <translation>乐器名：左对齐 / 谱表标签：右对齐</translation>
+        </message>
+        <message>
+            <source>Instrument name: right-align / Staff label: right-align</source>
+            <translation>乐器名：右对齐 / 谱表标签：右对齐</translation>
+        </message>
+        <message>
+            <source>Keep on the same line</source>
+            <translation>保持在同一行</translation>
+        </message>
+        <message>
+            <source>Long name format:</source>
+            <translation>长名称格式：</translation>
+        </message>
+        <message>
+            <source>Long names</source>
+            <translation>长名称</translation>
+        </message>
+        <message>
+            <source>Numerals</source>
+            <translation>数字编号</translation>
+        </message>
+        <message>
+            <source>On abbreviated names</source>
+            <translation>缩写名称上</translation>
+        </message>
+        <message>
+            <source>On long names</source>
+            <translation>长名称上</translation>
+        </message>
+        <message>
+            <source>On multiple combined instruments</source>
+            <translation>多个合并乐器上</translation>
+        </message>
+        <message>
+            <source>On single instruments</source>
+            <translation>单个乐器上</translation>
+        </message>
+        <message>
+            <source>Others</source>
+            <translation>其他</translation>
+        </message>
+        <message>
+            <source>Overlapping names</source>
+            <translation>重叠名称</translation>
+        </message>
+        <message>
+            <source>Restate label</source>
+            <translation>重申标签</translation>
+        </message>
+        <message>
+            <source>Restate with parenthesis</source>
+            <translation>用括号重申</translation>
+        </message>
+        <message>
+            <source>Short name format:</source>
+            <translation>短名称格式：</translation>
+        </message>
+        <message>
+            <source>Show numerals as interval when the number of consecutive instruments exceeds</source>
+            <translation>连续乐器数量超过以下值时，将编号显示为区间</translation>
+        </message>
+        <message>
+            <source>Show transposition</source>
+            <translation>显示移调</translation>
+        </message>
+        <message>
+            <source>Stack vertically</source>
+            <translation>垂直堆叠</translation>
+        </message>
+        <message>
+            <source>Vertically, up to</source>
+            <translation>垂直方向，最多</translation>
+        </message>
+        <message>
+            <source>When continuing onto a new system:</source>
+            <translation>换行到新系统时：</translation>
+        </message>
+        <message>
+            <source>instruments, then follow voice assignment</source>
+            <translation>乐器，然后遵循声部分配</translation>
+        </message>
+        <message>
+            <source>Winds</source>
+            <translation>木管乐器</translation>
+        </message>
+        <message>
+            <source>Vocals</source>
+            <translation>人声</translation>
+        </message>
+    </context>
+    <context>
+        <name>notation/editstyle/stavesharing</name>
+        <message>
+            <source>Allow voice crossing</source>
+            <translation>允许声部交叉</translation>
+        </message>
+        <message>
+            <source>Format instrument numerals as in margin labels</source>
+            <translation>乐器编号格式与页边标签一致</translation>
+        </message>
+        <message>
+            <source>Instrument labels on staff</source>
+            <translation>谱表上的乐器标签</translation>
+        </message>
+        <message>
+            <source>Show player numerals for instrument changes</source>
+            <translation>乐器变化时显示演奏者编号</translation>
+        </message>
+        <message>
+            <source>Text for unison indication:</source>
+            <translation>同音指示文本：</translation>
+        </message>
+    </context>
+    <context>
+        <name>staveSharingTest</name>
+        <message>
+            <source>Remove origin part</source>
+            <translation>移除原始声部</translation>
+        </message>
+        <message>
+            <source>Remove shared part</source>
+            <translation>移除共享声部</translation>
+        </message>
+    </context>
 </TS>
