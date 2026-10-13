@@ -39,6 +39,8 @@ Item {
     property string playheadColor: "#59BA54"
     property real playheadThickness: 1.0
     property var playheadColors: ["#59BA54", "#2F6FED", "#06B6D4", "#E11D48", "#F59E0B", "#111827"]
+    //! NOTE: 波形全局峰值归一化，只在波形变化时重算，避免每次重绘都扫一遍全部波峰。
+    property double wavePeakMax: 1.0
     property bool prevHasTrack: false
 
     function pad2(n) {
@@ -72,6 +74,20 @@ Item {
         if (scoreGridCanvas) { scoreGridCanvas.requestPaint() }
         if (waveCanvas) { waveCanvas.requestPaint() }
     }
+
+    function recomputeWavePeakMax() {
+        var peaks = audioModel.waveformPeaks
+        var m = 1e-6
+        if (peaks && peaks.length > 0) {
+            for (var j = 0; j < peaks.length; ++j) {
+                var a = Math.max(Math.abs(peaks[j].min), Math.abs(peaks[j].max))
+                if (a > m) { m = a }
+            }
+        }
+        wavePeakMax = m < 1e-6 ? 1e-6 : m
+    }
+
+    Component.onCompleted: root.recomputeWavePeakMax()
 
     onZoomChanged: repaintTimeline()
     onScrollSecChanged: repaintTimeline()
@@ -579,18 +595,7 @@ Item {
                                 if (peaks && peaks.length > 0) {
                                     var n = peaks.length
                                     var halfH = height / 2 - 4
-                                    // 归一化：找全局最大峰值，让不同音量的音频都能清晰看到波形
-                                    var peakMax = 0
-                                    for (var j = 0; j < n; ++j) {
-                                        var pj = peaks[j]
-                                        var aj = Math.max(Math.abs(pj.min), Math.abs(pj.max))
-                                        if (aj > peakMax) {
-                                            peakMax = aj
-                                        }
-                                    }
-                                    if (peakMax < 1e-6) {
-                                        peakMax = 1e-6
-                                    }
+                                    var peakMax = root.wavePeakMax
                                     for (var i = 0; i < n; ++i) {
                                         var t = i / n * dur
                                         var inClip = (t >= cs && t <= ce)
@@ -614,7 +619,10 @@ Item {
 
                         Connections {
                             target: audioModel
-                            function onWaveformPeaksChanged() { waveCanvas.requestPaint() }
+                            function onWaveformPeaksChanged() {
+                                root.recomputeWavePeakMax()
+                                waveCanvas.requestPaint()
+                            }
                             function onDurationChanged() { waveCanvas.requestPaint() }
                             function onStartOffsetChanged() { waveCanvas.requestPaint() }
                             function onClipStartChanged() { waveCanvas.requestPaint() }
