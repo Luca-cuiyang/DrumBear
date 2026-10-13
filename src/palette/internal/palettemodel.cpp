@@ -298,7 +298,7 @@ QVariant PaletteTreeModel::data(const QModelIndex& index, int role) const
         case Qt::ToolTipRole:
             return pp->translatedName();
         case Qt::AccessibleTextRole:
-            return QString("%1 palette").arg(pp->translatedName());
+            return QString("%1 面板").arg(pp->translatedName());
         case VisibleRole:
             return pp->isVisible();
         case CustomRole:
