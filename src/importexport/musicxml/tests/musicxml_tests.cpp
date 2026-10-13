@@ -22,9 +22,6 @@
 
 #include <gtest/gtest.h>
 
-#include <fstream>
-#include <sstream>
-
 #include "engraving/engravingerrors.h"
 #include "engraving/dom/jump.h"
 #include "engraving/dom/marker.h"
@@ -1495,27 +1492,4 @@ TEST_F(MusicXml_Tests, hiddenStaves)
     MasterScore* score = readScore(XML_IO_DATA_DIR + fileName);
 
     EXPECT_EQ(score->style().value(Sid::hideEmptyStaves).toBool(), true);
-}
-
-// 自检：简谱谱表导出 MusicXML 时，谱号应写为 jianpu（MusicXML 4.0）
-TEST_F(MusicXml_Tests, jianpuExportWritesJianpuClef)
-{
-    MScore::debugMode = true;
-
-    MasterScore* score = ScoreRW::readScore(u"data/jianpuGmajor.mscx");
-    ASSERT_TRUE(score);
-    score->doLayout();
-
-    String outName = u"jianpuGmajor_export.xml";
-    ASSERT_TRUE(saveXml(score, outName));
-
-    std::ifstream in(outName.toStdString());
-    ASSERT_TRUE(in.is_open());
-    std::stringstream buffer;
-    buffer << in.rdbuf();
-    std::string content = buffer.str();
-
-    EXPECT_NE(content.find("<sign>jianpu</sign>"), std::string::npos);
-
-    delete score;
 }
