@@ -58,13 +58,7 @@ Note* findJianpuNoteInChord(MasterScore* score)
                 continue;
             }
 
-            // 八度基准为中音 C4：优先返回真正带有高低音点的音符，
-            // 避免取到中音区无点的音符导致断言失败。
-            for (Note* note : chord->notes()) {
-                if (!note->octaveDots().empty()) {
-                    return note;
-                }
-            }
+            return chord->notes().front();
         }
     }
 
