@@ -95,7 +95,6 @@ public:
 
     struct LayoutData : public EngravingItem::LayoutData {
         std::vector<KeySym> keySymbols;
-        String jianpuText; // 简谱谱表的调号标记，如 "1=G"
     };
     DECLARE_LAYOUTDATA_METHODS(KeySig)
 

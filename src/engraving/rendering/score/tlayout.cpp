@@ -3528,21 +3528,6 @@ static void keySigAddLayout(const KeySig* item, const LayoutConfiguration& conf,
     ldata->keySymbols.push_back(ks);
 }
 
-static String jianpuTonicName(Key key)
-{
-    // 首调简谱的调号标记：1 = 大调主音。小调使用其关系大调主音。
-    // Key 为五度圈索引（-7..7），对应大调主音如下。
-    static const std::array<String, 15> names = {
-        u"C♭", u"G♭", u"D♭", u"A♭", u"E♭", u"B♭", u"F",
-        u"C", u"G", u"D", u"A", u"E", u"B", u"F♯", u"C♯"
-    };
-    const int idx = int(key) + 7;
-    if (idx < 0 || idx >= int(names.size())) {
-        return String();
-    }
-    return names[idx];
-}
-
 void TLayout::layoutKeySig(const KeySig* item, KeySig::LayoutData* ldata, const LayoutConfiguration& conf)
 {
     LAYOUT_CALL_ITEM(item);
@@ -3557,23 +3542,6 @@ void TLayout::layoutKeySig(const KeySig* item, KeySig::LayoutData* ldata, const 
     ldata->keySymbols.clear();
 
     const Staff* staff = item->staff();
-    if (staff && staff->isJianpuStaff(item->tick())) {
-        // 简谱不显示升降号，改为在谱表开头标注 "1=G" 等首调调号
-        const StaffType* st = staff->staffType(item->tick());
-        ldata->jianpuText = String(u"1=") + jianpuTonicName(item->key());
-
-        Font f = st ? st->jianpuFont() : Font();
-        FontMetrics fm(f);
-        const double w = fm.width(ldata->jianpuText) * item->magS();
-        const double h = st ? st->jianpuBoxH() * item->magS() : item->spatium();
-        RectF bbox(0.0, -h * 0.5, w, h);
-
-        ldata->setBbox(bbox);
-        Shape shape(bbox, item);
-        ldata->setShape(shape);
-        return;
-    }
-
     const StaffType* stVisibility = staff ? staff->staffType(item->tick()) : nullptr;
     if (stVisibility && !stVisibility->genKeysig()) {
         return;
