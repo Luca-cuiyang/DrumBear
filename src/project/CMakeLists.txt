@@ -131,7 +131,7 @@ elseif (OS_IS_WIN)
     )
 endif()
 
-target_link_libraries(project PRIVATE notation)
+target_link_libraries(project PRIVATE notation muse_audio_engine)
 
 if (QT_ADD_CONCURRENT)
     target_link_libraries(project PRIVATE Qt::Concurrent)

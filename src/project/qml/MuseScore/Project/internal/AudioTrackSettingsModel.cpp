@@ -27,8 +27,6 @@
 #include <thread>
 #include <vector>
 
-#include <QFile>
-#include <QFileInfo>
 #include <QPointer>
 
 #include "log.h"
@@ -36,157 +34,59 @@
 #include "notation/inotationplayback.h"
 #include "project/inotationproject.h"
 
-#include "audio/engine/internal/codecs/thirdparty/dr_mp3.h"
-#include "audio/engine/internal/codecs/thirdparty/dr_flac.h"
+#include "audio/engine/internal/codecs/audiofiledecoder.h"
+#include "io/file.h"
 
 using namespace mu::project;
 
 namespace {
-bool computeWavPeaks(const QString& path, double& duration, QVariantList& peaks, int buckets = 2048)
+// 通用音频解码：复用音频引擎的 AudioFileDecoder，统一支持
+// wav / aiff / mp3 / flac / ogg / m4a(aac) / adts(aac) 等所有导入格式。
+bool decodeAudioFile(const QString& path, std::vector<float>& interleaved,
+                     unsigned int& channels, unsigned int& sampleRate)
 {
-    QFile file(path);
-    if (!file.open(QIODevice::ReadOnly)) {
+    muse::io::File file(path.toStdString());
+    if (!file.open(muse::io::IODevice::ReadOnly)) {
         return false;
     }
 
-    const QByteArray bytes = file.readAll();
-    if (bytes.size() < 44 || bytes.left(4) != "RIFF" || bytes.mid(8, 4) != "WAVE") {
+    muse::audio::engine::AudioFileDecoder decoder;
+    if (!decoder.open(&file)) {
         return false;
     }
 
-    int pos = 12;
-    int audioFormat = 0;
-    int channels = 0;
-    int sampleRate = 0;
-    int bitsPerSample = 0;
-    int dataSize = 0;
-    int dataOffset = 0;
-
-    while (pos + 8 <= bytes.size()) {
-        const QByteArray id = bytes.mid(pos, 4);
-        const int size = int(bytes[pos + 4] & 0xff)
-                         | (int(bytes[pos + 5] & 0xff) << 8)
-                         | (int(bytes[pos + 6] & 0xff) << 16)
-                         | (int(bytes[pos + 7] & 0xff) << 24);
-        if (id == "fmt ") {
-            if (pos + 24 > bytes.size()) {
-                return false;
-            }
-            audioFormat = int(bytes[pos + 8] & 0xff) | (int(bytes[pos + 9] & 0xff) << 8);
-            channels = int(bytes[pos + 10] & 0xff) | (int(bytes[pos + 11] & 0xff) << 8);
-            sampleRate = int(bytes[pos + 12] & 0xff) | (int(bytes[pos + 13] & 0xff) << 8)
-                         | (int(bytes[pos + 14] & 0xff) << 16) | (int(bytes[pos + 15] & 0xff) << 24);
-            bitsPerSample = int(bytes[pos + 22] & 0xff) | (int(bytes[pos + 23] & 0xff) << 8);
-            pos += 8 + size + (size & 1);
-        } else if (id == "data") {
-            dataSize = size;
-            dataOffset = pos + 8;
-            break;
-        } else {
-            pos += 8 + size + (size & 1);
-        }
-    }
-
-    if (audioFormat != 1 || channels <= 0 || sampleRate <= 0 || bitsPerSample <= 0 || dataSize <= 0) {
+    if (!decoder.isValid() || decoder.frames() == 0 || decoder.channels() == 0 || decoder.sampleRate() == 0) {
         return false;
     }
 
-    const int bytesPerSample = bitsPerSample / 8;
-    const int frames = dataSize / (channels * bytesPerSample);
-    if (frames <= 0) {
-        return false;
-    }
-
-    duration = double(frames) / sampleRate;
-    const int bucketCount = std::min(buckets, frames);
-    peaks.clear();
-    peaks.reserve(bucketCount);
-
-    const char* data = bytes.constData() + dataOffset;
-    for (int b = 0; b < bucketCount; ++b) {
-        const int startFrame = (b * frames) / bucketCount;
-        const int endFrame = ((b + 1) * frames) / bucketCount;
-        float minV = 0.f;
-        float maxV = 0.f;
-        for (int f = startFrame; f < endFrame; ++f) {
-            for (int c = 0; c < channels; ++c) {
-                const int sampleIndex = (f * channels + c) * bytesPerSample;
-                if (sampleIndex + bytesPerSample > dataSize) {
-                    break;
-                }
-                float value = 0.f;
-                if (bitsPerSample == 16) {
-                    const unsigned char* p = reinterpret_cast<const unsigned char*>(data + sampleIndex);
-                    short s = short(p[0]) | (short(p[1]) << 8);
-                    value = float(s) / 32768.f;
-                } else if (bitsPerSample == 8) {
-                    const unsigned char v = static_cast<unsigned char>(data[sampleIndex]);
-                    value = (float(v) / 255.f) * 2.f - 1.f;
-                } else if (bitsPerSample == 24) {
-                    const unsigned char* p = reinterpret_cast<const unsigned char*>(data + sampleIndex);
-                    int32_t s = int32_t(p[0]) | (int32_t(p[1]) << 8) | (int32_t(p[2]) << 16);
-                    if (s & 0x800000) {
-                        s |= ~0xffffff;
-                    }
-                    value = float(s) / 8388608.f;
-                } else if (bitsPerSample == 32) {
-                    const unsigned char* p = reinterpret_cast<const unsigned char*>(data + sampleIndex);
-                    int32_t s = int32_t(p[0]) | (int32_t(p[1]) << 8) | (int32_t(p[2]) << 16) | (int32_t(p[3]) << 24);
-                    value = float(double(s) / 2147483648.0);
-                } else {
-                    continue;
-                }
-                minV = std::min(minV, value);
-                maxV = std::max(maxV, value);
-            }
-        }
-        QVariantMap item;
-        item.insert("min", minV);
-        item.insert("max", maxV);
-        peaks.append(item);
-    }
-
+    channels = decoder.channels();
+    sampleRate = decoder.sampleRate();
+    interleaved = decoder.data();
     return true;
 }
 
-bool computeMp3Peaks(const QString& path, double& duration, QVariantList& peaks, int buckets = 2048)
+bool computeAudioPeaks(const QString& path, double& duration, QVariantList& peaks, int buckets = 2048)
 {
-    drmp3 mp3;
-    if (!drmp3_init_file(&mp3, path.toUtf8().constData(), nullptr)) {
+    std::vector<float> samples;
+    unsigned int channels = 0;
+    unsigned int sampleRate = 0;
+    if (!decodeAudioFile(path, samples, channels, sampleRate)) {
         return false;
     }
 
-    const uint64_t totalFrames = drmp3_get_pcm_frame_count(&mp3);
-    const unsigned int channels = mp3.channels;
-    const unsigned int sampleRate = mp3.sampleRate;
-    if (totalFrames == 0 || channels == 0 || sampleRate == 0) {
-        drmp3_uninit(&mp3);
-        return false;
-    }
-
-    std::vector<float> samples(totalFrames * channels);
-    const uint64_t read = drmp3_read_pcm_frames_f32(&mp3, totalFrames, samples.data());
-    drmp3_uninit(&mp3);
-
-    if (read == 0) {
-        return false;
-    }
-
-    //! NOTE: for VBR files the frame count can be an over-estimate; use the frames we
-    //! actually decoded so the waveform matches the real audio length.
-    const uint64_t actualFrames = read;
-
+    const uint64_t actualFrames = samples.size() / channels;
     duration = double(actualFrames) / sampleRate;
+
     const int bucketCount = std::min(buckets, int(actualFrames));
     peaks.clear();
     peaks.reserve(bucketCount);
 
     for (int b = 0; b < bucketCount; ++b) {
-        const int startFrame = int((uint64_t(b) * actualFrames) / bucketCount);
-        const int endFrame = int((uint64_t(b + 1) * actualFrames) / bucketCount);
+        const uint64_t startFrame = (uint64_t(b) * actualFrames) / bucketCount;
+        const uint64_t endFrame = (uint64_t(b + 1) * actualFrames) / bucketCount;
         float minV = 0.f;
         float maxV = 0.f;
-        for (int f = startFrame; f < endFrame; ++f) {
+        for (uint64_t f = startFrame; f < endFrame; ++f) {
             for (unsigned int c = 0; c < channels; ++c) {
                 const size_t index = size_t(f) * channels + c;
                 if (index < samples.size()) {
@@ -205,193 +105,17 @@ bool computeMp3Peaks(const QString& path, double& duration, QVariantList& peaks,
     return true;
 }
 
-bool computeFlacPeaks(const QString& path, double& duration, QVariantList& peaks, int buckets = 2048)
+bool decodeAudioMono(const QString& path, std::vector<float>& mono, unsigned int& sampleRate)
 {
-    drflac* flac = drflac_open_file(path.toUtf8().constData(), nullptr);
-    if (!flac) {
+    std::vector<float> interleaved;
+    unsigned int channels = 0;
+    if (!decodeAudioFile(path, interleaved, channels, sampleRate)) {
         return false;
     }
 
-    const uint64_t totalFrames = flac->totalPCMFrameCount;
-    const unsigned int channels = flac->channels;
-    const unsigned int sampleRate = flac->sampleRate;
-    if (totalFrames == 0 || channels == 0 || sampleRate == 0) {
-        drflac_close(flac);
-        return false;
-    }
-
-    std::vector<float> samples(totalFrames * channels);
-    const uint64_t read = drflac_read_pcm_frames_f32(flac, totalFrames, samples.data());
-    drflac_close(flac);
-
-    if (read == 0) {
-        return false;
-    }
-
-    const uint64_t actualFrames = read;
-    duration = double(actualFrames) / sampleRate;
-    const int bucketCount = std::min(buckets, int(actualFrames));
-    peaks.clear();
-    peaks.reserve(bucketCount);
-
-    for (int b = 0; b < bucketCount; ++b) {
-        const int startFrame = int((uint64_t(b) * actualFrames) / bucketCount);
-        const int endFrame = int((uint64_t(b + 1) * actualFrames) / bucketCount);
-        float minV = 0.f;
-        float maxV = 0.f;
-        for (int f = startFrame; f < endFrame; ++f) {
-            for (unsigned int c = 0; c < channels; ++c) {
-                const size_t index = size_t(f) * channels + c;
-                if (index < samples.size()) {
-                    const float v = samples[index];
-                    minV = std::min(minV, v);
-                    maxV = std::max(maxV, v);
-                }
-            }
-        }
-        QVariantMap item;
-        item.insert("min", minV);
-        item.insert("max", maxV);
-        peaks.append(item);
-    }
-
-    return true;
-}
-
-bool decodeWavMono(const QString& path, std::vector<float>& mono, unsigned int& sampleRate)
-{
-    QFile file(path);
-    if (!file.open(QIODevice::ReadOnly)) {
-        return false;
-    }
-
-    const QByteArray bytes = file.readAll();
-    if (bytes.size() < 44 || bytes.left(4) != "RIFF" || bytes.mid(8, 4) != "WAVE") {
-        return false;
-    }
-
-    int pos = 12;
-    int audioFormat = 0;
-    int channels = 0;
-    int bitsPerSample = 0;
-    int dataSize = 0;
-    int dataOffset = 0;
-
-    while (pos + 8 <= bytes.size()) {
-        const QByteArray id = bytes.mid(pos, 4);
-        const int size = int(bytes[pos + 4] & 0xff) | (int(bytes[pos + 5] & 0xff) << 8)
-                         | (int(bytes[pos + 6] & 0xff) << 16) | (int(bytes[pos + 7] & 0xff) << 24);
-        if (id == "fmt ") {
-            audioFormat = int(bytes[pos + 8] & 0xff) | (int(bytes[pos + 9] & 0xff) << 8);
-            channels = int(bytes[pos + 10] & 0xff) | (int(bytes[pos + 11] & 0xff) << 8);
-            sampleRate = int(bytes[pos + 12] & 0xff) | (int(bytes[pos + 13] & 0xff) << 8)
-                         | (int(bytes[pos + 14] & 0xff) << 16) | (int(bytes[pos + 15] & 0xff) << 24);
-            bitsPerSample = int(bytes[pos + 22] & 0xff) | (int(bytes[pos + 23] & 0xff) << 8);
-            pos += 8 + size + (size & 1);
-        } else if (id == "data") {
-            dataSize = size;
-            dataOffset = pos + 8;
-            break;
-        } else {
-            pos += 8 + size + (size & 1);
-        }
-    }
-
-    if (audioFormat != 1 || channels <= 0 || sampleRate == 0 || bitsPerSample <= 0 || dataSize <= 0) {
-        return false;
-    }
-
-    const int bytesPerSample = bitsPerSample / 8;
-    const int frames = dataSize / (channels * bytesPerSample);
-    if (frames <= 0) {
-        return false;
-    }
-
-    const char* data = bytes.constData() + dataOffset;
+    const uint64_t frames = interleaved.size() / channels;
     mono.resize(frames);
-    for (int f = 0; f < frames; ++f) {
-        float acc = 0.f;
-        for (int c = 0; c < channels; ++c) {
-            const unsigned char* p = reinterpret_cast<const unsigned char*>(data + (f * channels + c) * bytesPerSample);
-            float v = 0.f;
-            if (bitsPerSample == 16) {
-                short s = short(p[0]) | (short(p[1]) << 8);
-                v = float(s) / 32768.f;
-            } else if (bitsPerSample == 8) {
-                v = (float(p[0]) / 255.f) * 2.f - 1.f;
-            } else {
-                continue;
-            }
-            acc += v;
-        }
-        mono[f] = acc / channels;
-    }
-    return true;
-}
-
-bool decodeMp3Mono(const QString& path, std::vector<float>& mono, unsigned int& sampleRate)
-{
-    drmp3 mp3;
-    if (!drmp3_init_file(&mp3, path.toUtf8().constData(), nullptr)) {
-        return false;
-    }
-
-    const uint64_t estimatedFrames = drmp3_get_pcm_frame_count(&mp3);
-    const unsigned int channels = mp3.channels;
-    sampleRate = mp3.sampleRate;
-    if (estimatedFrames == 0 || channels == 0 || sampleRate == 0) {
-        drmp3_uninit(&mp3);
-        return false;
-    }
-
-    std::vector<float> interleaved(estimatedFrames * channels);
-    const uint64_t read = drmp3_read_pcm_frames_f32(&mp3, estimatedFrames, interleaved.data());
-    drmp3_uninit(&mp3);
-
-    //! NOTE: for VBR files the frame count can be an over-estimate; use the frames we
-    //! actually decoded so the tempo estimate matches the real audio length.
-    const uint64_t actualFrames = read;
-    if (actualFrames == 0) {
-        return false;
-    }
-
-    mono.resize(actualFrames);
-    for (uint64_t f = 0; f < actualFrames; ++f) {
-        float acc = 0.f;
-        for (unsigned int c = 0; c < channels; ++c) {
-            acc += interleaved[f * channels + c];
-        }
-        mono[f] = acc / float(channels);
-    }
-    return true;
-}
-
-bool decodeFlacMono(const QString& path, std::vector<float>& mono, unsigned int& sampleRate)
-{
-    drflac* flac = drflac_open_file(path.toUtf8().constData(), nullptr);
-    if (!flac) {
-        return false;
-    }
-
-    const uint64_t frames = flac->totalPCMFrameCount;
-    const unsigned int channels = flac->channels;
-    sampleRate = flac->sampleRate;
-    if (frames == 0 || channels == 0 || sampleRate == 0) {
-        drflac_close(flac);
-        return false;
-    }
-
-    std::vector<float> interleaved(frames * channels);
-    const uint64_t read = drflac_read_pcm_frames_f32(flac, frames, interleaved.data());
-    drflac_close(flac);
-
-    const uint64_t actualFrames = read;
-    if (actualFrames == 0) {
-        return false;
-    }
-
-    mono.resize(actualFrames);
-    for (uint64_t f = 0; f < actualFrames; ++f) {
+    for (uint64_t f = 0; f < frames; ++f) {
         float acc = 0.f;
         for (unsigned int c = 0; c < channels; ++c) {
             acc += interleaved[f * channels + c];
@@ -1001,16 +725,7 @@ void AudioTrackSettingsModel::updateWaveform()
     std::thread([self, path]() {
         double duration = 0.0;
         QVariantList peaks;
-        bool ok = false;
-
-        if (path.endsWith(".wav", Qt::CaseInsensitive) || path.endsWith(".aiff", Qt::CaseInsensitive)
-            || path.endsWith(".aif", Qt::CaseInsensitive)) {
-            ok = computeWavPeaks(path, duration, peaks);
-        } else if (path.endsWith(".mp3", Qt::CaseInsensitive)) {
-            ok = computeMp3Peaks(path, duration, peaks);
-        } else if (path.endsWith(".flac", Qt::CaseInsensitive)) {
-            ok = computeFlacPeaks(path, duration, peaks);
-        }
+        const bool ok = computeAudioPeaks(path, duration, peaks);
 
         if (!ok || !self) {
             return;
@@ -1276,18 +991,8 @@ void AudioTrackSettingsModel::tapTempo()
     unsigned int sampleRate = 0;
     const QString path = clip->filePath.toQString();
 
-    if (path.endsWith(".mp3", Qt::CaseInsensitive)) {
-        if (!decodeMp3Mono(path, mono, sampleRate)) {
-            return;
-        }
-    } else if (path.endsWith(".flac", Qt::CaseInsensitive)) {
-        if (!decodeFlacMono(path, mono, sampleRate)) {
-            return;
-        }
-    } else {
-        if (!decodeWavMono(path, mono, sampleRate)) {
-            return;
-        }
+    if (!decodeAudioMono(path, mono, sampleRate)) {
+        return;
     }
 
     double bpm = detectBpm(mono, sampleRate);
