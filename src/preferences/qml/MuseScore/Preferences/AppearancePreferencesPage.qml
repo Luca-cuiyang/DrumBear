@@ -84,6 +84,22 @@ PreferencesPage {
             }
         }
 
+        SeparatorLine {}
+
+        ThemeColorSection {
+            width: parent.width
+
+            navigation.section: root.navigationSection
+            navigation.order: root.navigationOrderStart + 2
+
+            onSkinSelected: function(skin) {
+                appearanceModel.currentThemeCode = skin.theme
+                appearanceModel.setNewColor(skin.accent, AppearancePreferencesModel.AccentColor)
+                appearanceModel.backgroundUseColor = true
+                appearanceModel.backgroundColor = skin.background
+            }
+        }
+
         SeparatorLine {
             visible: uiColorsSection.visible
         }

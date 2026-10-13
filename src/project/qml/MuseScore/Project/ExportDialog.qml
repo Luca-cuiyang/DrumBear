@@ -124,15 +124,27 @@ StyledDialogView {
                 font: ui.theme.bodyBoldFont
             }
 
-            ExportOptionsView {
-                id: exportOptionsView
-
+            Flickable {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
 
-                exportModel: exportModel
-                navigation.section: root.navigationSection
-                navigation.order: 3
+                contentWidth: width
+                contentHeight: exportOptionsView.height
+                clip: true
+                boundsBehavior: Flickable.StopAtBounds
+                interactive: contentHeight > height
+
+                ScrollBar.vertical: ScrollBar { policy: ScrollBar.AsNeeded }
+
+                ExportOptionsView {
+                    id: exportOptionsView
+
+                    width: parent.width
+
+                    exportModel: exportModel
+                    navigation.section: root.navigationSection
+                    navigation.order: 3
+                }
             }
 
             RowLayout {

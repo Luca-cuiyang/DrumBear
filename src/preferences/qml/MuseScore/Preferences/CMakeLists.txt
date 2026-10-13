@@ -122,6 +122,7 @@ qt_add_qml_module(preferences_qml
         internal/SaveToCloudSection.qml
         internal/ScrollPagesSection.qml
         internal/ThemeAdditionalOptionsSection.qml
+        internal/ThemeColorSection.qml
         internal/ThemesSection.qml
         internal/ThemeSample.qml
         internal/UiColorsSection.qml
