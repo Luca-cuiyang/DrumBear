@@ -517,6 +517,7 @@ void AudioTrackSettingsModel::chooseFile()
     updateClipsList();
     apply();
     notifyAll();
+    emit audioImported();
 }
 
 void AudioTrackSettingsModel::replaceFile()

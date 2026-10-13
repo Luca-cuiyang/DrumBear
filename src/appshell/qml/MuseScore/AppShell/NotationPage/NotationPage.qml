@@ -82,15 +82,17 @@ DockPage {
 
         function onHasTrackChanged() {
             Qt.callLater(function() {
-                if (audioTrackInitialLoad) {
-                    //! 启动阶段：始终保持关闭，不自动弹出。
-                    audioTrackPanel.close()
-                } else if (audioModel.hasTrack) {
-                    audioTrackPanel.setFloating(false)
-                    audioTrackPanel.open()
-                } else {
+                //! 打开已含伴奏轨的乐谱时不自动弹出；只有用户手动导入/替换音频才打开。
+                if (audioTrackInitialLoad || !audioModel.hasTrack) {
                     audioTrackPanel.close()
                 }
+            })
+        }
+
+        function onAudioImported() {
+            Qt.callLater(function() {
+                audioTrackPanel.setFloating(false)
+                audioTrackPanel.open()
             })
         }
     }
