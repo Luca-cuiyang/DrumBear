@@ -28,11 +28,8 @@
 #include "async/asyncable.h"
 #include "modularity/ioc.h"
 #include "iprojectconfiguration.h"
-#include "project/iprojectcreator.h"
 #include "actions/iactionsdispatcher.h"
 #include "interactive/iplatforminteractive.h"
-#include "notation/iinstrumentsrepository.h"
-#include "context/iglobalcontext.h"
 
 class QString;
 
@@ -46,11 +43,8 @@ class ScoresPageModel : public QObject, public muse::Contextable, public muse::a
     QML_ELEMENT
 
     muse::GlobalInject<IProjectConfiguration> configuration;
-    muse::GlobalInject<IProjectCreator> notationCreator;
     muse::GlobalInject<muse::IPlatformInteractive> platformInteractive;
-    muse::GlobalInject<notation::IInstrumentsRepository> instrumentsRepository;
     muse::ContextInject<muse::actions::IActionsDispatcher> dispatcher = { this };
-    muse::ContextInject<context::IGlobalContext> globalContext = { this };
 
 public:
     explicit ScoresPageModel(QObject* parent = nullptr);
@@ -65,7 +59,6 @@ public:
     void setViewType(ViewType type);
 
     Q_INVOKABLE void createNewScore();
-    Q_INVOKABLE void createJianpuScore();
     Q_INVOKABLE void convertFileToScore();
     Q_INVOKABLE void openOther();
     Q_INVOKABLE void openScore(const QString& scorePath, const QString& displayNameOverride);
