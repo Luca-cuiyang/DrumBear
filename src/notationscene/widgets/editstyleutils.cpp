@@ -398,9 +398,6 @@ QString EditStyleUtils::subPageCodeForElement(const EngravingItem* element)
         case TextStyleType::PALM_MUTE:
             return "palm-mute";
 
-        case TextStyleType::JIANPU_NUMBER:
-            return "jianpu-number";
-
         case TextStyleType::USER1:
             return "user1";
 

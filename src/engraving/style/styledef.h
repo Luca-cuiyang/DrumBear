@@ -1120,21 +1120,6 @@ enum class Sid : short {
     articulationOffset,
     articulationPosition,
 
-    jianpuNumberFontFace,
-    jianpuNumberFontSize,
-    jianpuNumberLineSpacing,
-    jianpuNumberFontSpatiumDependent,
-    jianpuNumberFontStyle,
-    jianpuNumberColor,
-    jianpuNumberAlign,
-    jianpuNumberOffset,
-    jianpuNumberFrameType,
-    jianpuNumberFramePadding,
-    jianpuNumberFrameWidth,
-    jianpuNumberFrameRound,
-    jianpuNumberFrameFgColor,
-    jianpuNumberFrameBgColor,
-
     longInstrumentFontFace,
     longInstrumentFontSize,
     longInstrumentLineSpacing,
@@ -2288,13 +2273,6 @@ enum class Sid : short {
     palmMuteEndFilledArrowHeight,
     palmMuteEndFilledArrowWidth,
 
-    jianpuNumberVerticalDistance,
-    jianpuOctaveDotRadius,
-    jianpuOctaveDotDistance,
-    jianpuDiminutionBeamThickness,
-    jianpuDiminutionBeamDistance,
-    jianpuDiminutionBeamPlacement,
-    jianpuDurationLineThickness,
     STYLES
 };
 

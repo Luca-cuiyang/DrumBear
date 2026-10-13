@@ -62,7 +62,5 @@ private:
 
     static RestGroups computeRestGroups(const System* system, LayoutContext& ctx);
     static InterruptionPoints computeInterruptionPoints(const Measure* measure, staff_idx_t staffIdx);
-
-    static void layoutRestForJianpu(const Rest* item, Rest::LayoutData* ldata, const LayoutContext& ctx);
 };
 }

@@ -1686,15 +1686,6 @@ bool Staff::isDrumStaff(const Fraction& tick) const
 }
 
 //---------------------------------------------------------
-//   isJianpuStaff
-//---------------------------------------------------------
-
-bool Staff::isJianpuStaff(const Fraction& tick) const
-{
-    return staffType(tick)->type() == StaffTypes::JIANPU;
-}
-
-//---------------------------------------------------------
 //   lines
 //---------------------------------------------------------
 

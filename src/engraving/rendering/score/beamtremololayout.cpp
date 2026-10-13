@@ -29,7 +29,6 @@
 #include "../dom/chord.h"
 #include "../dom/measure.h"
 #include "../dom/note.h"
-#include "../dom/octavedot.h"
 #include "../dom/score.h"
 #include "../dom/staff.h"
 #include "../dom/stem.h"
@@ -637,22 +636,10 @@ bool BeamTremoloLayout::calculateAnchors(const BeamBase* item, BeamBase::LayoutD
     bool hasChordAboveBeam = false;
     bool hasChordBelowBeam = false;
 
-    const bool isJianpuStaff = item->isJianpuStaff();
-    double beamDotStack = 0.0;
-    bool beamAbove = false;
-    double beamDistance = 0.0;
-    double dotDistance = 0.0;
-
     for (auto chordRest : chordRests) {
         if (!startCr) {
             startCr = chordRest;
-            if (isJianpuStaff) {
-                beamAbove = ctx.conf().styleV(Sid::jianpuDiminutionBeamPlacement).value<PlacementV>() == PlacementV::ABOVE;
-                beamDistance = ctx.conf().styleAbsolute(Sid::jianpuDiminutionBeamDistance) * startCr->mag();
-                dotDistance = ctx.conf().styleAbsolute(Sid::jianpuOctaveDotDistance) * startCr->mag();
-            }
         }
-
         endCr = chordRest;
         if (chordRest->isChord()) {
             if (!startChord) {
@@ -668,41 +655,7 @@ bool BeamTremoloLayout::calculateAnchors(const BeamBase* item, BeamBase::LayoutD
         } else {
             hasChordAboveBeam = true;
         }
-
-        if (isJianpuStaff && beamAbove) {
-            // For Jianpu staffs with beams above, we need to calculate the maximum possible stack
-            // of beams and above octave dots for any single chord, so that we can offset the beam
-            // accordingly to avoid collisions with the dots.
-            int aboveDots = 0;
-            const Chord* chord = chordRest->isChord() ? toChord(chordRest) : nullptr;
-            if (chord) {
-                std::vector<OctaveDot*> dots = chord->upNote()->octaveDots();
-                if (!dots.empty() && dots.front()->above()) {
-                    aboveDots = static_cast<int>(dots.size());
-                }
-            }
-
-            const int beamLines = strokeCount(ldata, chordRest);
-            const double beamStack = beamLines * beamDistance;
-            const double dotStack = aboveDots > 0 ? aboveDots * dotDistance : 0.0;
-            beamDotStack = std::max(beamDotStack, beamStack + dotStack);
-        }
     }
-
-    if (isJianpuStaff) {
-        ldata->startAnchor = chordBeamAnchor(ldata, startCr, ChordBeamAnchorType::Start);
-        ldata->endAnchor = chordBeamAnchor(ldata, endCr, ChordBeamAnchorType::End);
-
-        // Jianpu Y origin is at the center of the number.
-        const double halfHeight = item->staff()->staffTypeForElement(item)->jianpuBoxH() * startCr->mag() * .5;
-        // ABOVE: offset up by height/2 + stacked beam and dot
-        // BELOW (default): offset down by height/2 + distance
-        const double offsetY = beamAbove ? -(halfHeight + beamDotStack) : halfHeight + beamDistance;
-        ldata->startAnchor += PointF(0, offsetY);
-        ldata->endAnchor += PointF(0, offsetY);
-        return true;
-    }
-
     if (!startChord) {
         // we were passed a vector of only rests. we don't support beams across only rests
         // this beam will be deleted in LayoutBeams
@@ -1350,61 +1303,53 @@ int BeamTremoloLayout::getBeamCount(const BeamBase::LayoutData* ldata, const std
 
 double BeamTremoloLayout::chordBeamAnchorX(const BeamBase::LayoutData* ldata, const ChordRest* cr, ChordBeamAnchorType anchorType)
 {
-    bool isJianpu = cr->isJianpuStaff();
     double pagePosX = ldata->trem ? ldata->trem->pagePos().x() : ldata->beam ? ldata->beam->pagePos().x() : 0.0;
-    double crPosX = cr->pagePos().x() - pagePosX;
-    auto stemPosX = [cr, crPosX]() { return StemLayout::stemPosX(cr) + crPosX; };
+    double stemPosX = StemLayout::stemPosX(cr) + cr->pagePos().x() - pagePosX;
 
-    if (!isJianpu && (!cr->isChord() || !toChord(cr)->stem())) {
-        if (ldata->up) {
-            return stemPosX();
-        } else {
+    if (!cr->isChord() || !toChord(cr)->stem()) {
+        if (!ldata->up) {
             // rests always return the right side of the glyph as their stemPosX
             // so we need to adjust back to the left side if stems are down
-            return stemPosX() - StemLayout::stemPosX(cr);
+            stemPosX -= StemLayout::stemPosX(cr);
         }
+        return stemPosX;
     }
-    const Chord* chord = cr->isChord() ? toChord(cr) : nullptr;
-    const Stem* stem = chord ? chord->stem() : nullptr;
+    const Chord* chord = toChord(cr);
+    const Stem* stem = chord->stem();
 
-    auto crWidth = [cr]() { return cr->ldata()->bbox().width(); };
-    auto stemWidth = [stem]() { return stem ? stem->lineWidthMag() : 0.0; };
+    double stemWidth = stem->lineWidthMag();
 
     switch (anchorType) {
     case ChordBeamAnchorType::Start:
-        if (isJianpu) {
-            return crPosX;
-        }
         if (ldata->tab) {
-            return stemPosX() - 0.5 * stemWidth();
+            return stemPosX - 0.5 * stemWidth;
         }
-        if (chord && chord->up()) {
-            return stemPosX() - stemWidth();
+
+        if (chord->up()) {
+            return stemPosX - stemWidth;
         }
+
         break;
     case ChordBeamAnchorType::Middle:
-        if (isJianpu) {
-            return crPosX + crWidth() / 2;
-        }
         if (ldata->tab) {
-            return stemPosX();
+            return stemPosX;
         }
-        return chord && chord->up() ? stemPosX() - 0.5 * stemWidth() : stemPosX() + 0.5 * stemWidth();
+
+        return chord->up() ? stemPosX - 0.5 * stemWidth : stemPosX + 0.5 * stemWidth;
 
     case ChordBeamAnchorType::End:
-        if (isJianpu) {
-            return crPosX + crWidth();
-        }
         if (ldata->tab) {
-            return stemPosX() + 0.5 * stemWidth();
+            return stemPosX + 0.5 * stemWidth;
         }
-        if (chord && !chord->up()) {
-            return stemPosX() + stemWidth();
+
+        if (!chord->up()) {
+            return stemPosX + stemWidth;
         }
+
         break;
     }
 
-    return stemPosX();
+    return stemPosX;
 }
 
 double BeamTremoloLayout::chordBeamAnchorY(const BeamBase::LayoutData* ldata, const ChordRest* cr)
@@ -1414,10 +1359,6 @@ double BeamTremoloLayout::chordBeamAnchorY(const BeamBase::LayoutData* ldata, co
     }
 
     const Chord* chord = toChord(cr);
-    if (chord->isJianpuStaff()) {
-        return chord->upNote()->pagePos().y();
-    }
-
     Note* note = cr->up() ? chord->downNote() : chord->upNote();
     PointF position = note->pagePos();
 
