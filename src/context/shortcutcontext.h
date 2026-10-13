@@ -40,8 +40,6 @@ static const std::string CTX_NOT_NOTATION_FOCUSED = muse::shortcuts::CTX_NOT_PRO
 static const std::string CTX_NOTATION_NOT_NOTE_INPUT_STAFF_TAB("notation-not-note-input-staff-tab");
 /// We're in note input on a TAB staff
 static const std::string CTX_NOTATION_NOTE_INPUT_STAFF_TAB("notation-note-input-staff-tab");
-/// We're in note input on a Jianpu staff
-static const std::string CTX_NOTATION_NOTE_INPUT_STAFF_JIANPU("notation-note-input-staff-jianpu");
 
 static const std::string CTX_NOTATION_TEXT_EDITING("notation-text-editing");
 
@@ -53,7 +51,7 @@ public:
 
     bool hasLowerPriorityThan(const std::string& ctx1, const std::string& ctx2) const override
     {
-        static const std::array<std::string, 8> CONTEXTS_BY_INCREASING_PRIORITY {
+        static const std::array<std::string, 7> CONTEXTS_BY_INCREASING_PRIORITY {
             CTX_ANY,
 
             CTX_NOTATION_OPENED,
@@ -62,7 +60,6 @@ public:
 
             CTX_NOTATION_NOT_NOTE_INPUT_STAFF_TAB,
             CTX_NOTATION_NOTE_INPUT_STAFF_TAB,
-            CTX_NOTATION_NOTE_INPUT_STAFF_JIANPU,
 
             CTX_NOTATION_TEXT_EDITING
         };

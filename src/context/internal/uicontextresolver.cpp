@@ -30,10 +30,6 @@
 #include "notation/inotationinteraction.h" // IWYU pragma: keep
 #include "notation/inotationnoteinput.h" // IWYU pragma: keep
 #include "notation/inotationselection.h" // IWYU pragma: keep
-#include "notation/inotationelements.h"
-
-#include "engraving/dom/score.h"
-#include "engraving/dom/staff.h"
 
 #include "shortcutcontext.h"
 
@@ -239,28 +235,6 @@ bool UiContextResolver::isShortcutContextAllowed(const std::string& scContext) c
         }
         auto noteInput = notation->interaction()->noteInput();
         return noteInput->isNoteInputMode() && noteInput->state().staffGroup() == mu::engraving::StaffGroup::TAB;
-    } else if (CTX_NOTATION_NOTE_INPUT_STAFF_JIANPU == scContext) {
-        if (!matchWithCurrent(context::UiCtxProjectFocused)) {
-            return false;
-        }
-        auto notation = globalContext()->currentNotation();
-        if (!notation) {
-            return false;
-        }
-        auto noteInput = notation->interaction()->noteInput();
-        if (!noteInput->isNoteInputMode()) {
-            return false;
-        }
-        auto score = notation->elements()->msScore();
-        if (!score) {
-            return false;
-        }
-        const auto& st = noteInput->state();
-        if (st.staffIdx() >= score->nstaves()) {
-            return false;
-        }
-        const mu::engraving::Staff* staff = score->staff(st.staffIdx());
-        return staff && staff->isJianpuStaff(st.tick());
     } else if (CTX_NOTATION_TEXT_EDITING == scContext) {
         if (!matchWithCurrent(context::UiCtxProjectFocused)) {
             return false;

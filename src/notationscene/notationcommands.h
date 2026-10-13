@@ -488,16 +488,6 @@ inline static const muse::rcommand::Command TOGGLE_AUTOMATION_COMMAND("command:/
 inline static const muse::rcommand::Command SELECT_AUTOMATION_TYPE_COMMAND("command://notation/select-automation-type"); // with params
 inline static const muse::rcommand::Command CREATE_JIANPU_LINKED_STAFF_COMMAND("command://notation/create-jianpu-linked-staff");
 
-// 简谱数字直输（首调：1=主音）
-inline static const muse::rcommand::Command JIANPU_INPUT_0_COMMAND("command://notation/jianpu-input-0");
-inline static const muse::rcommand::Command JIANPU_INPUT_1_COMMAND("command://notation/jianpu-input-1");
-inline static const muse::rcommand::Command JIANPU_INPUT_2_COMMAND("command://notation/jianpu-input-2");
-inline static const muse::rcommand::Command JIANPU_INPUT_3_COMMAND("command://notation/jianpu-input-3");
-inline static const muse::rcommand::Command JIANPU_INPUT_4_COMMAND("command://notation/jianpu-input-4");
-inline static const muse::rcommand::Command JIANPU_INPUT_5_COMMAND("command://notation/jianpu-input-5");
-inline static const muse::rcommand::Command JIANPU_INPUT_6_COMMAND("command://notation/jianpu-input-6");
-inline static const muse::rcommand::Command JIANPU_INPUT_7_COMMAND("command://notation/jianpu-input-7");
-
 // TAB commands
 inline static const muse::rcommand::Command SET_DURATION_WHOLE_TAB_COMMAND("command://notation/set-duration-whole-tab");
 inline static const muse::rcommand::Command SET_DURATION_HALF_TAB_COMMAND("command://notation/set-duration-half-tab");

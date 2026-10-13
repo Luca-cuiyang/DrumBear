@@ -2936,62 +2936,6 @@ static const std::vector<CommandInfo> s_commandInfos = {
         Decoration(IconCode::Code::NONE, rcommand::Checkable::No)
     },
     CommandInfo {
-        JIANPU_INPUT_0_COMMAND,
-        TranslatableString("action", "Jianpu rest"),
-        TranslatableString("action", "Enter jianpu rest (0)"),
-        InputSchema(),
-        Decoration(IconCode::Code::NONE, rcommand::Checkable::No)
-    },
-    CommandInfo {
-        JIANPU_INPUT_1_COMMAND,
-        TranslatableString("action", "Jianpu do (1)"),
-        TranslatableString("action", "Enter jianpu scale degree 1"),
-        InputSchema(),
-        Decoration(IconCode::Code::NONE, rcommand::Checkable::No)
-    },
-    CommandInfo {
-        JIANPU_INPUT_2_COMMAND,
-        TranslatableString("action", "Jianpu re (2)"),
-        TranslatableString("action", "Enter jianpu scale degree 2"),
-        InputSchema(),
-        Decoration(IconCode::Code::NONE, rcommand::Checkable::No)
-    },
-    CommandInfo {
-        JIANPU_INPUT_3_COMMAND,
-        TranslatableString("action", "Jianpu mi (3)"),
-        TranslatableString("action", "Enter jianpu scale degree 3"),
-        InputSchema(),
-        Decoration(IconCode::Code::NONE, rcommand::Checkable::No)
-    },
-    CommandInfo {
-        JIANPU_INPUT_4_COMMAND,
-        TranslatableString("action", "Jianpu fa (4)"),
-        TranslatableString("action", "Enter jianpu scale degree 4"),
-        InputSchema(),
-        Decoration(IconCode::Code::NONE, rcommand::Checkable::No)
-    },
-    CommandInfo {
-        JIANPU_INPUT_5_COMMAND,
-        TranslatableString("action", "Jianpu sol (5)"),
-        TranslatableString("action", "Enter jianpu scale degree 5"),
-        InputSchema(),
-        Decoration(IconCode::Code::NONE, rcommand::Checkable::No)
-    },
-    CommandInfo {
-        JIANPU_INPUT_6_COMMAND,
-        TranslatableString("action", "Jianpu la (6)"),
-        TranslatableString("action", "Enter jianpu scale degree 6"),
-        InputSchema(),
-        Decoration(IconCode::Code::NONE, rcommand::Checkable::No)
-    },
-    CommandInfo {
-        JIANPU_INPUT_7_COMMAND,
-        TranslatableString("action", "Jianpu ti (7)"),
-        TranslatableString("action", "Enter jianpu scale degree 7"),
-        InputSchema(),
-        Decoration(IconCode::Code::NONE, rcommand::Checkable::No)
-    },
-    CommandInfo {
         SELECT_AUTOMATION_TYPE_COMMAND,
         TranslatableString::untranslatable("Automation type"),
         TranslatableString::untranslatable("Select automation type"),

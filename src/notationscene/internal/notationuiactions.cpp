@@ -56,14 +56,6 @@ static const ActionCode SHOW_IRREGULAR_CODE("show-irregular");
 static const ActionCode TOGGLE_CONCERT_PITCH_CODE("concert-pitch");
 static const ActionCode TOGGLE_AUTOMATION_CODE("toggle-automation");
 static const ActionCode CREATE_JIANPU_LINKED_STAFF_CODE("create-jianpu-linked-staff");
-static const ActionCode JIANPU_INPUT_0_CODE("jianpu-input-0");
-static const ActionCode JIANPU_INPUT_1_CODE("jianpu-input-1");
-static const ActionCode JIANPU_INPUT_2_CODE("jianpu-input-2");
-static const ActionCode JIANPU_INPUT_3_CODE("jianpu-input-3");
-static const ActionCode JIANPU_INPUT_4_CODE("jianpu-input-4");
-static const ActionCode JIANPU_INPUT_5_CODE("jianpu-input-5");
-static const ActionCode JIANPU_INPUT_6_CODE("jianpu-input-6");
-static const ActionCode JIANPU_INPUT_7_CODE("jianpu-input-7");
 
 // avoid translation duplication
 
@@ -2728,54 +2720,6 @@ const UiActionList NotationUiActions::s_actions = {
              TranslatableString("action", "为当前谱表创建关联简谱谱表"),
              IconCode::Code::NONE,
              Checkable::No
-             ),
-    UiAction(JIANPU_INPUT_0_CODE,
-             mu::context::UiCtxProjectOpened,
-             mu::context::CTX_NOTATION_NOTE_INPUT_STAFF_JIANPU,
-             TranslatableString("action", "Jianpu rest"),
-             TranslatableString("action", "Enter jianpu rest (0)")
-             ),
-    UiAction(JIANPU_INPUT_1_CODE,
-             mu::context::UiCtxProjectOpened,
-             mu::context::CTX_NOTATION_NOTE_INPUT_STAFF_JIANPU,
-             TranslatableString("action", "Jianpu do (1)"),
-             TranslatableString("action", "Enter jianpu scale degree 1")
-             ),
-    UiAction(JIANPU_INPUT_2_CODE,
-             mu::context::UiCtxProjectOpened,
-             mu::context::CTX_NOTATION_NOTE_INPUT_STAFF_JIANPU,
-             TranslatableString("action", "Jianpu re (2)"),
-             TranslatableString("action", "Enter jianpu scale degree 2")
-             ),
-    UiAction(JIANPU_INPUT_3_CODE,
-             mu::context::UiCtxProjectOpened,
-             mu::context::CTX_NOTATION_NOTE_INPUT_STAFF_JIANPU,
-             TranslatableString("action", "Jianpu mi (3)"),
-             TranslatableString("action", "Enter jianpu scale degree 3")
-             ),
-    UiAction(JIANPU_INPUT_4_CODE,
-             mu::context::UiCtxProjectOpened,
-             mu::context::CTX_NOTATION_NOTE_INPUT_STAFF_JIANPU,
-             TranslatableString("action", "Jianpu fa (4)"),
-             TranslatableString("action", "Enter jianpu scale degree 4")
-             ),
-    UiAction(JIANPU_INPUT_5_CODE,
-             mu::context::UiCtxProjectOpened,
-             mu::context::CTX_NOTATION_NOTE_INPUT_STAFF_JIANPU,
-             TranslatableString("action", "Jianpu sol (5)"),
-             TranslatableString("action", "Enter jianpu scale degree 5")
-             ),
-    UiAction(JIANPU_INPUT_6_CODE,
-             mu::context::UiCtxProjectOpened,
-             mu::context::CTX_NOTATION_NOTE_INPUT_STAFF_JIANPU,
-             TranslatableString("action", "Jianpu la (6)"),
-             TranslatableString("action", "Enter jianpu scale degree 6")
-             ),
-    UiAction(JIANPU_INPUT_7_CODE,
-             mu::context::UiCtxProjectOpened,
-             mu::context::CTX_NOTATION_NOTE_INPUT_STAFF_JIANPU,
-             TranslatableString("action", "Jianpu ti (7)"),
-             TranslatableString("action", "Enter jianpu scale degree 7")
              ),
 };
 
