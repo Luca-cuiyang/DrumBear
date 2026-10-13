@@ -33,7 +33,6 @@
 #include "engraving/types/fraction.h"
 #include "notation/imasternotation.h"
 #include "notation/inotationparts.h"
-#include "project/iopenprojectscenario.h"
 #include "types/projectcreateoptions.h"
 
 using namespace mu::project;
@@ -84,7 +83,6 @@ void ScoresPageModel::createJianpuScore()
     }
 
     globalContext()->setCurrentProject(project);
-    openProjectScenario()->finishOpening();
 }
 
 void ScoresPageModel::convertFileToScore()

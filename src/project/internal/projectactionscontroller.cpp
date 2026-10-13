@@ -286,19 +286,8 @@ muse::Ret ProjectActionsController::openProject(const muse::rcommand::Params& pa
 
 muse::Ret ProjectActionsController::importMidiAsJianpu()
 {
-    std::vector<std::string> midiFilter {
-        muse::trc("project", "MIDI files") + " (*.mid *.midi *.kar)"
-    };
-
-    muse::io::path_t midiPath = interactive()->selectOpeningFileSync(
-        muse::trc("project", "导入 MIDI 为简谱"), "", midiFilter);
-
-    if (midiPath.empty()) {
-        return make_ret(Ret::Code::Cancel);
-    }
-
     openProjectScenario()->setImportMidiAsJianpu(true);
-    return runAsync(openProjectScenario()->openProject(midiPath));
+    return runAsync(openProjectScenario()->openProject(ProjectFile()));
 }
 
 muse::Ret ProjectActionsController::exportMusicXml()
@@ -320,11 +309,6 @@ muse::Ret ProjectActionsController::exportMusicXml()
     muse::io::path_t path = interactive()->selectSavingFileSync(muse::trc("project", "导出简谱 MusicXML"), "", filter);
     if (path.empty()) {
         return make_ret(Ret::Code::Cancel);
-    }
-
-    // 用户未输入扩展名时，默认补上 .musicxml，避免导出成无后缀文件
-    if (muse::io::suffix(path).empty()) {
-        path = path.toString() + u".musicxml";
     }
 
     if (!mu::iex::musicxml::saveXml(score, path.toString())) {
