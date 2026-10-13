@@ -201,6 +201,14 @@ ExportSettingsPage {
                 }
             }
 
+            StyledTextLabel {
+                width: parent.width
+                text: qsTrc("project/export", "提示：帧率越高文件越大、导出越慢。120/240 帧文件较大，部分播放器可能无法流畅播放。")
+                horizontalAlignment: Text.AlignLeft
+                wrapMode: Text.WordWrap
+                opacity: 0.7
+            }
+
             RadioButtonGroup {
                 orientation: ListView.Vertical
                 spacing: 8
