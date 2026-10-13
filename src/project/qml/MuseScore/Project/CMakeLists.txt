@@ -65,7 +65,6 @@ qt_add_qml_module(project_qml
         AskSaveLocationTypeDialog.qml
         AudioGenerationSettings.qml
         AudioGenerationSettingsDialog.qml
-        AudioTrackDialog.qml
         ConvertFileProcessingDialog.qml
         ConvertFileToScoreDialog.qml
         internal/ConvertFileToScore/ConvertButtonBox.qml

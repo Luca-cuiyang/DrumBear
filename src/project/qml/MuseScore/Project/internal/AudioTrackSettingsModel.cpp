@@ -758,7 +758,6 @@ void AudioTrackSettingsModel::notifyAll()
     emit clipEndChanged();
     emit volumeDbChanged();
     emit mutedChanged();
-    emit tempoSyncChanged();
     emit speedChanged();
     emit durationChanged();
     emit waveformPeaksChanged();
@@ -774,7 +773,6 @@ double AudioTrackSettingsModel::clipStart() const { const AudioClipSettings* c =
 double AudioTrackSettingsModel::clipEnd() const { const AudioClipSettings* c = firstClip(); return c ? c->clipEnd.to_double() : 0.0; }
 double AudioTrackSettingsModel::volumeDb() const { const AudioClipSettings* c = firstClip(); return c ? c->volume.to_double() : 0.0; }
 bool AudioTrackSettingsModel::muted() const { const AudioClipSettings* c = firstClip(); return c ? c->muted : false; }
-bool AudioTrackSettingsModel::tempoSync() const { return false; }
 double AudioTrackSettingsModel::speed() const { const AudioClipSettings* c = firstClip(); return c ? c->speed : 1.0; }
 bool AudioTrackSettingsModel::hasTrack() const { return m_settings.isValid(); }
 double AudioTrackSettingsModel::duration() const
@@ -859,7 +857,6 @@ void AudioTrackSettingsModel::setClipStart(double value) { if (!m_settings.clips
 void AudioTrackSettingsModel::setClipEnd(double value) { if (!m_settings.clips.empty()) { m_settings.clips[0].clipEnd = muse::secs_t(value); } emit clipEndChanged(); updateClipsList(); }
 void AudioTrackSettingsModel::setVolumeDb(double value) { if (!m_settings.clips.empty()) { m_settings.clips[0].volume = muse::audio::volume_db_t(value); } emit volumeDbChanged(); updateClipsList(); }
 void AudioTrackSettingsModel::setMuted(bool value) { if (!m_settings.clips.empty()) { m_settings.clips[0].muted = value; } emit mutedChanged(); updateClipsList(); }
-void AudioTrackSettingsModel::setTempoSync(bool value) { emit tempoSyncChanged(); }
 void AudioTrackSettingsModel::setSpeed(double value) { if (!m_settings.clips.empty()) { m_settings.clips[0].speed = float(value); } emit speedChanged(); updateClipsList(); }
 
 void AudioTrackSettingsModel::addClipFromFile()

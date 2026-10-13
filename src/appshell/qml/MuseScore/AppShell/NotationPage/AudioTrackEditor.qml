@@ -94,13 +94,19 @@ Item {
         anchors.margins: 10
         spacing: 6
 
+        // 音频文件操作
         RowLayout {
             Layout.fillWidth: true
             spacing: 8
 
-            FlatButton { text: "选择音频"; onClicked: audioModel.chooseFile() }
+            StyledTextLabel {
+                text: "音频文件"
+                font.bold: true
+            }
+            FlatButton { text: "选择音频"; accentButton: !audioModel.hasTrack; onClicked: audioModel.chooseFile() }
             FlatButton { text: "替换音频"; enabled: audioModel.hasTrack; onClicked: audioModel.replaceFile() }
             FlatButton { text: "移除伴奏轨"; enabled: audioModel.hasTrack; onClicked: audioModel.remove() }
+            Item { Layout.fillWidth: true }
             FlatButton {
                 text: audioModel.metronomeEnabled ? "✓ 节拍器" : "节拍器"
                 accentButton: audioModel.metronomeEnabled
@@ -117,14 +123,21 @@ Item {
             }
         }
 
+        SeparatorLine { Layout.fillWidth: true }
+
+        // 音量
         RowLayout {
             Layout.fillWidth: true
-            spacing: 8
+            spacing: 12
 
-            StyledTextLabel { text: "乐谱音量" }
+            StyledTextLabel {
+                text: "音量"
+                font.bold: true
+            }
+            StyledTextLabel { text: "乐谱" }
             StyledSlider {
                 id: scoreVolumeSlider
-                Layout.preferredWidth: 120
+                Layout.preferredWidth: 100
                 from: -60
                 to: 12
                 stepSize: 0.5
@@ -137,10 +150,10 @@ Item {
                 }
             }
 
-            StyledTextLabel { text: "伴奏轨音量" }
+            StyledTextLabel { text: "伴奏轨" }
             StyledSlider {
                 id: accompanimentVolumeSlider
-                Layout.preferredWidth: 120
+                Layout.preferredWidth: 100
                 from: -60
                 to: 12
                 stepSize: 0.5
@@ -153,10 +166,10 @@ Item {
                 }
             }
 
-            StyledTextLabel { text: "总音量" }
+            StyledTextLabel { text: "总" }
             StyledSlider {
                 id: masterVolumeSlider
-                Layout.preferredWidth: 120
+                Layout.preferredWidth: 100
                 from: -60
                 to: 12
                 stepSize: 0.5
@@ -170,11 +183,15 @@ Item {
             }
         }
 
+        // 播放指针样式 + 轨道缩放
         RowLayout {
             Layout.fillWidth: true
-            spacing: 6
+            spacing: 8
 
-            StyledTextLabel { text: "设置时间线" }
+            StyledTextLabel {
+                text: "播放指针"
+                font.bold: true
+            }
 
             Repeater {
                 model: root.playheadColors
@@ -203,19 +220,9 @@ Item {
                 value: root.playheadThickness
                 onMoved: root.playheadThickness = value
             }
-        }
 
-        RowLayout {
-            Layout.fillWidth: true
-            spacing: 8
-            StyledTextLabel { text: "播放位置" }
-            StyledSlider {
-                Layout.fillWidth: true
-                value: audioModel.playbackPosition
-                from: 0
-                to: Math.max(1, totalDuration)
-                onMoved: audioModel.seek(value)
-            }
+            Item { Layout.fillWidth: true }
+
             StyledTextLabel { text: "轨道缩放" }
             StyledSlider {
                 id: zoomSlider
@@ -237,6 +244,23 @@ Item {
                 }
             }
             StyledTextLabel { text: Math.round((zoom - 1.0) * 20.0) + "%" }
+        }
+
+        // 播放位置
+        RowLayout {
+            Layout.fillWidth: true
+            spacing: 8
+            StyledTextLabel {
+                text: "播放位置"
+                font.bold: true
+            }
+            StyledSlider {
+                Layout.fillWidth: true
+                value: audioModel.playbackPosition
+                from: 0
+                to: Math.max(1, totalDuration)
+                onMoved: audioModel.seek(value)
+            }
         }
 
         Rectangle {
@@ -551,6 +575,18 @@ Item {
                                 if (peaks && peaks.length > 0) {
                                     var n = peaks.length
                                     var halfH = height / 2 - 4
+                                    // 归一化：找全局最大峰值，让不同音量的音频都能清晰看到波形
+                                    var peakMax = 0
+                                    for (var j = 0; j < n; ++j) {
+                                        var pj = peaks[j]
+                                        var aj = Math.max(Math.abs(pj.min), Math.abs(pj.max))
+                                        if (aj > peakMax) {
+                                            peakMax = aj
+                                        }
+                                    }
+                                    if (peakMax < 1e-6) {
+                                        peakMax = 1e-6
+                                    }
                                     for (var i = 0; i < n; ++i) {
                                         var t = i / n * dur
                                         var inClip = (t >= cs && t <= ce)
@@ -558,19 +594,12 @@ Item {
                                             continue
                                         }
                                         var x = timeline.xAt(audioModel.startOffset + (t - cs))
-                                        var bw = Math.max(1, timeline.pxPerSec * (dur / n))
+                                        var bw = Math.max(1, timeline.pxPerSec * (dur / n) * 0.85)
                                         var item = peaks[i]
-                                        var minV = item.min
-                                        var maxV = item.max
-                                        var y1 = mid - maxV * halfH
-                                        var y2 = mid - minV * halfH
-                                        if (y2 < y1) {
-                                            var tmpY = y1
-                                            y1 = y2
-                                            y2 = tmpY
-                                        }
+                                        var amp = Math.max(Math.abs(item.min), Math.abs(item.max)) / peakMax
+                                        var barH = Math.max(1, amp * halfH)
                                         ctx.fillStyle = root.audioColor
-                                        ctx.fillRect(x, y1, bw, Math.max(1, y2 - y1))
+                                        ctx.fillRect(x, mid - barH, bw, barH * 2)
                                     }
                                 } else {
                                     ctx.fillStyle = root.audioColor

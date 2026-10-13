@@ -51,7 +51,6 @@ class AudioTrackSettingsModel : public QObject, public muse::Contextable, public
     Q_PROPERTY(double clipEnd READ clipEnd WRITE setClipEnd NOTIFY clipEndChanged)
     Q_PROPERTY(double volumeDb READ volumeDb WRITE setVolumeDb NOTIFY volumeDbChanged)
     Q_PROPERTY(bool muted READ muted WRITE setMuted NOTIFY mutedChanged)
-    Q_PROPERTY(bool tempoSync READ tempoSync WRITE setTempoSync NOTIFY tempoSyncChanged)
     Q_PROPERTY(double speed READ speed WRITE setSpeed NOTIFY speedChanged)
     Q_PROPERTY(bool hasTrack READ hasTrack NOTIFY hasTrackChanged)
     Q_PROPERTY(double duration READ duration NOTIFY durationChanged)
@@ -79,7 +78,6 @@ public:
     double clipEnd() const;
     double volumeDb() const;
     bool muted() const;
-    bool tempoSync() const;
     double speed() const;
     bool hasTrack() const;
     double duration() const;
@@ -103,7 +101,6 @@ public:
     Q_INVOKABLE void setClipEnd(double value);
     Q_INVOKABLE void setVolumeDb(double value);
     Q_INVOKABLE void setMuted(bool value);
-    Q_INVOKABLE void setTempoSync(bool value);
     Q_INVOKABLE void setSpeed(double value);
 
     Q_INVOKABLE void load();
@@ -140,7 +137,6 @@ signals:
     void clipEndChanged();
     void volumeDbChanged();
     void mutedChanged();
-    void tempoSyncChanged();
     void speedChanged();
     void hasTrackChanged();
     void durationChanged();
@@ -188,8 +184,6 @@ private:
     QVariantList m_clips;
     double m_measuredBpm = 0.0;
     double m_originalBpm = 0.0;
-    QElapsedTimer m_tapTimer;
-    QList<qint64> m_tapTimes;
     QVariantList m_scoreBeatGrid;
     bool m_scoreMuted = false;
     bool m_metronomeEnabled = false;
