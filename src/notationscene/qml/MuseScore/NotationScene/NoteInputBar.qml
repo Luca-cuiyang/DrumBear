@@ -115,7 +115,6 @@ Item {
 
             readonly property MenuItem item: Boolean(itemModel) ? itemModel.item : null
             readonly property bool hasMenu: Boolean(item) && item.subitems.length !== 0
-            readonly property bool isJianpuInput: Boolean(item) && item.id === "command://notation/toggle-note-input-jianpu"
 
             width: gridView.cellWidth
             height: gridView.cellWidth
@@ -125,8 +124,7 @@ Item {
             accentButton: (Boolean(item) && item.checked) || menuLoader.isMenuOpened
             transparent: !accentButton
 
-            icon: isJianpuInput ? IconCode.NONE : (Boolean(item) ? item.icon : IconCode.NONE)
-            text: isJianpuInput ? "简谱" : ""
+            icon: Boolean(item) ? item.icon : IconCode.NONE
             iconFont: ui.theme.toolbarIconsFont
 
             toolTipTitle: Boolean(item) ? item.title : ""
