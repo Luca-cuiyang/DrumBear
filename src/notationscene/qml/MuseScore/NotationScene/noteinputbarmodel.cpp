@@ -108,7 +108,7 @@ const muse::ui::ToolConfig& NoteInputBarModel::defaultNoteInputConfig()
             { TOGGLE_NOTE_INPUT_BY_DURATION_COMMAND, true },
             { TOGGLE_NOTE_INPUT_RHYTHM_COMMAND, false },
             { TOGGLE_NOTE_INPUT_REPITCH_COMMAND, false },
-            { TOGGLE_NOTE_INPUT_JIANPU_COMMAND, true },
+            { TOGGLE_NOTE_INPUT_JIANPU_COMMAND, false },
             { TOGGLE_NOTE_INPUT_REALTIME_AUTO_COMMAND, false },
             { TOGGLE_NOTE_INPUT_REALTIME_MANUAL_COMMAND, false },
             { TOGGLE_NOTE_INPUT_TIMEWISE_COMMAND, false },
