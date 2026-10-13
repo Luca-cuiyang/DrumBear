@@ -22,9 +22,6 @@
 
 #include "staffsettingsmodel.h"
 
-#include "engraving/types/fraction.h"
-#include "engraving/dom/staff.h"
-#include "engraving/dom/stafftype.h"
 #include "engraving/types/types.h"
 
 #include "notation/imasternotation.h"
@@ -357,29 +354,6 @@ void StaffSettingsModel::createLinkedStaff()
     }
 
     Staff* linkedStaff = sourceStaff->clone();
-    if (!masterNotationParts()->appendLinkedStaff(linkedStaff, sourceStaff->id(), sourceStaff->part()->id())) {
-        linkedStaff->unlink();
-        delete linkedStaff;
-    }
-}
-
-void StaffSettingsModel::createJianpuLinkedStaff()
-{
-    if (!masterNotationParts()) {
-        return;
-    }
-
-    const Staff* sourceStaff = masterNotationParts()->staff(m_staffId);
-    if (!sourceStaff) {
-        return;
-    }
-
-    Staff* linkedStaff = sourceStaff->clone();
-    const StaffType* jianpuType = StaffType::preset(StaffTypes::JIANPU);
-    if (jianpuType) {
-        linkedStaff->setStaffType(Fraction(0, 1), *jianpuType);
-    }
-
     if (!masterNotationParts()->appendLinkedStaff(linkedStaff, sourceStaff->id(), sourceStaff->part()->id())) {
         linkedStaff->unlink();
         delete linkedStaff;

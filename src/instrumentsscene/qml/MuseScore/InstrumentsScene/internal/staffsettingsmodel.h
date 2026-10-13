@@ -71,7 +71,6 @@ public:
     Q_INVOKABLE void load(const QString& staffId);
 
     Q_INVOKABLE void createLinkedStaff();
-    Q_INVOKABLE void createJianpuLinkedStaff();
     Q_INVOKABLE void setVoiceVisible(int voiceIndex, bool visible);
 
 public slots:
