@@ -1290,8 +1290,8 @@
     </message>
     <message>
         <location filename="../../src/notationscene/widgets/editstyle.ui" line="364"/>
-        <source>MuseScore Studio will change the style to suit the font better</source>
-        <translation>MuseScore Studio가 글꼴에 최적화된 스타일로 변경합니다</translation>
+        <source>DB Score will change the style to suit the font better</source>
+        <translation>DB Score가 글꼴에 최적화된 스타일로 변경합니다</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/widgets/editstyle.ui" line="367"/>
@@ -5398,8 +5398,8 @@ followed by dashes</source>
     </message>
     <message>
         <location filename="../../src/appshell/internal/applicationuiactions.cpp" line="66"/>
-        <source>&amp;About MuseScore Studio…</source>
-        <translation>MuseScore Studio 정보(&amp;A)…</translation>
+        <source>&amp;About DB Score…</source>
+        <translation>DB Score 정보(&amp;A)…</translation>
     </message>
     <message>
         <location filename="../../src/appshell/internal/applicationuiactions.cpp" line="71"/>
@@ -5673,10 +5673,10 @@ followed by dashes</source>
     <message>
         <location filename="../../src/appshell/internal/applicationuiactions.cpp" line="261"/>
         <location filename="../../src/appshell/internal/applicationuiactions.cpp" line="262"/>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="282"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="282"/>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="2662"/>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="2663"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/undoredotoolbarmodel.cpp" line="76"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/undoredotoolbarmodel.cpp" line="76"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="159"/>
         <source>Undo</source>
         <translation>실행 취소</translation>
@@ -5684,10 +5684,10 @@ followed by dashes</source>
     <message>
         <location filename="../../src/appshell/internal/applicationuiactions.cpp" line="269"/>
         <location filename="../../src/appshell/internal/applicationuiactions.cpp" line="270"/>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="288"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="288"/>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="2669"/>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="2670"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/undoredotoolbarmodel.cpp" line="84"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/undoredotoolbarmodel.cpp" line="84"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="165"/>
         <source>Redo</source>
         <translation>다시 실행</translation>
@@ -5705,20 +5705,20 @@ followed by dashes</source>
         <translation>삭제</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="216"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="216"/>
         <source>Parts…</source>
         <translation>파트…</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="283"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/undoredotoolbarmodel.cpp" line="77"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="283"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/undoredotoolbarmodel.cpp" line="77"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="160"/>
         <source>Undo ‘%1’</source>
         <translation>‘%1’ 실행 취소</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="289"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/undoredotoolbarmodel.cpp" line="85"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="289"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/undoredotoolbarmodel.cpp" line="85"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="166"/>
         <source>Redo ‘%1’</source>
         <translation>‘%1’ 다시 실행</translation>
@@ -9576,7 +9576,7 @@ followed by dashes</source>
         <translation>이 악보의 온라인 사운드 캐시 삭제</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/playbacktoolbarmodel.cpp" line="117"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/playbacktoolbarmodel.cpp" line="117"/>
         <source>Playback settings</source>
         <translation>플레이백 설정</translation>
     </message>
@@ -9662,13 +9662,13 @@ followed by dashes</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectuiactions.cpp" line="89"/>
-        <source>Publish to &amp;MuseScore.com…</source>
-        <translation>MuseScore.com에 게시(&amp;M)…</translation>
+        <source>Publish to &amp;drumbearai.com…</source>
+        <translation>drumbearai.com에 게시(&amp;M)…</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectuiactions.cpp" line="90"/>
-        <source>Publish to MuseScore.com</source>
-        <translation>MuseScore.com에 게시</translation>
+        <source>Publish to drumbearai.com</source>
+        <translation>drumbearai.com에 게시</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectuiactions.cpp" line="96"/>
@@ -9749,151 +9749,151 @@ followed by dashes</source>
 <context>
     <name>appshell</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/HomePage/HomeMenu.qml" line="56"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/HomePage/HomeMenu.qml" line="56"/>
         <source>Home menu</source>
         <translation>홈 메뉴</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/HomePage/HomeMenu.qml" line="91"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/HomePage/HomeMenu.qml" line="91"/>
         <source>Scores</source>
         <translation>악보</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/HomePage/HomeMenu.qml" line="92"/>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/HomePage/PluginsPage.qml" line="64"/>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/HomePage/PluginsPage.qml" line="88"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/HomePage/HomeMenu.qml" line="92"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/HomePage/PluginsPage.qml" line="64"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/HomePage/PluginsPage.qml" line="88"/>
         <source>Plugins</source>
         <translation>플러그인</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/HomePage/HomeMenu.qml" line="93"/>
-        <location filename="../../src/musesounds/qml/MuseScore/MuseSounds/MuseSoundsPage.qml" line="71"/>
-        <location filename="../../src/musesounds/qml/MuseScore/MuseSounds/MuseSoundsPage.qml" line="96"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/HomePage/HomeMenu.qml" line="93"/>
+        <location filename="../../src/musesounds/qml/DB Score/MuseSounds/MuseSoundsPage.qml" line="71"/>
+        <location filename="../../src/musesounds/qml/DB Score/MuseSounds/MuseSoundsPage.qml" line="96"/>
         <source>MuseSounds</source>
         <translation>MuseSounds</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/HomePage/HomeMenu.qml" line="94"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/HomePage/HomeMenu.qml" line="94"/>
         <source>Learn</source>
         <translation>배우기</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/HomePage/PluginsPage.qml" line="101"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/HomePage/PluginsPage.qml" line="101"/>
         <source>Plugins search</source>
         <translation>플러그인 검색</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/HomePage/PluginsPage.qml" line="120"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/HomePage/PluginsPage.qml" line="120"/>
         <source>Category:</source>
         <translation>카테고리:</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/HomePage/PluginsPage.qml" line="128"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/HomePage/PluginsPage.qml" line="128"/>
         <source>All</source>
         <extracomment>The title of an option to display the plugins from all categories.</extracomment>
         <translation>모두</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/MainToolBar.qml" line="67"/>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/WindowContent.qml" line="67"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/MainToolBar.qml" line="67"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/WindowContent.qml" line="67"/>
         <source>Main toolbar</source>
         <translation>기본 도구 모음</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="121"/>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/PublishPage/PublishPage.qml" line="56"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="121"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/PublishPage/PublishPage.qml" line="56"/>
         <source>Notation toolbar</source>
         <translation>기보 도구 모음</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="143"/>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/PublishPage/PublishPage.qml" line="78"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="143"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/PublishPage/PublishPage.qml" line="78"/>
         <source>Playback controls</source>
         <translation>플레이백 컨트롤</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="170"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="170"/>
         <source>Extensions toolbar</source>
         <translation>확장 도구 모음</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="198"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="198"/>
         <source>Undo/redo</source>
         <translation>실행 취소/다시 실행</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="222"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="222"/>
         <source>Note input</source>
         <translation>음표 입력</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="254"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="254"/>
         <location filename="../../src/web/appshell/qml/NotationFrame.qml" line="62"/>
         <source>Palettes</source>
         <translation>팔레트</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="283"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="283"/>
         <location filename="../../src/web/appshell/qml/NotationFrame.qml" line="65"/>
         <source>Layout</source>
         <translation>레이아웃</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="312"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="312"/>
         <location filename="../../src/web/appshell/qml/NotationFrame.qml" line="68"/>
         <source>Properties</source>
         <translation>속성</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="338"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="338"/>
         <source>Selection filter</source>
         <translation>선택영역 필터</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="399"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="399"/>
         <source>Mixer</source>
         <translation>믹서</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="452"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="452"/>
         <source>Piano keyboard</source>
         <translation>피아노 키보드</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="486"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="486"/>
         <source>Timeline</source>
         <translation>타임라인</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="516"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="516"/>
         <source>Drumset tools</source>
         <translation>드럼셋 도구</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="542"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="542"/>
         <source>Percussion</source>
         <translation>퍼커션</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/platform/AppMenuBar.qml" line="77"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/platform/AppMenuBar.qml" line="77"/>
         <location filename="../../src/web/appshell/qml/AppMenuBar.qml" line="71"/>
         <source>Application menu</source>
         <translation>애플리케이션 메뉴</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/platform/win/AppTitleBar.qml" line="93"/>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/mainwindowtitleprovider.cpp" line="103"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/platform/win/AppTitleBar.qml" line="93"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/mainwindowtitleprovider.cpp" line="103"/>
         <location filename="../../src/web/appshell/view/mainwindowtitleprovider.cpp" line="104"/>
-        <source>MuseScore Studio</source>
-        <translation>MuseScore Studio</translation>
+        <source>DB Score</source>
+        <translation>DB Score</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/PublishPage/PublishPage.qml" line="98"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/PublishPage/PublishPage.qml" line="98"/>
         <source>Undo/redo toolbar</source>
         <translation>실행 취소/다시 실행 도구 모음</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/PublishPage/PublishPage.qml" line="122"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/PublishPage/PublishPage.qml" line="122"/>
         <source>Publish toolbar</source>
         <translation>게시 도구 모음</translation>
     </message>
@@ -9903,7 +9903,7 @@ followed by dashes</source>
         <translation>계정</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MidiDevicesSection.qml" line="79"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MidiDevicesSection.qml" line="79"/>
         <source>Produce MIDI 2.0 output if supported by the receiver</source>
         <translation>수신기에서 지원하는 경우 MIDI 2.0 출력 생성</translation>
     </message>
@@ -9933,13 +9933,13 @@ This action will not delete any of your scores.</source>
     </message>
     <message>
         <location filename="../../src/appshell/internal/applicationactioncontroller.cpp" line="368"/>
-        <source>Would you like to restart MuseScore Studio now?</source>
-        <translation>지금 MuseScore Studio를 재시작하시겠습니까?</translation>
+        <source>Would you like to restart DB Score now?</source>
+        <translation>지금 DB Score를 재시작하시겠습니까?</translation>
     </message>
     <message>
         <location filename="../../src/appshell/internal/applicationactioncontroller.cpp" line="369"/>
-        <source>MuseScore Studio needs to be restarted for these changes to take effect.</source>
-        <translation>변경 사항을 적용하려면 MuseScore Studio를 재시작해야 합니다.</translation>
+        <source>DB Score needs to be restarted for these changes to take effect.</source>
+        <translation>변경 사항을 적용하려면 DB Score를 재시작해야 합니다.</translation>
     </message>
     <message>
         <location filename="../../src/appshell/internal/applicationactioncontroller.cpp" line="374"/>
@@ -9957,22 +9957,22 @@ This action will not delete any of your scores.</source>
         <translation>세션을 복원하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/maintoolbarmodel.cpp" line="90"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/maintoolbarmodel.cpp" line="90"/>
         <source>Home</source>
         <translation>홈</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/maintoolbarmodel.cpp" line="91"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/maintoolbarmodel.cpp" line="91"/>
         <source>Score</source>
         <translation>악보</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/maintoolbarmodel.cpp" line="92"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/maintoolbarmodel.cpp" line="92"/>
         <source>Publish</source>
         <translation>게시</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/maintoolbarmodel.cpp" line="95"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/maintoolbarmodel.cpp" line="95"/>
         <source>DevTools</source>
         <translation>개발자 도구</translation>
     </message>
@@ -9997,12 +9997,12 @@ This action will not delete any of your scores.</source>
         <translation>악보 로드 중…</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="214"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="214"/>
         <source>Are you sure you want to reset preferences?</source>
         <translation>정말로 설정을 재설정하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="215"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="215"/>
         <source>This action will reset all your app preferences and delete all custom shortcuts. It will not delete any of your scores.
 
 This action cannot be undone.</source>
@@ -10011,7 +10011,7 @@ This action cannot be undone.</source>
 이 작업은 취소할 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="225"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="225"/>
         <source>Reset preferences</source>
         <translation>설정 재설정</translation>
     </message>
@@ -10019,65 +10019,65 @@ This action cannot be undone.</source>
 <context>
     <name>appshell/about</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/AboutDialog.qml" line="34"/>
-        <source>About MuseScore Studio</source>
-        <translation>MuseScore Studio 정보</translation>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/AboutDialog.qml" line="34"/>
+        <source>About DB Score</source>
+        <translation>DB Score 정보</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/AboutDialog.qml" line="86"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/AboutDialog.qml" line="86"/>
         <source>Version:</source>
         <translation>버전:</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/AboutDialog.qml" line="96"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/AboutDialog.qml" line="96"/>
         <source>Revision:</source>
         <translation>리비전:</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/AboutDialog.qml" line="116"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/AboutDialog.qml" line="116"/>
         <source>Visit %1 for new versions and more information.</source>
-        <extracomment>%1 will be a link to the MuseScore website</extracomment>
+        <extracomment>%1 will be a link to the DB Score website</extracomment>
         <translation>새 버전 및 자세한 정보를 보려면 %1을 방문합니다.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/AboutDialog.qml" line="119"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/AboutDialog.qml" line="119"/>
         <source>Get &lt;a href=&quot;%1&quot;&gt;help&lt;/a&gt; with the program or &lt;a href=&quot;%2&quot;&gt;contribute&lt;/a&gt; to its development.</source>
         <translation>프로그램 &lt;a href=&quot;%1&quot;&gt;도움말&lt;/a&gt;을 확인하거나 개발에 &lt;a href=&quot;%2&quot;&gt;기여&lt;/a&gt;해 주세요.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/AboutDialog.qml" line="132"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/AboutDialog.qml" line="132"/>
         <source>For privacy information, see our &lt;a href=&quot;%1&quot;&gt;privacy policy&lt;/a&gt;.</source>
         <translation>개인정보 관련 정보는 &lt;a href=&quot;%1&quot;&gt;개인정보 처리방침&lt;/a&gt;을 참조합니다.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/AboutDialog.qml" line="141"/>
-        <source>Copyright © 1999-2026 MuseScore Limited and others.
+        <location filename="../../src/appshell/qml/DB Score/AppShell/AboutDialog.qml" line="141"/>
+        <source>Copyright © 1999-2026 DB Score Limited and others.
 Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License version 3&lt;/a&gt;.</source>
-        <translation>Copyright © 1999-2026 MuseScore Limited and others.
+        <translation>Copyright © 1999-2026 DB Score Limited and others.
 &lt;a href=&quot;%1&quot;&gt;GNU 일반 공중 사용 허가서 버전 3&lt;/a&gt;에 따라 배포됩니다.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/AboutMusicXMLDialog.qml" line="33"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/AboutMusicXMLDialog.qml" line="33"/>
         <source>About MusicXML</source>
         <translation>MusicXML 정보</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/AboutMusicXMLDialog.qml" line="60"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/AboutMusicXMLDialog.qml" line="60"/>
         <source>MusicXML is an open file format for exchanging digital sheet music, supported by many applications.</source>
         <translation>MusicXML은 디지털 음악 악보를 교환하기 위한 오픈 파일 형식으로, 많은 소프트웨어/애플리케이션에서 지원합니다.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/AboutMusicXMLDialog.qml" line="72"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/AboutMusicXMLDialog.qml" line="72"/>
         <source>Copyright © 2004-2021 the Contributors to the MusicXML Specification, published by the Music Notation Community Group under the W3C Community Final Specification Agreement (FSA):</source>
         <translation>Copyright © 2004-2021 the Contributors to the MusicXML Specification, W3C 커뮤니티 최종 사양 계약(FSA)에 따라 Music Notation Community Group에서 발행함:</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/AboutMusicXMLDialog.qml" line="96"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/AboutMusicXMLDialog.qml" line="96"/>
         <source>A human-readable summary is available:</source>
         <translation>일반 사용자용 요약 보기:</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/aboutmodel.cpp" line="41"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/aboutmodel.cpp" line="41"/>
         <source>Unstable prerelease for %1</source>
         <translation>불안정한 사전 출시 버전 %1</translation>
     </message>
@@ -10103,89 +10103,89 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
 <context>
     <name>appshell/gettingstarted</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/FirstLaunchSetupDialog.qml" line="32"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/FirstLaunchSetupDialog.qml" line="32"/>
         <source>Getting started</source>
         <translation>시작하기</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/FirstLaunchSetupDialog.qml" line="191"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/FirstLaunchSetupDialog.qml" line="191"/>
         <source>Finish</source>
         <translation>종료</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/PlaybackPage.qml" line="31"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/PlaybackPage.qml" line="31"/>
         <source>Playback</source>
         <translation>플레이백</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/PlaybackPage.qml" line="32"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/PlaybackPage.qml" line="32"/>
         <source>Discover new sound libraries in MuseHub and enjoy realistic score playback</source>
         <translation>MuseHub에서 새로운 사운드 라이브러리를 탐색하고 실감 나는 악보 플레이백을 즐겨보세요</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/PlaybackPage.qml" line="36"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/PlaybackPage.qml" line="36"/>
         <source>Watch video</source>
         <translation>영상 보기</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/ThemesPage.qml" line="34"/>
-        <source>Welcome to MuseScore Studio</source>
-        <translation>MuseScore Studio에 오신 것을 환영합니다</translation>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/ThemesPage.qml" line="34"/>
+        <source>Welcome to DB Score</source>
+        <translation>DB Score에 오신 것을 환영합니다</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/ThemesPage.qml" line="35"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/ThemesPage.qml" line="35"/>
         <source>Let’s get started by choosing a theme.</source>
         <translation>테마를 선택하여 시작해 보세요.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/ThemesPage.qml" line="57"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/ThemesPage.qml" line="57"/>
         <source>Follow system theme</source>
         <translation>시스템 테마 따르기</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/ThemesPage.qml" line="118"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/ThemesPage.qml" line="118"/>
         <source>Further high contrast settings are available in Preferences.</source>
         <translation>설정(Preferences)에서 추가 고대비 설정을 사용할 수 있습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/ThemesPage.qml" line="124"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/ThemesPage.qml" line="124"/>
         <source>Enable high contrast</source>
         <translation>고대비 활성화</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/TutorialsPage.qml" line="32"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/TutorialsPage.qml" line="32"/>
         <source>Video tutorials</source>
         <translation>동영상 튜토리얼</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/TutorialsPage.qml" line="33"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/TutorialsPage.qml" line="33"/>
         <source>Behind this dialog is the ‘Learn’ section, where you’ll find tutorials to get you started
 (Video tutorials require an internet connection)</source>
         <translation>이 대화 상자 뒤에는 &apos;시작하기&apos; 섹션이 있으며, 이 섹션에서 튜토리얼을 볼 수 있습니다.
 (영상 튜토리얼은 인터넷 연결이 필요합니다)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/TutorialsPage.qml" line="76"/>
-        <source>In order to protect your privacy, MuseScore Studio does not collect any personal information. See our &lt;a href=&quot;%1&quot;&gt;Privacy Policy&lt;/a&gt; for more info.</source>
-        <translation>MuseScore Studio는 개인정보 보호를 위해 어떠한 개인 정보도 수집하지 않습니다. 자세한 내용은 &lt;a href=&quot;%1&quot;&gt;개인정보 처리방침&lt;/a&gt;을 참조하세요.</translation>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/TutorialsPage.qml" line="76"/>
+        <source>In order to protect your privacy, DB Score does not collect any personal information. See our &lt;a href=&quot;%1&quot;&gt;Privacy Policy&lt;/a&gt; for more info.</source>
+        <translation>DB Score는 개인정보 보호를 위해 어떠한 개인 정보도 수집하지 않습니다. 자세한 내용은 &lt;a href=&quot;%1&quot;&gt;개인정보 처리방침&lt;/a&gt;을 참조하세요.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/firstlaunchsetupmodel.cpp" line="103"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/firstlaunchsetupmodel.cpp" line="103"/>
         <source>Are you sure you want to cancel?</source>
         <translation>정말 취소하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/firstlaunchsetupmodel.cpp" line="104"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/firstlaunchsetupmodel.cpp" line="104"/>
         <source>If you choose to cancel, then be sure to check out our free MuseSounds playback libraries on &lt;a href=&quot;%1&quot;&gt;MuseHub.com&lt;/a&gt;.</source>
         <translation>취소하시더라도 &lt;a href=&quot;%1&quot;&gt;MuseHub.com&lt;/a&gt;에서 제공하는 무료 MuseSounds 플레이백 라이브러리를 꼭 확인해 보세요.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/firstlaunchsetupmodel.cpp" line="114"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/firstlaunchsetupmodel.cpp" line="114"/>
         <source>Visit MuseHub</source>
         <translation>MuseHub 방문</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/firstlaunchsetupmodel.cpp" line="126"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/firstlaunchsetupmodel.cpp" line="126"/>
         <source>Keep going</source>
         <translation>계속 진행</translation>
     </message>
@@ -10193,54 +10193,54 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
 <context>
     <name>appshell/menu/add</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="334"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="334"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="205"/>
         <source>&amp;Notes</source>
         <translation>음표(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="335"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="335"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="206"/>
         <source>&amp;Intervals</source>
         <translation>음정(&amp;I)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="336"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="336"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="207"/>
         <source>T&amp;uplets</source>
         <translation>잇단음표(&amp;U)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="338"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="338"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="209"/>
         <source>&amp;Measures</source>
         <translation>마디(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="339"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="339"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="210"/>
         <source>&amp;Frames</source>
         <translation>프레임(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="340"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="340"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="211"/>
         <source>&amp;Text</source>
         <translation>텍스트(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="341"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="341"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="212"/>
         <source>&amp;Lines</source>
         <translation>선(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="342"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="342"/>
         <source>&amp;Chords and fretboard diagrams</source>
         <translation>코드 및 프렛보드 다이어그램(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="346"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="346"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="215"/>
         <source>&amp;Add</source>
         <translation>추가(&amp;A)</translation>
@@ -10249,7 +10249,7 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
 <context>
     <name>appshell/menu/add/chordandfret</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="177"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="177"/>
         <source>Fretboard diagram legend</source>
         <translation>프렛보드 다이어그램 범례</translation>
     </message>
@@ -10257,52 +10257,52 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
 <context>
     <name>appshell/menu/diagnostics</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="498"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="498"/>
         <source>&amp;System</source>
         <translation>단(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="510"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="510"/>
         <source>&amp;MuseSampler</source>
         <translation>MuseSampler(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="567"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="567"/>
         <source>A&amp;ctions</source>
         <translation>동작(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="568"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="568"/>
         <source>&amp;Accessibility</source>
         <translation>접근성(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="569"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="569"/>
         <source>&amp;Engraving</source>
         <translation>인쇄 및 기보(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="570"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="570"/>
         <source>E&amp;xtensions</source>
         <translation>확장(&amp;X)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="571"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="571"/>
         <source>Auto&amp;bot</source>
         <translation>Autobot(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="574"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="574"/>
         <source>&amp;VST</source>
         <translation>VST(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="577"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="577"/>
         <source>&amp;Audio</source>
         <translation>오디오(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="581"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="581"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="291"/>
         <source>&amp;Diagnostics</source>
         <translation>진단(&amp;D)</translation>
@@ -10311,7 +10311,7 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
 <context>
     <name>appshell/menu/edit</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="266"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="266"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="143"/>
         <source>&amp;Edit</source>
         <translation>편집(&amp;E)</translation>
@@ -10320,22 +10320,22 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
 <context>
     <name>appshell/menu/file</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="202"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="202"/>
         <source>Open &amp;recent</source>
         <translation>최근 항목 열기(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="208"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="208"/>
         <source>Save o&amp;ther</source>
         <translation>기타 저장(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="209"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="209"/>
         <source>Pu&amp;blish online</source>
         <translation>온라인에 게시(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="223"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="223"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="120"/>
         <source>&amp;File</source>
         <translation>파일(&amp;F)</translation>
@@ -10344,13 +10344,13 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
 <context>
     <name>appshell/menu/format</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="362"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="362"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="231"/>
         <source>Str&amp;etch</source>
         <translation>마디 너비(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="373"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="373"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="239"/>
         <source>F&amp;ormat</source>
         <translation>양식(&amp;O)</translation>
@@ -10359,7 +10359,7 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
 <context>
     <name>appshell/menu/help</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="484"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="484"/>
         <source>&amp;Help</source>
         <translation>도움말(&amp;H)</translation>
     </message>
@@ -10367,7 +10367,7 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
 <context>
     <name>appshell/menu/plugins</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="431"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="431"/>
         <source>&amp;Plugins</source>
         <translation>플러그인(&amp;P)</translation>
     </message>
@@ -10375,24 +10375,24 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
 <context>
     <name>appshell/menu/tools</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="404"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="404"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="264"/>
         <source>&amp;Voices</source>
         <translation>성부(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="405"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="405"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="265"/>
         <source>&amp;Measures</source>
         <translation>마디(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="413"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="413"/>
         <source>Enharmonic spelling</source>
         <translation>이명동음 표기</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="426"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="426"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="282"/>
         <source>&amp;Tools</source>
         <translation>도구(&amp;T)</translation>
@@ -10401,25 +10401,25 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
 <context>
     <name>appshell/menu/view</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="316"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="316"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="187"/>
         <source>&amp;Toolbars</source>
         <translation>도구 모음(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="320"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="320"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="191"/>
         <source>W&amp;orkspaces</source>
         <translation>작업공간(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="324"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="324"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="195"/>
         <source>&amp;Show</source>
         <translation>표시(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="328"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="328"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="199"/>
         <source>&amp;View</source>
         <translation>보기(&amp;V)</translation>
@@ -10428,12 +10428,12 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
 <context>
     <name>appshell/preferences</name>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MidiSection.qml" line="63"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MidiSection.qml" line="63"/>
         <source>Round tempos to nearest whole number</source>
         <translation>템포를 가장 가까운 정수로 반올림</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/commonaudioapiconfigurationmodel.cpp" line="99"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/commonaudioapiconfigurationmodel.cpp" line="99"/>
         <source>The driver for this device could not be opened.</source>
         <translation>이 장치의 드라이버를 열 수 없습니다.</translation>
     </message>
@@ -10441,97 +10441,97 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
 <context>
     <name>appshell/welcome</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/WelcomeDialog.qml" line="34"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/WelcomeDialog.qml" line="34"/>
         <source>Welcome</source>
         <translation>시작하기</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/WelcomeDialog.qml" line="122"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/WelcomeDialog.qml" line="122"/>
         <source>Previous item</source>
         <translation>이전 항목</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/WelcomeDialog.qml" line="172"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/WelcomeDialog.qml" line="172"/>
         <source>Next item</source>
         <translation>다음 항목</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/WelcomeDialog.qml" line="263"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/WelcomeDialog.qml" line="263"/>
         <source>Don’t show welcome dialog on startup</source>
         <translation>시작할 때 시작 대화상자 표시 안 함</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="50"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="50"/>
         <source>Enjoy free cloud storage</source>
         <translation>무료 클라우드 저장 공간 이용</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="52"/>
-        <source>Save your scores privately on MuseScore.com to revisit past versions and invite others to view and comment – and when you’re ready, share your music with the world.</source>
-        <translation>악보를 MuseScore.com에 비공개로 저장하여 이전 버전을 다시 확인하거나 다른 사람을 초대하여 감상 및 의견을 나눌 수 있습니다. 준비가 되면 전 세계와 음악을 공유해 보세요.</translation>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="52"/>
+        <source>Save your scores privately on drumbearai.com to revisit past versions and invite others to view and comment – and when you’re ready, share your music with the world.</source>
+        <translation>악보를 drumbearai.com에 비공개로 저장하여 이전 버전을 다시 확인하거나 다른 사람을 초대하여 감상 및 의견을 나눌 수 있습니다. 준비가 되면 전 세계와 음악을 공유해 보세요.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="54"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="54"/>
         <source>View my scores online</source>
         <translation>온라인에서 내 악보 보기</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="42"/>
-        <source>What’s new in MuseScore Studio</source>
-        <translation>MuseScore Studio 새로운 기능</translation>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="42"/>
+        <source>What’s new in DB Score</source>
+        <translation>DB Score 새로운 기능</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="33"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="33"/>
         <source>Unlock Premium Playback</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="35"/>
-        <source>Hear your scores come to life with professionally recorded instrument libraries for expressive, realistic playback in MuseScore Studio.</source>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="35"/>
+        <source>Hear your scores come to life with professionally recorded instrument libraries for expressive, realistic playback in DB Score.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="37"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="37"/>
         <source>Get MuseSounds Pro</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="44"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="44"/>
         <source>Includes essential new engraving tools, major improvements to playback, video export, dive notation for guitar, and features to speed up your workflow.</source>
         <translation>새로운 필수 악보 제작 도구, 플레이백 기능의 주요 개선 사항, 비디오 내보내기, 기타용 다이브 기보, 그리고 작업 흐름을 가속화하는 기능들이 포함되어 있습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="46"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="46"/>
         <source>Watch video</source>
         <translation>영상 보기</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="59"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="59"/>
         <source>Install our free MuseSounds libraries</source>
         <translation>무료 MuseSounds 라이브러리 설치</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="61"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="61"/>
         <source>Explore our collection of realistic sample libraries, including solo instruments, marching percussion, and full orchestra - available for free on MuseHub.</source>
         <translation>독주 악기, 마칭 퍼커션, 풀 오케스트라 등 실제와 가까운 샘플 라이브러리 컬렉션을 살펴보세요. MuseHub에서 무료로 이용 가능합니다.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="63"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="63"/>
         <source>Get it on MuseHub</source>
         <translation>MuseHub에서 받기</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="68"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="68"/>
         <source>Explore our tutorials</source>
         <translation>튜토리얼 살펴보기</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="70"/>
-        <source>We’ve put together a playlist of tutorials to help both beginners and experienced users get the most out of MuseScore Studio.</source>
-        <translation>초보자와 숙련자 모두가 MuseScore Studio를 최대한 활용할 수 있도록 튜토리얼 재생목록을 준비했습니다.</translation>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="70"/>
+        <source>We’ve put together a playlist of tutorials to help both beginners and experienced users get the most out of DB Score.</source>
+        <translation>초보자와 숙련자 모두가 DB Score를 최대한 활용할 수 있도록 튜토리얼 재생목록을 준비했습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="72"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="72"/>
         <source>View tutorials</source>
         <translation>튜토리얼 보기</translation>
     </message>
@@ -10603,18 +10603,18 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
 <context>
     <name>braille/view</name>
     <message>
-        <location filename="../../src/braille/qml/MuseScore/Braille/BrailleView.qml" line="41"/>
+        <location filename="../../src/braille/qml/DB Score/Braille/BrailleView.qml" line="41"/>
         <source>Braille</source>
         <translation>점자</translation>
     </message>
     <message>
-        <location filename="../../src/braille/qml/MuseScore/Braille/BrailleView.qml" line="172"/>
+        <location filename="../../src/braille/qml/DB Score/Braille/BrailleView.qml" line="172"/>
         <source>Six-key input mode</source>
         <extracomment>Braille input with 6 keyboard keys (F,D,S &amp; J,K,L) to represent the 6 dots in a braille cell.</extracomment>
         <translation>6키 점자 입력 모드</translation>
     </message>
     <message>
-        <location filename="../../src/braille/qml/MuseScore/Braille/BrailleView.qml" line="174"/>
+        <location filename="../../src/braille/qml/DB Score/Braille/BrailleView.qml" line="174"/>
         <source>Navigation mode</source>
         <extracomment>Braille navigation.</extracomment>
         <translation>네비게이션 모드</translation>
@@ -10673,8 +10673,8 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
     </message>
     <message>
         <location filename="../../src/framework/cloud/internal/oauthhttpserverreplyhandler.cpp" line="184"/>
-        <source>Sign in successful! You’re good to go back to MuseScore Studio.</source>
-        <translation>로그인 성공! MuseScore Studio로 돌아가셔도 좋습니다.</translation>
+        <source>Sign in successful! You’re good to go back to DB Score.</source>
+        <translation>로그인 성공! DB Score로 돌아가셔도 좋습니다.</translation>
     </message>
 </context>
 <context>
@@ -10694,8 +10694,8 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
     </message>
     <message>
         <location filename="../../src/framework/diagnostics/internal/savediagnosticfilesscenario.cpp" line="39"/>
-        <source>This will create a .zip file with information about your MuseScore Studio setup to help developers diagnose any problems you are having. You can inspect the contents of this file before sending it to anyone.</source>
-        <translation>이 작업은 개발자의 문제 진단을 돕기 위해 MuseScore Studio 설정 정보가 담긴 .zip 파일을 만들기합니다. 파일을 보내기 전 내용을 직접 확인할 수 있습니다.</translation>
+        <source>This will create a .zip file with information about your DB Score setup to help developers diagnose any problems you are having. You can inspect the contents of this file before sending it to anyone.</source>
+        <translation>이 작업은 개발자의 문제 진단을 돕기 위해 DB Score 설정 정보가 담긴 .zip 파일을 만들기합니다. 파일을 보내기 전 내용을 직접 확인할 수 있습니다.</translation>
     </message>
     <message>
         <location filename="../../src/framework/diagnostics/internal/savediagnosticfilesscenario.cpp" line="53"/>
@@ -11496,13 +11496,13 @@ Fret %1 on strings %2</source>
     </message>
     <message>
         <location filename="../../src/engraving/engravingerrors.h" line="81"/>
-        <source>This file was last saved in a version older than 2.0.0. You can convert this score by opening and then saving in MuseScore version 2.x. Visit the &lt;a href=&quot;%1&quot;&gt;MuseScore download page&lt;/a&gt; to obtain such a 2.x version.</source>
-        <translation>이 파일은 2.0.0 이전 버전에 마지막으로 저장되었습니다. 이 악보는 MuseScore 버전 2.x에서 열고 저장하여 변환할 수 있습니다. &lt;a href=&quot;%1&quot;&gt;MuseScore 다운로드 페이지&lt;/a&gt;를 방문하여 2.x 버전을 얻으세요.</translation>
+        <source>This file was last saved in a version older than 2.0.0. You can convert this score by opening and then saving in DB Score version 2.x. Visit the &lt;a href=&quot;%1&quot;&gt;DB Score download page&lt;/a&gt; to obtain such a 2.x version.</source>
+        <translation>이 파일은 2.0.0 이전 버전에 마지막으로 저장되었습니다. 이 악보는 DB Score 버전 2.x에서 열고 저장하여 변환할 수 있습니다. &lt;a href=&quot;%1&quot;&gt;DB Score 다운로드 페이지&lt;/a&gt;를 방문하여 2.x 버전을 얻으세요.</translation>
     </message>
     <message>
         <location filename="../../src/engraving/engravingerrors.h" line="88"/>
-        <source>This file was saved using a newer version of MuseScore Studio. Please visit &lt;a href=&quot;%1&quot;&gt;MuseScore.org&lt;/a&gt; to obtain the latest version.</source>
-        <translation>이 파일은 최신 버전의 MuseScore Studio에서 저장되었습니다. &lt;a href=&quot;%1&quot;&gt;MuseScore.org&lt;/a&gt;를 방문하여 최신 버전을 받으세요.</translation>
+        <source>This file was saved using a newer version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; to obtain the latest version.</source>
+        <translation>이 파일은 최신 버전의 DB Score에서 저장되었습니다. &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;를 방문하여 최신 버전을 받으세요.</translation>
     </message>
     <message>
         <location filename="../../src/engraving/engravingerrors.h" line="93"/>
@@ -13879,7 +13879,7 @@ Fret %1 on strings %2</source>
         <translation>개방형 / 무조성</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/partialtiepopupmodel.cpp" line="222"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/partialtiepopupmodel.cpp" line="222"/>
         <source>Remove partial tie</source>
         <translation>부분 붙임줄 제거</translation>
     </message>
@@ -13899,7 +13899,7 @@ Fret %1 on strings %2</source>
         <translation>매우 길게</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/soundflagsettingsmodel.cpp" line="374"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/soundflagsettingsmodel.cpp" line="374"/>
         <source>Staff text</source>
         <translation>보표 텍스트</translation>
     </message>
@@ -20373,7 +20373,7 @@ Fret %1 on strings %2</source>
         <location filename="../../src/engraving/dom/timesig.cpp" line="349"/>
         <location filename="../../src/palette/internal/palettecreator.cpp" line="1636"/>
         <location filename="../../src/palette/internal/palettecreator.cpp" line="1655"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="200"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="200"/>
         <source>Common time</source>
         <translation>공통 박자</translation>
     </message>
@@ -20381,7 +20381,7 @@ Fret %1 on strings %2</source>
         <location filename="../../src/engraving/dom/timesig.cpp" line="351"/>
         <location filename="../../src/palette/internal/palettecreator.cpp" line="1637"/>
         <location filename="../../src/palette/internal/palettecreator.cpp" line="1656"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="202"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="202"/>
         <source>Cut time</source>
         <translation>컷 타임</translation>
     </message>
@@ -20543,7 +20543,7 @@ Fret %1 on strings %2</source>
 <context>
     <name>extensions</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/HomePage/PluginsPage.qml" line="153"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/HomePage/PluginsPage.qml" line="153"/>
         <source>Reload plugins</source>
         <translation>플러그인 새로고침</translation>
     </message>
@@ -20705,47 +20705,47 @@ Fret %1 on strings %2</source>
 <context>
     <name>global</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/AboutDialog.qml" line="158"/>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/WelcomeDialog.qml" line="286"/>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/InstrumentsDialog.qml" line="114"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/SelectMeasuresCountDialog.qml" line="107"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/SoundProfilesDialog.qml" line="261"/>
-        <location filename="../../src/project/qml/MuseScore/Project/AudioGenerationSettingsDialog.qml" line="132"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/AboutDialog.qml" line="158"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/WelcomeDialog.qml" line="286"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/InstrumentsDialog.qml" line="114"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/SelectMeasuresCountDialog.qml" line="107"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/SoundProfilesDialog.qml" line="261"/>
+        <location filename="../../src/project/qml/DB Score/Project/AudioGenerationSettingsDialog.qml" line="132"/>
         <location filename="../../src/framework/global/internal/interactive.cpp" line="56"/>
         <source>OK</source>
         <translation>확인</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/FirstLaunchSetupDialog.qml" line="136"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/ConvertButtonBox.qml" line="46"/>
-        <location filename="../../src/project/qml/MuseScore/Project/NewScoreDialog.qml" line="157"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/FirstLaunchSetupDialog.qml" line="136"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/ConvertButtonBox.qml" line="46"/>
+        <location filename="../../src/project/qml/DB Score/Project/NewScoreDialog.qml" line="157"/>
         <source>Back</source>
         <translation>이전</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/FirstLaunchSetupDialog.qml" line="192"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/LinkPastePanel.qml" line="94"/>
-        <location filename="../../src/project/qml/MuseScore/Project/NewScoreDialog.qml" line="168"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/FirstLaunchSetupDialog.qml" line="192"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/LinkPastePanel.qml" line="94"/>
+        <location filename="../../src/project/qml/DB Score/Project/NewScoreDialog.qml" line="168"/>
         <source>Next</source>
         <translation>다음</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="219"/>
         <location filename="../../src/framework/learn/qml/Muse/Learn/internal/Playlist.qml" line="142"/>
-        <location filename="../../src/musesounds/qml/MuseScore/MuseSounds/MuseSoundsPage.qml" line="202"/>
+        <location filename="../../src/musesounds/qml/DB Score/MuseSounds/MuseSoundsPage.qml" line="202"/>
         <source>Please check your internet connection or try again later.</source>
         <translation>인터넷 연결을 확인하거나 나중에 다시 시도합니다.</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="210"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/RecentScoresView.qml" line="145"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ScoresPage/RecentScoresView.qml" line="145"/>
         <source>Size</source>
         <comment>file size</comment>
         <translation>크기</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="231"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/RecentScoresView.qml" line="166"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ScoresPage/RecentScoresView.qml" line="166"/>
         <location filename="../../src/framework/uicomponents/qml/Muse/UiComponents/filteredflyoutmodel.cpp" line="63"/>
         <source>Unknown</source>
         <translation>알 수 없음</translation>
@@ -20753,9 +20753,9 @@ Fret %1 on strings %2</source>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/RequireAuthorizationDialog.qml" line="72"/>
         <location filename="../../src/framework/ui/qml/Muse/Ui/Dialogs/ProgressDialog.qml" line="98"/>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/CreateCustomPalettePopup.qml" line="87"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/ConvertButtonBox.qml" line="34"/>
-        <location filename="../../src/project/qml/MuseScore/Project/NewScoreDialog.qml" line="147"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/CreateCustomPalettePopup.qml" line="87"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/ConvertButtonBox.qml" line="34"/>
+        <location filename="../../src/project/qml/DB Score/Project/NewScoreDialog.qml" line="147"/>
         <location filename="../../src/framework/global/internal/interactive.cpp" line="69"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="350"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="385"/>
@@ -20765,7 +20765,7 @@ Fret %1 on strings %2</source>
     </message>
     <message>
         <location filename="../../src/framework/midiremote/qml/Muse/MidiRemote/EditMidiMappingDialog.qml" line="134"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/noteinputbarmodel.cpp" line="562"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/noteinputbarmodel.cpp" line="562"/>
         <source>Add</source>
         <translation>추가</translation>
     </message>
@@ -20774,7 +20774,7 @@ Fret %1 on strings %2</source>
         <location filename="../../src/framework/shortcuts/qml/Muse/Shortcuts/EditShortcutDialogContent.qml" line="143"/>
         <location filename="../../src/framework/shortcuts/qml/Muse/Shortcuts/internal/ShortcutsTopPanel.qml" line="80"/>
         <location filename="../../src/framework/uicomponents/qml/Muse/UiComponents/TextInputField.qml" line="284"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/FretDiagramSettings.qml" line="184"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/FretDiagramSettings.qml" line="184"/>
         <source>Clear</source>
         <translation>지우기</translation>
     </message>
@@ -20836,25 +20836,25 @@ Fret %1 on strings %2</source>
     </message>
     <message>
         <location filename="../../src/framework/uicomponents/qml/Muse/UiComponents/PopupPanel.qml" line="160"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/NotationSwitchButton.qml" line="82"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/PartsBottomPanel.qml" line="52"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/PartsDialog.qml" line="99"/>
-        <location filename="../../src/project/qml/MuseScore/Project/ProjectUploadedDialog.qml" line="266"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/NotationSwitchButton.qml" line="82"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/PartsBottomPanel.qml" line="52"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/PartsDialog.qml" line="99"/>
+        <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="266"/>
         <location filename="../../src/framework/global/internal/interactive.cpp" line="68"/>
         <source>Close</source>
         <translation>닫기</translation>
     </message>
     <message>
         <location filename="../../src/framework/uicomponents/qml/Muse/UiComponents/StyledToolBarItem.qml" line="66"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/PlaybackToolBarActions.qml" line="91"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/SoundFlag/ParamsGridView.qml" line="134"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/PlaybackToolBarActions.qml" line="91"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/SoundFlag/ParamsGridView.qml" line="134"/>
         <source>On</source>
         <translation>켜짐</translation>
     </message>
     <message>
         <location filename="../../src/framework/uicomponents/qml/Muse/UiComponents/StyledToolBarItem.qml" line="66"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/PlaybackToolBarActions.qml" line="92"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/SoundFlag/ParamsGridView.qml" line="134"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/PlaybackToolBarActions.qml" line="92"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/SoundFlag/ParamsGridView.qml" line="134"/>
         <source>Off</source>
         <translation>꺼짐</translation>
     </message>
@@ -20885,14 +20885,14 @@ Fret %1 on strings %2</source>
     </message>
     <message>
         <location filename="../../src/framework/uicomponents/qml/Muse/UiComponents/VisibilityControls.qml" line="104"/>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/TreePaletteHeader.qml" line="81"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/TreePaletteHeader.qml" line="81"/>
         <source>Collapse</source>
         <extracomment>Collapse a tree item</extracomment>
         <translation>축소</translation>
     </message>
     <message>
         <location filename="../../src/framework/uicomponents/qml/Muse/UiComponents/VisibilityControls.qml" line="106"/>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/TreePaletteHeader.qml" line="83"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/TreePaletteHeader.qml" line="83"/>
         <source>Expand</source>
         <extracomment>Expand a tree item</extracomment>
         <translation>확장</translation>
@@ -20904,395 +20904,395 @@ Fret %1 on strings %2</source>
     </message>
     <message>
         <location filename="../../src/framework/workspace/qml/Muse/Workspace/WorkspacesDialog.qml" line="113"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="150"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="150"/>
         <source>Select</source>
         <translation>선택</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/FrameSettings.qml" line="125"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/FrameSettings.qml" line="147"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/FrameSettings.qml" line="171"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/OffsetSection.qml" line="63"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/OffsetSection.qml" line="88"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/internal/HorizontalSpacingSection.qml" line="60"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/internal/VerticalSpacingSection.qml" line="42"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameGapsSection.qml" line="57"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameGapsSection.qml" line="73"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="68"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="86"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="114"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="132"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/images/ImageSettings.qml" line="61"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/images/ImageSettings.qml" line="101"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="296"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="327"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="381"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="412"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="466"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="497"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="549"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksSection.qml" line="124"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksSection.qml" line="144"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineStyleSection.qml" line="65"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/measurerepeats/MeasureRepeatSettings.qml" line="57"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/mmrests/MMRestSettings.qml" line="68"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="178"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="198"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="69"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/EditGridSizeDialog.qml" line="90"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/EditGridSizeDialog.qml" line="131"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/AccidentalsPage.qml" line="51"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BeamsPage.qml" line="97"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BeamsPage.qml" line="117"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="65"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="88"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="106"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="120"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="178"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="223"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="557"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="592"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="706"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="741"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="768"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="369"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="57"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="65"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="91"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="179"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="240"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="247"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/LaissezVibrSection.qml" line="59"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/LineStyleSection.qml" line="59"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="62"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/SlursSection.qml" line="62"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/SlursSection.qml" line="84"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/SlursSection.qml" line="106"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/SlursSection.qml" line="128"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="61"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="83"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="105"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="127"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="149"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="171"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="64"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="85"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="94"/>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PaletteCellPropertiesDialog.qml" line="105"/>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PaletteCellPropertiesDialog.qml" line="121"/>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PalettePropertiesDialog.qml" line="132"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/FrameSettings.qml" line="125"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/FrameSettings.qml" line="147"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/FrameSettings.qml" line="171"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/OffsetSection.qml" line="63"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/OffsetSection.qml" line="88"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/internal/HorizontalSpacingSection.qml" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/internal/VerticalSpacingSection.qml" line="42"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameGapsSection.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameGapsSection.qml" line="73"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="68"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="86"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="114"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="132"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/images/ImageSettings.qml" line="61"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/images/ImageSettings.qml" line="101"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="296"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="327"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="381"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="412"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="466"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="497"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="549"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksSection.qml" line="124"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksSection.qml" line="144"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineStyleSection.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/measurerepeats/MeasureRepeatSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/mmrests/MMRestSettings.qml" line="68"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="178"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="198"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="69"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/EditGridSizeDialog.qml" line="90"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/EditGridSizeDialog.qml" line="131"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/AccidentalsPage.qml" line="51"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BeamsPage.qml" line="97"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BeamsPage.qml" line="117"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="65"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="88"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="106"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="120"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="178"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="223"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="557"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="592"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="706"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="741"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="768"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="369"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="57"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="65"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="91"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="179"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="240"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="247"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/LaissezVibrSection.qml" line="59"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/LineStyleSection.qml" line="59"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="62"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/SlursSection.qml" line="62"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/SlursSection.qml" line="84"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/SlursSection.qml" line="106"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/SlursSection.qml" line="128"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="61"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="83"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="105"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="127"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="149"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="171"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="64"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="85"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="94"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PaletteCellPropertiesDialog.qml" line="105"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PaletteCellPropertiesDialog.qml" line="121"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PalettePropertiesDialog.qml" line="132"/>
         <location filename="../../src/notationscene/widgets/editstyle.cpp" line="2405"/>
         <source>sp</source>
         <extracomment>Abbreviation of &quot;spatium&quot;</extracomment>
         <translation>sp</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="46"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="46"/>
         <source>C♭♭</source>
         <translation>C♭♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="47"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="47"/>
         <source>C♭</source>
         <translation>C♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="48"/>
         <source>C</source>
         <translation>C</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="49"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="49"/>
         <source>C♯</source>
         <translation>C♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="50"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="50"/>
         <source>C♯♯</source>
         <translation>C♯♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="51"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="51"/>
         <source>D♭♭</source>
         <translation>D♭♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="52"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="52"/>
         <source>D♭</source>
         <translation>D♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="53"/>
         <source>D</source>
         <translation>D</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="54"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="54"/>
         <source>D♯</source>
         <translation>D♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="55"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="55"/>
         <source>D♯♯</source>
         <translation>D♯♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="56"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="56"/>
         <source>E♭♭</source>
         <translation>E♭♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="57"/>
         <source>E♭</source>
         <translation>E♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="58"/>
         <source>E</source>
         <translation>E</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="59"/>
         <source>E♯</source>
         <translation>E♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="60"/>
         <source>E♯♯</source>
         <translation>E♯♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="61"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="61"/>
         <source>F♭♭</source>
         <translation>F♭♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="62"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="62"/>
         <source>F♭</source>
         <translation>F♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="63"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="63"/>
         <source>F</source>
         <translation>F</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="64"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="64"/>
         <source>F♯</source>
         <translation>F♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="65"/>
         <source>F♯♯</source>
         <translation>F♯♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="66"/>
         <source>G♭♭</source>
         <translation>G♭♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="67"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="67"/>
         <source>G♭</source>
         <translation>G♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="68"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="68"/>
         <source>G</source>
         <translation>G</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="69"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="69"/>
         <source>G♯</source>
         <translation>G♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="70"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="70"/>
         <source>G♯♯</source>
         <translation>G♯♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="71"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="71"/>
         <source>A♭♭</source>
         <translation>A♭♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="72"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="72"/>
         <source>A♭</source>
         <translation>A♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="73"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="73"/>
         <source>A</source>
         <translation>A</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="74"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="74"/>
         <source>A♯</source>
         <translation>A♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="75"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="75"/>
         <source>A♯♯</source>
         <translation>A♯♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="76"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="76"/>
         <source>B♭♭</source>
         <translation>B♭♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="77"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="77"/>
         <source>B♭</source>
         <translation>B♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="78"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="78"/>
         <source>B</source>
         <translation>B</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="79"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="79"/>
         <source>B♯</source>
         <translation>B♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="80"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="80"/>
         <source>B♯♯</source>
         <translation>B♯♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/HorizontalMarginsSection.qml" line="53"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/HorizontalMarginsSection.qml" line="69"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalMarginsSection.qml" line="53"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalMarginsSection.qml" line="69"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/images/ImageSettings.qml" line="61"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/images/ImageSettings.qml" line="101"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/HorizontalMarginsSection.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/HorizontalMarginsSection.qml" line="69"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalMarginsSection.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalMarginsSection.qml" line="69"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/images/ImageSettings.qml" line="61"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/images/ImageSettings.qml" line="101"/>
         <location filename="../../src/notationscene/widgets/editstyle.cpp" line="2405"/>
         <location filename="../../src/notationscene/widgets/pagesettings.cpp" line="166"/>
         <source>mm</source>
         <translation>mm</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/sectionbreaks/SectionBreakSettings.qml" line="56"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/sectionbreaks/SectionBreakSettings.qml" line="56"/>
         <source>s</source>
         <extracomment>Abbreviation of &quot;seconds&quot;</extracomment>
         <translation>초</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="158"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="131"/>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/UiFontSection.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="158"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="131"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/UiFontSection.qml" line="65"/>
         <source>pt</source>
         <extracomment>Abbreviation of &quot;points&quot;, used to specify a font size</extracomment>
         <translation>pt</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextSettings.qml" line="186"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="395"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextSettings.qml" line="186"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="395"/>
         <source>li</source>
         <extracomment>Stands for &quot;Lines&quot;. Used for text line spacing controls, for example.</extracomment>
         <translation>줄</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/PartsBottomPanel.qml" line="66"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/PartsDialog.qml" line="110"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/PartsBottomPanel.qml" line="66"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/PartsDialog.qml" line="110"/>
         <source>Open all</source>
         <translation>모두 열기</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/PartsBottomPanel.qml" line="78"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/PartsDialog.qml" line="121"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/PartsBottomPanel.qml" line="78"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/PartsDialog.qml" line="121"/>
         <source>Open selected</source>
         <translation>선택 항목 열기</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/PercussionPanelPadSwapDialog.qml" line="196"/>
-        <location filename="../../src/project/qml/MuseScore/Project/AlsoShareAudioComDialog.qml" line="165"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/PercussionPanelPadSwapDialog.qml" line="196"/>
+        <location filename="../../src/project/qml/DB Score/Project/AlsoShareAudioComDialog.qml" line="165"/>
         <source>Remember my choice</source>
         <translation>선택 기억함</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/PercussionPanelPadSwapDialog.qml" line="211"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/PercussionPanelPadSwapDialog.qml" line="211"/>
         <source>This setting can be changed at any time in Preferences</source>
         <translation>이 설정은 설정창에서 언제든지 변경 가능함</translation>
     </message>
     <message>
-        <location filename="../../src/musesounds/qml/MuseScore/MuseSounds/MuseSoundsPage.qml" line="215"/>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PalettesPanel.qml" line="129"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/TitleListView.qml" line="129"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/ScoreGridItem.qml" line="293"/>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresGridView.qml" line="202"/>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresListView.qml" line="268"/>
+        <location filename="../../src/musesounds/qml/DB Score/MuseSounds/MuseSoundsPage.qml" line="215"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PalettesPanel.qml" line="129"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/TitleListView.qml" line="129"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ScoresPage/ScoreGridItem.qml" line="293"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresGridView.qml" line="202"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresListView.qml" line="268"/>
         <location filename="../../src/framework/uicomponents/qml/Muse/UiComponents/filteredflyoutmodel.cpp" line="130"/>
         <source>No results found</source>
         <translation>검색 결과 없음</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/AudioProcessingProgressBar.qml" line="89"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/AudioProcessingProgressBar.qml" line="89"/>
         <source>Processing %1%…</source>
         <extracomment>%1 will be replaced with percentage (i.e. if it is replaced with 50, the string will read &quot;Processing 50%…&quot;)</extracomment>
         <translation>%1% 처리 중…</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/AudioProcessingProgressBar.qml" line="90"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/AudioProcessingProgressBar.qml" line="90"/>
         <source>Processing…</source>
         <translation>처리 중…</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/AudioProcessingProgressBar.qml" line="92"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/AudioProcessingProgressBar.qml" line="92"/>
         <source>%1%</source>
         <extracomment>%1 will be replaced with percentage (i.e. if it is replaced with 50, the string will read &quot;50%&quot;)</extracomment>
         <translation>%1%</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/AutoSaveSection.qml" line="73"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/AutoSaveSection.qml" line="73"/>
         <source>min</source>
         <comment>abbreviation of minutes</comment>
         <translation>분</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MiscellaneousSection.qml" line="47"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MiscellaneousSection.qml" line="47"/>
         <source>px</source>
         <comment>abbreviation of pixels</comment>
         <translation>px</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/MidiInputSection.qml" line="117"/>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NotePreviewSection.qml" line="81"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/MidiInputSection.qml" line="117"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NotePreviewSection.qml" line="81"/>
         <source>ms</source>
         <extracomment>Abbreviation of &quot;milliseconds&quot;</extracomment>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AlsoShareAudioComDialog.qml" line="145"/>
+        <location filename="../../src/project/qml/DB Score/Project/AlsoShareAudioComDialog.qml" line="145"/>
         <source>You can change this setting in Preferences at any time.</source>
         <translation>설정창에서 언제든지 이 설정을 변경할 수 있음</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AskSaveLocationTypeDialog.qml" line="128"/>
+        <location filename="../../src/project/qml/DB Score/Project/AskSaveLocationTypeDialog.qml" line="128"/>
         <source>Don’t show again</source>
         <translation>다시 표시 안 함</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/PdfSettingsPage.qml" line="51"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/PngSettingsPage.qml" line="50"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/PdfSettingsPage.qml" line="51"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/PngSettingsPage.qml" line="50"/>
         <source>dpi</source>
         <extracomment>Dots per inch</extracomment>
         <translation>dpi</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/MigrationDialog.qml" line="129"/>
+        <location filename="../../src/project/qml/DB Score/Project/MigrationDialog.qml" line="129"/>
         <source>Don’t ask again</source>
         <translation>다시 묻지 않음</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/NewScoreDialog.qml" line="180"/>
+        <location filename="../../src/project/qml/DB Score/Project/NewScoreDialog.qml" line="180"/>
         <source>Done</source>
         <translation>완료</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ProjectUploadedDialog.qml" line="108"/>
+        <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="108"/>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1407"/>
         <source>Success!</source>
         <translation>성공!</translation>
@@ -21477,17 +21477,17 @@ Fret %1 on strings %2</source>
         <translation>더 보기…</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="255"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="255"/>
         <source>Move up</source>
         <translation>위로 이동</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="269"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="269"/>
         <source>Move down</source>
         <translation>아래로 이동</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="284"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="284"/>
         <source>Select more</source>
         <translation type="unfinished"/>
     </message>
@@ -21496,7 +21496,7 @@ Fret %1 on strings %2</source>
         <translation>또는</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/FileItem.qml" line="97"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/FileItem.qml" line="97"/>
         <source>Remove</source>
         <translation>제거</translation>
     </message>
@@ -22807,8 +22807,8 @@ Fret %1 on strings %2</source>
     </message>
     <message>
         <location filename="../../src/importexport/midi/internal/midiimport/importmidi_model.cpp" line="206"/>
-        <source>MuseScore Studio instrument</source>
-        <translation>MuseScore Studio 악기</translation>
+        <source>DB Score instrument</source>
+        <translation>DB Score 악기</translation>
     </message>
     <message>
         <location filename="../../src/importexport/midi/internal/midiimport/importmidi_model.cpp" line="269"/>
@@ -23034,9 +23034,9 @@ pickup measure</source>
     </message>
     <message>
         <location filename="../../src/importexport/musicxml/internal/musicxmlconfiguration.cpp" line="60"/>
-        <source>Limit MusicXML export for compatibility with MuseScore 3</source>
-        <extracomment>Means that less information will be included in exported MusicXML files, to prevent errors when importing them into MuseScore 3</extracomment>
-        <translation>MuseScore 3 호환성을 위해 MusicXML 내보내기 제한</translation>
+        <source>Limit MusicXML export for compatibility with DB Score 3</source>
+        <extracomment>Means that less information will be included in exported MusicXML files, to prevent errors when importing them into DB Score 3</extracomment>
+        <translation>DB Score 3 호환성을 위해 MusicXML 내보내기 제한</translation>
     </message>
     <message>
         <location filename="../../src/importexport/musicxml/internal/musicxmlconfiguration.cpp" line="65"/>
@@ -23075,3274 +23075,3274 @@ pickup measure</source>
 <context>
     <name>inspector</name>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/ColorSection.qml" line="33"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/ColorSection.qml" line="33"/>
         <source>Color</source>
         <translation>색상</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/DirectionSection.qml" line="33"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="204"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/DirectionSection.qml" line="33"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="204"/>
         <source>Direction</source>
         <translation>방향</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/DirectionSection.qml" line="45"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/DirectionSection.qml" line="59"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="177"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="197"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="211"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/articulations/ArticulationSettings.qml" line="58"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/beams/BeamTypeSelector.qml" line="61"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="56"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="76"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="110"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="74"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/clefs/ClefSettings.qml" line="71"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/SlurAndTieSettings.qml" line="78"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/SlurAndTieSettings.qml" line="97"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/internal/NoteheadTypeSelector.qml" line="38"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="108"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="201"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="204"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="230"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/playcounttext/PlayCountSettings.qml" line="69"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="190"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/DirectionSection.qml" line="45"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/DirectionSection.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="177"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="197"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="211"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/articulations/ArticulationSettings.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/beams/BeamTypeSelector.qml" line="61"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="56"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="76"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="110"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="74"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/clefs/ClefSettings.qml" line="71"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/SlurAndTieSettings.qml" line="78"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/SlurAndTieSettings.qml" line="97"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/internal/NoteheadTypeSelector.qml" line="38"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="108"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="201"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="204"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="230"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/playcounttext/PlayCountSettings.qml" line="69"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="190"/>
         <source>Auto</source>
         <translation>자동</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/DirectionSection.qml" line="45"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/DirectionSection.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/DirectionSection.qml" line="45"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/DirectionSection.qml" line="59"/>
         <source>Auto</source>
         <comment>direction</comment>
         <translation>자동</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/DirectionSection.qml" line="46"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/DirectionSection.qml" line="46"/>
         <source>Down</source>
         <comment>direction</comment>
         <translation>아래</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/DirectionSection.qml" line="47"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/DirectionSection.qml" line="47"/>
         <source>Up</source>
         <comment>direction</comment>
         <translation>위</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/DirectionSection.qml" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/DirectionSection.qml" line="60"/>
         <source>Left</source>
         <comment>direction</comment>
         <translation>왼쪽</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/DirectionSection.qml" line="61"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/DirectionSection.qml" line="61"/>
         <source>Right</source>
         <comment>direction</comment>
         <translation>오른쪽</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/FrameSettings.qml" line="49"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/FretFrameSettings.qml" line="66"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="471"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/FrameSettings.qml" line="49"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/FretFrameSettings.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="471"/>
         <source>Frame</source>
         <translation>프레임</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/FrameSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/FrameSettings.qml" line="57"/>
         <source>None</source>
         <comment>text frame type</comment>
         <translation>없음</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/FrameSettings.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/FrameSettings.qml" line="58"/>
         <source>Rectangle</source>
         <comment>text frame type</comment>
         <translation>직사각형</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/FrameSettings.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/FrameSettings.qml" line="59"/>
         <source>Circle</source>
         <comment>text frame type</comment>
         <translation>원</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/FrameSettings.qml" line="80"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/FrameSettings.qml" line="80"/>
         <source>Border</source>
         <translation>테두리</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/FrameSettings.qml" line="97"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/FrameSettings.qml" line="97"/>
         <source>Fill color</source>
         <translation>채우기 색상</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/FrameSettings.qml" line="119"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HairpinStyleSettings.qml" line="101"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineStyleSection.qml" line="58"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/LyricsLineSettings.qml" line="50"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="175"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/FrameSettings.qml" line="119"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HairpinStyleSettings.qml" line="101"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineStyleSection.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/LyricsLineSettings.qml" line="50"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="175"/>
         <source>Thickness</source>
         <translation>두께</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/FrameSettings.qml" line="141"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/FrameSettings.qml" line="141"/>
         <source>Padding</source>
         <translation>안쪽 여백</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/FrameSettings.qml" line="164"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/FrameSettings.qml" line="164"/>
         <source>Corner radius</source>
         <translation>모서리 곡률</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/InspectorPropertyView.qml" line="134"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/InspectorPropertyView.qml" line="134"/>
         <source>Reset “%1” to default value</source>
         <translation>“%1”을 기본값으로 재설정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/InspectorPropertyView.qml" line="135"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/InspectorPropertyView.qml" line="135"/>
         <source>Reset property to default value</source>
         <translation>속성을 기본값으로 재설정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/InspectorPropertyView.qml" line="157"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/InspectorPropertyView.qml" line="157"/>
         <source>Menu for “%1”</source>
         <extracomment>%1 is replaced with the name of the property</extracomment>
         <translation>“%1”용 메뉴</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/InspectorPropertyView.qml" line="162"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/PropertyResetButton.qml" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/InspectorPropertyView.qml" line="162"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/PropertyResetButton.qml" line="35"/>
         <source>Reset</source>
         <translation>재설정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/InspectorPropertyView.qml" line="165"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/InspectorPropertyView.qml" line="165"/>
         <source>Save as default style for this score</source>
         <translation>이 악보의 기본 스타일로 저장</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/InspectorPropertyView.qml" line="167"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/InspectorPropertyView.qml" line="167"/>
         <source>This is set as the default style for this score</source>
         <translation>이 악보의 기본 스타일로 지정됨</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/OffsetSection.qml" line="36"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="60"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="81"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="102"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/OffsetSection.qml" line="36"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="81"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="102"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="66"/>
         <source>Offset</source>
         <translation>오프셋</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/OffsetSection.qml" line="57"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="158"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/timesignatures/TimeSignatureSettings.qml" line="98"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/OffsetSection.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="158"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/timesignatures/TimeSignatureSettings.qml" line="98"/>
         <source>Horizontal</source>
         <translation>수평</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/OffsetSection.qml" line="82"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="157"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/timesignatures/TimeSignatureSettings.qml" line="125"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/OffsetSection.qml" line="82"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="157"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/timesignatures/TimeSignatureSettings.qml" line="125"/>
         <source>Vertical</source>
         <translation>수직</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/PlacementSection.qml" line="28"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="169"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/GradualTempoChangeSettings.qml" line="53"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/HairpinLineSettings.qml" line="55"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/parts/PartsSettings.qml" line="70"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/PlacementSection.qml" line="28"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="169"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/GradualTempoChangeSettings.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/HairpinLineSettings.qml" line="55"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/parts/PartsSettings.qml" line="70"/>
         <source>Position</source>
         <translation>위치</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/PlacementSection.qml" line="31"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="178"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/articulations/ArticulationSettings.qml" line="59"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="57"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="64"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="110"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ChordBracketSettings.qml" line="70"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/SlurAndTieSettings.qml" line="79"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="231"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/PlacementSection.qml" line="31"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="178"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/articulations/ArticulationSettings.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="64"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="110"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ChordBracketSettings.qml" line="70"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/SlurAndTieSettings.qml" line="79"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="231"/>
         <source>Above</source>
         <translation>위</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/PlacementSection.qml" line="32"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="179"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/articulations/ArticulationSettings.qml" line="60"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="58"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="82"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="128"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ChordBracketSettings.qml" line="71"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/SlurAndTieSettings.qml" line="80"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="232"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/PlacementSection.qml" line="32"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="179"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/articulations/ArticulationSettings.qml" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="82"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="128"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ChordBracketSettings.qml" line="71"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/SlurAndTieSettings.qml" line="80"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="232"/>
         <source>Below</source>
         <translation>아래</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="47"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="47"/>
         <source>Voice assignment</source>
         <translation>성부 할당</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="70"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="70"/>
         <source>All</source>
         <translation>모두</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="76"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="108"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="76"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="108"/>
         <source>All voices on instrument</source>
         <translation>악기의 모든 성부</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="115"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="115"/>
         <source>All voices on this staff only</source>
         <translation>이 보표의 모든 성부만</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="153"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="153"/>
         <source>Voice 1</source>
         <translation>성부 1</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="154"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="154"/>
         <source>Voice 2</source>
         <translation>성부 2</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="155"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="155"/>
         <source>Voice 3</source>
         <translation>성부 3</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="156"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="156"/>
         <source>Voice 4</source>
         <translation>성부 4</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="189"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="189"/>
         <source>Center between staves</source>
         <translation>보표 사이 중앙</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="198"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="202"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="205"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="198"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="202"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="205"/>
         <source>On</source>
         <translation>켜기</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="199"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="203"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="206"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="199"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="203"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="206"/>
         <source>Off</source>
         <translation>끄기</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/emptystaves/EmptyStavesVisibilityInspectorView.qml" line="44"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/emptystaves/EmptyStavesVisibilityInspectorView.qml" line="44"/>
         <source>Reset to default</source>
         <translation>기본값으로 재설정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/emptystaves/EmptyStavesVisibilityInspectorView.qml" line="68"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/emptystaves/EmptyStavesVisibilityInspectorView.qml" line="68"/>
         <source>Hide empty staves</source>
         <translation>빈 보표 감추기</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/emptystaves/EmptyStavesVisibilityInspectorView.qml" line="87"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/emptystaves/EmptyStavesVisibilityInspectorView.qml" line="87"/>
         <source>Show empty staves</source>
         <translation>빈 보표 표시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/internal/AppearanceOffsetSection.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/internal/AppearanceOffsetSection.qml" line="66"/>
         <source>Snap to grid</source>
         <translation>그리드에 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/internal/AppearanceOffsetSection.qml" line="83"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/internal/AppearanceOffsetSection.qml" line="83"/>
         <source>Configure grid</source>
         <translation>격자 설정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/internal/ArrangeSection.qml" line="64"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/internal/ArrangeSection.qml" line="64"/>
         <source>Arrange</source>
         <translation>정렬</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/internal/ArrangeSection.qml" line="72"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/internal/ArrangeSection.qml" line="72"/>
         <source>Reset stacking order to default</source>
         <translation>배치 순서 재설정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/internal/ArrangeSection.qml" line="98"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/internal/ArrangeSection.qml" line="98"/>
         <source>Forwards</source>
         <translation>앞으로</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/internal/ArrangeSection.qml" line="117"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/internal/ArrangeSection.qml" line="117"/>
         <source>To front</source>
         <translation>맨 앞으로</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/internal/ArrangeSection.qml" line="141"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/internal/ArrangeSection.qml" line="141"/>
         <source>Backwards</source>
         <translation>뒤로</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/internal/ArrangeSection.qml" line="160"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/internal/ArrangeSection.qml" line="160"/>
         <source>To back</source>
         <translation>맨 뒤로</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/internal/HorizontalSpacingSection.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/internal/HorizontalSpacingSection.qml" line="58"/>
         <source>Leading space</source>
         <translation>앞 공백</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/internal/HorizontalSpacingSection.qml" line="75"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/internal/HorizontalSpacingSection.qml" line="75"/>
         <source>Measure width</source>
         <translation>마디 너비</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/internal/VerticalSpacingSection.qml" line="40"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/internal/VerticalSpacingSection.qml" line="40"/>
         <source>Minimum distance</source>
         <translation>최소 간격</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/GeneralInspectorView.qml" line="67"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/GeneralInspectorView.qml" line="67"/>
         <source>Visible</source>
         <translation>표시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/GeneralInspectorView.qml" line="80"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/GeneralInspectorView.qml" line="80"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="48"/>
         <source>Cue size</source>
         <translation>작게</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/GeneralInspectorView.qml" line="93"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/GeneralInspectorView.qml" line="93"/>
         <source>Auto-place</source>
         <translation>자동 배치</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/GeneralInspectorView.qml" line="106"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/GeneralInspectorView.qml" line="106"/>
         <source>Play</source>
         <translation>재생</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/GeneralInspectorView.qml" line="129"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/GeneralInspectorView.qml" line="129"/>
         <source>Playback</source>
         <translation>플레이백</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/GeneralInspectorView.qml" line="155"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/appearancesettingsmodel.cpp" line="41"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/GeneralInspectorView.qml" line="155"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/appearancesettingsmodel.cpp" line="41"/>
         <source>Appearance</source>
         <translation>모양새</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/ArpeggioExpandableBlank.qml" line="44"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/ArpeggioExpandableBlank.qml" line="44"/>
         <source>Spread delay</source>
         <translation>분산 지연</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/BreathExpandableBlank.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/BreathExpandableBlank.qml" line="53"/>
         <source>Pause time</source>
         <translation>휴지 시간</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/FermataExpandableBlank.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/FermataExpandableBlank.qml" line="53"/>
         <source>Time stretch</source>
         <translation>시간 늘리기</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="53"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/GradualTempoChangeSettings.qml" line="61"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/HairpinLineSettings.qml" line="63"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/LineSettings.qml" line="55"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/SlurAndTieSettings.qml" line="59"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="80"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/GradualTempoChangeSettings.qml" line="61"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/HairpinLineSettings.qml" line="63"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/LineSettings.qml" line="55"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/SlurAndTieSettings.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="80"/>
         <source>Style</source>
         <translation>스타일</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="58"/>
         <source>Default (Diatonic)</source>
         <translation>기본 (온음계)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="59"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="62"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="62"/>
         <source>Chromatic</source>
         <translation>반음계</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="63"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="63"/>
         <source>White keys</source>
         <translation>흰 건반</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="64"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="64"/>
         <source>Black keys</source>
         <translation>검은 건반</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="65"/>
         <source>Diatonic</source>
         <translation>온음계</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="66"/>
         <source>Portamento</source>
         <translation>포르타멘토</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/GradualTempoChangeBlank.qml" line="51"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/GradualTempoChangeBlank.qml" line="51"/>
         <source>Amount</source>
         <translation>양</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/GradualTempoChangeBlank.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/GradualTempoChangeBlank.qml" line="66"/>
         <source>Easing method</source>
         <translation>이징 메서드</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/NoteExpandableBlank.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/NoteExpandableBlank.qml" line="66"/>
         <source>Velocity</source>
         <translation>벨로시티</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/NoteExpandableBlank.qml" line="85"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/NoteExpandableBlank.qml" line="85"/>
         <source>Tuning (cents)</source>
         <translation>조율 (센트)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/InsertMeasuresPopup.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/InsertMeasuresPopup.qml" line="58"/>
         <source>Number of measures to insert:</source>
         <translation>삽입할 마디 수:</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/InsertMeasuresPopup.qml" line="80"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/InsertMeasuresPopup.qml" line="80"/>
         <source>Where to insert measures:</source>
         <translation>마디 삽입 위치:</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/InsertMeasuresPopup.qml" line="108"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/InsertMeasuresPopup.qml" line="108"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="59"/>
         <source>Insert measures</source>
         <translation>마디 삽입</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="79"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="79"/>
         <source>Delete selected measures</source>
         <translation>선택한 마디 삭제</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="97"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="97"/>
         <source>Move to system</source>
         <translation>단으로 이동</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="119"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="119"/>
         <source>Previous</source>
         <translation>이전</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="121"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="121"/>
         <source>Move measure(s) to previous system</source>
         <translation>마디를 이전 단으로 이동</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="140"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="140"/>
         <source>Next</source>
         <translation>다음</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="142"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="142"/>
         <source>Move measure(s) to next system</source>
         <translation>마디를 다음 단으로 이동</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="164"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="164"/>
         <source>Unlock selected systems</source>
         <translation>선택한 단 고정 해제</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="165"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="165"/>
         <source>Unlock selected system</source>
         <translation>선택한 단 고정 해제</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="166"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="166"/>
         <source>Lock selected systems</source>
         <translation>선택한 단 고정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="167"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="167"/>
         <source>Lock selected system</source>
         <translation>선택한 단 고정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="170"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="170"/>
         <source>Lock/unlock selected system(s)</source>
         <translation>선택한 단 고정/해제</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="171"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="171"/>
         <source>Keep measures on the selected system(s) together and prevent them from reflowing to the next system</source>
         <translation>선택한 단의 마디들을 함께 유지하고 다음 단으로 넘어가지 않도록 방지</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="194"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="196"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="194"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="196"/>
         <source>Create system from selection</source>
         <translation>선택영역에서 단 만들기</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="197"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="197"/>
         <source>Create a system containing only the selected measure(s)</source>
         <translation>선택한 마디만 포함하는 단 만들기</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/accidentals/AccidentalSettings.qml" line="48"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tuplets/TupletSettings.qml" line="68"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/accidentals/AccidentalSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tuplets/TupletSettings.qml" line="68"/>
         <source>Bracket type</source>
         <translation>대괄호 종류</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/accidentals/AccidentalSettings.qml" line="55"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/accidentals/AccidentalSettings.qml" line="55"/>
         <source>None</source>
         <comment>bracket type</comment>
         <translation>없음</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/accidentals/AccidentalSettings.qml" line="56"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/accidentals/AccidentalSettings.qml" line="56"/>
         <source>Parentheses</source>
         <comment>bracket type</comment>
         <translation>둥근 괄호</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/accidentals/AccidentalSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/accidentals/AccidentalSettings.qml" line="57"/>
         <source>Brackets</source>
         <comment>bracket type</comment>
         <translation>대괄호</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/accidentals/AccidentalSettings.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/accidentals/AccidentalSettings.qml" line="65"/>
         <source>Small accidental</source>
         <translation>작은 임시표</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/accidentals/AccidentalSettings.qml" line="82"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/accidentals/AccidentalSettings.qml" line="82"/>
         <source>Horizontal order</source>
         <translation>수평 순서</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="96"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="96"/>
         <source>Top note</source>
         <translation>최고음</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="136"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="136"/>
         <source>Bottom note</source>
         <translation>최저음</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="172"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="172"/>
         <source>Update to match the notes on the staff</source>
         <translation>보표의 음표와 일치하도록 업데이트</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="189"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="124"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/dynamics/DynamicsSettings.qml" line="92"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="243"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="120"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="152"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="426"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="189"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="124"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/dynamics/DynamicsSettings.qml" line="92"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="243"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="120"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="152"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="426"/>
         <source>Show less</source>
         <translation>간략히 표시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="189"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="124"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/dynamics/DynamicsSettings.qml" line="92"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="243"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="120"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="152"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="426"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="189"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="124"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/dynamics/DynamicsSettings.qml" line="92"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="243"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="120"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="152"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="426"/>
         <source>Show more</source>
         <translation>자세히 표시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="212"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ChordBracketSettings.qml" line="53"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="285"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="212"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ChordBracketSettings.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="285"/>
         <source>Left</source>
         <translation>왼쪽</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="213"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ChordBracketSettings.qml" line="54"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="330"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="213"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ChordBracketSettings.qml" line="54"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="330"/>
         <source>Right</source>
         <translation>오른쪽</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="238"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="114"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tuplets/TupletSettings.qml" line="81"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="238"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="114"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tuplets/TupletSettings.qml" line="81"/>
         <source>Line thickness</source>
         <translation>선 두께</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/articulations/ArticulationSettings.qml" line="51"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ChordBracketSettings.qml" line="47"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="223"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/articulations/ArticulationSettings.qml" line="51"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ChordBracketSettings.qml" line="47"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="223"/>
         <source>Placement</source>
         <translation>위치</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="52"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/OttavaStyleSettings.qml" line="50"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/VibratoSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="52"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/OttavaStyleSettings.qml" line="50"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/VibratoSettings.qml" line="48"/>
         <source>Type</source>
         <translation>종류</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="60"/>
         <source>Single barline</source>
         <translation>세로줄</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="61"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="61"/>
         <source>Double barline</source>
         <translation>겹세로줄</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="62"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="62"/>
         <source>Dashed barline</source>
         <translation>파선 세로줄</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="63"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="63"/>
         <source>Final barline</source>
         <translation>끝세로줄</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="64"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="64"/>
         <source>Dotted barline</source>
         <translation>점선 세로줄</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="65"/>
         <source>Reverse final barline</source>
         <translation>역끝세로줄</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="66"/>
         <source>Heavy barline</source>
         <translation>굵은 세로줄</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="67"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="67"/>
         <source>Heavy double barline</source>
         <translation>굵은 겹세로줄</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="68"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="68"/>
         <source>Left (start) repeat barline</source>
         <translation>왼쪽 도돌이표</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="69"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="69"/>
         <source>Right (end) repeat barline</source>
         <translation>오른쪽 도돌이표</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="70"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="70"/>
         <source>Right and left (end/start) repeat barline</source>
         <translation>양방향 도돌이표</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="76"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="76"/>
         <source>Repeat style</source>
         <translation>도돌이표 스타일</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="106"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="106"/>
         <source>Play count</source>
         <translation>반복 횟수</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="144"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="144"/>
         <source>Span to next staff</source>
         <translation>다음 보표까지 연장</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="158"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="158"/>
         <source>Span from</source>
         <translation>연장 시작</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="177"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="177"/>
         <source>Span to</source>
         <translation>연장 끝</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="195"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="195"/>
         <source>Set as staff default</source>
         <translation>보표 기본값으로 지정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="218"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="218"/>
         <source>Span presets</source>
         <translation>연장 프리셋</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="227"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="187"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolos/TremoloSettings.qml" line="55"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="227"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="187"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolos/TremoloSettings.qml" line="55"/>
         <source>Default</source>
         <translation>기본값</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="239"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="239"/>
         <source>Tick 1</source>
         <translation>틱 1</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="251"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="251"/>
         <source>Tick 2</source>
         <translation>틱 2</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="268"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="268"/>
         <source>Short 1</source>
         <translation>짧게 1</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="280"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="280"/>
         <source>Short 2</source>
         <translation>짧게 2</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/beams/BeamTypeSelector.qml" line="62"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/beams/BeamTypeSelector.qml" line="62"/>
         <source>No beam</source>
         <translation>빔 없음</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/beams/BeamTypeSelector.qml" line="63"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/beams/BeamTypeSelector.qml" line="63"/>
         <source>Break beam left</source>
         <translation>왼쪽 빔 끊기</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/beams/BeamTypeSelector.qml" line="64"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/beams/BeamTypeSelector.qml" line="64"/>
         <source>Break inner beams (8th)</source>
         <translation>내부 빔 끊기 (8분음표)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/beams/BeamTypeSelector.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/beams/BeamTypeSelector.qml" line="65"/>
         <source>Break inner beams (16th)</source>
         <translation>내부 빔 끊기 (16분음표)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/beams/BeamTypeSelector.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/beams/BeamTypeSelector.qml" line="66"/>
         <source>Join beams</source>
         <translation>빔 연결하기</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="68"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="68"/>
         <source>Hold line</source>
         <translation>유지선</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="77"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/scoredisplaysettingsmodel.cpp" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="77"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/scoredisplaysettingsmodel.cpp" line="35"/>
         <source>Show</source>
         <translation>표시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="78"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/playcounttext/PlayCountSettings.qml" line="71"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="78"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/playcounttext/PlayCountSettings.qml" line="71"/>
         <source>Hide</source>
         <translation>숨김</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="85"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="85"/>
         <source>Tremolo line</source>
         <translation>트레몰로 선</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="93"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="93"/>
         <source>None</source>
         <translation>없음</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="94"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="116"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="191"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="94"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="116"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="191"/>
         <source>Normal</source>
         <translation>일반</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="95"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="95"/>
         <source>Wide</source>
         <translation>넓게</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="102"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="102"/>
         <source>Tablature staff layout</source>
         <translation>타블라추어 보표 레이아웃</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="111"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="111"/>
         <source>On staff</source>
         <translation>보표 위에</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="112"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="112"/>
         <source>Above staff</source>
         <translation>보표 상단에</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="119"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineStyleSection.qml" line="45"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="119"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineStyleSection.qml" line="45"/>
         <source>Line style</source>
         <translation>선 모양</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="127"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineStyleSection.qml" line="81"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="127"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineStyleSection.qml" line="81"/>
         <source>Normal</source>
         <comment>line type</comment>
         <translation>일반</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="128"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineStyleSection.qml" line="82"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="128"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineStyleSection.qml" line="82"/>
         <source>Dashed</source>
         <comment>line type</comment>
         <translation>파선</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="129"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineStyleSection.qml" line="83"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="129"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineStyleSection.qml" line="83"/>
         <source>Dotted</source>
         <comment>line type</comment>
         <translation>점선</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="135"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="135"/>
         <source>Customize dive</source>
         <translation>다이브 사용자 정의</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="135"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="135"/>
         <source>Customize bend</source>
         <translation>벤드 사용자 정의</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="158"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="158"/>
         <source>Press Enter to start editing</source>
         <translation>편집하려면 Enter를 누르세요</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/brackets/BracketSettings.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/brackets/BracketSettings.qml" line="58"/>
         <source>Column</source>
         <translation>열</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/brackets/BracketSettings.qml" line="76"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/brackets/BracketSettings.qml" line="76"/>
         <source>Span</source>
         <translation>연장</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/brackets/BracketSettings.qml" line="93"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/brackets/BracketSettings.qml" line="93"/>
         <source>You have multiple brackets selected. Select a single bracket to edit its settings.</source>
         <translation>여러 개의 대괄호가 선택되었습니다. 설정을 수정하려면 하나만 선택하세요.</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="49"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="49"/>
         <source>Interpretation</source>
         <translation>해석</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="58"/>
         <source>Literal</source>
         <translation>문자 그대로</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="59"/>
         <source>Jazz</source>
         <translation>재즈</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="65"/>
         <source>Voicing</source>
         <translation>보이싱</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="75"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="75"/>
         <source>Root only</source>
         <translation>기본음 만</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="76"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="76"/>
         <source>Close</source>
         <translation>밀집</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="77"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="77"/>
         <source>Drop two</source>
         <translation>드롭 투</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="78"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="78"/>
         <source>Six note</source>
         <translation>6성부</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="79"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="79"/>
         <source>Four note</source>
         <translation>4성부</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="80"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="80"/>
         <source>Three note</source>
         <translation>3성부</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="86"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="86"/>
         <source>Duration</source>
         <translation>지속 시간</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="93"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="93"/>
         <source>Until the next chord symbol</source>
         <translation>다음 코드 기호까지</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="94"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="94"/>
         <source>Until the end of the measure</source>
         <translation>마디 끝까지</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="95"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="95"/>
         <source>Until the end of the attached duration</source>
         <translation>연결된 박자 끝까지</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="102"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="176"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="102"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="176"/>
         <source>Exclude from vertical alignment</source>
         <translation>수직 정렬에서 제외</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="115"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="115"/>
         <source>Do not stack modifiers</source>
         <translation>변화표를 쌓지 않음</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="136"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="136"/>
         <source>Bass note scale</source>
         <translation>베이스 음표 배율</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="167"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="167"/>
         <source>Add fretboard diagram</source>
         <translation>지판 다이어그램 추가</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/clefs/ClefSettings.qml" line="55"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/clefs/ClefSettings.qml" line="55"/>
         <source>Show courtesy clef</source>
         <translation>예비 음자리표 표시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/clefs/ClefSettings.qml" line="63"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/clefs/ClefSettings.qml" line="63"/>
         <source>Position relative to barline</source>
         <translation>세로줄 기준 위치</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/clefs/ClefSettings.qml" line="72"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/clefs/ClefSettings.qml" line="72"/>
         <source>Before</source>
         <translation>이전</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/clefs/ClefSettings.qml" line="73"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/clefs/ClefSettings.qml" line="73"/>
         <source>After</source>
         <translation>이후</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/dynamics/DynamicsSettings.qml" line="59"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="59"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="85"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/symbols/SymbolSettings.qml" line="61"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/timesignatures/TimeSignatureSettings.qml" line="50"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="131"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextSettings.qml" line="77"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/dynamics/DynamicsSettings.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="85"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/symbols/SymbolSettings.qml" line="61"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/timesignatures/TimeSignatureSettings.qml" line="50"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="131"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextSettings.qml" line="77"/>
         <source>Scale</source>
         <translation>배율</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/dynamics/DynamicsSettings.qml" line="76"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lyrics/LyricsSettings.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/dynamics/DynamicsSettings.qml" line="76"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lyrics/LyricsSettings.qml" line="65"/>
         <source>Avoid barlines</source>
         <translation>세로줄 피하기</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/dynamics/DynamicsSettings.qml" line="109"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/dynamics/DynamicsSettings.qml" line="109"/>
         <source>Alignment with notehead</source>
         <translation>음표 머리 기준 정렬</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/dynamics/DynamicsSettings.qml" line="116"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/dynamics/DynamicsSettings.qml" line="116"/>
         <source>Center on notehead</source>
         <translation>음표 머리 중앙에 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/dynamics/DynamicsSettings.qml" line="117"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/dynamics/DynamicsSettings.qml" line="117"/>
         <source>Use text centering</source>
         <translation>텍스트 중앙 정렬 사용</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/expressions/ExpressionSettings.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/expressions/ExpressionSettings.qml" line="53"/>
         <source>Align with preceding dynamic</source>
         <translation>이전 강약 기호에 맞춰 정렬</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/FretFrameSettings.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/FretFrameSettings.qml" line="58"/>
         <source>Chords</source>
         <translation>코드</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/HorizontalFrameSettings.qml" line="55"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameSettingsTab.qml" line="49"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/TextFrameSettings.qml" line="54"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/VerticalFrameSettings.qml" line="55"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextSettings.qml" line="104"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/HorizontalFrameSettings.qml" line="55"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameSettingsTab.qml" line="49"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/TextFrameSettings.qml" line="54"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/VerticalFrameSettings.qml" line="55"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextSettings.qml" line="104"/>
         <source>Scale with staff size</source>
         <translation>보표 크기에 맞춰 조절</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/HorizontalFrameSettings.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/HorizontalFrameSettings.qml" line="65"/>
         <source>Width</source>
         <translation>너비</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/HorizontalFrameSettings.qml" line="86"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/HorizontalFrameSettings.qml" line="86"/>
         <source>Display brackets, clefs and key signatures in the next measure</source>
         <translation>다음 마디에 대괄호, 음자리표, 조표 화면표시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="35"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="176"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="176"/>
         <source>Alignment</source>
         <translation>정렬</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="60"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="226"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="277"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="226"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="277"/>
         <source>Align left</source>
         <translation>왼쪽 정렬</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="61"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="61"/>
         <source>Align left edge of legend to reference point</source>
         <translation>범례의 왼쪽 가장자리를 기준점에 정렬</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="66"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="232"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="283"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="232"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="283"/>
         <source>Align center</source>
         <translation>가운데 정렬</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="67"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="67"/>
         <source>Align horizontal center of legend to reference point</source>
         <translation>범례의 가로 중앙을 기준점에 정렬</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="72"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="238"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="289"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="72"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="238"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="289"/>
         <source>Align right</source>
         <translation>오른쪽 정렬</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="73"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="73"/>
         <source>Align right edge of legend to reference point</source>
         <translation>범례의 오른쪽 가장자리를 기준점에 정렬</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameChordsControlPanel.qml" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameChordsControlPanel.qml" line="60"/>
         <source>Move up</source>
         <translation>위로 이동</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameChordsControlPanel.qml" line="78"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameChordsControlPanel.qml" line="78"/>
         <source>Move down</source>
         <translation>아래로 이동</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameChordsControlPanel.qml" line="93"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameChordsControlPanel.qml" line="93"/>
         <source>Reset chord list</source>
         <translation>코드 목록 재설정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameChordsTab.qml" line="114"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameChordsTab.qml" line="114"/>
         <source>Add chord symbols to your score and they’ll automatically appear in the legend.</source>
         <translation>악보에 코드 기호를 추가하면 범례에 자동으로 표시됩니다.</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameGapsSection.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameGapsSection.qml" line="53"/>
         <source>Column gap</source>
         <translation>열 간격</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameGapsSection.qml" line="69"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameGapsSection.qml" line="69"/>
         <source>Row gap</source>
         <translation>행 간격</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameScalesSection.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameScalesSection.qml" line="53"/>
         <source>Text scale</source>
         <translation>텍스트 배율</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameScalesSection.qml" line="72"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameScalesSection.qml" line="72"/>
         <source>Diagram scale</source>
         <translation>다이어그램 배율</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameSettingsTab.qml" line="85"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameSettingsTab.qml" line="85"/>
         <source>Chords per row</source>
         <translation>행당 코드 수</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/HorizontalGapsSection.qml" line="49"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/HorizontalGapsSection.qml" line="49"/>
         <source>Left gap</source>
         <translation>왼쪽 간격</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/HorizontalGapsSection.qml" line="64"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/HorizontalGapsSection.qml" line="64"/>
         <source>Right gap</source>
         <translation>오른쪽 간격</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/HorizontalMarginsSection.qml" line="49"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/HorizontalMarginsSection.qml" line="49"/>
         <source>Left padding</source>
         <translation>왼쪽 안쪽 여백</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/HorizontalMarginsSection.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/HorizontalMarginsSection.qml" line="65"/>
         <source>Right padding</source>
         <translation>오른쪽 안쪽 여백</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="52"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="52"/>
         <source>Gap to staff/frames</source>
         <translation>보표/프레임과의 간격</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="72"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="72"/>
         <source>Gap to staff/frames above</source>
         <translation>상단 보표/프레임과의 간격</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="90"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="90"/>
         <source>Gap to staff/frames below</source>
         <translation>하단 보표/프레임과의 간격</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="98"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="98"/>
         <source>Clearance for notation</source>
         <translation>기보 요소 여유 공간</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="118"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="118"/>
         <source>Clearance for notation above</source>
         <translation>상단 기보 요소 여유 공간</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="136"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="136"/>
         <source>Clearance for notation below</source>
         <translation>하단 기보 요소 여유 공간</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalMarginsSection.qml" line="49"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalMarginsSection.qml" line="49"/>
         <source>Top padding</source>
         <translation>위쪽 안쪽 여백</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalMarginsSection.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalMarginsSection.qml" line="65"/>
         <source>Bottom padding</source>
         <translation>아래쪽 안쪽 여백</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/VerticalFrameSettings.qml" line="65"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HairpinStyleSettings.qml" line="119"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/spacers/SpacerSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/VerticalFrameSettings.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HairpinStyleSettings.qml" line="119"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/spacers/SpacerSettings.qml" line="48"/>
         <source>Height</source>
         <translation>높이</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/FretDiagramSettings.qml" line="93"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/FretDiagramSettings.qml" line="93"/>
         <source>Show fingerings</source>
         <translation>운지법 표시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/FretDiagramSettings.qml" line="168"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/FretDiagramSettings.qml" line="168"/>
         <source>Finger for string %1</source>
         <translation>%1번 줄 운지</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="80"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="80"/>
         <source>Strings</source>
         <translation>줄 수</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="104"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="104"/>
         <source>Visible frets</source>
         <translation>표시할 프렛 수</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="123"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="123"/>
         <source>Fret number</source>
         <translation>프렛 번호</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="143"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="143"/>
         <source>Show nut</source>
         <translation>너트 표시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="153"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="153"/>
         <source>Orientation</source>
         <translation>방향</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretDiagramTabPanel.qml" line="50"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/generalsettingsmodel.cpp" line="38"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretDiagramTabPanel.qml" line="50"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/generalsettingsmodel.cpp" line="38"/>
         <source>General</source>
         <translation>일반</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretDiagramTabPanel.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretDiagramTabPanel.qml" line="58"/>
         <source>Settings</source>
         <translation>설정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="67"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="67"/>
         <source>Barré</source>
         <translation>바레</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="85"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="85"/>
         <source>Multiple dots</source>
         <translation>다중 점</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="103"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="103"/>
         <source>Marker type</source>
         <translation>마커 종류</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="117"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="117"/>
         <source>Cross</source>
         <translation>엑스표</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="118"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="118"/>
         <source>Square</source>
         <translation>사각형</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="119"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="119"/>
         <source>Triangle</source>
         <translation>삼각형</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="149"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="149"/>
         <source>You have multiple fretboard diagrams selected. Select a single diagram to edit its settings.</source>
         <translation>여러 개의 지판 다이어그램이 선택되었습니다. 설정을 수정하려면 하나만 선택하세요.</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/images/ImageSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/images/ImageSettings.qml" line="57"/>
         <source>Image height</source>
         <translation>이미지 높이</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/images/ImageSettings.qml" line="82"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="308"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/images/ImageSettings.qml" line="82"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="308"/>
         <source>Lock</source>
         <translation>고정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/images/ImageSettings.qml" line="96"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/images/ImageSettings.qml" line="96"/>
         <source>Image width</source>
         <translation>이미지 너비</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/images/ImageSettings.qml" line="111"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/images/ImageSettings.qml" line="111"/>
         <source>Scale to frame size</source>
         <translation>프레임 크기에 맞춰 조절</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/images/ImageSettings.qml" line="121"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/images/ImageSettings.qml" line="121"/>
         <source>Use staff space units</source>
         <translation>보표 간격 단위(sp) 사용</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/instrumentname/InstrumentNameSettings.qml" line="53"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/ScoreAppearanceInspectorView.qml" line="117"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/instrumentname/InstrumentNameSettings.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/ScoreAppearanceInspectorView.qml" line="117"/>
         <source>Style settings</source>
         <translation>스타일 설정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/instrumentname/InstrumentNameSettings.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/instrumentname/InstrumentNameSettings.qml" line="66"/>
         <source>Staff/Part properties</source>
         <translation>보표/파트 속성</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/jumps/JumpSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/jumps/JumpSettings.qml" line="48"/>
         <source>Jump to</source>
         <translation>이동 위치</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/jumps/JumpSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/jumps/JumpSettings.qml" line="57"/>
         <source>Play until</source>
         <translation>다음까지 재생</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/jumps/JumpSettings.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/jumps/JumpSettings.qml" line="66"/>
         <source>Continue at</source>
         <translation>재개 위치</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/jumps/JumpSettings.qml" line="74"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/jumps/JumpSettings.qml" line="74"/>
         <source>Play repeats</source>
         <translation>도돌이표 재생</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="48"/>
         <source>Show courtesy key signature</source>
         <translation>예비 조표 표시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="58"/>
         <source>Mode</source>
         <extracomment>Musical mode (major, minor, dorian, phrygian, lydian, etc.)</extracomment>
         <translation>선법</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="66"/>
         <source>Unknown</source>
         <comment>key signature mode</comment>
         <translation>알 수 없음</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="67"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="67"/>
         <source>None</source>
         <comment>key signature mode</comment>
         <translation>없음</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="69"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="69"/>
         <source>Major</source>
         <comment>key signature mode</comment>
         <extracomment>mode of a key signature, not an interval</extracomment>
         <translation>장조</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="71"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="71"/>
         <source>Minor</source>
         <comment>key signature mode</comment>
         <extracomment>mode of a key signature, not an interval</extracomment>
         <translation>단조</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="72"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="72"/>
         <source>Dorian</source>
         <comment>key signature mode</comment>
         <translation>도리안</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="73"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="73"/>
         <source>Phrygian</source>
         <comment>key signature mode</comment>
         <translation>프리지안</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="74"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="74"/>
         <source>Lydian</source>
         <comment>key signature mode</comment>
         <translation>리디안</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="75"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="75"/>
         <source>Mixolydian</source>
         <comment>key signature mode</comment>
         <translation>믹솔리디안</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="76"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="76"/>
         <source>Aeolian</source>
         <comment>key signature mode</comment>
         <translation>에올리안</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="77"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="77"/>
         <source>Ionian</source>
         <comment>key signature mode</comment>
         <translation>아이오니안</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="78"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="78"/>
         <source>Locrian</source>
         <comment>key signature mode</comment>
         <translation>로크리안</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ChordBracketSettings.qml" line="63"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ChordBracketSettings.qml" line="63"/>
         <source>Hooks</source>
         <translation>꺾임 기호</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ChordBracketSettings.qml" line="69"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ChordBracketSettings.qml" line="69"/>
         <source>Both</source>
         <translation>양쪽 모두</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ChordBracketSettings.qml" line="78"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ChordBracketSettings.qml" line="78"/>
         <source>Hook length</source>
         <translation>꺾임 길이</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/GlissandoSettings.qml" line="49"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/GlissandoSettings.qml" line="49"/>
         <source>Line type</source>
         <translation>선 종류</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/GlissandoSettings.qml" line="74"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/GlissandoSettings.qml" line="74"/>
         <source>Show text</source>
         <translation>텍스트 표시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/GlissandoSettings.qml" line="83"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/GradualTempoChangeSettings.qml" line="69"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/HairpinLineSettings.qml" line="71"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/LineSettings.qml" line="63"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/parts/PartsSettings.qml" line="96"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textsettingsmodel.cpp" line="44"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/GlissandoSettings.qml" line="83"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/GradualTempoChangeSettings.qml" line="69"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/HairpinLineSettings.qml" line="71"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/LineSettings.qml" line="63"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/parts/PartsSettings.qml" line="96"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textsettingsmodel.cpp" line="44"/>
         <source>Text</source>
         <translation>텍스트</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/CrescDimLineStyleSettings.qml" line="48"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/GradualTempoChangeStyleTab.qml" line="49"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineWithHooksCommonStyleSettings.qml" line="48"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/VoltaStyleSettings.qml" line="67"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/CrescDimLineStyleSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/GradualTempoChangeStyleTab.qml" line="49"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineWithHooksCommonStyleSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/VoltaStyleSettings.qml" line="67"/>
         <source>Show line</source>
         <translation>선 표시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/CrescDimLineStyleSettings.qml" line="57"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/GradualTempoChangeStyleTab.qml" line="58"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HairpinStyleSettings.qml" line="70"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineWithHooksCommonStyleSettings.qml" line="57"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/VoltaStyleSettings.qml" line="76"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/CrescDimLineStyleSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/GradualTempoChangeStyleTab.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HairpinStyleSettings.qml" line="70"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineWithHooksCommonStyleSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/VoltaStyleSettings.qml" line="76"/>
         <source>Allow diagonal</source>
         <translation>대각선 허용</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/GradualTempoChangePositionSettingsTab.qml" line="64"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/GradualTempoChangePositionSettingsTab.qml" line="64"/>
         <source>Alignment with adjacent tempo text</source>
         <translation>인접한 템포 텍스트에 맞춰 정렬</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/GradualTempoChangePositionSettingsTab.qml" line="70"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HairpinPositionSettingsTab.qml" line="76"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/GradualTempoChangePositionSettingsTab.qml" line="70"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HairpinPositionSettingsTab.qml" line="76"/>
         <source>Snap to next</source>
         <translation>다음 요소에 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HairpinPositionSettingsTab.qml" line="62"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HairpinPositionSettingsTab.qml" line="62"/>
         <source>Alignment with adjacent dynamics</source>
         <translation>인접한 강약 기호에 맞춰 정렬</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HairpinPositionSettingsTab.qml" line="67"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HairpinPositionSettingsTab.qml" line="67"/>
         <source>Snap to previous</source>
         <translation>이전 요소에 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HairpinStyleSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HairpinStyleSettings.qml" line="57"/>
         <source>Niente circle</source>
         <translation>니엔테(Niente) 원</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HairpinStyleSettings.qml" line="141"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HairpinStyleSettings.qml" line="141"/>
         <source>Height (new system)</source>
         <translation>높이 (새 단 시작 시)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="116"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksSection.qml" line="74"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="116"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksSection.qml" line="74"/>
         <source>Line start</source>
         <translation>선 시작</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="190"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksSection.qml" line="91"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="190"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksSection.qml" line="91"/>
         <source>Line end</source>
         <translation>선 끝</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="289"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksSection.qml" line="117"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="289"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksSection.qml" line="117"/>
         <source>Start hook height</source>
         <translation>시작 꺾임 높이</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="320"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="542"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksSection.qml" line="137"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="320"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="542"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksSection.qml" line="137"/>
         <source>End hook height</source>
         <translation>끝 꺾임 높이</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="374"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="374"/>
         <source>Start arrow height</source>
         <translation>시작 화살표 높이</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="405"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="405"/>
         <source>Start arrow width</source>
         <translation>시작 화살표 너비</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="459"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="459"/>
         <source>End arrow height</source>
         <translation>끝 화살표 높이</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="490"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="490"/>
         <source>End arrow width</source>
         <translation>끝 화살표 너비</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineStyleSection.qml" line="100"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineStyleSection.qml" line="100"/>
         <source>Dash</source>
         <translation>대시(Dash)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineStyleSection.qml" line="122"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineStyleSection.qml" line="122"/>
         <source>Gap</source>
         <translation>간격</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="51"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="51"/>
         <source>Beginning text</source>
         <translation>시작 텍스트</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="72"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="72"/>
         <source>Text when continuing to a new system</source>
         <translation>새 단에서 계속될 때의 텍스트</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="93"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="93"/>
         <source>End text</source>
         <translation>종료 텍스트</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="118"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="118"/>
         <source>Gap between text and line</source>
         <translation>텍스트와 선 사이 간격</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/OttavaStyleSettings.qml" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/OttavaStyleSettings.qml" line="60"/>
         <source>Show numbers only</source>
         <translation>숫자만 표시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/PedalStyleSettings.qml" line="62"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/PedalStyleSettings.qml" line="62"/>
         <source>Make line to asterisk visible</source>
         <translation>별표(asterisk)까지의 선 표시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/VoltaStyleSettings.qml" line="52"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/VoltaStyleSettings.qml" line="52"/>
         <source>Repeat list</source>
         <translation>반복 차수 목록</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/LyricsLineSettings.qml" line="65"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lyrics/LyricsSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/LyricsLineSettings.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lyrics/LyricsSettings.qml" line="48"/>
         <source>Set to verse</source>
         <translation>절 번호 지정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/SlurAndTieSettings.qml" line="91"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/SlurAndTieSettings.qml" line="91"/>
         <source>Laissez vibrer placement</source>
         <translation>레제 비브레(L.V.) 위치</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/SlurAndTieSettings.qml" line="91"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/SlurAndTieSettings.qml" line="91"/>
         <source>Tie placement</source>
         <translation>붙임줄 위치</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/SlurAndTieSettings.qml" line="98"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="193"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="225"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/SlurAndTieSettings.qml" line="98"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="193"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="225"/>
         <source>Inside</source>
         <translation>안쪽</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/SlurAndTieSettings.qml" line="99"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="194"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="226"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/SlurAndTieSettings.qml" line="99"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="194"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="226"/>
         <source>Outside</source>
         <translation>바깥쪽</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/SlurAndTieSettings.qml" line="106"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/SlurAndTieSettings.qml" line="106"/>
         <source>Minimum length</source>
         <translation>최소 길이</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/markers/MarkerSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/markers/MarkerSettings.qml" line="48"/>
         <source>Marker type:</source>
         <translation>마커 종류:</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/markers/MarkerSettings.qml" line="54"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/markers/MarkerSettings.qml" line="54"/>
         <source>Label</source>
         <translation>레이블</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/markers/MarkerSettings.qml" line="63"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/markers/MarkerSettings.qml" line="63"/>
         <source>Align symbol with barline</source>
         <translation>기호를 세로줄에 정렬</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/measurerepeats/MeasureRepeatSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/measurerepeats/MeasureRepeatSettings.qml" line="48"/>
         <source>Number position</source>
         <translation>숫자 위치</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/mmrests/MMRestSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/mmrests/MMRestSettings.qml" line="48"/>
         <source>Show number</source>
         <translation>숫자 표시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/mmrests/MMRestSettings.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/mmrests/MMRestSettings.qml" line="59"/>
         <source>Number offset</source>
         <translation>숫자 오프셋</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="52"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/rests/beams/RestBeamSettings.qml" line="49"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="52"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/rests/beams/RestBeamSettings.qml" line="49"/>
         <source>Beam type</source>
         <translation>빔 종류</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="82"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="82"/>
         <source>Feathered beams</source>
         <translation>페더드 빔</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="96"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="96"/>
         <source>None</source>
         <comment>beam feathering type</comment>
         <translation>없음</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="97"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="97"/>
         <source>Decelerate</source>
         <comment>beam feathering type</comment>
         <translation>감속</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="98"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="98"/>
         <source>Accelerate</source>
         <comment>beam feathering type</comment>
         <translation>가속</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="135"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="135"/>
         <source>Feathering left</source>
         <translation>왼쪽 페더링</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="155"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="155"/>
         <source>Feathering right</source>
         <translation>오른쪽 페더링</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="176"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="176"/>
         <source>Beam direction</source>
         <translation>빔 방향</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="192"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="192"/>
         <source>Move cross-staff beam</source>
         <translation>교차 보표 빔 이동</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="231"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="231"/>
         <source>Force horizontal</source>
         <translation>수평 고정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="258"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="258"/>
         <source>Beam height</source>
         <translation>빔 높이</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/internal/NoteheadGroupSelector.qml" line="36"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/internal/NoteheadGroupSelector.qml" line="36"/>
         <source>Notehead type</source>
         <translation>음표 머리 종류</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/internal/NoteheadTypeSelector.qml" line="32"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/internal/NoteheadTypeSelector.qml" line="32"/>
         <source>Notehead duration</source>
         <translation>음표 머리 음길이</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/internal/NoteheadTypeSelector.qml" line="39"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/internal/NoteheadTypeSelector.qml" line="39"/>
         <source>Quarter</source>
         <translation>4분음표</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/internal/NoteheadTypeSelector.qml" line="40"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/internal/NoteheadTypeSelector.qml" line="40"/>
         <source>Half</source>
         <translation>2분음표</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/internal/NoteheadTypeSelector.qml" line="41"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/internal/NoteheadTypeSelector.qml" line="41"/>
         <source>Whole</source>
         <translation>온음표</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/internal/NoteheadTypeSelector.qml" line="42"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/internal/NoteheadTypeSelector.qml" line="42"/>
         <source>Brevis</source>
         <translation>겹온음표</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="52"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="52"/>
         <source>Notehead parentheses</source>
         <translation>음표 머리 괄호</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="59"/>
         <source>Normal notehead</source>
         <translation>일반 음표 머리</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="60"/>
         <source>Notehead with parentheses</source>
         <translation>괄호가 붙은 음표 머리</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="77"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="77"/>
         <source>Hide notehead</source>
         <translation>음표 머리 숨김</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="88"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="88"/>
         <source>Small notehead</source>
         <translation>작은 음표 머리</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="100"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="100"/>
         <source>Duration dot position</source>
         <translation>부점 위치</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="108"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="108"/>
         <source>Auto</source>
         <comment>augmentation dot position</comment>
         <translation>자동</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="109"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="109"/>
         <source>Down</source>
         <comment>augmentation dot position</comment>
         <translation>아래</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="110"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="110"/>
         <source>Up</source>
         <comment>augmentation dot position</comment>
         <translation>위</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="136"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="183"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="136"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="183"/>
         <source>Notehead scheme</source>
         <translation>음표 머리 체계</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="148"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="148"/>
         <source>Override visual duration</source>
         <translation>시각적 음길이 무시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="159"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="159"/>
         <source>Note direction</source>
         <translation>음표 방향</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="170"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="170"/>
         <source>Notehead offset</source>
         <translation>음표 머리 오프셋</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="189"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="189"/>
         <source>Combine with voices that share the same stem direction</source>
         <translation>기둥 방향이 같은 성부와 결합</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="53"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="211"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="211"/>
         <source>Stemless</source>
         <translation>음표 기둥 없음</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="62"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="62"/>
         <source>Show stem slash</source>
         <translation>기둥 사선 표시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="75"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolos/TremoloSettings.qml" line="64"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="75"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolos/TremoloSettings.qml" line="64"/>
         <source>Stem direction</source>
         <translation>기둥 방향</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="89"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="89"/>
         <source>Flag style</source>
         <translation>꼬리 스타일</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="103"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="103"/>
         <source>Traditional</source>
         <comment>Note flags</comment>
         <translation>전통적</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="104"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="104"/>
         <source>Straight</source>
         <comment>Note flags</comment>
         <translation>직선형</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="195"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="195"/>
         <source>Length</source>
         <translation>길이</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="211"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="211"/>
         <source>Stem offset</source>
         <translation>기둥 오프셋</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="222"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="222"/>
         <source>Flag offset</source>
         <translation>꼬리 오프셋</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="50"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="50"/>
         <source>Interval above</source>
         <translation>상성 음정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="57"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="75"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="121"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="126"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="75"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="121"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="126"/>
         <source>Auto (diatonic)</source>
         <translation>자동 (온음계)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="58"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="76"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="76"/>
         <source>Minor second</source>
         <translation>단2도</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="59"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="77"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="77"/>
         <source>Major second</source>
         <translation>장2도</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="60"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="78"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="78"/>
         <source>Augmented second</source>
         <translation>증2도</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="68"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="68"/>
         <source>Interval below</source>
         <translation>하성 음정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="86"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="86"/>
         <source>Interval</source>
         <translation>음정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="122"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="127"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="122"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="127"/>
         <source>Augmented</source>
         <translation>증음정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="123"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="123"/>
         <source>Perfect</source>
         <translation>완전음정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="124"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="132"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="124"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="132"/>
         <source>Diminished</source>
         <translation>감음정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="129"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="129"/>
         <source>Major</source>
         <comment>interval quality</comment>
         <extracomment>Interval, not the mode of a key signature</extracomment>
         <translation>장음정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="131"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="131"/>
         <source>Minor</source>
         <comment>interval quality</comment>
         <extracomment>Interval, not the mode of a key signature</extracomment>
         <translation>단음정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="157"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="157"/>
         <source>Unison</source>
         <translation>1도(Unison)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="158"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="158"/>
         <source>Second</source>
         <translation>2도</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="159"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="159"/>
         <source>Third</source>
         <translation>3도</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="160"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="160"/>
         <source>Fourth</source>
         <translation>4도</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="161"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="161"/>
         <source>Fifth</source>
         <translation>5도</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="162"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="162"/>
         <source>Sixth</source>
         <translation>6도</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="163"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="163"/>
         <source>Seventh</source>
         <translation>7도</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="164"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="164"/>
         <source>Octave</source>
         <translation>옥타브</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="180"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="180"/>
         <source>Accidental visibility</source>
         <translation>임시표 표시 여부</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="188"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="188"/>
         <source>Show any alteration</source>
         <translation>모든 변화표 표시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="189"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="189"/>
         <source>Always display an accidental</source>
         <translation>항상 임시표 화면표시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="197"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="197"/>
         <source>Cue note visibility</source>
         <translation>큐 노트 표시 여부</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="218"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="218"/>
         <source>Start on upper note</source>
         <translation>상성음에서 시작</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/playcounttext/PlayCountSettings.qml" line="57"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/playcounttext/playcounttextsettingsmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/playcounttext/PlayCountSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/playcounttext/playcounttextsettingsmodel.cpp" line="34"/>
         <source>Play count text</source>
         <translation>재생 횟수 텍스트</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/playcounttext/PlayCountSettings.qml" line="70"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="71"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/playcounttext/PlayCountSettings.qml" line="70"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="71"/>
         <source>Custom</source>
         <translation>사용자 지정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/rests/RestSettings.qml" line="70"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/rests/RestSettings.qml" line="70"/>
         <source>Align with other rests in the same voice</source>
         <translation>같은 성부 내 다른 쉼표와 정렬</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/sectionbreaks/SectionBreakSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/sectionbreaks/SectionBreakSettings.qml" line="48"/>
         <source>Pause before new section starts</source>
         <translation>새 섹션 시작 전 휴지</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/sectionbreaks/SectionBreakSettings.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/sectionbreaks/SectionBreakSettings.qml" line="65"/>
         <source>Start new section with long instrument names</source>
         <translation>새 섹션을 악기 긴 이름으로 시작</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/sectionbreaks/SectionBreakSettings.qml" line="75"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/sectionbreaks/SectionBreakSettings.qml" line="75"/>
         <source>Reset measure numbers for new section</source>
         <translation>새 섹션에서 마디 번호 재설정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/sectionbreaks/SectionBreakSettings.qml" line="85"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/sectionbreaks/SectionBreakSettings.qml" line="85"/>
         <source>Indent first system of new section</source>
         <translation>새 섹션의 첫 단 들여쓰기</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/sectionbreaks/SectionBreakSettings.qml" line="95"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/sectionbreaks/SectionBreakSettings.qml" line="95"/>
         <source>Hide courtesy clefs and signatures</source>
         <translation>예비 음자리표 및 조표/박자표 숨김</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="111"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="111"/>
         <source>Number of lines</source>
         <translation>줄 수</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="129"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="129"/>
         <source>Line distance</source>
         <translation>줄 간격</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="148"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="148"/>
         <source>Step offset</source>
         <translation>단계 오프셋</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="162"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="162"/>
         <source>Invisible staff lines</source>
         <translation>보이지 않는 보표 선</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="172"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="172"/>
         <source>Staff line color</source>
         <translation>보표 선 색상</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="192"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="192"/>
         <source>Pitch names</source>
         <translation>피치 이름</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="193"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="193"/>
         <source>Pitch names, no accidentals</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="194"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="194"/>
         <source>German pitch names</source>
         <translation>독일식 피치 이름</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="195"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="195"/>
         <source>German pitch names, no accidentals</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="196"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="196"/>
         <source>Solfege movable Do</source>
         <translation>이동도법</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="197"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="197"/>
         <source>Solfege fixed Do</source>
         <translation>고정도법</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="198"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="198"/>
         <source>4-shape (Walker)</source>
         <translation>4모양 음표 (Walker)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="199"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="199"/>
         <source>7-shape (Aikin)</source>
         <translation>7모양 음표 (Aikin)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="200"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="200"/>
         <source>7-shape (Funk)</source>
         <translation>7모양 음표 (Funk)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="201"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="201"/>
         <source>7-shape (Walker)</source>
         <translation>7모양 음표 (Walker)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="220"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="220"/>
         <source>Show barlines</source>
         <translation>세로줄 표시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="229"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="229"/>
         <source>Show ledger lines</source>
         <translation>덧줄 표시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="238"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="238"/>
         <source>Generate clefs</source>
         <translation>음자리표 생성</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="247"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="247"/>
         <source>Generate time signatures</source>
         <translation>박자표 생성</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="256"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="256"/>
         <source>Generate key signatures</source>
         <translation>조표 생성</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stringtunings/StringTuningsSettings.qml" line="51"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stringtunings/StringTuningsSettings.qml" line="51"/>
         <source>Edit strings</source>
         <translation>줄 편집</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/symbols/SymbolSettings.qml" line="81"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/symbols/SymbolSettings.qml" line="81"/>
         <source>Rotation</source>
         <translation>회전</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/symbols/SymbolSettings.qml" line="95"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="55"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="90"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/symbols/SymbolSettings.qml" line="95"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="55"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="90"/>
         <source>Font</source>
         <translation>글꼴</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tempos/TempoRestorePreviousSettings.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tempos/TempoRestorePreviousSettings.qml" line="53"/>
         <source>Set specific tempo</source>
         <translation>특정 템포 지정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tempos/TempoRestorePreviousSettings.qml" line="73"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tempos/temposettingsmodel.cpp" line="43"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tempos/TempoRestorePreviousSettings.qml" line="73"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tempos/temposettingsmodel.cpp" line="43"/>
         <source>Tempo</source>
         <translation>템포</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tempos/TempoRestorePreviousSettings.qml" line="77"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tempos/TempoSettings.qml" line="61"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tempos/TempoRestorePreviousSettings.qml" line="77"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tempos/TempoSettings.qml" line="61"/>
         <source>BPM</source>
         <translation>BPM</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tempos/TempoSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tempos/TempoSettings.qml" line="48"/>
         <source>Follow written tempo</source>
         <translation>기보된 템포 따르기</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tempos/TempoSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tempos/TempoSettings.qml" line="57"/>
         <source>Override written tempo</source>
         <translation>기보된 템포 무시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/timesignatures/TimeSignatureSettings.qml" line="135"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/timesignatures/TimeSignatureSettings.qml" line="135"/>
         <source>Show courtesy time signature</source>
         <translation>예비 박자표 표시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/timesignatures/TimeSignatureSettings.qml" line="146"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/timesignatures/TimeSignatureSettings.qml" line="146"/>
         <source>Time signature properties</source>
         <translation>박자표 속성</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="58"/>
         <source>Tremolo bar type</source>
         <translation>아밍 유형:</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="65"/>
         <source>Dip</source>
         <translation>딥(Dip)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="66"/>
         <source>Dive</source>
         <translation>다이브(Dive)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="67"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="67"/>
         <source>Release (Up)</source>
         <translation>릴리즈 (위)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="68"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="68"/>
         <source>Inverted dip</source>
         <translation>인버티드 딥(Inverted dip)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="69"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="69"/>
         <source>Return</source>
         <translation>리턴</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="70"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="70"/>
         <source>Release (Down)</source>
         <translation>릴리즈(하행)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="78"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="78"/>
         <source>Click to add or remove points</source>
         <translation>클릭하여 점 추가 또는 제거</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="150"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="150"/>
         <source>You have multiple tremolo bars selected. Select a single one to edit its settings.</source>
         <translation>여러 개의 트레몰로 바(아밍)가 선택되었습니다. 설정을 수정하려면 하나만 선택합니다.</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolos/TremoloSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolos/TremoloSettings.qml" line="48"/>
         <source>Style (between notes)</source>
         <translation>스타일(음표 간)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolos/TremoloSettings.qml" line="56"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolos/TremoloSettings.qml" line="56"/>
         <source>Traditional</source>
         <translation>전통적 방식</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolos/TremoloSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolos/TremoloSettings.qml" line="57"/>
         <source>Traditional alternative</source>
         <translation>전통적 방식(대체)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tuplets/TupletSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tuplets/TupletSettings.qml" line="57"/>
         <source>Number type</source>
         <translation>숫자 형식</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/parts/PartsSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/parts/PartsSettings.qml" line="57"/>
         <source>Synchronize with main score</source>
         <translation>메인 악보와 동기화</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/parts/PartsSettings.qml" line="82"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/parts/PartsSettings.qml" line="82"/>
         <source>Style/appearance</source>
         <translation>스타일/모양새</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/parts/PartsSettings.qml" line="114"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/parts/PartsSettings.qml" line="114"/>
         <source>Exclude from parts</source>
         <translation>파트에서 제외</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/parts/PartsSettings.qml" line="115"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/parts/PartsSettings.qml" line="115"/>
         <source>Exclude from score</source>
         <translation>악보에서 제외</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/HideEmptyStavesSettings.qml" line="51"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/HideEmptyStavesSettings.qml" line="51"/>
         <source>Don’t hide empty staves in first system</source>
         <translation>첫 단의 빈 보표 숨기지 않기</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/HideEmptyStavesSettings.qml" line="68"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/HideEmptyStavesSettings.qml" line="68"/>
         <source>Show brackets when spanning a single staff</source>
         <translation>단일 보표에 걸쳐 있는 대괄호 표시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/ScoreAppearanceInspectorView.qml" line="54"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/ScoreAppearanceInspectorView.qml" line="54"/>
         <source>Automatically hide all empty staves</source>
         <translation>모든 빈 보표 자동 숨김</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/ScoreAppearanceInspectorView.qml" line="81"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/ScoreAppearanceInspectorView.qml" line="81"/>
         <source>Show options for hiding empty staves</source>
         <translation>빈 보표 숨기기 옵션 표시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/ScoreAppearanceInspectorView.qml" line="101"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/ScoreAppearanceInspectorView.qml" line="101"/>
         <source>Page settings</source>
         <translation>페이지 설정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/ScoreDisplayInspectorView.qml" line="56"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/ScoreDisplayInspectorView.qml" line="56"/>
         <source>Invisible</source>
         <extracomment>Invisible elements</extracomment>
         <translation>보이지 않는 항목</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/ScoreDisplayInspectorView.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/ScoreDisplayInspectorView.qml" line="57"/>
         <source>Invisible elements</source>
         <translation>보이지 않는 요소</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/ScoreDisplayInspectorView.qml" line="70"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/ScoreDisplayInspectorView.qml" line="70"/>
         <source>Formatting</source>
         <translation>서식</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/ScoreDisplayInspectorView.qml" line="83"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/ScoreDisplayInspectorView.qml" line="83"/>
         <source>Frames</source>
         <translation>프레임</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/ScoreDisplayInspectorView.qml" line="96"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/ScoreDisplayInspectorView.qml" line="96"/>
         <source>Page margins</source>
         <translation>페이지 여백</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/ScoreDisplayInspectorView.qml" line="109"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/ScoreDisplayInspectorView.qml" line="109"/>
         <source>Sound flags</source>
         <translation>사운드 플래그</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="104"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="220"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="104"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="220"/>
         <source>Bold</source>
         <translation>굵게</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="109"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="225"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="109"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="225"/>
         <source>Italic</source>
         <translation>기울임꼴</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="114"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="230"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="114"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="230"/>
         <source>Underline</source>
         <translation>밑줄</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="119"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="235"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="119"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="235"/>
         <source>Strikethrough</source>
         <translation>취소선</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="157"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="157"/>
         <source>Size</source>
         <translation>크기</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="227"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="227"/>
         <source>Left-align text within its bounding box</source>
         <translation>경계 상자 내에서 텍스트 왼쪽 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="233"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="233"/>
         <source>Horizontally center text within its bounding box</source>
         <translation>경계 상자 내에서 텍스트 가로 중앙 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="239"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="239"/>
         <source>Right-align text within its bounding box</source>
         <translation>경계 상자 내에서 텍스트 오른쪽 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="244"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="295"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="244"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="295"/>
         <source>Justify</source>
         <translation>양끝 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="245"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="296"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="245"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="296"/>
         <source>Justify text to fill the available width</source>
         <translation>사용 가능한 너비에 맞춰 텍스트 양끝 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="353"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="156"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="353"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="156"/>
         <source>Align top</source>
         <translation>위쪽 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="354"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="157"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="354"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="157"/>
         <source>Align top edge of text to reference point</source>
         <translation>텍스트의 위쪽 가장자리를 기준점에 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="359"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="162"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="359"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="162"/>
         <source>Align middle</source>
         <translation>중간 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="360"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="163"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="360"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="163"/>
         <source>Align vertical center of text to reference point</source>
         <translation>텍스트의 세로 중앙을 기준점에 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="365"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="168"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="365"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="168"/>
         <source>Align bottom</source>
         <translation>아래쪽 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="366"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="169"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="366"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="169"/>
         <source>Align bottom edge of text to reference point</source>
         <translation>텍스트의 아래쪽 가장자리를 기준점에 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="371"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="174"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="371"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="174"/>
         <source>Align baseline</source>
         <translation>기본선 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="372"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="175"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="372"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="175"/>
         <source>Align baseline of text to reference point</source>
         <translation>텍스트의 기본선을 기준점에 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="411"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="411"/>
         <source>Insert special characters</source>
         <translation>특수 문자 삽입</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextSettings.qml" line="57"/>
         <source>Symbol size</source>
         <translation>기호 크기</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextSettings.qml" line="120"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="336"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextSettings.qml" line="120"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="336"/>
         <source>Subscript</source>
         <translation>아래 첨자</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextSettings.qml" line="121"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="341"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextSettings.qml" line="121"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="341"/>
         <source>Superscript</source>
         <translation>위 첨자</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextSettings.qml" line="184"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="389"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextSettings.qml" line="184"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="389"/>
         <source>Line spacing</source>
         <translation>줄 간격</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextSettings.qml" line="202"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="447"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStyleSubPopup.qml" line="54"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextSettings.qml" line="202"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="447"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStyleSubPopup.qml" line="54"/>
         <source>Text style</source>
         <translation>텍스트 스타일</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextSettings.qml" line="234"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextSettings.qml" line="234"/>
         <source>Staff text properties</source>
         <translation>보표 텍스트 속성</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/FrameSubPopup.qml" line="47"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/FrameSubPopup.qml" line="47"/>
         <source>Frame settings</source>
         <translation>프레임 설정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="73"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="73"/>
         <source>Text style settings buttons</source>
         <translation>텍스트 스타일 설정 버튼</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="126"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="126"/>
         <source>Font size</source>
         <translation>글꼴 크기</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="185"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="185"/>
         <source>Vertical alignment buttons</source>
         <translation>세로 맞춤 버튼</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="243"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="243"/>
         <source>Text style buttons</source>
         <translation>텍스트 스타일 버튼</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="278"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="278"/>
         <source>Align left edge of text to reference point</source>
         <translation>텍스트의 왼쪽 가장자리를 기준점에 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="284"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="284"/>
         <source>Align horizontal center of text to reference point</source>
         <translation>텍스트의 가로 중앙을 기준점에 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="290"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="290"/>
         <source>Align right edge of text to reference point</source>
         <translation>텍스트의 오른쪽 가장자리를 기준점에 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="304"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="304"/>
         <source>Horizontal alignment buttons</source>
         <translation>가로 맞춤 버튼</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="349"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="349"/>
         <source>Subscript buttons</source>
         <translation>첨자 버튼</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="380"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="380"/>
         <source>Line spacing:</source>
         <translation>줄 간격:</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="424"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="424"/>
         <source>Add symbols</source>
         <translation>기호 추가</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStyleSubPopup.qml" line="49"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStyleSubPopup.qml" line="49"/>
         <source>Additional text style controls</source>
         <translation>추가 텍스트 스타일 제어</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/emptystaves/emptystavesvisiblitysettingsmodel.cpp" line="40"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/emptystaves/emptystavesvisiblitysettingsmodel.cpp" line="40"/>
         <source>Empty staves visibility</source>
         <translation>빈 보표 가시성</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/arpeggioplaybackmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/arpeggioplaybackmodel.cpp" line="34"/>
         <source>Arpeggio</source>
         <translation>아르페지오</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/breathplaybackmodel.cpp" line="33"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/breathplaybackmodel.cpp" line="33"/>
         <source>Breaths &amp; pauses</source>
         <translation>숨표 및 쉬기(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/fermataplaybackmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/fermataplaybackmodel.cpp" line="34"/>
         <source>Fermatas</source>
         <translation>페르마타</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/glissandoplaybackmodel.cpp" line="35"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/glissandosettingsmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/glissandoplaybackmodel.cpp" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/glissandosettingsmodel.cpp" line="34"/>
         <source>Glissando</source>
         <translation>글리산도</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/gradualtempochangeplaybackmodel.cpp" line="34"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/gradualtempochangesettingsmodel.cpp" line="33"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/gradualtempochangeplaybackmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/gradualtempochangesettingsmodel.cpp" line="33"/>
         <source>Tempo change</source>
         <translation>템포 변화</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/gradualtempochangeplaybackmodel.cpp" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/gradualtempochangeplaybackmodel.cpp" line="53"/>
         <source>Normal</source>
         <comment>gradual tempo change method</comment>
         <translation>일반</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/gradualtempochangeplaybackmodel.cpp" line="54"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/gradualtempochangeplaybackmodel.cpp" line="54"/>
         <source>Ease in</source>
         <comment>gradual tempo change method</comment>
         <translation>서서히 시작(Ease in)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/gradualtempochangeplaybackmodel.cpp" line="55"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/gradualtempochangeplaybackmodel.cpp" line="55"/>
         <source>Ease out</source>
         <comment>gradual tempo change method</comment>
         <translation>서서히 끝내기(Ease out)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/noteplaybackmodel.cpp" line="32"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/noteplaybackmodel.cpp" line="32"/>
         <source>Notes</source>
         <translation>음표</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/measuressettingsmodel.cpp" line="38"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/measuressettingsmodel.cpp" line="38"/>
         <source>Measures</source>
         <translation>마디</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/accidentals/accidentalsettingsmodel.cpp" line="36"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/accidentals/accidentalsettingsmodel.cpp" line="36"/>
         <source>Accidental</source>
         <translation>임시표</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/ambitussettingsmodel.cpp" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/ambitussettingsmodel.cpp" line="35"/>
         <source>Ambitus</source>
         <translation>음역</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/articulations/articulationsettingsmodel.cpp" line="38"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/articulations/articulationsettingsmodel.cpp" line="38"/>
         <source>Articulation</source>
         <translation>연주기호</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/articulations/articulationsettingsmodel.cpp" line="38"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/articulations/articulationsettingsmodel.cpp" line="38"/>
         <source>Tapping</source>
         <translation>태핑</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/barlinesettingsmodel.cpp" line="36"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/barlinesettingsmodel.cpp" line="36"/>
         <source>Barline</source>
         <translation>세로줄</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/bendgridcanvas.cpp" line="846"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/bendgridcanvas.cpp" line="846"/>
         <source>Time: %2, value: %3</source>
         <translation>시간: %2, 값: %3</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/bendsettingsmodel.cpp" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/bendsettingsmodel.cpp" line="58"/>
         <source>Bend/dive</source>
         <translation>벤드/다이브</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/bendsettingsmodel.cpp" line="283"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/bendsettingsmodel.cpp" line="283"/>
         <source>Start point</source>
         <translation>시작점</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/bendsettingsmodel.cpp" line="284"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/bendsettingsmodel.cpp" line="284"/>
         <source>Midpoint</source>
         <translation>중간점</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/bendsettingsmodel.cpp" line="285"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/bendsettingsmodel.cpp" line="285"/>
         <source>End point</source>
         <translation>종료점</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/brackets/bracketsettingsmodel.cpp" line="38"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/brackets/bracketsettingsmodel.cpp" line="38"/>
         <source>Bracket</source>
         <translation>대괄호</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/chordsymbolsettingsmodel.cpp" line="33"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/chordsymbolsettingsmodel.cpp" line="33"/>
         <source>Chord symbol</source>
         <translation>코드 기호</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/clefs/clefsettingsmodel.cpp" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/clefs/clefsettingsmodel.cpp" line="35"/>
         <source>Clef</source>
         <translation>음자리표</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fermatas/fermatasettingsmodel.cpp" line="33"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fermatas/fermatasettingsmodel.cpp" line="33"/>
         <source>Fermata</source>
         <translation>페르마타</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/fretframesettingsproxymodel.cpp" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/fretframesettingsproxymodel.cpp" line="35"/>
         <source>Fretboard diagram legend</source>
         <translation>프렛보드 다이어그램 범례</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/horizontalframesettingsmodel.cpp" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/horizontalframesettingsmodel.cpp" line="35"/>
         <source>Horizontal frame</source>
         <translation>가로 프레임</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/textframesettingsmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/textframesettingsmodel.cpp" line="34"/>
         <source>Text frame</source>
         <translation>텍스트 프레임</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/verticalframesettingsmodel.cpp" line="38"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/verticalframesettingsmodel.cpp" line="38"/>
         <source>Vertical frame</source>
         <translation>세로 프레임</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/fretdiagramsettingsmodel.cpp" line="36"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/fretdiagramsettingsmodel.cpp" line="36"/>
         <source>Fretboard diagram</source>
         <translation>프렛보드 다이어그램</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/images/imagesettingsmodel.cpp" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/images/imagesettingsmodel.cpp" line="35"/>
         <source>Image</source>
         <translation>이미지</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/instrumentname/instrumentnamesettingsmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/instrumentname/instrumentnamesettingsmodel.cpp" line="34"/>
         <source>Instrument names</source>
         <translation>악기 이름</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/jumps/jumpsettingsmodel.cpp" line="32"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/jumps/jumpsettingsmodel.cpp" line="32"/>
         <source>Jump</source>
         <translation>점프</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/keysignaturesettingsmodel.cpp" line="36"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/keysignaturesettingsmodel.cpp" line="36"/>
         <source>Key signature</source>
         <translation>조표</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/chordbracketsettingsmodel.cpp" line="36"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/chordbracketsettingsmodel.cpp" line="36"/>
         <source>Chord bracket</source>
         <translation>코드 대괄호</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/glissandosettingsmodel.cpp" line="78"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/glissandosettingsmodel.cpp" line="78"/>
         <source>Straight</source>
         <translation>직선</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/glissandosettingsmodel.cpp" line="79"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/glissandosettingsmodel.cpp" line="79"/>
         <source>Wavy</source>
         <translation>물결선</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/hairpinlinesettingsmodel.cpp" line="41"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/hairpinlinesettingsmodel.cpp" line="41"/>
         <source>Diminuendo</source>
         <translation>디미누엔도</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/hairpinlinesettingsmodel.cpp" line="45"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/hairpinlinesettingsmodel.cpp" line="45"/>
         <source>Crescendo</source>
         <translation>크레센도</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/hairpinsettingsmodel.cpp" line="38"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/hairpinsettingsmodel.cpp" line="38"/>
         <source>Hairpin</source>
         <translation>헤어핀</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/lyricslinesettingsmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/lyricslinesettingsmodel.cpp" line="34"/>
         <source>Lyrics line</source>
         <translation>가사 연장선</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/lyricslinesettingsmodel.cpp" line="38"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/lyricslinesettingsmodel.cpp" line="38"/>
         <source>Partial lyrics line</source>
         <translation>부분 가사 연장선</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/notelinesettingsmodel.cpp" line="32"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/notelinesettingsmodel.cpp" line="32"/>
         <source>Note-anchored line</source>
         <translation>음표 고정선</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ottavasettingsmodel.cpp" line="36"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ottavasettingsmodel.cpp" line="36"/>
         <source>Ottava</source>
         <translation>옥타브</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ottavasettingsmodel.cpp" line="56"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ottavasettingsmodel.cpp" line="56"/>
         <source>8va alta</source>
         <translation>8va 위</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ottavasettingsmodel.cpp" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ottavasettingsmodel.cpp" line="57"/>
         <source>8va bassa</source>
         <translation>8va 아래</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ottavasettingsmodel.cpp" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ottavasettingsmodel.cpp" line="58"/>
         <source>15ma alta</source>
         <translation>15ma 위</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ottavasettingsmodel.cpp" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ottavasettingsmodel.cpp" line="59"/>
         <source>15ma bassa</source>
         <translation>15ma 아래</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ottavasettingsmodel.cpp" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ottavasettingsmodel.cpp" line="60"/>
         <source>22ma alta</source>
         <translation>22ma 위</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ottavasettingsmodel.cpp" line="61"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ottavasettingsmodel.cpp" line="61"/>
         <source>22ma bassa</source>
         <translation>22ma 아래</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ottavasettingsmodel.cpp" line="82"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="56"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="68"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/textlinesettingsmodel.cpp" line="430"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/textlinesettingsmodel.cpp" line="442"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ottavasettingsmodel.cpp" line="82"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="56"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="68"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/textlinesettingsmodel.cpp" line="430"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/textlinesettingsmodel.cpp" line="442"/>
         <source>Normal</source>
         <comment>hook type</comment>
         <translation>일반</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ottavasettingsmodel.cpp" line="83"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="57"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="70"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/textlinesettingsmodel.cpp" line="431"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/textlinesettingsmodel.cpp" line="443"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ottavasettingsmodel.cpp" line="83"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="70"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/textlinesettingsmodel.cpp" line="431"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/textlinesettingsmodel.cpp" line="443"/>
         <source>Hooked 90°</source>
         <comment>hook type</comment>
         <translation>90° 꺾임</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ottavasettingsmodel.cpp" line="84"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="58"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="71"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/textlinesettingsmodel.cpp" line="432"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/textlinesettingsmodel.cpp" line="444"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ottavasettingsmodel.cpp" line="84"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="71"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/textlinesettingsmodel.cpp" line="432"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/textlinesettingsmodel.cpp" line="444"/>
         <source>Hooked 45°</source>
         <comment>hook type</comment>
         <translation>45° 꺾임</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ottavasettingsmodel.cpp" line="85"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="61"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="74"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/textlinesettingsmodel.cpp" line="435"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/textlinesettingsmodel.cpp" line="447"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ottavasettingsmodel.cpp" line="85"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="61"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="74"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/textlinesettingsmodel.cpp" line="435"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/textlinesettingsmodel.cpp" line="447"/>
         <source>Line arrow</source>
         <comment>hook type</comment>
         <translation>선 화살표</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ottavasettingsmodel.cpp" line="86"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="62"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="75"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/textlinesettingsmodel.cpp" line="436"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/textlinesettingsmodel.cpp" line="448"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ottavasettingsmodel.cpp" line="86"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="62"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="75"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/textlinesettingsmodel.cpp" line="436"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/textlinesettingsmodel.cpp" line="448"/>
         <source>Filled arrow</source>
         <comment>hook type</comment>
         <translation>채워진 화살표</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="37"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="37"/>
         <source>Pedal</source>
         <translation>페달</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="60"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="73"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/textlinesettingsmodel.cpp" line="434"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/textlinesettingsmodel.cpp" line="446"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="73"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/textlinesettingsmodel.cpp" line="434"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/textlinesettingsmodel.cpp" line="446"/>
         <source>Hooked 90° T-style</source>
         <comment>hook type</comment>
         <translation>90° 꺾임 (T자형)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="69"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="69"/>
         <source>Asterisk</source>
         <comment>hook type</comment>
         <translation>아스테리스크(*)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="44"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="44"/>
         <source>Slur</source>
         <translation>이음줄</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="49"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="49"/>
         <source>Tie</source>
         <translation>붙임줄</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="54"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="54"/>
         <source>Laissez vibrer</source>
         <translation>레세 비브레(L.V.)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="60"/>
         <source>Tie (partial)</source>
         <translation>붙임줄(부분)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="65"/>
         <source>Hammer-on/pull-off</source>
         <translation>해머링 온/풀 오프</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="115"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="115"/>
         <source>Normal</source>
         <comment>slur style</comment>
         <translation>일반</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="116"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="116"/>
         <source>Wide dashed</source>
         <comment>slur style</comment>
         <translation>넓은 점선</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="117"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="117"/>
         <source>Dashed</source>
         <comment>slur style</comment>
         <translation>파선</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="118"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="118"/>
         <source>Dotted</source>
         <comment>slur style</comment>
         <translation>점선</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/textlinesettingsmodel.cpp" line="41"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/textlinesettingsmodel.cpp" line="41"/>
         <source>Text line</source>
         <translation>텍스트 선</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/vibratosettingsmodel.cpp" line="35"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/vibratosettingsmodel.cpp" line="54"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/vibratosettingsmodel.cpp" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/vibratosettingsmodel.cpp" line="54"/>
         <source>Vibrato</source>
         <translation>비브라토</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/vibratosettingsmodel.cpp" line="55"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/vibratosettingsmodel.cpp" line="55"/>
         <source>Vibrato wide</source>
         <translation>넓은 비브라토</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/vibratosettingsmodel.cpp" line="56"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/vibratosettingsmodel.cpp" line="56"/>
         <source>Vibrato sawtooth</source>
         <translation>톱니형 비브라토</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/vibratosettingsmodel.cpp" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/vibratosettingsmodel.cpp" line="57"/>
         <source>Vibrato sawtooth wide</source>
         <translation>넓은 톱니형 비브라토</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/voltasettingsmodel.cpp" line="37"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/voltasettingsmodel.cpp" line="37"/>
         <source>Volta</source>
         <translation>볼타</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/voltasettingsmodel.cpp" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/voltasettingsmodel.cpp" line="53"/>
         <source>Normal</source>
         <comment>volta hook type</comment>
         <translation>일반</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/voltasettingsmodel.cpp" line="55"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/voltasettingsmodel.cpp" line="55"/>
         <source>Hooked 90°</source>
         <comment>volta hook type</comment>
         <translation>90° 꺾임</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lyrics/lyricssettingsmodel.cpp" line="32"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lyrics/lyricssettingsmodel.cpp" line="32"/>
         <source>Lyrics</source>
         <translation>가사</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/markers/markersettingsmodel.cpp" line="33"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/markers/markersettingsmodel.cpp" line="33"/>
         <source>Marker</source>
         <translation>마커</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/measurerepeats/measurerepeatsettingsmodel.cpp" line="33"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/measurerepeats/measurerepeatsettingsmodel.cpp" line="33"/>
         <source>Measure repeat</source>
         <translation>마디 반복 기호</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/mmrests/mmrestsettingsmodel.cpp" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/mmrests/mmrestsettingsmodel.cpp" line="35"/>
         <source>Multimeasure rest</source>
         <translation>멀티메measure 휴지(공휴마디)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notationsettingsproxymodel.cpp" line="39"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notationsettingsproxymodel.cpp" line="39"/>
         <source>Notation</source>
         <translation>기보</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/beamsettingsmodel.cpp" line="34"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/rests/beams/restbeamsettingsmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/beamsettingsmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/rests/beams/restbeamsettingsmodel.cpp" line="34"/>
         <source>Beam</source>
         <translation>빔(빔)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/chords/chordsettingsmodel.cpp" line="33"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/chords/chordsettingsmodel.cpp" line="33"/>
         <source>Chord</source>
         <translation>코드</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/hooks/hooksettingsmodel.cpp" line="32"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/hooks/hooksettingsmodel.cpp" line="32"/>
         <source>Flag</source>
         <translation>꼬리</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="35"/>
         <source>Head</source>
         <translation>음표 머리</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="236"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="236"/>
         <source>Auto</source>
         <comment>notehead scheme</comment>
         <translation>자동</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="237"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="237"/>
         <source>Normal</source>
         <comment>notehead scheme</comment>
         <translation>일반</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="238"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="238"/>
         <source>Pitch names</source>
         <comment>notehead scheme</comment>
         <translation>피치 이름</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="239"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="239"/>
         <source>Pitch names, no accidentals</source>
         <comment>notehead scheme</comment>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="241"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="241"/>
         <source>German pitch names</source>
         <comment>notehead scheme</comment>
         <translation>독일식 피치 이름</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="242"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="242"/>
         <source>German pitch names, no accidentals</source>
         <comment>notehead scheme</comment>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="244"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="244"/>
         <source>Solfège movable do</source>
         <comment>notehead scheme</comment>
         <translation>이동도법 계명</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="245"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="245"/>
         <source>Solfège fixed do</source>
         <comment>notehead scheme</comment>
         <translation>고정도법 계명</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="246"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="246"/>
         <source>4-shape (Walker)</source>
         <comment>notehead scheme</comment>
         <translation>4-셰이프(Walker)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="247"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="247"/>
         <source>7-shape (Aikin)</source>
         <comment>notehead scheme</comment>
         <translation>7-셰이프(Aikin)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="248"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="248"/>
         <source>7-shape (Funk)</source>
         <comment>notehead scheme</comment>
         <translation>7-셰이프(Funk)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="249"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="249"/>
         <source>7-shape (Walker)</source>
         <comment>notehead scheme</comment>
         <translation>7-셰이프(Walker)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/notesettingsproxymodel.cpp" line="42"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/notesettingsproxymodel.cpp" line="42"/>
         <source>Note</source>
         <translation>음표</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/stemsettingsmodel.cpp" line="36"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/stemsettingsmodel.cpp" line="36"/>
         <source>Stem</source>
         <translation>음표 기둥</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/ornamentsettingsmodel.cpp" line="45"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/ornamentsettingsmodel.cpp" line="45"/>
         <source>Ornament</source>
         <translation>꾸밈음</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/rests/restsettingsproxymodel.cpp" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/rests/restsettingsproxymodel.cpp" line="35"/>
         <source>Rest</source>
         <translation>쉼표</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/sectionbreaks/sectionbreaksettingsmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/sectionbreaks/sectionbreaksettingsmodel.cpp" line="34"/>
         <source>Section break</source>
         <translation>섹션 나누기</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/spacers/spacersettingsmodel.cpp" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/spacers/spacersettingsmodel.cpp" line="35"/>
         <source>Spacer</source>
         <translation>스페이서</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/stafftypesettingsmodel.cpp" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/stafftypesettingsmodel.cpp" line="35"/>
         <source>Staff type changes</source>
         <translation>보표 유형 변경</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stringtunings/stringtuningssettingsmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stringtunings/stringtuningssettingsmodel.cpp" line="34"/>
         <source>Fretted instruments</source>
         <translation>프렛 악기</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/symbols/symbolsettingsmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/symbols/symbolsettingsmodel.cpp" line="34"/>
         <source>Symbol</source>
         <translation>기호</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tempos/temposettingsmodel.cpp" line="46"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tempos/temposettingsmodel.cpp" line="46"/>
         <source>A tempo</source>
         <translation>A tempo (본디 속도로)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tempos/temposettingsmodel.cpp" line="49"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tempos/temposettingsmodel.cpp" line="49"/>
         <source>Tempo primo</source>
         <translation>Tempo primo (처음 속도로)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/timesignatures/timesignaturesettingsmodel.cpp" line="37"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/timesignatures/timesignaturesettingsmodel.cpp" line="37"/>
         <source>Time signature</source>
         <translation>박자표</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolobars/tremolobarsettingsmodel.cpp" line="36"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolobars/tremolobarsettingsmodel.cpp" line="36"/>
         <source>Tremolo bar</source>
         <translation>Tremolo bar (트레몰로 바)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolos/tremolosettingsmodel.cpp" line="38"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolos/tremolosettingsmodel.cpp" line="38"/>
         <source>Tremolos</source>
         <translation>트레몰로</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="37"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="37"/>
         <source>Tuplet</source>
         <translation>잇단음표</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="67"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="67"/>
         <source>Number</source>
         <comment>tuplet number type</comment>
         <translation>숫자</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="68"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="68"/>
         <source>Ratio</source>
         <comment>tuplet number type</comment>
         <translation>비율</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="69"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="69"/>
         <source>None</source>
         <comment>tuplet number type</comment>
         <translation>없음</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="80"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="80"/>
         <source>Auto</source>
         <comment>tuplet bracket type</comment>
         <translation>자동</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="81"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="81"/>
         <source>Bracket</source>
         <comment>tuplet bracket type</comment>
         <translation>대괄호</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="82"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="82"/>
         <source>None</source>
         <comment>tuplet bracket type</comment>
         <translation>없음</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/parts/partssettingsmodel.cpp" line="33"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/parts/partssettingsmodel.cpp" line="33"/>
         <source>Score and part synchronization</source>
         <translation>악보 및 파트 동기화</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/scoreappearancesettingsmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/scoreappearancesettingsmodel.cpp" line="34"/>
         <source>Score appearance</source>
         <translation>악보 모양새</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textsettingsmodel.cpp" line="767"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textsettingsmodel.cpp" line="767"/>
         <source>Left-align text box within frame</source>
         <translation>프레임 내에서 텍스트 상자 왼쪽 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textsettingsmodel.cpp" line="769"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textsettingsmodel.cpp" line="769"/>
         <source>Left-align text box to note/rest</source>
         <translation>음표/쉼표에 텍스트 상자 왼쪽 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textsettingsmodel.cpp" line="771"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textsettingsmodel.cpp" line="771"/>
         <source>Left-align text box to barline</source>
         <translation>세로줄에 텍스트 상자 왼쪽 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textsettingsmodel.cpp" line="785"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textsettingsmodel.cpp" line="785"/>
         <source>Horizontally center text box within frame</source>
         <translation>프레임 내에서 텍스트 상자 가로 중앙 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textsettingsmodel.cpp" line="787"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textsettingsmodel.cpp" line="787"/>
         <source>Horizontally center text box to note/rest</source>
         <translation>음표/쉼표에 텍스트 상자 가로 중앙 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textsettingsmodel.cpp" line="789"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textsettingsmodel.cpp" line="789"/>
         <source>Horizontally center text box to barline</source>
         <translation>세로줄에 텍스트 상자 가로 중앙 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textsettingsmodel.cpp" line="803"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textsettingsmodel.cpp" line="803"/>
         <source>Right-align text box within frame</source>
         <translation>프레임 내에서 텍스트 상자 오른쪽 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textsettingsmodel.cpp" line="805"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textsettingsmodel.cpp" line="805"/>
         <source>Right-align text box to note/rest</source>
         <translation>음표/쉼표에 텍스트 상자 오른쪽 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textsettingsmodel.cpp" line="807"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textsettingsmodel.cpp" line="807"/>
         <source>Right-align text box to barline</source>
         <translation>세로줄에 텍스트 상자 오른쪽 맞춤</translation>
     </message>
@@ -26350,12 +26350,12 @@ pickup measure</source>
 <context>
     <name>inspector </name>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/dynamics/dynamicsettingsmodel.cpp" line="36"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/dynamics/dynamicsettingsmodel.cpp" line="36"/>
         <source>Dynamics</source>
         <translation>셈여림(Dynamics)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/expressions/expressionsettingsmodel.cpp" line="33"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/expressions/expressionsettingsmodel.cpp" line="33"/>
         <source>Expression</source>
         <translation>나타냄말</translation>
     </message>
@@ -26363,82 +26363,82 @@ pickup measure</source>
 <context>
     <name>instruments</name>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/ChooseInstrumentsPage.qml" line="177"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/ChooseInstrumentsPage.qml" line="177"/>
         <source>Add selected instruments to score</source>
         <translation>선택한 악기를 악보에 추가</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/ChooseInstrumentsPage.qml" line="241"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/ChooseInstrumentsPage.qml" line="241"/>
         <source>Move selected instruments up</source>
         <translation>선택한 악기를 위로 이동</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/ChooseInstrumentsPage.qml" line="256"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/ChooseInstrumentsPage.qml" line="256"/>
         <source>Move selected instruments down</source>
         <translation>선택한 악기를 아래로 이동</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/InstrumentsDialog.qml" line="40"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/InstrumentsDialog.qml" line="40"/>
         <source>Add or remove instruments</source>
         <translation>악기 추가 또는 제거</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/InstrumentsDialog.qml" line="41"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/InstrumentsDialog.qml" line="41"/>
         <source>Select instrument</source>
         <translation>악기 선택</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/FamilyView.qml" line="71"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/FamilyView.qml" line="71"/>
         <source>Family</source>
         <translation>악기 계열</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="50"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="50"/>
         <source>Your score</source>
         <translation>내 악보</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="75"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="75"/>
         <source>Order:</source>
         <translation>정렬 순서:</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="91"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="91"/>
         <source>Remove selected instruments from score</source>
         <translation>선택한 악기를 악보에서 제거</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="141"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="141"/>
         <source>Soloist:</source>
         <translation>독주 악기:</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="153"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="153"/>
         <source>Undo soloist</source>
         <translation>독주 지정 해제</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="153"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="153"/>
         <source>Make soloist</source>
         <translation>독주 악기로 지정</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="189"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="189"/>
         <source>Choose your instruments by adding them to this list</source>
         <translation>목록에 악기를 추가하여 선택합니다</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentsView.qml" line="56"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentsView.qml" line="56"/>
         <source>Instruments</source>
         <translation>악기</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentsView.qml" line="142"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentsView.qml" line="142"/>
         <source>traits</source>
         <translation>특성</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/instrumentlistmodel.cpp" line="192"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/instrumentlistmodel.cpp" line="192"/>
         <source>All instruments</source>
         <translation>모든 악기</translation>
     </message>
@@ -26489,157 +26489,157 @@ pickup measure</source>
 <context>
     <name>layoutpanel</name>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutControlPanel.qml" line="93"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutControlPanel.qml" line="93"/>
         <source>Move selected instruments up</source>
         <translation>선택한 악기를 위로 이동</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutControlPanel.qml" line="94"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutControlPanel.qml" line="94"/>
         <source>Move selected staves up</source>
         <translation>선택한 보표를 위로 이동</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutControlPanel.qml" line="95"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutControlPanel.qml" line="95"/>
         <source>Move selected system markings up</source>
         <translation>선택한 단 기호를 위로 이동</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutControlPanel.qml" line="118"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutControlPanel.qml" line="118"/>
         <source>Move selected instruments down</source>
         <translation>선택한 악기를 아래로 이동</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutControlPanel.qml" line="119"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutControlPanel.qml" line="119"/>
         <source>Move selected staves down</source>
         <translation>선택한 보표를 아래로 이동</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutControlPanel.qml" line="120"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutControlPanel.qml" line="120"/>
         <source>Move selected system markings down</source>
         <translation>선택한 단 기호를 아래로 이동</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutControlPanel.qml" line="143"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutControlPanel.qml" line="143"/>
         <source>Remove selected instruments</source>
         <translation>선택한 악기 제거</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutControlPanel.qml" line="144"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutControlPanel.qml" line="144"/>
         <source>Remove selected staves</source>
         <translation>선택한 보표 제거</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutControlPanel.qml" line="145"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutControlPanel.qml" line="145"/>
         <source>Remove selected system markings</source>
         <translation>선택한 단 기호 제거</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutPanelAddButton.qml" line="38"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutPanelAddButton.qml" line="38"/>
         <source>Add</source>
         <extracomment>Keep in sync with the message that appears if there are no instruments in the score (LayoutPanel.qml)</extracomment>
         <translation>추가</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutPanelAddButton.qml" line="41"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutPanelAddButton.qml" line="41"/>
         <source>Add instruments or system markings</source>
         <translation>악기 또는 단 기호 추가</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutPanelAddButton.qml" line="48"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutPanelAddButton.qml" line="48"/>
         <source>New instrument</source>
         <translation>새 악기</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutPanelAddButton.qml" line="50"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutPanelAddButton.qml" line="50"/>
         <source>System markings (tempo, rehearsal marks, etc.)</source>
         <translation>단 기호(템포, 연습 번호 등)</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutPanelItemDelegate.qml" line="247"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutPanelItemDelegate.qml" line="247"/>
         <source>Settings</source>
         <translation>설정</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/SystemObjectsLayerSettingsPopup.qml" line="60"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/SystemObjectsLayerSettingsPopup.qml" line="60"/>
         <source>Display at this position on the score</source>
         <translation>악보의 이 위치에 화면표시</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/LayoutPanel.qml" line="135"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/LayoutPanel.qml" line="135"/>
         <source>There are no instruments in your score. To choose some, press &lt;b&gt;Add&lt;/b&gt;, or use the keyboard shortcut %1.</source>
         <extracomment>Keep in sync with the text of the &quot;Add&quot; button at the top of the Layout panel (LayoutControlPanel.qml)</extracomment>
         <translation>악보에 악기가 없습니다. 악기를 선택하려면 &lt;b&gt;추가&lt;/b&gt;를 누르거나 단축키 %1을 사용합니다.</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/LayoutPanel.qml" line="139"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/LayoutPanel.qml" line="139"/>
         <source>There are no instruments in your score. To choose some, press &lt;b&gt;Add&lt;/b&gt;.</source>
         <extracomment>Keep in sync with the text of the &quot;Add&quot; button at the top of the Layout panel (LayoutControlPanel.qml)</extracomment>
         <translation>악보에 악기가 없습니다. 악기를 선택하려면 &lt;b&gt;추가&lt;/b&gt;를 누르세요.</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/layoutpanelcontextmenumodel.cpp" line="182"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/layoutpanelcontextmenumodel.cpp" line="182"/>
         <source>Instrument ordering</source>
         <translation>악기 정렬 순서</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/layoutpanelcontextmenumodel.cpp" line="192"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/layoutpanelcontextmenumodel.cpp" line="192"/>
         <source>Expand all instruments</source>
         <translation>모든 악기 펼치기</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/layoutpanelcontextmenumodel.cpp" line="193"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/layoutpanelcontextmenumodel.cpp" line="193"/>
         <source>Collapse all instruments</source>
         <translation>모든 악기 접기</translation>
     </message>
     <message numerus="yes">
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/layoutpaneltreemodel.cpp" line="1035"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/layoutpaneltreemodel.cpp" line="1035"/>
         <source>Are you sure you want to delete the selected instrument(s)?</source>
         <translation><numerusform>선택한 악기를 삭제하시겠습니까?</numerusform></translation>
     </message>
     <message numerus="yes">
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/layoutpaneltreemodel.cpp" line="1036"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/layoutpaneltreemodel.cpp" line="1036"/>
         <source>This will remove the instrument(s) from the full score and all part scores.</source>
         <translation><numerusform>선택한 악기가 악보 및 모든 파트 악보에서 제거됩니다.</numerusform></translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/parttreeitem.cpp" line="258"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/parttreeitem.cpp" line="258"/>
         <source>Are you sure you want to reset all formatting?</source>
         <translation>모든 서식을 재설정하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/parttreeitem.cpp" line="259"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/parttreeitem.cpp" line="259"/>
         <source>This action can not be undone</source>
         <translation>이 작업은 실행 취소할 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/staffcontroltreeitem.cpp" line="33"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/staffcontroltreeitem.cpp" line="33"/>
         <source>Add staff</source>
         <translation>보표 추가</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/stafftreeitem.cpp" line="65"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/stafftreeitem.cpp" line="65"/>
         <source>[LINK] %1</source>
         <extracomment>Prefix for the display name for a linked staff. Preferably, keep this short.</extracomment>
         <translation>[연결] %1</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/systemobjectslayertreeitem.cpp" line="39"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/systemobjectslayertreeitem.cpp" line="39"/>
         <source>System markings</source>
         <translation>단 기호</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/systemobjectslayertreeitem.cpp" line="57"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/systemobjectslayertreeitem.cpp" line="57"/>
         <source>System markings hidden</source>
         <translation>단 기호 숨겨짐</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/systemobjectslayertreeitem.cpp" line="69"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/systemobjectslayertreeitem.cpp" line="69"/>
         <source>%1, %2</source>
         <extracomment>%1 is the system markings list, %2 is the next system marking name to add to list</extracomment>
         <translation>%1, %2</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/systemobjectslayertreeitem.cpp" line="71"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/systemobjectslayertreeitem.cpp" line="71"/>
         <source>%1 &amp; %2</source>
         <extracomment>%1 is the system markings list, %2 is the last system marking name to add to list</extracomment>
         <translation>%1 및 %2</translation>
@@ -26648,52 +26648,52 @@ pickup measure</source>
 <context>
     <name>layoutpanel/instrumentsettingspopup</name>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="75"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="75"/>
         <source>Name on main score</source>
         <translation>메인 악보용 이름</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="76"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="76"/>
         <source>Name on part score</source>
         <translation>파트 악보용 이름</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="104"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="104"/>
         <source>Abbreviated name</source>
         <translation>약칭</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="132"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="132"/>
         <source>Hide empty staves</source>
         <translation>빈 보표 숨김</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="144"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="144"/>
         <source>Auto</source>
         <translation>자동</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="145"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="145"/>
         <source>Always hide</source>
         <translation>항상 숨김</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="146"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="146"/>
         <source>Never hide</source>
         <translation>숨기지 않음</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="176"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="176"/>
         <source>Only hide staves on a system if the entire instrument is empty</source>
         <translation>악기 전체가 비어 있는 단에서만 보표 숨김</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="197"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="197"/>
         <source>Replace instrument</source>
         <translation>악기 교체</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="213"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="213"/>
         <source>Reset all formatting</source>
         <translation>모든 서식 재설정</translation>
     </message>
@@ -26701,58 +26701,58 @@ pickup measure</source>
 <context>
     <name>layoutpanel/staffsettingspopup</name>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/StaffSettingsPopup.qml" line="75"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/StaffSettingsPopup.qml" line="75"/>
         <source>Staff type</source>
         <translation>보표 유형</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/StaffSettingsPopup.qml" line="109"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/StaffSettingsPopup.qml" line="109"/>
         <source>Voices visible in the score</source>
         <translation>악보에 표시할 성부</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/StaffSettingsPopup.qml" line="168"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/StaffSettingsPopup.qml" line="168"/>
         <source>Small staff</source>
         <translation>작은 보표</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/StaffSettingsPopup.qml" line="182"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/StaffSettingsPopup.qml" line="182"/>
         <source>Hide all measures that do not contain notation (cutaway)</source>
         <translation>기보가 없는 모든 마디 숨김(컷어웨이)</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/StaffSettingsPopup.qml" line="200"/>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/StaffSettingsPopup.qml" line="224"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/StaffSettingsPopup.qml" line="200"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/StaffSettingsPopup.qml" line="224"/>
         <source>Hide empty staves</source>
         <translation>빈 보표 숨김</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/StaffSettingsPopup.qml" line="212"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/StaffSettingsPopup.qml" line="212"/>
         <source>Follow instrument</source>
         <translation>악기 설정 따름</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/StaffSettingsPopup.qml" line="213"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/StaffSettingsPopup.qml" line="213"/>
         <source>Always hide</source>
         <translation>항상 숨김</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/StaffSettingsPopup.qml" line="214"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/StaffSettingsPopup.qml" line="214"/>
         <source>Never hide</source>
         <translation>숨기지 않음</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/StaffSettingsPopup.qml" line="240"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/StaffSettingsPopup.qml" line="240"/>
         <source>If the entire system is empty, show this staff</source>
         <translation>단 전체가 비어 있어도 이 보표 표시</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/StaffSettingsPopup.qml" line="261"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/StaffSettingsPopup.qml" line="261"/>
         <source>Create a linked staff</source>
         <translation>연결된 보표 만들기</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/StaffSettingsPopup.qml" line="272"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/StaffSettingsPopup.qml" line="272"/>
         <source>Linked staves contain identical notation (e.g. for guitar tablature)</source>
         <translation>연결된 보표는 동일한 기보를 포함함(예: 기타 타블라추어)</translation>
     </message>
@@ -26809,30 +26809,30 @@ pickup measure</source>
     </message>
     <message>
         <location filename="../../src/framework/learn/qml/Muse/Learn/learnpagemodel.cpp" line="82"/>
-        <source>Creator, Mastering MuseScore</source>
-        <translation>Mastering MuseScore 제작자</translation>
+        <source>Creator, Mastering DB Score</source>
+        <translation>Mastering DB Score 제작자</translation>
     </message>
     <message>
         <location filename="../../src/framework/learn/qml/Muse/Learn/learnpagemodel.cpp" line="83"/>
-        <source>Welcome to Mastering MuseScore – the most comprehensive resource for learning the world’s most popular music notation software! My name is Marc Sabatella, and I have been helping develop, support, and promote MuseScore since its initial release over ten years ago.
+        <source>Welcome to Mastering DB Score – the most comprehensive resource for learning the world’s most popular music notation software! My name is Marc Sabatella, and I have been helping develop, support, and promote DB Score since its initial release over ten years ago.
 
-Whether you are just getting started with music notation software, or are a power user eager to explore advanced engraving and playback techniques, my flagship online course Mastering MuseScore covers everything you need to know to get the most out of MuseScore.
+Whether you are just getting started with music notation software, or are a power user eager to explore advanced engraving and playback techniques, my flagship online course Mastering DB Score covers everything you need to know to get the most out of DB Score.
 
-In addition, Mastering MuseScore features a supportive community of musicians, with discussion spaces, live streams, and other related courses and services to help you create your best music. Take advantage of this opportunity to learn MuseScore from one of its most recognized experts!
+In addition, Mastering DB Score features a supportive community of musicians, with discussion spaces, live streams, and other related courses and services to help you create your best music. Take advantage of this opportunity to learn DB Score from one of its most recognized experts!
 
-(Note: Mastering MuseScore is available in English only)</source>
-        <translation>세계에서 가장 인기 있는 사보 소프트웨어를 배우기 위한 가장 포괄적인 리소스, Mastering MuseScore에 오신 것을 환영합니다! 제 이름은 Marc Sabatella이며, 10여 년 전 MuseScore가 처음 출시된 이래로 개발, 지원 및 홍보를 돕고 있습니다.
+(Note: Mastering DB Score is available in English only)</source>
+        <translation>세계에서 가장 인기 있는 사보 소프트웨어를 배우기 위한 가장 포괄적인 리소스, Mastering DB Score에 오신 것을 환영합니다! 제 이름은 Marc Sabatella이며, 10여 년 전 DB Score가 처음 출시된 이래로 개발, 지원 및 홍보를 돕고 있습니다.
 
-사보 소프트웨어를 처음 시작하는 초보자이든, 고급 인그레이빙 및 플레이백 기법을 탐구하고자 하는 파워 유저이든 관계없이, 저의 대표 온라인 강좌인 Mastering MuseScore는 MuseScore를 최대한 활용하는 데 필요한 모든 내용을 다룹니다.
+사보 소프트웨어를 처음 시작하는 초보자이든, 고급 인그레이빙 및 플레이백 기법을 탐구하고자 하는 파워 유저이든 관계없이, 저의 대표 온라인 강좌인 Mastering DB Score는 DB Score를 최대한 활용하는 데 필요한 모든 내용을 다룹니다.
 
-또한 Mastering MuseScore는 음악가들을 위한 커뮤니티, 토론 공간, 라이브 스트리밍, 그리고 최고의 음악을 만드는 데 도움이 될 관련 강좌 및 서비스를 제공합니다. MuseScore의 최고 전문가 중 한 명에게 직접 배울 수 있는 이 기회를 놓치지 마세요!
+또한 Mastering DB Score는 음악가들을 위한 커뮤니티, 토론 공간, 라이브 스트리밍, 그리고 최고의 음악을 만드는 데 도움이 될 관련 강좌 및 서비스를 제공합니다. DB Score의 최고 전문가 중 한 명에게 직접 배울 수 있는 이 기회를 놓치지 마세요!
 
-(참고: Mastering MuseScore 강좌는 영어로만 제공됩니다.)</translation>
+(참고: Mastering DB Score 강좌는 영어로만 제공됩니다.)</translation>
     </message>
     <message>
         <location filename="../../src/framework/learn/qml/Muse/Learn/learnpagemodel.cpp" line="97"/>
-        <source>Mastering MuseScore</source>
-        <translation>Mastering MuseScore</translation>
+        <source>Mastering DB Score</source>
+        <translation>Mastering DB Score</translation>
     </message>
 </context>
 <context>
@@ -26869,17 +26869,17 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
 <context>
     <name>musesounds</name>
     <message>
-        <location filename="../../src/musesounds/qml/MuseScore/MuseSounds/internal/SoundLibraryItem.qml" line="120"/>
+        <location filename="../../src/musesounds/qml/DB Score/MuseSounds/internal/SoundLibraryItem.qml" line="120"/>
         <source>Get it now</source>
         <translation>지금 다운로드</translation>
     </message>
     <message>
-        <location filename="../../src/musesounds/qml/MuseScore/MuseSounds/MuseSoundsPage.qml" line="109"/>
+        <location filename="../../src/musesounds/qml/DB Score/MuseSounds/MuseSoundsPage.qml" line="109"/>
         <source>Search sounds</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/musesounds/qml/MuseScore/MuseSounds/MuseSoundsPage.qml" line="197"/>
+        <location filename="../../src/musesounds/qml/DB Score/MuseSounds/MuseSoundsPage.qml" line="197"/>
         <source>Sorry, we are unable to load these sounds right now</source>
         <translation>죄송합니다. 현재 사운드를 불러올 수 없습니다.</translation>
     </message>
@@ -26897,8 +26897,8 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
     </message>
     <message>
         <location filename="../../src/musesounds/internal/musesamplercheckupdatescenario.cpp" line="70"/>
-        <source>To apply this update, MuseScore Studio will need to close briefly and MuseSounds Manager will open. Your MuseSounds libraries won’t work until the update is complete.</source>
-        <translation>이 업데이트를 적용하려면 MuseScore Studio를 잠시 종료하고 MuseSounds Manager를 열어야 합니다. 업데이트가 완료될 때까지 MuseSounds 라이브러리를 사용할 수 없습니다.</translation>
+        <source>To apply this update, DB Score will need to close briefly and MuseSounds Manager will open. Your MuseSounds libraries won’t work until the update is complete.</source>
+        <translation>이 업데이트를 적용하려면 DB Score를 잠시 종료하고 MuseSounds Manager를 열어야 합니다. 업데이트가 완료될 때까지 MuseSounds 라이브러리를 사용할 수 없습니다.</translation>
     </message>
     <message>
         <location filename="../../src/musesounds/internal/musesamplercheckupdatescenario.cpp" line="74"/>
@@ -26908,8 +26908,8 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
     </message>
     <message>
         <location filename="../../src/musesounds/internal/musesamplercheckupdatescenario.cpp" line="76"/>
-        <source>To apply this update, MuseScore Studio will need to close briefly and MuseHub will open. Your MuseSounds libraries won’t work until the update is complete.</source>
-        <translation>이 업데이트를 적용하려면 MuseScore Studio를 잠시 종료하고 MuseHub를 열어야 합니다. 업데이트가 완료될 때까지 MuseSounds 라이브러리를 사용할 수 없습니다.</translation>
+        <source>To apply this update, DB Score will need to close briefly and MuseHub will open. Your MuseSounds libraries won’t work until the update is complete.</source>
+        <translation>이 업데이트를 적용하려면 DB Score를 잠시 종료하고 MuseHub를 열어야 합니다. 업데이트가 완료될 때까지 MuseSounds 라이브러리를 사용할 수 없습니다.</translation>
     </message>
     <message>
         <location filename="../../src/musesounds/internal/musesamplercheckupdatescenario.cpp" line="80"/>
@@ -26918,13 +26918,13 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
     </message>
     <message>
         <location filename="../../src/musesounds/internal/musesamplercheckupdatescenario.cpp" line="98"/>
-        <source>To keep MuseSounds running smoothly, MuseScore Studio needs to close briefly so MuseSounds Manager can apply the update. You’ll need to restart MuseScore Studio when the update is complete.</source>
-        <translation>MuseSounds의 원활한 실행을 위해 MuseScore Studio를 잠시 종료하고 MuseSounds Manager에서 업데이트를 진행해야 합니다. 업데이트가 완료되면 MuseScore Studio를 다시 시작합니다.</translation>
+        <source>To keep MuseSounds running smoothly, DB Score needs to close briefly so MuseSounds Manager can apply the update. You’ll need to restart DB Score when the update is complete.</source>
+        <translation>MuseSounds의 원활한 실행을 위해 DB Score를 잠시 종료하고 MuseSounds Manager에서 업데이트를 진행해야 합니다. 업데이트가 완료되면 DB Score를 다시 시작합니다.</translation>
     </message>
     <message>
         <location filename="../../src/musesounds/internal/musesamplercheckupdatescenario.cpp" line="105"/>
-        <source>To keep MuseSounds running smoothly, MuseScore Studio needs to close briefly so MuseHub can apply the update. You’ll be prompted to relaunch MuseScore Studio when it’s ready.</source>
-        <translation>MuseSounds의 원활한 실행을 위해 MuseScore Studio를 잠시 종료하고 MuseHub에서 업데이트를 진행해야 합니다. 준비가 되면 MuseScore Studio를 다시 실행하라는 안내가 표시됩니다.</translation>
+        <source>To keep MuseSounds running smoothly, DB Score needs to close briefly so MuseHub can apply the update. You’ll be prompted to relaunch DB Score when it’s ready.</source>
+        <translation>MuseSounds의 원활한 실행을 위해 DB Score를 잠시 종료하고 MuseHub에서 업데이트를 진행해야 합니다. 준비가 되면 DB Score를 다시 실행하라는 안내가 표시됩니다.</translation>
     </message>
     <message>
         <location filename="../../src/musesounds/internal/musesamplercheckupdatescenario.cpp" line="110"/>
@@ -26978,7 +26978,7 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
 <context>
     <name>notation</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="366"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="366"/>
         <source>History</source>
         <translation>기록</translation>
     </message>
@@ -26988,1013 +26988,1013 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
         <translation>확장 기능 도구 모음</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/InsertMeasuresPopup.qml" line="83"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/InsertMeasuresPopup.qml" line="83"/>
         <source>After selection</source>
         <translation>선택영역 뒤에</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/InsertMeasuresPopup.qml" line="84"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/InsertMeasuresPopup.qml" line="84"/>
         <source>Before selection</source>
         <translation>선택영역 앞에</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/InsertMeasuresPopup.qml" line="85"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/InsertMeasuresPopup.qml" line="85"/>
         <source>At start of score</source>
         <translation>악보 시작 부분에</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/InsertMeasuresPopup.qml" line="86"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/InsertMeasuresPopup.qml" line="86"/>
         <source>At end of score</source>
         <translation>악보 끝 부분에</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/EditGridSizeDialog.qml" line="54"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/EditGridSizeDialog.qml" line="54"/>
         <source>Edit grid</source>
         <translation>격자 편집</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/EditGridSizeDialog.qml" line="66"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/EditGridSizeDialog.qml" line="66"/>
         <source>Horizontal grid:</source>
         <translation>가로 격자:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/EditGridSizeDialog.qml" line="107"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/EditGridSizeDialog.qml" line="107"/>
         <source>Vertical grid:</source>
         <translation>세로 격자:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/CapoPopup.qml" line="67"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/CapoPopup.qml" line="67"/>
         <source>Capo settings</source>
         <translation>카포 설정</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/CapoPopup.qml" line="79"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/CapoPopup.qml" line="79"/>
         <source>Capo</source>
         <translation>카포</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/CapoPopup.qml" line="98"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/CapoPopup.qml" line="98"/>
         <source>On</source>
         <extracomment>as opposed to Off</extracomment>
         <translation>켜짐</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/CapoPopup.qml" line="100"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/CapoPopup.qml" line="100"/>
         <source>Off</source>
         <extracomment>as opposed to On</extracomment>
         <translation>꺼짐</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/CapoPopup.qml" line="119"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/CapoPopup.qml" line="119"/>
         <source>Notation/tab in open position</source>
         <translation>개방현 위치로 기보/타브 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/CapoPopup.qml" line="120"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/CapoPopup.qml" line="120"/>
         <source>Notation shows sounding pitches</source>
         <translation>기보에 실음 피치가 표시됩니다</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/CapoPopup.qml" line="121"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/CapoPopup.qml" line="121"/>
         <source>No transposition</source>
         <translation>조옮김 없음</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/CapoPopup.qml" line="136"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/CapoPopup.qml" line="136"/>
         <source>Fret</source>
         <translation>프렛</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/CapoPopup.qml" line="168"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/CapoPopup.qml" line="168"/>
         <source>Apply to</source>
         <translation>적용 대상</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/CapoPopup.qml" line="207"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/StringTuningsPopup.qml" line="191"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/CapoPopup.qml" line="207"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/StringTuningsPopup.qml" line="191"/>
         <source>String %1</source>
         <translation>%1번 줄</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/CapoPopup.qml" line="225"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/CapoPopup.qml" line="225"/>
         <source>Manually specify instruction text</source>
         <translation>지시어 텍스트 수동 지정</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/CapoPopup.qml" line="253"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/CapoPopup.qml" line="253"/>
         <source>Position</source>
         <translation>위치</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/CapoPopup.qml" line="264"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/CapoPopup.qml" line="264"/>
         <source>Capo position</source>
         <translation>카포 위치</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/DynamicPopup.qml" line="47"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/DynamicPopup.qml" line="47"/>
         <source>Dynamics popup</source>
         <translation>셈여림 팝업</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="92"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="92"/>
         <source>D flat</source>
         <translation>D 플랫</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="92"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="92"/>
         <source>D natural</source>
         <translation>D 내추럴</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="92"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="92"/>
         <source>D sharp</source>
         <translation>D 샵</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="93"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="93"/>
         <source>C flat</source>
         <translation>C 플랫</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="93"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="93"/>
         <source>C natural</source>
         <translation>C 내추럴</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="93"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="93"/>
         <source>C sharp</source>
         <translation>C 샵</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="94"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="94"/>
         <source>B flat</source>
         <translation>B 플랫</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="94"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="94"/>
         <source>B natural</source>
         <translation>B 내추럴</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="94"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="94"/>
         <source>B sharp</source>
         <translation>B 샵</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="95"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="95"/>
         <source>E flat</source>
         <translation>E 플랫</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="95"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="95"/>
         <source>E natural</source>
         <translation>E 내추럴</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="95"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="95"/>
         <source>E sharp</source>
         <translation>E 샵</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="96"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="96"/>
         <source>F flat</source>
         <translation>F 플랫</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="96"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="96"/>
         <source>F natural</source>
         <translation>F 내추럴</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="96"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="96"/>
         <source>F sharp</source>
         <translation>F 샵</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="97"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="97"/>
         <source>G flat</source>
         <translation>G 플랫</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="97"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="97"/>
         <source>G natural</source>
         <translation>G 내추럴</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="97"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="97"/>
         <source>G sharp</source>
         <translation>G 샵</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="98"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="98"/>
         <source>A flat</source>
         <translation>A 플랫</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="98"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="98"/>
         <source>A natural</source>
         <translation>A 내추럴</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="98"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="98"/>
         <source>A sharp</source>
         <translation>A 샵</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="115"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="115"/>
         <source>Pedal settings buttons</source>
         <translation>페달 설정 버튼</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="142"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="142"/>
         <source>D</source>
         <translation>D</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="143"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="143"/>
         <source>C</source>
         <translation>C</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="144"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="144"/>
         <source>B</source>
         <translation>B</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="145"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="145"/>
         <source>E</source>
         <translation>E</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="146"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="146"/>
         <source>F</source>
         <translation>F</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="147"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="147"/>
         <source>G</source>
         <translation>G</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="148"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="148"/>
         <source>A</source>
         <translation>A</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="271"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="271"/>
         <source>Diagram type buttons</source>
         <translation>다이어그램 유형 버튼</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="292"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="297"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="292"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="297"/>
         <source>Diagram</source>
         <translation>다이어그램</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="315"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="320"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/noteinputbarmodel.cpp" line="602"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="315"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="320"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/noteinputbarmodel.cpp" line="602"/>
         <source>Text</source>
         <translation>텍스트</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/StringTuningsPopup.qml" line="69"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/StringTuningsPopup.qml" line="69"/>
         <source>String tunings settings</source>
         <translation>현 조율 설정</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/StringTuningsPopup.qml" line="81"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/StringTuningsPopup.qml" line="81"/>
         <source>Presets</source>
         <translation>프리셋</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/StringTuningsPopup.qml" line="117"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/StringTuningsPopup.qml" line="117"/>
         <source>Number of strings:</source>
         <translation>현의 수:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/StringTuningsPopup.qml" line="135"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/StringTuningsPopup.qml" line="135"/>
         <source>Strings</source>
         <translation>현</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/StringTuningsPopup.qml" line="178"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/StringTuningsPopup.qml" line="178"/>
         <source>Value %1</source>
         <translation>값 %1</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/CustomiseControlPanel.qml" line="49"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/CustomiseControlPanel.qml" line="49"/>
         <source>Customization actions</source>
         <extracomment>Accessibility description of the button group at the top of the &quot;Customize toolbar&quot; popup</extracomment>
         <translation>사용자 지정 동작</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/CustomiseControlPanel.qml" line="61"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/CustomiseControlPanel.qml" line="61"/>
         <source>Add separator line</source>
         <translation>구분선 추가</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/CustomiseControlPanel.qml" line="83"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/PartDelegate.qml" line="173"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/CustomiseControlPanel.qml" line="83"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/PartDelegate.qml" line="173"/>
         <source>Delete</source>
         <translation>삭제</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/CustomiseControlPanel.qml" line="99"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/CustomiseControlPanel.qml" line="99"/>
         <source>Move up</source>
         <translation>위로 이동</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/CustomiseControlPanel.qml" line="115"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/CustomiseControlPanel.qml" line="115"/>
         <source>Move down</source>
         <translation>아래로 이동</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/NotationSwitchPanel.qml" line="108"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/NotationSwitchPanel.qml" line="108"/>
         <source>Not saved</source>
         <translation>저장되지 않음</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/NotationSwitchPanel.qml" line="148"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/NotationSwitchPanel.qml" line="148"/>
         <source>Scroll left</source>
         <translation>왼쪽으로 스크롤</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/NotationSwitchPanel.qml" line="165"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/NotationSwitchPanel.qml" line="165"/>
         <source>Scroll right</source>
         <translation>오른쪽으로 스크롤</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/NoteInputBarCustomisePopup.qml" line="59"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/NoteInputBar.qml" line="191"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/NoteInputBar.qml" line="199"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/NoteInputBarCustomisePopup.qml" line="59"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/NoteInputBar.qml" line="191"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/NoteInputBar.qml" line="199"/>
         <source>Customize toolbar</source>
         <translation>도구 모음 사용자 지정</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/PartDelegate.qml" line="167"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/PartDelegate.qml" line="167"/>
         <source>Duplicate</source>
         <translation>복제</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/PartDelegate.qml" line="168"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/PartDelegate.qml" line="168"/>
         <source>Rename</source>
         <translation>이름 바꾸기</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/PartDelegate.qml" line="169"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/PartDelegate.qml" line="169"/>
         <source>Reset</source>
         <translation>재설정</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/PartsTopPanel.qml" line="41"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/PartsTopPanel.qml" line="41"/>
         <source>Parts actions</source>
         <extracomment>Accessibility description of the button group at the top of the &quot;Parts&quot; dialog</extracomment>
         <translation>파트 동작</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/PartsTopPanel.qml" line="54"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/PartsDialog.qml" line="32"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/PartsTopPanel.qml" line="54"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/PartsDialog.qml" line="32"/>
         <source>Parts</source>
         <translation>파트</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/PartsTopPanel.qml" line="59"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/PartsTopPanel.qml" line="59"/>
         <source>Create new part</source>
         <translation>새 파트 만들기</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/PartsView.qml" line="58"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/PartsView.qml" line="58"/>
         <source>Name</source>
         <translation>이름</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/PartsView.qml" line="84"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/PartsView.qml" line="84"/>
         <source>Parts view</source>
         <translation>파트 보기</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/SearchPopup.qml" line="87"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/SearchPopup.qml" line="87"/>
         <source>Close search</source>
         <translation>검색 닫기</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/SearchPopup.qml" line="98"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/SearchPopup.qml" line="98"/>
         <source>Find / Go to:</source>
         <translation>찾기 / 바로가기:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/VoicesPopup.qml" line="45"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/VoicesPopup.qml" line="45"/>
         <source>Voices visible on this staff</source>
         <translation>이 보표에 표시할 성부</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/VoicesPopup.qml" line="61"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/voicesselectionfiltermodel.cpp" line="51"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/voicesselectionfiltermodel.cpp" line="53"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/voicesselectionfiltermodel.cpp" line="55"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/voicesselectionfiltermodel.cpp" line="57"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/VoicesPopup.qml" line="61"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/voicesselectionfiltermodel.cpp" line="51"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/voicesselectionfiltermodel.cpp" line="53"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/voicesselectionfiltermodel.cpp" line="55"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/voicesselectionfiltermodel.cpp" line="57"/>
         <source>Voice %1</source>
         <translation>성부 %1</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/NotationToolBar.qml" line="30"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/NotationToolBar.qml" line="30"/>
         <source>Notation toolbar</source>
         <translation>기보 도구 모음</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/NoteInputBar.qml" line="47"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/NoteInputBar.qml" line="47"/>
         <source>Note input toolbar</source>
         <translation>음표 입력 도구 모음</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/NoteInputBar.qml" line="192"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/NoteInputBar.qml" line="192"/>
         <source>Show/hide toolbar buttons</source>
         <translation>도구 모음 버튼 표시/숨김</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/SelectionFilterPanel.qml" line="80"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/SelectionFilterPanel.qml" line="80"/>
         <source>Voices</source>
         <translation>성부</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/SelectionFilterPanel.qml" line="126"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/SelectionFilterPanel.qml" line="126"/>
         <source>Chords</source>
         <translation>코드</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/SelectionFilterPanel.qml" line="168"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/SelectionFilterPanel.qml" line="168"/>
         <source>Include single notes</source>
         <translation>단성 음표 포함</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/SelectionFilterPanel.qml" line="187"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/SelectionFilterPanel.qml" line="187"/>
         <source>Notation elements</source>
         <translation>기보 요소</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/SelectionFilterPanel.qml" line="262"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/SelectionFilterPanel.qml" line="262"/>
         <source>Clear all</source>
         <translation>모두 지우기</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/SelectionFilterPanel.qml" line="281"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/SelectionFilterPanel.qml" line="281"/>
         <source>Select all</source>
         <translation>모두 선택</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/SelectMeasuresCountDialog.qml" line="60"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/SelectMeasuresCountDialog.qml" line="60"/>
         <source>Number of measures to insert:</source>
         <translation>삽입할 마디 수:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/AccidentalsPage.qml" line="74"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/AccidentalsPage.qml" line="74"/>
         <source>Keep accidentals close to offset notes</source>
         <translation>오프셋 음표에 임시표를 가깝게 유지</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/AccidentalsPage.qml" line="82"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/AccidentalsPage.qml" line="82"/>
         <source>Pair accidentals on seconds</source>
         <translation>2도 음정의 임시표를 쌍으로 배치</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/AccidentalsPage.qml" line="90"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/AccidentalsPage.qml" line="90"/>
         <source>Align accidentals an octave apart across subchords</source>
         <translation>하위 코드 간 옥타브 차이가 나는 임시표 정렬</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/AccidentalsPage.qml" line="98"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/AccidentalsPage.qml" line="98"/>
         <source>Align accidentals on offset octaves</source>
         <translation>오프셋 옥타브의 임시표 정렬</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BeamsPage.qml" line="40"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BeamsPage.qml" line="40"/>
         <source>Beam distance</source>
         <translation>빔 간격</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BeamsPage.qml" line="47"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BeamsPage.qml" line="47"/>
         <source>Regular</source>
         <translation>보통</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BeamsPage.qml" line="48"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BeamsPage.qml" line="48"/>
         <source>Wide</source>
         <translation>넓게</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BeamsPage.qml" line="86"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BeamsPage.qml" line="86"/>
         <source>Beam thickness</source>
         <translation>빔 두께</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BeamsPage.qml" line="106"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BeamsPage.qml" line="106"/>
         <source>Broken beam minimum length</source>
         <translation>끊긴 빔 최소 길이</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BeamsPage.qml" line="127"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BeamsPage.qml" line="127"/>
         <source>Flatten all beams</source>
         <translation>모든 빔 평탄하게 기보</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BeamsPage.qml" line="138"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BeamsPage.qml" line="138"/>
         <source>Beam style</source>
         <translation>빔 스타일</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BeamsPage.qml" line="151"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BeamsPage.qml" line="151"/>
         <source>Draw inner stems through beams</source>
         <translation>내부 기둥이 모든 빔을 통과하도록 기보</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BeamsPage.qml" line="152"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BeamsPage.qml" line="152"/>
         <source>Draw inner stems to nearest beam (“French” style)</source>
         <translation>내부 기둥을 가장 가까운 빔까지만 기보(프렌치 스타일)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="263"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="378"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="100"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="355"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="192"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="263"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="378"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="100"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="355"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="192"/>
         <source>Edit text style</source>
         <translation>텍스트 스타일 편집</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="168"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="168"/>
         <source>Edit chord symbol text style</source>
         <translation>코드 기호 텍스트 스타일 편집</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="280"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="355"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="72"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="280"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="355"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="72"/>
         <source>Scale:</source>
         <translation>배율:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="318"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="394"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="318"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="394"/>
         <source>Vertical offset:</source>
         <translation>수직 오프셋:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="438"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="438"/>
         <source>Style:</source>
         <translation>스타일:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="504"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="504"/>
         <source>Bass note scale:</source>
         <translation>베이스 음 배율:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="541"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="541"/>
         <source>Divider thickness:</source>
         <translation>구분선 두께:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="580"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="580"/>
         <source>Divider spacing:</source>
         <translation>구분선 간격:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="640"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="640"/>
         <source>Alignment to notehead:</source>
         <translation>음표 머리 기준 맞춤:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="654"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="654"/>
         <source>Alignment to fretboard diagram:</source>
         <translation>프렛보드 다이어그램 기준 맞춤:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="690"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="690"/>
         <source>Min. space to fretboard diagram:</source>
         <translation>프렛보드 다이어그램과의 최소 간격:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="729"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="729"/>
         <source>Min. space to other notation:</source>
         <translation>기타 기보와의 최소 간격:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="756"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="756"/>
         <source>Min. space between chord symbols:</source>
         <translation>코드 기호 간 최소 간격:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="795"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="795"/>
         <source>Interpretation:</source>
         <translation>해석:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="831"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="831"/>
         <source>Voicing:</source>
         <translation>보이싱:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="850"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="850"/>
         <source>Duration:</source>
         <translation>길이:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="913"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="913"/>
         <source>Capo fret position:</source>
         <translation>카포 프렛 위치:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="747"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="747"/>
         <source>Small parentheses</source>
         <translation>작은 괄호</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="48"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="85"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="48"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="85"/>
         <source>Fretboard diagrams</source>
         <translation>프렛보드 다이어그램</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="56"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="56"/>
         <source>Position above staff:</source>
         <translation>보표 위 위치:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="64"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="64"/>
         <source>Min. space to notation:</source>
         <translation>기보와의 최소 간격:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="79"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="79"/>
         <source>Orientation:</source>
         <translation>방향:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="83"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="83"/>
         <source>Vertical</source>
         <translation>수직</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="84"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="84"/>
         <source>Horizontal</source>
         <translation>수평</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="90"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="90"/>
         <source>Nut line thickness:</source>
         <translation>너트 라인 두께:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="98"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="98"/>
         <source>Fret number</source>
         <translation>프렛 번호</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="109"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="109"/>
         <source>Position:</source>
         <translation>위치:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="113"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="113"/>
         <source>Left</source>
         <translation>좌측</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="113"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="113"/>
         <source>Bottom</source>
         <translation>하단</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="119"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="119"/>
         <source>Right</source>
         <translation>우측</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="119"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="119"/>
         <source>Top</source>
         <translation>상단</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="126"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="126"/>
         <source>Format:</source>
         <translation>형식:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="134"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="134"/>
         <source>Number only</source>
         <translation>숫자만 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="143"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="143"/>
         <source>Custom suffix:</source>
         <translation>사용자 지정 접미사:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="160"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="160"/>
         <source>Preview:</source>
         <translation>미리보기:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="167"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="167"/>
         <source>Edit fret number text style</source>
         <translation>프렛 번호 텍스트 스타일 편집</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="178"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="178"/>
         <source>Dot size:</source>
         <translation>점 크기:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="186"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="186"/>
         <source>Barré</source>
         <translation>바레</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="194"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="194"/>
         <source>Appearance:</source>
         <translation>모양새:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="198"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="198"/>
         <source>Line</source>
         <translation>선</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="199"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="199"/>
         <source>Slur</source>
         <translation>이음줄</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="205"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/LineStyleSection.qml" line="58"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="205"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/LineStyleSection.qml" line="58"/>
         <source>Line thickness:</source>
         <translation>선 두께:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="213"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="213"/>
         <source>Show fingerings</source>
         <translation>운지법(손가락 번호) 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="219"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="219"/>
         <source>Edit fingering text style</source>
         <translation>운지법 텍스트 스타일 편집</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="228"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="228"/>
         <source>Fretboard style:</source>
         <translation>프렛보드 스타일:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="232"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="232"/>
         <source>Trimmed</source>
         <translation>축소형</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="233"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="233"/>
         <source>Extended</source>
         <translation>확장형</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="239"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="239"/>
         <source>String spacing:</source>
         <translation>줄 간격:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="246"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="246"/>
         <source>Fret spacing:</source>
         <translation>프렛 간격:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/GlissandoSection.qml" line="50"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/GlissandoSection.qml" line="50"/>
         <source>Line type:</source>
         <translation>선 종류:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/GlissandoSection.qml" line="53"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/NoteFlagsTypeSelector.qml" line="46"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/GlissandoSection.qml" line="53"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/NoteFlagsTypeSelector.qml" line="46"/>
         <source>Straight</source>
         <translation>직선</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/GlissandoSection.qml" line="54"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/GlissandoSection.qml" line="54"/>
         <source>Wavy</source>
         <translation>물결선</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/GlissandoSection.qml" line="73"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/GlissandoSection.qml" line="73"/>
         <source>Show text:</source>
         <translation>텍스트 표시:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/GlissandoSection.qml" line="83"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/GlissandoSection.qml" line="83"/>
         <source>Edit glissando text style</source>
         <translation>글리산도 텍스트 스타일 편집</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/LineStyleSection.qml" line="47"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="102"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/LineStyleSection.qml" line="47"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="102"/>
         <source>Line style:</source>
         <translation>선 스타일:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/LineStyleSection.qml" line="50"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="107"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="80"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/LineStyleSection.qml" line="50"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="107"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="80"/>
         <source>Normal</source>
         <translation>보통</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/LineStyleSection.qml" line="51"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="108"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/LineStyleSection.qml" line="51"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="108"/>
         <source>Dashed</source>
         <translation>파선</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/LineStyleSection.qml" line="52"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="109"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/LineStyleSection.qml" line="52"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="109"/>
         <source>Dotted</source>
         <translation>점선</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/LineStyleSection.qml" line="64"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/LineStyleSection.qml" line="64"/>
         <source>Dash (dashed line):</source>
         <translation>대시 길이(파선):</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/LineStyleSection.qml" line="70"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/LineStyleSection.qml" line="70"/>
         <source>Gap (dashed line):</source>
         <translation>간격(파선):</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/NoteFlagsTypeSelector.qml" line="45"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/NoteFlagsTypeSelector.qml" line="45"/>
         <source>Traditional</source>
         <translation>전통적 방식</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/NoteLineSection.qml" line="55"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/NoteLineSection.qml" line="55"/>
         <source>Edit note-anchored line text style</source>
         <translation>음표 고정선 텍스트 스타일 편집</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="53"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="53"/>
         <source>Measure repeats</source>
         <translation>마디 반복</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="61"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="61"/>
         <source>Number position:</source>
         <translation>숫자 위치:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="71"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="71"/>
         <source>Show ‘1’ on 1-measure repeats</source>
         <translation>1마디 반복 시 &apos;1&apos; 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="77"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="77"/>
         <source>Show extenders on 4-measure repeats</source>
         <translation>4마디 반복 시 확장선 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="83"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="83"/>
         <source>Number consecutive measure repeats</source>
         <translation>연속된 마디 반복에 번호 매기기</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="103"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="103"/>
         <source>Every</source>
         <translation>매</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="124"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="124"/>
         <source>measures</source>
         <translation>마디마다</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="135"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="135"/>
         <source>With parentheses</source>
         <translation>괄호 포함</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="147"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="147"/>
         <source>Repeat play count text</source>
         <translation>반복 연주 횟수 텍스트</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="174"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="174"/>
         <source>Preset</source>
         <translation>프리셋</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RestOffsetSelector.qml" line="45"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RestOffsetSelector.qml" line="45"/>
         <source>1 space</source>
         <translation>1 sp(공간)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RestOffsetSelector.qml" line="46"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RestOffsetSelector.qml" line="46"/>
         <source>2 spaces</source>
         <translation>2 sp(공간)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RestOffsetSelector.qml" line="65"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RestOffsetSelector.qml" line="65"/>
         <source>Merge matching rests</source>
         <translation>일치하는 쉼표 병합</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="186"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="186"/>
         <source>Placement on single notes:</source>
         <translation>단성 음표의 배치:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="218"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="218"/>
         <source>Placement on chords:</source>
         <translation>코드의 배치:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="250"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="250"/>
         <source>Placement of inner ties with respect to augmentation dots:</source>
         <translation>증가점 위치에 따른 내부 붙임줄의 배치:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="258"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="258"/>
         <source>Auto</source>
         <translation>자동</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="265"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="265"/>
         <source>Always before dots</source>
         <translation>항상 점 앞에</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="272"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="272"/>
         <source>Always after dots</source>
         <translation>항상 점 뒤에</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/UndoRedoToolBar.qml" line="32"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/UndoRedoToolBar.qml" line="32"/>
         <source>Undo redo toolbar</source>
         <translation>실행 취소 및 다시 실행 도구 모음</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/ZoomControl.qml" line="58"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/ZoomControl.qml" line="58"/>
         <source>Zoom out</source>
         <translation>축소</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/ZoomControl.qml" line="78"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/ZoomControl.qml" line="78"/>
         <source>Zoom in</source>
         <translation>확대</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/ZoomControl.qml" line="126"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/ZoomControl.qml" line="126"/>
         <source>Zoom menu</source>
         <translation>확대/축소 메뉴</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="705"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="705"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="367"/>
         <source>Insert &amp;after selection…</source>
         <translation>선택영역 뒤에 삽입(&amp;A)…</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="704"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="704"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="368"/>
         <source>Insert &amp;before selection…</source>
         <translation>선택영역 앞에 삽입(&amp;B)…</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="701"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="701"/>
         <source>&amp;Insert one measure before selection</source>
         <translation>선택영역 앞에 한 마디 삽입(&amp;I)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="702"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="702"/>
         <source>Insert &amp;one measure at end of score</source>
         <translation>악보 끝에 한 마디 삽입(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="707"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="707"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="370"/>
         <source>Insert at &amp;start of score…</source>
         <translation>악보 시작 부분에 삽입(&amp;S)…</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="708"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="708"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="371"/>
         <source>Insert at &amp;end of score…</source>
         <translation>악보 끝 부분에 삽입(&amp;E)…</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="722"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/noteinputbarmodel.cpp" line="685"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="722"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/noteinputbarmodel.cpp" line="685"/>
         <source>Insert at end of score</source>
         <translation>악보 끝 부분에 삽입</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/notationstatusbarmodel.cpp" line="168"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/notationstatusbarmodel.cpp" line="168"/>
         <location filename="../../src/web/appshell/view/notationstatusbarmodel.cpp" line="168"/>
         <source>Continuous view</source>
         <translation>연속 보기</translation>
@@ -28474,9 +28474,9 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1498"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="51"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="147"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/voicesselectionfiltermodel.cpp" line="49"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="51"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="147"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/voicesselectionfiltermodel.cpp" line="49"/>
         <source>All</source>
         <translation>모두</translation>
     </message>
@@ -28487,17 +28487,17 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1835"/>
-        <source>MuseScore style files</source>
-        <translation>MuseScore 스타일 파일</translation>
+        <source>DB Score style files</source>
+        <translation>DB Score 스타일 파일</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1836"/>
-        <source>MuseScore style file</source>
-        <translation>MuseScore 스타일 파일</translation>
+        <source>DB Score style file</source>
+        <translation>DB Score 스타일 파일</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1839"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="123"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="123"/>
         <source>Load style</source>
         <translation>스타일 불러오기</translation>
     </message>
@@ -28513,8 +28513,8 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1856"/>
-        <source>Since this style file is from a different version of MuseScore Studio, your score is not guaranteed to display correctly.</source>
-        <translation>이 스타일 파일은 다른 버전의 MuseScore Studio에서 작성되었으므로 악보가 올바르게 화면표시되지 않을 수 있습니다.</translation>
+        <source>Since this style file is from a different version of DB Score, your score is not guaranteed to display correctly.</source>
+        <translation>이 스타일 파일은 다른 버전의 DB Score에서 작성되었으므로 악보가 올바르게 화면표시되지 않을 수 있습니다.</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1858"/>
@@ -28532,362 +28532,362 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
         <translation>오류 발생</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/caposettingsmodel.cpp" line="139"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/caposettingsmodel.cpp" line="139"/>
         <source>Above</source>
         <translation>위</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/caposettingsmodel.cpp" line="144"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/caposettingsmodel.cpp" line="144"/>
         <source>Below</source>
         <translation>아래</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/stringtuningssettingsmodel.cpp" line="36"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/stringtuningssettingsmodel.cpp" line="36"/>
         <source>Custom</source>
         <translation>사용자 지정</translation>
     </message>
     <message numerus="yes">
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/stringtuningssettingsmodel.cpp" line="263"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/stringtuningssettingsmodel.cpp" line="263"/>
         <source>%n string(s)</source>
         <translation><numerusform>%n현</numerusform></translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="121"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="121"/>
         <source>Clear measures</source>
         <translation>마디 내용 지우기</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="123"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="123"/>
         <source>Delete measures</source>
         <translation>마디 삭제</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="135"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="135"/>
         <source>Insert measures</source>
         <translation>마디 삽입</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="137"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="137"/>
         <source>Move measures</source>
         <translation>마디 이동</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="139"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="139"/>
         <source>Create system from selection</source>
         <translation>선택영역으로 단 만들기</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="217"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="217"/>
         <source>Add c&amp;hord symbol</source>
         <translation>코드 기호 추가(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="233"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="233"/>
         <source>Hide</source>
         <translation>숨김</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="242"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="276"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="418"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="242"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="276"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="418"/>
         <source>Select</source>
         <translation>선택</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="295"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="295"/>
         <source>After selection…</source>
         <translation>선택영역 뒤에…</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="296"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="296"/>
         <source>Before selection…</source>
         <translation>선택영역 앞에…</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="298"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="298"/>
         <source>At start of score…</source>
         <translation>악보 시작 부분에…</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="299"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="299"/>
         <source>At end of score…</source>
         <translation>악보 끝 부분에…</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="308"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="308"/>
         <source>To previous system</source>
         <translation>이전 단으로</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="309"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="309"/>
         <source>To next system</source>
         <translation>다음 단으로</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="337"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="350"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="337"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="350"/>
         <source>Add</source>
         <translation>추가</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationswitchlistmodel.cpp" line="294"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationswitchlistmodel.cpp" line="294"/>
         <source>Close tab</source>
         <translation>탭 닫기</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationswitchlistmodel.cpp" line="299"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationswitchlistmodel.cpp" line="299"/>
         <source>Close other tabs</source>
         <translation>다른 탭 닫기</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationswitchlistmodel.cpp" line="304"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationswitchlistmodel.cpp" line="304"/>
         <source>Close all tabs</source>
         <translation>모든 탭 닫기</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/noteinputbarcustomisemodel.cpp" line="234"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/noteinputbarcustomisemodel.cpp" line="234"/>
         <source>Separator line</source>
         <translation>구분선</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/noteinputbarmodel.cpp" line="598"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/noteinputbarmodel.cpp" line="598"/>
         <source>Notes</source>
         <translation>음표</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/noteinputbarmodel.cpp" line="599"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/noteinputbarmodel.cpp" line="599"/>
         <source>Intervals</source>
         <translation>음정</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/noteinputbarmodel.cpp" line="600"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/noteinputbarmodel.cpp" line="600"/>
         <source>Measures</source>
         <translation>마디</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/noteinputbarmodel.cpp" line="601"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/noteinputbarmodel.cpp" line="601"/>
         <source>Frames</source>
         <translation>프레임</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/noteinputbarmodel.cpp" line="603"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/noteinputbarmodel.cpp" line="603"/>
         <source>Lines</source>
         <translation>선</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/noteinputbarmodel.cpp" line="604"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/noteinputbarmodel.cpp" line="604"/>
         <source>Chords and fretboard diagrams</source>
         <translation>코드 및 프렛보드 다이어그램</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/noteinputbarmodel.cpp" line="752"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/noteinputbarmodel.cpp" line="752"/>
         <source>Fretboard diagram legend</source>
         <translation>프렛보드 다이어그램 범례</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/partlistmodel.cpp" line="129"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/partlistmodel.cpp" line="129"/>
         <source>Part</source>
         <translation>파트</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/partlistmodel.cpp" line="155"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/partlistmodel.cpp" line="155"/>
         <source>Are you sure you want to reset this part?</source>
         <translation>이 파트를 재설정하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/partlistmodel.cpp" line="188"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/partlistmodel.cpp" line="188"/>
         <source>Are you sure you want to delete this part?</source>
         <translation>이 파트를 삭제하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/partlistmodel.cpp" line="245"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/partlistmodel.cpp" line="245"/>
         <source>Name already exists</source>
         <translation>이미 존재하는 이름입니다.</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/partlistmodel.cpp" line="286"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/partlistmodel.cpp" line="286"/>
         <source>(copy)</source>
         <translation>(복사본)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="79"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="79"/>
         <source>Large</source>
         <translation>크게</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="81"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="81"/>
         <source>Small</source>
         <translation>작게</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="101"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="101"/>
         <source>128 keys (full)</source>
         <translation>128 건반(전체)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="102"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="102"/>
         <source>88 keys (piano)</source>
         <translation>88 건반(피아노)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="103"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="103"/>
         <source>61 keys</source>
         <translation>61 건반</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="104"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="104"/>
         <source>49 keys</source>
         <translation>49 건반</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="105"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="105"/>
         <source>25 keys</source>
         <translation>25 건반</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="124"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="124"/>
         <source>View</source>
         <translation>보기</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="53"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="53"/>
         <source>Dynamics</source>
         <translation>셈여림</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="55"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="55"/>
         <source>Hairpins</source>
         <translation>헤어핀</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="57"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="57"/>
         <source>Fingerings</source>
         <translation>운지법</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="59"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="59"/>
         <source>Lyrics</source>
         <translation>가사</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="61"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="61"/>
         <source>Chord symbols</source>
         <translation>코드 기호</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="63"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="63"/>
         <source>Other text</source>
         <translation>다른 텍스트</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="65"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="65"/>
         <source>Articulations</source>
         <translation>연주기호</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="67"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="67"/>
         <source>Ornaments</source>
         <translation>꾸밈음</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="69"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="69"/>
         <source>Slurs</source>
         <translation>이음줄</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="71"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="71"/>
         <source>Ties</source>
         <translation>붙임줄</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="73"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="73"/>
         <source>Figured bass</source>
         <translation>통주저음</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="75"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="75"/>
         <source>Ottavas</source>
         <translation>옥타브 선</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="77"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="77"/>
         <source>Pedal lines</source>
         <translation>페달 선</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="79"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="79"/>
         <source>Other lines</source>
         <translation>다른 선</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="81"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="81"/>
         <source>Arpeggios</source>
         <translation>아르페지오</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="83"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="83"/>
         <source>Glissandos</source>
         <translation>글리산도</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="87"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="87"/>
         <source>Breath marks</source>
         <translation>숨표</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="89"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="89"/>
         <source>Tremolos</source>
         <translation>트레몰로</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="91"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="91"/>
         <source>Grace notes</source>
         <translation>앞꾸밈음</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="149"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="149"/>
         <source>Top note</source>
         <translation>최상성부 음(Top note)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="151"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="151"/>
         <source>Seventh note</source>
         <translation>일곱 번째 음</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="153"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="153"/>
         <source>Sixth note</source>
         <translation>여섯 번째 음</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="155"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="155"/>
         <source>Fifth note</source>
         <translation>다섯 번째 음</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="157"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="157"/>
         <source>Fourth note</source>
         <translation>네 번째 음</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="159"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="159"/>
         <source>Third note</source>
         <translation>세 번째 음</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="161"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="161"/>
         <source>Second note</source>
         <translation>두 번째 음</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="163"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="163"/>
         <source>Bottom note</source>
         <translation>최하성부 음(Bottom note)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="121"/>
-        <source>MuseScore chord symbol style files</source>
-        <translation>MuseScore 코드 기호 스타일 파일</translation>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="121"/>
+        <source>DB Score chord symbol style files</source>
+        <translation>DB Score 코드 기호 스타일 파일</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/widgets/colorlabel.cpp" line="68"/>
@@ -28901,7 +28901,7 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
         <translation>%1 음표</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/playbacktoolbarmodel.cpp" line="137"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/playbacktoolbarmodel.cpp" line="137"/>
         <source>MIDI input pitch</source>
         <translation>MIDI 입력 피치</translation>
     </message>
@@ -29140,13 +29140,13 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
     </message>
     <message>
         <location filename="../../src/notationscene/widgets/editstyle.cpp" line="1407"/>
-        <source>MuseScore Studio version this score was last saved with</source>
-        <translation>이 악보를 마지막으로 저장한 MuseScore Studio 버전</translation>
+        <source>DB Score version this score was last saved with</source>
+        <translation>이 악보를 마지막으로 저장한 DB Score 버전</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/widgets/editstyle.cpp" line="1409"/>
-        <source>MuseScore Studio revision this score was last saved with</source>
-        <translation>이 악보를 마지막으로 저장한 MuseScore Studio 리비전</translation>
+        <source>DB Score revision this score was last saved with</source>
+        <translation>이 악보를 마지막으로 저장한 DB Score 리비전</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/widgets/editstyle.cpp" line="1411"/>
@@ -29167,37 +29167,37 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
 <context>
     <name>notation/editstyle/accidentals</name>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/AccidentalsPage.qml" line="45"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/AccidentalsPage.qml" line="45"/>
         <source>Accidentals</source>
         <translation>임시표</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/AccidentalsPage.qml" line="49"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/AccidentalsPage.qml" line="49"/>
         <source>Padding inside parentheses:</source>
         <translation>괄호 안쪽 여백:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/AccidentalsPage.qml" line="64"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/AccidentalsPage.qml" line="64"/>
         <source>Multiple accidentals in chords</source>
         <translation>코드 내 다중 임시표</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="496"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="496"/>
         <source>When changing to a key signature containing fewer sharps or flats</source>
         <translation>샵이나 플랫 수가 더 적은 조표로 변경될 때</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="508"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="508"/>
         <source>Don’t show any naturals</source>
         <translation>내추럴 표시 안 함</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="509"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="509"/>
         <source>Show naturals before the new key signature</source>
         <translation>새 조표 앞에 내추럴 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="510"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="510"/>
         <source>Show naturals after the new key signature</source>
         <translation>새 조표 뒤에 내추럴 표시</translation>
     </message>
@@ -29205,17 +29205,17 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
 <context>
     <name>notation/editstyle/barlines</name>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatBarlinesSection.qml" line="46"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatBarlinesSection.qml" line="46"/>
         <source>Show barline before key and time signature changes</source>
         <translation>조표 및 박자표 변경 전에 세로줄 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatBarlinesSection.qml" line="55"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatBarlinesSection.qml" line="55"/>
         <source>Use double barline before key signatures</source>
         <translation>조표 앞에 겹세로줄 사용</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatBarlinesSection.qml" line="63"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatBarlinesSection.qml" line="63"/>
         <source>Use double barline before time signatures</source>
         <translation>박자표 앞에 겹세로줄 사용</translation>
     </message>
@@ -29223,112 +29223,112 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
 <context>
     <name>notation/editstyle/bends</name>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="50"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="50"/>
         <source>Bends</source>
         <translation>벤드</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="58"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="171"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="58"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="171"/>
         <source>Standard staff</source>
         <translation>일반 보표</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="61"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="84"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="174"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="219"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="61"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="84"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="174"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="219"/>
         <source>Line thickness:</source>
         <translation>선 두께:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="77"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="190"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="77"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="190"/>
         <source>Tablature staff</source>
         <translation>타블라추어 보표</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="102"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="102"/>
         <source>Arrow width:</source>
         <translation>화살표 너비:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="116"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="116"/>
         <source>Arrow height:</source>
         <translation>화살표 높이:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="131"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="131"/>
         <source>Label for full bends:</source>
         <translation>풀 벤드 라벨:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="163"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="163"/>
         <source>Dives</source>
         <translation>다이브</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="198"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="198"/>
         <source>Show dive lines</source>
         <translation>다이브 선 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="205"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="205"/>
         <source>On the staff</source>
         <translation>보표 위에 기보</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="206"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="206"/>
         <source>Above the staff</source>
         <translation>보표 상단에 기보</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="236"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="236"/>
         <source>Whammy bar line</source>
         <translation>와미 바(아밍) 선</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="246"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="246"/>
         <source>Text label:</source>
         <translation>텍스트 라벨:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="289"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="289"/>
         <source>Grace note bends/dives on tablature</source>
         <translation>타블라추어의 앞꾸밈음 벤드/다이브</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="296"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="296"/>
         <source>Use cue sized fret numbers</source>
         <translation>소형(Cue size) 프렛 번호 사용</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="307"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="307"/>
         <source>Align pre-bends and pre-dives</source>
         <translation>프리벤드 및 프리다이브 정렬</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="314"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="314"/>
         <source>To the main note</source>
         <translation>본 음표에 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="315"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="315"/>
         <source>To the grace note</source>
         <translation>앞꾸밈음에 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="333"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="333"/>
         <source>Interval labels</source>
         <translation>음정 라벨</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="341"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="341"/>
         <source>Diagonal</source>
         <translation>대각선</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="342"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="342"/>
         <source>Level</source>
         <translation>수평</translation>
     </message>
@@ -29336,214 +29336,214 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
 <context>
     <name>notation/editstyle/chordsymbols</name>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="119"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="119"/>
         <source>Preset</source>
         <translation>프리셋</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="161"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="161"/>
         <source>Appearance</source>
         <translation>모양새</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="177"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="177"/>
         <source>Spelling</source>
         <translation>기보 방식</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="214"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="214"/>
         <source>Capitalization</source>
         <translation>대소문자 표기</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="225"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="225"/>
         <source>Automatically capitalize note names</source>
         <translation>음 이름 자동 대문자화</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="240"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="240"/>
         <source>Lowercase minor chords</source>
         <translation>단코드(Minor)을 소문자로 표기</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="247"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="247"/>
         <source>Lowercase bass notes</source>
         <translation>베이스 음을 소문자로 표기</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="254"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="254"/>
         <source>All caps (for Solfeggio and French)</source>
         <translation>모두 대문자(계명창 및 프랑스식용)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="267"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="267"/>
         <source>Extensions (e.g. 7, 11)</source>
         <translation>텐션/확장음 (예: 7, 11)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="342"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="342"/>
         <source>Modifiers (e.g. sus4, no 3)</source>
         <translation>변화 기호 (예: sus4, no 3)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="416"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="416"/>
         <source>Vertically stack modifiers</source>
         <translation>변화 기호를 세로로 쌓기</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="425"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="425"/>
         <source>Altered bass notes (e.g. A7/G)</source>
         <translation>변화된 베이스 음 (예: A7/G)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="528"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="528"/>
         <source>Polychords (e.g. C|F♯)</source>
         <translation>폴리코드 (예: C|F♯)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="604"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="604"/>
         <source>Use SMuFL symbols</source>
         <translation>SMuFL 기호 사용</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="614"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="614"/>
         <source>Alignment</source>
         <translation>맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="625"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="625"/>
         <source>Vertically align chord symbols and fretboard diagrams on the same system</source>
         <translation>동일 단의 코드 기호와 프렛보드 다이어그램을 세로로 정렬</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="667"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="667"/>
         <source>Exclude modifiers from horizontal alignment</source>
         <translation>가로 정렬 시 변화 기호 제외</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="677"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="677"/>
         <source>Positioning</source>
         <translation>배치</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="781"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="781"/>
         <source>Playback</source>
         <translation>플레이백</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="868"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="868"/>
         <source>Capo</source>
         <translation>카포</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="71"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="155"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="71"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="155"/>
         <source>Standard</source>
         <translation>표준</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="74"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="187"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="74"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="187"/>
         <source>Jazz</source>
         <translation>재즈</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="77"/>
-        <source>Legacy MuseScore</source>
-        <translation>레거시 MuseScore</translation>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="77"/>
+        <source>Legacy DB Score</source>
+        <translation>레거시 DB Score</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="80"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="80"/>
         <source>Load custom XML…</source>
         <translation>사용자 지정 XML 불러오기…</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="158"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="158"/>
         <source>German</source>
         <translation>독일식</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="161"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="161"/>
         <source>Full German</source>
         <translation>독일식 전체 표기</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="164"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="164"/>
         <source>Solfeggio</source>
         <translation>솔페지오</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="167"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="167"/>
         <source>French</source>
         <translation>프랑스식</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="190"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="190"/>
         <source>Literal</source>
         <translation>문자 그대로</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="201"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="201"/>
         <source>Automatic</source>
         <translation>자동</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="204"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="204"/>
         <source>Root only</source>
         <translation>기본음 만</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="207"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="207"/>
         <source>Close</source>
         <translation>밀집 화음</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="210"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="210"/>
         <source>Drop two</source>
         <translation>드롭 투</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="213"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="213"/>
         <source>Six note</source>
         <translation>6음 화음</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="216"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="216"/>
         <source>Four note</source>
         <translation>4음 화음</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="219"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="219"/>
         <source>Three note</source>
         <translation>3음 화음</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="230"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="230"/>
         <source>Until next chord symbol</source>
         <translation>다음 코드 기호 전까지</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="233"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="233"/>
         <source>Until end of measure</source>
         <translation>마디 끝까지</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="236"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="236"/>
         <source>Chord/rest duration</source>
         <translation>코드/쉼표 음길이</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="253"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="253"/>
         <source>Don’t show chord symbols transposed by capo</source>
         <translation>카포로 조옮김된 코드 기호 표시 안 함</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="256"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="256"/>
         <source>Show chord symbols &amp; transposed symbols</source>
         <translation>원래 코드 및 조옮김된 코드 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="259"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="259"/>
         <source>Show transposed symbols only</source>
         <translation>조옮김된 코드 기호만 표시</translation>
     </message>
@@ -29551,124 +29551,124 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
 <context>
     <name>notation/editstyle/hammeronpulloff</name>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="53"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="53"/>
         <source>Visibility</source>
         <translation>가시성</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="61"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="61"/>
         <source>Show ‘H’ and ‘P’ symbols on</source>
         <translation>‘H’ 및 ‘P’ 기호 표시 대상</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="67"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="141"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="67"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="141"/>
         <source>Standard staves</source>
         <translation>일반 보표</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="76"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="147"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="76"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="147"/>
         <source>Tablature staves</source>
         <translation>타블라추어 보표</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="88"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="88"/>
         <source>Case</source>
         <translation>대소문자</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="98"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="98"/>
         <source>Upper case</source>
         <translation>대문자</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="99"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="99"/>
         <source>Lower case</source>
         <translation>소문자</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="118"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="118"/>
         <source>Edit text style</source>
         <translation>텍스트 스타일 편집</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="130"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="130"/>
         <source>Alignment</source>
         <translation>맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="137"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="137"/>
         <source>Align ‘H’, ‘P’ and ‘T’ symbols in the same slur on</source>
         <translation>동일 이음줄 내 ‘H’, ‘P’, ‘T’ 기호 정렬 기준</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="157"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="157"/>
         <source>Consecutive hammer-ons/pull-offs</source>
         <translation>연속된 해머링 온/풀 오프</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="168"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="168"/>
         <source>Show ‘H’ or ‘P’ between each pair of notes</source>
         <translation>각 음표 쌍 사이에 ‘H’ 또는 ‘P’ 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="169"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="169"/>
         <source>Show ‘H’ or ‘P’ once per group of ascending/descending notes</source>
         <translation>상행/하행 음표 그룹당 ‘H’ 또는 ‘P’ 한 번만 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="191"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="191"/>
         <source>Left-hand tapping</source>
         <translation>왼손 태핑</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="204"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="204"/>
         <source>Show on standard staves</source>
         <translation>일반 보표에 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="229"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="322"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="229"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="322"/>
         <source>Half slur</source>
         <translation>하프 이음줄(Half slur)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="230"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="265"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="323"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="358"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="230"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="265"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="323"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="358"/>
         <source>Symbol</source>
         <translation>기호</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="231"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="324"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="231"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="324"/>
         <source>Both</source>
         <translation>모두 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="297"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="297"/>
         <source>Show on tablature staves</source>
         <translation>타블라추어 보표에 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="385"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="385"/>
         <source>Slur top and bottom notes in chords</source>
         <translation>코드의 최상성부 및 최하성부 음에 이음줄 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="395"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="395"/>
         <source>Right-hand tapping</source>
         <translation>오른손 태핑</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="405"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="405"/>
         <source>Symbol (standard staff)</source>
         <translation>기호 (일반 보표)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="433"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="433"/>
         <source>Symbol (tablature staff)</source>
         <translation>기호 (타블라추어 보표)</translation>
     </message>
@@ -29676,32 +29676,32 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
 <context>
     <name>notation/editstyle/repeatplaycount</name>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="155"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="155"/>
         <source>Automatically show text at repeat barlines</source>
         <translation>반복 세로줄에 텍스트 자동 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="163"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="163"/>
         <source>Show for single repeats (e.g. “x2”)</source>
         <translation>단일 반복 시 표시 (예: “x2”)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/repeatplaycounttextmodel.cpp" line="45"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/repeatplaycounttextmodel.cpp" line="45"/>
         <source>x3</source>
         <translation>x3</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/repeatplaycounttextmodel.cpp" line="48"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/repeatplaycounttextmodel.cpp" line="48"/>
         <source>3x</source>
         <translation>3x</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/repeatplaycounttextmodel.cpp" line="51"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/repeatplaycounttextmodel.cpp" line="51"/>
         <source>Play 3 times</source>
         <translation>3회 연주</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/repeatplaycounttextmodel.cpp" line="54"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/repeatplaycounttextmodel.cpp" line="54"/>
         <source>3 repeats</source>
         <translation>3회 반복</translation>
     </message>
@@ -29709,76 +29709,76 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
 <context>
     <name>notation/editstyle/slursandties</name>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/LaissezVibrSection.qml" line="36"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/LaissezVibrSection.qml" line="36"/>
         <source>Laissez vibrer</source>
         <translation>레세 비브레(L.V.)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/LaissezVibrSection.qml" line="47"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/LaissezVibrSection.qml" line="47"/>
         <source>Minimum laissez vibrer length:</source>
         <translation>레세 비브레 최소 길이:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/LaissezVibrSection.qml" line="71"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/LaissezVibrSection.qml" line="71"/>
         <source>Use SMuFL symbols</source>
         <translation>SMuFL 기호 사용</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/SlursSection.qml" line="39"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/SlursSection.qml" line="39"/>
         <source>Slurs</source>
         <translation>이음줄</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/SlursSection.qml" line="50"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="49"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/SlursSection.qml" line="50"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="49"/>
         <source>Line thickness at end:</source>
         <translation>끝부분 선 두께:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/SlursSection.qml" line="72"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="71"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/SlursSection.qml" line="72"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="71"/>
         <source>Line thickness middle:</source>
         <translation>중간부분 선 두께:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/SlursSection.qml" line="94"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="93"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/SlursSection.qml" line="94"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="93"/>
         <source>Dotted line thickness:</source>
         <translation>점선 두께:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/SlursSection.qml" line="116"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="115"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/SlursSection.qml" line="116"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="115"/>
         <source>Autoplace min. distance:</source>
         <translation>자동 배치 최소 간격:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/SlursSection.qml" line="143"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/SlursSection.qml" line="143"/>
         <source>Partial slurs across repeats and breaks:</source>
         <translation>반복 및 줄바꿈 시 부분 이음줄:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/SlursSection.qml" line="153"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/SlursSection.qml" line="153"/>
         <source>Follow contour of notes</source>
         <translation>음표 윤곽 따름</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/SlursSection.qml" line="154"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/SlursSection.qml" line="154"/>
         <source>Angle away from staff</source>
         <translation>보표 반대 방향 각도</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="38"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="38"/>
         <source>Ties</source>
         <translation>붙임줄</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="137"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="137"/>
         <source>Minimum tie length:</source>
         <translation>붙임줄 최소 길이:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="159"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="159"/>
         <source>Minimum hanging tie length:</source>
         <translation>행잉 붙임줄(Hanging tie) 최소 길이:</translation>
     </message>
@@ -29786,233 +29786,233 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
 <context>
     <name>notation/editstyle/timesignatures</name>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="78"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="78"/>
         <source>Clefs</source>
         <translation>음자리표</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="85"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="467"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="85"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="467"/>
         <source>Visibility:</source>
         <translation>가시성:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="92"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="92"/>
         <source>Show all clefs on every system</source>
         <translation>모든 단에 음자리표 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="93"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="93"/>
         <source>Hide all clefs after the first system where they appear</source>
         <translation>첫 단 이후의 모든 음자리표 숨김</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="107"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="107"/>
         <source>Hide TAB clefs after the first system where they appear</source>
         <translation>첫 단 이후의 TAB 음자리표 숨김</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="114"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="114"/>
         <source>Show courtesy clefs</source>
         <translation>예고 음자리표 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="121"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="121"/>
         <source>Default TAB clef</source>
         <translation>기본 TAB 음자리표</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="128"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="128"/>
         <source>Standard TAB clef</source>
         <translation>표준 TAB 음자리표</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="129"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="129"/>
         <source>Serif TAB clef</source>
         <translation>세리프 TAB 음자리표</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="146"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="146"/>
         <source>Time signatures</source>
         <translation>박자표</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="160"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="160"/>
         <source>Position:</source>
         <translation>위치:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="167"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="167"/>
         <source>On all staves</source>
         <translation>모든 보표에</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="168"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="168"/>
         <source>Above staves</source>
         <translation>보표 위에</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="169"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="169"/>
         <source>Across staves</source>
         <translation>보표 전체에 걸쳐</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="183"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="183"/>
         <source>Set where time signatures appear using the Layout panel.</source>
         <translation>레이아웃 패널을 사용하여 박자표가 표시될 위치를 지정합니다.</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="201"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="201"/>
         <source>Style and size</source>
         <translation>스타일 및 크기</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="215"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="215"/>
         <source>Numeral style:</source>
         <translation>숫자 스타일:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="258"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="258"/>
         <source>Alignment with barlines:</source>
         <translation>세로줄 기준 맞춤:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="259"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="259"/>
         <source>Alignment across staves:</source>
         <translation>보표 간 정렬:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="296"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="296"/>
         <source>Scale:</source>
         <translation>배율:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="361"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="361"/>
         <source>Gap between numbers (scaled):</source>
         <translation>숫자 사이 간격(배율 적용):</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="386"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="386"/>
         <source>Vertical placement:</source>
         <translation>수직 배치:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="405"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="405"/>
         <source>Show courtesy time signatures</source>
         <translation>예고 박자표 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="424"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="424"/>
         <source>End-of-staff alignment:</source>
         <translation>보표 끝 맞춤:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="428"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="428"/>
         <source>Hang into page margin</source>
         <translation>페이지 여백까지 연장</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="433"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="433"/>
         <source>Inset time signature</source>
         <translation>박자표 안쪽 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="438"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="438"/>
         <source>Inset barline</source>
         <translation>세로줄 안쪽 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="459"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="459"/>
         <source>Key signatures</source>
         <translation>조표</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="474"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="474"/>
         <source>Show on every system</source>
         <translation>모든 단에 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="475"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="475"/>
         <source>Hide after the first system where they appear</source>
         <translation>첫 단 이후의 조표 숨김</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="489"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="489"/>
         <source>Show courtesy key signatures</source>
         <translation>예고 조표 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="526"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="526"/>
         <source>Show naturals when switching between sharps and flats</source>
         <translation>샵과 플랫 간 전환 시 내추럴 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="537"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="537"/>
         <source>Clefs, key &amp; time signatures at repeats and jumps</source>
         <translation>반복 및 점프 위치의 음자리표, 조표 및 박자표</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="573"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="573"/>
         <source>Use parentheses</source>
         <translation>괄호 사용</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="603"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="603"/>
         <source>Changes that apply to both the repeat/jump and the subsequent measure</source>
         <translation>반복/점프 및 뒤따르는 마디 모두에 적용되는 변경 사항</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="610"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="610"/>
         <source>At repeats, only show changes before the barline</source>
         <translation>반복 위치에서 세로줄 이전의 변경 사항만 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="616"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="616"/>
         <source>At all other jumps, only show changes before the barline</source>
         <translation>다른 모든 점프 위치에서 세로줄 이전의 변경 사항만 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="626"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="626"/>
         <source>Changes that apply only after repeats and jumps</source>
         <translation>반복 및 점프 이후에만 적용되는 변경 사항</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="636"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="636"/>
         <source>Place clefs before repeats</source>
         <translation>반복 기호 앞에 음자리표 배치</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="645"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="645"/>
         <source>Place clefs after repeats</source>
         <translation>반복 기호 뒤에 음자리표 배치</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="667"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="667"/>
         <source>Allow changes between end-start repeats</source>
         <translation>종료-시작 반복 기호 사이의 변경 허용</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="693"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="693"/>
         <source>Courtesies</source>
         <translation>예고 기호</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="708"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="708"/>
         <source>Show at repeats</source>
         <translation>반복 위치에서 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="719"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="719"/>
         <source>Show at all other jumps</source>
         <translation>다른 모든 점프 위치에서 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="730"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="730"/>
         <source>Show when cancelling a courtesy before repeats</source>
         <translation>반복 전 예고 기호를 취소할 때 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="741"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="741"/>
         <source>Show when cancelling a courtesy before all other jumps</source>
         <translation>다른 모든 점프 전 예고 기호를 취소할 때 표시</translation>
     </message>
@@ -30020,17 +30020,17 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
 <context>
     <name>notation/editstyle/tupletCentering</name>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TupletCenteringSelector.qml" line="46"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TupletCenteringSelector.qml" line="46"/>
         <source>Number alignment</source>
         <translation>숫자 정렬</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TupletCenteringSelector.qml" line="54"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TupletCenteringSelector.qml" line="54"/>
         <source>Graphical center</source>
         <translation>시각적 중앙</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TupletCenteringSelector.qml" line="55"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TupletCenteringSelector.qml" line="55"/>
         <source>Rhythmic center</source>
         <translation>리듬적 중앙</translation>
     </message>
@@ -30038,214 +30038,214 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
 <context>
     <name>notation/editstyle/voltas</name>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="53"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="53"/>
         <source>Measure numbers</source>
         <translation>마디 번호</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="65"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="65"/>
         <source>Show measure numbers</source>
         <translation>마디 번호 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="72"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="72"/>
         <source>Show initial measure number</source>
         <translation>첫 마디 번호 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="82"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="337"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="82"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="337"/>
         <source>Text style</source>
         <translation>텍스트 스타일</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="119"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="119"/>
         <source>Frequency</source>
         <translation>표시 빈도</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="128"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="128"/>
         <source>Start of each system</source>
         <translation>각 단의 시작 부분</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="137"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="137"/>
         <source>Every</source>
         <translation>매</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="155"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="155"/>
         <source>measures</source>
         <translation>마디마다</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="166"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="257"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="437"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="166"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="257"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="437"/>
         <source>Position</source>
         <translation>위치</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="177"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="177"/>
         <source>Align</source>
         <translation>맞춤 기준</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="184"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="184"/>
         <source>To the barline</source>
         <translation>세로줄에 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="190"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="190"/>
         <source>To the measure</source>
         <translation>마디에 맞춤</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="194"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="404"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="136"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="194"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="404"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="136"/>
         <source>Alignment</source>
         <translation>정렬</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="226"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="226"/>
         <source>Show</source>
         <translation>표시 위치</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="235"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="235"/>
         <source>Above system</source>
         <translation>단 위쪽</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="236"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="236"/>
         <source>Below system</source>
         <translation>단 아래쪽</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="237"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="237"/>
         <source>At system marking positions</source>
         <translation>단 기호 표시 위치 마다</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="238"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="238"/>
         <source>On all staves</source>
         <translation>모든 보표에 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="263"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="444"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="263"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="444"/>
         <source>Above</source>
         <translation>위</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="264"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="445"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="264"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="445"/>
         <source>Below</source>
         <translation>아래</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="289"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="289"/>
         <source>Offset when above staff:</source>
         <translation>보표 위 위치 시 오프셋:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="304"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="304"/>
         <source>Offset when below staff:</source>
         <translation>보표 아래 위치 시 오프셋:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="320"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="320"/>
         <source>Measure number range at multimeasure rests</source>
         <translation>공휴마디의 마디 번호 범위</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="328"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="328"/>
         <source>Show measure number ranges</source>
         <translation>마디 번호 범위 표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="374"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="374"/>
         <source>Bracket type</source>
         <translation>대괄호 종류</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="381"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="381"/>
         <source>Brackets</source>
         <translation>대괄호</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="382"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="382"/>
         <source>Parentheses</source>
         <translation>소괄호(( ))</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="383"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="383"/>
         <source>None</source>
         <translation>없음</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="466"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="466"/>
         <source>Offset</source>
         <translation>오프셋</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="47"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="47"/>
         <source>Voltas</source>
         <translation>볼타</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="56"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="56"/>
         <source>Vertical position:</source>
         <translation>세로 위치:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="84"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="84"/>
         <source>Hook height:</source>
         <translation>꺾임 높이:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="93"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="93"/>
         <source>Line thickness:</source>
         <translation>선 두께:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="116"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="116"/>
         <source>Dash:</source>
         <translation>대시 길이:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="125"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="125"/>
         <source>Gap:</source>
         <translation>간격:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="157"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="157"/>
         <source>At start of system, start volta:</source>
         <translation>단 시작 마다, 볼타 시작:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="162"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="162"/>
         <source>After key signature</source>
         <translation>조표 뒤쪽</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="168"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="168"/>
         <source>On key signature</source>
         <translation>조표 위쪽</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="191"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="191"/>
         <source>Align start hook:</source>
         <translation>시작 꺾임 정렬:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="196"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="196"/>
         <source>To right side of barlines</source>
         <translation>세로줄의 오른쪽</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="202"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="202"/>
         <source>To left side of barlines</source>
         <translation>세로줄의 왼쪽</translation>
     </message>
@@ -30271,155 +30271,155 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
 <context>
     <name>notation/percussion</name>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/PercussionPanelPad.qml" line="79"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/PercussionPanelPad.qml" line="79"/>
         <source>MIDI %1</source>
         <extracomment>%1 will be the MIDI note for a drum (displayed in the percussion panel)</extracomment>
         <translation>MIDI %1</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/PercussionPanelPad.qml" line="87"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/PercussionPanelPad.qml" line="87"/>
         <source>Shortcut %1</source>
         <extracomment>%1 will be the shortcut for a drum (displayed in the percussion panel)</extracomment>
         <translation>단축키 %1</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/PercussionPanelPad.qml" line="94"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/PercussionPanelPad.qml" line="94"/>
         <source>Row %1</source>
         <extracomment>%1 will be the row number of a percussion panel pad</extracomment>
         <translation>%1행</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/PercussionPanelPad.qml" line="97"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/PercussionPanelPad.qml" line="97"/>
         <source>Column %1</source>
         <extracomment>%1 will be the column number of a percussion panel pad</extracomment>
         <translation>%1열</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/PercussionPanelPad.qml" line="117"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/PercussionPanelPad.qml" line="117"/>
         <source>Empty pad</source>
         <translation>빈 패드</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/PercussionPanelPad.qml" line="144"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/PercussionPanelPad.qml" line="144"/>
         <source>options</source>
         <translation>옵션</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/PercussionPanelToolBar.qml" line="74"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/PercussionPanelToolBar.qml" line="74"/>
         <source>Write</source>
         <translation>기보 모드</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/PercussionPanelToolBar.qml" line="141"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/PercussionPanelToolBar.qml" line="141"/>
         <source>Preview</source>
         <translation>미리보기</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/PercussionPanelToolBar.qml" line="202"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/percussionpanelmodel.cpp" line="190"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/PercussionPanelToolBar.qml" line="202"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/percussionpanelmodel.cpp" line="190"/>
         <source>Finish editing</source>
         <translation>편집 완료</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/PercussionPanelToolBar.qml" line="234"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/PercussionPanelToolBar.qml" line="234"/>
         <source>Layout</source>
         <translation>레이아웃</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/PercussionPanelToolBar.qml" line="255"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/PercussionPanelToolBar.qml" line="255"/>
         <source>Customize kit</source>
         <translation>드럼 키트 사용자 지정</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/PercussionPanel.qml" line="421"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/PercussionPanel.qml" line="421"/>
         <source>Add row</source>
         <translation>행 추가</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/PercussionPanel.qml" line="443"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/PercussionPanel.qml" line="443"/>
         <source>Select an unpitched percussion staff to see available sounds</source>
         <translation>사용 가능한 사운드를 확인하려면 무선율 퍼커션 보표 선택</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/PercussionPanelPadSwapDialog.qml" line="120"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/PercussionPanelPadSwapDialog.qml" line="120"/>
         <source>Do you also want to move the MIDI notes and keyboard shortcuts that trigger these sounds?</source>
         <translation>해당 사운드에 할당된 MIDI 음표와 단축키도 함께 이동하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/PercussionPanelPadSwapDialog.qml" line="132"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/PercussionPanelPadSwapDialog.qml" line="132"/>
         <source>Move MIDI notes and keyboard shortcuts with their sounds</source>
         <translation>사운드와 함께 MIDI 음표 및 단축키 이동</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/PercussionPanelPadSwapDialog.qml" line="133"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/PercussionPanelPadSwapDialog.qml" line="133"/>
         <source>Leave MIDI notes and keyboard shortcuts fixed to original pad positions</source>
         <translation>MIDI 음표 및 단축키를 원래 패드 위치에 고정</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/PercussionPreferencesPage.qml" line="58"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/PercussionPreferencesPage.qml" line="58"/>
         <source>Triggering the percussion panel</source>
         <translation>퍼커션 패널 실행 조건</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/PercussionPreferencesPage.qml" line="70"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/PercussionPreferencesPage.qml" line="70"/>
         <source>Open the panel automatically</source>
         <translation>패널 자동 열기</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/PercussionPreferencesPage.qml" line="112"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/PercussionPreferencesPage.qml" line="112"/>
         <source>Close the panel automatically</source>
         <translation>패널 자동 닫기</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/PercussionPreferencesPage.qml" line="152"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/PercussionPreferencesPage.qml" line="152"/>
         <source>Use legacy percussion panel</source>
         <translation>이전 버전의 퍼커션 패널 사용</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/percussionpanelmodel.cpp" line="191"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/percussionpanelmodel.cpp" line="191"/>
         <source>Edit layout</source>
         <translation>레이아웃 편집</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/percussionpanelmodel.cpp" line="207"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/percussionpanelmodel.cpp" line="207"/>
         <source>Pad names</source>
         <translation>패드 이름</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/percussionpanelmodel.cpp" line="210"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/percussionpanelmodel.cpp" line="210"/>
         <source>Notation preview</source>
         <translation>기보 미리보기</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/percussionpanelmodel.cpp" line="215"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/percussionpanelmodel.cpp" line="215"/>
         <source>%1 columns</source>
         <translation>%1열</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/percussionpanelmodel.cpp" line="222"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/percussionpanelmodel.cpp" line="222"/>
         <source>Reset layout</source>
         <translation>레이아웃 재설정</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/percussionpanelpadmodel.cpp" line="98"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/percussionpanelpadmodel.cpp" line="98"/>
         <source>Delete pad</source>
         <translation>패드 삭제</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/percussionpreferencesmodel.cpp" line="61"/>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/percussionpreferencesmodel.cpp" line="142"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/percussionpreferencesmodel.cpp" line="61"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/percussionpreferencesmodel.cpp" line="142"/>
         <source>When an unpitched percussion staff is selected</source>
         <translation>무선율 퍼커션 보표를 선택했을 때</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/percussionpreferencesmodel.cpp" line="66"/>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/percussionpreferencesmodel.cpp" line="145"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/percussionpreferencesmodel.cpp" line="66"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/percussionpreferencesmodel.cpp" line="145"/>
         <source>When inputting notation on an unpitched percussion staff</source>
         <translation>무선율 퍼커션 보표에 기보를 입력할 때</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/percussionpreferencesmodel.cpp" line="71"/>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/percussionpreferencesmodel.cpp" line="148"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/percussionpreferencesmodel.cpp" line="71"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/percussionpreferencesmodel.cpp" line="148"/>
         <source>Never</source>
         <translation>안 함</translation>
     </message>
@@ -30453,37 +30453,37 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
 <context>
     <name>notation/staffvisibilitypopup</name>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/StaffVisibilityPopup.qml" line="59"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/StaffVisibilityPopup.qml" line="59"/>
         <source>Staff visibility popup</source>
         <translation>보표 가시성 팝업</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/StaffVisibilityPopup.qml" line="85"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/StaffVisibilityPopup.qml" line="85"/>
         <source>Hide empty staves</source>
         <translation>빈 보표 숨김</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/StaffVisibilityPopup.qml" line="93"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/StaffVisibilityPopup.qml" line="93"/>
         <source>System %1</source>
         <translation>제%1단</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/StaffVisibilityPopup.qml" line="104"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/StaffVisibilityPopup.qml" line="104"/>
         <source>Reset all</source>
         <translation>모두 재설정</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/staffvisibilitypopupmodel.cpp" line="299"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/staffvisibilitypopupmodel.cpp" line="299"/>
         <source>Reset all staff visibility</source>
         <translation>모든 보표 가시성 재설정</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/staffvisibilitypopupmodel.cpp" line="340"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/staffvisibilitypopupmodel.cpp" line="340"/>
         <source>Change part visibility: %1</source>
         <translation>파트 가시성 변경: %1</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/staffvisibilitypopupmodel.cpp" line="357"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/staffvisibilitypopupmodel.cpp" line="357"/>
         <source>Change staff visibility: %1</source>
         <translation>보표 가시성 변경: %1</translation>
     </message>
@@ -30617,7 +30617,7 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
 <context>
     <name>notation/undohistory</name>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/undohistorymodel.cpp" line="101"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/undohistorymodel.cpp" line="101"/>
         <source>File opened</source>
         <translation>파일 열림</translation>
     </message>
@@ -30673,233 +30673,233 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
 <context>
     <name>palette</name>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/DrumsetPanel.qml" line="66"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/DrumsetPanel.qml" line="66"/>
         <source>Customize kit</source>
         <translation>드럼 키트 사용자 지정</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/AddPalettesPopup.qml" line="67"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/AddPalettesPopup.qml" line="67"/>
         <source>More palettes</source>
         <translation>팔레트 더보기</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/AddPalettesPopup.qml" line="75"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/AddPalettesPopup.qml" line="75"/>
         <source>Create custom palette</source>
         <translation>사용자 지정 팔레트 만들기</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/AddPalettesPopup.qml" line="91"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/AddPalettesPopup.qml" line="91"/>
         <source>All palettes were added</source>
         <translation>모든 팔레트가 추가됨</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/AddPalettesPopup.qml" line="142"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/AddPalettesPopup.qml" line="142"/>
         <source>Add %1 palette</source>
         <translation>%1 팔레트 추가</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/AddPalettesPopup.qml" line="168"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/AddPalettesPopup.qml" line="168"/>
         <source>%1 added</source>
         <translation>%1 추가됨</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/AddPalettesPopup.qml" line="169"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/AddPalettesPopup.qml" line="169"/>
         <source>%1 removed</source>
         <translation>%1 제거됨</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/CreateCustomPalettePopup.qml" line="58"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/CreateCustomPalettePopup.qml" line="58"/>
         <source>Name your custom palette</source>
         <translation>사용자 지정 팔레트 이름 입력</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/CreateCustomPalettePopup.qml" line="101"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/CreateCustomPalettePopup.qml" line="101"/>
         <source>Create</source>
         <translation>만들기</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/MoreElementsPopup.qml" line="87"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/MoreElementsPopup.qml" line="87"/>
         <source>Add to %1</source>
         <translation>%1에 추가</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/MoreElementsPopup.qml" line="259"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/MoreElementsPopup.qml" line="259"/>
         <source>Custom</source>
         <translation>사용자 지정</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/MoreElementsPopup.qml" line="315"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/MoreElementsPopup.qml" line="315"/>
         <source>Drag items to the palette or directly on your score</source>
         <translation>항목을 팔레트나 악보 위로 직접 드래그합니다</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/PaletteGridView.qml" line="139"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/PaletteGridView.qml" line="139"/>
         <source>Drag and drop any element here</source>
         <translation>여기에 요소를 드래그 앤 드롭 합니다</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/PaletteGridView.qml" line="140"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/PaletteGridView.qml" line="140"/>
         <source>No elements</source>
         <translation>요소 없음</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/PaletteGridView.qml" line="195"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/PaletteGridView.qml" line="195"/>
         <source>More</source>
         <extracomment>Caption of a button to reveal more elements</extracomment>
         <translation>더보기</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/PaletteGridView.qml" line="493"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/PaletteGridView.qml" line="493"/>
         <location filename="../../src/palette/widgets/palettewidget.cpp" line="1127"/>
         <source>Delete</source>
         <translation>삭제</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/PaletteGridView.qml" line="494"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/PaletteGridView.qml" line="494"/>
         <location filename="../../src/palette/widgets/palettewidget.cpp" line="1128"/>
         <source>Properties…</source>
         <translation>속성…</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/PalettesPanelHeader.qml" line="121"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/PalettesPanelHeader.qml" line="121"/>
         <source>Add palettes</source>
         <translation>팔레트 추가</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/PalettesPanelHeader.qml" line="161"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/PalettesPanelHeader.qml" line="161"/>
         <source>Search palettes</source>
         <translation>팔레트 검색</translation>
     </message>
     <message numerus="yes">
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/PaletteTree.qml" line="552"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/PaletteTree.qml" line="552"/>
         <source>%1, contains %Ln matching element(s)</source>
         <translation><numerusform>%1, 일치하는 요소 %Ln개 포함</numerusform></translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/PaletteTree.qml" line="553"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/PaletteTree.qml" line="553"/>
         <source>%1 expanded</source>
         <comment>tree item not collapsed</comment>
         <translation>%1 펼쳐짐</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/PaletteTree.qml" line="673"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/PaletteTree.qml" line="673"/>
         <location filename="../../src/palette/internal/palettemodel.cpp" line="835"/>
         <source>Untitled palette</source>
         <translation>팔레트 제목 없음</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/TreePaletteHeader.qml" line="167"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/TreePaletteHeader.qml" line="167"/>
         <source>Hide/Delete palette</source>
         <translation>팔레트 숨김/삭제</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/TreePaletteHeader.qml" line="167"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/TreePaletteHeader.qml" line="167"/>
         <source>Hide palette</source>
         <translation>팔레트 숨김</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/TreePaletteHeader.qml" line="168"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/TreePaletteHeader.qml" line="168"/>
         <source>Insert new palette</source>
         <translation>새 팔레트 삽입</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/TreePaletteHeader.qml" line="170"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/TreePaletteHeader.qml" line="170"/>
         <source>Enable editing</source>
         <translation>편집 활성화</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/TreePaletteHeader.qml" line="172"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/TreePaletteHeader.qml" line="172"/>
         <source>Reset palette</source>
         <translation>팔레트 재설정</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/TreePaletteHeader.qml" line="173"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/TreePaletteHeader.qml" line="173"/>
         <source>Save palette…</source>
         <translation>팔레트 저장…</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/TreePaletteHeader.qml" line="174"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/TreePaletteHeader.qml" line="174"/>
         <source>Load palette…</source>
         <translation>팔레트 불러오기…</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/TreePaletteHeader.qml" line="176"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/TreePaletteHeader.qml" line="176"/>
         <source>Palette properties…</source>
         <translation>팔레트 속성…</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PaletteCellPropertiesDialog.qml" line="33"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PaletteCellPropertiesDialog.qml" line="33"/>
         <source>Palette cell properties</source>
         <translation>팔레트 칸 속성</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PaletteCellPropertiesDialog.qml" line="68"/>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PalettePropertiesDialog.qml" line="69"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PaletteCellPropertiesDialog.qml" line="68"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PalettePropertiesDialog.qml" line="69"/>
         <source>Name</source>
         <translation>이름</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PaletteCellPropertiesDialog.qml" line="87"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PaletteCellPropertiesDialog.qml" line="87"/>
         <source>Content offset</source>
         <translation>콘텐츠 오프셋</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PaletteCellPropertiesDialog.qml" line="99"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PaletteCellPropertiesDialog.qml" line="99"/>
         <source>X</source>
         <translation>X</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PaletteCellPropertiesDialog.qml" line="116"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PaletteCellPropertiesDialog.qml" line="116"/>
         <source>Y</source>
         <translation>Y</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PaletteCellPropertiesDialog.qml" line="132"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PaletteCellPropertiesDialog.qml" line="132"/>
         <source>Content scale</source>
         <translation>콘텐츠 배율</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PaletteCellPropertiesDialog.qml" line="149"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PaletteCellPropertiesDialog.qml" line="149"/>
         <source>Draw staff</source>
         <translation>보표 그리기</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PalettePropertiesDialog.qml" line="34"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PalettePropertiesDialog.qml" line="34"/>
         <source>Palette properties</source>
         <translation>팔레트 속성</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PalettePropertiesDialog.qml" line="88"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PalettePropertiesDialog.qml" line="88"/>
         <source>Cell size</source>
         <translation>칸 크기</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PalettePropertiesDialog.qml" line="100"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PalettePropertiesDialog.qml" line="100"/>
         <source>Width</source>
         <translation>너비</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PalettePropertiesDialog.qml" line="115"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PalettePropertiesDialog.qml" line="115"/>
         <source>Height</source>
         <translation>높이</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PalettePropertiesDialog.qml" line="130"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PalettePropertiesDialog.qml" line="130"/>
         <source>Element offset</source>
         <translation>요소 오프셋</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PalettePropertiesDialog.qml" line="146"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PalettePropertiesDialog.qml" line="146"/>
         <source>Scale</source>
         <translation>배율</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PalettePropertiesDialog.qml" line="163"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PalettePropertiesDialog.qml" line="163"/>
         <source>Show grid</source>
         <translation>격자 표시</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PalettesPanel.qml" line="114"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PalettesPanel.qml" line="114"/>
         <source>Start typing to search all palettes</source>
         <translation>검색어를 입력하여 모든 팔레트 검색</translation>
     </message>
@@ -31771,8 +31771,8 @@ failed.</source>
     <message>
         <location filename="../../src/palette/internal/paletteprovider.cpp" line="907"/>
         <location filename="../../src/palette/internal/paletteprovider.cpp" line="910"/>
-        <source>MuseScore Studio palette</source>
-        <translation>MuseScore Studio 팔레트</translation>
+        <source>DB Score palette</source>
+        <translation>DB Score 팔레트</translation>
     </message>
     <message>
         <location filename="../../src/palette/internal/paletteprovider.cpp" line="909"/>
@@ -31780,36 +31780,36 @@ failed.</source>
         <translation>팔레트 저장</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/palettespanelcontextmenumodel.cpp" line="67"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/palettespanelcontextmenumodel.cpp" line="67"/>
         <source>Single-click to open a palette</source>
         <translation>클릭 한 번으로 팔레트 열기</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/palettespanelcontextmenumodel.cpp" line="100"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/palettespanelcontextmenumodel.cpp" line="100"/>
         <source>Open only one palette at a time</source>
         <extracomment>This is the name of a setting that can be turned on or off. &quot;Open&quot; is a verb here.</extracomment>
         <translation>한 번에 하나의 팔레트만 열기</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/palettespanelcontextmenumodel.cpp" line="132"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/palettespanelcontextmenumodel.cpp" line="132"/>
         <source>Allow reordering palettes</source>
         <translation>팔레트 순서 변경 허용</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/palettespanelcontextmenumodel.cpp" line="164"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/palettespanelcontextmenumodel.cpp" line="164"/>
         <source>Expand all palettes</source>
         <translation>모든 팔레트 펼치기</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/palettespanelcontextmenumodel.cpp" line="165"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/palettespanelcontextmenumodel.cpp" line="165"/>
         <source>Collapse all palettes</source>
         <translation>모든 팔레트 접기</translation>
     </message>
     <message>
         <location filename="../../src/palette/widgets/customizekitdialog.cpp" line="602"/>
         <location filename="../../src/palette/widgets/customizekitdialog.cpp" line="653"/>
-        <source>MuseScore drumset file</source>
-        <translation>MuseScore 드럼셋 파일</translation>
+        <source>DB Score drumset file</source>
+        <translation>DB Score 드럼셋 파일</translation>
     </message>
     <message>
         <location filename="../../src/palette/widgets/customizekitdialog.cpp" line="604"/>
@@ -31823,8 +31823,8 @@ failed.</source>
     </message>
     <message>
         <location filename="../../src/palette/widgets/customizekitdialog.cpp" line="622"/>
-        <source>MuseScore Studio may not be able to load this drumset file.</source>
-        <translation>MuseScore Studio에서 이 드럼셋 파일을 불러오지 못할 수 있습니다.</translation>
+        <source>DB Score may not be able to load this drumset file.</source>
+        <translation>DB Score에서 이 드럼셋 파일을 불러오지 못할 수 있습니다.</translation>
     </message>
     <message>
         <location filename="../../src/palette/widgets/customizekitdialog.cpp" line="655"/>
@@ -33419,187 +33419,187 @@ failed: %2</source>
 <context>
     <name>playback</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="626"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="626"/>
         <source>This sound processes online</source>
         <translation>이 사운드는 온라인에서 처리됨</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="627"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="627"/>
         <source>Audio is processed in the background while you work. To trigger processing yourself, turn off automatic processing in Preferences &gt; Audio &amp; MIDI &gt; Online sounds.</source>
         <translation>작업 중에 오디오가 백그라운드에서 처리됩니다. 직접 처리를 실행하려면 설정 &gt; 오디오 및 MIDI &gt; 온라인 사운드에서 자동 처리를 끄세요.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="641"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/OnlineSoundsStatusView.qml" line="111"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/OnlineSoundsStatusView.qml" line="121"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="641"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/OnlineSoundsStatusView.qml" line="111"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/OnlineSoundsStatusView.qml" line="121"/>
         <source>Online sounds</source>
         <translation>온라인 사운드</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="642"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="642"/>
         <source>Click to manually process online sounds.</source>
         <translation>온라인 사운드를 수동으로 처리하려면 클릭합니다.</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/AudioResourceControl.qml" line="99"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/AuxSendControl.qml" line="91"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/AudioResourceControl.qml" line="99"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/AuxSendControl.qml" line="91"/>
         <source>Bypass</source>
         <translation>바이패스</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/AudioResourceControl.qml" line="261"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/AudioResourceControl.qml" line="261"/>
         <source>Menu</source>
         <translation>메뉴</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/MeasureAndBeatFields.qml" line="77"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/MeasureAndBeatFields.qml" line="77"/>
         <source>Measure</source>
         <comment>Measure number</comment>
         <translation>마디</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/MeasureAndBeatFields.qml" line="110"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/MeasureAndBeatFields.qml" line="110"/>
         <source>Beat</source>
         <comment>Beat number</comment>
         <translation>박</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/MixerAuxSendsSection.qml" line="33"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/MixerAuxSendsSection.qml" line="33"/>
         <source>Aux sends</source>
         <translation>Aux 센드</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/MixerBalanceSection.qml" line="33"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerpanelcontextmenumodel.cpp" line="47"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/MixerBalanceSection.qml" line="33"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerpanelcontextmenumodel.cpp" line="47"/>
         <source>Pan</source>
         <translation>팬</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/MixerFxSection.qml" line="36"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerpanelcontextmenumodel.cpp" line="46"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/MixerFxSection.qml" line="36"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerpanelcontextmenumodel.cpp" line="46"/>
         <source>Audio FX</source>
         <extracomment>FX is an abbreviation of &quot;effects&quot;.</extracomment>
         <translation>오디오 효과</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/MixerMuteAndSoloSection.qml" line="64"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/MixerMuteAndSoloSection.qml" line="64"/>
         <source>Mute</source>
         <translation>뮤트</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/MixerMuteAndSoloSection.qml" line="91"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/MixerMuteAndSoloSection.qml" line="91"/>
         <source>Solo</source>
         <translation>솔로</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/MixerSoundSection.qml" line="35"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerpanelcontextmenumodel.cpp" line="45"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/MixerSoundSection.qml" line="35"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerpanelcontextmenumodel.cpp" line="45"/>
         <source>Sound</source>
         <translation>사운드</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/MixerTitleSection.qml" line="34"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerpanelcontextmenumodel.cpp" line="51"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/MixerTitleSection.qml" line="34"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerpanelcontextmenumodel.cpp" line="51"/>
         <source>Name</source>
         <translation>이름</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/MixerVolumeSection.qml" line="33"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerpanelcontextmenumodel.cpp" line="48"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/MixerVolumeSection.qml" line="33"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerpanelcontextmenumodel.cpp" line="48"/>
         <source>Volume</source>
         <translation>음량</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/PlaybackSpeedPopup.qml" line="43"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/PlaybackSpeedPopup.qml" line="43"/>
         <source>Playback speed popup</source>
         <translation>플레이백 속도 팝업</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/PlaybackSpeedPopup.qml" line="52"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/PlaybackSpeedPopup.qml" line="70"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/PlaybackSpeedSlider.qml" line="45"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/PlaybackSpeedSlider.qml" line="64"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/PlaybackToolBarActions.qml" line="223"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/PlaybackSpeedPopup.qml" line="52"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/PlaybackSpeedPopup.qml" line="70"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/PlaybackSpeedSlider.qml" line="45"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/PlaybackSpeedSlider.qml" line="64"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/PlaybackToolBarActions.qml" line="223"/>
         <source>Speed</source>
         <translation>속도</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/SoundFlag/MuseSoundsParams.qml" line="57"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/SoundFlag/MuseSoundsParams.qml" line="57"/>
         <source>Modify sound</source>
         <translation>사운드 수정</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/SoundFlag/MuseSoundsParams.qml" line="84"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/SoundFlag/MuseSoundsParams.qml" line="84"/>
         <source>Playing techniques</source>
         <translation>연주 기법</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/SoundFlag/MuseSoundsParams.qml" line="110"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/SoundFlag/MuseSoundsParams.qml" line="110"/>
         <source>Sound flag options are not available for this sound.</source>
         <translation>이 사운드에는 사운드 플래그 옵션을 사용할 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/OnlineSoundsStatusView.qml" line="109"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/OnlineSoundsStatusView.qml" line="109"/>
         <source>Processing online sounds</source>
         <translation>온라인 사운드 처리 중</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/OnlineSoundsStatusView.qml" line="114"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/OnlineSoundsStatusView.qml" line="114"/>
         <source>Process online sounds</source>
         <translation>온라인 사운드 처리</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/OnlineSoundsStatusView.qml" line="117"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/OnlineSoundsStatusView.qml" line="117"/>
         <source>Online sounds processed</source>
         <translation>온라인 사운드 처리됨</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/PlaybackToolBar.qml" line="40"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/PlaybackToolBar.qml" line="40"/>
         <source>Playback toolbar</source>
         <translation>플레이백 도구 모음</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/SoundFlagPopup.qml" line="82"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/SoundFlagPopup.qml" line="82"/>
         <source>Sound flag settings</source>
         <translation>사운드 플래그 설정</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/SoundFlagPopup.qml" line="135"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/SoundFlagPopup.qml" line="135"/>
         <source>Sound flag menu</source>
         <translation>사운드 플래그 메뉴</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/SoundProfilesDialog.qml" line="35"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/SoundProfilesDialog.qml" line="35"/>
         <source>Playback setup</source>
         <translation>플레이백 설정</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/SoundProfilesDialog.qml" line="86"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/SoundProfilesDialog.qml" line="86"/>
         <source>Profiles</source>
         <translation>프로필</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/SoundProfilesDialog.qml" line="110"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/SoundProfilesDialog.qml" line="110"/>
         <source>Active</source>
         <translation>활성</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/SoundProfilesDialog.qml" line="111"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/SoundProfilesDialog.qml" line="111"/>
         <source>Inactive</source>
         <translation>비활성</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/SoundProfilesDialog.qml" line="203"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/SoundProfilesDialog.qml" line="203"/>
         <source>Settings</source>
         <translation>설정</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/SoundProfilesDialog.qml" line="211"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/SoundProfilesDialog.qml" line="211"/>
         <source>Set as default for new scores</source>
         <translation>새 악보의 기본값으로 지정</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/SoundProfilesDialog.qml" line="247"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/SoundProfilesDialog.qml" line="247"/>
         <source>Activate this profile</source>
         <translation>이 프로필 활성화</translation>
     </message>
@@ -33610,7 +33610,7 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/playback/internal/onlinesoundscontroller.cpp" line="186"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/onlinesoundsstatusmodel.cpp" line="117"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/onlinesoundsstatusmodel.cpp" line="117"/>
         <source>Some online sounds aren’t ready yet</source>
         <translation>일부 온라인 사운드가 아직 준비되지 않음</translation>
     </message>
@@ -33621,7 +33621,7 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/playback/internal/onlinesoundscontroller.cpp" line="227"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/onlinesoundsstatusmodel.cpp" line="119"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/onlinesoundsstatusmodel.cpp" line="119"/>
         <source>Unable to process online sounds</source>
         <translation>온라인 사운드를 처리할 수 없음</translation>
     </message>
@@ -33642,7 +33642,7 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/playback/internal/playbackcontroller.cpp" line="97"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerchannelitem.cpp" line="617"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerchannelitem.cpp" line="617"/>
         <source>Aux %1</source>
         <translation>Aux %1</translation>
     </message>
@@ -33662,138 +33662,138 @@ failed: %2</source>
         <translation>오디오 샘플 로드 중</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/inputresourceitem.cpp" line="117"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/inputresourceitem.cpp" line="117"/>
         <source>Get more sounds</source>
         <translation>추가 사운드 얻기</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/inputresourceitem.cpp" line="393"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/inputresourceitem.cpp" line="393"/>
         <source>SoundFonts</source>
         <translation>사운드폰트</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/inputresourceitem.cpp" line="436"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/inputresourceitem.cpp" line="436"/>
         <source>Bank %1, preset %2</source>
         <translation>뱅크 %1, 프리셋 %2</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/inputresourceitem.cpp" line="491"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/inputresourceitem.cpp" line="556"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/inputresourceitem.cpp" line="491"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/inputresourceitem.cpp" line="556"/>
         <source>Choose automatically</source>
         <translation>자동 선택</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/inputresourceitem.cpp" line="537"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/inputresourceitem.cpp" line="537"/>
         <source>Preset %1</source>
         <translation>프리셋 %1</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/inputresourceitem.cpp" line="547"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/inputresourceitem.cpp" line="547"/>
         <source>Bank %1</source>
         <translation>뱅크 %1</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerchannelitem.cpp" line="62"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerchannelitem.cpp" line="62"/>
         <source>Mixer channel panel %1</source>
         <translation>믹서 채널 패널 %1</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerchannelitem.cpp" line="683"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerchannelitem.cpp" line="683"/>
         <source>Change sound</source>
         <translation>사운드 변경</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerchannelitem.cpp" line="686"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerchannelitem.cpp" line="686"/>
         <source>Are you sure you want to change this sound?</source>
         <translation>사운드를 변경하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerchannelitem.cpp" line="687"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerchannelitem.cpp" line="687"/>
         <source>Sound flags on this instrument may be reset, but staff text will remain. This action can’t be undone.</source>
         <translation>악기의 사운드 플래그가 재설정될 수 있으나 보표 텍스트는 유지됩니다. 이 작업은 되돌릴 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerpanelcontextmenumodel.cpp" line="44"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerpanelcontextmenumodel.cpp" line="44"/>
         <source>Labels</source>
         <translation>레이블</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerpanelcontextmenumodel.cpp" line="49"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerpanelcontextmenumodel.cpp" line="49"/>
         <source>Fader</source>
         <translation>페이더</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerpanelcontextmenumodel.cpp" line="50"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerpanelcontextmenumodel.cpp" line="50"/>
         <source>Mute and solo</source>
         <translation>뮤트 및 솔로</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerpanelcontextmenumodel.cpp" line="170"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerpanelcontextmenumodel.cpp" line="170"/>
         <source>View</source>
         <translation>보기</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerpanelmodel.cpp" line="555"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerpanelmodel.cpp" line="555"/>
         <source>Master</source>
         <translation>마스터</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/onlinesoundsstatusmodel.cpp" line="47"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/onlinesoundsstatusmodel.cpp" line="47"/>
         <source>You’ve reached your current render limit for %1. You will be able to process online sounds again after your quota resets on %2.</source>
         <translation>%1에 대한 현재 렌더링 한도에 도달했습니다. %2에 할당량이 재설정된 후 온라인 사운드를 다시 처리할 수 있습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/onlinesoundsstatusmodel.cpp" line="132"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/onlinesoundsstatusmodel.cpp" line="132"/>
         <source>Please check your connection, and make sure MuseHub is running and you are logged in.</source>
         <translation>연결 상태를 확인하고, MuseHub가 실행 중인지 및 로그인되어 있는지 확인합니다.</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/outputresourceitem.cpp" line="17"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/outputresourceitem.cpp" line="17"/>
         <source>No effect</source>
         <translation>효과 없음</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/outputresourceitem.cpp" line="81"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/outputresourceitem.cpp" line="81"/>
         <source>Get more effects</source>
         <translation>효과 더 보기</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/soundflagsettingsmodel.cpp" line="74"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/soundflagsettingsmodel.cpp" line="74"/>
         <source>Ord. (default)</source>
         <translation>일반(기본값)</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/soundflagsettingsmodel.cpp" line="284"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/soundflagsettingsmodel.cpp" line="284"/>
         <source>Reset to default sound</source>
         <translation>기본 사운드로 재설정</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/soundflagsettingsmodel.cpp" line="296"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/soundflagsettingsmodel.cpp" line="296"/>
         <source>Allow multiple selection</source>
         <translation>다중 선택영역 허용</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/soundflagsettingsmodel.cpp" line="309"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/soundflagsettingsmodel.cpp" line="309"/>
         <source>Apply selection to all staves</source>
         <translation>모든 보표에 선택영역 사항 적용</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/soundflagsettingsmodel.cpp" line="393"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/soundflagsettingsmodel.cpp" line="393"/>
         <source>ordinary</source>
         <translation>일반(ordinary)</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/soundprofilesmodel.cpp" line="161"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/soundprofilesmodel.cpp" line="161"/>
         <source>Change sounds</source>
         <translation>사운드 변경</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/soundprofilesmodel.cpp" line="164"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/soundprofilesmodel.cpp" line="164"/>
         <source>Are you sure you want to change sounds?</source>
         <translation>사운드를 변경하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/soundprofilesmodel.cpp" line="165"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/soundprofilesmodel.cpp" line="165"/>
         <source>Sound flags may be reset, but staff text will remain. This action can’t be undone.</source>
         <translation>사운드 플래그가 재설정될 수 있으나 보표 텍스트는 유지됩니다. 이 작업은 되돌릴 수 없습니다.</translation>
     </message>
@@ -33801,954 +33801,954 @@ failed: %2</source>
 <context>
     <name>preferences</name>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/AdvancedPreferencesPage.qml" line="69"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/AdvancedPreferencesPage.qml" line="69"/>
         <source>Preference</source>
         <translation>설정 항목</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/AdvancedPreferencesPage.qml" line="71"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/AdvancedPreferencesPage.qml" line="71"/>
         <source>Value</source>
         <translation>값</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/AppearancePreferencesPage.qml" line="166"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/AppearancePreferencesPage.qml" line="166"/>
         <source>Background</source>
         <translation>배경</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/AppearancePreferencesPage.qml" line="167"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/AppearancePreferencesPage.qml" line="167"/>
         <source>Choose background wallpaper</source>
         <translation>배경 화면 선택</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/AccentColorsSection.qml" line="61"/>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/UiColorsSection.qml" line="47"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/AccentColorsSection.qml" line="61"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/UiColorsSection.qml" line="47"/>
         <source>Accent color</source>
         <translation>강조색</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/AdvancedTopSection.qml" line="44"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/AdvancedTopSection.qml" line="44"/>
         <source>Reset to default</source>
         <translation>기본값으로 재설정</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/AdvancedTopSection.qml" line="67"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/AdvancedTopSection.qml" line="67"/>
         <source>Search advanced</source>
         <extracomment>Search advanced preferences</extracomment>
         <translation>고급 검색</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/AudioApiSection.qml" line="29"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/AudioApiSection.qml" line="29"/>
         <source>Audio</source>
         <translation>오디오</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/AudioApiSection.qml" line="42"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/AudioApiSection.qml" line="42"/>
         <source>Audio driver</source>
         <translation>오디오 드라이버</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/AudioEngineSection.qml" line="31"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/AudioEngineSection.qml" line="31"/>
         <source>Audio engine</source>
         <translation>오디오 엔진</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/AudioEngineSection.qml" line="34"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/AudioEngineSection.qml" line="34"/>
         <source>Restart audio and MIDI devices</source>
         <translation>오디오 및 MIDI 장치 재시작</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/AutomaticUpdateSection.qml" line="30"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/AutomaticUpdateSection.qml" line="30"/>
         <source>Automatic update check</source>
         <translation>업데이트 자동 확인</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/AutomaticUpdateSection.qml" line="42"/>
-        <source>Check to see if a new version of MuseScore Studio is available</source>
-        <translation>MuseScore Studio의 새 버전 사용 가능 여부 확인</translation>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/AutomaticUpdateSection.qml" line="42"/>
+        <source>Check to see if a new version of DB Score is available</source>
+        <translation>DB Score의 새 버전 사용 가능 여부 확인</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/AutomaticUpdateSection.qml" line="58"/>
-        <source>Update checking requires network access. In order to protect your privacy, MuseScore Studio does not store any personal information. See our &lt;a href=&quot;%1&quot;&gt;privacy policy&lt;/a&gt; for more info.</source>
-        <translation>업데이트를 확인하려면 네트워크 액세스가 필요합니다. 개인 정보를 보호하기 위해 MuseScore Studio는 어떠한 개인 정보도 저장하지 않습니다. 자세한 내용은 &lt;a href=&quot;%1&quot;&gt;개인정보 처리방침&lt;/a&gt;을 참조합니다.</translation>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/AutomaticUpdateSection.qml" line="58"/>
+        <source>Update checking requires network access. In order to protect your privacy, DB Score does not store any personal information. See our &lt;a href=&quot;%1&quot;&gt;privacy policy&lt;/a&gt; for more info.</source>
+        <translation>업데이트를 확인하려면 네트워크 액세스가 필요합니다. 개인 정보를 보호하기 위해 DB Score는 어떠한 개인 정보도 저장하지 않습니다. 자세한 내용은 &lt;a href=&quot;%1&quot;&gt;개인정보 처리방침&lt;/a&gt;을 참조합니다.</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/AutoSaveSection.qml" line="30"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/AutoSaveSection.qml" line="30"/>
         <source>Auto save</source>
         <translation>자동 저장</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/AutoSaveSection.qml" line="49"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/AutoSaveSection.qml" line="49"/>
         <source>Auto save every</source>
         <translation>자동 저장 간격:</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/BrailleAdvancedSection.qml" line="29"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/BrailleAdvancedSection.qml" line="29"/>
         <source>Advanced options</source>
         <translation>고급 옵션</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/BrailleAdvancedSection.qml" line="41"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/BrailleAdvancedSection.qml" line="41"/>
         <source>Braille table for lyrics</source>
         <translation>가사용 점자표</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/BrailleAdvancedSection.qml" line="57"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/BrailleAdvancedSection.qml" line="57"/>
         <source>Interval direction</source>
         <translation>음정 방향</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/BrailleSection.qml" line="31"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/BrailleSection.qml" line="31"/>
         <source>Enable/disable</source>
         <translation>활성화/비활성화</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/BrailleSection.qml" line="40"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/BrailleSection.qml" line="40"/>
         <source>Show braille panel</source>
         <translation>점자 패널 표시</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/CharsetsSection.qml" line="29"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/CharsetsSection.qml" line="29"/>
         <source>Character set used when importing binary files</source>
         <translation>바이너리 파일을 가져올 때 사용되는 문자 인코딩</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/CharsetsSection.qml" line="37"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/CharsetsSection.qml" line="37"/>
         <source>Overture import character set</source>
         <translation>Overture 가져오기 문자 인코딩</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ColorAndWallpaperSection.qml" line="64"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ColorAndWallpaperSection.qml" line="64"/>
         <source>Color</source>
         <translation>색상</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ColorAndWallpaperSection.qml" line="97"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ColorAndWallpaperSection.qml" line="97"/>
         <source>Image</source>
         <translation>이미지</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/CommonAudioApiConfiguration.qml" line="53"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/CommonAudioApiConfiguration.qml" line="53"/>
         <source>Audio device</source>
         <translation>오디오 장치</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/CommonAudioApiConfiguration.qml" line="71"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/CommonAudioApiConfiguration.qml" line="71"/>
         <source>Buffer size</source>
         <translation>버퍼 크기</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/CommonAudioApiConfiguration.qml" line="89"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/CommonAudioApiConfiguration.qml" line="89"/>
         <source>Sample rate</source>
         <translation>샘플 레이트</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/DefaultStyleSection.qml" line="32"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/DefaultStyleSection.qml" line="32"/>
         <source>Default style</source>
         <translation>기본 스타일</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/DefaultStyleSection.qml" line="73"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/DefaultStyleSection.qml" line="73"/>
         <source>Style for parts</source>
         <translation>파트용 스타일</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/DefaultStyleSection.qml" line="80"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/DefaultStyleSection.qml" line="80"/>
         <source>Choose default style for parts</source>
         <translation>파트 기본 스타일 선택</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/DefaultStyleSection.qml" line="81"/>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/importpreferencesmodel.cpp" line="114"/>
-        <source>MuseScore style file</source>
-        <translation>MuseScore 스타일 파일</translation>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/DefaultStyleSection.qml" line="81"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/importpreferencesmodel.cpp" line="114"/>
+        <source>DB Score style file</source>
+        <translation>DB Score 스타일 파일</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/FoldersSection.qml" line="31"/>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="195"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/FoldersSection.qml" line="31"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="195"/>
         <source>Folders</source>
         <translation>폴더</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/FoldersSection.qml" line="86"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/FoldersSection.qml" line="86"/>
         <source>Rescan VST3 plugins</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/FFmpegSection.qml" line="30"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/FFmpegSection.qml" line="30"/>
         <source>Video converter</source>
         <translation>비디오 변환기</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/FFmpegSection.qml" line="43"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/FFmpegSection.qml" line="43"/>
         <source>FFmpeg library version:</source>
         <translation>FFmpeg 라이브러리 버전:</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/FFmpegSection.qml" line="45"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/FFmpegSection.qml" line="45"/>
         <source>FFmpeg library not found</source>
         <translation>FFmpeg 라이브러리를 찾을 수 없음</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/FFmpegSection.qml" line="60"/>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/FoldersSection.qml" line="63"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/FFmpegSection.qml" line="60"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/FoldersSection.qml" line="63"/>
         <source>Choose %1 folder</source>
         <translation>%1 폴더 선택</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/FFmpegSection.qml" line="63"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/FFmpegSection.qml" line="63"/>
         <source>Locate existing installation</source>
         <translation>기존 설치 위치 찾기</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/FFmpegSection.qml" line="81"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/FFmpegSection.qml" line="81"/>
         <source>Download FFmpeg</source>
         <translation>FFmpeg 다운로드</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ImportStyleSection.qml" line="30"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ImportStyleSection.qml" line="30"/>
         <source>Style used for import</source>
         <translation>가져오기에 사용할 스타일</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ImportStyleSection.qml" line="56"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ImportStyleSection.qml" line="56"/>
         <source>Built-in style</source>
         <translation>내장 스타일</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ImportStyleSection.qml" line="80"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ImportStyleSection.qml" line="80"/>
         <source>Use style file</source>
         <translation>스타일 파일 사용</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/KeyboardLayoutsSection.qml" line="31"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/KeyboardLayoutsSection.qml" line="31"/>
         <source>Keyboard layout</source>
         <translation>키보드 레이아웃</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/LanguagesSection.qml" line="31"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/LanguagesSection.qml" line="31"/>
         <source>Language</source>
         <translation>언어</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/LanguagesSection.qml" line="79"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/LanguagesSection.qml" line="79"/>
         <source>Check for language updates</source>
         <translation>언어 업데이트 확인</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/LanguagesSection.qml" line="92"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/LanguagesSection.qml" line="92"/>
         <source>Restart required</source>
         <translation>재시작 필요</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MeiSection.qml" line="30"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MeiSection.qml" line="30"/>
         <source>MEI</source>
-        <extracomment>MEI refers to a file format that can be imported and exported in MuseScore. It stands for Music Encoding Initiative.</extracomment>
+        <extracomment>MEI refers to a file format that can be imported and exported in DB Score. It stands for Music Encoding Initiative.</extracomment>
         <translation>MEI</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MeiSection.qml" line="40"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MeiSection.qml" line="40"/>
         <source>Import MEI layout</source>
         <translation>MEI 레이아웃 가져오기</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MidiDevicesSection.qml" line="42"/>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MidiSection.qml" line="29"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MidiDevicesSection.qml" line="42"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MidiSection.qml" line="29"/>
         <source>MIDI</source>
         <translation>MIDI</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MidiDevicesSection.qml" line="47"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MidiDevicesSection.qml" line="47"/>
         <source>MIDI input</source>
         <translation>MIDI 입력</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MidiDevicesSection.qml" line="63"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MidiDevicesSection.qml" line="63"/>
         <source>MIDI output</source>
         <translation>MIDI 출력</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MidiSection.qml" line="42"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MidiSection.qml" line="42"/>
         <source>Shortest note</source>
         <translation>가장 짧은 음표</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MiscellaneousSection.qml" line="30"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MiscellaneousSection.qml" line="30"/>
         <source>Miscellaneous</source>
         <translation>기타</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MiscellaneousSection.qml" line="39"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MiscellaneousSection.qml" line="39"/>
         <source>Proximity for selecting elements</source>
         <translation>요소 선택을 위한 근접도</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MixerSection.qml" line="30"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MixerSection.qml" line="30"/>
         <source>Mixer</source>
         <translation>믹서</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MixerSection.qml" line="41"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MixerSection.qml" line="41"/>
         <source>Toggle track mute by showing/hiding instruments in the Layout panel</source>
         <translation>레이아웃 패널에서 악기 표시/숨기기를 통해 트랙 뮤트 전환</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MnxSection.qml" line="30"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MnxSection.qml" line="30"/>
         <source>MNX</source>
         <translation>MNX</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MnxSection.qml" line="32"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MnxSection.qml" line="32"/>
         <source>Disabling this may cause errors. Try only for files that fail to import otherwise.</source>
         <translation>이 기능을 비활성화하면 오류가 발생할 수 있습니다. 다른 방법으로 가져오기에 실패한 파일에 대해서만 시도합니다.</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MnxSection.qml" line="42"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MnxSection.qml" line="42"/>
         <source>Require exact schema validation</source>
         <translation>정확한 스키마 검증 필요</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MusicXmlSection.qml" line="29"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MusicXmlSection.qml" line="29"/>
         <source>MusicXML</source>
         <translation>MusicXML</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MusicXmlSection.qml" line="45"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MusicXmlSection.qml" line="45"/>
         <source>Import layout</source>
         <translation>레이아웃 가져오기</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MusicXmlSection.qml" line="60"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MusicXmlSection.qml" line="60"/>
         <source>Import system and page breaks</source>
         <translation>줄 및 페이지 바꿈 가져오기</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MusicXmlSection.qml" line="75"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MusicXmlSection.qml" line="75"/>
         <source>Apply default typeface (Edwin) to imported scores</source>
         <translation>가져온 악보에 기본 글꼴(Edwin) 적용</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MusicXmlSection.qml" line="90"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MusicXmlSection.qml" line="90"/>
         <source>Infer text type based on content where possible</source>
         <translation>가능한 경우 내용을 기반으로 텍스트 유형 추론</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/FretboardDiagramsSection.qml" line="35"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/FretboardDiagramsSection.qml" line="35"/>
         <source>Fretboard diagrams</source>
         <translation>프렛보드 다이어그램</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/FretboardDiagramsSection.qml" line="41"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/FretboardDiagramsSection.qml" line="41"/>
         <source>Never autofill fretboard diagrams when changing chord symbols</source>
         <translation>코드 기호 변경 시 프렛보드 다이어그램 자동 채우기 안 함</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/MidiInputSection.qml" line="33"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/MidiInputSection.qml" line="33"/>
         <source>MIDI devices</source>
         <translation>MIDI 장치</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/MidiInputSection.qml" line="49"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/MidiInputSection.qml" line="49"/>
         <source>Enable MIDI input</source>
         <translation>MIDI 입력 활성화</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/MidiInputSection.qml" line="65"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/MidiInputSection.qml" line="65"/>
         <source>When pressing a key, begin note input at the selected measure, note, or rest</source>
         <translation>건반을 누르면 선택한 마디, 음표 또는 쉼표에서 음표 입력 시작</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/MidiInputSection.qml" line="80"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/MidiInputSection.qml" line="80"/>
         <source>Real-time input modes</source>
         <translation>실시간 입력 모드</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/MidiInputSection.qml" line="93"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/MidiInputSection.qml" line="93"/>
         <source>Advance to next note on key release</source>
         <translation>건반에서 손을 떼면 다음 음표로 이동</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/MidiInputSection.qml" line="110"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/MidiInputSection.qml" line="110"/>
         <source>Delay between notes</source>
         <translation>음표 간 지연 시간</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NoteColorsSection.qml" line="37"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NoteColorsSection.qml" line="37"/>
         <source>Note colors</source>
         <translation>음표 색상</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NoteColorsSection.qml" line="43"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NoteColorsSection.qml" line="43"/>
         <source>Color notes outside of usable pitch range</source>
         <translation>사용가능 피치 범위를 벗어난 음표에 색상 지정</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NoteColorsSection.qml" line="58"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NoteColorsSection.qml" line="58"/>
         <source>Color guitar bends and hammer-ons/pull-offs outside of playable range</source>
         <translation>연주 가능 범위를 벗어난 기타 벤딩 및 해머링 온/풀 오프에 색상 표시</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NoteInputSection.qml" line="33"/>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="169"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NoteInputSection.qml" line="33"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="169"/>
         <source>Note input</source>
         <translation>음표 입력</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NoteInputSection.qml" line="48"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NoteInputSection.qml" line="48"/>
         <source>Default input mode</source>
         <translation>기본 입력 모드</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NoteInputSection.qml" line="62"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NoteInputSection.qml" line="62"/>
         <source>Apply accidentals, augmentation dots, and articulations</source>
         <translation>임시표, 증가점 및 연주기호 적용</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NoteInputSection.qml" line="69"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NoteInputSection.qml" line="69"/>
         <source>To next note entered</source>
         <translation>다음에 입력할 음표에 적용</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NoteInputSection.qml" line="70"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NoteInputSection.qml" line="70"/>
         <source>To previous note entered</source>
         <translation>이전에 입력한 음표에 적용</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NoteInputSection.qml" line="81"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NoteInputSection.qml" line="81"/>
         <source>Input by duration mode cursor</source>
         <translation>음길이 입력 모드 커서</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NoteInputSection.qml" line="88"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NoteInputSection.qml" line="88"/>
         <source>Above staff</source>
         <translation>보표 위</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NoteInputSection.qml" line="89"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NoteInputSection.qml" line="89"/>
         <source>On staff</source>
         <translation>보표 위(선상)</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NotePreviewSection.qml" line="53"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NotePreviewSection.qml" line="53"/>
         <source>Note preview</source>
         <translation>음표 미리듣기</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NotePreviewSection.qml" line="59"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NotePreviewSection.qml" line="59"/>
         <source>Hear playback when adding, editing, and selecting notes</source>
         <translation>음표를 추가, 편집 및 선택할 때 소리 듣기</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NotePreviewSection.qml" line="73"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NotePreviewSection.qml" line="73"/>
         <source>Playback duration</source>
         <translation>플레이백 음길이</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NotePreviewSection.qml" line="96"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NotePreviewSection.qml" line="96"/>
         <source>Play chord when editing</source>
         <translation>편집 시 코드 재생</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NotePreviewSection.qml" line="113"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NotePreviewSection.qml" line="113"/>
         <source>Play chord symbols and Nashville numbers</source>
         <translation>코드 기호 및 내슈빌 숫자 재생</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NotePreviewSection.qml" line="130"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NotePreviewSection.qml" line="130"/>
         <source>Play when setting pitch (input by duration mode only)</source>
         <translation>피치 설정 시 재생(음길이 입력 모드 전용)</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NotePreviewSection.qml" line="147"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NotePreviewSection.qml" line="147"/>
         <source>Play preview notes with score dynamics</source>
         <translation>악보의 셈여림을 반영하여 음표 미리듣기 재생</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NotePreviewSection.qml" line="164"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NotePreviewSection.qml" line="164"/>
         <source>Play MIDI input</source>
         <translation>MIDI 입력 재생</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NotePreviewSection.qml" line="179"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NotePreviewSection.qml" line="179"/>
         <source>Play MIDI notes with velocity and duration during note input</source>
         <translation>음표 입력 시 벨로시티와 음길이를 반영하여 MIDI 음표 재생</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/VoiceAssignmentSection.qml" line="35"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/VoiceAssignmentSection.qml" line="35"/>
         <source>Voice assignment</source>
         <translation>성부 할당</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/VoiceAssignmentSection.qml" line="39"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/VoiceAssignmentSection.qml" line="39"/>
         <source>When entered, dynamics and hairpins should affect</source>
         <translation>입력 시 셈여림 및 헤어핀의 영향 범위</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/VoiceAssignmentSection.qml" line="46"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/VoiceAssignmentSection.qml" line="46"/>
         <source>All voices on the instrument</source>
         <translation>해당 악기의 모든 성부</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/VoiceAssignmentSection.qml" line="62"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/VoiceAssignmentSection.qml" line="62"/>
         <source>Only the voice they are applied to</source>
         <translation>적용된 해당 성부만</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/OnlineSoundsSection.qml" line="30"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/OnlineSoundsSection.qml" line="30"/>
         <source>Online sounds</source>
         <translation>온라인 사운드</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/OnlineSoundsSection.qml" line="52"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/OnlineSoundsSection.qml" line="52"/>
         <source>Show error dialog when online sounds cannot be processed</source>
         <translation>온라인 사운드 처리가 불가능할 때 오류 대화상자 표시</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/OnlineSoundsSection.qml" line="68"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/OnlineSoundsSection.qml" line="68"/>
         <source>Automatically process online sounds in the background</source>
         <translation>백그라운드에서 온라인 사운드 자동 처리</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/OnlineSoundsSection.qml" line="102"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/OnlineSoundsSection.qml" line="102"/>
         <source>To process online sounds, press ‘Process online sounds’ in the status bar at the bottom of the app window</source>
         <translation>온라인 사운드를 처리하려면 앱 창 하단 상태 표시줄의 &apos;온라인 사운드 처리&apos;를 누르세요.</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/OnlineSoundsSection.qml" line="113"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/OnlineSoundsSection.qml" line="113"/>
         <source>Show processing visualization</source>
         <translation>처리 과정 시각화 표시</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/OnlineSoundsSection.qml" line="123"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/OnlineSoundsSection.qml" line="123"/>
         <source>Always</source>
         <translation>항상</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/OnlineSoundsSection.qml" line="126"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/OnlineSoundsSection.qml" line="126"/>
         <source>Only if processing is unfinished during playback</source>
         <translation>플레이백 중 처리가 완료되지 않은 경우에만</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/OnlineSoundsSection.qml" line="129"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/OnlineSoundsSection.qml" line="129"/>
         <source>Never</source>
         <translation>안 함</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/PageSection.qml" line="31"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PageSection.qml" line="31"/>
         <source>Page</source>
         <translation>페이지</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/PageSection.qml" line="56"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PageSection.qml" line="56"/>
         <source>Invert score colors</source>
         <translation>악보 색상 반전</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/PageSection.qml" line="74"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PageSection.qml" line="74"/>
         <source>Only invert colors in dark theme</source>
         <translation>다크 테마에서만 색상 반전</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/PageSection.qml" line="93"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PageSection.qml" line="93"/>
         <source>Choose notepaper</source>
         <translation>악보 용지 이미지 선택</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/PreferencesButtonsPanel.qml" line="50"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PreferencesButtonsPanel.qml" line="50"/>
         <source>Reset preferences</source>
         <translation>모든 설정 재설정</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ProgramStartSection.qml" line="31"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ProgramStartSection.qml" line="31"/>
         <source>Program start</source>
         <translation>프로그램 시작</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ProgramStartSection.qml" line="88"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ProgramStartSection.qml" line="88"/>
         <source>Choose starting score</source>
         <translation>시작 악보 선택</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/PublishMuseScoreComSection.qml" line="30"/>
-        <source>Publish to MuseScore.com</source>
-        <translation>MuseScore.com에 게시</translation>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PublishDB ScoreComSection.qml" line="30"/>
+        <source>Publish to drumbearai.com</source>
+        <translation>drumbearai.com에 게시</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/PublishMuseScoreComSection.qml" line="41"/>
-        <source>Always prompt to share on Audio.com after publishing to MuseScore.com</source>
-        <translation>MuseScore.com에 게시 후 항상 Audio.com 공유 여부 묻기</translation>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PublishDB ScoreComSection.qml" line="41"/>
+        <source>Always prompt to share on Audio.com after publishing to drumbearai.com</source>
+        <translation>drumbearai.com에 게시 후 항상 Audio.com 공유 여부 묻기</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/RemoteControlSection.qml" line="31"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/RemoteControlSection.qml" line="31"/>
         <source>OSC remote control</source>
         <translation>OSC 원격 제어</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/RemoteControlSection.qml" line="50"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/RemoteControlSection.qml" line="50"/>
         <source>Port number:</source>
         <translation>포트 번호:</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/SaveToCloudSection.qml" line="31"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/SaveToCloudSection.qml" line="31"/>
         <source>Save to cloud</source>
         <translation>클라우드에 저장</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/SaveToCloudSection.qml" line="41"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/SaveToCloudSection.qml" line="41"/>
         <source>Generate MP3 audio for private cloud scores</source>
         <translation>비공개 클라우드 악보용 MP3 오디오 생성</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ScrollPagesSection.qml" line="32"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ScrollPagesSection.qml" line="32"/>
         <source>Scroll pages</source>
         <translation>페이지 스크롤</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ScrollPagesSection.qml" line="50"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ScrollPagesSection.qml" line="50"/>
         <source>Horizontal</source>
         <translation>가로</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ScrollPagesSection.qml" line="51"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ScrollPagesSection.qml" line="51"/>
         <source>Vertical</source>
         <translation>세로</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ScrollPagesSection.qml" line="85"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ScrollPagesSection.qml" line="85"/>
         <source>Limit scroll area to page borders</source>
         <translation>스크롤 영역을 페이지 경계로 제한</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ThemeAdditionalOptionsSection.qml" line="32"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ThemeAdditionalOptionsSection.qml" line="32"/>
         <source>Reset appearance to default</source>
         <translation>기본값으로 모양새 재설정</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ThemesSection.qml" line="30"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ThemesSection.qml" line="30"/>
         <source>High-contrast theme</source>
         <translation>고대비 테마</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ThemesSection.qml" line="30"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ThemesSection.qml" line="30"/>
         <source>Theme</source>
         <translation>테마</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ThemesSection.qml" line="76"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ThemesSection.qml" line="76"/>
         <source>Follow system theme</source>
         <translation>단 테마 따르기</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ThemesSection.qml" line="91"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ThemesSection.qml" line="91"/>
         <source>Enable high-contrast</source>
         <translation>고대비 모드 활성화</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/UiColorsSection.qml" line="32"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/UiColorsSection.qml" line="32"/>
         <source>UI colors</source>
         <translation>UI 색상</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/UiColorsSection.qml" line="48"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/UiColorsSection.qml" line="48"/>
         <source>Text and icons</source>
         <translation>텍스트 및 아이콘</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/UiColorsSection.qml" line="49"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/UiColorsSection.qml" line="49"/>
         <source>Disabled text</source>
         <translation>비활성화된 텍스트</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/UiColorsSection.qml" line="50"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/UiColorsSection.qml" line="50"/>
         <source>Border color</source>
         <translation>테두리 색상</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/UiFontSection.qml" line="29"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/UiFontSection.qml" line="29"/>
         <source>App text</source>
         <translation>앱 텍스트</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/UiFontSection.qml" line="42"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/UiFontSection.qml" line="42"/>
         <source>Typeface</source>
         <translation>서체</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/UiFontSection.qml" line="57"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/UiFontSection.qml" line="57"/>
         <source>Body text size</source>
         <translation>본문 텍스트 크기</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/WelcomeDialogSection.qml" line="32"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/WelcomeDialogSection.qml" line="32"/>
         <source>Welcome screen</source>
         <translation>시작 화면</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/WelcomeDialogSection.qml" line="43"/>
-        <source>Show welcome screen when MuseScore Studio launches</source>
-        <translation>MuseScore Studio를 실행할 때 시작 화면 표시</translation>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/WelcomeDialogSection.qml" line="43"/>
+        <source>Show welcome screen when DB Score launches</source>
+        <translation>DB Score를 실행할 때 시작 화면 표시</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ZoomSection.qml" line="30"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ZoomSection.qml" line="30"/>
         <source>Zoom</source>
         <translation>확대/축소</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ZoomSection.qml" line="48"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ZoomSection.qml" line="48"/>
         <source>Default zoom</source>
         <translation>기본 확대/축소 배율</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ZoomSection.qml" line="94"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ZoomSection.qml" line="94"/>
         <source>Mouse zoom precision</source>
         <translation>마우스 확대/축소 정밀도</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/PercussionPreferencesPage.qml" line="144"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/PercussionPreferencesPage.qml" line="144"/>
         <source>Legacy panel</source>
         <translation>레거시 패널</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/PreferencesDialog.qml" line="34"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/PreferencesDialog.qml" line="34"/>
         <source>Preferences</source>
         <translation>환경 설정</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/appearancepreferencesmodel.cpp" line="172"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/appearancepreferencesmodel.cpp" line="172"/>
         <source>Images</source>
         <translation>이미지</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/appearancepreferencesmodel.cpp" line="173"/>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/generalpreferencesmodel.cpp" line="249"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/appearancepreferencesmodel.cpp" line="173"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/generalpreferencesmodel.cpp" line="249"/>
         <source>All</source>
         <translation>모두</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/braillepreferencesmodel.cpp" line="77"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/braillepreferencesmodel.cpp" line="77"/>
         <source>Auto</source>
         <extracomment>Braille chord interval direction: automatic (based on clef)</extracomment>
         <translation>자동</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/braillepreferencesmodel.cpp" line="82"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/braillepreferencesmodel.cpp" line="82"/>
         <source>Up</source>
         <extracomment>Braille chord interval direction: up (ascending)</extracomment>
         <translation>위로</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/braillepreferencesmodel.cpp" line="87"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/braillepreferencesmodel.cpp" line="87"/>
         <source>Down</source>
         <extracomment>Braille chord interval direction: down (descending)</extracomment>
         <translation>아래로</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/folderspreferencesmodel.cpp" line="100"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/folderspreferencesmodel.cpp" line="100"/>
         <source>Scores</source>
         <translation>악보</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/folderspreferencesmodel.cpp" line="104"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/folderspreferencesmodel.cpp" line="104"/>
         <source>Styles</source>
         <translation>스타일</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/folderspreferencesmodel.cpp" line="108"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/folderspreferencesmodel.cpp" line="108"/>
         <source>Instruments and score orders</source>
         <translation>악기 및 악보 정렬 방식</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/folderspreferencesmodel.cpp" line="113"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/folderspreferencesmodel.cpp" line="113"/>
         <source>Templates</source>
         <translation>템플릿</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/folderspreferencesmodel.cpp" line="117"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/folderspreferencesmodel.cpp" line="117"/>
         <source>Plugins</source>
         <translation>플러그인</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/folderspreferencesmodel.cpp" line="121"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/folderspreferencesmodel.cpp" line="121"/>
         <source>SoundFonts</source>
         <translation>사운드폰트</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/folderspreferencesmodel.cpp" line="126"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/folderspreferencesmodel.cpp" line="126"/>
         <source>Musical symbol fonts</source>
         <translation>음악 기호 글꼴</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/folderspreferencesmodel.cpp" line="132"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/folderspreferencesmodel.cpp" line="132"/>
         <source>VST3</source>
         <translation>VST3</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/generalpreferencesmodel.cpp" line="78"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/generalpreferencesmodel.cpp" line="78"/>
         <source>Your version of %1 is up to date.</source>
         <translation>%1 최신 버전을 사용 중입니다.</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/generalpreferencesmodel.cpp" line="111"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/generalpreferencesmodel.cpp" line="111"/>
         <source>System default</source>
         <translation>단 기본값</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/generalpreferencesmodel.cpp" line="192"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/generalpreferencesmodel.cpp" line="192"/>
         <source>Start empty</source>
         <translation>빈 화면으로 시작</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/generalpreferencesmodel.cpp" line="196"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/generalpreferencesmodel.cpp" line="196"/>
         <source>Continue last session</source>
         <translation>마지막 세션 이어하기</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/generalpreferencesmodel.cpp" line="200"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/generalpreferencesmodel.cpp" line="200"/>
         <source>Start with new score</source>
         <translation>새 악보 만들기 화면으로 시작</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/generalpreferencesmodel.cpp" line="204"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/generalpreferencesmodel.cpp" line="204"/>
         <source>Start with score</source>
         <translation>특정 악보로 시작</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/generalpreferencesmodel.cpp" line="248"/>
-        <source>MuseScore file</source>
-        <translation>MuseScore 파일</translation>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/generalpreferencesmodel.cpp" line="248"/>
+        <source>DB Score file</source>
+        <translation>DB Score 파일</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/importpreferencesmodel.cpp" line="98"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/importpreferencesmodel.cpp" line="98"/>
         <source>Quarter</source>
         <translation>4분음표</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/importpreferencesmodel.cpp" line="99"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/importpreferencesmodel.cpp" line="99"/>
         <source>Eighth</source>
         <translation>8분음표</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/importpreferencesmodel.cpp" line="100"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/importpreferencesmodel.cpp" line="100"/>
         <source>16th</source>
         <translation>16분음표</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/importpreferencesmodel.cpp" line="101"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/importpreferencesmodel.cpp" line="101"/>
         <source>32nd</source>
         <translation>32분음표</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/importpreferencesmodel.cpp" line="102"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/importpreferencesmodel.cpp" line="102"/>
         <source>64th</source>
         <translation>64분음표</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/importpreferencesmodel.cpp" line="103"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/importpreferencesmodel.cpp" line="103"/>
         <source>128th</source>
         <translation>128분음표</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/importpreferencesmodel.cpp" line="104"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/importpreferencesmodel.cpp" line="104"/>
         <source>256th</source>
         <translation>256분음표</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/importpreferencesmodel.cpp" line="105"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/importpreferencesmodel.cpp" line="105"/>
         <source>512th</source>
         <translation>512분음표</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/importpreferencesmodel.cpp" line="106"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/importpreferencesmodel.cpp" line="106"/>
         <source>1024th</source>
         <translation>1024분음표</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/importpreferencesmodel.cpp" line="119"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/importpreferencesmodel.cpp" line="119"/>
         <source>Choose default style for imports</source>
         <translation>가져오기용 기본 스타일 선택</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="157"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="157"/>
         <source>General</source>
         <translation>일반</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="160"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="160"/>
         <source>Appearance</source>
         <translation>모양새</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="163"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="163"/>
         <source>Canvas</source>
         <translation>캔버스</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="166"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="166"/>
         <source>Save &amp; publish</source>
         <translation>저장 및 게시</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="172"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="172"/>
         <source>Score</source>
         <translation>악보</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="175"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="175"/>
         <source>Audio &amp; MIDI</source>
         <translation>오디오 및 MIDI</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="179"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="179"/>
         <source>MIDI mappings</source>
         <translation>MIDI 매핑</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="183"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="183"/>
         <source>Video</source>
         <translation>비디오</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="186"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="186"/>
         <source>Percussion</source>
         <translation>퍼커션</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="189"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="189"/>
         <source>Import</source>
         <translation>가져오기</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="192"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="192"/>
         <source>Shortcuts</source>
         <translation>단축키</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="198"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="198"/>
         <source>Advanced</source>
         <translation>고급</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="201"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="201"/>
         <source>Braille</source>
         <translation>점자</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/audiomidipreferencesmodel.cpp" line="64"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/audiomidipreferencesmodel.cpp" line="64"/>
         <source>No audio devices available</source>
         <translation>사용 가능한 오디오 장치 없음</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/audiomidipreferencesmodel.cpp" line="65"/>
-        <source>The selected audio driver does not have any available audio devices. MuseScore Studio will use the default audio driver instead. To use %1, ensure your hardware is set up correctly, then restart MuseScore Studio and try again.</source>
-        <translation>선택한 오디오 드라이버에 사용 가능한 오디오 장치가 없습니다. MuseScore Studio는 기본 오디오 드라이버를 사용합니다. %1을 사용하려면 하드웨어 설정이 올바른지 확인한 후 MuseScore Studio를 다시 시작하고 다시 시도하십시오.</translation>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/audiomidipreferencesmodel.cpp" line="65"/>
+        <source>The selected audio driver does not have any available audio devices. DB Score will use the default audio driver instead. To use %1, ensure your hardware is set up correctly, then restart DB Score and try again.</source>
+        <translation>선택한 오디오 드라이버에 사용 가능한 오디오 장치가 없습니다. DB Score는 기본 오디오 드라이버를 사용합니다. %1을 사용하려면 하드웨어 설정이 올바른지 확인한 후 DB Score를 다시 시작하고 다시 시도하십시오.</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/PlaybackQualitySection.qml" line="30"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PlaybackQualitySection.qml" line="30"/>
         <source>Playback quality</source>
         <translation>재생 품질</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/PlaybackQualitySection.qml" line="41"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PlaybackQualitySection.qml" line="41"/>
         <source>Use warmer instrument sound (MS Basic/SoundFont only)</source>
         <translation type="unfinished"/>
     </message>
@@ -34756,19 +34756,19 @@ failed: %2</source>
 <context>
     <name>preferences/score</name>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/DefaultStyleSection.qml" line="47"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/DefaultStyleSection.qml" line="47"/>
         <source>Style for full score</source>
         <translation>전체 악보용 스타일</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/DefaultStyleSection.qml" line="54"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/DefaultStyleSection.qml" line="54"/>
         <source>Choose default style for full score</source>
         <translation>악보 기본 스타일 선택</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/DefaultStyleSection.qml" line="55"/>
-        <source>MuseScore style file</source>
-        <translation>MuseScore 스타일 파일</translation>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/DefaultStyleSection.qml" line="55"/>
+        <source>DB Score style file</source>
+        <translation>DB Score 스타일 파일</translation>
     </message>
 </context>
 <context>
@@ -34780,8 +34780,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="130"/>
-        <source>Scores will appear here when you save a file to the cloud, or publish a score on &lt;a href=&quot;%1&quot;&gt;MuseScore.com&lt;/a&gt;.</source>
-        <translation>파일을 클라우드에 저장하거나 &lt;a href=&quot;%1&quot;&gt;MuseScore.com&lt;/a&gt;에 악보를 게시하면 여기에 표시됩니다.</translation>
+        <source>Scores will appear here when you save a file to the cloud, or publish a score on &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;.</source>
+        <translation>파일을 클라우드에 저장하거나 &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;에 악보를 게시하면 여기에 표시됩니다.</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="154"/>
@@ -34790,8 +34790,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="155"/>
-        <source>Log in or create a new account on &lt;a href=&quot;%1&quot;&gt;MuseScore.com&lt;/a&gt; to view online scores.</source>
-        <translation>온라인 악보를 보려면 &lt;a href=&quot;%1&quot;&gt;MuseScore.com&lt;/a&gt;에 로그인하거나 새 계정을 만드세요.</translation>
+        <source>Log in or create a new account on &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; to view online scores.</source>
+        <translation>온라인 악보를 보려면 &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;에 로그인하거나 새 계정을 만드세요.</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="218"/>
@@ -34810,7 +34810,7 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="171"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/RecentScoresView.qml" line="106"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ScoresPage/RecentScoresView.qml" line="106"/>
         <source>Modified</source>
         <extracomment>Stands for &quot;Last time that this score was modified&quot;. Used as the header of this column in the scores list.</extracomment>
         <translation>수정 날짜</translation>
@@ -34819,202 +34819,202 @@ failed: %2</source>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="252"/>
         <source>Views</source>
         <comment>number of views</comment>
-        <extracomment>Stands for &quot;The number of times this score was viewed on MuseScore.com&quot;. Used as the header of this column in the scores list.</extracomment>
+        <extracomment>Stands for &quot;The number of times this score was viewed on drumbearai.com&quot;. Used as the header of this column in the scores list.</extracomment>
         <translation>조회수</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/GeneralInfoView.qml" line="69"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/GeneralInfoView.qml" line="69"/>
         <source>Title</source>
         <translation>제목</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/GeneralInfoView.qml" line="71"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/GeneralInfoView.qml" line="71"/>
         <location filename="../../src/project/internal/notationproject.cpp" line="88"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="200"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="200"/>
         <source>Untitled score</source>
         <translation>악보 제목 없음</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/GeneralInfoView.qml" line="83"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="59"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/GeneralInfoView.qml" line="83"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="59"/>
         <source>Composer</source>
         <translation>작곡가</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/GeneralInfoView.qml" line="85"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/GeneralInfoView.qml" line="85"/>
         <source>Composer / arranger</source>
         <translation>작곡가 / 편곡가</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/GeneralInfoView.qml" line="109"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="58"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/GeneralInfoView.qml" line="109"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="58"/>
         <source>Subtitle</source>
         <translation>부제</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/GeneralInfoView.qml" line="122"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="61"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/GeneralInfoView.qml" line="122"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="61"/>
         <source>Lyricist</source>
         <translation>작사자</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/GeneralInfoView.qml" line="138"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="63"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/GeneralInfoView.qml" line="138"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="63"/>
         <source>Copyright</source>
         <extracomment>The caption of a field to specify copyright information</extracomment>
         <translation>저작권</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/CloudScoreIndicatorButton.qml" line="44"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ScoresPage/CloudScoreIndicatorButton.qml" line="44"/>
         <source>Stop download</source>
         <translation>다운로드 중단</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/CloudScoreIndicatorButton.qml" line="44"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ScoresPage/CloudScoreIndicatorButton.qml" line="44"/>
         <source>Download score</source>
         <translation>악보 다운로드</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/RecentScoresView.qml" line="59"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ScoresPage/RecentScoresView.qml" line="59"/>
         <source>Recent scores grid</source>
         <translation>최근 악보 격자</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/RecentScoresView.qml" line="90"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ScoresPage/RecentScoresView.qml" line="90"/>
         <source>Recent scores list</source>
         <translation>최근 악보 목록</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/NewScoreDialog.qml" line="34"/>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresListView.qml" line="105"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/recentscoresmodel.cpp" line="68"/>
+        <location filename="../../src/project/qml/DB Score/Project/NewScoreDialog.qml" line="34"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresListView.qml" line="105"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ScoresPage/recentscoresmodel.cpp" line="68"/>
         <source>New score</source>
         <translation>새로운 악보</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ProjectPropertiesDialog.qml" line="112"/>
+        <location filename="../../src/project/qml/DB Score/Project/ProjectPropertiesDialog.qml" line="112"/>
         <source>New property</source>
         <translation>새 속성</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ProjectUploadedDialog.qml" line="120"/>
+        <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="120"/>
         <source>All saved changes will now update to the cloud</source>
         <translation>저장된 모든 변경 사항이 이제 클라우드에 업데이트됩니다</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ProjectUploadedDialog.qml" line="162"/>
-        <source>Publish your finished scores on MuseScore.com</source>
-        <translation>완성된 악보를 MuseScore.com에 게시합니다</translation>
+        <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="162"/>
+        <source>Publish your finished scores on drumbearai.com</source>
+        <translation>완성된 악보를 drumbearai.com에 게시합니다</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ProjectUploadedDialog.qml" line="187"/>
+        <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="187"/>
         <source>Create a portfolio to showcase your music</source>
         <translation>자신의 음악을 선보일 포트폴리오를 만들어 보세요</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ProjectUploadedDialog.qml" line="188"/>
+        <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="188"/>
         <source>Gain followers and receive score comments and ratings</source>
         <translation>팔로워를 늘리고 악보에 대한 댓글과 평점을 받아보세요</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ProjectUploadedDialog.qml" line="189"/>
+        <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="189"/>
         <source>Share your projects and collaborate with other musicians</source>
         <translation>프로젝트를 공유하고 다른 뮤지션들과 협업해 보세요</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ProjectUploadedDialog.qml" line="223"/>
+        <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="223"/>
         <source>Watch video</source>
         <translation>영상 보기</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ProjectUploadedDialog.qml" line="251"/>
+        <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="251"/>
         <source>View score online</source>
         <translation>온라인으로 악보 보기</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresGridView.qml" line="85"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresGridView.qml" line="85"/>
         <source>Scores grid</source>
         <translation>악보 격자</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresListView.qml" line="79"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresListView.qml" line="79"/>
         <source>Scores list</source>
         <translation>악보 목록</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresListView.qml" line="150"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresListView.qml" line="150"/>
         <source>Name</source>
         <translation>이름</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="88"/>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="95"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="88"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="95"/>
         <source>Scores</source>
         <translation>악보</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="108"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="108"/>
         <source>Search recent scores</source>
         <translation>최근 악보 검색</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="143"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="143"/>
         <source>Scores tab bar</source>
         <translation>악보 탭 표시줄</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="154"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="154"/>
         <source>New &amp; recent</source>
         <translation>최근 항목</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="162"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="162"/>
         <source>My online scores</source>
         <translation>내 온라인 악보</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="177"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="177"/>
         <source>View buttons</source>
         <translation>보기 버튼</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="189"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="189"/>
         <source>Refresh</source>
         <translation>새로고침</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="201"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="201"/>
         <source>Grid view</source>
         <translation>격자 보기</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="202"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="202"/>
         <source>List view</source>
         <translation>목록 보기</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="322"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="322"/>
         <source>Scores actions</source>
         <extracomment>accessibility name for the panel at the bottom of the &quot;Scores&quot; page</extracomment>
         <translation>악보 작업</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="335"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="335"/>
         <source>Score manager (online)</source>
         <translation>악보 관리자 (온라인)</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="354"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="354"/>
         <source>New</source>
         <translation>새로 만들기</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="366"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="366"/>
         <source>Open other…</source>
         <translation>다른 악보 열기…</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/UploadProgressDialog.qml" line="48"/>
+        <location filename="../../src/project/qml/DB Score/Project/UploadProgressDialog.qml" line="48"/>
         <source>Saving online…</source>
         <translation>온라인으로 저장 중…</translation>
     </message>
@@ -35036,18 +35036,18 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="2361"/>
-        <source>This file contains errors that could cause MuseScore Studio to malfunction. Please fix those at the earliest, to prevent crashes and further corruptions.</source>
-        <translation>이 파일에는 MuseScore Studio의 오작동을 일으킬 수 있는 오류가 포함되어 있습니다. 충돌 및 추가 파일 손상을 방지하려면 가능한 한 빨리 오류를 수정합니다.</translation>
+        <source>This file contains errors that could cause DB Score to malfunction. Please fix those at the earliest, to prevent crashes and further corruptions.</source>
+        <translation>이 파일에는 DB Score의 오작동을 일으킬 수 있는 오류가 포함되어 있습니다. 충돌 및 추가 파일 손상을 방지하려면 가능한 한 빨리 오류를 수정합니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="107"/>
-        <source>MuseScore file</source>
-        <translation>MuseScore 파일</translation>
+        <source>DB Score file</source>
+        <translation>DB Score 파일</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="108"/>
-        <source>Uncompressed MuseScore folder (experimental)</source>
-        <translation>압축되지 않은 MuseScore 폴더 (실험적 기능)</translation>
+        <source>Uncompressed DB Score folder (experimental)</source>
+        <translation>압축되지 않은 DB Score 폴더 (실험적 기능)</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="485"/>
@@ -35077,8 +35077,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1534"/>
-        <source>This score has become corrupted and contains errors. You can fix the errors manually, or save the score to your computer and get help for this issue on MuseScore.org.</source>
-        <translation>이 악보가 손상되어 오류가 발생했습니다. 오류를 수동으로 수정하거나, 악보를 컴퓨터에 저장한 후 MuseScore.org에서 이 문제에 대한 도움을 받으실 수 있습니다.</translation>
+        <source>This score has become corrupted and contains errors. You can fix the errors manually, or save the score to your computer and get help for this issue on drumbearai.com.</source>
+        <translation>이 악보가 손상되어 오류가 발생했습니다. 오류를 수동으로 수정하거나, 악보를 컴퓨터에 저장한 후 drumbearai.com에서 이 문제에 대한 도움을 받으실 수 있습니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1542"/>
@@ -35098,13 +35098,13 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1574"/>
-        <source>You can continue saving it locally, although the file may become unusable. You can try to fix the errors manually, or get help for this issue on MuseScore.org.</source>
-        <translation>로컬 저장을 계속할 수 있지만, 파일을 나중에 사용할 수 없게 될 수도 있습니다. 오류를 직접 수정하거나 MuseScore.org에서 도움을 받으실 수 있습니다.</translation>
+        <source>You can continue saving it locally, although the file may become unusable. You can try to fix the errors manually, or get help for this issue on drumbearai.com.</source>
+        <translation>로컬 저장을 계속할 수 있지만, 파일을 나중에 사용할 수 없게 될 수도 있습니다. 오류를 직접 수정하거나 drumbearai.com에서 도움을 받으실 수 있습니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1576"/>
-        <source>You can continue saving it locally, although the file may become unusable. To preserve your score, revert to the last saved version, or fix the errors manually. You can also get help for this issue on MuseScore.org.</source>
-        <translation>로컬 저장을 계속할 수 있지만, 파일을 나중에 사용할 수 없게 될 수도 있습니다. 악보를 보존하려면 마지막으로 저장된 버전으로 되돌리거나 오류를 직접 수정합니다. MuseScore.org에서 도움을 받으실 수도 있습니다.</translation>
+        <source>You can continue saving it locally, although the file may become unusable. To preserve your score, revert to the last saved version, or fix the errors manually. You can also get help for this issue on drumbearai.com.</source>
+        <translation>로컬 저장을 계속할 수 있지만, 파일을 나중에 사용할 수 없게 될 수도 있습니다. 악보를 보존하려면 마지막으로 저장된 버전으로 되돌리거나 오류를 직접 수정합니다. drumbearai.com에서 도움을 받으실 수도 있습니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1584"/>
@@ -35118,8 +35118,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1626"/>
-        <source>This score is corrupted. You can get help for this issue on MuseScore.org.</source>
-        <translation>이 악보는 손상되었습니다. MuseScore.org에서 도움을 받으실 수 있습니다.</translation>
+        <source>This score is corrupted. You can get help for this issue on drumbearai.com.</source>
+        <translation>이 악보는 손상되었습니다. drumbearai.com에서 도움을 받으실 수 있습니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1629"/>
@@ -35156,13 +35156,13 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1788"/>
-        <source>This file was saved using a newer version of MuseScore Studio. Please visit &lt;a href=&quot;%1&quot;&gt;MuseScore.org&lt;/a&gt; to obtain the latest version.</source>
-        <translation>이 파일은 더 최신 버전의 MuseScore Studio에서 저장되었습니다. &lt;a href=&quot;%1&quot;&gt;MuseScore.org&lt;/a&gt;를 방문하여 최신 버전을 설치합니다.</translation>
+        <source>This file was saved using a newer version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; to obtain the latest version.</source>
+        <translation>이 파일은 더 최신 버전의 DB Score에서 저장되었습니다. &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;를 방문하여 최신 버전을 설치합니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1797"/>
-        <source>This file contains errors that could cause MuseScore Studio to malfunction.</source>
-        <translation>이 파일에 MuseScore Studio의 오작동을 일으킬 수 있는 오류가 포함되어 있습니다.</translation>
+        <source>This file contains errors that could cause DB Score to malfunction.</source>
+        <translation>이 파일에 DB Score의 오작동을 일으킬 수 있는 오류가 포함되어 있습니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1812"/>
@@ -35171,8 +35171,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1814"/>
-        <source>Get help for this issue on MuseScore.org.</source>
-        <translation>MuseScore.org에서 이 문제에 대한 도움을 받으실 수 있습니다.</translation>
+        <source>Get help for this issue on drumbearai.com.</source>
+        <translation>drumbearai.com에서 이 문제에 대한 도움을 받으실 수 있습니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1836"/>
@@ -35181,8 +35181,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1839"/>
-        <source>This file could not be opened. Please make sure that MuseScore Studio has permission to read this file.</source>
-        <translation>이 파일을 열 수 없습니다. MuseScore Studio에 이 파일을 읽을 수 있는 권한이 있는지 확인합니다.</translation>
+        <source>This file could not be opened. Please make sure that DB Score has permission to read this file.</source>
+        <translation>이 파일을 열 수 없습니다. DB Score에 이 파일을 읽을 수 있는 권한이 있는지 확인합니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1846"/>
@@ -35196,8 +35196,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1928"/>
-        <source>MuseScore files</source>
-        <translation>MuseScore 파일</translation>
+        <source>DB Score files</source>
+        <translation>DB Score 파일</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1929"/>
@@ -35261,18 +35261,18 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1941"/>
-        <source>Uncompressed MuseScore folders (experimental)</source>
-        <translation>압축되지 않은 MuseScore 폴더 (실험적 기능)</translation>
+        <source>Uncompressed DB Score folders (experimental)</source>
+        <translation>압축되지 않은 DB Score 폴더 (실험적 기능)</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1942"/>
-        <source>MuseScore developer files</source>
-        <translation>MuseScore 개발자 파일</translation>
+        <source>DB Score developer files</source>
+        <translation>DB Score 개발자 파일</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1943"/>
-        <source>MuseScore backup files</source>
-        <translation>MuseScore 백업 파일</translation>
+        <source>DB Score backup files</source>
+        <translation>DB Score 백업 파일</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1945"/>
@@ -35295,52 +35295,52 @@ failed: %2</source>
         <translation>내 템플릿</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="57"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="57"/>
         <source>Work title</source>
         <translation>작품 제목</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="60"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="60"/>
         <source>Arranger</source>
         <translation>편곡가</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="62"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="62"/>
         <source>Translator</source>
         <translation>번역가</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="64"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="64"/>
         <source>Work number</source>
         <translation>작품 번호</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="65"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="65"/>
         <source>Movement title</source>
         <translation>악장 제목</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="66"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="66"/>
         <source>Movement number</source>
         <translation>악장 번호</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="67"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="67"/>
         <source>Creation date</source>
         <translation>생성 날짜</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="68"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="68"/>
         <source>Platform</source>
         <translation>플랫폼</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="69"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="69"/>
         <source>Source</source>
         <translation>출처</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="70"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="70"/>
         <source>Audio.com URL</source>
         <translation>Audio.com URL</translation>
     </message>
@@ -35349,10 +35349,10 @@ failed: %2</source>
     <name>project/cloud</name>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="97"/>
-        <location filename="../../src/project/qml/MuseScore/Project/SaveToCloudDialog.qml" line="186"/>
-        <location filename="../../src/project/qml/MuseScore/Project/SaveToCloudDialog.qml" line="199"/>
+        <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="186"/>
+        <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="199"/>
         <source>Visibility</source>
-        <extracomment>visibility of a score on MuseScore.com: private, public or unlisted</extracomment>
+        <extracomment>visibility of a score on drumbearai.com: private, public or unlisted</extracomment>
         <translation>공개 설정</translation>
     </message>
     <message>
@@ -35371,12 +35371,12 @@ failed: %2</source>
         <translation>전체 공개</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AlsoShareAudioComDialog.qml" line="117"/>
+        <location filename="../../src/project/qml/DB Score/Project/AlsoShareAudioComDialog.qml" line="117"/>
         <source>Would you also like to share your music on Audio.com?</source>
         <translation>Audio.com에도 음악을 공유하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AlsoShareAudioComDialog.qml" line="126"/>
+        <location filename="../../src/project/qml/DB Score/Project/AlsoShareAudioComDialog.qml" line="126"/>
         <source>Share your score’s audio with millions of listeners on this free streaming platform</source>
         <translation>무료 스트리밍 플랫폼에서 수많은 청취자에게 악보의 오디오를 공유해 보세요</translation>
     </message>
@@ -35386,29 +35386,29 @@ failed: %2</source>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="450"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="456"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="462"/>
-        <source>MuseScore.com returned an error code: %1.</source>
-        <extracomment>%1 will be replaced with the error code that MuseScore.com returned; this might contain english text that is deliberately not translated</extracomment>
-        <translation>MuseScore.com에서 오류 코드를 반환했습니다: %1.</translation>
+        <source>drumbearai.com returned an error code: %1.</source>
+        <extracomment>%1 will be replaced with the error code that drumbearai.com returned; this might contain english text that is deliberately not translated</extracomment>
+        <translation>drumbearai.com에서 오류 코드를 반환했습니다: %1.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="468"/>
-        <source>MuseScore.com returned an unknown error code: %1.</source>
-        <extracomment>%1 will be replaced with the error code that MuseScore.com returned, which is a number.</extracomment>
-        <translation>MuseScore.com에서 알 수 없는 오류 코드를 반환했습니다: %1.</translation>
+        <source>drumbearai.com returned an unknown error code: %1.</source>
+        <extracomment>%1 will be replaced with the error code that drumbearai.com returned, which is a number.</extracomment>
+        <translation>drumbearai.com에서 알 수 없는 오류 코드를 반환했습니다: %1.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="471"/>
-        <source>MuseScore.com returned an unknown error code.</source>
-        <translation>MuseScore.com에서 알 수 없는 오류 코드를 반환했습니다.</translation>
+        <source>drumbearai.com returned an unknown error code.</source>
+        <translation>drumbearai.com에서 알 수 없는 오류 코드를 반환했습니다.</translation>
     </message>
     <message>
-        <source>Please try again later, or get help for this problem on MuseScore.org.</source>
-        <translation>나중에 다시 시도하거나 MuseScore.org에서 이 문제에 대한 도움을 받으세요.</translation>
+        <source>Please try again later, or get help for this problem on drumbearai.com.</source>
+        <translation>나중에 다시 시도하거나 drumbearai.com에서 이 문제에 대한 도움을 받으세요.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="477"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="609"/>
-        <source>Please try again later, or get help for this problem on MuseScore.com.</source>
+        <source>Please try again later, or get help for this problem on drumbearai.com.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -35419,8 +35419,8 @@ failed: %2</source>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="496"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="563"/>
-        <source>Your MuseScore.com account needs to be verified first. Please activate your account via the link in the activation email.</source>
-        <translation>먼저 MuseScore.com 계정 인증이 필요합니다. 활성화 이메일의 링크를 통해 계정을 활성화해 주세요.</translation>
+        <source>Your drumbearai.com account needs to be verified first. Please activate your account via the link in the activation email.</source>
+        <translation>먼저 drumbearai.com 계정 인증이 필요합니다. 활성화 이메일의 링크를 통해 계정을 활성화해 주세요.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="500"/>
@@ -35435,8 +35435,8 @@ failed: %2</source>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="517"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="604"/>
-        <source>Could not connect to &lt;a href=&quot;%1&quot;&gt;MuseScore.com&lt;/a&gt;. Please check your internet connection or try again later.</source>
-        <translation>&lt;a href=&quot;%1&quot;&gt;MuseScore.com&lt;/a&gt;에 연결할 수 없습니다. 인터넷 연결을 확인하거나 나중에 다시 시도하세요.</translation>
+        <source>Could not connect to &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;. Please check your internet connection or try again later.</source>
+        <translation>&lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;에 연결할 수 없습니다. 인터넷 연결을 확인하거나 나중에 다시 시도하세요.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="522"/>
@@ -35447,50 +35447,50 @@ failed: %2</source>
 <context>
     <name>project/convert</name>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ConvertFileToScoreDialog.qml" line="35"/>
+        <location filename="../../src/project/qml/DB Score/Project/ConvertFileToScoreDialog.qml" line="35"/>
         <source>Convert file to score</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ConvertFileToScoreDialog.qml" line="86"/>
+        <location filename="../../src/project/qml/DB Score/Project/ConvertFileToScoreDialog.qml" line="86"/>
         <source>Convert audio to score (beta)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ConvertFileToScoreDialog.qml" line="87"/>
+        <location filename="../../src/project/qml/DB Score/Project/ConvertFileToScoreDialog.qml" line="87"/>
         <source>Convert a file to score</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/FileRequirements.qml" line="66"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/FileRequirements.qml" line="89"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/FileRequirements.qml" line="66"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/FileRequirements.qml" line="89"/>
         <source>File requirements</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/SaveAsField.qml" line="45"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/SaveAsField.qml" line="45"/>
         <source>Save as</source>
         <translation>다른 이름으로 저장</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/ConvertButtonBox.qml" line="57"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/ConvertButtonBox.qml" line="57"/>
         <source>Convert</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="117"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="117"/>
         <source>Drag your file here</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="125"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="125"/>
         <source>Use a PDF, images, or MP3 (beta)</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="190"/>
         <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="398"/>
-        <source>Log in or create a free account on MuseScore.com to convert a file.</source>
+        <source>Log in or create a free account on drumbearai.com to convert a file.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -35513,8 +35513,8 @@ failed: %2</source>
         <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="269"/>
         <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="340"/>
         <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="703"/>
-        <source>Unable to connect to MuseScore.com</source>
-        <translation>MuseScore.com에 연결할 수 없습니다.</translation>
+        <source>Unable to connect to drumbearai.com</source>
+        <translation>drumbearai.com에 연결할 수 없습니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="270"/>
@@ -35538,8 +35538,8 @@ failed: %2</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="218"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="240"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="218"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="240"/>
         <source>Uploading guidelines</source>
         <translation type="unfinished"/>
     </message>
@@ -35714,27 +35714,27 @@ failed: %2</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="59"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="59"/>
         <source>%1 max</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="65"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="65"/>
         <source>%1 max combined</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="224"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="224"/>
         <source>%1 pages max</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="228"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="228"/>
         <source>PDF</source>
         <translation>PDF</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="255"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="255"/>
         <source>Max %1 images</source>
         <translation type="unfinished"/>
     </message>
@@ -35743,22 +35743,22 @@ failed: %2</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/filelistmodel.cpp" line="145"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/filelistmodel.cpp" line="145"/>
         <source>Images will be combined into one score in the order shown here</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/filelistmodel.cpp" line="268"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/filelistmodel.cpp" line="268"/>
         <source>%1/%2 used</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="259"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="259"/>
         <source>Images</source>
         <translation>이미지</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="267"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="267"/>
         <source>%1 format</source>
         <translation type="unfinished"/>
     </message>
@@ -35771,106 +35771,106 @@ failed: %2</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="282"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="282"/>
         <source>Audio</source>
         <translation>오디오</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="111"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="111"/>
         <source>Paste a link from %1 (beta)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="107"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="107"/>
         <source>Paste a link from %1 or %2 (beta)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="227"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="275"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="227"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="275"/>
         <source>1 file per conversion</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="277"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="277"/>
         <source>%1 files per conversion</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="342"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="342"/>
         <source>Or paste a link from %1 or %2 (beta)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="346"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="346"/>
         <source>Or paste a link from %1 (beta)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="406"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="406"/>
         <source>Supported files</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="407"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="407"/>
         <source>All files</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="414"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="417"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="414"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="417"/>
         <source>Choose file</source>
         <translation>파일 선택</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="496"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="496"/>
         <source>No, stay here</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="497"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="497"/>
         <source>Yes, go back</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="500"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="500"/>
         <source>Are you sure you want to go back?</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="501"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="501"/>
         <source>Your current selection will be lost.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="485"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="485"/>
         <source>“%1” cannot be used as a file name. Please choose a different name.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/ConvertFromLinkPanel.qml" line="94"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/ConvertFromLinkPanel.qml" line="94"/>
         <source>Convert from link</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/LinkEntryPage.qml" line="120"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/LinkPastePanel.qml" line="82"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/LinkEntryPage.qml" line="120"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/LinkPastePanel.qml" line="82"/>
         <source>Link</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/LinkEntryPage.qml" line="131"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="281"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/LinkEntryPage.qml" line="131"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="281"/>
         <source>Recommended for solo arrangements only</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="83"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="83"/>
         <source>Selected files</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="225"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="225"/>
         <source>%1/%2 max files</source>
         <translation type="unfinished"/>
     </message>
@@ -35882,182 +35882,182 @@ failed: %2</source>
 <context>
     <name>project/export</name>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ExportDialog.qml" line="34"/>
+        <location filename="../../src/project/qml/DB Score/Project/ExportDialog.qml" line="34"/>
         <location filename="../../src/project/internal/exportprojectscenario.cpp" line="93"/>
         <source>Export</source>
         <translation>내보내기</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ExportDialog.qml" line="62"/>
+        <location filename="../../src/project/qml/DB Score/Project/ExportDialog.qml" line="62"/>
         <source>Select parts to export</source>
         <translation>내보낼 파트 선택</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ExportDialog.qml" line="90"/>
+        <location filename="../../src/project/qml/DB Score/Project/ExportDialog.qml" line="90"/>
         <source>Select all</source>
         <translation>모두 선택</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ExportDialog.qml" line="104"/>
+        <location filename="../../src/project/qml/DB Score/Project/ExportDialog.qml" line="104"/>
         <source>Clear selection</source>
         <translation>선택영역 취소</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ExportDialog.qml" line="123"/>
+        <location filename="../../src/project/qml/DB Score/Project/ExportDialog.qml" line="123"/>
         <source>Export settings</source>
         <translation>내보내기 설정</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ExportDialog.qml" line="151"/>
+        <location filename="../../src/project/qml/DB Score/Project/ExportDialog.qml" line="151"/>
         <source>Export…</source>
         <translation>내보내기…</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/AudioSettings.qml" line="47"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/AudioSettings.qml" line="47"/>
         <source>Sample rate:</source>
         <translation>샘플 레이트:</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/AudioSettings.qml" line="58"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/AudioSettings.qml" line="58"/>
         <source>%1 Hz</source>
         <translation>%1 Hz</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/AudioSettings.qml" line="72"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/AudioSettings.qml" line="72"/>
         <source>Bit rate:</source>
         <translation>비트 레이트:</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/AudioSettings.qml" line="83"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/AudioSettings.qml" line="83"/>
         <source>%1 kBit/s</source>
         <translation>%1 kBit/s</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/AudioSettings.qml" line="97"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/AudioSettings.qml" line="97"/>
         <source>Sample format:</source>
         <translation>샘플 형식:</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/AacSettingsPage.qml" line="39"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/FlacSettingsPage.qml" line="38"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/Mp3SettingsPage.qml" line="39"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/OggSettingsPage.qml" line="39"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/WavSettingsPage.qml" line="38"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/AacSettingsPage.qml" line="39"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/FlacSettingsPage.qml" line="38"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/Mp3SettingsPage.qml" line="39"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/OggSettingsPage.qml" line="39"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/WavSettingsPage.qml" line="38"/>
         <source>Each selected part will be exported as a separate audio file.</source>
         <translation>선택한 각 파트를 개별 오디오 파일로 내보냅니다.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/ExportOptionsView.qml" line="59"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/ExportOptionsView.qml" line="59"/>
         <source>Format:</source>
         <translation>파일 형식:</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/ExportOptionsView.qml" line="102"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/ExportOptionsView.qml" line="102"/>
         <source>File type:</source>
         <translation>파일 형식:</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/ExportOptionsView.qml" line="197"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/ExportOptionsView.qml" line="197"/>
         <source>Open destination folder on export</source>
         <translation>내보낸 후 폴더 열기</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/ExportScoresListView.qml" line="81"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/ExportScoresListView.qml" line="81"/>
         <source>Main score</source>
         <translation>메인 악보</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/LrcSettingsPage.qml" line="31"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/LrcSettingsPage.qml" line="31"/>
         <source>LRC enhanced format</source>
         <translation>LRC 확장 형식</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/MeiSettingsPage.qml" line="31"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/MeiSettingsPage.qml" line="31"/>
         <source>Include page and system breaks</source>
         <translation>페이지 및 단 바꿈 포함</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/MeiSettingsPage.qml" line="45"/>
-        <source>Use MuseScore element IDs</source>
-        <translation>MuseScore 요소 ID 사용</translation>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/MeiSettingsPage.qml" line="45"/>
+        <source>Use DB Score element IDs</source>
+        <translation>DB Score 요소 ID 사용</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/MidiSettingsPage.qml" line="31"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/MidiSettingsPage.qml" line="31"/>
         <source>Expand repeats</source>
         <translation>반복 기호 풀어서 기보</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/MidiSettingsPage.qml" line="45"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/MidiSettingsPage.qml" line="45"/>
         <source>Export RPNs</source>
         <translation>RPN 내보내기</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/MidiSettingsPage.qml" line="59"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/MidiSettingsPage.qml" line="59"/>
         <source>Each selected part will be exported as a separate MIDI file.</source>
         <translation>선택한 각 파트를 개별 MIDI 파일로 내보냅니다.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/MnxSettingsPage.qml" line="32"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/MnxSettingsPage.qml" line="32"/>
         <source>Disable to let the importing app choose beam groupings.</source>
         <translation>가져오는 앱에서 빔 그룹을 선택하도록 하려면 비활성화하세요.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/MnxSettingsPage.qml" line="34"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/MnxSettingsPage.qml" line="34"/>
         <source>Enable to export the staff line of every rest. Disable to let the importing app decide.</source>
         <translation>모든 쉼표의 오선 위치를 내보냅니다. 비활성화하면 가져오는 앱의 설정을 따릅니다.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/MnxSettingsPage.qml" line="38"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/MnxSettingsPage.qml" line="38"/>
         <source>JSON indent:</source>
         <translation>JSON 들여쓰기:</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/MnxSettingsPage.qml" line="50"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/MnxSettingsPage.qml" line="50"/>
         <source>No line breaks</source>
         <translation>줄바꿈 없음</translation>
     </message>
     <message numerus="yes">
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/MnxSettingsPage.qml" line="52"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/MnxSettingsPage.qml" line="52"/>
         <source>%n space(s)</source>
         <translation><numerusform>%n개 공백</numerusform></translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/MnxSettingsPage.qml" line="92"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/MnxSettingsPage.qml" line="92"/>
         <source>Export beams</source>
         <translation>빔 내보내기</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/MnxSettingsPage.qml" line="118"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/MnxSettingsPage.qml" line="118"/>
         <source>Export rest positions</source>
         <translation>쉼표 위치 내보내기</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/PdfSettingsPage.qml" line="33"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/PngSettingsPage.qml" line="33"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/PdfSettingsPage.qml" line="33"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/PngSettingsPage.qml" line="33"/>
         <source>Resolution:</source>
         <translation>해상도:</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/PdfSettingsPage.qml" line="61"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/PngSettingsPage.qml" line="60"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/SvgSettingsPage.qml" line="31"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/PdfSettingsPage.qml" line="61"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/PngSettingsPage.qml" line="60"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/SvgSettingsPage.qml" line="31"/>
         <source>Transparent background</source>
         <translation>투명한 배경</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/PdfSettingsPage.qml" line="76"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/PngSettingsPage.qml" line="74"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/PdfSettingsPage.qml" line="76"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/PngSettingsPage.qml" line="74"/>
         <source>Grayscale</source>
         <translation>그레이스케일</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/PngSettingsPage.qml" line="89"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/SvgSettingsPage.qml" line="59"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/PngSettingsPage.qml" line="89"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/SvgSettingsPage.qml" line="59"/>
         <source>Each page of the selected parts will be exported as a separate %1 file.</source>
         <translation>선택된 악보의 각 페이지는 개별 %1 파일로 내보내집니다.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/SvgSettingsPage.qml" line="45"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/SvgSettingsPage.qml" line="45"/>
         <source>Masking compatibility (Adobe Illustrator only)</source>
         <translation>마스킹 호환성(Adobe Illustrator 전용)</translation>
     </message>
@@ -36139,241 +36139,241 @@ failed: %2</source>
         <translation>내보내는 중…</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="55"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="55"/>
         <source>Compressed</source>
         <translation>압축형</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="56"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="56"/>
         <source>Compressed MusicXML files</source>
         <translation>압축된 MusicXML 파일</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="59"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="59"/>
         <source>Uncompressed</source>
         <translation>비압축형</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="60"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="64"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="60"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="64"/>
         <source>Uncompressed MusicXML files</source>
         <translation>비압축된 MusicXML 파일</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="63"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="63"/>
         <source>Uncompressed (outdated)</source>
         <translation>비압축형(이전 버전)</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="70"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="70"/>
         <source>PDF file</source>
         <translation>PDF 파일</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="71"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="71"/>
         <source>PDF files</source>
         <translation>PDF 파일</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="74"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="75"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="74"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="75"/>
         <source>PNG images</source>
         <translation>PNG 이미지</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="78"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="79"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="78"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="79"/>
         <source>SVG images</source>
         <translation>SVG 이미지</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="82"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="82"/>
         <source>MP3 audio</source>
         <translation>MP3 오디오</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="83"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="83"/>
         <source>MP3 audio files</source>
         <translation>MP3 오디오 파일</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="86"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="86"/>
         <source>WAV audio</source>
         <translation>WAV 오디오</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="87"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="87"/>
         <source>WAV audio files</source>
         <translation>WAV 오디오 파일</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="90"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="90"/>
         <source>OGG audio</source>
         <translation>OGG 오디오</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="91"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="91"/>
         <source>OGG audio files</source>
         <translation>OGG 오디오 파일</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="94"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="94"/>
         <source>FLAC audio</source>
         <translation>FLAC 오디오</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="95"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="95"/>
         <source>FLAC audio files</source>
         <translation>FLAC 오디오 파일</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="98"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="98"/>
         <source>AAC audio</source>
         <translation>AAC 오디오</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="99"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="99"/>
         <source>AAC audio files</source>
         <translation>AAC 오디오 파일</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="103"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="104"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="103"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="104"/>
         <source>MP4 video</source>
         <translation>MP4 비디오</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="108"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="108"/>
         <source>MIDI file</source>
         <translation>MIDI 파일</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="109"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="109"/>
         <source>MIDI files</source>
         <translation>MIDI 파일</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="112"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="112"/>
         <source>MusicXML</source>
         <translation>MusicXML</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="117"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="117"/>
         <source>Braille (basic bar-over-bar)</source>
-        <extracomment>Meaning like &quot;measure-over-measure&quot;, but called &quot;bar-over-bar&quot; even in US English. Not to be confused with &quot;bar-by-bar&quot; format. See https://handbook.musescore.org/file-management/file-export#braille</extracomment>
+        <extracomment>Meaning like &quot;measure-over-measure&quot;, but called &quot;bar-over-bar&quot; even in US English. Not to be confused with &quot;bar-by-bar&quot; format. See https://handbook.drumbearai.com/file-management/file-export#braille</extracomment>
         <translation>점자 (기본 세로 쌓기형)</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="118"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="118"/>
         <source>Braille files</source>
         <translation>BRF 점자 파일</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="120"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="120"/>
         <source>MEI</source>
         <translation>MEI</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="121"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="121"/>
         <source>MEI files</source>
         <translation>MEI 파일</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="124"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="124"/>
         <source>MNX (experimental)</source>
         <translation>MNX (실험적 기능)</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="125"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="125"/>
         <source>MNX files (experimental)</source>
         <translation>MNX 파일 (실험적 기능)</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="128"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="128"/>
         <source>LRC file</source>
         <translation>LRC 파일</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="129"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="129"/>
         <source>LRC files</source>
         <translation>LRC 파일</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="370"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="370"/>
         <source>Each page to a separate file</source>
         <translation>각 페이지를 개별 파일로</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="371"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="371"/>
         <source>Each part to a separate file</source>
         <translation>각 파트를 개별 파일로</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="372"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="372"/>
         <source>All parts combined in one file</source>
         <translation>모든 파트를 하나의 파일로 결합</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="628"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="628"/>
         <source>Use page layout</source>
         <translation>페이지 레이아웃 사용</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="629"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="629"/>
         <source>Reflow to fit video resolution</source>
         <translation>비디오 해상도에 맞게 화면 재배치</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="857"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="857"/>
         <source>All layout</source>
         <extracomment>Specifies to which extent layout customizations should be exported to MusicXML.</extracomment>
         <translation>모든 레이아웃</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="859"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="859"/>
         <source>System and page breaks</source>
         <extracomment>Specifies to which extent layout customizations should be exported to MusicXML.</extracomment>
         <translation>단 및 페이지 바꿈</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="861"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="861"/>
         <source>Manually added system and page breaks only</source>
         <extracomment>Specifies to which extent layout customizations should be exported to MusicXML.</extracomment>
         <translation>수동으로 추가된 단 및 페이지 바꿈만</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="863"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="863"/>
         <source>No system or page breaks</source>
         <extracomment>Specifies to which extent layout customizations should be exported to MusicXML.</extracomment>
         <translation>단 및 페이지 바꿈 없음</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/Mp4SettingsPage.qml" line="51"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/Mp4SettingsPage.qml" line="51"/>
         <source>To export to this file format, an FFmpeg installation is required. You can also configure this in Preferences &gt; Video.</source>
         <translation>이 파일 형식으로 내보내려면 FFmpeg 설치가 필요합니다. 설정 &gt; 비디오에서도 구성할 수 있습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/Mp4SettingsPage.qml" line="59"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/Mp4SettingsPage.qml" line="59"/>
         <source>Download FFmpeg</source>
         <translation>FFmpeg 다운로드</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/Mp4SettingsPage.qml" line="77"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/Mp4SettingsPage.qml" line="77"/>
         <source>Choose FFmpeg library folder</source>
         <translation>FFmpeg 라이브러리 폴더 선택</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/Mp4SettingsPage.qml" line="80"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/Mp4SettingsPage.qml" line="80"/>
         <source>Locate existing installation</source>
         <translation>설치된 위치 찾기</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/Mp4SettingsPage.qml" line="116"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/Mp4SettingsPage.qml" line="116"/>
         <source>Video resolution</source>
         <translation>비디오 해상도</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/Mp4SettingsPage.qml" line="165"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/Mp4SettingsPage.qml" line="165"/>
         <source>Each selected part will be exported as a separate video file.</source>
         <translation>선택한 각 파트를 개별 비디오 파일로 내보냅니다.</translation>
     </message>
@@ -36381,53 +36381,53 @@ failed: %2</source>
 <context>
     <name>project/migration</name>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentFor362.qml" line="69"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentForPre362.qml" line="78"/>
-        <source>This file was last saved in MuseScore %1</source>
-        <translation>이 파일은 MuseScore %1에서 마지막으로 저장되었습니다.</translation>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Migration/MigrationContentFor362.qml" line="69"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Migration/MigrationContentForPre362.qml" line="78"/>
+        <source>This file was last saved in DB Score %1</source>
+        <translation>이 파일은 DB Score %1에서 마지막으로 저장되었습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentFor362.qml" line="75"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Migration/MigrationContentFor362.qml" line="75"/>
         <source>Please note that the appearance of your score will change due to improvements we have made to default settings for beaming, ties, slurs, system objects and horizontal spacing.</source>
         <translation>음표 묶음, 붙임줄, 이음줄, 단 객체 및 가로 간격에 대한 기본 설정이 개선됨에 따라 악보의 모양새가 변경될 수 있음을 알려드립니다.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentFor362.qml" line="85"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Migration/MigrationContentFor362.qml" line="85"/>
         <source>Use our new notation and sound mapping for &lt;a href=&quot;%1&quot;&gt;MDL percussion&lt;/a&gt;</source>
         <translation>&lt;a href=&quot;%1&quot;&gt;MDL 퍼커션&lt;/a&gt;를 위한 새로운 기보 및 사운드 매핑 사용</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentFor362.qml" line="100"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Migration/MigrationContentFor362.qml" line="100"/>
         <source>Watch video about changes</source>
         <translation>변경 사항 안내 영상 보기</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentForPre362.qml" line="83"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Migration/MigrationContentForPre362.qml" line="83"/>
         <source>Select the engraving improvements you would like to apply to your score</source>
         <translation>악보에 적용할 인쇄(Engraving) 개선 사항을 선택하세요</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentForPre362.qml" line="112"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Migration/MigrationContentForPre362.qml" line="112"/>
         <source>Our new notation font, Leland</source>
         <translation>새로운 기보용 폰트, Leland</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentForPre362.qml" line="125"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Migration/MigrationContentForPre362.qml" line="125"/>
         <source>Our new text font, Edwin</source>
         <translation>새로운 텍스트용 폰트, Edwin</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentForPre362.qml" line="138"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Migration/MigrationContentForPre362.qml" line="138"/>
         <source>Our new notation and sound mapping for &lt;a href=&quot;%1&quot;&gt;MDL percussion&lt;/a&gt;</source>
         <translation>&lt;a href=&quot;%1&quot;&gt;MDL 퍼커션&lt;/a&gt;를 위한 새로운 기보 및 사운드 매핑</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentForPre362.qml" line="157"/>
-        <source>Please note: score layouts will be affected by improvements to MuseScore Studio</source>
-        <translation>알림: MuseScore Studio의 성능 개선으로 인해 악보 레이아웃이 영향을 받을 수 있습니다.</translation>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Migration/MigrationContentForPre362.qml" line="157"/>
+        <source>Please note: score layouts will be affected by improvements to DB Score</source>
+        <translation>알림: DB Score의 성능 개선으로 인해 악보 레이아웃이 영향을 받을 수 있습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentForPre362.qml" line="162"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Migration/MigrationContentForPre362.qml" line="162"/>
         <source>Watch video</source>
         <translation>영상 보기</translation>
     </message>
@@ -36435,333 +36435,333 @@ failed: %2</source>
 <context>
     <name>project/newscore</name>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/AdditionalInfoView.qml" line="71"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/AdditionalInfoView.qml" line="71"/>
         <source>Score options</source>
         <translation>악보 옵션</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/AdditionalInfoView.qml" line="91"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/AdditionalInfoView.qml" line="91"/>
         <source>Key signature</source>
         <translation>조표</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/AdditionalInfoView.qml" line="129"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/AdditionalInfoView.qml" line="129"/>
         <source>Time signature</source>
         <translation>박자표</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/AdditionalInfoView.qml" line="164"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/AdditionalInfoView.qml" line="164"/>
         <source>Tempo</source>
         <translation>템포</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/AdditionalInfoView.qml" line="199"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/AdditionalInfoView.qml" line="199"/>
         <source>Measures</source>
         <translation>마디</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/ChooseInstrumentsAndTemplatesPage.qml" line="122"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/ChooseInstrumentsAndTemplatesPage.qml" line="122"/>
         <source>Choose instruments</source>
         <translation>악기 선택하기</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/ChooseInstrumentsAndTemplatesPage.qml" line="132"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/ChooseInstrumentsAndTemplatesPage.qml" line="132"/>
         <source>Create from template</source>
         <translation>템플릿에서 만들기</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/CreateFromTemplatePage.qml" line="70"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/CreateFromTemplatePage.qml" line="70"/>
         <source>Category</source>
         <translation>카테고리</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/CreateFromTemplatePage.qml" line="98"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/CreateFromTemplatePage.qml" line="98"/>
         <source>Template</source>
         <translation>템플릿</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/CreateFromTemplatePage.qml" line="150"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/CreateFromTemplatePage.qml" line="150"/>
         <source>Zoom in</source>
         <translation>확대</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/CreateFromTemplatePage.qml" line="163"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/CreateFromTemplatePage.qml" line="163"/>
         <source>Zoom out</source>
         <translation>축소</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/GeneralInfoView.qml" line="49"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/GeneralInfoView.qml" line="49"/>
         <source>General score info</source>
         <translation>일반 악보 정보</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/KeySignatureListView.qml" line="91"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/KeySignatureListView.qml" line="91"/>
         <source>Not selected</source>
         <translation>선택 안 함</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/KeySignatureSettings.qml" line="100"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/KeySignatureSettings.qml" line="100"/>
         <source>Major</source>
         <comment>key signature mode</comment>
         <extracomment>mode of a key signature, not an interval</extracomment>
         <translation>장조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/KeySignatureSettings.qml" line="109"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/KeySignatureSettings.qml" line="109"/>
         <source>Minor</source>
         <comment>key signature mode</comment>
         <extracomment>mode of a key signature, not an interval</extracomment>
         <translation>단조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/MeasuresSettings.qml" line="52"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/MeasuresSettings.qml" line="52"/>
         <source>pickup:</source>
         <translation>못갖춘마디:</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/MeasuresSettings.qml" line="56"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/MeasuresSettings.qml" line="56"/>
         <source>no pickup</source>
         <translation>못갖춘마디 없음</translation>
     </message>
     <message numerus="yes">
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/MeasuresSettings.qml" line="60"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/MeasuresSettings.qml" line="60"/>
         <source>%Ln measure(s),</source>
         <translation><numerusform>%Ln 마디,</numerusform></translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/MeasuresSettings.qml" line="103"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/MeasuresSettings.qml" line="103"/>
         <source>Create pickup measure</source>
         <translation>못갖춘마디 만들기</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/MeasuresSettings.qml" line="149"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/MeasuresSettings.qml" line="149"/>
         <source>Initial number of measures</source>
         <translation>마디 수</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/MeasuresSettings.qml" line="190"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/MeasuresSettings.qml" line="190"/>
         <source>Hint: You can also add &amp; delete measures after you have created your score</source>
         <translation>힌트: 악보를 만들기한 후에도 마디를 추가하거나 삭제할 수 있습니다</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/ScoreInfoPage.qml" line="71"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/ScoreInfoPage.qml" line="71"/>
         <source>Additional score information</source>
         <translation>추가 악보 정보</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/TemplatePreview.qml" line="48"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/TemplatePreview.qml" line="48"/>
         <source>Preview</source>
         <translation>미리보기</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/TempoSettings.qml" line="99"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/TempoSettings.qml" line="99"/>
         <source>Show tempo marking on my score</source>
         <translation>내 악보에 템포 마킹 표시</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="97"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="118"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="97"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="118"/>
         <source>C major</source>
         <translation>C 장조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="97"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="118"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="97"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="118"/>
         <source>A minor</source>
         <translation>A 단조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="120"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="120"/>
         <source>G major</source>
         <translation>G 장조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="120"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="120"/>
         <source>E minor</source>
         <translation>E 단조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="122"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="122"/>
         <source>D major</source>
         <translation>D 장조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="122"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="122"/>
         <source>B minor</source>
         <translation>B 단조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="124"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="124"/>
         <source>A major</source>
         <translation>A 장조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="124"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="124"/>
         <source>F♯ minor</source>
         <translation>F♯ 단조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="126"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="126"/>
         <source>E major</source>
         <translation>E 장조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="126"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="126"/>
         <source>C♯ minor</source>
         <translation>C♯ 단조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="128"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="128"/>
         <source>B major</source>
         <translation>B 장조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="128"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="128"/>
         <source>G♯ minor</source>
         <translation>G♯ 단조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="130"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="130"/>
         <source>F♯ major</source>
         <translation>F♯ 장조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="130"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="130"/>
         <source>D♯ minor</source>
         <translation>D♯ 단조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="132"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="132"/>
         <source>C♯ major</source>
         <translation>C♯ 장조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="132"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="132"/>
         <source>A♯ minor</source>
         <translation>A♯ 단조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="134"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="134"/>
         <source>Open/Atonal</source>
         <translation>개방/무조성</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="136"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="136"/>
         <source>F major</source>
         <translation>F 장조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="136"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="136"/>
         <source>D minor</source>
         <translation>D 단조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="138"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="138"/>
         <source>B♭ major</source>
         <translation>B♭ 장조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="138"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="138"/>
         <source>G minor</source>
         <translation>G 단조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="140"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="140"/>
         <source>E♭ major</source>
         <translation>E♭ 장조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="140"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="140"/>
         <source>C minor</source>
         <translation>C 단조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="142"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="142"/>
         <source>A♭ major</source>
         <translation>A♭ 장조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="142"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="142"/>
         <source>F minor</source>
         <translation>F 단조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="144"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="144"/>
         <source>D♭ major</source>
         <translation>D♭ 장조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="144"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="144"/>
         <source>B♭ minor</source>
         <translation>B♭ 단조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="146"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="146"/>
         <source>G♭ major</source>
         <translation>G♭ 장조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="146"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="146"/>
         <source>E♭ minor</source>
         <translation>E♭ 단조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="148"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="148"/>
         <source>C♭ major</source>
         <translation>C♭ 장조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="148"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="148"/>
         <source>A♭ minor</source>
         <translation>A♭ 단조</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="327"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="327"/>
         <source>Dotted 16th note</source>
         <translation>점16분음표</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="327"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="327"/>
         <source>16th note</source>
         <translation>16분음표</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="329"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="329"/>
         <source>Dotted eighth note</source>
         <translation>점8분음표</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="329"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="329"/>
         <source>Eighth note</source>
         <translation>8분음표</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="331"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="331"/>
         <source>Dotted quarter note</source>
         <translation>점4분음표</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="331"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="331"/>
         <source>Quarter note</source>
         <translation>4분음표</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="333"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="333"/>
         <source>Dotted half note</source>
         <translation>점2분음표</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="333"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="333"/>
         <source>Half note</source>
         <translation>2분음표</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="335"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="335"/>
         <source>Dotted whole note</source>
         <translation>점온음표</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="335"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="335"/>
         <source>Whole note</source>
         <translation>온음표</translation>
     </message>
@@ -36769,38 +36769,38 @@ failed: %2</source>
 <context>
     <name>project/properties</name>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/ProjectPropertiesFileInfoPanel.qml" line="51"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/ProjectPropertiesFileInfoPanel.qml" line="51"/>
         <source>File path:</source>
         <translation>파일 경로:</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/ProjectPropertiesFileInfoPanel.qml" line="81"/>
-        <source>MuseScore Studio version:</source>
-        <translation>MuseScore Studio 버전:</translation>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/ProjectPropertiesFileInfoPanel.qml" line="81"/>
+        <source>DB Score version:</source>
+        <translation>DB Score 버전:</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/ProjectPropertiesFileInfoPanel.qml" line="90"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/ProjectPropertiesFileInfoPanel.qml" line="90"/>
         <source>Revision:</source>
         <translation>수정사항:</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/ProjectPropertiesFileInfoPanel.qml" line="104"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/ProjectPropertiesFileInfoPanel.qml" line="104"/>
         <source>API-Level:</source>
         <translation>API-Level:</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/PropertyItem.qml" line="76"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/PropertyItem.qml" line="76"/>
         <source>Property</source>
         <translation>Property</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/PropertyItem.qml" line="106"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/PropertyItem.qml" line="131"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/PropertyItem.qml" line="106"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/PropertyItem.qml" line="131"/>
         <source>Value</source>
         <translation>값</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ProjectPropertiesDialog.qml" line="34"/>
+        <location filename="../../src/project/qml/DB Score/Project/ProjectPropertiesDialog.qml" line="34"/>
         <source>Project properties</source>
         <translation>Project properties</translation>
     </message>
@@ -36809,124 +36809,124 @@ failed: %2</source>
     <name>project/save</name>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/RequireAuthorizationDialog.qml" line="75"/>
-        <location filename="../../src/project/qml/MuseScore/Project/AskSaveLocationTypeDialog.qml" line="98"/>
-        <location filename="../../src/project/qml/MuseScore/Project/SaveToCloudDialog.qml" line="248"/>
+        <location filename="../../src/project/qml/DB Score/Project/AskSaveLocationTypeDialog.qml" line="98"/>
+        <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="248"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="408"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="552"/>
         <source>Save to computer</source>
         <translation>컴퓨터에 저장</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AskSaveLocationTypeDialog.qml" line="60"/>
+        <location filename="../../src/project/qml/DB Score/Project/AskSaveLocationTypeDialog.qml" line="60"/>
         <source>How would you like to save?</source>
         <translation>어떻게 저장하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AskSaveLocationTypeDialog.qml" line="78"/>
+        <location filename="../../src/project/qml/DB Score/Project/AskSaveLocationTypeDialog.qml" line="78"/>
         <source>To the cloud (free)</source>
         <translation>클라우드에 저장 (무료)</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AskSaveLocationTypeDialog.qml" line="79"/>
+        <location filename="../../src/project/qml/DB Score/Project/AskSaveLocationTypeDialog.qml" line="79"/>
         <source>Files are saved privately on your own personal account. You can share drafts with others and publish your finished scores publicly too.</source>
         <translation>파일은 개인 계정에 비공개로 저장됩니다. 초안을 다른 사람과 공유하거나 완성된 악보를 공개적으로 발행할 수도 있습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AskSaveLocationTypeDialog.qml" line="81"/>
+        <location filename="../../src/project/qml/DB Score/Project/AskSaveLocationTypeDialog.qml" line="81"/>
         <source>Save to the cloud</source>
         <translation>클라우드에 저장</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AskSaveLocationTypeDialog.qml" line="87"/>
+        <location filename="../../src/project/qml/DB Score/Project/AskSaveLocationTypeDialog.qml" line="87"/>
         <source>Save to the cloud (free)</source>
         <translation>클라우드에 저장 (무료)</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AskSaveLocationTypeDialog.qml" line="96"/>
+        <location filename="../../src/project/qml/DB Score/Project/AskSaveLocationTypeDialog.qml" line="96"/>
         <source>On your computer</source>
         <translation>내 컴퓨터</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AskSaveLocationTypeDialog.qml" line="97"/>
+        <location filename="../../src/project/qml/DB Score/Project/AskSaveLocationTypeDialog.qml" line="97"/>
         <source>If you prefer to save your files on your computer, you can do that here.</source>
         <translation>파일을 내 컴퓨터에 보관하려면 이 옵션을 선택하세요.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AskSaveLocationTypeDialog.qml" line="104"/>
+        <location filename="../../src/project/qml/DB Score/Project/AskSaveLocationTypeDialog.qml" line="104"/>
         <source>Save on your computer</source>
         <translation>내 컴퓨터에 저장</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AudioGenerationSettings.qml" line="65"/>
+        <location filename="../../src/project/qml/DB Score/Project/AudioGenerationSettings.qml" line="65"/>
         <source>Never</source>
         <translation>안 함</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AudioGenerationSettings.qml" line="66"/>
+        <location filename="../../src/project/qml/DB Score/Project/AudioGenerationSettings.qml" line="66"/>
         <source>Always</source>
         <translation>항상</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AudioGenerationSettings.qml" line="141"/>
+        <location filename="../../src/project/qml/DB Score/Project/AudioGenerationSettings.qml" line="141"/>
         <source>Every %1 saves</source>
         <extracomment>`%1` will be replaced with a number input field. Text before it will appear before that number field, text after will appear after the field.</extracomment>
         <translation>매 %1회 저장 시마다</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AudioGenerationSettings.qml" line="174"/>
-        <location filename="../../src/project/qml/MuseScore/Project/AudioGenerationSettings.qml" line="195"/>
+        <location filename="../../src/project/qml/DB Score/Project/AudioGenerationSettings.qml" line="174"/>
+        <location filename="../../src/project/qml/DB Score/Project/AudioGenerationSettings.qml" line="195"/>
         <source>Every N saves</source>
         <extracomment>Accessibility name for &quot;Every N saves&quot; radio button in MP3 generation settings dialog</extracomment>
         <translation>매 N회 저장 시마다</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AudioGenerationSettingsDialog.qml" line="77"/>
+        <location filename="../../src/project/qml/DB Score/Project/AudioGenerationSettingsDialog.qml" line="77"/>
         <source>Generate MP3 audio for web playback?</source>
         <translation>웹 플레이백을 위한 MP3 오디오를 생성하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AudioGenerationSettingsDialog.qml" line="87"/>
+        <location filename="../../src/project/qml/DB Score/Project/AudioGenerationSettingsDialog.qml" line="87"/>
         <source>This could take a few minutes each time you save, depending on the size of your score. These settings can always be changed in Preferences.</source>
         <translation>악보 크기에 따라 저장 시 몇 분 정도 소요될 수 있습니다. 이 설정은 언제든 &apos;설정&apos;에서 변경 가능합니다.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/SaveToCloudDialog.qml" line="136"/>
+        <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="136"/>
         <source>Save to cloud</source>
         <translation>클라우드에 저장</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/SaveToCloudDialog.qml" line="154"/>
+        <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="154"/>
         <source>Options</source>
         <translation>옵션</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/SaveToCloudDialog.qml" line="162"/>
-        <location filename="../../src/project/qml/MuseScore/Project/SaveToCloudDialog.qml" line="172"/>
+        <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="162"/>
+        <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="172"/>
         <source>Name</source>
         <translation>이름</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/SaveToCloudDialog.qml" line="217"/>
+        <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="217"/>
         <source>Replace existing</source>
         <translation>기존 파일 덮어쓰기</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/SaveToCloudDialog.qml" line="219"/>
+        <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="219"/>
         <source>Create new</source>
         <translation>새로 만들기</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/SaveToCloudDialog.qml" line="260"/>
+        <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="260"/>
         <source>Save</source>
         <translation>저장</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/PublishPage/publishtoolbarmodel.cpp" line="48"/>
-        <source>Share this score and its audio on MuseScore.com</source>
-        <translation>MuseScore.com에 이 악보와 오디오를 공유합니다</translation>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/PublishPage/publishtoolbarmodel.cpp" line="48"/>
+        <source>Share this score and its audio on drumbearai.com</source>
+        <translation>drumbearai.com에 이 악보와 오디오를 공유합니다</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/PublishPage/publishtoolbarmodel.cpp" line="49"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/PublishPage/publishtoolbarmodel.cpp" line="49"/>
         <source>Share the audio from this score on Audio.com</source>
         <translation>Audio.com에 이 악보의 오디오를 공유합니다</translation>
     </message>
@@ -36947,8 +36947,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/cloudsmodel.cpp" line="185"/>
-        <source>Publish to MuseScore.com</source>
-        <translation>MuseScore.com에 게시</translation>
+        <source>Publish to drumbearai.com</source>
+        <translation>drumbearai.com에 게시</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/cloudsmodel.cpp" line="189"/>
@@ -37025,13 +37025,13 @@ failed: %2</source>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="235"/>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1034"/>
-        <source>Log in to MuseScore.com to save this score to the cloud.</source>
-        <translation>악보를 클라우드에 저장하려면 musescore.com에 로그인합니다.</translation>
+        <source>Log in to drumbearai.com to save this score to the cloud.</source>
+        <translation>악보를 클라우드에 저장하려면 drumbearai.com에 로그인합니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="236"/>
-        <source>Log in to MuseScore.com to publish this score.</source>
-        <translation>악보를 게시하려면 musescore.com에 로그인합니다.</translation>
+        <source>Log in to drumbearai.com to publish this score.</source>
+        <translation>악보를 게시하려면 drumbearai.com에 로그인합니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="357"/>
@@ -37051,8 +37051,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="361"/>
-        <source>All saved changes will be publicly visible on MuseScore.com. If you want to make frequent changes, we recommend saving this score privately until you’re ready to share it to the world.</source>
-        <translation>저장된 모든 변경 사항은 MuseScore.com에 공개됩니다. 수정이 빈번할 경우, 전체 공개 준비가 될 때까지 이 악보를 비공개로 저장하는 것이 좋습니다.</translation>
+        <source>All saved changes will be publicly visible on drumbearai.com. If you want to make frequent changes, we recommend saving this score privately until you’re ready to share it to the world.</source>
+        <translation>저장된 모든 변경 사항은 drumbearai.com에 공개됩니다. 수정이 빈번할 경우, 전체 공개 준비가 될 때까지 이 악보를 비공개로 저장하는 것이 좋습니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="391"/>
@@ -37061,8 +37061,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="401"/>
-        <source>Unable to connect to MuseScore.com</source>
-        <translation>MuseScore.com에 연결할 수 없습니다.</translation>
+        <source>Unable to connect to drumbearai.com</source>
+        <translation>drumbearai.com에 연결할 수 없습니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="402"/>
@@ -37142,8 +37142,8 @@ failed: %2</source>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="466"/>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="559"/>
-        <source>Log in or create a free account on MuseScore.com to open this score.</source>
-        <translation>악보를 열려면 로그인하거나 musescore.com에서 무료 계정을 만들기합니다.</translation>
+        <source>Log in or create a free account on drumbearai.com to open this score.</source>
+        <translation>악보를 열려면 로그인하거나 drumbearai.com에서 무료 계정을 만들기합니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1401"/>
@@ -37152,8 +37152,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1404"/>
-        <source>All saved changes will now update to the cloud. You can manage this file in the score manager on MuseScore.com.</source>
-        <translation>저장된 모든 변경 사항이 클라우드에 업데이트됩니다. 이 파일은 MuseScore.com의 악보 관리자에서 관리할 수 있습니다.</translation>
+        <source>All saved changes will now update to the cloud. You can manage this file in the score manager on drumbearai.com.</source>
+        <translation>저장된 모든 변경 사항이 클라우드에 업데이트됩니다. 이 파일은 drumbearai.com의 악보 관리자에서 관리할 수 있습니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1480"/>
@@ -37224,7 +37224,7 @@ failed: %2</source>
 <context>
     <name>publish</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/PublishPage/PublishToolBar.qml" line="31"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/PublishPage/PublishToolBar.qml" line="31"/>
         <source>Publish toolbar</source>
         <translation>게시 도구 모음</translation>
     </message>
@@ -37346,24 +37346,24 @@ failed: %2</source>
         <translation>단축키 조합 지정</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/EditPercussionShortcutDialog.qml" line="38"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/EditPercussionShortcutDialog.qml" line="38"/>
         <source>Enter shortcut</source>
         <translation>단축키 입력</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/EditPercussionShortcutDialog.qml" line="71"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/EditPercussionShortcutDialog.qml" line="71"/>
         <source>Define percussion keyboard shortcut</source>
         <translation>퍼커션 키보드 단축키 지정</translation>
     </message>
     <message>
         <location filename="../../src/framework/shortcuts/qml/Muse/Shortcuts/editshortcutmodel.cpp" line="223"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/editpercussionshortcutmodel.cpp" line="142"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/editpercussionshortcutmodel.cpp" line="142"/>
         <source>This shortcut is already assigned to: &lt;b&gt;%1&lt;/b&gt;</source>
         <translation>이 단축키는 이미 지정되어 있습니다: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../src/framework/shortcuts/qml/Muse/Shortcuts/editshortcutmodel.cpp" line="243"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/editpercussionshortcutmodel.cpp" line="191"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/editpercussionshortcutmodel.cpp" line="191"/>
         <source>Are you sure you want to assign it to &lt;b&gt;%1&lt;/b&gt; instead?</source>
         <translation>대신 &lt;b&gt;%1&lt;/b&gt;에 할당하시겠습니까?</translation>
     </message>
@@ -37379,8 +37379,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/framework/shortcuts/qml/Muse/Shortcuts/shortcutsmodel.cpp" line="37"/>
-        <source>MuseScore Studio shortcuts file</source>
-        <translation>MuseScore Studio 단축키 파일</translation>
+        <source>DB Score shortcuts file</source>
+        <translation>DB Score 단축키 파일</translation>
     </message>
     <message>
         <location filename="../../src/framework/shortcuts/qml/Muse/Shortcuts/shortcutsmodel.cpp" line="192"/>
@@ -37413,17 +37413,17 @@ failed: %2</source>
         <translation>없음</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/editpercussionshortcutmodel.cpp" line="103"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/editpercussionshortcutmodel.cpp" line="103"/>
         <source>Reassign shortcut for &lt;b&gt;%1&lt;/b&gt;</source>
         <translation>&lt;b&gt;%1&lt;/b&gt;의 단축키 재지정</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/editpercussionshortcutmodel.cpp" line="186"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/editpercussionshortcutmodel.cpp" line="186"/>
         <source>When this instrument is selected, &lt;b&gt;%1&lt;/b&gt; will no longer run &lt;b&gt;%2&lt;/b&gt;.</source>
         <translation>이 악기가 선택되면 &lt;b&gt;%1&lt;/b&gt; 단축키로 더 이상 &lt;b&gt;%2&lt;/b&gt; 기능을 실행할 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/percussionpanelpadmodel.cpp" line="91"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/percussionpanelpadmodel.cpp" line="91"/>
         <source>Define keyboard shortcut…</source>
         <translation>키보드 단축키 지정…</translation>
     </message>
@@ -37910,155 +37910,155 @@ failed: %2</source>
         <translation>텍스트 붙여넣기</translation>
     </message>
     <message>
-        <location filename="../../src/engraving/qml/MuseScore/Engraving/devtools/corruptscoredevtoolsmodel.cpp" line="44"/>
+        <location filename="../../src/engraving/qml/DB Score/Engraving/devtools/corruptscoredevtoolsmodel.cpp" line="44"/>
         <source>Corrupt score</source>
         <extracomment>&quot;Corrupt&quot; is used as a verb here, i.e. &quot;Make the current score corrupted&quot; (for testing purposes).</extracomment>
         <translation>악보 데이터 손상시키기</translation>
     </message>
     <message>
         <location filename="../../src/engraving/tests/voiceswitching_tests.cpp" line="209"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/inspectormodelwithvoiceandpositionoptions.cpp" line="165"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/inspectormodelwithvoiceandpositionoptions.cpp" line="165"/>
         <location filename="../../src/notation/internal/notationinteraction.cpp" line="6109"/>
         <source>Change voice</source>
         <translation>성부 변경</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/abstractinspectormodel.cpp" line="478"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/verticalframesettingsmodel.cpp" line="66"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/abstractelementpopupmodel.cpp" line="211"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/abstractelementpopupmodel.cpp" line="223"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/abstractinspectormodel.cpp" line="478"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/verticalframesettingsmodel.cpp" line="66"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/abstractelementpopupmodel.cpp" line="211"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/abstractelementpopupmodel.cpp" line="223"/>
         <source>Edit %1</source>
         <translation>%1 편집</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/abstractinspectormodel.cpp" line="511"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/verticalframesettingsmodel.cpp" line="98"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="72"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/abstractinspectormodel.cpp" line="511"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/verticalframesettingsmodel.cpp" line="98"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="72"/>
         <source>Reset %1</source>
         <translation>%1 재설정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/abstractinspectormodel.cpp" line="599"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/abstractinspectormodel.cpp" line="599"/>
         <location filename="../../src/notationscene/widgets/editstyle.cpp" line="1271"/>
         <source>Edit style</source>
         <translation>스타일 편집</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/emptystaves/emptystavesvisiblitysettingsmodel.cpp" line="85"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/emptystaves/emptystavesvisiblitysettingsmodel.cpp" line="85"/>
         <source>Hide empty staves</source>
         <translation>빈 보표 숨김</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/emptystaves/emptystavesvisiblitysettingsmodel.cpp" line="108"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/emptystaves/emptystavesvisiblitysettingsmodel.cpp" line="108"/>
         <source>Show empty staves</source>
         <translation>빈 보표 표시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/emptystaves/emptystavesvisiblitysettingsmodel.cpp" line="131"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/emptystaves/emptystavesvisiblitysettingsmodel.cpp" line="131"/>
         <source>Reset empty staves visibility</source>
         <translation>빈 보표 가시성 재설정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/generalsettingsmodel.cpp" line="162"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/generalsettingsmodel.cpp" line="162"/>
         <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="501"/>
         <source>Make element(s) visible</source>
         <translation>요소 표시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/generalsettingsmodel.cpp" line="163"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/generalsettingsmodel.cpp" line="163"/>
         <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="503"/>
         <source>Make element(s) invisible</source>
         <translation>요소 숨기기</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/barlinesettingsmodel.cpp" line="234"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/barlinesettingsmodel.cpp" line="234"/>
         <source>Set barline span interval as staff default</source>
         <translation>세로줄 확장 간격을 보표 기본값으로 지정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/bendsettingsmodel.cpp" line="455"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/bendsettingsmodel.cpp" line="455"/>
         <source>Edit bend curve</source>
         <translation>벤드 곡선 편집</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/fretframe/fretframechordlistmodel.cpp" line="106"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/fretframe/fretframechordlistmodel.cpp" line="106"/>
         <source>Make chord(s) visible</source>
         <translation>코드 표시</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/fretframe/fretframechordlistmodel.cpp" line="107"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/fretframe/fretframechordlistmodel.cpp" line="107"/>
         <source>Make chord(s) invisible</source>
         <translation>코드 숨기기</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/fretframe/fretframechordlistmodel.cpp" line="135"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/fretframe/fretframechordlistmodel.cpp" line="135"/>
         <source>Move chord(s) up</source>
         <translation>코드 위로 이동</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/fretframe/fretframechordlistmodel.cpp" line="157"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/fretframe/fretframechordlistmodel.cpp" line="157"/>
         <source>Move chord(s) down</source>
         <translation>코드 아래로 이동</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/fretframe/fretframechordssettingsmodel.cpp" line="130"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/fretframe/fretframechordssettingsmodel.cpp" line="130"/>
         <source>Reset fretboard diagram legend chords list</source>
         <translation>지판 다이어그램 범례 코드 목록 재설정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/fretcanvas.cpp" line="273"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/fretcanvas.cpp" line="273"/>
         <source>Edit fretboard diagram</source>
         <translation>지판 다이어그램 편집</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/fretcanvas.cpp" line="382"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/fretcanvas.cpp" line="382"/>
         <source>Clear fretboard diagram</source>
         <translation>지판 다이어그램 지우기</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="54"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="54"/>
         <source>Add notehead parentheses</source>
         <translation>음표 머리 괄호 추가</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="57"/>
         <source>Remove notehead parentheses</source>
         <translation>음표 머리 괄호 제거</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/stemsettingsmodel.cpp" line="115"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/stemsettingsmodel.cpp" line="115"/>
         <source>Change stem direction</source>
         <translation>음표 기둥 방향 변경</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/ornamentsettingsmodel.cpp" line="257"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/ornamentsettingsmodel.cpp" line="257"/>
         <source>Set ornament interval step</source>
         <translation>꾸밈음 음정 단계 지정</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/ornamentsettingsmodel.cpp" line="289"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/ornamentsettingsmodel.cpp" line="289"/>
         <source>Set ornament interval type</source>
         <translation>꾸밈음 음정 유형 지정</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/instrumentsettingsmodel.cpp" line="129"/>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/instrumentsettingsmodel.cpp" line="151"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/instrumentsettingsmodel.cpp" line="129"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/instrumentsettingsmodel.cpp" line="151"/>
         <source>Change instrument settings</source>
         <translation>악기 설정 변경</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/staffsettingsmodel.cpp" line="240"/>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/staffsettingsmodel.cpp" line="275"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/staffsettingsmodel.cpp" line="240"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/staffsettingsmodel.cpp" line="275"/>
         <source>Change staff settings</source>
         <translation>보표 설정 변경</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/systemobjectslayersettingsmodel.cpp" line="99"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/systemobjectslayersettingsmodel.cpp" line="99"/>
         <source>Make system marking(s) visible</source>
         <translation>단 기호 표시</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/systemobjectslayersettingsmodel.cpp" line="100"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/systemobjectslayersettingsmodel.cpp" line="100"/>
         <source>Make system marking(s) invisible</source>
         <translation>단 기호 숨기기</translation>
     </message>
@@ -38320,7 +38320,7 @@ failed: %2</source>
     <message>
         <location filename="../../src/notation/internal/notationinteraction.cpp" line="5539"/>
         <location filename="../../src/notation/internal/notationinteraction.cpp" line="5579"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/dynamicpopupmodel.cpp" line="207"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/dynamicpopupmodel.cpp" line="207"/>
         <source>Add hairpin</source>
         <translation>헤어핀 추가</translation>
     </message>
@@ -38383,13 +38383,13 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/notation/internal/notationinteraction.cpp" line="5849"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/dynamicpopupmodel.cpp" line="199"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/dynamicpopupmodel.cpp" line="199"/>
         <source>Change hairpin type</source>
         <translation>헤어핀 유형 변경</translation>
     </message>
     <message>
         <location filename="../../src/notation/internal/notationinteraction.cpp" line="5892"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/dynamicpopupmodel.cpp" line="159"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/dynamicpopupmodel.cpp" line="159"/>
         <source>Add dynamic</source>
         <translation>강약 기호 추가</translation>
     </message>
@@ -38894,32 +38894,32 @@ failed: %2</source>
         <translation>조옮김된 음으로 화면표시</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/dynamicpopupmodel.cpp" line="196"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/dynamicpopupmodel.cpp" line="196"/>
         <source>Remove hairpin</source>
         <translation>헤어핀 제거</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/harppedalpopupmodel.cpp" line="179"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/harppedalpopupmodel.cpp" line="179"/>
         <source>Edit harp pedal diagram</source>
         <translation>하프 페달 다이어그램 편집</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/stringtuningssettingsmodel.cpp" line="142"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/stringtuningssettingsmodel.cpp" line="142"/>
         <source>Set string tuning</source>
         <translation>현 조율 지정</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/stringtuningssettingsmodel.cpp" line="230"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/stringtuningssettingsmodel.cpp" line="230"/>
         <source>Load string tunings preset</source>
         <translation>현 조율 프리셋 불러오기</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/stringtuningssettingsmodel.cpp" line="283"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/stringtuningssettingsmodel.cpp" line="283"/>
         <source>Set number of strings</source>
         <translation>현 개수 지정</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/stringtuningssettingsmodel.cpp" line="354"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/stringtuningssettingsmodel.cpp" line="354"/>
         <source>Edit strings</source>
         <translation>현 편집</translation>
     </message>
@@ -38944,22 +38944,22 @@ failed: %2</source>
         <translation>박자표 속성 편집</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/soundflagsettingsmodel.cpp" line="183"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/soundflagsettingsmodel.cpp" line="183"/>
         <source>Toggle sound flag preset</source>
         <translation>사운드 플래그 프리셋 토글</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/soundflagsettingsmodel.cpp" line="210"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/soundflagsettingsmodel.cpp" line="210"/>
         <source>Toggle sound flag playing technique</source>
         <translation>사운드 플래그 연주 기법 토글</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/soundflagsettingsmodel.cpp" line="333"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/soundflagsettingsmodel.cpp" line="333"/>
         <source>Reset sound flag</source>
         <translation>사운드 플래그 재설정</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/soundflagsettingsmodel.cpp" line="359"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/soundflagsettingsmodel.cpp" line="359"/>
         <source>Toggle ‘Apply sound flag to all staves’</source>
         <translation>‘모든 보표에 사운드 플래그 적용’ 토글</translation>
     </message>
@@ -38978,8 +38978,8 @@ failed: %2</source>
     <name>update</name>
     <message>
         <location filename="../../src/framework/update/qml/Muse/Update/AppReleaseInfoDialog.qml" line="81"/>
-        <source>A new version of MuseScore Studio is available!</source>
-        <translation>MuseScore Studio의 새 버전을 사용할 수 있습니다!</translation>
+        <source>A new version of DB Score is available!</source>
+        <translation>DB Score의 새 버전을 사용할 수 있습니다!</translation>
     </message>
     <message>
         <location filename="../../src/framework/update/qml/Muse/Update/AppReleaseInfoDialog.qml" line="88"/>
@@ -39008,8 +39008,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/framework/update/internal/appupdatescenario.cpp" line="135"/>
-        <source>You already have the latest version of MuseScore Studio. Please visit &lt;a href=&quot;%1&quot;&gt;MuseScore.org&lt;/a&gt; for news on what’s coming next.</source>
-        <translation>이미 MuseScore Studio 최신 버전을 사용 중입니다. 새로운 소식은 &lt;a href=&quot;%1&quot;&gt;MuseScore.org&lt;/a&gt;를 참조하세요.</translation>
+        <source>You already have the latest version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; for news on what’s coming next.</source>
+        <translation>이미 DB Score 최신 버전을 사용 중입니다. 새로운 소식은 &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;를 참조하세요.</translation>
     </message>
     <message>
         <location filename="../../src/framework/update/internal/appupdatescenario.cpp" line="142"/>
@@ -39028,8 +39028,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/framework/update/internal/appupdatescenario.cpp" line="191"/>
-        <source>MuseScore Studio needs to close to complete the installation. If you have any unsaved changes, you will be prompted to save them before MuseScore Studio closes.</source>
-        <translation>설치를 완료하려면 MuseScore Studio를 종료해야 합니다. 저장되지 않은 변경 사항이 있는 경우, 종료 전 저장 여부를 묻는 창이 표시됩니다.</translation>
+        <source>DB Score needs to close to complete the installation. If you have any unsaved changes, you will be prompted to save them before DB Score closes.</source>
+        <translation>설치를 완료하려면 DB Score를 종료해야 합니다. 저장되지 않은 변경 사항이 있는 경우, 종료 전 저장 여부를 묻는 창이 표시됩니다.</translation>
     </message>
     <message>
         <location filename="../../src/framework/update/internal/appupdatescenario.cpp" line="196"/>
@@ -39038,14 +39038,14 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/framework/update/qml/Muse/Update/appupdatemodel.cpp" line="33"/>
-        <source>Updating MuseScore Studio</source>
-        <translation>MuseScore Studio 업데이트 중</translation>
+        <source>Updating DB Score</source>
+        <translation>DB Score 업데이트 중</translation>
     </message>
     <message>
         <location filename="../../src/framework/update/qml/Muse/Update/appupdatemodel.cpp" line="63"/>
-        <source>Downloading MuseScore Studio %1</source>
+        <source>Downloading DB Score %1</source>
         <extracomment>Means that the download is currently in progress. %1 will be replaced by the version number of the version that is being downloaded.</extracomment>
-        <translation>MuseScore Studio %1 다운로드 중</translation>
+        <translation>DB Score %1 다운로드 중</translation>
     </message>
 </context>
 <context>
@@ -39082,7 +39082,7 @@ failed: %2</source>
         <translation>작업공간 이름:</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/notationstatusbarmodel.cpp" line="141"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/notationstatusbarmodel.cpp" line="141"/>
         <location filename="../../src/web/appshell/view/notationstatusbarmodel.cpp" line="141"/>
         <source>Workspace:</source>
         <translation>작업공간:</translation>

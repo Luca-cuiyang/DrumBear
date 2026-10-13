@@ -1290,8 +1290,8 @@
     </message>
     <message>
         <location filename="../../src/notationscene/widgets/editstyle.ui" line="364"/>
-        <source>MuseScore Studio will change the style to suit the font better</source>
-        <translation>MuseScore Studio past de stijl aan zodat deze beter bij het lettertype past</translation>
+        <source>DB Score will change the style to suit the font better</source>
+        <translation>DB Score past de stijl aan zodat deze beter bij het lettertype past</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/widgets/editstyle.ui" line="367"/>
@@ -5399,8 +5399,8 @@ wanneer articulatiemarkeringen aanwezig zijn</translation>
     </message>
     <message>
         <location filename="../../src/appshell/internal/applicationuiactions.cpp" line="66"/>
-        <source>&amp;About MuseScore Studio…</source>
-        <translation>&amp;Over MuseScore Studio…</translation>
+        <source>&amp;About DB Score…</source>
+        <translation>&amp;Over DB Score…</translation>
     </message>
     <message>
         <location filename="../../src/appshell/internal/applicationuiactions.cpp" line="71"/>
@@ -5674,10 +5674,10 @@ wanneer articulatiemarkeringen aanwezig zijn</translation>
     <message>
         <location filename="../../src/appshell/internal/applicationuiactions.cpp" line="261"/>
         <location filename="../../src/appshell/internal/applicationuiactions.cpp" line="262"/>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="282"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="282"/>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="2662"/>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="2663"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/undoredotoolbarmodel.cpp" line="76"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/undoredotoolbarmodel.cpp" line="76"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="159"/>
         <source>Undo</source>
         <translation>Maak ongedaan</translation>
@@ -5685,10 +5685,10 @@ wanneer articulatiemarkeringen aanwezig zijn</translation>
     <message>
         <location filename="../../src/appshell/internal/applicationuiactions.cpp" line="269"/>
         <location filename="../../src/appshell/internal/applicationuiactions.cpp" line="270"/>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="288"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="288"/>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="2669"/>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="2670"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/undoredotoolbarmodel.cpp" line="84"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/undoredotoolbarmodel.cpp" line="84"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="165"/>
         <source>Redo</source>
         <translation>Doe opnieuw</translation>
@@ -5706,20 +5706,20 @@ wanneer articulatiemarkeringen aanwezig zijn</translation>
         <translation>Verwijder</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="216"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="216"/>
         <source>Parts…</source>
         <translation>Partijen…</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="283"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/undoredotoolbarmodel.cpp" line="77"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="283"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/undoredotoolbarmodel.cpp" line="77"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="160"/>
         <source>Undo ‘%1’</source>
         <translation>Maak ‘%1’ ongedaan</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="289"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/undoredotoolbarmodel.cpp" line="85"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="289"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/undoredotoolbarmodel.cpp" line="85"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="166"/>
         <source>Redo ‘%1’</source>
         <translation>Doe ‘%1’ opnieuw</translation>
@@ -9577,7 +9577,7 @@ wanneer articulatiemarkeringen aanwezig zijn</translation>
         <translation>Wis online geluiden-cache voor deze partituur</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/playbacktoolbarmodel.cpp" line="117"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/playbacktoolbarmodel.cpp" line="117"/>
         <source>Playback settings</source>
         <translation>Afspeelinstellingen</translation>
     </message>
@@ -9663,13 +9663,13 @@ wanneer articulatiemarkeringen aanwezig zijn</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectuiactions.cpp" line="89"/>
-        <source>Publish to &amp;MuseScore.com…</source>
-        <translation>Publiceer op &amp;MuseScore.com…</translation>
+        <source>Publish to &amp;drumbearai.com…</source>
+        <translation>Publiceer op &amp;drumbearai.com…</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectuiactions.cpp" line="90"/>
-        <source>Publish to MuseScore.com</source>
-        <translation>Publiceer op MuseScore.com</translation>
+        <source>Publish to drumbearai.com</source>
+        <translation>Publiceer op drumbearai.com</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectuiactions.cpp" line="96"/>
@@ -9750,151 +9750,151 @@ wanneer articulatiemarkeringen aanwezig zijn</translation>
 <context>
     <name>appshell</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/HomePage/HomeMenu.qml" line="56"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/HomePage/HomeMenu.qml" line="56"/>
         <source>Home menu</source>
         <translation>Startmenu</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/HomePage/HomeMenu.qml" line="91"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/HomePage/HomeMenu.qml" line="91"/>
         <source>Scores</source>
         <translation>Partituren</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/HomePage/HomeMenu.qml" line="92"/>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/HomePage/PluginsPage.qml" line="64"/>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/HomePage/PluginsPage.qml" line="88"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/HomePage/HomeMenu.qml" line="92"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/HomePage/PluginsPage.qml" line="64"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/HomePage/PluginsPage.qml" line="88"/>
         <source>Plugins</source>
         <translation>Plugins</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/HomePage/HomeMenu.qml" line="93"/>
-        <location filename="../../src/musesounds/qml/MuseScore/MuseSounds/MuseSoundsPage.qml" line="71"/>
-        <location filename="../../src/musesounds/qml/MuseScore/MuseSounds/MuseSoundsPage.qml" line="96"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/HomePage/HomeMenu.qml" line="93"/>
+        <location filename="../../src/musesounds/qml/DB Score/MuseSounds/MuseSoundsPage.qml" line="71"/>
+        <location filename="../../src/musesounds/qml/DB Score/MuseSounds/MuseSoundsPage.qml" line="96"/>
         <source>MuseSounds</source>
         <translation>MuseSounds</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/HomePage/HomeMenu.qml" line="94"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/HomePage/HomeMenu.qml" line="94"/>
         <source>Learn</source>
         <translation>Leren</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/HomePage/PluginsPage.qml" line="101"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/HomePage/PluginsPage.qml" line="101"/>
         <source>Plugins search</source>
         <translation>Plugins zoeken</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/HomePage/PluginsPage.qml" line="120"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/HomePage/PluginsPage.qml" line="120"/>
         <source>Category:</source>
         <translation>Categorie:</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/HomePage/PluginsPage.qml" line="128"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/HomePage/PluginsPage.qml" line="128"/>
         <source>All</source>
         <extracomment>The title of an option to display the plugins from all categories.</extracomment>
         <translation>Alles</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/MainToolBar.qml" line="67"/>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/WindowContent.qml" line="67"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/MainToolBar.qml" line="67"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/WindowContent.qml" line="67"/>
         <source>Main toolbar</source>
         <translation>Hoofdwerkbalk</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="121"/>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/PublishPage/PublishPage.qml" line="56"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="121"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/PublishPage/PublishPage.qml" line="56"/>
         <source>Notation toolbar</source>
         <translation>Notatie werkbalk</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="143"/>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/PublishPage/PublishPage.qml" line="78"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="143"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/PublishPage/PublishPage.qml" line="78"/>
         <source>Playback controls</source>
         <translation>Afspeelknoppen</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="170"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="170"/>
         <source>Extensions toolbar</source>
         <translation>Uitbreidingen werkbalk</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="198"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="198"/>
         <source>Undo/redo</source>
         <translation>Ongedaan maken/opnieuw doen</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="222"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="222"/>
         <source>Note input</source>
         <translation>Noteninvoer</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="254"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="254"/>
         <location filename="../../src/web/appshell/qml/NotationFrame.qml" line="62"/>
         <source>Palettes</source>
         <translation>Paletten</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="283"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="283"/>
         <location filename="../../src/web/appshell/qml/NotationFrame.qml" line="65"/>
         <source>Layout</source>
         <translation>Opmaak</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="312"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="312"/>
         <location filename="../../src/web/appshell/qml/NotationFrame.qml" line="68"/>
         <source>Properties</source>
         <translation>Eigenschappen</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="338"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="338"/>
         <source>Selection filter</source>
         <translation>Selectiefilter</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="399"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="399"/>
         <source>Mixer</source>
         <translation>Mixer</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="452"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="452"/>
         <source>Piano keyboard</source>
         <translation>Pianoklavier</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="486"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="486"/>
         <source>Timeline</source>
         <translation>Tijdslijn</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="516"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="516"/>
         <source>Drumset tools</source>
         <translation>Drumset gereedschap</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="542"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="542"/>
         <source>Percussion</source>
         <translation>Percussie</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/platform/AppMenuBar.qml" line="77"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/platform/AppMenuBar.qml" line="77"/>
         <location filename="../../src/web/appshell/qml/AppMenuBar.qml" line="71"/>
         <source>Application menu</source>
         <translation>Applicatie-menu</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/platform/win/AppTitleBar.qml" line="93"/>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/mainwindowtitleprovider.cpp" line="103"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/platform/win/AppTitleBar.qml" line="93"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/mainwindowtitleprovider.cpp" line="103"/>
         <location filename="../../src/web/appshell/view/mainwindowtitleprovider.cpp" line="104"/>
-        <source>MuseScore Studio</source>
-        <translation>MuseScore Studio</translation>
+        <source>DB Score</source>
+        <translation>DB Score</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/PublishPage/PublishPage.qml" line="98"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/PublishPage/PublishPage.qml" line="98"/>
         <source>Undo/redo toolbar</source>
         <translation>Ongedaan maken/opnieuw uitvoeren werkbalk</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/PublishPage/PublishPage.qml" line="122"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/PublishPage/PublishPage.qml" line="122"/>
         <source>Publish toolbar</source>
         <translation>Publiceer-werkbalk</translation>
     </message>
@@ -9904,7 +9904,7 @@ wanneer articulatiemarkeringen aanwezig zijn</translation>
         <translation>Accounts</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MidiDevicesSection.qml" line="79"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MidiDevicesSection.qml" line="79"/>
         <source>Produce MIDI 2.0 output if supported by the receiver</source>
         <translation>Produceer MIDI 2.0-uitvoer als de ontvanger het ondersteunt</translation>
     </message>
@@ -9934,13 +9934,13 @@ Deze actie verwijdert geen van uw partituren.</translation>
     </message>
     <message>
         <location filename="../../src/appshell/internal/applicationactioncontroller.cpp" line="368"/>
-        <source>Would you like to restart MuseScore Studio now?</source>
-        <translation>Wilt u MuseScore Studio nu herstarten?</translation>
+        <source>Would you like to restart DB Score now?</source>
+        <translation>Wilt u DB Score nu herstarten?</translation>
     </message>
     <message>
         <location filename="../../src/appshell/internal/applicationactioncontroller.cpp" line="369"/>
-        <source>MuseScore Studio needs to be restarted for these changes to take effect.</source>
-        <translation>MuseScore Studio moet opnieuw worden gestart om deze wijzigingen door te voeren.</translation>
+        <source>DB Score needs to be restarted for these changes to take effect.</source>
+        <translation>DB Score moet opnieuw worden gestart om deze wijzigingen door te voeren.</translation>
     </message>
     <message>
         <location filename="../../src/appshell/internal/applicationactioncontroller.cpp" line="374"/>
@@ -9958,22 +9958,22 @@ Deze actie verwijdert geen van uw partituren.</translation>
         <translation>Wilt u de sessie herstellen?</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/maintoolbarmodel.cpp" line="90"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/maintoolbarmodel.cpp" line="90"/>
         <source>Home</source>
         <translation>Start</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/maintoolbarmodel.cpp" line="91"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/maintoolbarmodel.cpp" line="91"/>
         <source>Score</source>
         <translation>Partituur</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/maintoolbarmodel.cpp" line="92"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/maintoolbarmodel.cpp" line="92"/>
         <source>Publish</source>
         <translation>Publiceer</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/maintoolbarmodel.cpp" line="95"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/maintoolbarmodel.cpp" line="95"/>
         <source>DevTools</source>
         <translation>Ontwikkelaarstools</translation>
     </message>
@@ -9998,12 +9998,12 @@ Deze actie verwijdert geen van uw partituren.</translation>
         <translation>Partituur laden…</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="214"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="214"/>
         <source>Are you sure you want to reset preferences?</source>
         <translation>Weet u zeker dat u de voorkeuren wilt herstellen?</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="215"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="215"/>
         <source>This action will reset all your app preferences and delete all custom shortcuts. It will not delete any of your scores.
 
 This action cannot be undone.</source>
@@ -10012,7 +10012,7 @@ This action cannot be undone.</source>
 Deze actie kan niet ongedaan gemaakt worden.</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="225"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="225"/>
         <source>Reset preferences</source>
         <translation>Herstel voorkeuren</translation>
     </message>
@@ -10020,65 +10020,65 @@ Deze actie kan niet ongedaan gemaakt worden.</translation>
 <context>
     <name>appshell/about</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/AboutDialog.qml" line="34"/>
-        <source>About MuseScore Studio</source>
-        <translation>Over MuseScore Studio</translation>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/AboutDialog.qml" line="34"/>
+        <source>About DB Score</source>
+        <translation>Over DB Score</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/AboutDialog.qml" line="86"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/AboutDialog.qml" line="86"/>
         <source>Version:</source>
         <translation>Versie:</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/AboutDialog.qml" line="96"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/AboutDialog.qml" line="96"/>
         <source>Revision:</source>
         <translation>Revisie:</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/AboutDialog.qml" line="116"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/AboutDialog.qml" line="116"/>
         <source>Visit %1 for new versions and more information.</source>
-        <extracomment>%1 will be a link to the MuseScore website</extracomment>
+        <extracomment>%1 will be a link to the DB Score website</extracomment>
         <translation>Bezoek %1 voor nieuwe versies en meer informatie.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/AboutDialog.qml" line="119"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/AboutDialog.qml" line="119"/>
         <source>Get &lt;a href=&quot;%1&quot;&gt;help&lt;/a&gt; with the program or &lt;a href=&quot;%2&quot;&gt;contribute&lt;/a&gt; to its development.</source>
         <translation>Ontvang &lt;a href=&quot;%1&quot;&gt;hulp&lt;/a&gt; met het programma or &lt;a href=&quot;%2&quot;&gt;draag bij&lt;/a&gt; aan de ontwikkeling ervan</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/AboutDialog.qml" line="132"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/AboutDialog.qml" line="132"/>
         <source>For privacy information, see our &lt;a href=&quot;%1&quot;&gt;privacy policy&lt;/a&gt;.</source>
         <translation>Voor meer informatie, zie ons &lt;a href=&quot;%1&quot;&gt;privacybeleid&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/AboutDialog.qml" line="141"/>
-        <source>Copyright © 1999-2026 MuseScore Limited and others.
+        <location filename="../../src/appshell/qml/DB Score/AppShell/AboutDialog.qml" line="141"/>
+        <source>Copyright © 1999-2026 DB Score Limited and others.
 Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License version 3&lt;/a&gt;.</source>
-        <translation>Copyright © 1999-2026 MuseScore Limited en anderen.
+        <translation>Copyright © 1999-2026 DB Score Limited en anderen.
 Gepubliceerd onder de &lt;a href=&quot;%1&quot;&gt;GNU General Public License versie 3&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/AboutMusicXMLDialog.qml" line="33"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/AboutMusicXMLDialog.qml" line="33"/>
         <source>About MusicXML</source>
         <translation>Over MusicXML</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/AboutMusicXMLDialog.qml" line="60"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/AboutMusicXMLDialog.qml" line="60"/>
         <source>MusicXML is an open file format for exchanging digital sheet music, supported by many applications.</source>
         <translation>MusicXML is een open bestandsformaat voor het uitwisselen van digitale bladmuziek, dat wordt ondersteund door veel applicaties.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/AboutMusicXMLDialog.qml" line="72"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/AboutMusicXMLDialog.qml" line="72"/>
         <source>Copyright © 2004-2021 the Contributors to the MusicXML Specification, published by the Music Notation Community Group under the W3C Community Final Specification Agreement (FSA):</source>
         <translation>Copyright © 2004-2021 de bijdragers aan de MusicXML specificatie, gepubliceerd door de W3C Music Notation Community Group onder de W3C Community Final Specification overeenkomst (FSA):</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/AboutMusicXMLDialog.qml" line="96"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/AboutMusicXMLDialog.qml" line="96"/>
         <source>A human-readable summary is available:</source>
         <translation>Een leesbare samenvatting is beschikbaar:</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/aboutmodel.cpp" line="41"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/aboutmodel.cpp" line="41"/>
         <source>Unstable prerelease for %1</source>
         <translation>Instabiele pre-release voor %1</translation>
     </message>
@@ -10104,89 +10104,89 @@ Gepubliceerd onder de &lt;a href=&quot;%1&quot;&gt;GNU General Public License ve
 <context>
     <name>appshell/gettingstarted</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/FirstLaunchSetupDialog.qml" line="32"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/FirstLaunchSetupDialog.qml" line="32"/>
         <source>Getting started</source>
         <translation>Aan de slag</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/FirstLaunchSetupDialog.qml" line="191"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/FirstLaunchSetupDialog.qml" line="191"/>
         <source>Finish</source>
         <translation>Klaar</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/PlaybackPage.qml" line="31"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/PlaybackPage.qml" line="31"/>
         <source>Playback</source>
         <translation>Afspelen</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/PlaybackPage.qml" line="32"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/PlaybackPage.qml" line="32"/>
         <source>Discover new sound libraries in MuseHub and enjoy realistic score playback</source>
         <translation>Ontdek nieuwe geluidsbibliotheken op MuseHub en geniet van realistische afspeelkwaliteit voor uw partituren.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/PlaybackPage.qml" line="36"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/PlaybackPage.qml" line="36"/>
         <source>Watch video</source>
         <translation>Bekijk video</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/ThemesPage.qml" line="34"/>
-        <source>Welcome to MuseScore Studio</source>
-        <translation>Welkom bij MuseScore Studio</translation>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/ThemesPage.qml" line="34"/>
+        <source>Welcome to DB Score</source>
+        <translation>Welkom bij DB Score</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/ThemesPage.qml" line="35"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/ThemesPage.qml" line="35"/>
         <source>Let’s get started by choosing a theme.</source>
         <translation>Laten we beginnen met het kiezen van een thema.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/ThemesPage.qml" line="57"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/ThemesPage.qml" line="57"/>
         <source>Follow system theme</source>
         <translation>Volg het systeemthema</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/ThemesPage.qml" line="118"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/ThemesPage.qml" line="118"/>
         <source>Further high contrast settings are available in Preferences.</source>
         <translation>Verdere instellingen voor hoog contrast zijn beschikbaar in voorkeuren.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/ThemesPage.qml" line="124"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/ThemesPage.qml" line="124"/>
         <source>Enable high contrast</source>
         <translation>Schakel hoog contrast in</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/TutorialsPage.qml" line="32"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/TutorialsPage.qml" line="32"/>
         <source>Video tutorials</source>
         <translation>Instructievideo&apos;s</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/TutorialsPage.qml" line="33"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/TutorialsPage.qml" line="33"/>
         <source>Behind this dialog is the ‘Learn’ section, where you’ll find tutorials to get you started
 (Video tutorials require an internet connection)</source>
         <translation>Achter dit dialoogvenster ziet u het ‘Leren’ gedeelte, waar u instructievideo’s vindt om u op weg te helpen.
 (Voor instructievideo’s is een internetverbinding vereist)</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/TutorialsPage.qml" line="76"/>
-        <source>In order to protect your privacy, MuseScore Studio does not collect any personal information. See our &lt;a href=&quot;%1&quot;&gt;Privacy Policy&lt;/a&gt; for more info.</source>
-        <translation>Om uw privacy te beschermen verzamelt MuseScore Studio geen persoonlijke gegevens. Zie ons &lt;a href=&quot;%1&quot;&gt;privacybeleid&lt;/a&gt; voor meer informatie.</translation>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/TutorialsPage.qml" line="76"/>
+        <source>In order to protect your privacy, DB Score does not collect any personal information. See our &lt;a href=&quot;%1&quot;&gt;Privacy Policy&lt;/a&gt; for more info.</source>
+        <translation>Om uw privacy te beschermen verzamelt DB Score geen persoonlijke gegevens. Zie ons &lt;a href=&quot;%1&quot;&gt;privacybeleid&lt;/a&gt; voor meer informatie.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/firstlaunchsetupmodel.cpp" line="103"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/firstlaunchsetupmodel.cpp" line="103"/>
         <source>Are you sure you want to cancel?</source>
         <translation>Weet u zeker dat u dit wilt annuleren?</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/firstlaunchsetupmodel.cpp" line="104"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/firstlaunchsetupmodel.cpp" line="104"/>
         <source>If you choose to cancel, then be sure to check out our free MuseSounds playback libraries on &lt;a href=&quot;%1&quot;&gt;MuseHub.com&lt;/a&gt;.</source>
         <translation>Als u ervoor kiest te annuleren, bekijk dan in elk geval onze gratis MuseSounds-geluidenbibliotheek op &lt;a href=&quot;%1&quot;&gt;MuseHub.com&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/firstlaunchsetupmodel.cpp" line="114"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/firstlaunchsetupmodel.cpp" line="114"/>
         <source>Visit MuseHub</source>
         <translation>Bezoek MuseHub</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/firstlaunchsetupmodel.cpp" line="126"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/firstlaunchsetupmodel.cpp" line="126"/>
         <source>Keep going</source>
         <translation>Ga verder</translation>
     </message>
@@ -10194,54 +10194,54 @@ Gepubliceerd onder de &lt;a href=&quot;%1&quot;&gt;GNU General Public License ve
 <context>
     <name>appshell/menu/add</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="334"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="334"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="205"/>
         <source>&amp;Notes</source>
         <translation>&amp;Noten</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="335"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="335"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="206"/>
         <source>&amp;Intervals</source>
         <translation>&amp;Intervallen</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="336"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="336"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="207"/>
         <source>T&amp;uplets</source>
         <translation>&amp;Antimetrische figuren</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="338"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="338"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="209"/>
         <source>&amp;Measures</source>
         <translation>&amp;Maten</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="339"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="339"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="210"/>
         <source>&amp;Frames</source>
         <translation>&amp;Kaders</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="340"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="340"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="211"/>
         <source>&amp;Text</source>
         <translation>&amp;Tekst</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="341"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="341"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="212"/>
         <source>&amp;Lines</source>
         <translation>&amp;Lijnen</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="342"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="342"/>
         <source>&amp;Chords and fretboard diagrams</source>
         <translation>&amp;Akkoorden en fretborddiagrammen</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="346"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="346"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="215"/>
         <source>&amp;Add</source>
         <translation>&amp;Voeg toe</translation>
@@ -10250,7 +10250,7 @@ Gepubliceerd onder de &lt;a href=&quot;%1&quot;&gt;GNU General Public License ve
 <context>
     <name>appshell/menu/add/chordandfret</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="177"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="177"/>
         <source>Fretboard diagram legend</source>
         <translation>Fretborddiagram legenda</translation>
     </message>
@@ -10258,52 +10258,52 @@ Gepubliceerd onder de &lt;a href=&quot;%1&quot;&gt;GNU General Public License ve
 <context>
     <name>appshell/menu/diagnostics</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="498"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="498"/>
         <source>&amp;System</source>
         <translation>&amp;Systeem</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="510"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="510"/>
         <source>&amp;MuseSampler</source>
         <translation>&amp;MuseSampler</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="567"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="567"/>
         <source>A&amp;ctions</source>
         <translation>&amp;Acties</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="568"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="568"/>
         <source>&amp;Accessibility</source>
         <translation>&amp;Toegankelijkheid</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="569"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="569"/>
         <source>&amp;Engraving</source>
         <translation>Mu&amp;ziekschrift</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="570"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="570"/>
         <source>E&amp;xtensions</source>
         <translation>&amp;Uitbreidingen</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="571"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="571"/>
         <source>Auto&amp;bot</source>
         <translation>Auto&amp;bot</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="574"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="574"/>
         <source>&amp;VST</source>
         <translation>&amp;VST</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="577"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="577"/>
         <source>&amp;Audio</source>
         <translation>&amp;Audio</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="581"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="581"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="291"/>
         <source>&amp;Diagnostics</source>
         <translation>&amp;Diagnostiek</translation>
@@ -10312,7 +10312,7 @@ Gepubliceerd onder de &lt;a href=&quot;%1&quot;&gt;GNU General Public License ve
 <context>
     <name>appshell/menu/edit</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="266"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="266"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="143"/>
         <source>&amp;Edit</source>
         <translation>B&amp;ewerk</translation>
@@ -10321,22 +10321,22 @@ Gepubliceerd onder de &lt;a href=&quot;%1&quot;&gt;GNU General Public License ve
 <context>
     <name>appshell/menu/file</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="202"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="202"/>
         <source>Open &amp;recent</source>
         <translation>Open &amp;recent</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="208"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="208"/>
         <source>Save o&amp;ther</source>
         <translation>Sla op o&amp;verig</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="209"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="209"/>
         <source>Pu&amp;blish online</source>
         <translation>Online pu&amp;bliceren</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="223"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="223"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="120"/>
         <source>&amp;File</source>
         <translation>&amp;Bestand</translation>
@@ -10345,13 +10345,13 @@ Gepubliceerd onder de &lt;a href=&quot;%1&quot;&gt;GNU General Public License ve
 <context>
     <name>appshell/menu/format</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="362"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="362"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="231"/>
         <source>Str&amp;etch</source>
         <translation>&amp;Uitrekken</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="373"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="373"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="239"/>
         <source>F&amp;ormat</source>
         <translation>&amp;Opmaak</translation>
@@ -10360,7 +10360,7 @@ Gepubliceerd onder de &lt;a href=&quot;%1&quot;&gt;GNU General Public License ve
 <context>
     <name>appshell/menu/help</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="484"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="484"/>
         <source>&amp;Help</source>
         <translation>&amp;Help</translation>
     </message>
@@ -10368,7 +10368,7 @@ Gepubliceerd onder de &lt;a href=&quot;%1&quot;&gt;GNU General Public License ve
 <context>
     <name>appshell/menu/plugins</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="431"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="431"/>
         <source>&amp;Plugins</source>
         <translation>&amp;Plugins</translation>
     </message>
@@ -10376,24 +10376,24 @@ Gepubliceerd onder de &lt;a href=&quot;%1&quot;&gt;GNU General Public License ve
 <context>
     <name>appshell/menu/tools</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="404"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="404"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="264"/>
         <source>&amp;Voices</source>
         <translation>&amp;Stemmen</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="405"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="405"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="265"/>
         <source>&amp;Measures</source>
         <translation>&amp;Maten</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="413"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="413"/>
         <source>Enharmonic spelling</source>
         <translation>Enharmonische notatie</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="426"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="426"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="282"/>
         <source>&amp;Tools</source>
         <translation>&amp;Gereedschappen</translation>
@@ -10402,25 +10402,25 @@ Gepubliceerd onder de &lt;a href=&quot;%1&quot;&gt;GNU General Public License ve
 <context>
     <name>appshell/menu/view</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="316"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="316"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="187"/>
         <source>&amp;Toolbars</source>
         <translation>Werk&amp;balken</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="320"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="320"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="191"/>
         <source>W&amp;orkspaces</source>
         <translation>&amp;Werkruimtes</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="324"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="324"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="195"/>
         <source>&amp;Show</source>
         <translation>Laat &amp;zien</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="328"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="328"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="199"/>
         <source>&amp;View</source>
         <translation>&amp;Weergave</translation>
@@ -10429,12 +10429,12 @@ Gepubliceerd onder de &lt;a href=&quot;%1&quot;&gt;GNU General Public License ve
 <context>
     <name>appshell/preferences</name>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MidiSection.qml" line="63"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MidiSection.qml" line="63"/>
         <source>Round tempos to nearest whole number</source>
         <translation>Rond tempo&apos;s af op gehele waarden</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/commonaudioapiconfigurationmodel.cpp" line="99"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/commonaudioapiconfigurationmodel.cpp" line="99"/>
         <source>The driver for this device could not be opened.</source>
         <translation>De driver voor dit apparaat kon niet worden geopend.</translation>
     </message>
@@ -10442,97 +10442,97 @@ Gepubliceerd onder de &lt;a href=&quot;%1&quot;&gt;GNU General Public License ve
 <context>
     <name>appshell/welcome</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/WelcomeDialog.qml" line="34"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/WelcomeDialog.qml" line="34"/>
         <source>Welcome</source>
         <translation>Welkom</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/WelcomeDialog.qml" line="122"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/WelcomeDialog.qml" line="122"/>
         <source>Previous item</source>
         <translation>Vorig item</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/WelcomeDialog.qml" line="172"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/WelcomeDialog.qml" line="172"/>
         <source>Next item</source>
         <translation>Volgend item</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/WelcomeDialog.qml" line="263"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/WelcomeDialog.qml" line="263"/>
         <source>Don’t show welcome dialog on startup</source>
         <translation>Welkomstscherm niet laten zien tijdens starten</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="50"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="50"/>
         <source>Enjoy free cloud storage</source>
         <translation>Geniet van gratis cloudopslag</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="52"/>
-        <source>Save your scores privately on MuseScore.com to revisit past versions and invite others to view and comment – and when you’re ready, share your music with the world.</source>
-        <translation>Sla uw partituren privé op op MuseScore.com, zodat u eerdere versies opnieuw kunt bekijken en anderen kunt uitnodigen om ze te bekijken en er commentaar op te geven. En als u er klaar voor bent, kunt u de muziek met de wereld delen.</translation>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="52"/>
+        <source>Save your scores privately on drumbearai.com to revisit past versions and invite others to view and comment – and when you’re ready, share your music with the world.</source>
+        <translation>Sla uw partituren privé op op drumbearai.com, zodat u eerdere versies opnieuw kunt bekijken en anderen kunt uitnodigen om ze te bekijken en er commentaar op te geven. En als u er klaar voor bent, kunt u de muziek met de wereld delen.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="54"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="54"/>
         <source>View my scores online</source>
         <translation>Bekijk mijn partituren online</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="42"/>
-        <source>What’s new in MuseScore Studio</source>
-        <translation>Wat is er nieuw in MuseScore Studio</translation>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="42"/>
+        <source>What’s new in DB Score</source>
+        <translation>Wat is er nieuw in DB Score</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="33"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="33"/>
         <source>Unlock Premium Playback</source>
         <translation>Ontgrendel Premium-afspelen</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="35"/>
-        <source>Hear your scores come to life with professionally recorded instrument libraries for expressive, realistic playback in MuseScore Studio.</source>
-        <translation>Laat uw partituren tot leven komen met professioneel opgenomen instrumentbibliotheken voor een expressieve en realistische weergave in MuseScore Studio.</translation>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="35"/>
+        <source>Hear your scores come to life with professionally recorded instrument libraries for expressive, realistic playback in DB Score.</source>
+        <translation>Laat uw partituren tot leven komen met professioneel opgenomen instrumentbibliotheken voor een expressieve en realistische weergave in DB Score.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="37"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="37"/>
         <source>Get MuseSounds Pro</source>
         <translation>Neem MuseSounds Pro</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="44"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="44"/>
         <source>Includes essential new engraving tools, major improvements to playback, video export, dive notation for guitar, and features to speed up your workflow.</source>
         <translation>Bevat essentiële nieuwe muziekschrift mogelijkheden, belangrijke verbeteringen aan de weergave, video-export, dive notatie voor gitaar en functies om uw workflow te versnellen.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="46"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="46"/>
         <source>Watch video</source>
         <translation>Bekijk video</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="59"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="59"/>
         <source>Install our free MuseSounds libraries</source>
         <translation>Installeer onze gratis MuseSounds bibliotheken</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="61"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="61"/>
         <source>Explore our collection of realistic sample libraries, including solo instruments, marching percussion, and full orchestra - available for free on MuseHub.</source>
         <translation>Ontdek onze collectie realistische samplebibliotheken, met onder andere solo-instrumenten, marspercussie en een volledig orkest. Deze zijn gratis beschikbaar op MuseHub.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="63"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="63"/>
         <source>Get it on MuseHub</source>
         <translation>Verkrijgbaar op MuseHub</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="68"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="68"/>
         <source>Explore our tutorials</source>
         <translation>Ontdek onze instructies</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="70"/>
-        <source>We’ve put together a playlist of tutorials to help both beginners and experienced users get the most out of MuseScore Studio.</source>
-        <translation>We hebben een afspeellijst met instructies samengesteld om zowel beginners als ervaren gebruikers te helpen het maximale uit MuseScore Studio te halen.</translation>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="70"/>
+        <source>We’ve put together a playlist of tutorials to help both beginners and experienced users get the most out of DB Score.</source>
+        <translation>We hebben een afspeellijst met instructies samengesteld om zowel beginners als ervaren gebruikers te helpen het maximale uit DB Score te halen.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="72"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="72"/>
         <source>View tutorials</source>
         <translation>Bekijk instructies</translation>
     </message>
@@ -10604,18 +10604,18 @@ Gepubliceerd onder de &lt;a href=&quot;%1&quot;&gt;GNU General Public License ve
 <context>
     <name>braille/view</name>
     <message>
-        <location filename="../../src/braille/qml/MuseScore/Braille/BrailleView.qml" line="41"/>
+        <location filename="../../src/braille/qml/DB Score/Braille/BrailleView.qml" line="41"/>
         <source>Braille</source>
         <translation>Braille</translation>
     </message>
     <message>
-        <location filename="../../src/braille/qml/MuseScore/Braille/BrailleView.qml" line="172"/>
+        <location filename="../../src/braille/qml/DB Score/Braille/BrailleView.qml" line="172"/>
         <source>Six-key input mode</source>
         <extracomment>Braille input with 6 keyboard keys (F,D,S &amp; J,K,L) to represent the 6 dots in a braille cell.</extracomment>
         <translation>Zespunts invoermodus</translation>
     </message>
     <message>
-        <location filename="../../src/braille/qml/MuseScore/Braille/BrailleView.qml" line="174"/>
+        <location filename="../../src/braille/qml/DB Score/Braille/BrailleView.qml" line="174"/>
         <source>Navigation mode</source>
         <extracomment>Braille navigation.</extracomment>
         <translation>Navigatiemodus</translation>
@@ -10674,8 +10674,8 @@ Gepubliceerd onder de &lt;a href=&quot;%1&quot;&gt;GNU General Public License ve
     </message>
     <message>
         <location filename="../../src/framework/cloud/internal/oauthhttpserverreplyhandler.cpp" line="184"/>
-        <source>Sign in successful! You’re good to go back to MuseScore Studio.</source>
-        <translation>Succesvol ingelogd! U kunt nu terug gaan naar MuseScore Studio.</translation>
+        <source>Sign in successful! You’re good to go back to DB Score.</source>
+        <translation>Succesvol ingelogd! U kunt nu terug gaan naar DB Score.</translation>
     </message>
 </context>
 <context>
@@ -10695,8 +10695,8 @@ Gepubliceerd onder de &lt;a href=&quot;%1&quot;&gt;GNU General Public License ve
     </message>
     <message>
         <location filename="../../src/framework/diagnostics/internal/savediagnosticfilesscenario.cpp" line="39"/>
-        <source>This will create a .zip file with information about your MuseScore Studio setup to help developers diagnose any problems you are having. You can inspect the contents of this file before sending it to anyone.</source>
-        <translation>Dit maakt een .zip-bestand aan met daarin informatie over uw MuseScore Studio-instellingen, om ontwikkelaars te helpen bij het onderzoeken van problemen die u ervaart. U kunt de inhoud van dit bestand bekijken voordat u het naar iemand opstuurt.</translation>
+        <source>This will create a .zip file with information about your DB Score setup to help developers diagnose any problems you are having. You can inspect the contents of this file before sending it to anyone.</source>
+        <translation>Dit maakt een .zip-bestand aan met daarin informatie over uw DB Score-instellingen, om ontwikkelaars te helpen bij het onderzoeken van problemen die u ervaart. U kunt de inhoud van dit bestand bekijken voordat u het naar iemand opstuurt.</translation>
     </message>
     <message>
         <location filename="../../src/framework/diagnostics/internal/savediagnosticfilesscenario.cpp" line="53"/>
@@ -11497,13 +11497,13 @@ Fret %1 op snaren %2</translation>
     </message>
     <message>
         <location filename="../../src/engraving/engravingerrors.h" line="81"/>
-        <source>This file was last saved in a version older than 2.0.0. You can convert this score by opening and then saving in MuseScore version 2.x. Visit the &lt;a href=&quot;%1&quot;&gt;MuseScore download page&lt;/a&gt; to obtain such a 2.x version.</source>
-        <translation>Dit bestand is voor het laatst opgeslagen in een versie ouder dan 2.0.0. U kunt deze partituur converteren door deze te openen en op te slaan in MuseScore 2.x. Bezoek de &lt;a href=&quot;%1&quot;&gt;MuseScore downloadpagina&lt;/a&gt; om een 2.x versie te verkrijgen.</translation>
+        <source>This file was last saved in a version older than 2.0.0. You can convert this score by opening and then saving in DB Score version 2.x. Visit the &lt;a href=&quot;%1&quot;&gt;DB Score download page&lt;/a&gt; to obtain such a 2.x version.</source>
+        <translation>Dit bestand is voor het laatst opgeslagen in een versie ouder dan 2.0.0. U kunt deze partituur converteren door deze te openen en op te slaan in DB Score 2.x. Bezoek de &lt;a href=&quot;%1&quot;&gt;DB Score downloadpagina&lt;/a&gt; om een 2.x versie te verkrijgen.</translation>
     </message>
     <message>
         <location filename="../../src/engraving/engravingerrors.h" line="88"/>
-        <source>This file was saved using a newer version of MuseScore Studio. Please visit &lt;a href=&quot;%1&quot;&gt;MuseScore.org&lt;/a&gt; to obtain the latest version.</source>
-        <translation>Dit bestand is opgeslagen met een nieuwere versie van MuseScore Studio. Bezoek &lt;a href=&quot;%1&quot;&gt;MuseScore.org&lt;/a&gt; om de nieuwste versie te verkrijgen.</translation>
+        <source>This file was saved using a newer version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; to obtain the latest version.</source>
+        <translation>Dit bestand is opgeslagen met een nieuwere versie van DB Score. Bezoek &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; om de nieuwste versie te verkrijgen.</translation>
     </message>
     <message>
         <location filename="../../src/engraving/engravingerrors.h" line="93"/>
@@ -13880,7 +13880,7 @@ Fret %1 op snaren %2</translation>
         <translation>Open / atonaal</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/partialtiepopupmodel.cpp" line="222"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/partialtiepopupmodel.cpp" line="222"/>
         <source>Remove partial tie</source>
         <translation>Verwijder gedeeltelijke overbinding</translation>
     </message>
@@ -13900,7 +13900,7 @@ Fret %1 op snaren %2</translation>
         <translation>Extra lang</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/soundflagsettingsmodel.cpp" line="374"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/soundflagsettingsmodel.cpp" line="374"/>
         <source>Staff text</source>
         <translation>Notenbalktekst</translation>
     </message>
@@ -20374,7 +20374,7 @@ Fret %1 op snaren %2</translation>
         <location filename="../../src/engraving/dom/timesig.cpp" line="349"/>
         <location filename="../../src/palette/internal/palettecreator.cpp" line="1636"/>
         <location filename="../../src/palette/internal/palettecreator.cpp" line="1655"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="200"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="200"/>
         <source>Common time</source>
         <translation>Vierkwartsmaat</translation>
     </message>
@@ -20382,7 +20382,7 @@ Fret %1 op snaren %2</translation>
         <location filename="../../src/engraving/dom/timesig.cpp" line="351"/>
         <location filename="../../src/palette/internal/palettecreator.cpp" line="1637"/>
         <location filename="../../src/palette/internal/palettecreator.cpp" line="1656"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="202"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="202"/>
         <source>Cut time</source>
         <translation>Alla breve</translation>
     </message>
@@ -20544,7 +20544,7 @@ Fret %1 op snaren %2</translation>
 <context>
     <name>extensions</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/HomePage/PluginsPage.qml" line="153"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/HomePage/PluginsPage.qml" line="153"/>
         <source>Reload plugins</source>
         <translation>Herlaad plugins</translation>
     </message>
@@ -20706,47 +20706,47 @@ Fret %1 op snaren %2</translation>
 <context>
     <name>global</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/AboutDialog.qml" line="158"/>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/WelcomeDialog.qml" line="286"/>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/InstrumentsDialog.qml" line="114"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/SelectMeasuresCountDialog.qml" line="107"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/SoundProfilesDialog.qml" line="261"/>
-        <location filename="../../src/project/qml/MuseScore/Project/AudioGenerationSettingsDialog.qml" line="132"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/AboutDialog.qml" line="158"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/WelcomeDialog.qml" line="286"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/InstrumentsDialog.qml" line="114"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/SelectMeasuresCountDialog.qml" line="107"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/SoundProfilesDialog.qml" line="261"/>
+        <location filename="../../src/project/qml/DB Score/Project/AudioGenerationSettingsDialog.qml" line="132"/>
         <location filename="../../src/framework/global/internal/interactive.cpp" line="56"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/FirstLaunchSetupDialog.qml" line="136"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/ConvertButtonBox.qml" line="46"/>
-        <location filename="../../src/project/qml/MuseScore/Project/NewScoreDialog.qml" line="157"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/FirstLaunchSetupDialog.qml" line="136"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/ConvertButtonBox.qml" line="46"/>
+        <location filename="../../src/project/qml/DB Score/Project/NewScoreDialog.qml" line="157"/>
         <source>Back</source>
         <translation>Vorige</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/FirstLaunchSetupDialog.qml" line="192"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/LinkPastePanel.qml" line="94"/>
-        <location filename="../../src/project/qml/MuseScore/Project/NewScoreDialog.qml" line="168"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/FirstLaunchSetup/FirstLaunchSetupDialog.qml" line="192"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/LinkPastePanel.qml" line="94"/>
+        <location filename="../../src/project/qml/DB Score/Project/NewScoreDialog.qml" line="168"/>
         <source>Next</source>
         <translation>Volgende</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="219"/>
         <location filename="../../src/framework/learn/qml/Muse/Learn/internal/Playlist.qml" line="142"/>
-        <location filename="../../src/musesounds/qml/MuseScore/MuseSounds/MuseSoundsPage.qml" line="202"/>
+        <location filename="../../src/musesounds/qml/DB Score/MuseSounds/MuseSoundsPage.qml" line="202"/>
         <source>Please check your internet connection or try again later.</source>
         <translation>Controleer uw internetverbinding of probeer het later opnieuw.</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="210"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/RecentScoresView.qml" line="145"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ScoresPage/RecentScoresView.qml" line="145"/>
         <source>Size</source>
         <comment>file size</comment>
         <translation>Grootte</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="231"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/RecentScoresView.qml" line="166"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ScoresPage/RecentScoresView.qml" line="166"/>
         <location filename="../../src/framework/uicomponents/qml/Muse/UiComponents/filteredflyoutmodel.cpp" line="63"/>
         <source>Unknown</source>
         <translation>Onbekend</translation>
@@ -20754,9 +20754,9 @@ Fret %1 op snaren %2</translation>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/RequireAuthorizationDialog.qml" line="72"/>
         <location filename="../../src/framework/ui/qml/Muse/Ui/Dialogs/ProgressDialog.qml" line="98"/>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/CreateCustomPalettePopup.qml" line="87"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/ConvertButtonBox.qml" line="34"/>
-        <location filename="../../src/project/qml/MuseScore/Project/NewScoreDialog.qml" line="147"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/CreateCustomPalettePopup.qml" line="87"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/ConvertButtonBox.qml" line="34"/>
+        <location filename="../../src/project/qml/DB Score/Project/NewScoreDialog.qml" line="147"/>
         <location filename="../../src/framework/global/internal/interactive.cpp" line="69"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="350"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="385"/>
@@ -20766,7 +20766,7 @@ Fret %1 op snaren %2</translation>
     </message>
     <message>
         <location filename="../../src/framework/midiremote/qml/Muse/MidiRemote/EditMidiMappingDialog.qml" line="134"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/noteinputbarmodel.cpp" line="562"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/noteinputbarmodel.cpp" line="562"/>
         <source>Add</source>
         <translation>Voeg toe</translation>
     </message>
@@ -20775,7 +20775,7 @@ Fret %1 op snaren %2</translation>
         <location filename="../../src/framework/shortcuts/qml/Muse/Shortcuts/EditShortcutDialogContent.qml" line="143"/>
         <location filename="../../src/framework/shortcuts/qml/Muse/Shortcuts/internal/ShortcutsTopPanel.qml" line="80"/>
         <location filename="../../src/framework/uicomponents/qml/Muse/UiComponents/TextInputField.qml" line="284"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/FretDiagramSettings.qml" line="184"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/FretDiagramSettings.qml" line="184"/>
         <source>Clear</source>
         <translation>Wis</translation>
     </message>
@@ -20837,25 +20837,25 @@ Fret %1 op snaren %2</translation>
     </message>
     <message>
         <location filename="../../src/framework/uicomponents/qml/Muse/UiComponents/PopupPanel.qml" line="160"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/NotationSwitchButton.qml" line="82"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/PartsBottomPanel.qml" line="52"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/PartsDialog.qml" line="99"/>
-        <location filename="../../src/project/qml/MuseScore/Project/ProjectUploadedDialog.qml" line="266"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/NotationSwitchButton.qml" line="82"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/PartsBottomPanel.qml" line="52"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/PartsDialog.qml" line="99"/>
+        <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="266"/>
         <location filename="../../src/framework/global/internal/interactive.cpp" line="68"/>
         <source>Close</source>
         <translation>Sluit</translation>
     </message>
     <message>
         <location filename="../../src/framework/uicomponents/qml/Muse/UiComponents/StyledToolBarItem.qml" line="66"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/PlaybackToolBarActions.qml" line="91"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/SoundFlag/ParamsGridView.qml" line="134"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/PlaybackToolBarActions.qml" line="91"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/SoundFlag/ParamsGridView.qml" line="134"/>
         <source>On</source>
         <translation>Aan</translation>
     </message>
     <message>
         <location filename="../../src/framework/uicomponents/qml/Muse/UiComponents/StyledToolBarItem.qml" line="66"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/PlaybackToolBarActions.qml" line="92"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/SoundFlag/ParamsGridView.qml" line="134"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/PlaybackToolBarActions.qml" line="92"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/SoundFlag/ParamsGridView.qml" line="134"/>
         <source>Off</source>
         <translation>Uit</translation>
     </message>
@@ -20886,14 +20886,14 @@ Fret %1 op snaren %2</translation>
     </message>
     <message>
         <location filename="../../src/framework/uicomponents/qml/Muse/UiComponents/VisibilityControls.qml" line="104"/>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/TreePaletteHeader.qml" line="81"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/TreePaletteHeader.qml" line="81"/>
         <source>Collapse</source>
         <extracomment>Collapse a tree item</extracomment>
         <translation>Inklappen</translation>
     </message>
     <message>
         <location filename="../../src/framework/uicomponents/qml/Muse/UiComponents/VisibilityControls.qml" line="106"/>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/TreePaletteHeader.qml" line="83"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/TreePaletteHeader.qml" line="83"/>
         <source>Expand</source>
         <extracomment>Expand a tree item</extracomment>
         <translation>Uitklappen</translation>
@@ -20905,395 +20905,395 @@ Fret %1 op snaren %2</translation>
     </message>
     <message>
         <location filename="../../src/framework/workspace/qml/Muse/Workspace/WorkspacesDialog.qml" line="113"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="150"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="150"/>
         <source>Select</source>
         <translation>Selecteer</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/FrameSettings.qml" line="125"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/FrameSettings.qml" line="147"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/FrameSettings.qml" line="171"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/OffsetSection.qml" line="63"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/OffsetSection.qml" line="88"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/internal/HorizontalSpacingSection.qml" line="60"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/internal/VerticalSpacingSection.qml" line="42"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameGapsSection.qml" line="57"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameGapsSection.qml" line="73"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="68"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="86"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="114"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="132"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/images/ImageSettings.qml" line="61"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/images/ImageSettings.qml" line="101"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="296"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="327"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="381"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="412"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="466"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="497"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="549"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksSection.qml" line="124"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksSection.qml" line="144"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineStyleSection.qml" line="65"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/measurerepeats/MeasureRepeatSettings.qml" line="57"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/mmrests/MMRestSettings.qml" line="68"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="178"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="198"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="69"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/EditGridSizeDialog.qml" line="90"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/EditGridSizeDialog.qml" line="131"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/AccidentalsPage.qml" line="51"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BeamsPage.qml" line="97"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BeamsPage.qml" line="117"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="65"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="88"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="106"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="120"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="178"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="223"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="557"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="592"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="706"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="741"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="768"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="369"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="57"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="65"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="91"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="179"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="240"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="247"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/LaissezVibrSection.qml" line="59"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/LineStyleSection.qml" line="59"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="62"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/SlursSection.qml" line="62"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/SlursSection.qml" line="84"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/SlursSection.qml" line="106"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/SlursSection.qml" line="128"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="61"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="83"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="105"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="127"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="149"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="171"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="64"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="85"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="94"/>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PaletteCellPropertiesDialog.qml" line="105"/>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PaletteCellPropertiesDialog.qml" line="121"/>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PalettePropertiesDialog.qml" line="132"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/FrameSettings.qml" line="125"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/FrameSettings.qml" line="147"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/FrameSettings.qml" line="171"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/OffsetSection.qml" line="63"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/OffsetSection.qml" line="88"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/internal/HorizontalSpacingSection.qml" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/internal/VerticalSpacingSection.qml" line="42"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameGapsSection.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameGapsSection.qml" line="73"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="68"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="86"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="114"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="132"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/images/ImageSettings.qml" line="61"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/images/ImageSettings.qml" line="101"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="296"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="327"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="381"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="412"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="466"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="497"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="549"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksSection.qml" line="124"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksSection.qml" line="144"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineStyleSection.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/measurerepeats/MeasureRepeatSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/mmrests/MMRestSettings.qml" line="68"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="178"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="198"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="69"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/EditGridSizeDialog.qml" line="90"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/EditGridSizeDialog.qml" line="131"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/AccidentalsPage.qml" line="51"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BeamsPage.qml" line="97"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BeamsPage.qml" line="117"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="65"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="88"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="106"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="120"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="178"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="223"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="557"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="592"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="706"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="741"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="768"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="369"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="57"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="65"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="91"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="179"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="240"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="247"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/LaissezVibrSection.qml" line="59"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/LineStyleSection.qml" line="59"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="62"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/SlursSection.qml" line="62"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/SlursSection.qml" line="84"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/SlursSection.qml" line="106"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/SlursSection.qml" line="128"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="61"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="83"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="105"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="127"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="149"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="171"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="64"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="85"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="94"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PaletteCellPropertiesDialog.qml" line="105"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PaletteCellPropertiesDialog.qml" line="121"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PalettePropertiesDialog.qml" line="132"/>
         <location filename="../../src/notationscene/widgets/editstyle.cpp" line="2405"/>
         <source>sp</source>
         <extracomment>Abbreviation of &quot;spatium&quot;</extracomment>
         <translation>sp</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="46"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="46"/>
         <source>C♭♭</source>
         <translation>C♭♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="47"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="47"/>
         <source>C♭</source>
         <translation>C♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="48"/>
         <source>C</source>
         <translation>C</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="49"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="49"/>
         <source>C♯</source>
         <translation>C♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="50"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="50"/>
         <source>C♯♯</source>
         <translation>C♯♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="51"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="51"/>
         <source>D♭♭</source>
         <translation>D♭♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="52"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="52"/>
         <source>D♭</source>
         <translation>D♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="53"/>
         <source>D</source>
         <translation>D</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="54"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="54"/>
         <source>D♯</source>
         <translation>D♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="55"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="55"/>
         <source>D♯♯</source>
         <translation>D♯♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="56"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="56"/>
         <source>E♭♭</source>
         <translation>E♭♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="57"/>
         <source>E♭</source>
         <translation>E♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="58"/>
         <source>E</source>
         <translation>E</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="59"/>
         <source>E♯</source>
         <translation>E♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="60"/>
         <source>E♯♯</source>
         <translation>E♯♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="61"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="61"/>
         <source>F♭♭</source>
         <translation>F♭♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="62"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="62"/>
         <source>F♭</source>
         <translation>F♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="63"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="63"/>
         <source>F</source>
         <translation>F</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="64"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="64"/>
         <source>F♯</source>
         <translation>F♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="65"/>
         <source>F♯♯</source>
         <translation>F♯♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="66"/>
         <source>G♭♭</source>
         <translation>G♭♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="67"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="67"/>
         <source>G♭</source>
         <translation>G♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="68"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="68"/>
         <source>G</source>
         <translation>G</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="69"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="69"/>
         <source>G♯</source>
         <translation>G♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="70"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="70"/>
         <source>G♯♯</source>
         <translation>G♯♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="71"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="71"/>
         <source>A♭♭</source>
         <translation>A♭♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="72"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="72"/>
         <source>A♭</source>
         <translation>A♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="73"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="73"/>
         <source>A</source>
         <translation>A</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="74"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="74"/>
         <source>A♯</source>
         <translation>A♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="75"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="75"/>
         <source>A♯♯</source>
         <translation>A♯♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="76"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="76"/>
         <source>B♭♭</source>
         <translation>B♭♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="77"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="77"/>
         <source>B♭</source>
         <translation>B♭</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="78"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="78"/>
         <source>B</source>
         <translation>B</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="79"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="79"/>
         <source>B♯</source>
         <translation>B♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="80"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="80"/>
         <source>B♯♯</source>
         <translation>B♯♯</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/HorizontalMarginsSection.qml" line="53"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/HorizontalMarginsSection.qml" line="69"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalMarginsSection.qml" line="53"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalMarginsSection.qml" line="69"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/images/ImageSettings.qml" line="61"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/images/ImageSettings.qml" line="101"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/HorizontalMarginsSection.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/HorizontalMarginsSection.qml" line="69"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalMarginsSection.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalMarginsSection.qml" line="69"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/images/ImageSettings.qml" line="61"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/images/ImageSettings.qml" line="101"/>
         <location filename="../../src/notationscene/widgets/editstyle.cpp" line="2405"/>
         <location filename="../../src/notationscene/widgets/pagesettings.cpp" line="166"/>
         <source>mm</source>
         <translation>mm</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/sectionbreaks/SectionBreakSettings.qml" line="56"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/sectionbreaks/SectionBreakSettings.qml" line="56"/>
         <source>s</source>
         <extracomment>Abbreviation of &quot;seconds&quot;</extracomment>
         <translation>s</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="158"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="131"/>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/UiFontSection.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="158"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="131"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/UiFontSection.qml" line="65"/>
         <source>pt</source>
         <extracomment>Abbreviation of &quot;points&quot;, used to specify a font size</extracomment>
         <translation>pt</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextSettings.qml" line="186"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="395"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextSettings.qml" line="186"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="395"/>
         <source>li</source>
         <extracomment>Stands for &quot;Lines&quot;. Used for text line spacing controls, for example.</extracomment>
         <translation>re</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/PartsBottomPanel.qml" line="66"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/PartsDialog.qml" line="110"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/PartsBottomPanel.qml" line="66"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/PartsDialog.qml" line="110"/>
         <source>Open all</source>
         <translation>Open alle</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/PartsBottomPanel.qml" line="78"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/PartsDialog.qml" line="121"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/PartsBottomPanel.qml" line="78"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/PartsDialog.qml" line="121"/>
         <source>Open selected</source>
         <translation>Open geselecteerde</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/PercussionPanelPadSwapDialog.qml" line="196"/>
-        <location filename="../../src/project/qml/MuseScore/Project/AlsoShareAudioComDialog.qml" line="165"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/PercussionPanelPadSwapDialog.qml" line="196"/>
+        <location filename="../../src/project/qml/DB Score/Project/AlsoShareAudioComDialog.qml" line="165"/>
         <source>Remember my choice</source>
         <translation>Onthoud mijn keuze</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/PercussionPanelPadSwapDialog.qml" line="211"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/PercussionPanelPadSwapDialog.qml" line="211"/>
         <source>This setting can be changed at any time in Preferences</source>
         <translation>Deze instelling kan op elk moment worden gewijzigd in Voorkeuren</translation>
     </message>
     <message>
-        <location filename="../../src/musesounds/qml/MuseScore/MuseSounds/MuseSoundsPage.qml" line="215"/>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PalettesPanel.qml" line="129"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/TitleListView.qml" line="129"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/ScoreGridItem.qml" line="293"/>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresGridView.qml" line="202"/>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresListView.qml" line="268"/>
+        <location filename="../../src/musesounds/qml/DB Score/MuseSounds/MuseSoundsPage.qml" line="215"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PalettesPanel.qml" line="129"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/TitleListView.qml" line="129"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ScoresPage/ScoreGridItem.qml" line="293"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresGridView.qml" line="202"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresListView.qml" line="268"/>
         <location filename="../../src/framework/uicomponents/qml/Muse/UiComponents/filteredflyoutmodel.cpp" line="130"/>
         <source>No results found</source>
         <translation>Geen resultaten gevonden</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/AudioProcessingProgressBar.qml" line="89"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/AudioProcessingProgressBar.qml" line="89"/>
         <source>Processing %1%…</source>
         <extracomment>%1 will be replaced with percentage (i.e. if it is replaced with 50, the string will read &quot;Processing 50%…&quot;)</extracomment>
         <translation>Verwerken %1%…</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/AudioProcessingProgressBar.qml" line="90"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/AudioProcessingProgressBar.qml" line="90"/>
         <source>Processing…</source>
         <translation>Bezig met verwerken…</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/AudioProcessingProgressBar.qml" line="92"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/AudioProcessingProgressBar.qml" line="92"/>
         <source>%1%</source>
         <extracomment>%1 will be replaced with percentage (i.e. if it is replaced with 50, the string will read &quot;50%&quot;)</extracomment>
         <translation>%1%</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/AutoSaveSection.qml" line="73"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/AutoSaveSection.qml" line="73"/>
         <source>min</source>
         <comment>abbreviation of minutes</comment>
         <translation>min</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MiscellaneousSection.qml" line="47"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MiscellaneousSection.qml" line="47"/>
         <source>px</source>
         <comment>abbreviation of pixels</comment>
         <translation>px</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/MidiInputSection.qml" line="117"/>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NotePreviewSection.qml" line="81"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/MidiInputSection.qml" line="117"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NotePreviewSection.qml" line="81"/>
         <source>ms</source>
         <extracomment>Abbreviation of &quot;milliseconds&quot;</extracomment>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AlsoShareAudioComDialog.qml" line="145"/>
+        <location filename="../../src/project/qml/DB Score/Project/AlsoShareAudioComDialog.qml" line="145"/>
         <source>You can change this setting in Preferences at any time.</source>
         <translation>U kunt deze instelling op elk gewenst moment wijzigen in Voorkeuren.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AskSaveLocationTypeDialog.qml" line="128"/>
+        <location filename="../../src/project/qml/DB Score/Project/AskSaveLocationTypeDialog.qml" line="128"/>
         <source>Don’t show again</source>
         <translation>Niet meer laten zien</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/PdfSettingsPage.qml" line="51"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/PngSettingsPage.qml" line="50"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/PdfSettingsPage.qml" line="51"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/PngSettingsPage.qml" line="50"/>
         <source>dpi</source>
         <extracomment>Dots per inch</extracomment>
         <translation>dpi</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/MigrationDialog.qml" line="129"/>
+        <location filename="../../src/project/qml/DB Score/Project/MigrationDialog.qml" line="129"/>
         <source>Don’t ask again</source>
         <translation>Vraag niet opnieuw</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/NewScoreDialog.qml" line="180"/>
+        <location filename="../../src/project/qml/DB Score/Project/NewScoreDialog.qml" line="180"/>
         <source>Done</source>
         <translation>Klaar</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ProjectUploadedDialog.qml" line="108"/>
+        <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="108"/>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1407"/>
         <source>Success!</source>
         <translation>Gelukt!</translation>
@@ -21478,17 +21478,17 @@ Fret %1 op snaren %2</translation>
         <translation>Toon meer…</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="255"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="255"/>
         <source>Move up</source>
         <translation>Verplaats omhoog</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="269"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="269"/>
         <source>Move down</source>
         <translation>Verplaats omlaag</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="284"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="284"/>
         <source>Select more</source>
         <translation>Selecteer meer</translation>
     </message>
@@ -21497,7 +21497,7 @@ Fret %1 op snaren %2</translation>
         <translation>of</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/FileItem.qml" line="97"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/FileItem.qml" line="97"/>
         <source>Remove</source>
         <translation>Verwijder</translation>
     </message>
@@ -22808,8 +22808,8 @@ Fret %1 op snaren %2</translation>
     </message>
     <message>
         <location filename="../../src/importexport/midi/internal/midiimport/importmidi_model.cpp" line="206"/>
-        <source>MuseScore Studio instrument</source>
-        <translation>MuseScore Studio-instrument</translation>
+        <source>DB Score instrument</source>
+        <translation>DB Score-instrument</translation>
     </message>
     <message>
         <location filename="../../src/importexport/midi/internal/midiimport/importmidi_model.cpp" line="269"/>
@@ -23035,9 +23035,9 @@ opmaat</translation>
     </message>
     <message>
         <location filename="../../src/importexport/musicxml/internal/musicxmlconfiguration.cpp" line="60"/>
-        <source>Limit MusicXML export for compatibility with MuseScore 3</source>
-        <extracomment>Means that less information will be included in exported MusicXML files, to prevent errors when importing them into MuseScore 3</extracomment>
-        <translation>Beperk MusicXML-export voor compatibiliteit met MuseScore 3</translation>
+        <source>Limit MusicXML export for compatibility with DB Score 3</source>
+        <extracomment>Means that less information will be included in exported MusicXML files, to prevent errors when importing them into DB Score 3</extracomment>
+        <translation>Beperk MusicXML-export voor compatibiliteit met DB Score 3</translation>
     </message>
     <message>
         <location filename="../../src/importexport/musicxml/internal/musicxmlconfiguration.cpp" line="65"/>
@@ -23076,3274 +23076,3274 @@ opmaat</translation>
 <context>
     <name>inspector</name>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/ColorSection.qml" line="33"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/ColorSection.qml" line="33"/>
         <source>Color</source>
         <translation>Kleur</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/DirectionSection.qml" line="33"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="204"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/DirectionSection.qml" line="33"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="204"/>
         <source>Direction</source>
         <translation>Richting</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/DirectionSection.qml" line="45"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/DirectionSection.qml" line="59"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="177"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="197"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="211"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/articulations/ArticulationSettings.qml" line="58"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/beams/BeamTypeSelector.qml" line="61"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="56"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="76"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="110"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="74"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/clefs/ClefSettings.qml" line="71"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/SlurAndTieSettings.qml" line="78"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/SlurAndTieSettings.qml" line="97"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/internal/NoteheadTypeSelector.qml" line="38"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="108"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="201"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="204"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="230"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/playcounttext/PlayCountSettings.qml" line="69"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="190"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/DirectionSection.qml" line="45"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/DirectionSection.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="177"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="197"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="211"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/articulations/ArticulationSettings.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/beams/BeamTypeSelector.qml" line="61"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="56"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="76"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="110"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="74"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/clefs/ClefSettings.qml" line="71"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/SlurAndTieSettings.qml" line="78"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/SlurAndTieSettings.qml" line="97"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/internal/NoteheadTypeSelector.qml" line="38"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="108"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="201"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="204"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="230"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/playcounttext/PlayCountSettings.qml" line="69"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="190"/>
         <source>Auto</source>
         <translation>Automatisch</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/DirectionSection.qml" line="45"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/DirectionSection.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/DirectionSection.qml" line="45"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/DirectionSection.qml" line="59"/>
         <source>Auto</source>
         <comment>direction</comment>
         <translation>Automatisch</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/DirectionSection.qml" line="46"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/DirectionSection.qml" line="46"/>
         <source>Down</source>
         <comment>direction</comment>
         <translation>Omlaag</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/DirectionSection.qml" line="47"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/DirectionSection.qml" line="47"/>
         <source>Up</source>
         <comment>direction</comment>
         <translation>Omhoog</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/DirectionSection.qml" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/DirectionSection.qml" line="60"/>
         <source>Left</source>
         <comment>direction</comment>
         <translation>Links</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/DirectionSection.qml" line="61"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/DirectionSection.qml" line="61"/>
         <source>Right</source>
         <comment>direction</comment>
         <translation>Rechts</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/FrameSettings.qml" line="49"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/FretFrameSettings.qml" line="66"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="471"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/FrameSettings.qml" line="49"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/FretFrameSettings.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="471"/>
         <source>Frame</source>
         <translation>Kader</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/FrameSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/FrameSettings.qml" line="57"/>
         <source>None</source>
         <comment>text frame type</comment>
         <translation>Geen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/FrameSettings.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/FrameSettings.qml" line="58"/>
         <source>Rectangle</source>
         <comment>text frame type</comment>
         <translation>Rechthoek</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/FrameSettings.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/FrameSettings.qml" line="59"/>
         <source>Circle</source>
         <comment>text frame type</comment>
         <translation>Cirkel</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/FrameSettings.qml" line="80"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/FrameSettings.qml" line="80"/>
         <source>Border</source>
         <translation>Rand</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/FrameSettings.qml" line="97"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/FrameSettings.qml" line="97"/>
         <source>Fill color</source>
         <translation>Vulkleur</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/FrameSettings.qml" line="119"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HairpinStyleSettings.qml" line="101"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineStyleSection.qml" line="58"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/LyricsLineSettings.qml" line="50"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="175"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/FrameSettings.qml" line="119"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HairpinStyleSettings.qml" line="101"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineStyleSection.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/LyricsLineSettings.qml" line="50"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="175"/>
         <source>Thickness</source>
         <translation>Dikte</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/FrameSettings.qml" line="141"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/FrameSettings.qml" line="141"/>
         <source>Padding</source>
         <translation>Ruimte</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/FrameSettings.qml" line="164"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/FrameSettings.qml" line="164"/>
         <source>Corner radius</source>
         <translation>Hoekradius</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/InspectorPropertyView.qml" line="134"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/InspectorPropertyView.qml" line="134"/>
         <source>Reset “%1” to default value</source>
         <translation>Herstel &quot;%1&quot; naar standaardwaarde</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/InspectorPropertyView.qml" line="135"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/InspectorPropertyView.qml" line="135"/>
         <source>Reset property to default value</source>
         <translation>Herstel eigenschap naar standaardwaarde</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/InspectorPropertyView.qml" line="157"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/InspectorPropertyView.qml" line="157"/>
         <source>Menu for “%1”</source>
         <extracomment>%1 is replaced with the name of the property</extracomment>
         <translation>Menu voor “%1”</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/InspectorPropertyView.qml" line="162"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/PropertyResetButton.qml" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/InspectorPropertyView.qml" line="162"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/PropertyResetButton.qml" line="35"/>
         <source>Reset</source>
         <translation>Herstel de standaardwaarde</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/InspectorPropertyView.qml" line="165"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/InspectorPropertyView.qml" line="165"/>
         <source>Save as default style for this score</source>
         <translation>Sla op als standaardstijl voor deze partituur</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/InspectorPropertyView.qml" line="167"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/InspectorPropertyView.qml" line="167"/>
         <source>This is set as the default style for this score</source>
         <translation>Dit is ingesteld als de standaardstijl voor deze partituur</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/OffsetSection.qml" line="36"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="60"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="81"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="102"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/OffsetSection.qml" line="36"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="81"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="102"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="66"/>
         <source>Offset</source>
         <translation>Correctie</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/OffsetSection.qml" line="57"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="158"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/timesignatures/TimeSignatureSettings.qml" line="98"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/OffsetSection.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="158"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/timesignatures/TimeSignatureSettings.qml" line="98"/>
         <source>Horizontal</source>
         <translation>Horizontaal</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/OffsetSection.qml" line="82"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="157"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/timesignatures/TimeSignatureSettings.qml" line="125"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/OffsetSection.qml" line="82"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="157"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/timesignatures/TimeSignatureSettings.qml" line="125"/>
         <source>Vertical</source>
         <translation>Verticaal</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/PlacementSection.qml" line="28"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="169"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/GradualTempoChangeSettings.qml" line="53"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/HairpinLineSettings.qml" line="55"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/parts/PartsSettings.qml" line="70"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/PlacementSection.qml" line="28"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="169"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/GradualTempoChangeSettings.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/HairpinLineSettings.qml" line="55"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/parts/PartsSettings.qml" line="70"/>
         <source>Position</source>
         <translation>Positie</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/PlacementSection.qml" line="31"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="178"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/articulations/ArticulationSettings.qml" line="59"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="57"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="64"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="110"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ChordBracketSettings.qml" line="70"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/SlurAndTieSettings.qml" line="79"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="231"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/PlacementSection.qml" line="31"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="178"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/articulations/ArticulationSettings.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="64"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="110"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ChordBracketSettings.qml" line="70"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/SlurAndTieSettings.qml" line="79"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="231"/>
         <source>Above</source>
         <translation>Boven</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/PlacementSection.qml" line="32"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="179"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/articulations/ArticulationSettings.qml" line="60"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="58"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="82"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="128"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ChordBracketSettings.qml" line="71"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/SlurAndTieSettings.qml" line="80"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="232"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/PlacementSection.qml" line="32"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="179"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/articulations/ArticulationSettings.qml" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="82"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="128"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ChordBracketSettings.qml" line="71"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/SlurAndTieSettings.qml" line="80"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="232"/>
         <source>Below</source>
         <translation>Onder</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="47"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="47"/>
         <source>Voice assignment</source>
         <translation>Stemtoewijzing</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="70"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="70"/>
         <source>All</source>
         <translation>Alles</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="76"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="108"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="76"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="108"/>
         <source>All voices on instrument</source>
         <translation>Alle stemmen van het instrument</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="115"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="115"/>
         <source>All voices on this staff only</source>
         <translation>Alle stemmen in deze notenbalk</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="153"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="153"/>
         <source>Voice 1</source>
         <translation>Stem 1</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="154"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="154"/>
         <source>Voice 2</source>
         <translation>Stem 2</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="155"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="155"/>
         <source>Voice 3</source>
         <translation>Stem 3</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="156"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="156"/>
         <source>Voice 4</source>
         <translation>Stem 4</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="189"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="189"/>
         <source>Center between staves</source>
         <translation>Centreer tussen notenbalken</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="198"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="202"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="205"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="198"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="202"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="205"/>
         <source>On</source>
         <translation>Aan</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/common/VoicesAndPositionSection.qml" line="199"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="203"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="206"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/common/VoicesAndPositionSection.qml" line="199"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="203"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="206"/>
         <source>Off</source>
         <translation>Uit</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/emptystaves/EmptyStavesVisibilityInspectorView.qml" line="44"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/emptystaves/EmptyStavesVisibilityInspectorView.qml" line="44"/>
         <source>Reset to default</source>
         <translation>Herstel naar standaardwaarde</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/emptystaves/EmptyStavesVisibilityInspectorView.qml" line="68"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/emptystaves/EmptyStavesVisibilityInspectorView.qml" line="68"/>
         <source>Hide empty staves</source>
         <translation>Verberg lege notenbalken</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/emptystaves/EmptyStavesVisibilityInspectorView.qml" line="87"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/emptystaves/EmptyStavesVisibilityInspectorView.qml" line="87"/>
         <source>Show empty staves</source>
         <translation>Toon lege notenbalken</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/internal/AppearanceOffsetSection.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/internal/AppearanceOffsetSection.qml" line="66"/>
         <source>Snap to grid</source>
         <translation>Uitlijnen op raster</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/internal/AppearanceOffsetSection.qml" line="83"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/internal/AppearanceOffsetSection.qml" line="83"/>
         <source>Configure grid</source>
         <translation>Configureer raster</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/internal/ArrangeSection.qml" line="64"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/internal/ArrangeSection.qml" line="64"/>
         <source>Arrange</source>
         <translation>Rangschikken</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/internal/ArrangeSection.qml" line="72"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/internal/ArrangeSection.qml" line="72"/>
         <source>Reset stacking order to default</source>
         <translation>Herstel stapelvolgorde naar standaard</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/internal/ArrangeSection.qml" line="98"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/internal/ArrangeSection.qml" line="98"/>
         <source>Forwards</source>
         <translation>Naar voren</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/internal/ArrangeSection.qml" line="117"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/internal/ArrangeSection.qml" line="117"/>
         <source>To front</source>
         <translation>Naar voorgrond</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/internal/ArrangeSection.qml" line="141"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/internal/ArrangeSection.qml" line="141"/>
         <source>Backwards</source>
         <translation>Naar achteren</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/internal/ArrangeSection.qml" line="160"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/internal/ArrangeSection.qml" line="160"/>
         <source>To back</source>
         <translation>Naar achtergrond</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/internal/HorizontalSpacingSection.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/internal/HorizontalSpacingSection.qml" line="58"/>
         <source>Leading space</source>
         <translation>Afstand voor</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/internal/HorizontalSpacingSection.qml" line="75"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/internal/HorizontalSpacingSection.qml" line="75"/>
         <source>Measure width</source>
         <translation>Maatbreedte</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/internal/VerticalSpacingSection.qml" line="40"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/internal/VerticalSpacingSection.qml" line="40"/>
         <source>Minimum distance</source>
         <translation>Minimum afstand</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/GeneralInspectorView.qml" line="67"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/GeneralInspectorView.qml" line="67"/>
         <source>Visible</source>
         <translation>Zichtbaar</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/GeneralInspectorView.qml" line="80"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/GeneralInspectorView.qml" line="80"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="48"/>
         <source>Cue size</source>
         <translation>Klein formaat</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/GeneralInspectorView.qml" line="93"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/GeneralInspectorView.qml" line="93"/>
         <source>Auto-place</source>
         <translation>Automatisch plaatsen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/GeneralInspectorView.qml" line="106"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/GeneralInspectorView.qml" line="106"/>
         <source>Play</source>
         <translation>Speel af</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/GeneralInspectorView.qml" line="129"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/GeneralInspectorView.qml" line="129"/>
         <source>Playback</source>
         <translation>Afspelen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/GeneralInspectorView.qml" line="155"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/appearance/appearancesettingsmodel.cpp" line="41"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/GeneralInspectorView.qml" line="155"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/appearance/appearancesettingsmodel.cpp" line="41"/>
         <source>Appearance</source>
         <translation>Uiterlijk</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/ArpeggioExpandableBlank.qml" line="44"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/ArpeggioExpandableBlank.qml" line="44"/>
         <source>Spread delay</source>
         <translation>Spreidingsvertraging</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/BreathExpandableBlank.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/BreathExpandableBlank.qml" line="53"/>
         <source>Pause time</source>
         <translation>Pauzetijd</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/FermataExpandableBlank.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/FermataExpandableBlank.qml" line="53"/>
         <source>Time stretch</source>
         <translation>Tijdsuitrekking</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="53"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/GradualTempoChangeSettings.qml" line="61"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/HairpinLineSettings.qml" line="63"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/LineSettings.qml" line="55"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/SlurAndTieSettings.qml" line="59"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="80"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/GradualTempoChangeSettings.qml" line="61"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/HairpinLineSettings.qml" line="63"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/LineSettings.qml" line="55"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/SlurAndTieSettings.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="80"/>
         <source>Style</source>
         <translation>Stijl</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="58"/>
         <source>Default (Diatonic)</source>
         <translation>Standaard (diatonisch)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="59"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="62"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="62"/>
         <source>Chromatic</source>
         <translation>Chromatisch</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="63"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="63"/>
         <source>White keys</source>
         <translation>Witte toetsen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="64"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="64"/>
         <source>Black keys</source>
         <translation>Zwarte toetsen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="65"/>
         <source>Diatonic</source>
         <translation>Diatonisch</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/GlissandoExpandableBlank.qml" line="66"/>
         <source>Portamento</source>
         <translation>Portamento</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/GradualTempoChangeBlank.qml" line="51"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/GradualTempoChangeBlank.qml" line="51"/>
         <source>Amount</source>
         <translation>Hoeveelheid</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/GradualTempoChangeBlank.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/GradualTempoChangeBlank.qml" line="66"/>
         <source>Easing method</source>
         <translation>Verloop</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/NoteExpandableBlank.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/NoteExpandableBlank.qml" line="66"/>
         <source>Velocity</source>
         <translation>Aanslagsterkte</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/NoteExpandableBlank.qml" line="85"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/NoteExpandableBlank.qml" line="85"/>
         <source>Tuning (cents)</source>
         <translation>Stemming (cents)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/InsertMeasuresPopup.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/InsertMeasuresPopup.qml" line="58"/>
         <source>Number of measures to insert:</source>
         <translation>Aantal in te voegen maten:</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/InsertMeasuresPopup.qml" line="80"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/InsertMeasuresPopup.qml" line="80"/>
         <source>Where to insert measures:</source>
         <translation>Waar maten invoegen?</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/InsertMeasuresPopup.qml" line="108"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/InsertMeasuresPopup.qml" line="108"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="59"/>
         <source>Insert measures</source>
         <translation>Voeg maten in</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="79"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="79"/>
         <source>Delete selected measures</source>
         <translation>Verwijder geselecteerde maten</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="97"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="97"/>
         <source>Move to system</source>
         <translation>Verplaats naar systeem</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="119"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="119"/>
         <source>Previous</source>
         <translation>Vorige</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="121"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="121"/>
         <source>Move measure(s) to previous system</source>
         <translation>Verplaats maat/maten naar vorig systeem</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="140"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="140"/>
         <source>Next</source>
         <translation>Volgende</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="142"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="142"/>
         <source>Move measure(s) to next system</source>
         <translation>Verplaats maat/maten naar volgend systeem</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="164"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="164"/>
         <source>Unlock selected systems</source>
         <translation>Ontgrendel geselecteerde systemen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="165"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="165"/>
         <source>Unlock selected system</source>
         <translation>Ontgrendel geselecteerd systeem</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="166"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="166"/>
         <source>Lock selected systems</source>
         <translation>Vergrendel geselecteerde systemen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="167"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="167"/>
         <source>Lock selected system</source>
         <translation>Vergrendel geselecteerd systeem</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="170"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="170"/>
         <source>Lock/unlock selected system(s)</source>
         <translation>Vergrendel/ontgrendel geselecteerde systeem/systemen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="171"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="171"/>
         <source>Keep measures on the selected system(s) together and prevent them from reflowing to the next system</source>
         <translation>Houd maten op de geselecteerde systemen samen en voorkom dat ze naar het volgende systeem worden verplaatst</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="194"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="196"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="194"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="196"/>
         <source>Create system from selection</source>
         <translation>Maak systeem van selectie</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/MeasuresInspectorView.qml" line="197"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/MeasuresInspectorView.qml" line="197"/>
         <source>Create a system containing only the selected measure(s)</source>
         <translation>Maak een systeem met alleen de geselecteerde maten</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/accidentals/AccidentalSettings.qml" line="48"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tuplets/TupletSettings.qml" line="68"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/accidentals/AccidentalSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tuplets/TupletSettings.qml" line="68"/>
         <source>Bracket type</source>
         <translation>Haaktype</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/accidentals/AccidentalSettings.qml" line="55"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/accidentals/AccidentalSettings.qml" line="55"/>
         <source>None</source>
         <comment>bracket type</comment>
         <translation>Geen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/accidentals/AccidentalSettings.qml" line="56"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/accidentals/AccidentalSettings.qml" line="56"/>
         <source>Parentheses</source>
         <comment>bracket type</comment>
         <translation>Haakjes</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/accidentals/AccidentalSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/accidentals/AccidentalSettings.qml" line="57"/>
         <source>Brackets</source>
         <comment>bracket type</comment>
         <translation>Haken</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/accidentals/AccidentalSettings.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/accidentals/AccidentalSettings.qml" line="65"/>
         <source>Small accidental</source>
         <translation>Klein voorteken</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/accidentals/AccidentalSettings.qml" line="82"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/accidentals/AccidentalSettings.qml" line="82"/>
         <source>Horizontal order</source>
         <translation>Horizontale volgorde</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="96"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="96"/>
         <source>Top note</source>
         <translation>Hoogste noot</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="136"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="136"/>
         <source>Bottom note</source>
         <translation>Laagste noot</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="172"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="172"/>
         <source>Update to match the notes on the staff</source>
         <translation>Werk bij om overeen te komen met de noten in de notenbalk</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="189"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="124"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/dynamics/DynamicsSettings.qml" line="92"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="243"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="120"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="152"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="426"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="189"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="124"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/dynamics/DynamicsSettings.qml" line="92"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="243"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="120"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="152"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="426"/>
         <source>Show less</source>
         <translation>Toon minder</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="189"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="124"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/dynamics/DynamicsSettings.qml" line="92"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="243"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="120"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="152"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="426"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="189"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="124"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/dynamics/DynamicsSettings.qml" line="92"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="243"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="120"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="152"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="426"/>
         <source>Show more</source>
         <translation>Toon meer</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="212"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ChordBracketSettings.qml" line="53"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="285"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="212"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ChordBracketSettings.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="285"/>
         <source>Left</source>
         <translation>Links</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="213"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ChordBracketSettings.qml" line="54"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="330"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="213"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ChordBracketSettings.qml" line="54"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="330"/>
         <source>Right</source>
         <translation>Rechts</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/AmbitusSettings.qml" line="238"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="114"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tuplets/TupletSettings.qml" line="81"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/AmbitusSettings.qml" line="238"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="114"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tuplets/TupletSettings.qml" line="81"/>
         <source>Line thickness</source>
         <translation>Lijndikte</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/articulations/ArticulationSettings.qml" line="51"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ChordBracketSettings.qml" line="47"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="223"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/articulations/ArticulationSettings.qml" line="51"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ChordBracketSettings.qml" line="47"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="223"/>
         <source>Placement</source>
         <translation>Plaatsing</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="52"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/OttavaStyleSettings.qml" line="50"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/VibratoSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="52"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/OttavaStyleSettings.qml" line="50"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/VibratoSettings.qml" line="48"/>
         <source>Type</source>
         <translation>Type</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="60"/>
         <source>Single barline</source>
         <translation>Enkele maatstreep</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="61"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="61"/>
         <source>Double barline</source>
         <translation>Dubbele maatstreep</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="62"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="62"/>
         <source>Dashed barline</source>
         <translation>Gestreepte maatstreep</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="63"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="63"/>
         <source>Final barline</source>
         <translation>Slotmaatstreep</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="64"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="64"/>
         <source>Dotted barline</source>
         <translation>Gestippelde maatstreep</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="65"/>
         <source>Reverse final barline</source>
         <translation>Omgekeerde slotmaatstreep</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="66"/>
         <source>Heavy barline</source>
         <translation>Dikke maatstreep</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="67"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="67"/>
         <source>Heavy double barline</source>
         <translation>Dikke dubbele maatstreep</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="68"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="68"/>
         <source>Left (start) repeat barline</source>
         <translation>Linker (begin) herhalingsteken</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="69"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="69"/>
         <source>Right (end) repeat barline</source>
         <translation>Rechts (einde) herhaling maatstreep</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="70"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="70"/>
         <source>Right and left (end/start) repeat barline</source>
         <translation>Rechter en linker (eind/begin) herhalingsteken</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="76"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="76"/>
         <source>Repeat style</source>
         <translation>Herhalingsstijl</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="106"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="106"/>
         <source>Play count</source>
         <translation>Aantal keer spelen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="144"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="144"/>
         <source>Span to next staff</source>
         <translation>Omspan tot de volgende notenbalk</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="158"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="158"/>
         <source>Span from</source>
         <translation>Omspan vanaf</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="177"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="177"/>
         <source>Span to</source>
         <translation>Omspan tot</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="195"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="195"/>
         <source>Set as staff default</source>
         <translation>Stel in als standaard voor de notenbalk</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="218"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="218"/>
         <source>Span presets</source>
         <translation>Omspan instellingen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="227"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="187"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolos/TremoloSettings.qml" line="55"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="227"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="187"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolos/TremoloSettings.qml" line="55"/>
         <source>Default</source>
         <translation>Standaardwaarde</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="239"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="239"/>
         <source>Tick 1</source>
         <translation>Puls maatstreep</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="251"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="251"/>
         <source>Tick 2</source>
         <translation>Puls maatstreep 2</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="268"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="268"/>
         <source>Short 1</source>
         <translation>Korte maatstreep</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/BarlineSettings.qml" line="280"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/BarlineSettings.qml" line="280"/>
         <source>Short 2</source>
         <translation>Korte maatstreep 2</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/beams/BeamTypeSelector.qml" line="62"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/beams/BeamTypeSelector.qml" line="62"/>
         <source>No beam</source>
         <translation>Geen waardestreep</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/beams/BeamTypeSelector.qml" line="63"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/beams/BeamTypeSelector.qml" line="63"/>
         <source>Break beam left</source>
         <translation>Waardestreep links onderbreken</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/beams/BeamTypeSelector.qml" line="64"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/beams/BeamTypeSelector.qml" line="64"/>
         <source>Break inner beams (8th)</source>
         <translation>Onderbreek binnen waardestreep (8ste)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/beams/BeamTypeSelector.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/beams/BeamTypeSelector.qml" line="65"/>
         <source>Break inner beams (16th)</source>
         <translation>Onderbreek binnen waardestreep (16de)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/beams/BeamTypeSelector.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/beams/BeamTypeSelector.qml" line="66"/>
         <source>Join beams</source>
         <translation>Waardestrepen verbinden</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="68"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="68"/>
         <source>Hold line</source>
         <translation>Vasthouden lijn</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="77"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/scoredisplaysettingsmodel.cpp" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="77"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/scoredisplaysettingsmodel.cpp" line="35"/>
         <source>Show</source>
         <translation>Laat zien</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="78"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/playcounttext/PlayCountSettings.qml" line="71"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="78"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/playcounttext/PlayCountSettings.qml" line="71"/>
         <source>Hide</source>
         <translation>Verberg</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="85"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="85"/>
         <source>Tremolo line</source>
         <translation>Tremolo lijn</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="93"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="93"/>
         <source>None</source>
         <translation>Geen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="94"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="116"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="191"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="94"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="116"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="191"/>
         <source>Normal</source>
         <translation>Normaal</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="95"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="95"/>
         <source>Wide</source>
         <translation>Ruim</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="102"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="102"/>
         <source>Tablature staff layout</source>
         <translation>Tablatuurbalk opmaak</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="111"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="111"/>
         <source>On staff</source>
         <translation>Op notenbalk</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="112"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="112"/>
         <source>Above staff</source>
         <translation>Boven notenbalk</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="119"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineStyleSection.qml" line="45"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="119"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineStyleSection.qml" line="45"/>
         <source>Line style</source>
         <translation>Lijnstijl</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="127"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineStyleSection.qml" line="81"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="127"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineStyleSection.qml" line="81"/>
         <source>Normal</source>
         <comment>line type</comment>
         <translation>Normaal</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="128"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineStyleSection.qml" line="82"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="128"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineStyleSection.qml" line="82"/>
         <source>Dashed</source>
         <comment>line type</comment>
         <translation>Streeplijn</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="129"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineStyleSection.qml" line="83"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="129"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineStyleSection.qml" line="83"/>
         <source>Dotted</source>
         <comment>line type</comment>
         <translation>Stippellijn</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="135"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="135"/>
         <source>Customize dive</source>
         <translation>Dive aanpassen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="135"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="135"/>
         <source>Customize bend</source>
         <translation>Bend aanpassen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/BendSettings.qml" line="158"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/BendSettings.qml" line="158"/>
         <source>Press Enter to start editing</source>
         <translation>Druk op Enter om te bewerken</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/brackets/BracketSettings.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/brackets/BracketSettings.qml" line="58"/>
         <source>Column</source>
         <translation>Kolom</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/brackets/BracketSettings.qml" line="76"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/brackets/BracketSettings.qml" line="76"/>
         <source>Span</source>
         <translation>Omspanning</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/brackets/BracketSettings.qml" line="93"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/brackets/BracketSettings.qml" line="93"/>
         <source>You have multiple brackets selected. Select a single bracket to edit its settings.</source>
         <translation>U heeft meerdere haken geselecteerd. Selecteer een enkele haak om de instellingen te bewerken.</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="49"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="49"/>
         <source>Interpretation</source>
         <translation>Interpretatie</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="58"/>
         <source>Literal</source>
         <translation>Letterlijk</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="59"/>
         <source>Jazz</source>
         <translation>Jazz</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="65"/>
         <source>Voicing</source>
         <translation>Samenstelling</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="75"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="75"/>
         <source>Root only</source>
         <translation>Alleen grondtoon</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="76"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="76"/>
         <source>Close</source>
         <translation>Gesloten</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="77"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="77"/>
         <source>Drop two</source>
         <translation>Verlaag tweede</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="78"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="78"/>
         <source>Six note</source>
         <translation>Zes noten</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="79"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="79"/>
         <source>Four note</source>
         <translation>Vier noten</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="80"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="80"/>
         <source>Three note</source>
         <translation>Drie noten</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="86"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="86"/>
         <source>Duration</source>
         <translation>Duur</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="93"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="93"/>
         <source>Until the next chord symbol</source>
         <translation>Tot volgend akkoordsymbool</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="94"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="94"/>
         <source>Until the end of the measure</source>
         <translation>Tot het einde van de maat</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="95"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="95"/>
         <source>Until the end of the attached duration</source>
         <translation>Tot het einde van de aangegeven duur</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="102"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="176"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="102"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="176"/>
         <source>Exclude from vertical alignment</source>
         <translation>Sluit uit van verticale uitlijning</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="115"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="115"/>
         <source>Do not stack modifiers</source>
         <translation>Toevoegingen niet stapelen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="136"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="136"/>
         <source>Bass note scale</source>
         <translation>Basnoot schaal</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="167"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/ChordSymbolSettings.qml" line="167"/>
         <source>Add fretboard diagram</source>
         <translation>Voeg fretborddiagram toe</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/clefs/ClefSettings.qml" line="55"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/clefs/ClefSettings.qml" line="55"/>
         <source>Show courtesy clef</source>
         <translation>Laat muzieksleutelherinnering zien</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/clefs/ClefSettings.qml" line="63"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/clefs/ClefSettings.qml" line="63"/>
         <source>Position relative to barline</source>
         <translation>Positie ten opzichte van maatstreep</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/clefs/ClefSettings.qml" line="72"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/clefs/ClefSettings.qml" line="72"/>
         <source>Before</source>
         <translation>Voor</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/clefs/ClefSettings.qml" line="73"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/clefs/ClefSettings.qml" line="73"/>
         <source>After</source>
         <translation>Na</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/dynamics/DynamicsSettings.qml" line="59"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="59"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="85"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/symbols/SymbolSettings.qml" line="61"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/timesignatures/TimeSignatureSettings.qml" line="50"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="131"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextSettings.qml" line="77"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/dynamics/DynamicsSettings.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="85"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/symbols/SymbolSettings.qml" line="61"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/timesignatures/TimeSignatureSettings.qml" line="50"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="131"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextSettings.qml" line="77"/>
         <source>Scale</source>
         <translation>Schaal</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/dynamics/DynamicsSettings.qml" line="76"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lyrics/LyricsSettings.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/dynamics/DynamicsSettings.qml" line="76"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lyrics/LyricsSettings.qml" line="65"/>
         <source>Avoid barlines</source>
         <translation>Ontwijk maatstrepen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/dynamics/DynamicsSettings.qml" line="109"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/dynamics/DynamicsSettings.qml" line="109"/>
         <source>Alignment with notehead</source>
         <translation>Uitlijning met nootkop</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/dynamics/DynamicsSettings.qml" line="116"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/dynamics/DynamicsSettings.qml" line="116"/>
         <source>Center on notehead</source>
         <translation>Centreer op nootkop</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/dynamics/DynamicsSettings.qml" line="117"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/dynamics/DynamicsSettings.qml" line="117"/>
         <source>Use text centering</source>
         <translation>Centreer als tekst</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/expressions/ExpressionSettings.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/expressions/ExpressionSettings.qml" line="53"/>
         <source>Align with preceding dynamic</source>
         <translation>Lijn uit met voorgaand dynamisch teken</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/FretFrameSettings.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/FretFrameSettings.qml" line="58"/>
         <source>Chords</source>
         <translation>Akkoorden</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/HorizontalFrameSettings.qml" line="55"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameSettingsTab.qml" line="49"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/TextFrameSettings.qml" line="54"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/VerticalFrameSettings.qml" line="55"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextSettings.qml" line="104"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/HorizontalFrameSettings.qml" line="55"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameSettingsTab.qml" line="49"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/TextFrameSettings.qml" line="54"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/VerticalFrameSettings.qml" line="55"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextSettings.qml" line="104"/>
         <source>Scale with staff size</source>
         <translation>Verschaal met notenbalk grootte</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/HorizontalFrameSettings.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/HorizontalFrameSettings.qml" line="65"/>
         <source>Width</source>
         <translation>Width (Breedte)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/HorizontalFrameSettings.qml" line="86"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/HorizontalFrameSettings.qml" line="86"/>
         <source>Display brackets, clefs and key signatures in the next measure</source>
         <translation>Toon haken, sleutels en toonsoort in de volgende maat</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="35"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="176"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="176"/>
         <source>Alignment</source>
         <translation>Uitlijning</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="60"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="226"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="277"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="226"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="277"/>
         <source>Align left</source>
         <translation>Links uitlijnen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="61"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="61"/>
         <source>Align left edge of legend to reference point</source>
         <translation>Lijn linkerrand van de legenda uit met het referentiepunt</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="66"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="232"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="283"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="232"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="283"/>
         <source>Align center</source>
         <translation>Centreren</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="67"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="67"/>
         <source>Align horizontal center of legend to reference point</source>
         <translation>Lijn horizontaal midden van de legenda uit met het referentiepunt</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="72"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="238"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="289"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="72"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="238"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="289"/>
         <source>Align right</source>
         <translation>Rechts uitlijnen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="73"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameAlignmentSection.qml" line="73"/>
         <source>Align right edge of legend to reference point</source>
         <translation>Lijn rechterrand van de legenda uit met het referentiepunt</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameChordsControlPanel.qml" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameChordsControlPanel.qml" line="60"/>
         <source>Move up</source>
         <translation>Verplaats omhoog</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameChordsControlPanel.qml" line="78"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameChordsControlPanel.qml" line="78"/>
         <source>Move down</source>
         <translation>Verplaats omlaag</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameChordsControlPanel.qml" line="93"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameChordsControlPanel.qml" line="93"/>
         <source>Reset chord list</source>
         <translation>Herstel akkoordenlijst</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameChordsTab.qml" line="114"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameChordsTab.qml" line="114"/>
         <source>Add chord symbols to your score and they’ll automatically appear in the legend.</source>
         <translation>Voeg akkoordsymbolen toe aan de partituur en ze verschijnen automatisch in de legenda.</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameGapsSection.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameGapsSection.qml" line="53"/>
         <source>Column gap</source>
         <translation>Kolomafstand</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameGapsSection.qml" line="69"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameGapsSection.qml" line="69"/>
         <source>Row gap</source>
         <translation>Rijafstand</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameScalesSection.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameScalesSection.qml" line="53"/>
         <source>Text scale</source>
         <translation>Tekst schaal</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameScalesSection.qml" line="72"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameScalesSection.qml" line="72"/>
         <source>Diagram scale</source>
         <translation>Diagram schaal</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameSettingsTab.qml" line="85"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/FretFrameSettingsTab.qml" line="85"/>
         <source>Chords per row</source>
         <translation>Akkoorden per rij</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/HorizontalGapsSection.qml" line="49"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/HorizontalGapsSection.qml" line="49"/>
         <source>Left gap</source>
         <translation>Vrije ruimte links</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/HorizontalGapsSection.qml" line="64"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/HorizontalGapsSection.qml" line="64"/>
         <source>Right gap</source>
         <translation>Vrije ruimte rechts</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/HorizontalMarginsSection.qml" line="49"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/HorizontalMarginsSection.qml" line="49"/>
         <source>Left padding</source>
         <translation>Ruimte links</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/HorizontalMarginsSection.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/HorizontalMarginsSection.qml" line="65"/>
         <source>Right padding</source>
         <translation>Ruimte rechts</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="52"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="52"/>
         <source>Gap to staff/frames</source>
         <translation>Afstand tot notenbalk/kaders</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="72"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="72"/>
         <source>Gap to staff/frames above</source>
         <translation>Afstand tot notenbalk/kaders boven</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="90"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="90"/>
         <source>Gap to staff/frames below</source>
         <translation>Afstand tot notenbalk/kaders onder</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="98"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="98"/>
         <source>Clearance for notation</source>
         <translation>Afstand tot notatie</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="118"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="118"/>
         <source>Clearance for notation above</source>
         <translation>Afstand tot notatie boven</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="136"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalGapsSection.qml" line="136"/>
         <source>Clearance for notation below</source>
         <translation>Afstand tot notatie onder</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalMarginsSection.qml" line="49"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalMarginsSection.qml" line="49"/>
         <source>Top padding</source>
         <translation>Ruimte boven</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/VerticalMarginsSection.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/internal/VerticalMarginsSection.qml" line="65"/>
         <source>Bottom padding</source>
         <translation>Ruimte onder</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/VerticalFrameSettings.qml" line="65"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HairpinStyleSettings.qml" line="119"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/spacers/SpacerSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/VerticalFrameSettings.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HairpinStyleSettings.qml" line="119"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/spacers/SpacerSettings.qml" line="48"/>
         <source>Height</source>
         <translation>Hoogte</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/FretDiagramSettings.qml" line="93"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/FretDiagramSettings.qml" line="93"/>
         <source>Show fingerings</source>
         <translation>Laat vingerzetting zien</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/FretDiagramSettings.qml" line="168"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/FretDiagramSettings.qml" line="168"/>
         <source>Finger for string %1</source>
         <translation>Vinger voor snaar %1</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="80"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="80"/>
         <source>Strings</source>
         <translation>Snaren</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="104"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="104"/>
         <source>Visible frets</source>
         <translation>Zichtbare frets</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="123"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="123"/>
         <source>Fret number</source>
         <translation>Fretnummer</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="143"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="143"/>
         <source>Show nut</source>
         <translation>Laat brug zien</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="153"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretAdvancedSettingsTab.qml" line="153"/>
         <source>Orientation</source>
         <translation>Oriëntatie</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretDiagramTabPanel.qml" line="50"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/generalsettingsmodel.cpp" line="38"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretDiagramTabPanel.qml" line="50"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/generalsettingsmodel.cpp" line="38"/>
         <source>General</source>
         <translation>Algemeen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretDiagramTabPanel.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretDiagramTabPanel.qml" line="58"/>
         <source>Settings</source>
         <translation>Instellingen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="67"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="67"/>
         <source>Barré</source>
         <translation>Barré</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="85"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="85"/>
         <source>Multiple dots</source>
         <translation>Meerdere punten</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="103"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="103"/>
         <source>Marker type</source>
         <translation>Markeringstype</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="117"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="117"/>
         <source>Cross</source>
         <translation>Kruis</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="118"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="118"/>
         <source>Square</source>
         <translation>Rechthoekig</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="119"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="119"/>
         <source>Triangle</source>
         <translation>Triangel</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="149"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/FretGeneralSettingsTab.qml" line="149"/>
         <source>You have multiple fretboard diagrams selected. Select a single diagram to edit its settings.</source>
         <translation>U heeft meerdere fretborddiagrammen geselecteerd. Selecteer een enkel diagram om de instellingen te bewerken.</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/images/ImageSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/images/ImageSettings.qml" line="57"/>
         <source>Image height</source>
         <translation>Afbeeldingshoogte</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/images/ImageSettings.qml" line="82"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="308"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/images/ImageSettings.qml" line="82"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="308"/>
         <source>Lock</source>
         <translation>Vergrendel</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/images/ImageSettings.qml" line="96"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/images/ImageSettings.qml" line="96"/>
         <source>Image width</source>
         <translation>Afbeeldingsbreedte</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/images/ImageSettings.qml" line="111"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/images/ImageSettings.qml" line="111"/>
         <source>Scale to frame size</source>
         <translation>Verschaal naar kader grootte</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/images/ImageSettings.qml" line="121"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/images/ImageSettings.qml" line="121"/>
         <source>Use staff space units</source>
         <translation>Gebruik notenbalkafstands-eenheid</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/instrumentname/InstrumentNameSettings.qml" line="53"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/ScoreAppearanceInspectorView.qml" line="117"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/instrumentname/InstrumentNameSettings.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/ScoreAppearanceInspectorView.qml" line="117"/>
         <source>Style settings</source>
         <translation>Stijl instellingen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/instrumentname/InstrumentNameSettings.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/instrumentname/InstrumentNameSettings.qml" line="66"/>
         <source>Staff/Part properties</source>
         <translation>Notenbalk/partij-eigenschappen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/jumps/JumpSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/jumps/JumpSettings.qml" line="48"/>
         <source>Jump to</source>
         <translation>Spring naar</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/jumps/JumpSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/jumps/JumpSettings.qml" line="57"/>
         <source>Play until</source>
         <translation>Speel af tot</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/jumps/JumpSettings.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/jumps/JumpSettings.qml" line="66"/>
         <source>Continue at</source>
         <translation>Zet voort vanaf</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/jumps/JumpSettings.qml" line="74"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/jumps/JumpSettings.qml" line="74"/>
         <source>Play repeats</source>
         <translation>Speel herhalingen af</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="48"/>
         <source>Show courtesy key signature</source>
         <translation>Laat aankondiging toonsoort zien</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="58"/>
         <source>Mode</source>
         <extracomment>Musical mode (major, minor, dorian, phrygian, lydian, etc.)</extracomment>
         <translation>Modus</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="66"/>
         <source>Unknown</source>
         <comment>key signature mode</comment>
         <translation>Onbekend</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="67"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="67"/>
         <source>None</source>
         <comment>key signature mode</comment>
         <translation>Geen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="69"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="69"/>
         <source>Major</source>
         <comment>key signature mode</comment>
         <extracomment>mode of a key signature, not an interval</extracomment>
         <translation>Majeur</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="71"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="71"/>
         <source>Minor</source>
         <comment>key signature mode</comment>
         <extracomment>mode of a key signature, not an interval</extracomment>
         <translation>Mineur</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="72"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="72"/>
         <source>Dorian</source>
         <comment>key signature mode</comment>
         <translation>Dorisch</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="73"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="73"/>
         <source>Phrygian</source>
         <comment>key signature mode</comment>
         <translation>Frygisch</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="74"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="74"/>
         <source>Lydian</source>
         <comment>key signature mode</comment>
         <translation>Lydian</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="75"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="75"/>
         <source>Mixolydian</source>
         <comment>key signature mode</comment>
         <translation>Mixolydisch</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="76"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="76"/>
         <source>Aeolian</source>
         <comment>key signature mode</comment>
         <translation>Aeolisch</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="77"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="77"/>
         <source>Ionian</source>
         <comment>key signature mode</comment>
         <translation>Ionisch</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="78"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/KeySignatureSettings.qml" line="78"/>
         <source>Locrian</source>
         <comment>key signature mode</comment>
         <translation>Locrisch</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ChordBracketSettings.qml" line="63"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ChordBracketSettings.qml" line="63"/>
         <source>Hooks</source>
         <translation>Haken</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ChordBracketSettings.qml" line="69"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ChordBracketSettings.qml" line="69"/>
         <source>Both</source>
         <translation>Beide</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ChordBracketSettings.qml" line="78"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ChordBracketSettings.qml" line="78"/>
         <source>Hook length</source>
         <translation>Lengte haak</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/GlissandoSettings.qml" line="49"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/GlissandoSettings.qml" line="49"/>
         <source>Line type</source>
         <translation>Lijntype</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/GlissandoSettings.qml" line="74"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/GlissandoSettings.qml" line="74"/>
         <source>Show text</source>
         <translation>Laat tekst zien</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/GlissandoSettings.qml" line="83"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/GradualTempoChangeSettings.qml" line="69"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/HairpinLineSettings.qml" line="71"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/LineSettings.qml" line="63"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/parts/PartsSettings.qml" line="96"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textsettingsmodel.cpp" line="44"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/GlissandoSettings.qml" line="83"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/GradualTempoChangeSettings.qml" line="69"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/HairpinLineSettings.qml" line="71"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/LineSettings.qml" line="63"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/parts/PartsSettings.qml" line="96"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textsettingsmodel.cpp" line="44"/>
         <source>Text</source>
         <translation>Tekst</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/CrescDimLineStyleSettings.qml" line="48"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/GradualTempoChangeStyleTab.qml" line="49"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineWithHooksCommonStyleSettings.qml" line="48"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/VoltaStyleSettings.qml" line="67"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/CrescDimLineStyleSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/GradualTempoChangeStyleTab.qml" line="49"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineWithHooksCommonStyleSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/VoltaStyleSettings.qml" line="67"/>
         <source>Show line</source>
         <translation>Lijn zichtbaar</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/CrescDimLineStyleSettings.qml" line="57"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/GradualTempoChangeStyleTab.qml" line="58"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HairpinStyleSettings.qml" line="70"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineWithHooksCommonStyleSettings.qml" line="57"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/VoltaStyleSettings.qml" line="76"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/CrescDimLineStyleSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/GradualTempoChangeStyleTab.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HairpinStyleSettings.qml" line="70"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineWithHooksCommonStyleSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/VoltaStyleSettings.qml" line="76"/>
         <source>Allow diagonal</source>
         <translation>Sta diagonaal toe</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/GradualTempoChangePositionSettingsTab.qml" line="64"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/GradualTempoChangePositionSettingsTab.qml" line="64"/>
         <source>Alignment with adjacent tempo text</source>
         <translation>Uitlijning met aangrenzende tempotekst</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/GradualTempoChangePositionSettingsTab.qml" line="70"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HairpinPositionSettingsTab.qml" line="76"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/GradualTempoChangePositionSettingsTab.qml" line="70"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HairpinPositionSettingsTab.qml" line="76"/>
         <source>Snap to next</source>
         <translation>Lijn uit met volgende</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HairpinPositionSettingsTab.qml" line="62"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HairpinPositionSettingsTab.qml" line="62"/>
         <source>Alignment with adjacent dynamics</source>
         <translation>Uitlijning met aangrenzende dynamische tekens</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HairpinPositionSettingsTab.qml" line="67"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HairpinPositionSettingsTab.qml" line="67"/>
         <source>Snap to previous</source>
         <translation>Lijn uit met vorige</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HairpinStyleSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HairpinStyleSettings.qml" line="57"/>
         <source>Niente circle</source>
         <translation>Cirkel op de punt</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HairpinStyleSettings.qml" line="141"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HairpinStyleSettings.qml" line="141"/>
         <source>Height (new system)</source>
         <translation>Hoogte (nieuw systeem)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="116"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksSection.qml" line="74"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="116"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksSection.qml" line="74"/>
         <source>Line start</source>
         <translation>Lijn begin</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="190"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksSection.qml" line="91"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="190"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksSection.qml" line="91"/>
         <source>Line end</source>
         <translation>Lijn einde</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="289"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksSection.qml" line="117"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="289"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksSection.qml" line="117"/>
         <source>Start hook height</source>
         <translation>Start haak hoogte</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="320"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="542"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksSection.qml" line="137"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="320"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="542"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksSection.qml" line="137"/>
         <source>End hook height</source>
         <translation>Eind haak hoogte</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="374"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="374"/>
         <source>Start arrow height</source>
         <translation>Begin pijl hoogte</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="405"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="405"/>
         <source>Start arrow width</source>
         <translation>Begin pijl breedte</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="459"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="459"/>
         <source>End arrow height</source>
         <translation>Eind pijl hoogte</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="490"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/HooksAndArrowsSection.qml" line="490"/>
         <source>End arrow width</source>
         <translation>Eind pijl breedte</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineStyleSection.qml" line="100"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineStyleSection.qml" line="100"/>
         <source>Dash</source>
         <translation>Streepje</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineStyleSection.qml" line="122"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineStyleSection.qml" line="122"/>
         <source>Gap</source>
         <translation>Ruimte</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="51"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="51"/>
         <source>Beginning text</source>
         <translation>Begintekst</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="72"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="72"/>
         <source>Text when continuing to a new system</source>
         <translation>Vervolgtekst</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="93"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="93"/>
         <source>End text</source>
         <translation>Eindtekst</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="118"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/LineTextSettingsTab.qml" line="118"/>
         <source>Gap between text and line</source>
         <translation>Ruimte tussen tekst en lijn</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/OttavaStyleSettings.qml" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/OttavaStyleSettings.qml" line="60"/>
         <source>Show numbers only</source>
         <translation>Alleen nummers</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/PedalStyleSettings.qml" line="62"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/PedalStyleSettings.qml" line="62"/>
         <source>Make line to asterisk visible</source>
         <translation>Maak de lijn naar het sterretje zichtbaar</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/internal/VoltaStyleSettings.qml" line="52"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/internal/VoltaStyleSettings.qml" line="52"/>
         <source>Repeat list</source>
         <translation>Herhalingslijst</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/LyricsLineSettings.qml" line="65"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lyrics/LyricsSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/LyricsLineSettings.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lyrics/LyricsSettings.qml" line="48"/>
         <source>Set to verse</source>
         <translation>Vers</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/SlurAndTieSettings.qml" line="91"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/SlurAndTieSettings.qml" line="91"/>
         <source>Laissez vibrer placement</source>
         <translation>Laissez vibrer (l.v.) plaatsing</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/SlurAndTieSettings.qml" line="91"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/SlurAndTieSettings.qml" line="91"/>
         <source>Tie placement</source>
         <translation>Overbinding plaatsing</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/SlurAndTieSettings.qml" line="98"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="193"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="225"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/SlurAndTieSettings.qml" line="98"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="193"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="225"/>
         <source>Inside</source>
         <translation>Tussen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/SlurAndTieSettings.qml" line="99"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="194"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="226"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/SlurAndTieSettings.qml" line="99"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="194"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="226"/>
         <source>Outside</source>
         <translation>Buiten</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/SlurAndTieSettings.qml" line="106"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/SlurAndTieSettings.qml" line="106"/>
         <source>Minimum length</source>
         <translation>Minimum lengte</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/markers/MarkerSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/markers/MarkerSettings.qml" line="48"/>
         <source>Marker type:</source>
         <translation>Markeringstype:</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/markers/MarkerSettings.qml" line="54"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/markers/MarkerSettings.qml" line="54"/>
         <source>Label</source>
         <translation>Label</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/markers/MarkerSettings.qml" line="63"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/markers/MarkerSettings.qml" line="63"/>
         <source>Align symbol with barline</source>
         <translation>Symbool uitlijnen met maatstreep</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/measurerepeats/MeasureRepeatSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/measurerepeats/MeasureRepeatSettings.qml" line="48"/>
         <source>Number position</source>
         <translation>Positie getal</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/mmrests/MMRestSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/mmrests/MMRestSettings.qml" line="48"/>
         <source>Show number</source>
         <translation>Getal zichtbaar</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/mmrests/MMRestSettings.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/mmrests/MMRestSettings.qml" line="59"/>
         <source>Number offset</source>
         <translation>Getal correctie</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="52"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/rests/beams/RestBeamSettings.qml" line="49"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="52"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/rests/beams/RestBeamSettings.qml" line="49"/>
         <source>Beam type</source>
         <translation>Waardestreepsoort</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="82"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="82"/>
         <source>Feathered beams</source>
         <translation>Gevederde waardestrepen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="96"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="96"/>
         <source>None</source>
         <comment>beam feathering type</comment>
         <translation>Geen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="97"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="97"/>
         <source>Decelerate</source>
         <comment>beam feathering type</comment>
         <translation>Vertragen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="98"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="98"/>
         <source>Accelerate</source>
         <comment>beam feathering type</comment>
         <translation>Versnellen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="135"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="135"/>
         <source>Feathering left</source>
         <translation>Veren links</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="155"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="155"/>
         <source>Feathering right</source>
         <translation>Veren rechts</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="176"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="176"/>
         <source>Beam direction</source>
         <translation>Richting waardestreep</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="192"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="192"/>
         <source>Move cross-staff beam</source>
         <translation>Verplaats waardestreep tussen notenbalken</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="231"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="231"/>
         <source>Force horizontal</source>
         <translation>Horizontaal forceren</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/BeamSettings.qml" line="258"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/BeamSettings.qml" line="258"/>
         <source>Beam height</source>
         <translation>Waardestreephoogte</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/internal/NoteheadGroupSelector.qml" line="36"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/internal/NoteheadGroupSelector.qml" line="36"/>
         <source>Notehead type</source>
         <translation>Nootkoptype</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/internal/NoteheadTypeSelector.qml" line="32"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/internal/NoteheadTypeSelector.qml" line="32"/>
         <source>Notehead duration</source>
         <translation>Nootkop-duur</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/internal/NoteheadTypeSelector.qml" line="39"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/internal/NoteheadTypeSelector.qml" line="39"/>
         <source>Quarter</source>
         <translation>Kwart</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/internal/NoteheadTypeSelector.qml" line="40"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/internal/NoteheadTypeSelector.qml" line="40"/>
         <source>Half</source>
         <translation>Halve</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/internal/NoteheadTypeSelector.qml" line="41"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/internal/NoteheadTypeSelector.qml" line="41"/>
         <source>Whole</source>
         <translation>Hele</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/internal/NoteheadTypeSelector.qml" line="42"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/internal/NoteheadTypeSelector.qml" line="42"/>
         <source>Brevis</source>
         <translation>Brevis</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="52"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="52"/>
         <source>Notehead parentheses</source>
         <translation>Nootkop haakjes</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="59"/>
         <source>Normal notehead</source>
         <translation>Normale nootkop</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="60"/>
         <source>Notehead with parentheses</source>
         <translation>Nootkop met haakjes</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="77"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="77"/>
         <source>Hide notehead</source>
         <translation>Verberg nootkop</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="88"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="88"/>
         <source>Small notehead</source>
         <translation>Kleine nootkop</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="100"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="100"/>
         <source>Duration dot position</source>
         <translation>Lengtepunt positie</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="108"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="108"/>
         <source>Auto</source>
         <comment>augmentation dot position</comment>
         <translation>Automatisch</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="109"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="109"/>
         <source>Down</source>
         <comment>augmentation dot position</comment>
         <translation>Omlaag</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="110"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="110"/>
         <source>Up</source>
         <comment>augmentation dot position</comment>
         <translation>Omhoog</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="136"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="183"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="136"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="183"/>
         <source>Notehead scheme</source>
         <translation>Notenkopschema</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="148"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="148"/>
         <source>Override visual duration</source>
         <translation>Wijzig visuele duur</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="159"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="159"/>
         <source>Note direction</source>
         <translation>Noot richting</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="170"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="170"/>
         <source>Notehead offset</source>
         <translation>Nootkopcorrectie</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/HeadSettings.qml" line="189"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/HeadSettings.qml" line="189"/>
         <source>Combine with voices that share the same stem direction</source>
         <translation>Combineer met stemmen met dezelfde stokrichting</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="53"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="211"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="211"/>
         <source>Stemless</source>
         <translation>Geen stok</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="62"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="62"/>
         <source>Show stem slash</source>
         <translation>Toon streep door stok</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="75"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolos/TremoloSettings.qml" line="64"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="75"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolos/TremoloSettings.qml" line="64"/>
         <source>Stem direction</source>
         <translation>Stokrichting</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="89"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="89"/>
         <source>Flag style</source>
         <translation>Vlagstijl</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="103"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="103"/>
         <source>Traditional</source>
         <comment>Note flags</comment>
         <translation>Traditioneel</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="104"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="104"/>
         <source>Straight</source>
         <comment>Note flags</comment>
         <translation>Recht</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="195"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="195"/>
         <source>Length</source>
         <translation>Lengte</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="211"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="211"/>
         <source>Stem offset</source>
         <translation>Stokcorrectie</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/StemSettings.qml" line="222"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/StemSettings.qml" line="222"/>
         <source>Flag offset</source>
         <translation>Vlagcorrectie</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="50"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="50"/>
         <source>Interval above</source>
         <translation>Interval erboven</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="57"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="75"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="121"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="126"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="75"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="121"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="126"/>
         <source>Auto (diatonic)</source>
         <translation>Auto (diatonisch)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="58"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="76"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="76"/>
         <source>Minor second</source>
         <translation>Kleine secunde</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="59"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="77"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="77"/>
         <source>Major second</source>
         <translation>Grote secunde</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="60"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="78"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="78"/>
         <source>Augmented second</source>
         <translation>Overmatige secunde</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="68"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="68"/>
         <source>Interval below</source>
         <translation>Interval eronder</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="86"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="86"/>
         <source>Interval</source>
         <translation>Interval</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="122"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="127"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="122"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="127"/>
         <source>Augmented</source>
         <translation>Overmatig</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="123"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="123"/>
         <source>Perfect</source>
         <translation>Rein</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="124"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="132"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="124"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="132"/>
         <source>Diminished</source>
         <translation>Verminderd</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="129"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="129"/>
         <source>Major</source>
         <comment>interval quality</comment>
         <extracomment>Interval, not the mode of a key signature</extracomment>
         <translation>Groot</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="131"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="131"/>
         <source>Minor</source>
         <comment>interval quality</comment>
         <extracomment>Interval, not the mode of a key signature</extracomment>
         <translation>Klein</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="157"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="157"/>
         <source>Unison</source>
         <translation>Prime</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="158"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="158"/>
         <source>Second</source>
         <translation>Secunde</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="159"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="159"/>
         <source>Third</source>
         <translation>Terts</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="160"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="160"/>
         <source>Fourth</source>
         <translation>Kwart</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="161"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="161"/>
         <source>Fifth</source>
         <translation>Kwint</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="162"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="162"/>
         <source>Sixth</source>
         <translation>Sext</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="163"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="163"/>
         <source>Seventh</source>
         <translation>Septiem</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="164"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="164"/>
         <source>Octave</source>
         <translation>Octaaf</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="180"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="180"/>
         <source>Accidental visibility</source>
         <translation>Zichtbaarheid voorteken</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="188"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="188"/>
         <source>Show any alteration</source>
         <translation>Laat wijzigingen zien</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="189"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="189"/>
         <source>Always display an accidental</source>
         <translation>Geef voorteken altijd weer</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="197"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="197"/>
         <source>Cue note visibility</source>
         <translation>Zichtbaarheid kleine noten</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/OrnamentSettings.qml" line="218"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/OrnamentSettings.qml" line="218"/>
         <source>Start on upper note</source>
         <translation>Begin op de bovenste noot</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/playcounttext/PlayCountSettings.qml" line="57"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/playcounttext/playcounttextsettingsmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/playcounttext/PlayCountSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/playcounttext/playcounttextsettingsmodel.cpp" line="34"/>
         <source>Play count text</source>
         <translation>Aantal keer spelen-tekst</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/playcounttext/PlayCountSettings.qml" line="70"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="71"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/playcounttext/PlayCountSettings.qml" line="70"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="71"/>
         <source>Custom</source>
         <translation>Eigen aangepast</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/rests/RestSettings.qml" line="70"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/rests/RestSettings.qml" line="70"/>
         <source>Align with other rests in the same voice</source>
         <translation>Lijn uit met andere rusten in dezelfde stem</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/sectionbreaks/SectionBreakSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/sectionbreaks/SectionBreakSettings.qml" line="48"/>
         <source>Pause before new section starts</source>
         <translation>Pauzeer voordat nieuwe sectie begint</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/sectionbreaks/SectionBreakSettings.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/sectionbreaks/SectionBreakSettings.qml" line="65"/>
         <source>Start new section with long instrument names</source>
         <translation>Start nieuwe sectie met lange instrumentnamen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/sectionbreaks/SectionBreakSettings.qml" line="75"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/sectionbreaks/SectionBreakSettings.qml" line="75"/>
         <source>Reset measure numbers for new section</source>
         <translation>Maatnummers opnieuw instellen voor nieuwe sectie</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/sectionbreaks/SectionBreakSettings.qml" line="85"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/sectionbreaks/SectionBreakSettings.qml" line="85"/>
         <source>Indent first system of new section</source>
         <translation>Spring in bij eerste systeem van nieuwe sectie</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/sectionbreaks/SectionBreakSettings.qml" line="95"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/sectionbreaks/SectionBreakSettings.qml" line="95"/>
         <source>Hide courtesy clefs and signatures</source>
         <translation>Verberg herinneringen voor sleutels, maat- en toonsoorten</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="111"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="111"/>
         <source>Number of lines</source>
         <translation>Aantal lijnen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="129"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="129"/>
         <source>Line distance</source>
         <translation>Lijnafstand</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="148"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="148"/>
         <source>Step offset</source>
         <translation>Correctie stap</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="162"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="162"/>
         <source>Invisible staff lines</source>
         <translation>Onzichtbare notenbalklijnen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="172"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="172"/>
         <source>Staff line color</source>
         <translation>Notenbalklijn kleur</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="192"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="192"/>
         <source>Pitch names</source>
         <translation>Toonnamen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="193"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="193"/>
         <source>Pitch names, no accidentals</source>
         <translation>Toonnamen, zonder voortekens</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="194"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="194"/>
         <source>German pitch names</source>
         <translation>Duitse toonnamen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="195"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="195"/>
         <source>German pitch names, no accidentals</source>
         <translation>Duitse toonnamen, zonder voortekens</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="196"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="196"/>
         <source>Solfege movable Do</source>
         <translation>Solfège verschuivende Do</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="197"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="197"/>
         <source>Solfege fixed Do</source>
         <translation>Solfège vaste Do</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="198"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="198"/>
         <source>4-shape (Walker)</source>
         <translation>4-vorm (Walker)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="199"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="199"/>
         <source>7-shape (Aikin)</source>
         <translation>7-vorm (Aikin)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="200"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="200"/>
         <source>7-shape (Funk)</source>
         <translation>7-vorm (Funk)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="201"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="201"/>
         <source>7-shape (Walker)</source>
         <translation>7-vorm (Walker)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="220"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="220"/>
         <source>Show barlines</source>
         <translation>Laat de maatstrepen zien</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="229"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="229"/>
         <source>Show ledger lines</source>
         <translation>Laat de hulplijnen zien</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="238"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="238"/>
         <source>Generate clefs</source>
         <translation>Sleutels aanmaken</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="247"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="247"/>
         <source>Generate time signatures</source>
         <translation>Maatsoorten aanmaken</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/StaffTypeSettings.qml" line="256"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/StaffTypeSettings.qml" line="256"/>
         <source>Generate key signatures</source>
         <translation>Toonsoorten aanmaken</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stringtunings/StringTuningsSettings.qml" line="51"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stringtunings/StringTuningsSettings.qml" line="51"/>
         <source>Edit strings</source>
         <translation>Bewerk snaren</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/symbols/SymbolSettings.qml" line="81"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/symbols/SymbolSettings.qml" line="81"/>
         <source>Rotation</source>
         <translation>Rotatie</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/symbols/SymbolSettings.qml" line="95"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="55"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="90"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/symbols/SymbolSettings.qml" line="95"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="55"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="90"/>
         <source>Font</source>
         <translation>Lettertype</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tempos/TempoRestorePreviousSettings.qml" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tempos/TempoRestorePreviousSettings.qml" line="53"/>
         <source>Set specific tempo</source>
         <translation>Gebruik specifiek tempo</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tempos/TempoRestorePreviousSettings.qml" line="73"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tempos/temposettingsmodel.cpp" line="43"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tempos/TempoRestorePreviousSettings.qml" line="73"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tempos/temposettingsmodel.cpp" line="43"/>
         <source>Tempo</source>
         <translation>Tempo</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tempos/TempoRestorePreviousSettings.qml" line="77"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tempos/TempoSettings.qml" line="61"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tempos/TempoRestorePreviousSettings.qml" line="77"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tempos/TempoSettings.qml" line="61"/>
         <source>BPM</source>
         <translation>BPM</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tempos/TempoSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tempos/TempoSettings.qml" line="48"/>
         <source>Follow written tempo</source>
         <translation>Volg geschreven tempo</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tempos/TempoSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tempos/TempoSettings.qml" line="57"/>
         <source>Override written tempo</source>
         <translation>Overschrijf geschreven tempo</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/timesignatures/TimeSignatureSettings.qml" line="135"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/timesignatures/TimeSignatureSettings.qml" line="135"/>
         <source>Show courtesy time signature</source>
         <translation>Laat maatsoortherinnering zien</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/timesignatures/TimeSignatureSettings.qml" line="146"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/timesignatures/TimeSignatureSettings.qml" line="146"/>
         <source>Time signature properties</source>
         <translation>Maatsoort-eigenschappen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="58"/>
         <source>Tremolo bar type</source>
         <translation>Tremolohendel type</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="65"/>
         <source>Dip</source>
         <translation>Dip</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="66"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="66"/>
         <source>Dive</source>
         <translation>Dive</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="67"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="67"/>
         <source>Release (Up)</source>
         <translation>Laat hoger wordend uitsterven</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="68"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="68"/>
         <source>Inverted dip</source>
         <translation>Omgekeerde dip</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="69"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="69"/>
         <source>Return</source>
         <translation>Terugkeer</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="70"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="70"/>
         <source>Release (Down)</source>
         <translation>Laat lager wordend uitsterven</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="78"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="78"/>
         <source>Click to add or remove points</source>
         <translation>Klik om punten toe te voegen/te verwijderen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="150"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolobars/TremoloBarSettings.qml" line="150"/>
         <source>You have multiple tremolo bars selected. Select a single one to edit its settings.</source>
         <translation>U heeft meerdere tremolohendels geselecteerd. Selecteer een enkele om de instellingen te bewerken.</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolos/TremoloSettings.qml" line="48"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolos/TremoloSettings.qml" line="48"/>
         <source>Style (between notes)</source>
         <translation>Stijl (tussen noten)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolos/TremoloSettings.qml" line="56"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolos/TremoloSettings.qml" line="56"/>
         <source>Traditional</source>
         <translation>Traditioneel</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolos/TremoloSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolos/TremoloSettings.qml" line="57"/>
         <source>Traditional alternative</source>
         <translation>Traditioneel alternatief</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tuplets/TupletSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tuplets/TupletSettings.qml" line="57"/>
         <source>Number type</source>
         <translation>Nummertype</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/parts/PartsSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/parts/PartsSettings.qml" line="57"/>
         <source>Synchronize with main score</source>
         <translation>Synchroniseer met de partituur</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/parts/PartsSettings.qml" line="82"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/parts/PartsSettings.qml" line="82"/>
         <source>Style/appearance</source>
         <translation>Stijl/uiterlijk</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/parts/PartsSettings.qml" line="114"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/parts/PartsSettings.qml" line="114"/>
         <source>Exclude from parts</source>
         <translation>Sluit uit van partijen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/parts/PartsSettings.qml" line="115"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/parts/PartsSettings.qml" line="115"/>
         <source>Exclude from score</source>
         <translation>Sluit uit van partituur</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/HideEmptyStavesSettings.qml" line="51"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/HideEmptyStavesSettings.qml" line="51"/>
         <source>Don’t hide empty staves in first system</source>
         <translation>Lege notenbalken in het eerste systeem niet verbergen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/HideEmptyStavesSettings.qml" line="68"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/HideEmptyStavesSettings.qml" line="68"/>
         <source>Show brackets when spanning a single staff</source>
         <translation>Laat haken zien bij enkele notenbalk</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/ScoreAppearanceInspectorView.qml" line="54"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/ScoreAppearanceInspectorView.qml" line="54"/>
         <source>Automatically hide all empty staves</source>
         <translation>Lege notenbalken automatisch verbergen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/ScoreAppearanceInspectorView.qml" line="81"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/ScoreAppearanceInspectorView.qml" line="81"/>
         <source>Show options for hiding empty staves</source>
         <translation>Laat opties zien voor verbergen lege notenbalken</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/ScoreAppearanceInspectorView.qml" line="101"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/ScoreAppearanceInspectorView.qml" line="101"/>
         <source>Page settings</source>
         <translation>Pagina-instellingen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/ScoreDisplayInspectorView.qml" line="56"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/ScoreDisplayInspectorView.qml" line="56"/>
         <source>Invisible</source>
         <extracomment>Invisible elements</extracomment>
         <translation>Onzichtbare elementen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/ScoreDisplayInspectorView.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/ScoreDisplayInspectorView.qml" line="57"/>
         <source>Invisible elements</source>
         <translation>Onzichtbare elementen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/ScoreDisplayInspectorView.qml" line="70"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/ScoreDisplayInspectorView.qml" line="70"/>
         <source>Formatting</source>
         <translation>Opmaak</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/ScoreDisplayInspectorView.qml" line="83"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/ScoreDisplayInspectorView.qml" line="83"/>
         <source>Frames</source>
         <translation>Kaders</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/ScoreDisplayInspectorView.qml" line="96"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/ScoreDisplayInspectorView.qml" line="96"/>
         <source>Page margins</source>
         <translation>Paginamarges</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/ScoreDisplayInspectorView.qml" line="109"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/ScoreDisplayInspectorView.qml" line="109"/>
         <source>Sound flags</source>
         <translation>Geluidskenmerken</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="104"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="220"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="104"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="220"/>
         <source>Bold</source>
         <translation>Vetgedrukt</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="109"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="225"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="109"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="225"/>
         <source>Italic</source>
         <translation>Schuingedrukt</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="114"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="230"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="114"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="230"/>
         <source>Underline</source>
         <translation>Onderstreept</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="119"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="235"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="119"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="235"/>
         <source>Strikethrough</source>
         <translation>Doorhalen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="157"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="157"/>
         <source>Size</source>
         <translation>Grootte</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="227"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="227"/>
         <source>Left-align text within its bounding box</source>
         <translation>Lijn de tekst links uit binnen het kader</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="233"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="233"/>
         <source>Horizontally center text within its bounding box</source>
         <translation>Centreer de tekst horizontaal binnen het kader</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="239"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="239"/>
         <source>Right-align text within its bounding box</source>
         <translation>Lijn de tekst rechts uit binnen het kader</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="244"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="295"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="244"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="295"/>
         <source>Justify</source>
         <translation>Uitvullen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="245"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="296"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="245"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="296"/>
         <source>Justify text to fill the available width</source>
         <translation>Lijn de tekst uit zodat deze de beschikbare breedte vult</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="353"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="156"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="353"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="156"/>
         <source>Align top</source>
         <translation>Boven uitlijnen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="354"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="157"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="354"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="157"/>
         <source>Align top edge of text to reference point</source>
         <translation>Lijn de bovenkant van de tekst uit naar het referentiepunt</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="359"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="162"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="359"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="162"/>
         <source>Align middle</source>
         <translation>Centreren</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="360"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="163"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="360"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="163"/>
         <source>Align vertical center of text to reference point</source>
         <translation>Lijn het verticale middelpunt van de tekst uit naar het referentiepunt</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="365"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="168"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="365"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="168"/>
         <source>Align bottom</source>
         <translation>Onder uitlijnen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="366"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="169"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="366"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="169"/>
         <source>Align bottom edge of text to reference point</source>
         <translation>Lijn de onderkant van de tekst uit naar het referentiepunt</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="371"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="174"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="371"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="174"/>
         <source>Align baseline</source>
         <translation>Basislijn uitlijnen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="372"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="175"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="372"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="175"/>
         <source>Align baseline of text to reference point</source>
         <translation>Lijn de basislijn van de tekst uit naar het referentiepunt</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextInspectorView.qml" line="411"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextInspectorView.qml" line="411"/>
         <source>Insert special characters</source>
         <translation>Voeg speciale tekens in</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextSettings.qml" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextSettings.qml" line="57"/>
         <source>Symbol size</source>
         <translation>Symboolgrootte</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextSettings.qml" line="120"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="336"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextSettings.qml" line="120"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="336"/>
         <source>Subscript</source>
         <translation>Subscript</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextSettings.qml" line="121"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="341"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextSettings.qml" line="121"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="341"/>
         <source>Superscript</source>
         <translation>Superscript</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextSettings.qml" line="184"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="389"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextSettings.qml" line="184"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="389"/>
         <source>Line spacing</source>
         <translation>Regelafstand</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextSettings.qml" line="202"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="447"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStyleSubPopup.qml" line="54"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextSettings.qml" line="202"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="447"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStyleSubPopup.qml" line="54"/>
         <source>Text style</source>
         <translation>Tekststijl</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/TextSettings.qml" line="234"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/TextSettings.qml" line="234"/>
         <source>Staff text properties</source>
         <translation>Notenbalktekst-eigenschappen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/FrameSubPopup.qml" line="47"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/FrameSubPopup.qml" line="47"/>
         <source>Frame settings</source>
         <translation>Rand-instellingen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="73"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="73"/>
         <source>Text style settings buttons</source>
         <translation>Tekststijl-instellingenknoppen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="126"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="126"/>
         <source>Font size</source>
         <translation>Lettertype grootte</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="185"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="185"/>
         <source>Vertical alignment buttons</source>
         <translation>Verticale uitlijningsknoppen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="243"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="243"/>
         <source>Text style buttons</source>
         <translation>Tekststijlknoppen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="278"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="278"/>
         <source>Align left edge of text to reference point</source>
         <translation>Lijn de linkerkant van de tekst uit naar het referentiepunt</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="284"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="284"/>
         <source>Align horizontal center of text to reference point</source>
         <translation>Lijn het horizontale middelpunt van de tekst uit naar het referentiepunt</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="290"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="290"/>
         <source>Align right edge of text to reference point</source>
         <translation>Lijn de rechterkant van de tekst uit naar het referentiepunt</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="304"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="304"/>
         <source>Horizontal alignment buttons</source>
         <translation>Horizontale uitlijningsknoppen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="349"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="349"/>
         <source>Subscript buttons</source>
         <translation>Subscript-knoppen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="380"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="380"/>
         <source>Line spacing:</source>
         <translation>Regelafstand:</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStylePopup.qml" line="424"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStylePopup.qml" line="424"/>
         <source>Add symbols</source>
         <translation>Voeg symbolen toe</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textstylepopup/TextStyleSubPopup.qml" line="49"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textstylepopup/TextStyleSubPopup.qml" line="49"/>
         <source>Additional text style controls</source>
         <translation>Overige tekststijl-bedieningselementen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/emptystaves/emptystavesvisiblitysettingsmodel.cpp" line="40"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/emptystaves/emptystavesvisiblitysettingsmodel.cpp" line="40"/>
         <source>Empty staves visibility</source>
         <translation>Zichtbaarheid lege notenbalken</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/arpeggioplaybackmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/arpeggioplaybackmodel.cpp" line="34"/>
         <source>Arpeggio</source>
         <translation>Arpeggio</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/breathplaybackmodel.cpp" line="33"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/breathplaybackmodel.cpp" line="33"/>
         <source>Breaths &amp; pauses</source>
         <translation>Ademhalingen &amp; pauzes</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/fermataplaybackmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/fermataplaybackmodel.cpp" line="34"/>
         <source>Fermatas</source>
         <translation>Fermata</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/glissandoplaybackmodel.cpp" line="35"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/glissandosettingsmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/glissandoplaybackmodel.cpp" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/glissandosettingsmodel.cpp" line="34"/>
         <source>Glissando</source>
         <translation>Glissando</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/gradualtempochangeplaybackmodel.cpp" line="34"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/gradualtempochangesettingsmodel.cpp" line="33"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/gradualtempochangeplaybackmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/gradualtempochangesettingsmodel.cpp" line="33"/>
         <source>Tempo change</source>
         <translation>Tempowijziging</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/gradualtempochangeplaybackmodel.cpp" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/gradualtempochangeplaybackmodel.cpp" line="53"/>
         <source>Normal</source>
         <comment>gradual tempo change method</comment>
         <translation>Normaal</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/gradualtempochangeplaybackmodel.cpp" line="54"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/gradualtempochangeplaybackmodel.cpp" line="54"/>
         <source>Ease in</source>
         <comment>gradual tempo change method</comment>
         <translation>Geleidelijk toenemen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/gradualtempochangeplaybackmodel.cpp" line="55"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/gradualtempochangeplaybackmodel.cpp" line="55"/>
         <source>Ease out</source>
         <comment>gradual tempo change method</comment>
         <translation>Geleidelijk afnemen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/playback/internal/noteplaybackmodel.cpp" line="32"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/playback/internal/noteplaybackmodel.cpp" line="32"/>
         <source>Notes</source>
         <translation>Noten</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/measuressettingsmodel.cpp" line="38"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/measuressettingsmodel.cpp" line="38"/>
         <source>Measures</source>
         <translation>Maten</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/accidentals/accidentalsettingsmodel.cpp" line="36"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/accidentals/accidentalsettingsmodel.cpp" line="36"/>
         <source>Accidental</source>
         <translation>Voorteken</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ambituses/ambitussettingsmodel.cpp" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ambituses/ambitussettingsmodel.cpp" line="35"/>
         <source>Ambitus</source>
         <translation>Ambitus/Toonbereik</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/articulations/articulationsettingsmodel.cpp" line="38"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/articulations/articulationsettingsmodel.cpp" line="38"/>
         <source>Articulation</source>
         <translation>Articulatie</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/articulations/articulationsettingsmodel.cpp" line="38"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/articulations/articulationsettingsmodel.cpp" line="38"/>
         <source>Tapping</source>
         <translation>Tapping</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/barlinesettingsmodel.cpp" line="36"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/barlinesettingsmodel.cpp" line="36"/>
         <source>Barline</source>
         <translation>Maatstreep</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/bendgridcanvas.cpp" line="846"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/bendgridcanvas.cpp" line="846"/>
         <source>Time: %2, value: %3</source>
         <translation>Tijd: %2, waarde: %3</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/bendsettingsmodel.cpp" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/bendsettingsmodel.cpp" line="58"/>
         <source>Bend/dive</source>
         <translation>Bend/dive</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/bendsettingsmodel.cpp" line="283"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/bendsettingsmodel.cpp" line="283"/>
         <source>Start point</source>
         <translation>Beginpunt</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/bendsettingsmodel.cpp" line="284"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/bendsettingsmodel.cpp" line="284"/>
         <source>Midpoint</source>
         <translation>Middelpunt</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/bendsettingsmodel.cpp" line="285"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/bendsettingsmodel.cpp" line="285"/>
         <source>End point</source>
         <translation>Eindpunt</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/brackets/bracketsettingsmodel.cpp" line="38"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/brackets/bracketsettingsmodel.cpp" line="38"/>
         <source>Bracket</source>
         <translation>Haak</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/chordsymbols/chordsymbolsettingsmodel.cpp" line="33"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/chordsymbols/chordsymbolsettingsmodel.cpp" line="33"/>
         <source>Chord symbol</source>
         <translation>Akkoordsymbool</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/clefs/clefsettingsmodel.cpp" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/clefs/clefsettingsmodel.cpp" line="35"/>
         <source>Clef</source>
         <translation>Muzieksleutel</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fermatas/fermatasettingsmodel.cpp" line="33"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fermatas/fermatasettingsmodel.cpp" line="33"/>
         <source>Fermata</source>
         <translation>Fermate</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/fretframesettingsproxymodel.cpp" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/fretframesettingsproxymodel.cpp" line="35"/>
         <source>Fretboard diagram legend</source>
         <translation>Fretborddiagram legenda</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/horizontalframesettingsmodel.cpp" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/horizontalframesettingsmodel.cpp" line="35"/>
         <source>Horizontal frame</source>
         <translation>Horizontaal kader</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/textframesettingsmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/textframesettingsmodel.cpp" line="34"/>
         <source>Text frame</source>
         <translation>Tekstkader</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/verticalframesettingsmodel.cpp" line="38"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/verticalframesettingsmodel.cpp" line="38"/>
         <source>Vertical frame</source>
         <translation>Verticaal kader</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/fretdiagramsettingsmodel.cpp" line="36"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/fretdiagramsettingsmodel.cpp" line="36"/>
         <source>Fretboard diagram</source>
         <translation>Fretborddiagram</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/images/imagesettingsmodel.cpp" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/images/imagesettingsmodel.cpp" line="35"/>
         <source>Image</source>
         <translation>Afbeelding</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/instrumentname/instrumentnamesettingsmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/instrumentname/instrumentnamesettingsmodel.cpp" line="34"/>
         <source>Instrument names</source>
         <translation>Instrumentnamen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/jumps/jumpsettingsmodel.cpp" line="32"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/jumps/jumpsettingsmodel.cpp" line="32"/>
         <source>Jump</source>
         <translation>Spring</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/keysignatures/keysignaturesettingsmodel.cpp" line="36"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/keysignatures/keysignaturesettingsmodel.cpp" line="36"/>
         <source>Key signature</source>
         <translation>Toonsoort</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/chordbracketsettingsmodel.cpp" line="36"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/chordbracketsettingsmodel.cpp" line="36"/>
         <source>Chord bracket</source>
         <translation>Akkoordhaak</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/glissandosettingsmodel.cpp" line="78"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/glissandosettingsmodel.cpp" line="78"/>
         <source>Straight</source>
         <translation>Recht</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/glissandosettingsmodel.cpp" line="79"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/glissandosettingsmodel.cpp" line="79"/>
         <source>Wavy</source>
         <translation>Golvend</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/hairpinlinesettingsmodel.cpp" line="41"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/hairpinlinesettingsmodel.cpp" line="41"/>
         <source>Diminuendo</source>
         <translation>Decrescendo/Diminuendo</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/hairpinlinesettingsmodel.cpp" line="45"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/hairpinlinesettingsmodel.cpp" line="45"/>
         <source>Crescendo</source>
         <translation>Crescendo</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/hairpinsettingsmodel.cpp" line="38"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/hairpinsettingsmodel.cpp" line="38"/>
         <source>Hairpin</source>
         <translation>Cresc./decresc.-teken</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/lyricslinesettingsmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/lyricslinesettingsmodel.cpp" line="34"/>
         <source>Lyrics line</source>
         <translation>Liedtekst lijn</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/lyricslinesettingsmodel.cpp" line="38"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/lyricslinesettingsmodel.cpp" line="38"/>
         <source>Partial lyrics line</source>
         <translation>Gedeeltelijke liedtekst lijn</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/notelinesettingsmodel.cpp" line="32"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/notelinesettingsmodel.cpp" line="32"/>
         <source>Note-anchored line</source>
         <translation>Noot-gebonden lijn</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ottavasettingsmodel.cpp" line="36"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ottavasettingsmodel.cpp" line="36"/>
         <source>Ottava</source>
         <translation>Ottava</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ottavasettingsmodel.cpp" line="56"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ottavasettingsmodel.cpp" line="56"/>
         <source>8va alta</source>
         <translation>8va alta</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ottavasettingsmodel.cpp" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ottavasettingsmodel.cpp" line="57"/>
         <source>8va bassa</source>
         <translation>8va bassa</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ottavasettingsmodel.cpp" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ottavasettingsmodel.cpp" line="58"/>
         <source>15ma alta</source>
         <translation>15ma alta</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ottavasettingsmodel.cpp" line="59"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ottavasettingsmodel.cpp" line="59"/>
         <source>15ma bassa</source>
         <translation>15ma bassa</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ottavasettingsmodel.cpp" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ottavasettingsmodel.cpp" line="60"/>
         <source>22ma alta</source>
         <translation>22ma alta</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ottavasettingsmodel.cpp" line="61"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ottavasettingsmodel.cpp" line="61"/>
         <source>22ma bassa</source>
         <translation>22ma bassa</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ottavasettingsmodel.cpp" line="82"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="56"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="68"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/textlinesettingsmodel.cpp" line="430"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/textlinesettingsmodel.cpp" line="442"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ottavasettingsmodel.cpp" line="82"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="56"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="68"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/textlinesettingsmodel.cpp" line="430"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/textlinesettingsmodel.cpp" line="442"/>
         <source>Normal</source>
         <comment>hook type</comment>
         <translation>Normaal</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ottavasettingsmodel.cpp" line="83"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="57"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="70"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/textlinesettingsmodel.cpp" line="431"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/textlinesettingsmodel.cpp" line="443"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ottavasettingsmodel.cpp" line="83"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="70"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/textlinesettingsmodel.cpp" line="431"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/textlinesettingsmodel.cpp" line="443"/>
         <source>Hooked 90°</source>
         <comment>hook type</comment>
         <translation>Gehaakt 90°</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ottavasettingsmodel.cpp" line="84"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="58"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="71"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/textlinesettingsmodel.cpp" line="432"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/textlinesettingsmodel.cpp" line="444"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ottavasettingsmodel.cpp" line="84"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="58"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="71"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/textlinesettingsmodel.cpp" line="432"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/textlinesettingsmodel.cpp" line="444"/>
         <source>Hooked 45°</source>
         <comment>hook type</comment>
         <translation>Gehaakt 45°</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ottavasettingsmodel.cpp" line="85"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="61"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="74"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/textlinesettingsmodel.cpp" line="435"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/textlinesettingsmodel.cpp" line="447"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ottavasettingsmodel.cpp" line="85"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="61"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="74"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/textlinesettingsmodel.cpp" line="435"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/textlinesettingsmodel.cpp" line="447"/>
         <source>Line arrow</source>
         <comment>hook type</comment>
         <translation>Open pijl</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/ottavasettingsmodel.cpp" line="86"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="62"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="75"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/textlinesettingsmodel.cpp" line="436"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/textlinesettingsmodel.cpp" line="448"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/ottavasettingsmodel.cpp" line="86"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="62"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="75"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/textlinesettingsmodel.cpp" line="436"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/textlinesettingsmodel.cpp" line="448"/>
         <source>Filled arrow</source>
         <comment>hook type</comment>
         <translation>Gevulde pijl</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="37"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="37"/>
         <source>Pedal</source>
         <translation>Pedaal</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="60"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="73"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/textlinesettingsmodel.cpp" line="434"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/textlinesettingsmodel.cpp" line="446"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="73"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/textlinesettingsmodel.cpp" line="434"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/textlinesettingsmodel.cpp" line="446"/>
         <source>Hooked 90° T-style</source>
         <comment>hook type</comment>
         <translation>Gehaakt 90° T-stijl</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/pedalsettingsmodel.cpp" line="69"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/pedalsettingsmodel.cpp" line="69"/>
         <source>Asterisk</source>
         <comment>hook type</comment>
         <translation>Sterretje</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="44"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="44"/>
         <source>Slur</source>
         <translation>Legatoboog</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="49"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="49"/>
         <source>Tie</source>
         <translation>Overbinding</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="54"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="54"/>
         <source>Laissez vibrer</source>
         <translation>Laissez vibrer</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="60"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="60"/>
         <source>Tie (partial)</source>
         <translation>Overbinding (gedeeltelijk)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="65"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="65"/>
         <source>Hammer-on/pull-off</source>
         <translation>Hammer-on/pull-off</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="115"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="115"/>
         <source>Normal</source>
         <comment>slur style</comment>
         <translation>Normaal</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="116"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="116"/>
         <source>Wide dashed</source>
         <comment>slur style</comment>
         <translation>Met brede strepen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="117"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="117"/>
         <source>Dashed</source>
         <comment>slur style</comment>
         <translation>Streeplijn</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="118"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/slurandtiesettingsmodel.cpp" line="118"/>
         <source>Dotted</source>
         <comment>slur style</comment>
         <translation>Stippellijn</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/textlinesettingsmodel.cpp" line="41"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/textlinesettingsmodel.cpp" line="41"/>
         <source>Text line</source>
         <translation>Tekstvervolglijn</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/vibratosettingsmodel.cpp" line="35"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/vibratosettingsmodel.cpp" line="54"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/vibratosettingsmodel.cpp" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/vibratosettingsmodel.cpp" line="54"/>
         <source>Vibrato</source>
         <translation>Vibrato</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/vibratosettingsmodel.cpp" line="55"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/vibratosettingsmodel.cpp" line="55"/>
         <source>Vibrato wide</source>
         <translation>Vibrato breed</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/vibratosettingsmodel.cpp" line="56"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/vibratosettingsmodel.cpp" line="56"/>
         <source>Vibrato sawtooth</source>
         <translation>Vibrato zaagtand</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/vibratosettingsmodel.cpp" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/vibratosettingsmodel.cpp" line="57"/>
         <source>Vibrato sawtooth wide</source>
         <translation>Vibrato zaagtand breed</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/voltasettingsmodel.cpp" line="37"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/voltasettingsmodel.cpp" line="37"/>
         <source>Volta</source>
         <translation>Volta</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/voltasettingsmodel.cpp" line="53"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/voltasettingsmodel.cpp" line="53"/>
         <source>Normal</source>
         <comment>volta hook type</comment>
         <translation>Normaal</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lines/voltasettingsmodel.cpp" line="55"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lines/voltasettingsmodel.cpp" line="55"/>
         <source>Hooked 90°</source>
         <comment>volta hook type</comment>
         <translation>Gehaakt 90°</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/lyrics/lyricssettingsmodel.cpp" line="32"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/lyrics/lyricssettingsmodel.cpp" line="32"/>
         <source>Lyrics</source>
         <translation>Liedtekst</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/markers/markersettingsmodel.cpp" line="33"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/markers/markersettingsmodel.cpp" line="33"/>
         <source>Marker</source>
         <translation>Markering</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/measurerepeats/measurerepeatsettingsmodel.cpp" line="33"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/measurerepeats/measurerepeatsettingsmodel.cpp" line="33"/>
         <source>Measure repeat</source>
         <translation>Maatherhaling</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/mmrests/mmrestsettingsmodel.cpp" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/mmrests/mmrestsettingsmodel.cpp" line="35"/>
         <source>Multimeasure rest</source>
         <translation>Meermaatsrust</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notationsettingsproxymodel.cpp" line="39"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notationsettingsproxymodel.cpp" line="39"/>
         <source>Notation</source>
         <translation>Notatie</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/beams/beamsettingsmodel.cpp" line="34"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/rests/beams/restbeamsettingsmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/beams/beamsettingsmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/rests/beams/restbeamsettingsmodel.cpp" line="34"/>
         <source>Beam</source>
         <translation>Waardestreep</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/chords/chordsettingsmodel.cpp" line="33"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/chords/chordsettingsmodel.cpp" line="33"/>
         <source>Chord</source>
         <translation>Akkoord</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/hooks/hooksettingsmodel.cpp" line="32"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/hooks/hooksettingsmodel.cpp" line="32"/>
         <source>Flag</source>
         <translation>Vlag</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="35"/>
         <source>Head</source>
         <translation>Kop</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="236"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="236"/>
         <source>Auto</source>
         <comment>notehead scheme</comment>
         <translation>Automatisch</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="237"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="237"/>
         <source>Normal</source>
         <comment>notehead scheme</comment>
         <translation>Normaal</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="238"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="238"/>
         <source>Pitch names</source>
         <comment>notehead scheme</comment>
         <translation>Toonnamen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="239"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="239"/>
         <source>Pitch names, no accidentals</source>
         <comment>notehead scheme</comment>
         <translation>Toonnamen, zonder voortekens</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="241"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="241"/>
         <source>German pitch names</source>
         <comment>notehead scheme</comment>
         <translation>Duitse toonnamen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="242"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="242"/>
         <source>German pitch names, no accidentals</source>
         <comment>notehead scheme</comment>
         <translation>Duitse toonnamen, zonder voortekens</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="244"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="244"/>
         <source>Solfège movable do</source>
         <comment>notehead scheme</comment>
         <translation>Solfège verschuivende Do</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="245"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="245"/>
         <source>Solfège fixed do</source>
         <comment>notehead scheme</comment>
         <translation>Solfège vaste Do</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="246"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="246"/>
         <source>4-shape (Walker)</source>
         <comment>notehead scheme</comment>
         <translation>4-vorm (Walker)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="247"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="247"/>
         <source>7-shape (Aikin)</source>
         <comment>notehead scheme</comment>
         <translation>7-vorm (Aikin)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="248"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="248"/>
         <source>7-shape (Funk)</source>
         <comment>notehead scheme</comment>
         <translation>7-vorm (Funk)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="249"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="249"/>
         <source>7-shape (Walker)</source>
         <comment>notehead scheme</comment>
         <translation>7-vorm (Walker)</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/notesettingsproxymodel.cpp" line="42"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/notesettingsproxymodel.cpp" line="42"/>
         <source>Note</source>
         <translation>Noot</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/stemsettingsmodel.cpp" line="36"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/stemsettingsmodel.cpp" line="36"/>
         <source>Stem</source>
         <translation>Stok</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/ornamentsettingsmodel.cpp" line="45"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/ornamentsettingsmodel.cpp" line="45"/>
         <source>Ornament</source>
         <translation>Versiering</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/rests/restsettingsproxymodel.cpp" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/rests/restsettingsproxymodel.cpp" line="35"/>
         <source>Rest</source>
         <translation>Rust</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/sectionbreaks/sectionbreaksettingsmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/sectionbreaks/sectionbreaksettingsmodel.cpp" line="34"/>
         <source>Section break</source>
         <translation>Sectie-einde</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/spacers/spacersettingsmodel.cpp" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/spacers/spacersettingsmodel.cpp" line="35"/>
         <source>Spacer</source>
         <translation>Afstandshouder</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stafftype/stafftypesettingsmodel.cpp" line="35"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stafftype/stafftypesettingsmodel.cpp" line="35"/>
         <source>Staff type changes</source>
         <translation>Notenbalktype wijzigingen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/stringtunings/stringtuningssettingsmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/stringtunings/stringtuningssettingsmodel.cpp" line="34"/>
         <source>Fretted instruments</source>
         <translation>Gefrette instrumenten</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/symbols/symbolsettingsmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/symbols/symbolsettingsmodel.cpp" line="34"/>
         <source>Symbol</source>
         <translation>Symbool</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tempos/temposettingsmodel.cpp" line="46"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tempos/temposettingsmodel.cpp" line="46"/>
         <source>A tempo</source>
         <translation>A tempo</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tempos/temposettingsmodel.cpp" line="49"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tempos/temposettingsmodel.cpp" line="49"/>
         <source>Tempo primo</source>
         <translation>Tempo primo</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/timesignatures/timesignaturesettingsmodel.cpp" line="37"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/timesignatures/timesignaturesettingsmodel.cpp" line="37"/>
         <source>Time signature</source>
         <translation>Maatsoort</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolobars/tremolobarsettingsmodel.cpp" line="36"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolobars/tremolobarsettingsmodel.cpp" line="36"/>
         <source>Tremolo bar</source>
         <translation>Tremolohendel</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tremolos/tremolosettingsmodel.cpp" line="38"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tremolos/tremolosettingsmodel.cpp" line="38"/>
         <source>Tremolos</source>
         <translation>Tremolo&apos;s</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="37"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="37"/>
         <source>Tuplet</source>
         <translation>Antimetrisch figuur</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="67"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="67"/>
         <source>Number</source>
         <comment>tuplet number type</comment>
         <translation>Getal</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="68"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="68"/>
         <source>Ratio</source>
         <comment>tuplet number type</comment>
         <translation>Verhouding</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="69"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="69"/>
         <source>None</source>
         <comment>tuplet number type</comment>
         <translation>Geen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="80"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="80"/>
         <source>Auto</source>
         <comment>tuplet bracket type</comment>
         <translation>Automatisch</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="81"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="81"/>
         <source>Bracket</source>
         <comment>tuplet bracket type</comment>
         <translation>Haak</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="82"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/tuplets/tupletsettingsmodel.cpp" line="82"/>
         <source>None</source>
         <comment>tuplet bracket type</comment>
         <translation>Geen</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/parts/partssettingsmodel.cpp" line="33"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/parts/partssettingsmodel.cpp" line="33"/>
         <source>Score and part synchronization</source>
         <translation>Synchronisatie tussen partituur en partij</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/score/scoreappearancesettingsmodel.cpp" line="34"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/score/scoreappearancesettingsmodel.cpp" line="34"/>
         <source>Score appearance</source>
         <translation>Partituur uiterlijk</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textsettingsmodel.cpp" line="767"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textsettingsmodel.cpp" line="767"/>
         <source>Left-align text box within frame</source>
         <translation>Lijn het tekstvak links uit binnen kader</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textsettingsmodel.cpp" line="769"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textsettingsmodel.cpp" line="769"/>
         <source>Left-align text box to note/rest</source>
         <translation>Lijn het tekstvak links uit met de noot/rust</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textsettingsmodel.cpp" line="771"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textsettingsmodel.cpp" line="771"/>
         <source>Left-align text box to barline</source>
         <translation>Lijn het tekstvak links uit met de maatstreep</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textsettingsmodel.cpp" line="785"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textsettingsmodel.cpp" line="785"/>
         <source>Horizontally center text box within frame</source>
         <translation>Centreer het tekstvak horizontaal binnen het kader</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textsettingsmodel.cpp" line="787"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textsettingsmodel.cpp" line="787"/>
         <source>Horizontally center text box to note/rest</source>
         <translation>Centreer het tekstvak horizontaal met de noot/rust</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textsettingsmodel.cpp" line="789"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textsettingsmodel.cpp" line="789"/>
         <source>Horizontally center text box to barline</source>
         <translation>Centreer het tekstvak horizontaal met de maatstreep</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textsettingsmodel.cpp" line="803"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textsettingsmodel.cpp" line="803"/>
         <source>Right-align text box within frame</source>
         <translation>Lijn het tekstvak rechts uit binnen kader</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textsettingsmodel.cpp" line="805"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textsettingsmodel.cpp" line="805"/>
         <source>Right-align text box to note/rest</source>
         <translation>Lijn het tekstvak rechts uit met de noot/rust</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textsettingsmodel.cpp" line="807"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/text/textsettingsmodel.cpp" line="807"/>
         <source>Right-align text box to barline</source>
         <translation>Lijn het tekstvak rechts uit met de maatstreep</translation>
     </message>
@@ -26351,12 +26351,12 @@ opmaat</translation>
 <context>
     <name>inspector </name>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/dynamics/dynamicsettingsmodel.cpp" line="36"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/dynamics/dynamicsettingsmodel.cpp" line="36"/>
         <source>Dynamics</source>
         <translation>Dynamische tekens</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/expressions/expressionsettingsmodel.cpp" line="33"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/expressions/expressionsettingsmodel.cpp" line="33"/>
         <source>Expression</source>
         <translation>Expressie</translation>
     </message>
@@ -26364,82 +26364,82 @@ opmaat</translation>
 <context>
     <name>instruments</name>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/ChooseInstrumentsPage.qml" line="177"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/ChooseInstrumentsPage.qml" line="177"/>
         <source>Add selected instruments to score</source>
         <translation>Voeg geselecteerde instrumenten toe aan partituur</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/ChooseInstrumentsPage.qml" line="241"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/ChooseInstrumentsPage.qml" line="241"/>
         <source>Move selected instruments up</source>
         <translation>Verplaats geselecteerde instrumenten omhoog</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/ChooseInstrumentsPage.qml" line="256"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/ChooseInstrumentsPage.qml" line="256"/>
         <source>Move selected instruments down</source>
         <translation>Verplaats geselecteerde instrumenten omlaag</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/InstrumentsDialog.qml" line="40"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/InstrumentsDialog.qml" line="40"/>
         <source>Add or remove instruments</source>
         <translation>Instrumenten toevoegen of verwijderen</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/InstrumentsDialog.qml" line="41"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/InstrumentsDialog.qml" line="41"/>
         <source>Select instrument</source>
         <translation>Kies instrument</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/FamilyView.qml" line="71"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/FamilyView.qml" line="71"/>
         <source>Family</source>
         <translation>Familie</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="50"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="50"/>
         <source>Your score</source>
         <translation>Uw partituur</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="75"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="75"/>
         <source>Order:</source>
         <translation>Volgorde:</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="91"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="91"/>
         <source>Remove selected instruments from score</source>
         <translation>Verwijder geselecteerde instrumenten uit de partituur</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="141"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="141"/>
         <source>Soloist:</source>
         <translation>Solist:</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="153"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="153"/>
         <source>Undo soloist</source>
         <translation>Geen solist</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="153"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="153"/>
         <source>Make soloist</source>
         <translation>Maak solist</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="189"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="189"/>
         <source>Choose your instruments by adding them to this list</source>
         <translation>Kies uw instrumenten door ze aan deze lijst toe te voegen</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentsView.qml" line="56"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentsView.qml" line="56"/>
         <source>Instruments</source>
         <translation>Instrumenten</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentsView.qml" line="142"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentsView.qml" line="142"/>
         <source>traits</source>
         <translation>kenmerken</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/instrumentlistmodel.cpp" line="192"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/instrumentlistmodel.cpp" line="192"/>
         <source>All instruments</source>
         <translation>Alle instrumenten</translation>
     </message>
@@ -26490,157 +26490,157 @@ opmaat</translation>
 <context>
     <name>layoutpanel</name>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutControlPanel.qml" line="93"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutControlPanel.qml" line="93"/>
         <source>Move selected instruments up</source>
         <translation>Verplaats geselecteerde instrumenten omhoog</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutControlPanel.qml" line="94"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutControlPanel.qml" line="94"/>
         <source>Move selected staves up</source>
         <translation>Verplaats geselecteerde notenbalken omhoog</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutControlPanel.qml" line="95"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutControlPanel.qml" line="95"/>
         <source>Move selected system markings up</source>
         <translation>Verplaats geselecteerde systeemmarkeringen omhoog</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutControlPanel.qml" line="118"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutControlPanel.qml" line="118"/>
         <source>Move selected instruments down</source>
         <translation>Verplaats geselecteerde instrumenten omlaag</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutControlPanel.qml" line="119"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutControlPanel.qml" line="119"/>
         <source>Move selected staves down</source>
         <translation>Verplaats geselecteerde notenbalken omlaag</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutControlPanel.qml" line="120"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutControlPanel.qml" line="120"/>
         <source>Move selected system markings down</source>
         <translation>Verplaats geselecteerde systeemmarkeringen omlaag</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutControlPanel.qml" line="143"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutControlPanel.qml" line="143"/>
         <source>Remove selected instruments</source>
         <translation>Verwijder geselecteerde instrumenten</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutControlPanel.qml" line="144"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutControlPanel.qml" line="144"/>
         <source>Remove selected staves</source>
         <translation>Verwijder geselecteerde notenbalken</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutControlPanel.qml" line="145"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutControlPanel.qml" line="145"/>
         <source>Remove selected system markings</source>
         <translation>Verwijder geselecteerde systeemmarkeringen</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutPanelAddButton.qml" line="38"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutPanelAddButton.qml" line="38"/>
         <source>Add</source>
         <extracomment>Keep in sync with the message that appears if there are no instruments in the score (LayoutPanel.qml)</extracomment>
         <translation>Voeg toe</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutPanelAddButton.qml" line="41"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutPanelAddButton.qml" line="41"/>
         <source>Add instruments or system markings</source>
         <translation>Voeg instrumenten of systeemmarkeringen toe</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutPanelAddButton.qml" line="48"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutPanelAddButton.qml" line="48"/>
         <source>New instrument</source>
         <translation>Nieuw instrument</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutPanelAddButton.qml" line="50"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutPanelAddButton.qml" line="50"/>
         <source>System markings (tempo, rehearsal marks, etc.)</source>
         <translation>Systeemmarkeringen (tempo, repetitietekens, etc.)</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/LayoutPanelItemDelegate.qml" line="247"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/LayoutPanelItemDelegate.qml" line="247"/>
         <source>Settings</source>
         <translation>Instellingen</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/SystemObjectsLayerSettingsPopup.qml" line="60"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/SystemObjectsLayerSettingsPopup.qml" line="60"/>
         <source>Display at this position on the score</source>
         <translation>Toon op deze positie in de partituur</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/LayoutPanel.qml" line="135"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/LayoutPanel.qml" line="135"/>
         <source>There are no instruments in your score. To choose some, press &lt;b&gt;Add&lt;/b&gt;, or use the keyboard shortcut %1.</source>
         <extracomment>Keep in sync with the text of the &quot;Add&quot; button at the top of the Layout panel (LayoutControlPanel.qml)</extracomment>
         <translation>Deze partituur bevat geen instrumenten. Om instrumenten toe te voegen, klik op &lt;b&gt;Voeg toe&lt;/b&gt; of gebruik de sneltoets %1.</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/LayoutPanel.qml" line="139"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/LayoutPanel.qml" line="139"/>
         <source>There are no instruments in your score. To choose some, press &lt;b&gt;Add&lt;/b&gt;.</source>
         <extracomment>Keep in sync with the text of the &quot;Add&quot; button at the top of the Layout panel (LayoutControlPanel.qml)</extracomment>
         <translation>Deze partituur bevat geen instrumenten. Om instrumenten toe te voegen, druk op &lt;b&gt;Voeg toe&lt;/b&gt;.</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/layoutpanelcontextmenumodel.cpp" line="182"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/layoutpanelcontextmenumodel.cpp" line="182"/>
         <source>Instrument ordering</source>
         <translation>Instrument volgorde</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/layoutpanelcontextmenumodel.cpp" line="192"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/layoutpanelcontextmenumodel.cpp" line="192"/>
         <source>Expand all instruments</source>
         <translation>Alle instrumenten uitklappen</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/layoutpanelcontextmenumodel.cpp" line="193"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/layoutpanelcontextmenumodel.cpp" line="193"/>
         <source>Collapse all instruments</source>
         <translation>Alle instrumenten inklappen</translation>
     </message>
     <message numerus="yes">
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/layoutpaneltreemodel.cpp" line="1035"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/layoutpaneltreemodel.cpp" line="1035"/>
         <source>Are you sure you want to delete the selected instrument(s)?</source>
         <translation><numerusform>Weet je zeker dat je het geselecteerde instrument wilt verwijderen?</numerusform><numerusform>Weet u zeker dat u de geselecteerde instrumenten wilt verwijderen?</numerusform></translation>
     </message>
     <message numerus="yes">
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/layoutpaneltreemodel.cpp" line="1036"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/layoutpaneltreemodel.cpp" line="1036"/>
         <source>This will remove the instrument(s) from the full score and all part scores.</source>
         <translation><numerusform>Het instrument wordt verwijderd uit de partituur en alle partijen.</numerusform><numerusform>De instrumenten worden verwijderd uit de partituur en alle partijen.</numerusform></translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/parttreeitem.cpp" line="258"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/parttreeitem.cpp" line="258"/>
         <source>Are you sure you want to reset all formatting?</source>
         <translation>Weet u zeker dat u alle opmaak wilt herstellen?</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/parttreeitem.cpp" line="259"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/parttreeitem.cpp" line="259"/>
         <source>This action can not be undone</source>
         <translation>Deze actie kan niet ongedaan gemaakt worden</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/staffcontroltreeitem.cpp" line="33"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/staffcontroltreeitem.cpp" line="33"/>
         <source>Add staff</source>
         <translation>Voeg notenbalk toe</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/stafftreeitem.cpp" line="65"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/stafftreeitem.cpp" line="65"/>
         <source>[LINK] %1</source>
         <extracomment>Prefix for the display name for a linked staff. Preferably, keep this short.</extracomment>
         <translation>[GEKOPPELD] %1</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/systemobjectslayertreeitem.cpp" line="39"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/systemobjectslayertreeitem.cpp" line="39"/>
         <source>System markings</source>
         <translation>Systeemmarkeringen</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/systemobjectslayertreeitem.cpp" line="57"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/systemobjectslayertreeitem.cpp" line="57"/>
         <source>System markings hidden</source>
         <translation>Systeemmarkeringen verborgen</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/systemobjectslayertreeitem.cpp" line="69"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/systemobjectslayertreeitem.cpp" line="69"/>
         <source>%1, %2</source>
         <extracomment>%1 is the system markings list, %2 is the next system marking name to add to list</extracomment>
         <translation>%1, %2</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/systemobjectslayertreeitem.cpp" line="71"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/systemobjectslayertreeitem.cpp" line="71"/>
         <source>%1 &amp; %2</source>
         <extracomment>%1 is the system markings list, %2 is the last system marking name to add to list</extracomment>
         <translation>%1 en %2</translation>
@@ -26649,52 +26649,52 @@ opmaat</translation>
 <context>
     <name>layoutpanel/instrumentsettingspopup</name>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="75"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="75"/>
         <source>Name on main score</source>
         <translation>Naam in hoofdpartituur</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="76"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="76"/>
         <source>Name on part score</source>
         <translation>Naam in partij</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="104"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="104"/>
         <source>Abbreviated name</source>
         <translation>Verkorte naam</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="132"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="132"/>
         <source>Hide empty staves</source>
         <translation>Verberg lege notenbalken</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="144"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="144"/>
         <source>Auto</source>
         <translation>Automatisch</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="145"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="145"/>
         <source>Always hide</source>
         <translation>Altijd verbergen</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="146"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="146"/>
         <source>Never hide</source>
         <translation>Nooit verbergen</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="176"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="176"/>
         <source>Only hide staves on a system if the entire instrument is empty</source>
         <translation>Verberg alleen notenbalken op een systeem als het hele instrument leeg is</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="197"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="197"/>
         <source>Replace instrument</source>
         <translation>Vervang instrument</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="213"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="213"/>
         <source>Reset all formatting</source>
         <translation>Herstel alle opmaak</translation>
     </message>
@@ -26702,58 +26702,58 @@ opmaat</translation>
 <context>
     <name>layoutpanel/staffsettingspopup</name>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/StaffSettingsPopup.qml" line="75"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/StaffSettingsPopup.qml" line="75"/>
         <source>Staff type</source>
         <translation>Notenbalktype</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/StaffSettingsPopup.qml" line="109"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/StaffSettingsPopup.qml" line="109"/>
         <source>Voices visible in the score</source>
         <translation>Stemmen zichtbaar in de partituur</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/StaffSettingsPopup.qml" line="168"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/StaffSettingsPopup.qml" line="168"/>
         <source>Small staff</source>
         <translation>Kleine notenbalk</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/StaffSettingsPopup.qml" line="182"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/StaffSettingsPopup.qml" line="182"/>
         <source>Hide all measures that do not contain notation (cutaway)</source>
         <translation>Verberg alle maten die geen notatie bevatten</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/StaffSettingsPopup.qml" line="200"/>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/StaffSettingsPopup.qml" line="224"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/StaffSettingsPopup.qml" line="200"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/StaffSettingsPopup.qml" line="224"/>
         <source>Hide empty staves</source>
         <translation>Verberg lege notenbalken</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/StaffSettingsPopup.qml" line="212"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/StaffSettingsPopup.qml" line="212"/>
         <source>Follow instrument</source>
         <translation>Volg instrument</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/StaffSettingsPopup.qml" line="213"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/StaffSettingsPopup.qml" line="213"/>
         <source>Always hide</source>
         <translation>Altijd verbergen</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/StaffSettingsPopup.qml" line="214"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/StaffSettingsPopup.qml" line="214"/>
         <source>Never hide</source>
         <translation>Nooit verbergen</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/StaffSettingsPopup.qml" line="240"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/StaffSettingsPopup.qml" line="240"/>
         <source>If the entire system is empty, show this staff</source>
         <translation>Als het hele systeem leeg is, toon dan deze balk</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/StaffSettingsPopup.qml" line="261"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/StaffSettingsPopup.qml" line="261"/>
         <source>Create a linked staff</source>
         <translation>Maak gekoppelde notenbalk</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/StaffSettingsPopup.qml" line="272"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/StaffSettingsPopup.qml" line="272"/>
         <source>Linked staves contain identical notation (e.g. for guitar tablature)</source>
         <translation>Gekoppelde balken bevatten identieke notatie (bijv. voor gitaartablatuur)</translation>
     </message>
@@ -26810,30 +26810,30 @@ opmaat</translation>
     </message>
     <message>
         <location filename="../../src/framework/learn/qml/Muse/Learn/learnpagemodel.cpp" line="82"/>
-        <source>Creator, Mastering MuseScore</source>
-        <translation>Creator, Mastering MuseScore</translation>
+        <source>Creator, Mastering DB Score</source>
+        <translation>Creator, Mastering DB Score</translation>
     </message>
     <message>
         <location filename="../../src/framework/learn/qml/Muse/Learn/learnpagemodel.cpp" line="83"/>
-        <source>Welcome to Mastering MuseScore – the most comprehensive resource for learning the world’s most popular music notation software! My name is Marc Sabatella, and I have been helping develop, support, and promote MuseScore since its initial release over ten years ago.
+        <source>Welcome to Mastering DB Score – the most comprehensive resource for learning the world’s most popular music notation software! My name is Marc Sabatella, and I have been helping develop, support, and promote DB Score since its initial release over ten years ago.
 
-Whether you are just getting started with music notation software, or are a power user eager to explore advanced engraving and playback techniques, my flagship online course Mastering MuseScore covers everything you need to know to get the most out of MuseScore.
+Whether you are just getting started with music notation software, or are a power user eager to explore advanced engraving and playback techniques, my flagship online course Mastering DB Score covers everything you need to know to get the most out of DB Score.
 
-In addition, Mastering MuseScore features a supportive community of musicians, with discussion spaces, live streams, and other related courses and services to help you create your best music. Take advantage of this opportunity to learn MuseScore from one of its most recognized experts!
+In addition, Mastering DB Score features a supportive community of musicians, with discussion spaces, live streams, and other related courses and services to help you create your best music. Take advantage of this opportunity to learn DB Score from one of its most recognized experts!
 
-(Note: Mastering MuseScore is available in English only)</source>
-        <translation>Welkom bij Mastering MuseScore - de meest uitgebreide bron voor het leren van &apos;s werelds populairste muzieknotatiesoftware! Mijn naam is Marc Sabatella en ik ben betrokken bij het ontwikkelen, ondersteunen en promoten van MuseScore sinds de eerste release meer dan tien jaar geleden.
+(Note: Mastering DB Score is available in English only)</source>
+        <translation>Welkom bij Mastering DB Score - de meest uitgebreide bron voor het leren van &apos;s werelds populairste muzieknotatiesoftware! Mijn naam is Marc Sabatella en ik ben betrokken bij het ontwikkelen, ondersteunen en promoten van DB Score sinds de eerste release meer dan tien jaar geleden.
 
-Of u nu net begint met muzieknotatiesoftware of een ervaren gebruiker bent die graag geavanceerde muziekschrift- en afspeeltechnieken wil ontdekken, mijn online cursus Mastering MuseScore behandelt alles wat u moet weten om het meeste uit MuseScore te halen. 
+Of u nu net begint met muzieknotatiesoftware of een ervaren gebruiker bent die graag geavanceerde muziekschrift- en afspeeltechnieken wil ontdekken, mijn online cursus Mastering DB Score behandelt alles wat u moet weten om het meeste uit DB Score te halen. 
 
-Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikanten, met discussieruimten, livestreams en andere gerelateerde cursussen en diensten om u te helpen de beste muziek te creëren. Profiteer van deze kans om MuseScore te leren van een van de meest erkende experts!
+Daarnaast biedt Mastering DB Score een ondersteunende gemeenschap van muzikanten, met discussieruimten, livestreams en andere gerelateerde cursussen en diensten om u te helpen de beste muziek te creëren. Profiteer van deze kans om DB Score te leren van een van de meest erkende experts!
 
-(Opmerking: Mastering MuseScore is alleen beschikbaar in het Engels.)</translation>
+(Opmerking: Mastering DB Score is alleen beschikbaar in het Engels.)</translation>
     </message>
     <message>
         <location filename="../../src/framework/learn/qml/Muse/Learn/learnpagemodel.cpp" line="97"/>
-        <source>Mastering MuseScore</source>
-        <translation>Mastering MuseScore</translation>
+        <source>Mastering DB Score</source>
+        <translation>Mastering DB Score</translation>
     </message>
 </context>
 <context>
@@ -26870,17 +26870,17 @@ Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikante
 <context>
     <name>musesounds</name>
     <message>
-        <location filename="../../src/musesounds/qml/MuseScore/MuseSounds/internal/SoundLibraryItem.qml" line="120"/>
+        <location filename="../../src/musesounds/qml/DB Score/MuseSounds/internal/SoundLibraryItem.qml" line="120"/>
         <source>Get it now</source>
         <translation>Download nu</translation>
     </message>
     <message>
-        <location filename="../../src/musesounds/qml/MuseScore/MuseSounds/MuseSoundsPage.qml" line="109"/>
+        <location filename="../../src/musesounds/qml/DB Score/MuseSounds/MuseSoundsPage.qml" line="109"/>
         <source>Search sounds</source>
         <translation>Zoek geluiden</translation>
     </message>
     <message>
-        <location filename="../../src/musesounds/qml/MuseScore/MuseSounds/MuseSoundsPage.qml" line="197"/>
+        <location filename="../../src/musesounds/qml/DB Score/MuseSounds/MuseSoundsPage.qml" line="197"/>
         <source>Sorry, we are unable to load these sounds right now</source>
         <translation>Sorry, we kunnen de geluiden op dit moment niet laden</translation>
     </message>
@@ -26898,8 +26898,8 @@ Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikante
     </message>
     <message>
         <location filename="../../src/musesounds/internal/musesamplercheckupdatescenario.cpp" line="70"/>
-        <source>To apply this update, MuseScore Studio will need to close briefly and MuseSounds Manager will open. Your MuseSounds libraries won’t work until the update is complete.</source>
-        <translation>Om deze update toe te passen, moet MuseScore Studio kort worden afgesloten en wordt MuseSounds Manager geopend. Je MuseSounds-bibliotheken werken pas nadat de update is voltooid.</translation>
+        <source>To apply this update, DB Score will need to close briefly and MuseSounds Manager will open. Your MuseSounds libraries won’t work until the update is complete.</source>
+        <translation>Om deze update toe te passen, moet DB Score kort worden afgesloten en wordt MuseSounds Manager geopend. Je MuseSounds-bibliotheken werken pas nadat de update is voltooid.</translation>
     </message>
     <message>
         <location filename="../../src/musesounds/internal/musesamplercheckupdatescenario.cpp" line="74"/>
@@ -26909,8 +26909,8 @@ Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikante
     </message>
     <message>
         <location filename="../../src/musesounds/internal/musesamplercheckupdatescenario.cpp" line="76"/>
-        <source>To apply this update, MuseScore Studio will need to close briefly and MuseHub will open. Your MuseSounds libraries won’t work until the update is complete.</source>
-        <translation>Om deze update toe te passen, moet MuseScore Studio kort worden afgesloten en wordt MuseHub geopend. Je MuseSounds-bibliotheken werken pas nadat de update is voltooid.</translation>
+        <source>To apply this update, DB Score will need to close briefly and MuseHub will open. Your MuseSounds libraries won’t work until the update is complete.</source>
+        <translation>Om deze update toe te passen, moet DB Score kort worden afgesloten en wordt MuseHub geopend. Je MuseSounds-bibliotheken werken pas nadat de update is voltooid.</translation>
     </message>
     <message>
         <location filename="../../src/musesounds/internal/musesamplercheckupdatescenario.cpp" line="80"/>
@@ -26919,13 +26919,13 @@ Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikante
     </message>
     <message>
         <location filename="../../src/musesounds/internal/musesamplercheckupdatescenario.cpp" line="98"/>
-        <source>To keep MuseSounds running smoothly, MuseScore Studio needs to close briefly so MuseSounds Manager can apply the update. You’ll need to restart MuseScore Studio when the update is complete.</source>
-        <translation>Om te zorgen dat MuseSounds goed blijft werken, moet MuseScore Studio kort worden afgesloten zodat MuseSounds Manager de update kan uitvoeren. Nadat de update is voltooid, moet u MuseScore Studio opnieuw starten.</translation>
+        <source>To keep MuseSounds running smoothly, DB Score needs to close briefly so MuseSounds Manager can apply the update. You’ll need to restart DB Score when the update is complete.</source>
+        <translation>Om te zorgen dat MuseSounds goed blijft werken, moet DB Score kort worden afgesloten zodat MuseSounds Manager de update kan uitvoeren. Nadat de update is voltooid, moet u DB Score opnieuw starten.</translation>
     </message>
     <message>
         <location filename="../../src/musesounds/internal/musesamplercheckupdatescenario.cpp" line="105"/>
-        <source>To keep MuseSounds running smoothly, MuseScore Studio needs to close briefly so MuseHub can apply the update. You’ll be prompted to relaunch MuseScore Studio when it’s ready.</source>
-        <translation>Om te zorgen dat MuseSounds goed blijft werken, moet MuseScore Studio kort worden afgesloten zodat MuseHub de update kan uitvoeren. U krijgt een melding zodra de update voltooid is en u MuseScore Studio weer kan opstarten.</translation>
+        <source>To keep MuseSounds running smoothly, DB Score needs to close briefly so MuseHub can apply the update. You’ll be prompted to relaunch DB Score when it’s ready.</source>
+        <translation>Om te zorgen dat MuseSounds goed blijft werken, moet DB Score kort worden afgesloten zodat MuseHub de update kan uitvoeren. U krijgt een melding zodra de update voltooid is en u DB Score weer kan opstarten.</translation>
     </message>
     <message>
         <location filename="../../src/musesounds/internal/musesamplercheckupdatescenario.cpp" line="110"/>
@@ -26979,7 +26979,7 @@ Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikante
 <context>
     <name>notation</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="366"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="366"/>
         <source>History</source>
         <translation>Geschiedenis</translation>
     </message>
@@ -26989,1013 +26989,1013 @@ Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikante
         <translation>Uitbreidingen werkbalk</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/InsertMeasuresPopup.qml" line="83"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/InsertMeasuresPopup.qml" line="83"/>
         <source>After selection</source>
         <translation>Na selectie</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/InsertMeasuresPopup.qml" line="84"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/InsertMeasuresPopup.qml" line="84"/>
         <source>Before selection</source>
         <translation>Voor selectie</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/InsertMeasuresPopup.qml" line="85"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/InsertMeasuresPopup.qml" line="85"/>
         <source>At start of score</source>
         <translation>Aan het begin van de partituur</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/InsertMeasuresPopup.qml" line="86"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/measures/InsertMeasuresPopup.qml" line="86"/>
         <source>At end of score</source>
         <translation>Aan het einde van de partituur</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/EditGridSizeDialog.qml" line="54"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/EditGridSizeDialog.qml" line="54"/>
         <source>Edit grid</source>
         <translation>Bewerk raster</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/EditGridSizeDialog.qml" line="66"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/EditGridSizeDialog.qml" line="66"/>
         <source>Horizontal grid:</source>
         <translation>Horizontaal raster:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/EditGridSizeDialog.qml" line="107"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/EditGridSizeDialog.qml" line="107"/>
         <source>Vertical grid:</source>
         <translation>Verticaal raster:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/CapoPopup.qml" line="67"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/CapoPopup.qml" line="67"/>
         <source>Capo settings</source>
         <translation>Capo-instellingen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/CapoPopup.qml" line="79"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/CapoPopup.qml" line="79"/>
         <source>Capo</source>
         <translation>Capo</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/CapoPopup.qml" line="98"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/CapoPopup.qml" line="98"/>
         <source>On</source>
         <extracomment>as opposed to Off</extracomment>
         <translation>Aan</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/CapoPopup.qml" line="100"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/CapoPopup.qml" line="100"/>
         <source>Off</source>
         <extracomment>as opposed to On</extracomment>
         <translation>Uit</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/CapoPopup.qml" line="119"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/CapoPopup.qml" line="119"/>
         <source>Notation/tab in open position</source>
         <translation>Notatie/tab in open positie</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/CapoPopup.qml" line="120"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/CapoPopup.qml" line="120"/>
         <source>Notation shows sounding pitches</source>
         <translation>Notatie toont klinkende toonhoogtes</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/CapoPopup.qml" line="121"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/CapoPopup.qml" line="121"/>
         <source>No transposition</source>
         <translation>Geen transpositie</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/CapoPopup.qml" line="136"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/CapoPopup.qml" line="136"/>
         <source>Fret</source>
         <translation>Fret</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/CapoPopup.qml" line="168"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/CapoPopup.qml" line="168"/>
         <source>Apply to</source>
         <translation>Pas toe op</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/CapoPopup.qml" line="207"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/StringTuningsPopup.qml" line="191"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/CapoPopup.qml" line="207"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/StringTuningsPopup.qml" line="191"/>
         <source>String %1</source>
         <translation>Snaar %1</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/CapoPopup.qml" line="225"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/CapoPopup.qml" line="225"/>
         <source>Manually specify instruction text</source>
         <translation>Instructietekst</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/CapoPopup.qml" line="253"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/CapoPopup.qml" line="253"/>
         <source>Position</source>
         <translation>Positie</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/CapoPopup.qml" line="264"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/CapoPopup.qml" line="264"/>
         <source>Capo position</source>
         <translation>Capo positie</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/DynamicPopup.qml" line="47"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/DynamicPopup.qml" line="47"/>
         <source>Dynamics popup</source>
         <translation>Dynamiek-popup</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="92"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="92"/>
         <source>D flat</source>
         <translation>Des</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="92"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="92"/>
         <source>D natural</source>
         <translation>D</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="92"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="92"/>
         <source>D sharp</source>
         <translation>Dis</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="93"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="93"/>
         <source>C flat</source>
         <translation>Ces</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="93"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="93"/>
         <source>C natural</source>
         <translation>C</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="93"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="93"/>
         <source>C sharp</source>
         <translation>Cis</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="94"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="94"/>
         <source>B flat</source>
         <translation>Bes</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="94"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="94"/>
         <source>B natural</source>
         <translation>B</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="94"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="94"/>
         <source>B sharp</source>
         <translation>Bis</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="95"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="95"/>
         <source>E flat</source>
         <translation>Es</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="95"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="95"/>
         <source>E natural</source>
         <translation>E</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="95"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="95"/>
         <source>E sharp</source>
         <translation>Eïs</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="96"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="96"/>
         <source>F flat</source>
         <translation>Fes</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="96"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="96"/>
         <source>F natural</source>
         <translation>F</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="96"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="96"/>
         <source>F sharp</source>
         <translation>Fis</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="97"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="97"/>
         <source>G flat</source>
         <translation>Ges</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="97"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="97"/>
         <source>G natural</source>
         <translation>G</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="97"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="97"/>
         <source>G sharp</source>
         <translation>Gis</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="98"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="98"/>
         <source>A flat</source>
         <translation>As</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="98"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="98"/>
         <source>A natural</source>
         <translation>A</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="98"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="98"/>
         <source>A sharp</source>
         <translation>Ais</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="115"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="115"/>
         <source>Pedal settings buttons</source>
         <translation>Pedaalinstellingen knoppen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="142"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="142"/>
         <source>D</source>
         <translation>D</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="143"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="143"/>
         <source>C</source>
         <translation>C</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="144"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="144"/>
         <source>B</source>
         <translation>B</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="145"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="145"/>
         <source>E</source>
         <translation>E</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="146"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="146"/>
         <source>F</source>
         <translation>F</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="147"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="147"/>
         <source>G</source>
         <translation>G</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="148"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="148"/>
         <source>A</source>
         <translation>A</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="271"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="271"/>
         <source>Diagram type buttons</source>
         <translation>Diagramtype knoppen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="292"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="297"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="292"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="297"/>
         <source>Diagram</source>
         <translation>Diagram</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="315"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/HarpPedalPopup.qml" line="320"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/noteinputbarmodel.cpp" line="602"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="315"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/HarpPedalPopup.qml" line="320"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/noteinputbarmodel.cpp" line="602"/>
         <source>Text</source>
         <translation>Tekst</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/StringTuningsPopup.qml" line="69"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/StringTuningsPopup.qml" line="69"/>
         <source>String tunings settings</source>
         <translation>Instellingen voor snaarstemmingen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/StringTuningsPopup.qml" line="81"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/StringTuningsPopup.qml" line="81"/>
         <source>Presets</source>
         <translation>Voorinstellingen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/StringTuningsPopup.qml" line="117"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/StringTuningsPopup.qml" line="117"/>
         <source>Number of strings:</source>
         <translation>Aantal snaren:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/StringTuningsPopup.qml" line="135"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/StringTuningsPopup.qml" line="135"/>
         <source>Strings</source>
         <translation>Snaren</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/StringTuningsPopup.qml" line="178"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/StringTuningsPopup.qml" line="178"/>
         <source>Value %1</source>
         <translation>Waarde %1</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/CustomiseControlPanel.qml" line="49"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/CustomiseControlPanel.qml" line="49"/>
         <source>Customization actions</source>
         <extracomment>Accessibility description of the button group at the top of the &quot;Customize toolbar&quot; popup</extracomment>
         <translation>Bewerkings-acties</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/CustomiseControlPanel.qml" line="61"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/CustomiseControlPanel.qml" line="61"/>
         <source>Add separator line</source>
         <translation>Voeg scheidingslijn toe</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/CustomiseControlPanel.qml" line="83"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/PartDelegate.qml" line="173"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/CustomiseControlPanel.qml" line="83"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/PartDelegate.qml" line="173"/>
         <source>Delete</source>
         <translation>Verwijder</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/CustomiseControlPanel.qml" line="99"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/CustomiseControlPanel.qml" line="99"/>
         <source>Move up</source>
         <translation>Verplaats omhoog</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/CustomiseControlPanel.qml" line="115"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/CustomiseControlPanel.qml" line="115"/>
         <source>Move down</source>
         <translation>Verplaats omlaag</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/NotationSwitchPanel.qml" line="108"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/NotationSwitchPanel.qml" line="108"/>
         <source>Not saved</source>
         <translation>Niet opgeslagen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/NotationSwitchPanel.qml" line="148"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/NotationSwitchPanel.qml" line="148"/>
         <source>Scroll left</source>
         <translation>Schuif naar links</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/NotationSwitchPanel.qml" line="165"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/NotationSwitchPanel.qml" line="165"/>
         <source>Scroll right</source>
         <translation>Schuif naar rechts</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/NoteInputBarCustomisePopup.qml" line="59"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/NoteInputBar.qml" line="191"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/NoteInputBar.qml" line="199"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/NoteInputBarCustomisePopup.qml" line="59"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/NoteInputBar.qml" line="191"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/NoteInputBar.qml" line="199"/>
         <source>Customize toolbar</source>
         <translation>Werkbalk aanpassen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/PartDelegate.qml" line="167"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/PartDelegate.qml" line="167"/>
         <source>Duplicate</source>
         <translation>Dupliceer</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/PartDelegate.qml" line="168"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/PartDelegate.qml" line="168"/>
         <source>Rename</source>
         <translation>Hernoem</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/PartDelegate.qml" line="169"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/PartDelegate.qml" line="169"/>
         <source>Reset</source>
         <translation>Herstel</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/PartsTopPanel.qml" line="41"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/PartsTopPanel.qml" line="41"/>
         <source>Parts actions</source>
         <extracomment>Accessibility description of the button group at the top of the &quot;Parts&quot; dialog</extracomment>
         <translation>Partij acties</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/PartsTopPanel.qml" line="54"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/PartsDialog.qml" line="32"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/PartsTopPanel.qml" line="54"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/PartsDialog.qml" line="32"/>
         <source>Parts</source>
         <translation>Partijen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/PartsTopPanel.qml" line="59"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/PartsTopPanel.qml" line="59"/>
         <source>Create new part</source>
         <translation>Maak nieuwe partij</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/PartsView.qml" line="58"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/PartsView.qml" line="58"/>
         <source>Name</source>
         <translation>Naam</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/PartsView.qml" line="84"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/PartsView.qml" line="84"/>
         <source>Parts view</source>
         <translation>Partijen weergave</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/SearchPopup.qml" line="87"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/SearchPopup.qml" line="87"/>
         <source>Close search</source>
         <translation>Sluit zoeken</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/SearchPopup.qml" line="98"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/SearchPopup.qml" line="98"/>
         <source>Find / Go to:</source>
         <translation>Zoek/ga naar:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/VoicesPopup.qml" line="45"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/VoicesPopup.qml" line="45"/>
         <source>Voices visible on this staff</source>
         <translation>Stemmen zichtbaar in deze notenbalk</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/VoicesPopup.qml" line="61"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/voicesselectionfiltermodel.cpp" line="51"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/voicesselectionfiltermodel.cpp" line="53"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/voicesselectionfiltermodel.cpp" line="55"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/voicesselectionfiltermodel.cpp" line="57"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/VoicesPopup.qml" line="61"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/voicesselectionfiltermodel.cpp" line="51"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/voicesselectionfiltermodel.cpp" line="53"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/voicesselectionfiltermodel.cpp" line="55"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/voicesselectionfiltermodel.cpp" line="57"/>
         <source>Voice %1</source>
         <translation>Stem %1</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/NotationToolBar.qml" line="30"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/NotationToolBar.qml" line="30"/>
         <source>Notation toolbar</source>
         <translation>Notatie werkbalk</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/NoteInputBar.qml" line="47"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/NoteInputBar.qml" line="47"/>
         <source>Note input toolbar</source>
         <translation>Noteninvoer-werkbalk</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/NoteInputBar.qml" line="192"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/NoteInputBar.qml" line="192"/>
         <source>Show/hide toolbar buttons</source>
         <translation>Toon/verberg werkbalkknoppen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/SelectionFilterPanel.qml" line="80"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/SelectionFilterPanel.qml" line="80"/>
         <source>Voices</source>
         <translation>Stemmen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/SelectionFilterPanel.qml" line="126"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/SelectionFilterPanel.qml" line="126"/>
         <source>Chords</source>
         <translation>Akkoorden</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/SelectionFilterPanel.qml" line="168"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/SelectionFilterPanel.qml" line="168"/>
         <source>Include single notes</source>
         <translation>Inclusief enkele noten</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/SelectionFilterPanel.qml" line="187"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/SelectionFilterPanel.qml" line="187"/>
         <source>Notation elements</source>
         <translation>Notatie elementen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/SelectionFilterPanel.qml" line="262"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/SelectionFilterPanel.qml" line="262"/>
         <source>Clear all</source>
         <translation>Wis alle</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/SelectionFilterPanel.qml" line="281"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/SelectionFilterPanel.qml" line="281"/>
         <source>Select all</source>
         <translation>Selecteer alles</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/SelectMeasuresCountDialog.qml" line="60"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/SelectMeasuresCountDialog.qml" line="60"/>
         <source>Number of measures to insert:</source>
         <translation>Aantal in te voegen maten:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/AccidentalsPage.qml" line="74"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/AccidentalsPage.qml" line="74"/>
         <source>Keep accidentals close to offset notes</source>
         <translation>Houd voortekens dicht bij verschoven noten</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/AccidentalsPage.qml" line="82"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/AccidentalsPage.qml" line="82"/>
         <source>Pair accidentals on seconds</source>
         <translation>Houd voortekens bij secunden samen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/AccidentalsPage.qml" line="90"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/AccidentalsPage.qml" line="90"/>
         <source>Align accidentals an octave apart across subchords</source>
         <translation>Lijn voortekens die een octaaf uit elkaar liggen uit tussen sub-akkoorden</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/AccidentalsPage.qml" line="98"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/AccidentalsPage.qml" line="98"/>
         <source>Align accidentals on offset octaves</source>
         <translation>Lijn voortekens uit bij octaven met verschoven noten</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BeamsPage.qml" line="40"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BeamsPage.qml" line="40"/>
         <source>Beam distance</source>
         <translation>Waardestreep-afstand</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BeamsPage.qml" line="47"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BeamsPage.qml" line="47"/>
         <source>Regular</source>
         <translation>Regulier</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BeamsPage.qml" line="48"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BeamsPage.qml" line="48"/>
         <source>Wide</source>
         <translation>Ruim</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BeamsPage.qml" line="86"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BeamsPage.qml" line="86"/>
         <source>Beam thickness</source>
         <translation>Waardestreepdikte</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BeamsPage.qml" line="106"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BeamsPage.qml" line="106"/>
         <source>Broken beam minimum length</source>
         <translation>Minimum lengte onderbroken waardestreep</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BeamsPage.qml" line="127"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BeamsPage.qml" line="127"/>
         <source>Flatten all beams</source>
         <translation>Maak alle waardestrepen vlak</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BeamsPage.qml" line="138"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BeamsPage.qml" line="138"/>
         <source>Beam style</source>
         <translation>Waardestreepstijl</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BeamsPage.qml" line="151"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BeamsPage.qml" line="151"/>
         <source>Draw inner stems through beams</source>
         <translation>Teken binnenste stokken door waardestrepen heen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BeamsPage.qml" line="152"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BeamsPage.qml" line="152"/>
         <source>Draw inner stems to nearest beam (“French” style)</source>
         <translation>Teken binnenste stokken tot aan dichtstbijzijnde waardestreep (&quot;Franse&quot; stijl)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="263"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="378"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="100"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="355"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="192"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="263"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="378"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="100"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="355"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="192"/>
         <source>Edit text style</source>
         <translation>Bewerk tekststijl</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="168"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="168"/>
         <source>Edit chord symbol text style</source>
         <translation>Bewerk akkoordsymbolentekststijl</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="280"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="355"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="72"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="280"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="355"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="72"/>
         <source>Scale:</source>
         <translation>Schaal:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="318"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="394"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="318"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="394"/>
         <source>Vertical offset:</source>
         <translation>Verticale correctie:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="438"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="438"/>
         <source>Style:</source>
         <translation>Stijl:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="504"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="504"/>
         <source>Bass note scale:</source>
         <translation>Basnoot schaal:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="541"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="541"/>
         <source>Divider thickness:</source>
         <translation>Scheidingsteken dikte:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="580"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="580"/>
         <source>Divider spacing:</source>
         <translation>Scheidingsteken afstand:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="640"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="640"/>
         <source>Alignment to notehead:</source>
         <translation>Uitlijning met nootkop:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="654"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="654"/>
         <source>Alignment to fretboard diagram:</source>
         <translation>Uitlijning met fretborddiagram:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="690"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="690"/>
         <source>Min. space to fretboard diagram:</source>
         <translation>Min. afstand tot fretborddiagram:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="729"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="729"/>
         <source>Min. space to other notation:</source>
         <translation>Min. afstand tot andere notatie:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="756"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="756"/>
         <source>Min. space between chord symbols:</source>
         <translation>Min. afstand tussen akkoordsymbolen:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="795"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="795"/>
         <source>Interpretation:</source>
         <translation>Interpretatie:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="831"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="831"/>
         <source>Voicing:</source>
         <translation>Samenstelling</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="850"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="850"/>
         <source>Duration:</source>
         <translation>Duur:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="913"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="913"/>
         <source>Capo fret position:</source>
         <translation>Capo fret positie:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="747"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="747"/>
         <source>Small parentheses</source>
         <translation>Kleine haakjes</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="48"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="85"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="48"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="85"/>
         <source>Fretboard diagrams</source>
         <translation>Fretborddiagrammen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="56"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="56"/>
         <source>Position above staff:</source>
         <translation>Positie boven notenbalk:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="64"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="64"/>
         <source>Min. space to notation:</source>
         <translation>Min. afstand tot notatie:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="79"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="79"/>
         <source>Orientation:</source>
         <translation>Oriëntatie:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="83"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="83"/>
         <source>Vertical</source>
         <translation>Verticaal</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="84"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="84"/>
         <source>Horizontal</source>
         <translation>Horizontaal</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="90"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="90"/>
         <source>Nut line thickness:</source>
         <translation>Bruglijndikte:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="98"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="98"/>
         <source>Fret number</source>
         <translation>Fretnummer</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="109"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="109"/>
         <source>Position:</source>
         <translation>Positie:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="113"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="113"/>
         <source>Left</source>
         <translation>Links</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="113"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="113"/>
         <source>Bottom</source>
         <translation>Beneden</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="119"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="119"/>
         <source>Right</source>
         <translation>Rechts</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="119"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="119"/>
         <source>Top</source>
         <translation>Bovenaan</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="126"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="126"/>
         <source>Format:</source>
         <translation>Formaat:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="134"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="134"/>
         <source>Number only</source>
         <translation>Alleen getal</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="143"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="143"/>
         <source>Custom suffix:</source>
         <translation>Eigen toevoeging:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="160"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="160"/>
         <source>Preview:</source>
         <translation>Voorbeeld:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="167"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="167"/>
         <source>Edit fret number text style</source>
         <translation>Bewerk tekststijl fretnummer</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="178"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="178"/>
         <source>Dot size:</source>
         <translation>Puntgrootte:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="186"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="186"/>
         <source>Barré</source>
         <translation>Barré</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="194"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="194"/>
         <source>Appearance:</source>
         <translation>Uiterlijk:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="198"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="198"/>
         <source>Line</source>
         <translation>Lijn</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="199"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="199"/>
         <source>Slur</source>
         <translation>Legatoboog</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="205"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/LineStyleSection.qml" line="58"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="205"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/LineStyleSection.qml" line="58"/>
         <source>Line thickness:</source>
         <translation>Lijndikte:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="213"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="213"/>
         <source>Show fingerings</source>
         <translation>Laat vingerzetting zien</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="219"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="219"/>
         <source>Edit fingering text style</source>
         <translation>Bewerk tekststijl vingerzetting</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="228"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="228"/>
         <source>Fretboard style:</source>
         <translation>Fretbordstijl:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="232"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="232"/>
         <source>Trimmed</source>
         <translation>Ingekort</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="233"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="233"/>
         <source>Extended</source>
         <translation>Verlengd</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="239"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="239"/>
         <source>String spacing:</source>
         <translation>Snaarafstand:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/FretboardsPage.qml" line="246"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/FretboardsPage.qml" line="246"/>
         <source>Fret spacing:</source>
         <translation>Fretafstand:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/GlissandoSection.qml" line="50"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/GlissandoSection.qml" line="50"/>
         <source>Line type:</source>
         <translation>Lijntype:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/GlissandoSection.qml" line="53"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/NoteFlagsTypeSelector.qml" line="46"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/GlissandoSection.qml" line="53"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/NoteFlagsTypeSelector.qml" line="46"/>
         <source>Straight</source>
         <translation>Recht</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/GlissandoSection.qml" line="54"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/GlissandoSection.qml" line="54"/>
         <source>Wavy</source>
         <translation>Golvend</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/GlissandoSection.qml" line="73"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/GlissandoSection.qml" line="73"/>
         <source>Show text:</source>
         <translation>Laat tekst zien:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/GlissandoSection.qml" line="83"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/GlissandoSection.qml" line="83"/>
         <source>Edit glissando text style</source>
         <translation>Bewerk tekststijl glissando</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/LineStyleSection.qml" line="47"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="102"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/LineStyleSection.qml" line="47"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="102"/>
         <source>Line style:</source>
         <translation>Lijnstijl:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/LineStyleSection.qml" line="50"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="107"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="80"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/LineStyleSection.qml" line="50"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="107"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="80"/>
         <source>Normal</source>
         <translation>Normaal</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/LineStyleSection.qml" line="51"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="108"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/LineStyleSection.qml" line="51"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="108"/>
         <source>Dashed</source>
         <translation>Streeplijn</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/LineStyleSection.qml" line="52"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="109"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/LineStyleSection.qml" line="52"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="109"/>
         <source>Dotted</source>
         <translation>Stippellijn</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/LineStyleSection.qml" line="64"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/LineStyleSection.qml" line="64"/>
         <source>Dash (dashed line):</source>
         <translation>Streepje (streepjeslijn):</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/LineStyleSection.qml" line="70"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/LineStyleSection.qml" line="70"/>
         <source>Gap (dashed line):</source>
         <translation>Open ruimte (streepjeslijn):</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/NoteFlagsTypeSelector.qml" line="45"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/NoteFlagsTypeSelector.qml" line="45"/>
         <source>Traditional</source>
         <translation>Traditioneel</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/NoteLineSection.qml" line="55"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/NoteLineSection.qml" line="55"/>
         <source>Edit note-anchored line text style</source>
         <translation>Bewerk tekststijl noot-gebonden lijn</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="53"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="53"/>
         <source>Measure repeats</source>
         <translation>Maatherhalingen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="61"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="61"/>
         <source>Number position:</source>
         <translation>Positie getal:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="71"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="71"/>
         <source>Show ‘1’ on 1-measure repeats</source>
         <translation>Toon &quot;1&quot; bij 1-maat herhalingen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="77"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="77"/>
         <source>Show extenders on 4-measure repeats</source>
         <translation>Toon verlengers bij herhalingen van 4 maten</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="83"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="83"/>
         <source>Number consecutive measure repeats</source>
         <translation>Aantal opeenvolgende maatherhalingen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="103"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="103"/>
         <source>Every</source>
         <translation>Iedere</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="124"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="124"/>
         <source>measures</source>
         <translation>maten</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="135"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="135"/>
         <source>With parentheses</source>
         <translation>Met haakjes</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="147"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="147"/>
         <source>Repeat play count text</source>
         <translation>Aantal keer herhalen-tekst</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="174"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="174"/>
         <source>Preset</source>
         <translation>Instelling</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RestOffsetSelector.qml" line="45"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RestOffsetSelector.qml" line="45"/>
         <source>1 space</source>
         <translation>1 spatie</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RestOffsetSelector.qml" line="46"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RestOffsetSelector.qml" line="46"/>
         <source>2 spaces</source>
         <translation>2 spaties</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RestOffsetSelector.qml" line="65"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RestOffsetSelector.qml" line="65"/>
         <source>Merge matching rests</source>
         <translation>Voeg gelijke rusten samen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="186"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="186"/>
         <source>Placement on single notes:</source>
         <translation>Plaatsing bij enkele noten:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="218"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="218"/>
         <source>Placement on chords:</source>
         <translation>Plaatsing bij akkoorden:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="250"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="250"/>
         <source>Placement of inner ties with respect to augmentation dots:</source>
         <translation>Plaatsing binnenste overbindingen ten opzichte van punteringen:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="258"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="258"/>
         <source>Auto</source>
         <translation>Automatisch</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="265"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="265"/>
         <source>Always before dots</source>
         <translation>Altijd vóór punteringen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="272"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="272"/>
         <source>Always after dots</source>
         <translation>Altijd na punteringen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/UndoRedoToolBar.qml" line="32"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/UndoRedoToolBar.qml" line="32"/>
         <source>Undo redo toolbar</source>
         <translation>Ongedaan maken/opnieuw doen werkbalk</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/ZoomControl.qml" line="58"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/ZoomControl.qml" line="58"/>
         <source>Zoom out</source>
         <translation>Zoom uit</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/ZoomControl.qml" line="78"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/ZoomControl.qml" line="78"/>
         <source>Zoom in</source>
         <translation>Zoom in</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/ZoomControl.qml" line="126"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/ZoomControl.qml" line="126"/>
         <source>Zoom menu</source>
         <translation>Zoom menu</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="705"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="705"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="367"/>
         <source>Insert &amp;after selection…</source>
         <translation>Voeg toe n&amp;a selectie…</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="704"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="704"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="368"/>
         <source>Insert &amp;before selection…</source>
         <translation>Voeg in &amp;voor selectie…</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="701"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="701"/>
         <source>&amp;Insert one measure before selection</source>
         <translation>Voeg één &amp;maat in voor selectie</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="702"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="702"/>
         <source>Insert &amp;one measure at end of score</source>
         <translation>Voeg één maat &amp;toe aan het einde</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="707"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="707"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="370"/>
         <source>Insert at &amp;start of score…</source>
         <translation>Voeg in aan het &amp;begin van de partituur…</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="708"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="708"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="371"/>
         <source>Insert at &amp;end of score…</source>
         <translation>Voeg toe aan het &amp;einde van de partituur…</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="722"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/noteinputbarmodel.cpp" line="685"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/appmenumodel.cpp" line="722"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/noteinputbarmodel.cpp" line="685"/>
         <source>Insert at end of score</source>
         <translation>Voeg toe aan het einde</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/notationstatusbarmodel.cpp" line="168"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/notationstatusbarmodel.cpp" line="168"/>
         <location filename="../../src/web/appshell/view/notationstatusbarmodel.cpp" line="168"/>
         <source>Continuous view</source>
         <translation>Doorlopende weergave</translation>
@@ -28475,9 +28475,9 @@ Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikante
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1498"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="51"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="147"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/voicesselectionfiltermodel.cpp" line="49"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="51"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="147"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/voicesselectionfiltermodel.cpp" line="49"/>
         <source>All</source>
         <translation>Alles</translation>
     </message>
@@ -28488,17 +28488,17 @@ Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikante
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1835"/>
-        <source>MuseScore style files</source>
-        <translation>MuseScore stijlbestanden</translation>
+        <source>DB Score style files</source>
+        <translation>DB Score stijlbestanden</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1836"/>
-        <source>MuseScore style file</source>
-        <translation>MuseScore stijlbestand</translation>
+        <source>DB Score style file</source>
+        <translation>DB Score stijlbestand</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1839"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="123"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="123"/>
         <source>Load style</source>
         <translation>Laad stijl</translation>
     </message>
@@ -28514,8 +28514,8 @@ Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikante
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1856"/>
-        <source>Since this style file is from a different version of MuseScore Studio, your score is not guaranteed to display correctly.</source>
-        <translation>Dit stijlbestand is afkomstig van een andere versie van MuseScore Studio. Hierdoor wordt uw partituur mogelijk niet correct weergegeven.</translation>
+        <source>Since this style file is from a different version of DB Score, your score is not guaranteed to display correctly.</source>
+        <translation>Dit stijlbestand is afkomstig van een andere versie van DB Score. Hierdoor wordt uw partituur mogelijk niet correct weergegeven.</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1858"/>
@@ -28533,362 +28533,362 @@ Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikante
         <translation>Er is een fout opgetreden.</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/caposettingsmodel.cpp" line="139"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/caposettingsmodel.cpp" line="139"/>
         <source>Above</source>
         <translation>Boven</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/caposettingsmodel.cpp" line="144"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/caposettingsmodel.cpp" line="144"/>
         <source>Below</source>
         <translation>Onder</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/stringtuningssettingsmodel.cpp" line="36"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/stringtuningssettingsmodel.cpp" line="36"/>
         <source>Custom</source>
         <translation>Eigen aangepast</translation>
     </message>
     <message numerus="yes">
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/stringtuningssettingsmodel.cpp" line="263"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/stringtuningssettingsmodel.cpp" line="263"/>
         <source>%n string(s)</source>
         <translation><numerusform>%n snaar</numerusform><numerusform>%n snaren</numerusform></translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="121"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="121"/>
         <source>Clear measures</source>
         <translation>Wis maten</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="123"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="123"/>
         <source>Delete measures</source>
         <translation>Verwijder maten</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="135"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="135"/>
         <source>Insert measures</source>
         <translation>Voeg maten in</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="137"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="137"/>
         <source>Move measures</source>
         <translation>Verplaats maten</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="139"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="139"/>
         <source>Create system from selection</source>
         <translation>Maak systeem van selectie</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="217"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="217"/>
         <source>Add c&amp;hord symbol</source>
         <translation>Voeg a&amp;kkoordsymbool toe</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="233"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="233"/>
         <source>Hide</source>
         <translation>Verberg</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="242"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="276"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="418"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="242"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="276"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="418"/>
         <source>Select</source>
         <translation>Selecteer</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="295"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="295"/>
         <source>After selection…</source>
         <translation>Na selectie…</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="296"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="296"/>
         <source>Before selection…</source>
         <translation>Voor selectie…</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="298"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="298"/>
         <source>At start of score…</source>
         <translation>Aan het begin van de partituur…</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="299"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="299"/>
         <source>At end of score…</source>
         <translation>Aan het einde van de partituur…</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="308"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="308"/>
         <source>To previous system</source>
         <translation>Naar vorig systeem</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="309"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="309"/>
         <source>To next system</source>
         <translation>Naar volgend systeem</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="337"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="350"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="337"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationcontextmenumodel.cpp" line="350"/>
         <source>Add</source>
         <translation>Voeg toe</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationswitchlistmodel.cpp" line="294"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationswitchlistmodel.cpp" line="294"/>
         <source>Close tab</source>
         <translation>Sluit tab</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationswitchlistmodel.cpp" line="299"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationswitchlistmodel.cpp" line="299"/>
         <source>Close other tabs</source>
         <translation>Sluit andere tabs</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationswitchlistmodel.cpp" line="304"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/notationswitchlistmodel.cpp" line="304"/>
         <source>Close all tabs</source>
         <translation>Sluit alle tabs</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/noteinputbarcustomisemodel.cpp" line="234"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/noteinputbarcustomisemodel.cpp" line="234"/>
         <source>Separator line</source>
         <translation>Scheidingslijn</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/noteinputbarmodel.cpp" line="598"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/noteinputbarmodel.cpp" line="598"/>
         <source>Notes</source>
         <translation>Noten</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/noteinputbarmodel.cpp" line="599"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/noteinputbarmodel.cpp" line="599"/>
         <source>Intervals</source>
         <translation>Intervallen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/noteinputbarmodel.cpp" line="600"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/noteinputbarmodel.cpp" line="600"/>
         <source>Measures</source>
         <translation>Maten</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/noteinputbarmodel.cpp" line="601"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/noteinputbarmodel.cpp" line="601"/>
         <source>Frames</source>
         <translation>Kaders</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/noteinputbarmodel.cpp" line="603"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/noteinputbarmodel.cpp" line="603"/>
         <source>Lines</source>
         <translation>Lijnen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/noteinputbarmodel.cpp" line="604"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/noteinputbarmodel.cpp" line="604"/>
         <source>Chords and fretboard diagrams</source>
         <translation>Akkoorden en fretborddiagrammen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/noteinputbarmodel.cpp" line="752"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/noteinputbarmodel.cpp" line="752"/>
         <source>Fretboard diagram legend</source>
         <translation>Fretborddiagram legenda</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/partlistmodel.cpp" line="129"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/partlistmodel.cpp" line="129"/>
         <source>Part</source>
         <translation>Partij</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/partlistmodel.cpp" line="155"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/partlistmodel.cpp" line="155"/>
         <source>Are you sure you want to reset this part?</source>
         <translation>Weet u zeker dat u deze partij wilt herstellen?</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/partlistmodel.cpp" line="188"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/partlistmodel.cpp" line="188"/>
         <source>Are you sure you want to delete this part?</source>
         <translation>Weet u zeker dat u deze partij wilt verwijderen?</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/partlistmodel.cpp" line="245"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/partlistmodel.cpp" line="245"/>
         <source>Name already exists</source>
         <translation>Naam bestaat al</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/partlistmodel.cpp" line="286"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/partlistmodel.cpp" line="286"/>
         <source>(copy)</source>
         <translation>(kopie)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="79"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="79"/>
         <source>Large</source>
         <translation>Groot</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="81"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="81"/>
         <source>Small</source>
         <translation>Klein</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="101"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="101"/>
         <source>128 keys (full)</source>
         <translation>128 toetsen (volledig)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="102"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="102"/>
         <source>88 keys (piano)</source>
         <translation>88 toetsen (piano)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="103"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="103"/>
         <source>61 keys</source>
         <translation>61 toetsen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="104"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="104"/>
         <source>49 keys</source>
         <translation>49 toetsen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="105"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="105"/>
         <source>25 keys</source>
         <translation>25 toetsen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="124"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/pianokeyboard/pianokeyboardpanelcontextmenumodel.cpp" line="124"/>
         <source>View</source>
         <translation>Weergave</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="53"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="53"/>
         <source>Dynamics</source>
         <translation>Dynamiek</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="55"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="55"/>
         <source>Hairpins</source>
         <translation>Cresc./decresc.(diminuendo)-tekens</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="57"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="57"/>
         <source>Fingerings</source>
         <translation>Vingerzetting</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="59"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="59"/>
         <source>Lyrics</source>
         <translation>Liedtekst</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="61"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="61"/>
         <source>Chord symbols</source>
         <translation>Akkoordsymbolen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="63"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="63"/>
         <source>Other text</source>
         <translation>Overige tekst</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="65"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="65"/>
         <source>Articulations</source>
         <translation>Articulaties</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="67"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="67"/>
         <source>Ornaments</source>
         <translation>Versieringen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="69"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="69"/>
         <source>Slurs</source>
         <translation>Legatobogen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="71"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="71"/>
         <source>Ties</source>
         <translation>Overbindingen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="73"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="73"/>
         <source>Figured bass</source>
         <translation>Basso continuo</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="75"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="75"/>
         <source>Ottavas</source>
         <translation>Ottava&apos;s</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="77"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="77"/>
         <source>Pedal lines</source>
         <translation>Pedaallijnen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="79"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="79"/>
         <source>Other lines</source>
         <translation>Overige lijnen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="81"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="81"/>
         <source>Arpeggios</source>
         <translation>Arpeggio&apos;s</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="83"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="83"/>
         <source>Glissandos</source>
         <translation>Glissandi</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="87"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="87"/>
         <source>Breath marks</source>
         <translation>Ademhalingstekens</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="89"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="89"/>
         <source>Tremolos</source>
         <translation>Tremolo&apos;s</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="91"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="91"/>
         <source>Grace notes</source>
         <translation>Siernoten</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="149"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="149"/>
         <source>Top note</source>
         <translation>Hoogste noot</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="151"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="151"/>
         <source>Seventh note</source>
         <translation>Zevende noot</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="153"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="153"/>
         <source>Sixth note</source>
         <translation>Zesde noot</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="155"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="155"/>
         <source>Fifth note</source>
         <translation>Vijfde noot</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="157"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="157"/>
         <source>Fourth note</source>
         <translation>Vierde noot</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="159"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="159"/>
         <source>Third note</source>
         <translation>Derde noot</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="161"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="161"/>
         <source>Second note</source>
         <translation>Tweede noot</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="163"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="163"/>
         <source>Bottom note</source>
         <translation>Laagste noot</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="121"/>
-        <source>MuseScore chord symbol style files</source>
-        <translation>MuseScore akkoordsymbolen-stijlbestanden</translation>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="121"/>
+        <source>DB Score chord symbol style files</source>
+        <translation>DB Score akkoordsymbolen-stijlbestanden</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/widgets/colorlabel.cpp" line="68"/>
@@ -28902,7 +28902,7 @@ Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikante
         <translation>%1 noot</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/playbacktoolbarmodel.cpp" line="137"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/playbacktoolbarmodel.cpp" line="137"/>
         <source>MIDI input pitch</source>
         <translation>MIDI-invoertoonhoogte</translation>
     </message>
@@ -29141,13 +29141,13 @@ Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikante
     </message>
     <message>
         <location filename="../../src/notationscene/widgets/editstyle.cpp" line="1407"/>
-        <source>MuseScore Studio version this score was last saved with</source>
-        <translation>MuseScore Studio-versie waarmee deze partituur het laatst is opgeslagen</translation>
+        <source>DB Score version this score was last saved with</source>
+        <translation>DB Score-versie waarmee deze partituur het laatst is opgeslagen</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/widgets/editstyle.cpp" line="1409"/>
-        <source>MuseScore Studio revision this score was last saved with</source>
-        <translation>MuseScore Studio-revisie waarmee deze partituur het laatst is opgeslagen</translation>
+        <source>DB Score revision this score was last saved with</source>
+        <translation>DB Score-revisie waarmee deze partituur het laatst is opgeslagen</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/widgets/editstyle.cpp" line="1411"/>
@@ -29168,37 +29168,37 @@ Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikante
 <context>
     <name>notation/editstyle/accidentals</name>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/AccidentalsPage.qml" line="45"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/AccidentalsPage.qml" line="45"/>
         <source>Accidentals</source>
         <translation>Voortekens</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/AccidentalsPage.qml" line="49"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/AccidentalsPage.qml" line="49"/>
         <source>Padding inside parentheses:</source>
         <translation>Vulruimte tussen haakjes:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/AccidentalsPage.qml" line="64"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/AccidentalsPage.qml" line="64"/>
         <source>Multiple accidentals in chords</source>
         <translation>Meerdere voortekens in een akkoord</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="496"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="496"/>
         <source>When changing to a key signature containing fewer sharps or flats</source>
         <translation>Bij het overgaan naar een toonsoort met minder kruisen of mollen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="508"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="508"/>
         <source>Don’t show any naturals</source>
         <translation>Laat geen herstellingstekens zien</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="509"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="509"/>
         <source>Show naturals before the new key signature</source>
         <translation>Laat herstellingstekens zien voor de nieuwe toonsoort</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="510"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="510"/>
         <source>Show naturals after the new key signature</source>
         <translation>Laat herstellingstekens zien na de nieuwe toonsoort</translation>
     </message>
@@ -29206,17 +29206,17 @@ Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikante
 <context>
     <name>notation/editstyle/barlines</name>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatBarlinesSection.qml" line="46"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatBarlinesSection.qml" line="46"/>
         <source>Show barline before key and time signature changes</source>
         <translation>Laat maatstreep zien voor wijzigingen in toon- en maatsoort</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatBarlinesSection.qml" line="55"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatBarlinesSection.qml" line="55"/>
         <source>Use double barline before key signatures</source>
         <translation>Gebruik dubbele maatstreep voor toonsoortwisseling</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatBarlinesSection.qml" line="63"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatBarlinesSection.qml" line="63"/>
         <source>Use double barline before time signatures</source>
         <translation>Gebruik dubbele maatstreep voor maatsoortwisseling</translation>
     </message>
@@ -29224,112 +29224,112 @@ Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikante
 <context>
     <name>notation/editstyle/bends</name>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="50"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="50"/>
         <source>Bends</source>
         <translation>Bend/toonbuigingen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="58"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="171"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="58"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="171"/>
         <source>Standard staff</source>
         <translation>Standaardnotenbalk</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="61"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="84"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="174"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="219"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="61"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="84"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="174"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="219"/>
         <source>Line thickness:</source>
         <translation>Lijndikte:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="77"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="190"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="77"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="190"/>
         <source>Tablature staff</source>
         <translation>Tablatuurbalk</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="102"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="102"/>
         <source>Arrow width:</source>
         <translation>Pijlbreedte:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="116"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="116"/>
         <source>Arrow height:</source>
         <translation>Pijlhoogte:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="131"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="131"/>
         <source>Label for full bends:</source>
         <translation>Label voor full bends:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="163"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="163"/>
         <source>Dives</source>
         <translation>Dives</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="198"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="198"/>
         <source>Show dive lines</source>
         <translation>Laat dive lijnen zien</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="205"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="205"/>
         <source>On the staff</source>
         <translation>In de balk</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="206"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="206"/>
         <source>Above the staff</source>
         <translation>Boven de balk</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="236"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="236"/>
         <source>Whammy bar line</source>
         <translation>Whammy bar lijn</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="246"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="246"/>
         <source>Text label:</source>
         <translation>Tekst label:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="289"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="289"/>
         <source>Grace note bends/dives on tablature</source>
         <translation>Siernoot bends/dives in tablatuur</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="296"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="296"/>
         <source>Use cue sized fret numbers</source>
         <translation>Gebruik cijfers in klein formaat voor fretnummers</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="307"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="307"/>
         <source>Align pre-bends and pre-dives</source>
         <translation>Lijn pre-bends en pre-dives uit</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="314"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="314"/>
         <source>To the main note</source>
         <translation>Naar de hoofdnoot</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="315"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="315"/>
         <source>To the grace note</source>
         <translation>Naar de siernoot</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="333"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="333"/>
         <source>Interval labels</source>
         <translation>Interval labels</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="341"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="341"/>
         <source>Diagonal</source>
         <translation>diagonaal</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/BendsPage.qml" line="342"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/BendsPage.qml" line="342"/>
         <source>Level</source>
         <translation>Niveau</translation>
     </message>
@@ -29337,214 +29337,214 @@ Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikante
 <context>
     <name>notation/editstyle/chordsymbols</name>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="119"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="119"/>
         <source>Preset</source>
         <translation>Instelling</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="161"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="161"/>
         <source>Appearance</source>
         <translation>Vorm</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="177"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="177"/>
         <source>Spelling</source>
         <translation>Spelling</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="214"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="214"/>
         <source>Capitalization</source>
         <translation>Hoofdlettergebruik</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="225"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="225"/>
         <source>Automatically capitalize note names</source>
         <translation>Automatische hoofdletters voor nootnamen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="240"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="240"/>
         <source>Lowercase minor chords</source>
         <translation>Kleine letters mineurakkoorden</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="247"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="247"/>
         <source>Lowercase bass notes</source>
         <translation>Kleine letters basnoten</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="254"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="254"/>
         <source>All caps (for Solfeggio and French)</source>
         <translation>Allemaal hoofdletters (voor Solfeggio en Frans)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="267"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="267"/>
         <source>Extensions (e.g. 7, 11)</source>
         <translation>Uitbreidingen (bijv. 7, 11)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="342"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="342"/>
         <source>Modifiers (e.g. sus4, no 3)</source>
         <translation>Toevoegingen (bijv. sus4, no 3)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="416"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="416"/>
         <source>Vertically stack modifiers</source>
         <translation>Toevoegingen verticaal stapelen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="425"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="425"/>
         <source>Altered bass notes (e.g. A7/G)</source>
         <translation>Veranderde basnoten (bijv. A7/G)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="528"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="528"/>
         <source>Polychords (e.g. C|F♯)</source>
         <translation>Polyakkoorden (bijv. C|F♯)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="604"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="604"/>
         <source>Use SMuFL symbols</source>
         <translation>Gebruik SMuFL-symbolen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="614"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="614"/>
         <source>Alignment</source>
         <translation>Uitlijning</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="625"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="625"/>
         <source>Vertically align chord symbols and fretboard diagrams on the same system</source>
         <translation>Akkoordsymbolen en fretborddiagrammen verticaal uitlijnen op hetzelfde systeem</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="667"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="667"/>
         <source>Exclude modifiers from horizontal alignment</source>
         <translation>Toevoegingen uitsluiten van horizontale uitlijning</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="677"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="677"/>
         <source>Positioning</source>
         <translation>Positionering</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="781"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="781"/>
         <source>Playback</source>
         <translation>Afspelen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ChordSymbolsPage.qml" line="868"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ChordSymbolsPage.qml" line="868"/>
         <source>Capo</source>
         <translation>Capo</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="71"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="155"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="71"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="155"/>
         <source>Standard</source>
         <translation>Standaard</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="74"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="187"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="74"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="187"/>
         <source>Jazz</source>
         <translation>Jazz</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="77"/>
-        <source>Legacy MuseScore</source>
-        <translation>Eerdere versies van MuseScore</translation>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="77"/>
+        <source>Legacy DB Score</source>
+        <translation>Eerdere versies van DB Score</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="80"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="80"/>
         <source>Load custom XML…</source>
         <translation>Laad eigen XML-bestand…</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="158"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="158"/>
         <source>German</source>
         <translation>Duits</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="161"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="161"/>
         <source>Full German</source>
         <translation>Volledig Duits</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="164"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="164"/>
         <source>Solfeggio</source>
         <translation>Solfeggio</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="167"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="167"/>
         <source>French</source>
         <translation>Frans</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="190"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="190"/>
         <source>Literal</source>
         <translation>Letterlijk</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="201"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="201"/>
         <source>Automatic</source>
         <translation>Automatisch</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="204"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="204"/>
         <source>Root only</source>
         <translation>Alleen grondtoon</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="207"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="207"/>
         <source>Close</source>
         <translation>Sluit</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="210"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="210"/>
         <source>Drop two</source>
         <translation>Verlaag tweede</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="213"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="213"/>
         <source>Six note</source>
         <translation>Zes noten</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="216"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="216"/>
         <source>Four note</source>
         <translation>Vier noten</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="219"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="219"/>
         <source>Three note</source>
         <translation>Drie noten</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="230"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="230"/>
         <source>Until next chord symbol</source>
         <translation>Tot volgende akkoordsymbool</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="233"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="233"/>
         <source>Until end of measure</source>
         <translation>Tot het einde van de maat</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="236"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="236"/>
         <source>Chord/rest duration</source>
         <translation>Akkoord/rust duur</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="253"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="253"/>
         <source>Don’t show chord symbols transposed by capo</source>
         <translation>Laat geen akkoordsymbolen zien die door een capo zijn getransponeerd</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="256"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="256"/>
         <source>Show chord symbols &amp; transposed symbols</source>
         <translation>Laat akkoordsymbolen en getransponeerde symbolen zien</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="259"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="259"/>
         <source>Show transposed symbols only</source>
         <translation>Laat alleen getransponeerde symbolen zien</translation>
     </message>
@@ -29552,124 +29552,124 @@ Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikante
 <context>
     <name>notation/editstyle/hammeronpulloff</name>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="53"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="53"/>
         <source>Visibility</source>
         <translation>Zichtbaarheid</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="61"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="61"/>
         <source>Show ‘H’ and ‘P’ symbols on</source>
         <translation>Toon ‘H’ en ‘P’ symbolen op</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="67"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="141"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="67"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="141"/>
         <source>Standard staves</source>
         <translation>Standaard notenbalken</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="76"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="147"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="76"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="147"/>
         <source>Tablature staves</source>
         <translation>Tablatuurbalken</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="88"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="88"/>
         <source>Case</source>
         <translation>Hoofdletters of kleine letters</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="98"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="98"/>
         <source>Upper case</source>
         <translation>Hoofdletter</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="99"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="99"/>
         <source>Lower case</source>
         <translation>Kleine letter</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="118"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="118"/>
         <source>Edit text style</source>
         <translation>Bewerk tekststijl</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="130"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="130"/>
         <source>Alignment</source>
         <translation>Uitlijning</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="137"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="137"/>
         <source>Align ‘H’, ‘P’ and ‘T’ symbols in the same slur on</source>
         <translation>Lijn ‘H’, ‘P’ and ‘T’ symbolen in dezelfde boog uit op</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="157"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="157"/>
         <source>Consecutive hammer-ons/pull-offs</source>
         <translation>Opeenvolgende hammer-ons/pull-offs</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="168"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="168"/>
         <source>Show ‘H’ or ‘P’ between each pair of notes</source>
         <translation>Toon ‘H’ of ‘P’ tussen elk paar noten</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="169"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="169"/>
         <source>Show ‘H’ or ‘P’ once per group of ascending/descending notes</source>
         <translation>Toon ‘H’ of ‘P’ eens per groep stijgende/dalende noten</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="191"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="191"/>
         <source>Left-hand tapping</source>
         <translation>Linkerhand-tapping</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="204"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="204"/>
         <source>Show on standard staves</source>
         <translation>Toon op standaard notenbalken</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="229"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="322"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="229"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="322"/>
         <source>Half slur</source>
         <translation>Half boogje</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="230"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="265"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="323"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="358"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="230"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="265"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="323"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="358"/>
         <source>Symbol</source>
         <translation>Symbool</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="231"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="324"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="231"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="324"/>
         <source>Both</source>
         <translation>Beide</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="297"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="297"/>
         <source>Show on tablature staves</source>
         <translation>Toon op tablatuurbalken</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="385"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="385"/>
         <source>Slur top and bottom notes in chords</source>
         <translation>Verbind bovenste en onderste noten in akkoorden</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="395"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="395"/>
         <source>Right-hand tapping</source>
         <translation>Rechterhand-tapping</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="405"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="405"/>
         <source>Symbol (standard staff)</source>
         <translation>Symbool (standaard notenbalk)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="433"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/HammerOnPullOffTappingPage.qml" line="433"/>
         <source>Symbol (tablature staff)</source>
         <translation>Symbool (tablatuurbalk)</translation>
     </message>
@@ -29677,32 +29677,32 @@ Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikante
 <context>
     <name>notation/editstyle/repeatplaycount</name>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="155"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="155"/>
         <source>Automatically show text at repeat barlines</source>
         <translation>Toon automatisch tekst bij herhalingsmaatstrepen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/RepeatPage.qml" line="163"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/RepeatPage.qml" line="163"/>
         <source>Show for single repeats (e.g. “x2”)</source>
         <translation>Toon voor enkele herhalingen (bijv. “x2”)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/repeatplaycounttextmodel.cpp" line="45"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/repeatplaycounttextmodel.cpp" line="45"/>
         <source>x3</source>
         <translation>x3</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/repeatplaycounttextmodel.cpp" line="48"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/repeatplaycounttextmodel.cpp" line="48"/>
         <source>3x</source>
         <translation>3x</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/repeatplaycounttextmodel.cpp" line="51"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/repeatplaycounttextmodel.cpp" line="51"/>
         <source>Play 3 times</source>
         <translation>Speel 3 keer</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/repeatplaycounttextmodel.cpp" line="54"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/repeatplaycounttextmodel.cpp" line="54"/>
         <source>3 repeats</source>
         <translation>3 herhalingen</translation>
     </message>
@@ -29710,76 +29710,76 @@ Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikante
 <context>
     <name>notation/editstyle/slursandties</name>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/LaissezVibrSection.qml" line="36"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/LaissezVibrSection.qml" line="36"/>
         <source>Laissez vibrer</source>
         <translation>Laissez vibrer</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/LaissezVibrSection.qml" line="47"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/LaissezVibrSection.qml" line="47"/>
         <source>Minimum laissez vibrer length:</source>
         <translation>Minimumlengte ‘Laissez vibrer’:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/LaissezVibrSection.qml" line="71"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/LaissezVibrSection.qml" line="71"/>
         <source>Use SMuFL symbols</source>
         <translation>Gebruik SMuFL-symbolen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/SlursSection.qml" line="39"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/SlursSection.qml" line="39"/>
         <source>Slurs</source>
         <translation>Legatobogen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/SlursSection.qml" line="50"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="49"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/SlursSection.qml" line="50"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="49"/>
         <source>Line thickness at end:</source>
         <translation>Lijndikte aan het uiteinde:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/SlursSection.qml" line="72"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="71"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/SlursSection.qml" line="72"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="71"/>
         <source>Line thickness middle:</source>
         <translation>Lijndikte in het midden:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/SlursSection.qml" line="94"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="93"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/SlursSection.qml" line="94"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="93"/>
         <source>Dotted line thickness:</source>
         <translation>Stippellijndikte:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/SlursSection.qml" line="116"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="115"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/SlursSection.qml" line="116"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="115"/>
         <source>Autoplace min. distance:</source>
         <translation>Min. afstand automatisch plaatsen:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/SlursSection.qml" line="143"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/SlursSection.qml" line="143"/>
         <source>Partial slurs across repeats and breaks:</source>
         <translation>Gedeeltelijke overbindingen bij herhalingen en systeemomslagen:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/SlursSection.qml" line="153"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/SlursSection.qml" line="153"/>
         <source>Follow contour of notes</source>
         <translation>Volg contour van noten</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/SlursSection.qml" line="154"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/SlursSection.qml" line="154"/>
         <source>Angle away from staff</source>
         <translation>Buig weg van notenbalk</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="38"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="38"/>
         <source>Ties</source>
         <translation>Overbindingen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="137"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="137"/>
         <source>Minimum tie length:</source>
         <translation>Minimum lengte overbindingsboog:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TiesSection.qml" line="159"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TiesSection.qml" line="159"/>
         <source>Minimum hanging tie length:</source>
         <translation>Minimumlengte ‘overhangende’ overbinding:</translation>
     </message>
@@ -29787,233 +29787,233 @@ Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikante
 <context>
     <name>notation/editstyle/timesignatures</name>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="78"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="78"/>
         <source>Clefs</source>
         <translation>Muzieksleutels</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="85"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="467"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="85"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="467"/>
         <source>Visibility:</source>
         <translation>Zichtbaarheid:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="92"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="92"/>
         <source>Show all clefs on every system</source>
         <translation>Laat alle sleutels op elk systeem zien</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="93"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="93"/>
         <source>Hide all clefs after the first system where they appear</source>
         <translation>Verberg alle sleutels na het eerste systeem waar ze verschijnen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="107"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="107"/>
         <source>Hide TAB clefs after the first system where they appear</source>
         <translation>Verberg TAB-sleutels na het eerste systeem waar ze verschijnen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="114"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="114"/>
         <source>Show courtesy clefs</source>
         <translation>Laat muzieksleutelherinnering zien</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="121"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="121"/>
         <source>Default TAB clef</source>
         <translation>Standaard TAB-sleutel</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="128"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="128"/>
         <source>Standard TAB clef</source>
         <translation>Normale TAB-sleutel</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="129"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="129"/>
         <source>Serif TAB clef</source>
         <translation>TAB-sleutel met schreef (Serif)</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="146"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="146"/>
         <source>Time signatures</source>
         <translation>Maatsoorten</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="160"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="160"/>
         <source>Position:</source>
         <translation>Positie:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="167"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="167"/>
         <source>On all staves</source>
         <translation>Op alle notenbalken</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="168"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="168"/>
         <source>Above staves</source>
         <translation>Boven notenbalken</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="169"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="169"/>
         <source>Across staves</source>
         <translation>Door notenbalken heen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="183"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="183"/>
         <source>Set where time signatures appear using the Layout panel.</source>
         <translation>Bepaal met het Opmaak-paneel waar de maatsoorten worden weergegeven.</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="201"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="201"/>
         <source>Style and size</source>
         <translation>Stijl en grootte</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="215"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="215"/>
         <source>Numeral style:</source>
         <translation>Cijferstijl:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="258"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="258"/>
         <source>Alignment with barlines:</source>
         <translation>Uitlijning met maatstrepen:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="259"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="259"/>
         <source>Alignment across staves:</source>
         <translation>Uitlijning met notenbalken:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="296"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="296"/>
         <source>Scale:</source>
         <translation>Schaal:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="361"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="361"/>
         <source>Gap between numbers (scaled):</source>
         <translation>Ruimte tussen cijfers (geschaald):</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="386"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="386"/>
         <source>Vertical placement:</source>
         <translation>Verticale plaatsing:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="405"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="405"/>
         <source>Show courtesy time signatures</source>
         <translation>Laat maatsoortherinnering zien</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="424"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="424"/>
         <source>End-of-staff alignment:</source>
         <translation>Uitlijning aan het eind van de notenbalk</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="428"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="428"/>
         <source>Hang into page margin</source>
         <translation>Laat maatsoort overhangen in paginamarge</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="433"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="433"/>
         <source>Inset time signature</source>
         <translation>Plaats maatsoort vóór maatstreep</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="438"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="438"/>
         <source>Inset barline</source>
         <translation>Verplaats maatstreep naar binnen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="459"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="459"/>
         <source>Key signatures</source>
         <translation>Toonsoorten</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="474"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="474"/>
         <source>Show on every system</source>
         <translation>Laat op elk systeem zien</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="475"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="475"/>
         <source>Hide after the first system where they appear</source>
         <translation>Verberg na het eerste systeem waar ze verschijnen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="489"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="489"/>
         <source>Show courtesy key signatures</source>
         <translation>Laat toonsoortherinnering zien</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="526"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="526"/>
         <source>Show naturals when switching between sharps and flats</source>
         <translation>Laat herstellingtekens zien bij het wisselen tussen kruisen en mollen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="537"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="537"/>
         <source>Clefs, key &amp; time signatures at repeats and jumps</source>
         <translation>Sleutels, toon- en maatsoorten bij herhalingen en sprongen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="573"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="573"/>
         <source>Use parentheses</source>
         <translation>Gebruik haakjes</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="603"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="603"/>
         <source>Changes that apply to both the repeat/jump and the subsequent measure</source>
         <translation>Wijzigingen die van toepassing zijn op zowel de herhaling/sprong als de daaropvolgende maat</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="610"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="610"/>
         <source>At repeats, only show changes before the barline</source>
         <translation>Bij herhalingen wijzigingen alleen vóór de maatstreep weergeven</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="616"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="616"/>
         <source>At all other jumps, only show changes before the barline</source>
         <translation>Bij sprongen wijzigingen alleen vóór de maatstreep weergegeven</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="626"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="626"/>
         <source>Changes that apply only after repeats and jumps</source>
         <translation>Wijzigingen die alleen van toepassing zijn na herhalingen en sprongen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="636"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="636"/>
         <source>Place clefs before repeats</source>
         <translation>Plaats sleutels vóór herhalingen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="645"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="645"/>
         <source>Place clefs after repeats</source>
         <translation>Plaats sleutels na herhalingen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="667"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="667"/>
         <source>Allow changes between end-start repeats</source>
         <translation>Laat wijzigingen tussen eind-begin herhalingen toe</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="693"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="693"/>
         <source>Courtesies</source>
         <translation>Herinneringstekens</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="708"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="708"/>
         <source>Show at repeats</source>
         <translation>Laat bij herhalingen zien</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="719"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="719"/>
         <source>Show at all other jumps</source>
         <translation>Laat bij alle andere sprongen zien</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="730"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="730"/>
         <source>Show when cancelling a courtesy before repeats</source>
         <translation>Laat het annuleren van een herinnering vóór herhalingen zien</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="741"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/ClefKeyTimeSigPage.qml" line="741"/>
         <source>Show when cancelling a courtesy before all other jumps</source>
         <translation>Laat het annuleren van een herinnering vóór alle andere sprongen zien</translation>
     </message>
@@ -30021,17 +30021,17 @@ Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikante
 <context>
     <name>notation/editstyle/tupletCentering</name>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TupletCenteringSelector.qml" line="46"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TupletCenteringSelector.qml" line="46"/>
         <source>Number alignment</source>
         <translation>Uitlijning nummer:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TupletCenteringSelector.qml" line="54"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TupletCenteringSelector.qml" line="54"/>
         <source>Graphical center</source>
         <translation>Centreer grafisch</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/TupletCenteringSelector.qml" line="55"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/TupletCenteringSelector.qml" line="55"/>
         <source>Rhythmic center</source>
         <translation>Centreer ritmisch</translation>
     </message>
@@ -30039,214 +30039,214 @@ Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikante
 <context>
     <name>notation/editstyle/voltas</name>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="53"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="53"/>
         <source>Measure numbers</source>
         <translation>Maatnummers</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="65"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="65"/>
         <source>Show measure numbers</source>
         <translation>Toon maatnummers</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="72"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="72"/>
         <source>Show initial measure number</source>
         <translation>Toon eerste maatnummer</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="82"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="337"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="82"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="337"/>
         <source>Text style</source>
         <translation>Tekststijl</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="119"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="119"/>
         <source>Frequency</source>
         <translation>Frequentie</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="128"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="128"/>
         <source>Start of each system</source>
         <translation>Begin van elk systeem</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="137"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="137"/>
         <source>Every</source>
         <translation>Iedere</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="155"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="155"/>
         <source>measures</source>
         <translation>maten</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="166"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="257"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="437"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="166"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="257"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="437"/>
         <source>Position</source>
         <translation>Positie</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="177"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="177"/>
         <source>Align</source>
         <translation>Lijn uit</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="184"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="184"/>
         <source>To the barline</source>
         <translation>Met maatstreep</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="190"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="190"/>
         <source>To the measure</source>
         <translation>Met maat</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="194"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="404"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="136"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="194"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="404"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="136"/>
         <source>Alignment</source>
         <translation>Uitlijning</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="226"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="226"/>
         <source>Show</source>
         <translation>Laat zien</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="235"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="235"/>
         <source>Above system</source>
         <translation>Boven systeem</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="236"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="236"/>
         <source>Below system</source>
         <translation>Onder systeem</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="237"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="237"/>
         <source>At system marking positions</source>
         <translation>Op posities van systeemmarkeringen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="238"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="238"/>
         <source>On all staves</source>
         <translation>Bij alle notenbalken</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="263"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="444"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="263"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="444"/>
         <source>Above</source>
         <translation>Boven</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="264"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="445"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="264"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="445"/>
         <source>Below</source>
         <translation>Onder</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="289"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="289"/>
         <source>Offset when above staff:</source>
         <translation>Correctie indien boven de balk:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="304"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="304"/>
         <source>Offset when below staff:</source>
         <translation>Correctie indien onder de balk:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="320"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="320"/>
         <source>Measure number range at multimeasure rests</source>
         <translation>Maatnummerbereik bij meermaatsrusten</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="328"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="328"/>
         <source>Show measure number ranges</source>
         <translation>Toon maatnummerbereik</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="374"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="374"/>
         <source>Bracket type</source>
         <translation>Haaktype</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="381"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="381"/>
         <source>Brackets</source>
         <translation>Haken</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="382"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="382"/>
         <source>Parentheses</source>
         <translation>Haakjes</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="383"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="383"/>
         <source>None</source>
         <translation>Geen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/MeasureNumbersPage.qml" line="466"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/MeasureNumbersPage.qml" line="466"/>
         <source>Offset</source>
         <translation>Correctie</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="47"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="47"/>
         <source>Voltas</source>
         <translation>Volta&apos;s</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="56"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="56"/>
         <source>Vertical position:</source>
         <translation>Verticale positie:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="84"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="84"/>
         <source>Hook height:</source>
         <translation>Haakhoogte:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="93"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="93"/>
         <source>Line thickness:</source>
         <translation>Lijndikte:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="116"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="116"/>
         <source>Dash:</source>
         <translation>Streepje:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="125"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="125"/>
         <source>Gap:</source>
         <translation>Ruimte:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="157"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="157"/>
         <source>At start of system, start volta:</source>
         <translation>Aan het begin van een systeem, start volta:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="162"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="162"/>
         <source>After key signature</source>
         <translation>Na toonsoort</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="168"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="168"/>
         <source>On key signature</source>
         <translation>Op toonsoort</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="191"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="191"/>
         <source>Align start hook:</source>
         <translation>Lijn beginhaak uit:</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="196"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="196"/>
         <source>To right side of barlines</source>
         <translation>Met rechterkant van maatstrepen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/VoltasPage.qml" line="202"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/styledialog/VoltasPage.qml" line="202"/>
         <source>To left side of barlines</source>
         <translation>Met linkerkant van maatstrepen</translation>
     </message>
@@ -30272,155 +30272,155 @@ Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikante
 <context>
     <name>notation/percussion</name>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/PercussionPanelPad.qml" line="79"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/PercussionPanelPad.qml" line="79"/>
         <source>MIDI %1</source>
         <extracomment>%1 will be the MIDI note for a drum (displayed in the percussion panel)</extracomment>
         <translation>MIDI %1</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/PercussionPanelPad.qml" line="87"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/PercussionPanelPad.qml" line="87"/>
         <source>Shortcut %1</source>
         <extracomment>%1 will be the shortcut for a drum (displayed in the percussion panel)</extracomment>
         <translation>Sneltoets %1</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/PercussionPanelPad.qml" line="94"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/PercussionPanelPad.qml" line="94"/>
         <source>Row %1</source>
         <extracomment>%1 will be the row number of a percussion panel pad</extracomment>
         <translation>Rij %1</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/PercussionPanelPad.qml" line="97"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/PercussionPanelPad.qml" line="97"/>
         <source>Column %1</source>
         <extracomment>%1 will be the column number of a percussion panel pad</extracomment>
         <translation>Kolom %1</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/PercussionPanelPad.qml" line="117"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/PercussionPanelPad.qml" line="117"/>
         <source>Empty pad</source>
         <translation>Leeg pad</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/PercussionPanelPad.qml" line="144"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/PercussionPanelPad.qml" line="144"/>
         <source>options</source>
         <translation>opties</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/PercussionPanelToolBar.qml" line="74"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/PercussionPanelToolBar.qml" line="74"/>
         <source>Write</source>
         <translation>Schrijf</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/PercussionPanelToolBar.qml" line="141"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/PercussionPanelToolBar.qml" line="141"/>
         <source>Preview</source>
         <translation>Voorbeeld</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/PercussionPanelToolBar.qml" line="202"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/percussionpanelmodel.cpp" line="190"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/PercussionPanelToolBar.qml" line="202"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/percussionpanelmodel.cpp" line="190"/>
         <source>Finish editing</source>
         <translation>Gereed</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/PercussionPanelToolBar.qml" line="234"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/PercussionPanelToolBar.qml" line="234"/>
         <source>Layout</source>
         <translation>Indeling</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/PercussionPanelToolBar.qml" line="255"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/PercussionPanelToolBar.qml" line="255"/>
         <source>Customize kit</source>
         <translation>Kit aanpassen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/PercussionPanel.qml" line="421"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/PercussionPanel.qml" line="421"/>
         <source>Add row</source>
         <translation>Voeg rij toe</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/PercussionPanel.qml" line="443"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/PercussionPanel.qml" line="443"/>
         <source>Select an unpitched percussion staff to see available sounds</source>
         <translation>Selecteer een ongestemde percussienotenbalk om beschikbare geluiden te zien</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/PercussionPanelPadSwapDialog.qml" line="120"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/PercussionPanelPadSwapDialog.qml" line="120"/>
         <source>Do you also want to move the MIDI notes and keyboard shortcuts that trigger these sounds?</source>
         <translation>Wilt u ook de MIDI-noten en sneltoetsen die deze geluiden activeren verplaatsen?</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/PercussionPanelPadSwapDialog.qml" line="132"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/PercussionPanelPadSwapDialog.qml" line="132"/>
         <source>Move MIDI notes and keyboard shortcuts with their sounds</source>
         <translation>Verplaats MIDI-noten en sneltoetsen mee met geluiden</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/PercussionPanelPadSwapDialog.qml" line="133"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/PercussionPanelPadSwapDialog.qml" line="133"/>
         <source>Leave MIDI notes and keyboard shortcuts fixed to original pad positions</source>
         <translation>Laat MIDI-noten en sneltoetsen op oorspronkelijke posities</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/PercussionPreferencesPage.qml" line="58"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/PercussionPreferencesPage.qml" line="58"/>
         <source>Triggering the percussion panel</source>
         <translation>Percussiepaneel activeren</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/PercussionPreferencesPage.qml" line="70"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/PercussionPreferencesPage.qml" line="70"/>
         <source>Open the panel automatically</source>
         <translation>Open het paneel automatisch</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/PercussionPreferencesPage.qml" line="112"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/PercussionPreferencesPage.qml" line="112"/>
         <source>Close the panel automatically</source>
         <translation>Sluit het paneel automatisch</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/PercussionPreferencesPage.qml" line="152"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/PercussionPreferencesPage.qml" line="152"/>
         <source>Use legacy percussion panel</source>
         <translation>Gebruik oud percussiepaneel</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/percussionpanelmodel.cpp" line="191"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/percussionpanelmodel.cpp" line="191"/>
         <source>Edit layout</source>
         <translation>Wijzig indeling</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/percussionpanelmodel.cpp" line="207"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/percussionpanelmodel.cpp" line="207"/>
         <source>Pad names</source>
         <translation>Padnamen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/percussionpanelmodel.cpp" line="210"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/percussionpanelmodel.cpp" line="210"/>
         <source>Notation preview</source>
         <translation>Notatievoorbeeld</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/percussionpanelmodel.cpp" line="215"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/percussionpanelmodel.cpp" line="215"/>
         <source>%1 columns</source>
         <translation>%1 kolommen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/percussionpanelmodel.cpp" line="222"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/percussionpanelmodel.cpp" line="222"/>
         <source>Reset layout</source>
         <translation>Herstel indeling</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/percussionpanelpadmodel.cpp" line="98"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/percussionpanelpadmodel.cpp" line="98"/>
         <source>Delete pad</source>
         <translation>Verwijder pad</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/percussionpreferencesmodel.cpp" line="61"/>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/percussionpreferencesmodel.cpp" line="142"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/percussionpreferencesmodel.cpp" line="61"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/percussionpreferencesmodel.cpp" line="142"/>
         <source>When an unpitched percussion staff is selected</source>
         <translation>Bij het selecteren van een ongestemde percussienotenbalk</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/percussionpreferencesmodel.cpp" line="66"/>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/percussionpreferencesmodel.cpp" line="145"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/percussionpreferencesmodel.cpp" line="66"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/percussionpreferencesmodel.cpp" line="145"/>
         <source>When inputting notation on an unpitched percussion staff</source>
         <translation>Bij het invoeren van notatie in een ongestemde percussienotenbalk</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/percussionpreferencesmodel.cpp" line="71"/>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/percussionpreferencesmodel.cpp" line="148"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/percussionpreferencesmodel.cpp" line="71"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/percussionpreferencesmodel.cpp" line="148"/>
         <source>Never</source>
         <translation>Nooit</translation>
     </message>
@@ -30454,37 +30454,37 @@ Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikante
 <context>
     <name>notation/staffvisibilitypopup</name>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/StaffVisibilityPopup.qml" line="59"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/StaffVisibilityPopup.qml" line="59"/>
         <source>Staff visibility popup</source>
         <translation>Popup voor zichtbaarheid notenbalken</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/StaffVisibilityPopup.qml" line="85"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/StaffVisibilityPopup.qml" line="85"/>
         <source>Hide empty staves</source>
         <translation>Verberg lege notenbalken</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/StaffVisibilityPopup.qml" line="93"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/StaffVisibilityPopup.qml" line="93"/>
         <source>System %1</source>
         <translation>Systeem %1</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/StaffVisibilityPopup.qml" line="104"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/StaffVisibilityPopup.qml" line="104"/>
         <source>Reset all</source>
         <translation>Stel alles opnieuw in</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/staffvisibilitypopupmodel.cpp" line="299"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/staffvisibilitypopupmodel.cpp" line="299"/>
         <source>Reset all staff visibility</source>
         <translation>Stel zichtbaarheid van alle balken opnieuw in</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/staffvisibilitypopupmodel.cpp" line="340"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/staffvisibilitypopupmodel.cpp" line="340"/>
         <source>Change part visibility: %1</source>
         <translation>Wijzig zichtbaarheid partij: %1</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/staffvisibilitypopupmodel.cpp" line="357"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/staffvisibilitypopupmodel.cpp" line="357"/>
         <source>Change staff visibility: %1</source>
         <translation>Wijzig zichtbaarheid balk: %1</translation>
     </message>
@@ -30618,7 +30618,7 @@ Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikante
 <context>
     <name>notation/undohistory</name>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/undohistorymodel.cpp" line="101"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/internal/undohistorymodel.cpp" line="101"/>
         <source>File opened</source>
         <translation>Bestand geopend</translation>
     </message>
@@ -30674,233 +30674,233 @@ Daarnaast biedt Mastering MuseScore een ondersteunende gemeenschap van muzikante
 <context>
     <name>palette</name>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/DrumsetPanel.qml" line="66"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/DrumsetPanel.qml" line="66"/>
         <source>Customize kit</source>
         <translation>Kit aanpassen</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/AddPalettesPopup.qml" line="67"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/AddPalettesPopup.qml" line="67"/>
         <source>More palettes</source>
         <translation>Meer paletten</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/AddPalettesPopup.qml" line="75"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/AddPalettesPopup.qml" line="75"/>
         <source>Create custom palette</source>
         <translation>Maak eigen palet</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/AddPalettesPopup.qml" line="91"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/AddPalettesPopup.qml" line="91"/>
         <source>All palettes were added</source>
         <translation>Alle paletten zijn toegevoegd</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/AddPalettesPopup.qml" line="142"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/AddPalettesPopup.qml" line="142"/>
         <source>Add %1 palette</source>
         <translation>Voeg %1 palet toe</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/AddPalettesPopup.qml" line="168"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/AddPalettesPopup.qml" line="168"/>
         <source>%1 added</source>
         <translation>%1 toegevoegd</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/AddPalettesPopup.qml" line="169"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/AddPalettesPopup.qml" line="169"/>
         <source>%1 removed</source>
         <translation>%1 verwijderd</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/CreateCustomPalettePopup.qml" line="58"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/CreateCustomPalettePopup.qml" line="58"/>
         <source>Name your custom palette</source>
         <translation>Geef uw eigen palet een naam</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/CreateCustomPalettePopup.qml" line="101"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/CreateCustomPalettePopup.qml" line="101"/>
         <source>Create</source>
         <translation>Maak</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/MoreElementsPopup.qml" line="87"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/MoreElementsPopup.qml" line="87"/>
         <source>Add to %1</source>
         <translation>Voeg toe aan %1</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/MoreElementsPopup.qml" line="259"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/MoreElementsPopup.qml" line="259"/>
         <source>Custom</source>
         <translation>Eigen aangepast</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/MoreElementsPopup.qml" line="315"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/MoreElementsPopup.qml" line="315"/>
         <source>Drag items to the palette or directly on your score</source>
         <translation>Sleep items naar het palet of direct naar de partituur</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/PaletteGridView.qml" line="139"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/PaletteGridView.qml" line="139"/>
         <source>Drag and drop any element here</source>
         <translation>Sleep een element hierheen</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/PaletteGridView.qml" line="140"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/PaletteGridView.qml" line="140"/>
         <source>No elements</source>
         <translation>Geen elementen</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/PaletteGridView.qml" line="195"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/PaletteGridView.qml" line="195"/>
         <source>More</source>
         <extracomment>Caption of a button to reveal more elements</extracomment>
         <translation>Meer</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/PaletteGridView.qml" line="493"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/PaletteGridView.qml" line="493"/>
         <location filename="../../src/palette/widgets/palettewidget.cpp" line="1127"/>
         <source>Delete</source>
         <translation>Verwijder</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/PaletteGridView.qml" line="494"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/PaletteGridView.qml" line="494"/>
         <location filename="../../src/palette/widgets/palettewidget.cpp" line="1128"/>
         <source>Properties…</source>
         <translation>Eigenschappen…</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/PalettesPanelHeader.qml" line="121"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/PalettesPanelHeader.qml" line="121"/>
         <source>Add palettes</source>
         <translation>Voeg palet toe</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/PalettesPanelHeader.qml" line="161"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/PalettesPanelHeader.qml" line="161"/>
         <source>Search palettes</source>
         <translation>Zoek in paletten</translation>
     </message>
     <message numerus="yes">
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/PaletteTree.qml" line="552"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/PaletteTree.qml" line="552"/>
         <source>%1, contains %Ln matching element(s)</source>
         <translation><numerusform>%1, bevat één overeenkomstig element</numerusform><numerusform>%1, bevat %Ln overeenkomstige elementen</numerusform></translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/PaletteTree.qml" line="553"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/PaletteTree.qml" line="553"/>
         <source>%1 expanded</source>
         <comment>tree item not collapsed</comment>
         <translation>%1 uitgebreid</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/PaletteTree.qml" line="673"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/PaletteTree.qml" line="673"/>
         <location filename="../../src/palette/internal/palettemodel.cpp" line="835"/>
         <source>Untitled palette</source>
         <translation>Naamloos palet</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/TreePaletteHeader.qml" line="167"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/TreePaletteHeader.qml" line="167"/>
         <source>Hide/Delete palette</source>
         <translation>Verberg/verwijder palet</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/TreePaletteHeader.qml" line="167"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/TreePaletteHeader.qml" line="167"/>
         <source>Hide palette</source>
         <translation>Verberg palet</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/TreePaletteHeader.qml" line="168"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/TreePaletteHeader.qml" line="168"/>
         <source>Insert new palette</source>
         <translation>Voeg nieuw palet in</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/TreePaletteHeader.qml" line="170"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/TreePaletteHeader.qml" line="170"/>
         <source>Enable editing</source>
         <translation>Schakel bewerken in</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/TreePaletteHeader.qml" line="172"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/TreePaletteHeader.qml" line="172"/>
         <source>Reset palette</source>
         <translation>Herstel palet</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/TreePaletteHeader.qml" line="173"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/TreePaletteHeader.qml" line="173"/>
         <source>Save palette…</source>
         <translation>Sla palet op…</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/TreePaletteHeader.qml" line="174"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/TreePaletteHeader.qml" line="174"/>
         <source>Load palette…</source>
         <translation>Laad palet…</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/TreePaletteHeader.qml" line="176"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/TreePaletteHeader.qml" line="176"/>
         <source>Palette properties…</source>
         <translation>Palet-eigenschappen…</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PaletteCellPropertiesDialog.qml" line="33"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PaletteCellPropertiesDialog.qml" line="33"/>
         <source>Palette cell properties</source>
         <translation>Paletcel-eigenschappen</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PaletteCellPropertiesDialog.qml" line="68"/>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PalettePropertiesDialog.qml" line="69"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PaletteCellPropertiesDialog.qml" line="68"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PalettePropertiesDialog.qml" line="69"/>
         <source>Name</source>
         <translation>Naam</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PaletteCellPropertiesDialog.qml" line="87"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PaletteCellPropertiesDialog.qml" line="87"/>
         <source>Content offset</source>
         <translation>Correctie voor de inhoud</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PaletteCellPropertiesDialog.qml" line="99"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PaletteCellPropertiesDialog.qml" line="99"/>
         <source>X</source>
         <translation>X</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PaletteCellPropertiesDialog.qml" line="116"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PaletteCellPropertiesDialog.qml" line="116"/>
         <source>Y</source>
         <translation>Y</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PaletteCellPropertiesDialog.qml" line="132"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PaletteCellPropertiesDialog.qml" line="132"/>
         <source>Content scale</source>
         <translation>Inhoudsschaal</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PaletteCellPropertiesDialog.qml" line="149"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PaletteCellPropertiesDialog.qml" line="149"/>
         <source>Draw staff</source>
         <translation>Teken notenbalk</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PalettePropertiesDialog.qml" line="34"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PalettePropertiesDialog.qml" line="34"/>
         <source>Palette properties</source>
         <translation>Palet-eigenschappen</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PalettePropertiesDialog.qml" line="88"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PalettePropertiesDialog.qml" line="88"/>
         <source>Cell size</source>
         <translation>Celgrootte</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PalettePropertiesDialog.qml" line="100"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PalettePropertiesDialog.qml" line="100"/>
         <source>Width</source>
         <translation>Breedte</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PalettePropertiesDialog.qml" line="115"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PalettePropertiesDialog.qml" line="115"/>
         <source>Height</source>
         <translation>Hoogte</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PalettePropertiesDialog.qml" line="130"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PalettePropertiesDialog.qml" line="130"/>
         <source>Element offset</source>
         <translation>Element correctie</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PalettePropertiesDialog.qml" line="146"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PalettePropertiesDialog.qml" line="146"/>
         <source>Scale</source>
         <translation>Schaal</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PalettePropertiesDialog.qml" line="163"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PalettePropertiesDialog.qml" line="163"/>
         <source>Show grid</source>
         <translation>Laat raster zien</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/PalettesPanel.qml" line="114"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/PalettesPanel.qml" line="114"/>
         <source>Start typing to search all palettes</source>
         <translation>Begin te typen om in alle paletten te zoeken</translation>
     </message>
@@ -31773,8 +31773,8 @@ is mislukt.</translation>
     <message>
         <location filename="../../src/palette/internal/paletteprovider.cpp" line="907"/>
         <location filename="../../src/palette/internal/paletteprovider.cpp" line="910"/>
-        <source>MuseScore Studio palette</source>
-        <translation>MuseScore Studio-palet</translation>
+        <source>DB Score palette</source>
+        <translation>DB Score-palet</translation>
     </message>
     <message>
         <location filename="../../src/palette/internal/paletteprovider.cpp" line="909"/>
@@ -31782,36 +31782,36 @@ is mislukt.</translation>
         <translation>Palet opslaan</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/palettespanelcontextmenumodel.cpp" line="67"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/palettespanelcontextmenumodel.cpp" line="67"/>
         <source>Single-click to open a palette</source>
         <translation>Enkele klik om een palet te openen</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/palettespanelcontextmenumodel.cpp" line="100"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/palettespanelcontextmenumodel.cpp" line="100"/>
         <source>Open only one palette at a time</source>
         <extracomment>This is the name of a setting that can be turned on or off. &quot;Open&quot; is a verb here.</extracomment>
         <translation>Eén palet tegelijk openen</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/palettespanelcontextmenumodel.cpp" line="132"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/palettespanelcontextmenumodel.cpp" line="132"/>
         <source>Allow reordering palettes</source>
         <translation>Sta het herschikken van paletten toe</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/palettespanelcontextmenumodel.cpp" line="164"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/palettespanelcontextmenumodel.cpp" line="164"/>
         <source>Expand all palettes</source>
         <translation>Alle paletten uitklappen</translation>
     </message>
     <message>
-        <location filename="../../src/palette/qml/MuseScore/Palette/internal/palettespanelcontextmenumodel.cpp" line="165"/>
+        <location filename="../../src/palette/qml/DB Score/Palette/internal/palettespanelcontextmenumodel.cpp" line="165"/>
         <source>Collapse all palettes</source>
         <translation>Alle paletten inklappen</translation>
     </message>
     <message>
         <location filename="../../src/palette/widgets/customizekitdialog.cpp" line="602"/>
         <location filename="../../src/palette/widgets/customizekitdialog.cpp" line="653"/>
-        <source>MuseScore drumset file</source>
-        <translation>MuseScore drumsetbestand</translation>
+        <source>DB Score drumset file</source>
+        <translation>DB Score drumsetbestand</translation>
     </message>
     <message>
         <location filename="../../src/palette/widgets/customizekitdialog.cpp" line="604"/>
@@ -31825,8 +31825,8 @@ is mislukt.</translation>
     </message>
     <message>
         <location filename="../../src/palette/widgets/customizekitdialog.cpp" line="622"/>
-        <source>MuseScore Studio may not be able to load this drumset file.</source>
-        <translation>MuseScore Studio kan dit drumset-bestand mogelijk niet laden.</translation>
+        <source>DB Score may not be able to load this drumset file.</source>
+        <translation>DB Score kan dit drumset-bestand mogelijk niet laden.</translation>
     </message>
     <message>
         <location filename="../../src/palette/widgets/customizekitdialog.cpp" line="655"/>
@@ -33421,187 +33421,187 @@ mislukt: %2</translation>
 <context>
     <name>playback</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="626"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="626"/>
         <source>This sound processes online</source>
         <translation>Dit geluid wordt online verwerkt</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="627"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="627"/>
         <source>Audio is processed in the background while you work. To trigger processing yourself, turn off automatic processing in Preferences &gt; Audio &amp; MIDI &gt; Online sounds.</source>
         <translation>Audio wordt op de achtergrond verwerkt terwijl u werkt. Om de verwerking zelf te activeren, schakelt u automatische verwerking uit via Voorkeuren &gt; Audio &amp; MIDI &gt; Online geluiden.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="641"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/OnlineSoundsStatusView.qml" line="111"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/OnlineSoundsStatusView.qml" line="121"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="641"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/OnlineSoundsStatusView.qml" line="111"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/OnlineSoundsStatusView.qml" line="121"/>
         <source>Online sounds</source>
         <translation>Online geluiden</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="642"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/NotationPage/NotationPage.qml" line="642"/>
         <source>Click to manually process online sounds.</source>
         <translation>Klik om online geluiden handmatig te verwerken</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/AudioResourceControl.qml" line="99"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/AuxSendControl.qml" line="91"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/AudioResourceControl.qml" line="99"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/AuxSendControl.qml" line="91"/>
         <source>Bypass</source>
         <translation>Omzeilen</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/AudioResourceControl.qml" line="261"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/AudioResourceControl.qml" line="261"/>
         <source>Menu</source>
         <translation>Menu</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/MeasureAndBeatFields.qml" line="77"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/MeasureAndBeatFields.qml" line="77"/>
         <source>Measure</source>
         <comment>Measure number</comment>
         <translation>Maat</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/MeasureAndBeatFields.qml" line="110"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/MeasureAndBeatFields.qml" line="110"/>
         <source>Beat</source>
         <comment>Beat number</comment>
         <translation>Tel</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/MixerAuxSendsSection.qml" line="33"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/MixerAuxSendsSection.qml" line="33"/>
         <source>Aux sends</source>
         <translation>Aux signaal</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/MixerBalanceSection.qml" line="33"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerpanelcontextmenumodel.cpp" line="47"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/MixerBalanceSection.qml" line="33"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerpanelcontextmenumodel.cpp" line="47"/>
         <source>Pan</source>
         <translation>Pan</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/MixerFxSection.qml" line="36"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerpanelcontextmenumodel.cpp" line="46"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/MixerFxSection.qml" line="36"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerpanelcontextmenumodel.cpp" line="46"/>
         <source>Audio FX</source>
         <extracomment>FX is an abbreviation of &quot;effects&quot;.</extracomment>
         <translation>Audio FX</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/MixerMuteAndSoloSection.qml" line="64"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/MixerMuteAndSoloSection.qml" line="64"/>
         <source>Mute</source>
         <translation>Demp</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/MixerMuteAndSoloSection.qml" line="91"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/MixerMuteAndSoloSection.qml" line="91"/>
         <source>Solo</source>
         <translation>Solo</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/MixerSoundSection.qml" line="35"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerpanelcontextmenumodel.cpp" line="45"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/MixerSoundSection.qml" line="35"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerpanelcontextmenumodel.cpp" line="45"/>
         <source>Sound</source>
         <translation>Geluid</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/MixerTitleSection.qml" line="34"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerpanelcontextmenumodel.cpp" line="51"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/MixerTitleSection.qml" line="34"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerpanelcontextmenumodel.cpp" line="51"/>
         <source>Name</source>
         <translation>Naam</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/MixerVolumeSection.qml" line="33"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerpanelcontextmenumodel.cpp" line="48"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/MixerVolumeSection.qml" line="33"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerpanelcontextmenumodel.cpp" line="48"/>
         <source>Volume</source>
         <translation>Volume</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/PlaybackSpeedPopup.qml" line="43"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/PlaybackSpeedPopup.qml" line="43"/>
         <source>Playback speed popup</source>
         <translation>Afspeelsnelheidpopup</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/PlaybackSpeedPopup.qml" line="52"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/PlaybackSpeedPopup.qml" line="70"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/PlaybackSpeedSlider.qml" line="45"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/PlaybackSpeedSlider.qml" line="64"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/PlaybackToolBarActions.qml" line="223"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/PlaybackSpeedPopup.qml" line="52"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/PlaybackSpeedPopup.qml" line="70"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/PlaybackSpeedSlider.qml" line="45"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/PlaybackSpeedSlider.qml" line="64"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/PlaybackToolBarActions.qml" line="223"/>
         <source>Speed</source>
         <translation>Snelheid</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/SoundFlag/MuseSoundsParams.qml" line="57"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/SoundFlag/MuseSoundsParams.qml" line="57"/>
         <source>Modify sound</source>
         <translation>Wijzig geluid</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/SoundFlag/MuseSoundsParams.qml" line="84"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/SoundFlag/MuseSoundsParams.qml" line="84"/>
         <source>Playing techniques</source>
         <translation>Speeltechnieken</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/internal/SoundFlag/MuseSoundsParams.qml" line="110"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/internal/SoundFlag/MuseSoundsParams.qml" line="110"/>
         <source>Sound flag options are not available for this sound.</source>
         <translation>Geluidskenmerk opties zijn niet beschikbaar voor dit geluid.</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/OnlineSoundsStatusView.qml" line="109"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/OnlineSoundsStatusView.qml" line="109"/>
         <source>Processing online sounds</source>
         <translation>Online geluiden verwerken</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/OnlineSoundsStatusView.qml" line="114"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/OnlineSoundsStatusView.qml" line="114"/>
         <source>Process online sounds</source>
         <translation>Online geluiden verwerken</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/OnlineSoundsStatusView.qml" line="117"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/OnlineSoundsStatusView.qml" line="117"/>
         <source>Online sounds processed</source>
         <translation>Online geluiden verwerkt</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/PlaybackToolBar.qml" line="40"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/PlaybackToolBar.qml" line="40"/>
         <source>Playback toolbar</source>
         <translation>Afspeelwerkbalk</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/SoundFlagPopup.qml" line="82"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/SoundFlagPopup.qml" line="82"/>
         <source>Sound flag settings</source>
         <translation>Geluidskenmerk-instellingen</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/SoundFlagPopup.qml" line="135"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/SoundFlagPopup.qml" line="135"/>
         <source>Sound flag menu</source>
         <translation>Geluidskenmerk-menu</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/SoundProfilesDialog.qml" line="35"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/SoundProfilesDialog.qml" line="35"/>
         <source>Playback setup</source>
         <translation>Afspeelinstellingen</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/SoundProfilesDialog.qml" line="86"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/SoundProfilesDialog.qml" line="86"/>
         <source>Profiles</source>
         <translation>Profielen</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/SoundProfilesDialog.qml" line="110"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/SoundProfilesDialog.qml" line="110"/>
         <source>Active</source>
         <translation>Actief</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/SoundProfilesDialog.qml" line="111"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/SoundProfilesDialog.qml" line="111"/>
         <source>Inactive</source>
         <translation>Inactief</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/SoundProfilesDialog.qml" line="203"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/SoundProfilesDialog.qml" line="203"/>
         <source>Settings</source>
         <translation>Instellingen</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/SoundProfilesDialog.qml" line="211"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/SoundProfilesDialog.qml" line="211"/>
         <source>Set as default for new scores</source>
         <translation>Gebruik als standaard voor nieuwe partituren</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/SoundProfilesDialog.qml" line="247"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/SoundProfilesDialog.qml" line="247"/>
         <source>Activate this profile</source>
         <translation>Activeer dit profiel</translation>
     </message>
@@ -33612,7 +33612,7 @@ mislukt: %2</translation>
     </message>
     <message>
         <location filename="../../src/playback/internal/onlinesoundscontroller.cpp" line="186"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/onlinesoundsstatusmodel.cpp" line="117"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/onlinesoundsstatusmodel.cpp" line="117"/>
         <source>Some online sounds aren’t ready yet</source>
         <translation>Sommige online geluiden zijn nog niet klaar</translation>
     </message>
@@ -33623,7 +33623,7 @@ mislukt: %2</translation>
     </message>
     <message>
         <location filename="../../src/playback/internal/onlinesoundscontroller.cpp" line="227"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/onlinesoundsstatusmodel.cpp" line="119"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/onlinesoundsstatusmodel.cpp" line="119"/>
         <source>Unable to process online sounds</source>
         <translation>Kan online geluiden niet verwerken</translation>
     </message>
@@ -33644,7 +33644,7 @@ mislukt: %2</translation>
     </message>
     <message>
         <location filename="../../src/playback/internal/playbackcontroller.cpp" line="97"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerchannelitem.cpp" line="617"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerchannelitem.cpp" line="617"/>
         <source>Aux %1</source>
         <translation>Aux %1</translation>
     </message>
@@ -33664,138 +33664,138 @@ mislukt: %2</translation>
         <translation>Audio-samples laden</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/inputresourceitem.cpp" line="117"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/inputresourceitem.cpp" line="117"/>
         <source>Get more sounds</source>
         <translation>Meer geluiden</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/inputresourceitem.cpp" line="393"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/inputresourceitem.cpp" line="393"/>
         <source>SoundFonts</source>
         <translation>SoundFonts</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/inputresourceitem.cpp" line="436"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/inputresourceitem.cpp" line="436"/>
         <source>Bank %1, preset %2</source>
         <translation>Verzameling %1, voorinstelling %2</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/inputresourceitem.cpp" line="491"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/inputresourceitem.cpp" line="556"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/inputresourceitem.cpp" line="491"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/inputresourceitem.cpp" line="556"/>
         <source>Choose automatically</source>
         <translation>Automatisch kiezen</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/inputresourceitem.cpp" line="537"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/inputresourceitem.cpp" line="537"/>
         <source>Preset %1</source>
         <translation>Voorinstelling %1</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/inputresourceitem.cpp" line="547"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/inputresourceitem.cpp" line="547"/>
         <source>Bank %1</source>
         <translation>Verzameling voorinstellingen %1</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerchannelitem.cpp" line="62"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerchannelitem.cpp" line="62"/>
         <source>Mixer channel panel %1</source>
         <translation>Mixerkanaalpaneel %1</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerchannelitem.cpp" line="683"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerchannelitem.cpp" line="683"/>
         <source>Change sound</source>
         <translation>Wijzig geluid</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerchannelitem.cpp" line="686"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerchannelitem.cpp" line="686"/>
         <source>Are you sure you want to change this sound?</source>
         <translation>Weet u zeker dat u dit geluid wilt wijzigen?</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerchannelitem.cpp" line="687"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerchannelitem.cpp" line="687"/>
         <source>Sound flags on this instrument may be reset, but staff text will remain. This action can’t be undone.</source>
         <translation>Instellingen voor geluidskenmerken op dit instrument kunnen hierbij verloren gaan, maar de notenbalktekst blijft behouden. Deze bewerking kan niet ongedaan gemaakt worden.</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerpanelcontextmenumodel.cpp" line="44"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerpanelcontextmenumodel.cpp" line="44"/>
         <source>Labels</source>
         <translation>Labels</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerpanelcontextmenumodel.cpp" line="49"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerpanelcontextmenumodel.cpp" line="49"/>
         <source>Fader</source>
         <translation>Fader</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerpanelcontextmenumodel.cpp" line="50"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerpanelcontextmenumodel.cpp" line="50"/>
         <source>Mute and solo</source>
         <translation>Dempen en solo</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerpanelcontextmenumodel.cpp" line="170"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerpanelcontextmenumodel.cpp" line="170"/>
         <source>View</source>
         <translation>Weergave</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/mixerpanelmodel.cpp" line="555"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/mixerpanelmodel.cpp" line="555"/>
         <source>Master</source>
         <translation>Hoofdversterker</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/onlinesoundsstatusmodel.cpp" line="47"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/onlinesoundsstatusmodel.cpp" line="47"/>
         <source>You’ve reached your current render limit for %1. You will be able to process online sounds again after your quota resets on %2.</source>
         <translation>U heeft het huidige renderlimiet voor %1 bereikt. U kunt online geluiden weer verwerken nadat uw quotum op %2 is gereset.</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/onlinesoundsstatusmodel.cpp" line="132"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/onlinesoundsstatusmodel.cpp" line="132"/>
         <source>Please check your connection, and make sure MuseHub is running and you are logged in.</source>
         <translation>Controleer je verbinding, zorg dat MuseHub geopend is en dat je bent ingelogd.</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/outputresourceitem.cpp" line="17"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/outputresourceitem.cpp" line="17"/>
         <source>No effect</source>
         <translation>Geen effect</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/outputresourceitem.cpp" line="81"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/outputresourceitem.cpp" line="81"/>
         <source>Get more effects</source>
         <translation>Meer effecten</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/soundflagsettingsmodel.cpp" line="74"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/soundflagsettingsmodel.cpp" line="74"/>
         <source>Ord. (default)</source>
         <translation>Std. (standaard)</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/soundflagsettingsmodel.cpp" line="284"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/soundflagsettingsmodel.cpp" line="284"/>
         <source>Reset to default sound</source>
         <translation>Herstel naar standaardgeluid</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/soundflagsettingsmodel.cpp" line="296"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/soundflagsettingsmodel.cpp" line="296"/>
         <source>Allow multiple selection</source>
         <translation>Sta meervoudige selectie toe</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/soundflagsettingsmodel.cpp" line="309"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/soundflagsettingsmodel.cpp" line="309"/>
         <source>Apply selection to all staves</source>
         <translation>Pas selectie toe op alle notenbalken</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/soundflagsettingsmodel.cpp" line="393"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/soundflagsettingsmodel.cpp" line="393"/>
         <source>ordinary</source>
         <translation>standaard (normaal)</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/soundprofilesmodel.cpp" line="161"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/soundprofilesmodel.cpp" line="161"/>
         <source>Change sounds</source>
         <translation>Wijzig geluid</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/soundprofilesmodel.cpp" line="164"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/soundprofilesmodel.cpp" line="164"/>
         <source>Are you sure you want to change sounds?</source>
         <translation>Weet u zeker dat u het geluid wilt wijzigen?</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/soundprofilesmodel.cpp" line="165"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/soundprofilesmodel.cpp" line="165"/>
         <source>Sound flags may be reset, but staff text will remain. This action can’t be undone.</source>
         <translation>Geluidskenmerken worden mogelijk opnieuw ingesteld, maar de notenbalktekst blijft. Deze actie kan niet ongedaan gemaakt worden.</translation>
     </message>
@@ -33803,954 +33803,954 @@ mislukt: %2</translation>
 <context>
     <name>preferences</name>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/AdvancedPreferencesPage.qml" line="69"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/AdvancedPreferencesPage.qml" line="69"/>
         <source>Preference</source>
         <translation>Voorkeur</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/AdvancedPreferencesPage.qml" line="71"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/AdvancedPreferencesPage.qml" line="71"/>
         <source>Value</source>
         <translation>Waarde</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/AppearancePreferencesPage.qml" line="166"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/AppearancePreferencesPage.qml" line="166"/>
         <source>Background</source>
         <translation>Achtergrond</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/AppearancePreferencesPage.qml" line="167"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/AppearancePreferencesPage.qml" line="167"/>
         <source>Choose background wallpaper</source>
         <translation>Kies achtergrondafbeelding</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/AccentColorsSection.qml" line="61"/>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/UiColorsSection.qml" line="47"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/AccentColorsSection.qml" line="61"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/UiColorsSection.qml" line="47"/>
         <source>Accent color</source>
         <translation>Accentkleur</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/AdvancedTopSection.qml" line="44"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/AdvancedTopSection.qml" line="44"/>
         <source>Reset to default</source>
         <translation>Herstel naar standaardwaarde</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/AdvancedTopSection.qml" line="67"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/AdvancedTopSection.qml" line="67"/>
         <source>Search advanced</source>
         <extracomment>Search advanced preferences</extracomment>
         <translation>Geavanceerd zoeken</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/AudioApiSection.qml" line="29"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/AudioApiSection.qml" line="29"/>
         <source>Audio</source>
         <translation>Geluid</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/AudioApiSection.qml" line="42"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/AudioApiSection.qml" line="42"/>
         <source>Audio driver</source>
         <translation>Audiodriver</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/AudioEngineSection.qml" line="31"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/AudioEngineSection.qml" line="31"/>
         <source>Audio engine</source>
         <translation>Audio-engine</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/AudioEngineSection.qml" line="34"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/AudioEngineSection.qml" line="34"/>
         <source>Restart audio and MIDI devices</source>
         <translation>Herstart audio en MIDI apparaten</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/AutomaticUpdateSection.qml" line="30"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/AutomaticUpdateSection.qml" line="30"/>
         <source>Automatic update check</source>
         <translation>Automatisch controleren op updates</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/AutomaticUpdateSection.qml" line="42"/>
-        <source>Check to see if a new version of MuseScore Studio is available</source>
-        <translation>Controleer op nieuwe versies van MuseScore Studio</translation>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/AutomaticUpdateSection.qml" line="42"/>
+        <source>Check to see if a new version of DB Score is available</source>
+        <translation>Controleer op nieuwe versies van DB Score</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/AutomaticUpdateSection.qml" line="58"/>
-        <source>Update checking requires network access. In order to protect your privacy, MuseScore Studio does not store any personal information. See our &lt;a href=&quot;%1&quot;&gt;privacy policy&lt;/a&gt; for more info.</source>
-        <translation>Voor het controleren op updates is een internetverbinding vereist. Om uw privacy te beschermen, slaat MuseScore Studio geen persoonlijke gegevens op. Zie ons &lt;a href=&quot;%1&quot;&gt;privacybeleid&lt;/a&gt; voor meer informatie.</translation>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/AutomaticUpdateSection.qml" line="58"/>
+        <source>Update checking requires network access. In order to protect your privacy, DB Score does not store any personal information. See our &lt;a href=&quot;%1&quot;&gt;privacy policy&lt;/a&gt; for more info.</source>
+        <translation>Voor het controleren op updates is een internetverbinding vereist. Om uw privacy te beschermen, slaat DB Score geen persoonlijke gegevens op. Zie ons &lt;a href=&quot;%1&quot;&gt;privacybeleid&lt;/a&gt; voor meer informatie.</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/AutoSaveSection.qml" line="30"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/AutoSaveSection.qml" line="30"/>
         <source>Auto save</source>
         <translation>Automatisch opslaan</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/AutoSaveSection.qml" line="49"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/AutoSaveSection.qml" line="49"/>
         <source>Auto save every</source>
         <translation>Sla op elke</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/BrailleAdvancedSection.qml" line="29"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/BrailleAdvancedSection.qml" line="29"/>
         <source>Advanced options</source>
         <translation>Geavanceerde opties</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/BrailleAdvancedSection.qml" line="41"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/BrailleAdvancedSection.qml" line="41"/>
         <source>Braille table for lyrics</source>
         <translation>Braille-tabel voor liedtekst</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/BrailleAdvancedSection.qml" line="57"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/BrailleAdvancedSection.qml" line="57"/>
         <source>Interval direction</source>
         <translation>Interval-richting</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/BrailleSection.qml" line="31"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/BrailleSection.qml" line="31"/>
         <source>Enable/disable</source>
         <translation>In-/uitschakelen</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/BrailleSection.qml" line="40"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/BrailleSection.qml" line="40"/>
         <source>Show braille panel</source>
         <translation>Toon braille-paneel</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/CharsetsSection.qml" line="29"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/CharsetsSection.qml" line="29"/>
         <source>Character set used when importing binary files</source>
         <translation>Karakterset te gebruiken bij het importeren van binaire bestanden</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/CharsetsSection.qml" line="37"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/CharsetsSection.qml" line="37"/>
         <source>Overture import character set</source>
         <translation>Overture import karakterset</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ColorAndWallpaperSection.qml" line="64"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ColorAndWallpaperSection.qml" line="64"/>
         <source>Color</source>
         <translation>Kleur</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ColorAndWallpaperSection.qml" line="97"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ColorAndWallpaperSection.qml" line="97"/>
         <source>Image</source>
         <translation>Afbeelding</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/CommonAudioApiConfiguration.qml" line="53"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/CommonAudioApiConfiguration.qml" line="53"/>
         <source>Audio device</source>
         <translation>Audioapparaat</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/CommonAudioApiConfiguration.qml" line="71"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/CommonAudioApiConfiguration.qml" line="71"/>
         <source>Buffer size</source>
         <translation>Buffergrootte</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/CommonAudioApiConfiguration.qml" line="89"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/CommonAudioApiConfiguration.qml" line="89"/>
         <source>Sample rate</source>
         <translation>Sample rate</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/DefaultStyleSection.qml" line="32"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/DefaultStyleSection.qml" line="32"/>
         <source>Default style</source>
         <translation>Standaard stijl</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/DefaultStyleSection.qml" line="73"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/DefaultStyleSection.qml" line="73"/>
         <source>Style for parts</source>
         <translation>Stijl voor partijen</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/DefaultStyleSection.qml" line="80"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/DefaultStyleSection.qml" line="80"/>
         <source>Choose default style for parts</source>
         <translation>Kies standaardstijl voor partijen</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/DefaultStyleSection.qml" line="81"/>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/importpreferencesmodel.cpp" line="114"/>
-        <source>MuseScore style file</source>
-        <translation>MuseScore stijlbestand</translation>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/DefaultStyleSection.qml" line="81"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/importpreferencesmodel.cpp" line="114"/>
+        <source>DB Score style file</source>
+        <translation>DB Score stijlbestand</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/FoldersSection.qml" line="31"/>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="195"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/FoldersSection.qml" line="31"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="195"/>
         <source>Folders</source>
         <translation>Mappen</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/FoldersSection.qml" line="86"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/FoldersSection.qml" line="86"/>
         <source>Rescan VST3 plugins</source>
         <translation>VST3-plugins opnieuw scannen</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/FFmpegSection.qml" line="30"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/FFmpegSection.qml" line="30"/>
         <source>Video converter</source>
         <translation>Video converter</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/FFmpegSection.qml" line="43"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/FFmpegSection.qml" line="43"/>
         <source>FFmpeg library version:</source>
         <translation>FFmpeg-bibliotheekversie:</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/FFmpegSection.qml" line="45"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/FFmpegSection.qml" line="45"/>
         <source>FFmpeg library not found</source>
         <translation>FFmpeg-bibliotheek niet gevonden</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/FFmpegSection.qml" line="60"/>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/FoldersSection.qml" line="63"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/FFmpegSection.qml" line="60"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/FoldersSection.qml" line="63"/>
         <source>Choose %1 folder</source>
         <translation>Kies %1-map</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/FFmpegSection.qml" line="63"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/FFmpegSection.qml" line="63"/>
         <source>Locate existing installation</source>
         <translation>Lokaliseer bestaande installatie</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/FFmpegSection.qml" line="81"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/FFmpegSection.qml" line="81"/>
         <source>Download FFmpeg</source>
         <translation>Download FFmpeg</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ImportStyleSection.qml" line="30"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ImportStyleSection.qml" line="30"/>
         <source>Style used for import</source>
         <translation>Stijl te gebruiken bij importeren</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ImportStyleSection.qml" line="56"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ImportStyleSection.qml" line="56"/>
         <source>Built-in style</source>
         <translation>Ingebouwde stijl</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ImportStyleSection.qml" line="80"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ImportStyleSection.qml" line="80"/>
         <source>Use style file</source>
         <translation>Gebruik stijlbestand</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/KeyboardLayoutsSection.qml" line="31"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/KeyboardLayoutsSection.qml" line="31"/>
         <source>Keyboard layout</source>
         <translation>Toetsenbordindeling</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/LanguagesSection.qml" line="31"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/LanguagesSection.qml" line="31"/>
         <source>Language</source>
         <translation>Taal</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/LanguagesSection.qml" line="79"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/LanguagesSection.qml" line="79"/>
         <source>Check for language updates</source>
         <translation>Controleer op taalupdates</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/LanguagesSection.qml" line="92"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/LanguagesSection.qml" line="92"/>
         <source>Restart required</source>
         <translation>Herstart vereist</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MeiSection.qml" line="30"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MeiSection.qml" line="30"/>
         <source>MEI</source>
-        <extracomment>MEI refers to a file format that can be imported and exported in MuseScore. It stands for Music Encoding Initiative.</extracomment>
+        <extracomment>MEI refers to a file format that can be imported and exported in DB Score. It stands for Music Encoding Initiative.</extracomment>
         <translation>MEI</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MeiSection.qml" line="40"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MeiSection.qml" line="40"/>
         <source>Import MEI layout</source>
         <translation>Importeer MEI opmaak</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MidiDevicesSection.qml" line="42"/>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MidiSection.qml" line="29"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MidiDevicesSection.qml" line="42"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MidiSection.qml" line="29"/>
         <source>MIDI</source>
         <translation>MIDI</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MidiDevicesSection.qml" line="47"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MidiDevicesSection.qml" line="47"/>
         <source>MIDI input</source>
         <translation>MIDI-invoer</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MidiDevicesSection.qml" line="63"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MidiDevicesSection.qml" line="63"/>
         <source>MIDI output</source>
         <translation>MIDI-uitvoer</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MidiSection.qml" line="42"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MidiSection.qml" line="42"/>
         <source>Shortest note</source>
         <translation>Kortste noot</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MiscellaneousSection.qml" line="30"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MiscellaneousSection.qml" line="30"/>
         <source>Miscellaneous</source>
         <translation>Overig</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MiscellaneousSection.qml" line="39"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MiscellaneousSection.qml" line="39"/>
         <source>Proximity for selecting elements</source>
         <translation>Afstand voor het selecteren van elementen</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MixerSection.qml" line="30"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MixerSection.qml" line="30"/>
         <source>Mixer</source>
         <translation>Mixer</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MixerSection.qml" line="41"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MixerSection.qml" line="41"/>
         <source>Toggle track mute by showing/hiding instruments in the Layout panel</source>
         <translation>Schakel het dempen van tracks in of uit door instrumenten in het opmaakpaneel te tonen/verbergen</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MnxSection.qml" line="30"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MnxSection.qml" line="30"/>
         <source>MNX</source>
         <translation>MNX</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MnxSection.qml" line="32"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MnxSection.qml" line="32"/>
         <source>Disabling this may cause errors. Try only for files that fail to import otherwise.</source>
         <translation>Het uitschakelen hiervan kan fouten veroorzaken. Probeer dit alleen voor bestanden die anders niet geïmporteerd kunnen worden.</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MnxSection.qml" line="42"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MnxSection.qml" line="42"/>
         <source>Require exact schema validation</source>
         <translation>Vereis exacte schemavalidatie</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MusicXmlSection.qml" line="29"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MusicXmlSection.qml" line="29"/>
         <source>MusicXML</source>
         <translation>MusicXML</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MusicXmlSection.qml" line="45"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MusicXmlSection.qml" line="45"/>
         <source>Import layout</source>
         <translation>Importeer opmaak</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MusicXmlSection.qml" line="60"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MusicXmlSection.qml" line="60"/>
         <source>Import system and page breaks</source>
         <translation>Importeer systeemomslagen en pagina-eindes</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MusicXmlSection.qml" line="75"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MusicXmlSection.qml" line="75"/>
         <source>Apply default typeface (Edwin) to imported scores</source>
         <translation>Gebruik standaardlettertype (Edwin) voor geïmporteerde partituren</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MusicXmlSection.qml" line="90"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/MusicXmlSection.qml" line="90"/>
         <source>Infer text type based on content where possible</source>
         <translation>Leid teksttype af op basis van inhoud waar mogelijk</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/FretboardDiagramsSection.qml" line="35"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/FretboardDiagramsSection.qml" line="35"/>
         <source>Fretboard diagrams</source>
         <translation>Fretborddiagrammen</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/FretboardDiagramsSection.qml" line="41"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/FretboardDiagramsSection.qml" line="41"/>
         <source>Never autofill fretboard diagrams when changing chord symbols</source>
         <translation>Vul nooit automatisch fretborddiagrammen in bij het wijzigen van akkoordsymbolen</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/MidiInputSection.qml" line="33"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/MidiInputSection.qml" line="33"/>
         <source>MIDI devices</source>
         <translation>MIDI-apparaten</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/MidiInputSection.qml" line="49"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/MidiInputSection.qml" line="49"/>
         <source>Enable MIDI input</source>
         <translation>Schakel MIDI-invoer in/uit</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/MidiInputSection.qml" line="65"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/MidiInputSection.qml" line="65"/>
         <source>When pressing a key, begin note input at the selected measure, note, or rest</source>
         <translation>Start noteninvoer bij de geselecteerde maat, noot of rust wanner er een toets wordt ingedrukt</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/MidiInputSection.qml" line="80"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/MidiInputSection.qml" line="80"/>
         <source>Real-time input modes</source>
         <translation>Real-time invoermodi</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/MidiInputSection.qml" line="93"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/MidiInputSection.qml" line="93"/>
         <source>Advance to next note on key release</source>
         <translation>Ga verder naar volgende noot bij loslaten toets</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/MidiInputSection.qml" line="110"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/MidiInputSection.qml" line="110"/>
         <source>Delay between notes</source>
         <translation>Vertraging tussen noten</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NoteColorsSection.qml" line="37"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NoteColorsSection.qml" line="37"/>
         <source>Note colors</source>
         <translation>Nootkleuren</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NoteColorsSection.qml" line="43"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NoteColorsSection.qml" line="43"/>
         <source>Color notes outside of usable pitch range</source>
         <translation>Kleur noten die buiten het bereik van het instrument liggen</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NoteColorsSection.qml" line="58"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NoteColorsSection.qml" line="58"/>
         <source>Color guitar bends and hammer-ons/pull-offs outside of playable range</source>
         <translation>Kleur gitaarbuigingen en hammer-ons/pull-offs buiten het speelbereik</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NoteInputSection.qml" line="33"/>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="169"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NoteInputSection.qml" line="33"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="169"/>
         <source>Note input</source>
         <translation>Noteninvoer</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NoteInputSection.qml" line="48"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NoteInputSection.qml" line="48"/>
         <source>Default input mode</source>
         <translation>Standaard invoermodus</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NoteInputSection.qml" line="62"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NoteInputSection.qml" line="62"/>
         <source>Apply accidentals, augmentation dots, and articulations</source>
         <translation>Pas voortekens, punteringen en articulaties toe</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NoteInputSection.qml" line="69"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NoteInputSection.qml" line="69"/>
         <source>To next note entered</source>
         <translation>Op volgende in te voeren noot</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NoteInputSection.qml" line="70"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NoteInputSection.qml" line="70"/>
         <source>To previous note entered</source>
         <translation>Op laatst ingevoerde noot</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NoteInputSection.qml" line="81"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NoteInputSection.qml" line="81"/>
         <source>Input by duration mode cursor</source>
         <translation>Toon cursor bij invoer met nootduur</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NoteInputSection.qml" line="88"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NoteInputSection.qml" line="88"/>
         <source>Above staff</source>
         <translation>Boven notenbalk</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NoteInputSection.qml" line="89"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NoteInputSection.qml" line="89"/>
         <source>On staff</source>
         <translation>Op notenbalk</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NotePreviewSection.qml" line="53"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NotePreviewSection.qml" line="53"/>
         <source>Note preview</source>
         <translation>Nootvoorbeeld</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NotePreviewSection.qml" line="59"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NotePreviewSection.qml" line="59"/>
         <source>Hear playback when adding, editing, and selecting notes</source>
         <translation>Laat noten horen bij toevoegen, bewerken en selecteren</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NotePreviewSection.qml" line="73"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NotePreviewSection.qml" line="73"/>
         <source>Playback duration</source>
         <translation>Afspeelduur</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NotePreviewSection.qml" line="96"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NotePreviewSection.qml" line="96"/>
         <source>Play chord when editing</source>
         <translation>Speel hele akkoord bij bewerken</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NotePreviewSection.qml" line="113"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NotePreviewSection.qml" line="113"/>
         <source>Play chord symbols and Nashville numbers</source>
         <translation>Speel akkoordsymbolen en Nashville-nummers af</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NotePreviewSection.qml" line="130"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NotePreviewSection.qml" line="130"/>
         <source>Play when setting pitch (input by duration mode only)</source>
         <translation>Speel bij instellen toonhoogte (alleen bij invoer met nootduur)</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NotePreviewSection.qml" line="147"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NotePreviewSection.qml" line="147"/>
         <source>Play preview notes with score dynamics</source>
         <translation>Speel noten af met dynamiek</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NotePreviewSection.qml" line="164"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NotePreviewSection.qml" line="164"/>
         <source>Play MIDI input</source>
         <translation>Speel MIDI-invoer</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NotePreviewSection.qml" line="179"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/NotePreviewSection.qml" line="179"/>
         <source>Play MIDI notes with velocity and duration during note input</source>
         <translation>Speel MIDI-noten met aanslagsterkte en duur tijdens het invoeren van de noten</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/VoiceAssignmentSection.qml" line="35"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/VoiceAssignmentSection.qml" line="35"/>
         <source>Voice assignment</source>
         <translation>Stemtoewijzing</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/VoiceAssignmentSection.qml" line="39"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/VoiceAssignmentSection.qml" line="39"/>
         <source>When entered, dynamics and hairpins should affect</source>
         <translation>Bij het invoeren ervan zouden dynamiek en crescendo/decrescendo-tekens van invloed moeten zijn op</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/VoiceAssignmentSection.qml" line="46"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/VoiceAssignmentSection.qml" line="46"/>
         <source>All voices on the instrument</source>
         <translation>Alle stemmen van het instrument</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/VoiceAssignmentSection.qml" line="62"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/NoteInput/VoiceAssignmentSection.qml" line="62"/>
         <source>Only the voice they are applied to</source>
         <translation>Alleen de huidige stem</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/OnlineSoundsSection.qml" line="30"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/OnlineSoundsSection.qml" line="30"/>
         <source>Online sounds</source>
         <translation>Online geluiden</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/OnlineSoundsSection.qml" line="52"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/OnlineSoundsSection.qml" line="52"/>
         <source>Show error dialog when online sounds cannot be processed</source>
         <translation>Toon foutmelding wanneer online geluiden niet kunnen worden verwerkt</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/OnlineSoundsSection.qml" line="68"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/OnlineSoundsSection.qml" line="68"/>
         <source>Automatically process online sounds in the background</source>
         <translation>Verwerk online geluiden automatisch op de achtergrond</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/OnlineSoundsSection.qml" line="102"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/OnlineSoundsSection.qml" line="102"/>
         <source>To process online sounds, press ‘Process online sounds’ in the status bar at the bottom of the app window</source>
         <translation>Om online geluiden te laten verwerken, klikt u op ‘Verwerk online geluiden’ in de statusbalk onderin het scherm.</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/OnlineSoundsSection.qml" line="113"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/OnlineSoundsSection.qml" line="113"/>
         <source>Show processing visualization</source>
         <translation>Toon verwerkingsvoortgang</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/OnlineSoundsSection.qml" line="123"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/OnlineSoundsSection.qml" line="123"/>
         <source>Always</source>
         <translation>Altijd</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/OnlineSoundsSection.qml" line="126"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/OnlineSoundsSection.qml" line="126"/>
         <source>Only if processing is unfinished during playback</source>
         <translation>Alleen als verwerken nog niet klaar is tijdens afspelen</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/OnlineSoundsSection.qml" line="129"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/OnlineSoundsSection.qml" line="129"/>
         <source>Never</source>
         <translation>Nooit</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/PageSection.qml" line="31"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PageSection.qml" line="31"/>
         <source>Page</source>
         <translation>Pagina</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/PageSection.qml" line="56"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PageSection.qml" line="56"/>
         <source>Invert score colors</source>
         <translation>Inverteer partituur kleuren</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/PageSection.qml" line="74"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PageSection.qml" line="74"/>
         <source>Only invert colors in dark theme</source>
         <translation>Inverteer kleuren alleen in het donkere thema</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/PageSection.qml" line="93"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PageSection.qml" line="93"/>
         <source>Choose notepaper</source>
         <translation>Kies notenpapier</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/PreferencesButtonsPanel.qml" line="50"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PreferencesButtonsPanel.qml" line="50"/>
         <source>Reset preferences</source>
         <translation>Herstel voorkeuren</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ProgramStartSection.qml" line="31"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ProgramStartSection.qml" line="31"/>
         <source>Program start</source>
         <translation>Bij opstarten</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ProgramStartSection.qml" line="88"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ProgramStartSection.qml" line="88"/>
         <source>Choose starting score</source>
         <translation>Kies opstartpartituur</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/PublishMuseScoreComSection.qml" line="30"/>
-        <source>Publish to MuseScore.com</source>
-        <translation>Publiceer op MuseScore.com</translation>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PublishDB ScoreComSection.qml" line="30"/>
+        <source>Publish to drumbearai.com</source>
+        <translation>Publiceer op drumbearai.com</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/PublishMuseScoreComSection.qml" line="41"/>
-        <source>Always prompt to share on Audio.com after publishing to MuseScore.com</source>
-        <translation>Vraag altijd om te delen op Audio.com na publicatie op MuseScore.com</translation>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PublishDB ScoreComSection.qml" line="41"/>
+        <source>Always prompt to share on Audio.com after publishing to drumbearai.com</source>
+        <translation>Vraag altijd om te delen op Audio.com na publicatie op drumbearai.com</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/RemoteControlSection.qml" line="31"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/RemoteControlSection.qml" line="31"/>
         <source>OSC remote control</source>
         <translation>OSC-bediening</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/RemoteControlSection.qml" line="50"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/RemoteControlSection.qml" line="50"/>
         <source>Port number:</source>
         <translation>Poortnummer:</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/SaveToCloudSection.qml" line="31"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/SaveToCloudSection.qml" line="31"/>
         <source>Save to cloud</source>
         <translation>Sla op in de cloud</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/SaveToCloudSection.qml" line="41"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/SaveToCloudSection.qml" line="41"/>
         <source>Generate MP3 audio for private cloud scores</source>
         <translation>Genereer MP3-audio voor privé-cloud-partituren</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ScrollPagesSection.qml" line="32"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ScrollPagesSection.qml" line="32"/>
         <source>Scroll pages</source>
         <translation>Scroll pagina&apos;s</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ScrollPagesSection.qml" line="50"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ScrollPagesSection.qml" line="50"/>
         <source>Horizontal</source>
         <translation>Horizontaal</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ScrollPagesSection.qml" line="51"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ScrollPagesSection.qml" line="51"/>
         <source>Vertical</source>
         <translation>Verticaal</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ScrollPagesSection.qml" line="85"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ScrollPagesSection.qml" line="85"/>
         <source>Limit scroll area to page borders</source>
         <translation>Beperk het scrollgebied tot de rand van de pagina</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ThemeAdditionalOptionsSection.qml" line="32"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ThemeAdditionalOptionsSection.qml" line="32"/>
         <source>Reset appearance to default</source>
         <translation>Herstel uiterlijk naar standaard</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ThemesSection.qml" line="30"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ThemesSection.qml" line="30"/>
         <source>High-contrast theme</source>
         <translation>Thema met hoog contrast</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ThemesSection.qml" line="30"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ThemesSection.qml" line="30"/>
         <source>Theme</source>
         <translation>Thema</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ThemesSection.qml" line="76"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ThemesSection.qml" line="76"/>
         <source>Follow system theme</source>
         <translation>Volg het systeemthema</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ThemesSection.qml" line="91"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ThemesSection.qml" line="91"/>
         <source>Enable high-contrast</source>
         <translation>Schakel hoog contrast in</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/UiColorsSection.qml" line="32"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/UiColorsSection.qml" line="32"/>
         <source>UI colors</source>
         <translation>UI-kleuren</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/UiColorsSection.qml" line="48"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/UiColorsSection.qml" line="48"/>
         <source>Text and icons</source>
         <translation>Tekst en iconen</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/UiColorsSection.qml" line="49"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/UiColorsSection.qml" line="49"/>
         <source>Disabled text</source>
         <translation>Gedimde tekst</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/UiColorsSection.qml" line="50"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/UiColorsSection.qml" line="50"/>
         <source>Border color</source>
         <translation>Randkleur</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/UiFontSection.qml" line="29"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/UiFontSection.qml" line="29"/>
         <source>App text</source>
         <translation>App-tekst</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/UiFontSection.qml" line="42"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/UiFontSection.qml" line="42"/>
         <source>Typeface</source>
         <translation>Lettertype</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/UiFontSection.qml" line="57"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/UiFontSection.qml" line="57"/>
         <source>Body text size</source>
         <translation>Lettergrootte</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/WelcomeDialogSection.qml" line="32"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/WelcomeDialogSection.qml" line="32"/>
         <source>Welcome screen</source>
         <translation>Welkomstscherm</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/WelcomeDialogSection.qml" line="43"/>
-        <source>Show welcome screen when MuseScore Studio launches</source>
-        <translation>Laat welkomstscherm zien bij starten MuseScore Studio</translation>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/WelcomeDialogSection.qml" line="43"/>
+        <source>Show welcome screen when DB Score launches</source>
+        <translation>Laat welkomstscherm zien bij starten DB Score</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ZoomSection.qml" line="30"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ZoomSection.qml" line="30"/>
         <source>Zoom</source>
         <translation>Zoom</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ZoomSection.qml" line="48"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ZoomSection.qml" line="48"/>
         <source>Default zoom</source>
         <translation>Standaard schaalverhouding</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ZoomSection.qml" line="94"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/ZoomSection.qml" line="94"/>
         <source>Mouse zoom precision</source>
         <translation>Schaalverhouding precisie muis</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/PercussionPreferencesPage.qml" line="144"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/PercussionPreferencesPage.qml" line="144"/>
         <source>Legacy panel</source>
         <translation>Oud paneel</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/PreferencesDialog.qml" line="34"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/PreferencesDialog.qml" line="34"/>
         <source>Preferences</source>
         <translation>Voorkeuren</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/appearancepreferencesmodel.cpp" line="172"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/appearancepreferencesmodel.cpp" line="172"/>
         <source>Images</source>
         <translation>Afbeeldingen</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/appearancepreferencesmodel.cpp" line="173"/>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/generalpreferencesmodel.cpp" line="249"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/appearancepreferencesmodel.cpp" line="173"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/generalpreferencesmodel.cpp" line="249"/>
         <source>All</source>
         <translation>Alles</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/braillepreferencesmodel.cpp" line="77"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/braillepreferencesmodel.cpp" line="77"/>
         <source>Auto</source>
         <extracomment>Braille chord interval direction: automatic (based on clef)</extracomment>
         <translation>Automatisch</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/braillepreferencesmodel.cpp" line="82"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/braillepreferencesmodel.cpp" line="82"/>
         <source>Up</source>
         <extracomment>Braille chord interval direction: up (ascending)</extracomment>
         <translation>Omhoog</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/braillepreferencesmodel.cpp" line="87"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/braillepreferencesmodel.cpp" line="87"/>
         <source>Down</source>
         <extracomment>Braille chord interval direction: down (descending)</extracomment>
         <translation>Omlaag</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/folderspreferencesmodel.cpp" line="100"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/folderspreferencesmodel.cpp" line="100"/>
         <source>Scores</source>
         <translation>Partituren</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/folderspreferencesmodel.cpp" line="104"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/folderspreferencesmodel.cpp" line="104"/>
         <source>Styles</source>
         <translation>Stijlen</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/folderspreferencesmodel.cpp" line="108"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/folderspreferencesmodel.cpp" line="108"/>
         <source>Instruments and score orders</source>
         <translation>Instrument en partituur volgordes</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/folderspreferencesmodel.cpp" line="113"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/folderspreferencesmodel.cpp" line="113"/>
         <source>Templates</source>
         <translation>Sjablonen</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/folderspreferencesmodel.cpp" line="117"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/folderspreferencesmodel.cpp" line="117"/>
         <source>Plugins</source>
         <translation>Plugins</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/folderspreferencesmodel.cpp" line="121"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/folderspreferencesmodel.cpp" line="121"/>
         <source>SoundFonts</source>
         <translation>SoundFonts</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/folderspreferencesmodel.cpp" line="126"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/folderspreferencesmodel.cpp" line="126"/>
         <source>Musical symbol fonts</source>
         <translation>Lettertype muzieksymbolen</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/folderspreferencesmodel.cpp" line="132"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/folderspreferencesmodel.cpp" line="132"/>
         <source>VST3</source>
         <translation>VST3</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/generalpreferencesmodel.cpp" line="78"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/generalpreferencesmodel.cpp" line="78"/>
         <source>Your version of %1 is up to date.</source>
         <translation>Uw versie van %1 is up-to-date.</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/generalpreferencesmodel.cpp" line="111"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/generalpreferencesmodel.cpp" line="111"/>
         <source>System default</source>
         <translation>Systeemstandaard</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/generalpreferencesmodel.cpp" line="192"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/generalpreferencesmodel.cpp" line="192"/>
         <source>Start empty</source>
         <translation>Start met een leeg blad</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/generalpreferencesmodel.cpp" line="196"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/generalpreferencesmodel.cpp" line="196"/>
         <source>Continue last session</source>
         <translation>Ga verder met de laatste sessie</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/generalpreferencesmodel.cpp" line="200"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/generalpreferencesmodel.cpp" line="200"/>
         <source>Start with new score</source>
         <translation>Start met een nieuwe partituur</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/generalpreferencesmodel.cpp" line="204"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/generalpreferencesmodel.cpp" line="204"/>
         <source>Start with score</source>
         <translation>Begin met partituur</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/generalpreferencesmodel.cpp" line="248"/>
-        <source>MuseScore file</source>
-        <translation>MuseScore-bestand</translation>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/generalpreferencesmodel.cpp" line="248"/>
+        <source>DB Score file</source>
+        <translation>DB Score-bestand</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/importpreferencesmodel.cpp" line="98"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/importpreferencesmodel.cpp" line="98"/>
         <source>Quarter</source>
         <translation>Kwart</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/importpreferencesmodel.cpp" line="99"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/importpreferencesmodel.cpp" line="99"/>
         <source>Eighth</source>
         <translation>Achtste</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/importpreferencesmodel.cpp" line="100"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/importpreferencesmodel.cpp" line="100"/>
         <source>16th</source>
         <translation>16de</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/importpreferencesmodel.cpp" line="101"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/importpreferencesmodel.cpp" line="101"/>
         <source>32nd</source>
         <translation>32ste</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/importpreferencesmodel.cpp" line="102"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/importpreferencesmodel.cpp" line="102"/>
         <source>64th</source>
         <translation>64ste</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/importpreferencesmodel.cpp" line="103"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/importpreferencesmodel.cpp" line="103"/>
         <source>128th</source>
         <translation>128ste</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/importpreferencesmodel.cpp" line="104"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/importpreferencesmodel.cpp" line="104"/>
         <source>256th</source>
         <translation>256ste</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/importpreferencesmodel.cpp" line="105"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/importpreferencesmodel.cpp" line="105"/>
         <source>512th</source>
         <translation>512de</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/importpreferencesmodel.cpp" line="106"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/importpreferencesmodel.cpp" line="106"/>
         <source>1024th</source>
         <translation>1024ste</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/importpreferencesmodel.cpp" line="119"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/importpreferencesmodel.cpp" line="119"/>
         <source>Choose default style for imports</source>
         <translation>Kies standaard stijl voor importeren</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="157"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="157"/>
         <source>General</source>
         <translation>Algemeen</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="160"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="160"/>
         <source>Appearance</source>
         <translation>Vorm</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="163"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="163"/>
         <source>Canvas</source>
         <translation>Werkblad</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="166"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="166"/>
         <source>Save &amp; publish</source>
         <translation>Opslaan &amp; publiceren</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="172"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="172"/>
         <source>Score</source>
         <translation>Partituur</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="175"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="175"/>
         <source>Audio &amp; MIDI</source>
         <translation>Audio &amp; MIDI</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="179"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="179"/>
         <source>MIDI mappings</source>
         <translation>MIDI-toewijzingen</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="183"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="183"/>
         <source>Video</source>
         <translation>Video</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="186"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="186"/>
         <source>Percussion</source>
         <translation>Percussie</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="189"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="189"/>
         <source>Import</source>
         <translation>Importeren</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="192"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="192"/>
         <source>Shortcuts</source>
         <translation>Sneltoetsen</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="198"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="198"/>
         <source>Advanced</source>
         <translation>Geavanceerd</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="201"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/preferencesmodel.cpp" line="201"/>
         <source>Braille</source>
         <translation>Braille</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/audiomidipreferencesmodel.cpp" line="64"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/audiomidipreferencesmodel.cpp" line="64"/>
         <source>No audio devices available</source>
         <translation>Geen audioapparaten beschikbaar</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/audiomidipreferencesmodel.cpp" line="65"/>
-        <source>The selected audio driver does not have any available audio devices. MuseScore Studio will use the default audio driver instead. To use %1, ensure your hardware is set up correctly, then restart MuseScore Studio and try again.</source>
-        <translation>De geselecteerde audiodriver heeft geen beschikbare audioapparaten. MuseScore Studio gebruikt in plaats daarvan de standaard audiodriver. Om %1 te gebruiken, moet u ervoor zorgen dat uw hardware correct is ingesteld, MuseScore Studio opnieuw opstarten en het nogmaals proberen.</translation>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/audiomidipreferencesmodel.cpp" line="65"/>
+        <source>The selected audio driver does not have any available audio devices. DB Score will use the default audio driver instead. To use %1, ensure your hardware is set up correctly, then restart DB Score and try again.</source>
+        <translation>De geselecteerde audiodriver heeft geen beschikbare audioapparaten. DB Score gebruikt in plaats daarvan de standaard audiodriver. Om %1 te gebruiken, moet u ervoor zorgen dat uw hardware correct is ingesteld, DB Score opnieuw opstarten en het nogmaals proberen.</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/PlaybackQualitySection.qml" line="30"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PlaybackQualitySection.qml" line="30"/>
         <source>Playback quality</source>
         <translation>Afspeelkwaliteit</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/PlaybackQualitySection.qml" line="41"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PlaybackQualitySection.qml" line="41"/>
         <source>Use warmer instrument sound (MS Basic/SoundFont only)</source>
         <translation>Gebruik een warmer instrumentgeluid (alleen MS Basic/SoundFont)</translation>
     </message>
@@ -34758,19 +34758,19 @@ mislukt: %2</translation>
 <context>
     <name>preferences/score</name>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/DefaultStyleSection.qml" line="47"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/DefaultStyleSection.qml" line="47"/>
         <source>Style for full score</source>
         <translation>Stijl voor volledige partituur</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/DefaultStyleSection.qml" line="54"/>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/DefaultStyleSection.qml" line="54"/>
         <source>Choose default style for full score</source>
         <translation>Kies standaard stijl voor volledige partituur</translation>
     </message>
     <message>
-        <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/DefaultStyleSection.qml" line="55"/>
-        <source>MuseScore style file</source>
-        <translation>MuseScore stijlbestand</translation>
+        <location filename="../../src/preferences/qml/DB Score/Preferences/internal/DefaultStyleSection.qml" line="55"/>
+        <source>DB Score style file</source>
+        <translation>DB Score stijlbestand</translation>
     </message>
 </context>
 <context>
@@ -34782,8 +34782,8 @@ mislukt: %2</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="130"/>
-        <source>Scores will appear here when you save a file to the cloud, or publish a score on &lt;a href=&quot;%1&quot;&gt;MuseScore.com&lt;/a&gt;.</source>
-        <translation>Partituren verschijnen hier als u een bestand in de cloud opslaat of publiceert op &lt;a href=&quot;%1&quot;&gt;MuseScore.com&lt;/a&gt;.</translation>
+        <source>Scores will appear here when you save a file to the cloud, or publish a score on &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;.</source>
+        <translation>Partituren verschijnen hier als u een bestand in de cloud opslaat of publiceert op &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="154"/>
@@ -34792,8 +34792,8 @@ mislukt: %2</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="155"/>
-        <source>Log in or create a new account on &lt;a href=&quot;%1&quot;&gt;MuseScore.com&lt;/a&gt; to view online scores.</source>
-        <translation>Log in of maak een nieuw account aan op &lt;a href=&quot;%1&quot;&gt;MuseScore.com&lt;/a&gt; om online partituren te bekijken.</translation>
+        <source>Log in or create a new account on &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; to view online scores.</source>
+        <translation>Log in of maak een nieuw account aan op &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; om online partituren te bekijken.</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="218"/>
@@ -34812,7 +34812,7 @@ mislukt: %2</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="171"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/RecentScoresView.qml" line="106"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ScoresPage/RecentScoresView.qml" line="106"/>
         <source>Modified</source>
         <extracomment>Stands for &quot;Last time that this score was modified&quot;. Used as the header of this column in the scores list.</extracomment>
         <translation>Aangepast</translation>
@@ -34821,202 +34821,202 @@ mislukt: %2</translation>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="252"/>
         <source>Views</source>
         <comment>number of views</comment>
-        <extracomment>Stands for &quot;The number of times this score was viewed on MuseScore.com&quot;. Used as the header of this column in the scores list.</extracomment>
+        <extracomment>Stands for &quot;The number of times this score was viewed on drumbearai.com&quot;. Used as the header of this column in the scores list.</extracomment>
         <translation>Weergaven</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/GeneralInfoView.qml" line="69"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/GeneralInfoView.qml" line="69"/>
         <source>Title</source>
         <translation>Titel</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/GeneralInfoView.qml" line="71"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/GeneralInfoView.qml" line="71"/>
         <location filename="../../src/project/internal/notationproject.cpp" line="88"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="200"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="200"/>
         <source>Untitled score</source>
         <translation>Naamloze partituur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/GeneralInfoView.qml" line="83"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="59"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/GeneralInfoView.qml" line="83"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="59"/>
         <source>Composer</source>
         <translation>Componist</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/GeneralInfoView.qml" line="85"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/GeneralInfoView.qml" line="85"/>
         <source>Composer / arranger</source>
         <translation>Componist / arrangeur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/GeneralInfoView.qml" line="109"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="58"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/GeneralInfoView.qml" line="109"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="58"/>
         <source>Subtitle</source>
         <translation>Ondertitel</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/GeneralInfoView.qml" line="122"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="61"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/GeneralInfoView.qml" line="122"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="61"/>
         <source>Lyricist</source>
         <translation>Tekstschrijver</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/GeneralInfoView.qml" line="138"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="63"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/GeneralInfoView.qml" line="138"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="63"/>
         <source>Copyright</source>
         <extracomment>The caption of a field to specify copyright information</extracomment>
         <translation>Copyright</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/CloudScoreIndicatorButton.qml" line="44"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ScoresPage/CloudScoreIndicatorButton.qml" line="44"/>
         <source>Stop download</source>
         <translation>Stop download</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/CloudScoreIndicatorButton.qml" line="44"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ScoresPage/CloudScoreIndicatorButton.qml" line="44"/>
         <source>Download score</source>
         <translation>Download partituur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/RecentScoresView.qml" line="59"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ScoresPage/RecentScoresView.qml" line="59"/>
         <source>Recent scores grid</source>
         <translation>Recente partituren weergave</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/RecentScoresView.qml" line="90"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ScoresPage/RecentScoresView.qml" line="90"/>
         <source>Recent scores list</source>
         <translation>Lijst met recente partituren</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/NewScoreDialog.qml" line="34"/>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresListView.qml" line="105"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/recentscoresmodel.cpp" line="68"/>
+        <location filename="../../src/project/qml/DB Score/Project/NewScoreDialog.qml" line="34"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresListView.qml" line="105"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ScoresPage/recentscoresmodel.cpp" line="68"/>
         <source>New score</source>
         <translation>Nieuwe partituur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ProjectPropertiesDialog.qml" line="112"/>
+        <location filename="../../src/project/qml/DB Score/Project/ProjectPropertiesDialog.qml" line="112"/>
         <source>New property</source>
         <translation>Nieuwe eigenschap</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ProjectUploadedDialog.qml" line="120"/>
+        <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="120"/>
         <source>All saved changes will now update to the cloud</source>
         <translation>Alle opgeslagen wijzigingen zullen nu geüpdatet worden naar de cloud.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ProjectUploadedDialog.qml" line="162"/>
-        <source>Publish your finished scores on MuseScore.com</source>
-        <translation>Publiceer uw voltooide partituren op MuseScore.com</translation>
+        <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="162"/>
+        <source>Publish your finished scores on drumbearai.com</source>
+        <translation>Publiceer uw voltooide partituren op drumbearai.com</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ProjectUploadedDialog.qml" line="187"/>
+        <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="187"/>
         <source>Create a portfolio to showcase your music</source>
         <translation>Bouw een portfolio op en laat uw muziek zien aan de wereld</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ProjectUploadedDialog.qml" line="188"/>
+        <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="188"/>
         <source>Gain followers and receive score comments and ratings</source>
         <translation>Krijg volgers en ontvang commentaar en beoordelingen op uw partituren</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ProjectUploadedDialog.qml" line="189"/>
+        <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="189"/>
         <source>Share your projects and collaborate with other musicians</source>
         <translation>Deel uw projecten en werk samen met andere muzikanten</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ProjectUploadedDialog.qml" line="223"/>
+        <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="223"/>
         <source>Watch video</source>
         <translation>Bekijk video</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ProjectUploadedDialog.qml" line="251"/>
+        <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="251"/>
         <source>View score online</source>
         <translation>Bekijk partituur online</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresGridView.qml" line="85"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresGridView.qml" line="85"/>
         <source>Scores grid</source>
         <translation>Raster met partituren</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresListView.qml" line="79"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresListView.qml" line="79"/>
         <source>Scores list</source>
         <translation>Lijst met partituren</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresListView.qml" line="150"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresListView.qml" line="150"/>
         <source>Name</source>
         <translation>Naam</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="88"/>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="95"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="88"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="95"/>
         <source>Scores</source>
         <translation>Partituren</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="108"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="108"/>
         <source>Search recent scores</source>
         <translation>Zoek recente partituren</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="143"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="143"/>
         <source>Scores tab bar</source>
         <translation>Partituren-tabbladbalk</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="154"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="154"/>
         <source>New &amp; recent</source>
         <translation>Nieuw &amp; recent</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="162"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="162"/>
         <source>My online scores</source>
         <translation>Mijn online partituren</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="177"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="177"/>
         <source>View buttons</source>
         <translation>Weergave-knoppen</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="189"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="189"/>
         <source>Refresh</source>
         <translation>Laad opnieuw</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="201"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="201"/>
         <source>Grid view</source>
         <translation>Rasterweergave</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="202"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="202"/>
         <source>List view</source>
         <translation>Lijstweergave</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="322"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="322"/>
         <source>Scores actions</source>
         <extracomment>accessibility name for the panel at the bottom of the &quot;Scores&quot; page</extracomment>
         <translation>Partituur acties</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="335"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="335"/>
         <source>Score manager (online)</source>
         <translation>Partituur beheerder (online)</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="354"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="354"/>
         <source>New</source>
         <translation>Nieuw</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="366"/>
+        <location filename="../../src/project/qml/DB Score/Project/ScoresPage.qml" line="366"/>
         <source>Open other…</source>
         <translation>Open andere…</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/UploadProgressDialog.qml" line="48"/>
+        <location filename="../../src/project/qml/DB Score/Project/UploadProgressDialog.qml" line="48"/>
         <source>Saving online…</source>
         <translation>Online opslaan…</translation>
     </message>
@@ -35038,18 +35038,18 @@ mislukt: %2</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="2361"/>
-        <source>This file contains errors that could cause MuseScore Studio to malfunction. Please fix those at the earliest, to prevent crashes and further corruptions.</source>
-        <translation>Dit bestand bevat fouten die problemen met MuseScore Studio kunnen veroorzaken. Verhelp deze fouten zo snel mogelijk, om crashes en verdere corrupties te voorkomen.</translation>
+        <source>This file contains errors that could cause DB Score to malfunction. Please fix those at the earliest, to prevent crashes and further corruptions.</source>
+        <translation>Dit bestand bevat fouten die problemen met DB Score kunnen veroorzaken. Verhelp deze fouten zo snel mogelijk, om crashes en verdere corrupties te voorkomen.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="107"/>
-        <source>MuseScore file</source>
-        <translation>MuseScore-bestand</translation>
+        <source>DB Score file</source>
+        <translation>DB Score-bestand</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="108"/>
-        <source>Uncompressed MuseScore folder (experimental)</source>
-        <translation>Niet-gecomprimeerde MuseScore-map (experimenteel)</translation>
+        <source>Uncompressed DB Score folder (experimental)</source>
+        <translation>Niet-gecomprimeerde DB Score-map (experimenteel)</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="485"/>
@@ -35079,8 +35079,8 @@ mislukt: %2</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1534"/>
-        <source>This score has become corrupted and contains errors. You can fix the errors manually, or save the score to your computer and get help for this issue on MuseScore.org.</source>
-        <translation>Deze partituur is corrupt geraakt en bevat fouten. U kunt deze fouten handmatig oplossen of u kunt de partituur op uw computer opslaan en hulp ontvangen met dit probleem op MuseScore.org.</translation>
+        <source>This score has become corrupted and contains errors. You can fix the errors manually, or save the score to your computer and get help for this issue on drumbearai.com.</source>
+        <translation>Deze partituur is corrupt geraakt en bevat fouten. U kunt deze fouten handmatig oplossen of u kunt de partituur op uw computer opslaan en hulp ontvangen met dit probleem op drumbearai.com.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1542"/>
@@ -35100,13 +35100,13 @@ mislukt: %2</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1574"/>
-        <source>You can continue saving it locally, although the file may become unusable. You can try to fix the errors manually, or get help for this issue on MuseScore.org.</source>
-        <translation>U kunt de partituur lokaal blijven opslaan, hoewel het bestand onbruikbaar kan worden. U kunt proberen de fouten handmatig te verhelpen of hulp vragen met dit probleem op MuseScore.org.</translation>
+        <source>You can continue saving it locally, although the file may become unusable. You can try to fix the errors manually, or get help for this issue on drumbearai.com.</source>
+        <translation>U kunt de partituur lokaal blijven opslaan, hoewel het bestand onbruikbaar kan worden. U kunt proberen de fouten handmatig te verhelpen of hulp vragen met dit probleem op drumbearai.com.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1576"/>
-        <source>You can continue saving it locally, although the file may become unusable. To preserve your score, revert to the last saved version, or fix the errors manually. You can also get help for this issue on MuseScore.org.</source>
-        <translation>U kunt de partituur lokaal blijven opslaan, hoewel het bestand onbruikbaar kan worden. Om uw partituur te behouden, kunt u terugkeren naar de laatst opgeslagen versie of de fouten handmatig verhelpen. U kunt ook hulp vragen met dit probleem op MuseScore.org.</translation>
+        <source>You can continue saving it locally, although the file may become unusable. To preserve your score, revert to the last saved version, or fix the errors manually. You can also get help for this issue on drumbearai.com.</source>
+        <translation>U kunt de partituur lokaal blijven opslaan, hoewel het bestand onbruikbaar kan worden. Om uw partituur te behouden, kunt u terugkeren naar de laatst opgeslagen versie of de fouten handmatig verhelpen. U kunt ook hulp vragen met dit probleem op drumbearai.com.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1584"/>
@@ -35120,8 +35120,8 @@ mislukt: %2</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1626"/>
-        <source>This score is corrupted. You can get help for this issue on MuseScore.org.</source>
-        <translation>Deze partituur is corrupt. U kunt hulp vragen met dit probleem op MuseScore.org.</translation>
+        <source>This score is corrupted. You can get help for this issue on drumbearai.com.</source>
+        <translation>Deze partituur is corrupt. U kunt hulp vragen met dit probleem op drumbearai.com.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1629"/>
@@ -35158,13 +35158,13 @@ mislukt: %2</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1788"/>
-        <source>This file was saved using a newer version of MuseScore Studio. Please visit &lt;a href=&quot;%1&quot;&gt;MuseScore.org&lt;/a&gt; to obtain the latest version.</source>
-        <translation>Dit bestand is opgeslagen met een nieuwere versie van MuseScore Studio. Bezoek &lt;a href=&quot;%1&quot;&gt;MuseScore.org&lt;/a&gt; om de nieuwste versie te verkrijgen.</translation>
+        <source>This file was saved using a newer version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; to obtain the latest version.</source>
+        <translation>Dit bestand is opgeslagen met een nieuwere versie van DB Score. Bezoek &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; om de nieuwste versie te verkrijgen.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1797"/>
-        <source>This file contains errors that could cause MuseScore Studio to malfunction.</source>
-        <translation>Dit bestand bevat fouten die problemen met MuseScore Studio kunnen veroorzaken.</translation>
+        <source>This file contains errors that could cause DB Score to malfunction.</source>
+        <translation>Dit bestand bevat fouten die problemen met DB Score kunnen veroorzaken.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1812"/>
@@ -35173,8 +35173,8 @@ mislukt: %2</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1814"/>
-        <source>Get help for this issue on MuseScore.org.</source>
-        <translation>Ontvang hulp met dit probleem op MuseScore.org.</translation>
+        <source>Get help for this issue on drumbearai.com.</source>
+        <translation>Ontvang hulp met dit probleem op drumbearai.com.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1836"/>
@@ -35183,8 +35183,8 @@ mislukt: %2</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1839"/>
-        <source>This file could not be opened. Please make sure that MuseScore Studio has permission to read this file.</source>
-        <translation>Dit bestand kon niet worden geopend. Controleer of MuseScore Studio toestemming heeft om dit bestand te lezen.</translation>
+        <source>This file could not be opened. Please make sure that DB Score has permission to read this file.</source>
+        <translation>Dit bestand kon niet worden geopend. Controleer of DB Score toestemming heeft om dit bestand te lezen.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1846"/>
@@ -35198,8 +35198,8 @@ mislukt: %2</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1928"/>
-        <source>MuseScore files</source>
-        <translation>MuseScore bestanden</translation>
+        <source>DB Score files</source>
+        <translation>DB Score bestanden</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1929"/>
@@ -35263,18 +35263,18 @@ mislukt: %2</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1941"/>
-        <source>Uncompressed MuseScore folders (experimental)</source>
-        <translation>Niet-gecomprimeerde MuseScore mappen (experimenteel)</translation>
+        <source>Uncompressed DB Score folders (experimental)</source>
+        <translation>Niet-gecomprimeerde DB Score mappen (experimenteel)</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1942"/>
-        <source>MuseScore developer files</source>
-        <translation>MuseScore ontwikkelingsbestanden</translation>
+        <source>DB Score developer files</source>
+        <translation>DB Score ontwikkelingsbestanden</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1943"/>
-        <source>MuseScore backup files</source>
-        <translation>MuseScore backup bestanden</translation>
+        <source>DB Score backup files</source>
+        <translation>DB Score backup bestanden</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1945"/>
@@ -35297,52 +35297,52 @@ mislukt: %2</translation>
         <translation>Mijn sjablonen</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="57"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="57"/>
         <source>Work title</source>
         <translation>Titel</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="60"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="60"/>
         <source>Arranger</source>
         <translation>Arrangeur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="62"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="62"/>
         <source>Translator</source>
         <translation>Vertaler</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="64"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="64"/>
         <source>Work number</source>
         <translation>Werknummer</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="65"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="65"/>
         <source>Movement title</source>
         <translation>Titel van deel</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="66"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="66"/>
         <source>Movement number</source>
         <translation>Deelnummer</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="67"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="67"/>
         <source>Creation date</source>
         <translation>Aanmaakdatum</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="68"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="68"/>
         <source>Platform</source>
         <translation>Platform</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="69"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="69"/>
         <source>Source</source>
         <translation>Bron</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/projectpropertiesmodel.cpp" line="70"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/projectpropertiesmodel.cpp" line="70"/>
         <source>Audio.com URL</source>
         <translation>Audio.com URL</translation>
     </message>
@@ -35351,10 +35351,10 @@ mislukt: %2</translation>
     <name>project/cloud</name>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="97"/>
-        <location filename="../../src/project/qml/MuseScore/Project/SaveToCloudDialog.qml" line="186"/>
-        <location filename="../../src/project/qml/MuseScore/Project/SaveToCloudDialog.qml" line="199"/>
+        <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="186"/>
+        <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="199"/>
         <source>Visibility</source>
-        <extracomment>visibility of a score on MuseScore.com: private, public or unlisted</extracomment>
+        <extracomment>visibility of a score on drumbearai.com: private, public or unlisted</extracomment>
         <translation>Zichtbaarheid</translation>
     </message>
     <message>
@@ -35373,12 +35373,12 @@ mislukt: %2</translation>
         <translation>Openbaar</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AlsoShareAudioComDialog.qml" line="117"/>
+        <location filename="../../src/project/qml/DB Score/Project/AlsoShareAudioComDialog.qml" line="117"/>
         <source>Would you also like to share your music on Audio.com?</source>
         <translation>Wilt u uw muziek ook delen op &lt;a href=&quot;%1&quot;&gt;Audio.com&lt;/a&gt;?</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AlsoShareAudioComDialog.qml" line="126"/>
+        <location filename="../../src/project/qml/DB Score/Project/AlsoShareAudioComDialog.qml" line="126"/>
         <source>Share your score’s audio with millions of listeners on this free streaming platform</source>
         <translation>Deel de audio van uw partituur met miljoenen luisteraars op dit gratis streamingplatform</translation>
     </message>
@@ -35388,30 +35388,30 @@ mislukt: %2</translation>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="450"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="456"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="462"/>
-        <source>MuseScore.com returned an error code: %1.</source>
-        <extracomment>%1 will be replaced with the error code that MuseScore.com returned; this might contain english text that is deliberately not translated</extracomment>
-        <translation>MuseScore.com heeft een foutcode gegeven: %1.</translation>
+        <source>drumbearai.com returned an error code: %1.</source>
+        <extracomment>%1 will be replaced with the error code that drumbearai.com returned; this might contain english text that is deliberately not translated</extracomment>
+        <translation>drumbearai.com heeft een foutcode gegeven: %1.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="468"/>
-        <source>MuseScore.com returned an unknown error code: %1.</source>
-        <extracomment>%1 will be replaced with the error code that MuseScore.com returned, which is a number.</extracomment>
-        <translation>MuseScore.com heeft een onbekende foutcode gegeven: %1.</translation>
+        <source>drumbearai.com returned an unknown error code: %1.</source>
+        <extracomment>%1 will be replaced with the error code that drumbearai.com returned, which is a number.</extracomment>
+        <translation>drumbearai.com heeft een onbekende foutcode gegeven: %1.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="471"/>
-        <source>MuseScore.com returned an unknown error code.</source>
-        <translation>MuseScore.com heeft een onbekende foutcode gegeven.</translation>
+        <source>drumbearai.com returned an unknown error code.</source>
+        <translation>drumbearai.com heeft een onbekende foutcode gegeven.</translation>
     </message>
     <message>
-        <source>Please try again later, or get help for this problem on MuseScore.org.</source>
-        <translation>Probeer het later opnieuw of ontvang hulp met dit probleem op MuseScore.org.</translation>
+        <source>Please try again later, or get help for this problem on drumbearai.com.</source>
+        <translation>Probeer het later opnieuw of ontvang hulp met dit probleem op drumbearai.com.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="477"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="609"/>
-        <source>Please try again later, or get help for this problem on MuseScore.com.</source>
-        <translation>Probeer het later opnieuw, of zoek hulp voor dit probleem op MuseScore.com.</translation>
+        <source>Please try again later, or get help for this problem on drumbearai.com.</source>
+        <translation>Probeer het later opnieuw, of zoek hulp voor dit probleem op drumbearai.com.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="493"/>
@@ -35421,8 +35421,8 @@ mislukt: %2</translation>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="496"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="563"/>
-        <source>Your MuseScore.com account needs to be verified first. Please activate your account via the link in the activation email.</source>
-        <translation>Uw MuseScore.com account moet eerst geverifieerd worden. Activeer uw account via de link in de activatie-email.</translation>
+        <source>Your drumbearai.com account needs to be verified first. Please activate your account via the link in the activation email.</source>
+        <translation>Uw drumbearai.com account moet eerst geverifieerd worden. Activeer uw account via de link in de activatie-email.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="500"/>
@@ -35437,8 +35437,8 @@ mislukt: %2</translation>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="517"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="604"/>
-        <source>Could not connect to &lt;a href=&quot;%1&quot;&gt;MuseScore.com&lt;/a&gt;. Please check your internet connection or try again later.</source>
-        <translation>Kon geen verbinding maken met &lt;a href=&quot;%1&quot;&gt;MuseScore.com&lt;/a&gt;. Controleer de internetverbinding of probeer het later opnieuw.</translation>
+        <source>Could not connect to &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;. Please check your internet connection or try again later.</source>
+        <translation>Kon geen verbinding maken met &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;. Controleer de internetverbinding of probeer het later opnieuw.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="522"/>
@@ -35449,51 +35449,51 @@ mislukt: %2</translation>
 <context>
     <name>project/convert</name>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ConvertFileToScoreDialog.qml" line="35"/>
+        <location filename="../../src/project/qml/DB Score/Project/ConvertFileToScoreDialog.qml" line="35"/>
         <source>Convert file to score</source>
         <translation>Converteer bestand naar partituur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ConvertFileToScoreDialog.qml" line="86"/>
+        <location filename="../../src/project/qml/DB Score/Project/ConvertFileToScoreDialog.qml" line="86"/>
         <source>Convert audio to score (beta)</source>
         <translation>Converteer audio naar partituur (bèta)</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ConvertFileToScoreDialog.qml" line="87"/>
+        <location filename="../../src/project/qml/DB Score/Project/ConvertFileToScoreDialog.qml" line="87"/>
         <source>Convert a file to score</source>
         <translation>Converteer een bestand naar een partituur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/FileRequirements.qml" line="66"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/FileRequirements.qml" line="89"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/FileRequirements.qml" line="66"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/FileRequirements.qml" line="89"/>
         <source>File requirements</source>
         <translation>Bestandsvereisten</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/SaveAsField.qml" line="45"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/SaveAsField.qml" line="45"/>
         <source>Save as</source>
         <translation>Sla op als</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/ConvertButtonBox.qml" line="57"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/ConvertButtonBox.qml" line="57"/>
         <source>Convert</source>
         <translation>Converteer</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="117"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="117"/>
         <source>Drag your file here</source>
         <translation>Sleep uw bestand hierheen</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="125"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="125"/>
         <source>Use a PDF, images, or MP3 (beta)</source>
         <translation>Gebruik een PDF, afbeeldingen of MP3 (beta)</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="190"/>
         <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="398"/>
-        <source>Log in or create a free account on MuseScore.com to convert a file.</source>
-        <translation>Log in of maak een gratis account aan op MuseScore.com om een ​​bestand te converteren.</translation>
+        <source>Log in or create a free account on drumbearai.com to convert a file.</source>
+        <translation>Log in of maak een gratis account aan op drumbearai.com om een ​​bestand te converteren.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="216"/>
@@ -35515,8 +35515,8 @@ mislukt: %2</translation>
         <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="269"/>
         <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="340"/>
         <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="703"/>
-        <source>Unable to connect to MuseScore.com</source>
-        <translation>Kan geen verbinding maken met MuseScore.com</translation>
+        <source>Unable to connect to drumbearai.com</source>
+        <translation>Kan geen verbinding maken met drumbearai.com</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="270"/>
@@ -35540,8 +35540,8 @@ mislukt: %2</translation>
         <translation>Dit bestand is te groot.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="218"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="240"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="218"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="240"/>
         <source>Uploading guidelines</source>
         <translation>Richtlijnen voor het uploaden</translation>
     </message>
@@ -35716,27 +35716,27 @@ mislukt: %2</translation>
         <translation>We werken voortdurend aan een betere partituurconversie. Laat ons weten wat u van deze conversie vindt.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="59"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="59"/>
         <source>%1 max</source>
         <translation>%1 max.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="65"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="65"/>
         <source>%1 max combined</source>
         <translation>%1 max. gecombineerd</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="224"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="224"/>
         <source>%1 pages max</source>
         <translation>%1 pagina&apos;s max.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="228"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="228"/>
         <source>PDF</source>
         <translation>PDF</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="255"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="255"/>
         <source>Max %1 images</source>
         <translation>Max. %1 afbeeldingen</translation>
     </message>
@@ -35745,22 +35745,22 @@ mislukt: %2</translation>
         <translation>De afbeeldingen worden in de volgorde waarin u ze uploadt samengevoegd tot één partituur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/filelistmodel.cpp" line="145"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/filelistmodel.cpp" line="145"/>
         <source>Images will be combined into one score in the order shown here</source>
         <translation>De afbeeldingen worden in de hier getoonde volgorde samengevoegd tot één partituur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/filelistmodel.cpp" line="268"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/filelistmodel.cpp" line="268"/>
         <source>%1/%2 used</source>
         <translation>%1/%2 gebruikt</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="259"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="259"/>
         <source>Images</source>
         <translation>Afbeeldingen</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="267"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="267"/>
         <source>%1 format</source>
         <translation>%1 formaat</translation>
     </message>
@@ -35773,106 +35773,106 @@ mislukt: %2</translation>
         <translation>%1 bestanden per upload</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="282"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="282"/>
         <source>Audio</source>
         <translation>Geluid</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="111"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="111"/>
         <source>Paste a link from %1 (beta)</source>
         <translation>Plak een link van %1 (beta)</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="107"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="107"/>
         <source>Paste a link from %1 or %2 (beta)</source>
         <translation>Plak een link van %1 of %2 (beta)</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="227"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="275"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="227"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="275"/>
         <source>1 file per conversion</source>
         <translation>1 bestand per conversie</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="277"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="277"/>
         <source>%1 files per conversion</source>
         <translation>%1 bestanden per conversie</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="342"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="342"/>
         <source>Or paste a link from %1 or %2 (beta)</source>
         <translation>Of plak een link van %1 of %2 (beta)</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="346"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="346"/>
         <source>Or paste a link from %1 (beta)</source>
         <translation>Of plak een link van %1 (beta)</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="406"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="406"/>
         <source>Supported files</source>
         <translation>Ondersteunde bestanden</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="407"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="407"/>
         <source>All files</source>
         <translation>Alle bestanden</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="414"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="417"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="414"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="417"/>
         <source>Choose file</source>
         <translation>Kies bestand</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="496"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="496"/>
         <source>No, stay here</source>
         <translation>Nee, blijf hier</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="497"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="497"/>
         <source>Yes, go back</source>
         <translation>Ja, ga terug</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="500"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="500"/>
         <source>Are you sure you want to go back?</source>
         <translation>Weet u zeker dat u terug wilt gaan?</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="501"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="501"/>
         <source>Your current selection will be lost.</source>
         <translation>Je huidige selectie gaat verloren.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="485"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="485"/>
         <source>“%1” cannot be used as a file name. Please choose a different name.</source>
         <translation>“%1” kan niet als bestandsnaam worden gebruikt. Kies een andere naam.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/ConvertFromLinkPanel.qml" line="94"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/ConvertFromLinkPanel.qml" line="94"/>
         <source>Convert from link</source>
         <translation>Converteer van link</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/LinkEntryPage.qml" line="120"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/LinkPastePanel.qml" line="82"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/LinkEntryPage.qml" line="120"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/LinkPastePanel.qml" line="82"/>
         <source>Link</source>
         <translation>Link</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/LinkEntryPage.qml" line="131"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="281"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/LinkEntryPage.qml" line="131"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="281"/>
         <source>Recommended for solo arrangements only</source>
         <translation>Alleen aanbevolen voor solo-arrangementen</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="83"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="83"/>
         <source>Selected files</source>
         <translation>Geselecteerde bestanden</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="225"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="225"/>
         <source>%1/%2 max files</source>
         <translation>%1/%2 max. bestanden</translation>
     </message>
@@ -35884,182 +35884,182 @@ mislukt: %2</translation>
 <context>
     <name>project/export</name>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ExportDialog.qml" line="34"/>
+        <location filename="../../src/project/qml/DB Score/Project/ExportDialog.qml" line="34"/>
         <location filename="../../src/project/internal/exportprojectscenario.cpp" line="93"/>
         <source>Export</source>
         <translation>Exporteer</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ExportDialog.qml" line="62"/>
+        <location filename="../../src/project/qml/DB Score/Project/ExportDialog.qml" line="62"/>
         <source>Select parts to export</source>
         <translation>Kies partijen om te exporteren</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ExportDialog.qml" line="90"/>
+        <location filename="../../src/project/qml/DB Score/Project/ExportDialog.qml" line="90"/>
         <source>Select all</source>
         <translation>Selecteer alles</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ExportDialog.qml" line="104"/>
+        <location filename="../../src/project/qml/DB Score/Project/ExportDialog.qml" line="104"/>
         <source>Clear selection</source>
         <translation>Wis selectie</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ExportDialog.qml" line="123"/>
+        <location filename="../../src/project/qml/DB Score/Project/ExportDialog.qml" line="123"/>
         <source>Export settings</source>
         <translation>Exportinstellingen</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ExportDialog.qml" line="151"/>
+        <location filename="../../src/project/qml/DB Score/Project/ExportDialog.qml" line="151"/>
         <source>Export…</source>
         <translation>Exporteer…</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/AudioSettings.qml" line="47"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/AudioSettings.qml" line="47"/>
         <source>Sample rate:</source>
         <translation>Sample rate:</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/AudioSettings.qml" line="58"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/AudioSettings.qml" line="58"/>
         <source>%1 Hz</source>
         <translation>%1 Hz</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/AudioSettings.qml" line="72"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/AudioSettings.qml" line="72"/>
         <source>Bit rate:</source>
         <translation>Bitrate:</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/AudioSettings.qml" line="83"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/AudioSettings.qml" line="83"/>
         <source>%1 kBit/s</source>
         <translation>%1 kBit/s</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/AudioSettings.qml" line="97"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/AudioSettings.qml" line="97"/>
         <source>Sample format:</source>
         <translation>Sample formaat:</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/AacSettingsPage.qml" line="39"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/FlacSettingsPage.qml" line="38"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/Mp3SettingsPage.qml" line="39"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/OggSettingsPage.qml" line="39"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/WavSettingsPage.qml" line="38"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/AacSettingsPage.qml" line="39"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/FlacSettingsPage.qml" line="38"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/Mp3SettingsPage.qml" line="39"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/OggSettingsPage.qml" line="39"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/WavSettingsPage.qml" line="38"/>
         <source>Each selected part will be exported as a separate audio file.</source>
         <translation>Elke gekozen partij wordt geëxporteerd als een apart audiobestand.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/ExportOptionsView.qml" line="59"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/ExportOptionsView.qml" line="59"/>
         <source>Format:</source>
         <translation>Formaat:</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/ExportOptionsView.qml" line="102"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/ExportOptionsView.qml" line="102"/>
         <source>File type:</source>
         <translation>Bestandstype:</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/ExportOptionsView.qml" line="197"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/ExportOptionsView.qml" line="197"/>
         <source>Open destination folder on export</source>
         <translation>Doelmap openen bij exporteren</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/ExportScoresListView.qml" line="81"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/ExportScoresListView.qml" line="81"/>
         <source>Main score</source>
         <translation>Hoofdpartituur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/LrcSettingsPage.qml" line="31"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/LrcSettingsPage.qml" line="31"/>
         <source>LRC enhanced format</source>
         <translation>LRC enhanced formaat</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/MeiSettingsPage.qml" line="31"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/MeiSettingsPage.qml" line="31"/>
         <source>Include page and system breaks</source>
         <translation>Pagina- en systeemonderbrekingen invoegen</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/MeiSettingsPage.qml" line="45"/>
-        <source>Use MuseScore element IDs</source>
-        <translation>Gebruik MuseScore-element-IDs</translation>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/MeiSettingsPage.qml" line="45"/>
+        <source>Use DB Score element IDs</source>
+        <translation>Gebruik DB Score-element-IDs</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/MidiSettingsPage.qml" line="31"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/MidiSettingsPage.qml" line="31"/>
         <source>Expand repeats</source>
         <translation>Schrijf herhalingen uit</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/MidiSettingsPage.qml" line="45"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/MidiSettingsPage.qml" line="45"/>
         <source>Export RPNs</source>
         <translation>Exporteer RPNs</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/MidiSettingsPage.qml" line="59"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/MidiSettingsPage.qml" line="59"/>
         <source>Each selected part will be exported as a separate MIDI file.</source>
         <translation>Elke gekozen partij wordt geëxporteerd als een apart MIDI-bestand.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/MnxSettingsPage.qml" line="32"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/MnxSettingsPage.qml" line="32"/>
         <source>Disable to let the importing app choose beam groupings.</source>
         <translation>Schakel deze optie uit om de import-app de waardestrepen te laten kiezen.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/MnxSettingsPage.qml" line="34"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/MnxSettingsPage.qml" line="34"/>
         <source>Enable to export the staff line of every rest. Disable to let the importing app decide.</source>
         <translation>Schakel deze optie in om de notenbalk van elke rust te exporteren. Schakel deze optie uit om de import door de app te laten bepalen.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/MnxSettingsPage.qml" line="38"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/MnxSettingsPage.qml" line="38"/>
         <source>JSON indent:</source>
         <translation>JSON-inspringing:</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/MnxSettingsPage.qml" line="50"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/MnxSettingsPage.qml" line="50"/>
         <source>No line breaks</source>
         <translation>Geen regeleinden</translation>
     </message>
     <message numerus="yes">
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/MnxSettingsPage.qml" line="52"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/MnxSettingsPage.qml" line="52"/>
         <source>%n space(s)</source>
         <translation><numerusform>1 spatie</numerusform><numerusform>%n spaties</numerusform></translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/MnxSettingsPage.qml" line="92"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/MnxSettingsPage.qml" line="92"/>
         <source>Export beams</source>
         <translation>Exporteer waardestrepen</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/MnxSettingsPage.qml" line="118"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/MnxSettingsPage.qml" line="118"/>
         <source>Export rest positions</source>
         <translation>Exporteer rust posities</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/PdfSettingsPage.qml" line="33"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/PngSettingsPage.qml" line="33"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/PdfSettingsPage.qml" line="33"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/PngSettingsPage.qml" line="33"/>
         <source>Resolution:</source>
         <translation>Resolutie:</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/PdfSettingsPage.qml" line="61"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/PngSettingsPage.qml" line="60"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/SvgSettingsPage.qml" line="31"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/PdfSettingsPage.qml" line="61"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/PngSettingsPage.qml" line="60"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/SvgSettingsPage.qml" line="31"/>
         <source>Transparent background</source>
         <translation>Transparante achtergrond</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/PdfSettingsPage.qml" line="76"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/PngSettingsPage.qml" line="74"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/PdfSettingsPage.qml" line="76"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/PngSettingsPage.qml" line="74"/>
         <source>Grayscale</source>
         <translation>Grijswaarden</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/PngSettingsPage.qml" line="89"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/SvgSettingsPage.qml" line="59"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/PngSettingsPage.qml" line="89"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/SvgSettingsPage.qml" line="59"/>
         <source>Each page of the selected parts will be exported as a separate %1 file.</source>
         <translation>Iedere pagina van de geselecteerde partijen wordt geëxporteerd als een apart %1 bestand.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/SvgSettingsPage.qml" line="45"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/SvgSettingsPage.qml" line="45"/>
         <source>Masking compatibility (Adobe Illustrator only)</source>
         <translation>Masking-compatibiliteit met Adobe Illustrator</translation>
     </message>
@@ -36141,241 +36141,241 @@ mislukt: %2</translation>
         <translation>Bezig met exporteren…</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="55"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="55"/>
         <source>Compressed</source>
         <translation>Gecomprimeerd</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="56"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="56"/>
         <source>Compressed MusicXML files</source>
         <translation>Gecomprimeerde MusicXML-bestanden</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="59"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="59"/>
         <source>Uncompressed</source>
         <translation>Ongecomprimeerd</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="60"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="64"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="60"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="64"/>
         <source>Uncompressed MusicXML files</source>
         <translation>Niet-gecomprimeerde MusicXML-bestanden</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="63"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="63"/>
         <source>Uncompressed (outdated)</source>
         <translation>Ongecomprimeerd (verouderd)</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="70"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="70"/>
         <source>PDF file</source>
         <translation>PDF-bestand</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="71"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="71"/>
         <source>PDF files</source>
         <translation>PDF-bestanden</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="74"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="75"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="74"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="75"/>
         <source>PNG images</source>
         <translation>PNG-afbeeldingen</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="78"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="79"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="78"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="79"/>
         <source>SVG images</source>
         <translation>SVG-afbeeldingen</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="82"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="82"/>
         <source>MP3 audio</source>
         <translation>MP3-audio</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="83"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="83"/>
         <source>MP3 audio files</source>
         <translation>MP3-audiobestanden</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="86"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="86"/>
         <source>WAV audio</source>
         <translation>WAV-audio</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="87"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="87"/>
         <source>WAV audio files</source>
         <translation>WAV-audiobestanden</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="90"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="90"/>
         <source>OGG audio</source>
         <translation>OGG-audio</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="91"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="91"/>
         <source>OGG audio files</source>
         <translation>OGG-audiobestanden</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="94"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="94"/>
         <source>FLAC audio</source>
         <translation>FLAC-audio</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="95"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="95"/>
         <source>FLAC audio files</source>
         <translation>FLAC-audiobestanden</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="98"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="98"/>
         <source>AAC audio</source>
         <translation>AAC-audio</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="99"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="99"/>
         <source>AAC audio files</source>
         <translation>AAC-audiobestanden</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="103"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="104"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="103"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="104"/>
         <source>MP4 video</source>
         <translation>MP4 video</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="108"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="108"/>
         <source>MIDI file</source>
         <translation>MIDI-bestand</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="109"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="109"/>
         <source>MIDI files</source>
         <translation>MIDI-bestanden</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="112"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="112"/>
         <source>MusicXML</source>
         <translation>MusicXML</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="117"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="117"/>
         <source>Braille (basic bar-over-bar)</source>
-        <extracomment>Meaning like &quot;measure-over-measure&quot;, but called &quot;bar-over-bar&quot; even in US English. Not to be confused with &quot;bar-by-bar&quot; format. See https://handbook.musescore.org/file-management/file-export#braille</extracomment>
+        <extracomment>Meaning like &quot;measure-over-measure&quot;, but called &quot;bar-over-bar&quot; even in US English. Not to be confused with &quot;bar-by-bar&quot; format. See https://handbook.drumbearai.com/file-management/file-export#braille</extracomment>
         <translation>Braille (basis maat-boven-maat-notatie)</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="118"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="118"/>
         <source>Braille files</source>
         <translation>Braille-bestanden</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="120"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="120"/>
         <source>MEI</source>
         <translation>MEI</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="121"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="121"/>
         <source>MEI files</source>
         <translation>MEI-bestanden</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="124"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="124"/>
         <source>MNX (experimental)</source>
         <translation>MNX (experimenteel)</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="125"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="125"/>
         <source>MNX files (experimental)</source>
         <translation>MNX bestanden (experimenteel)</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="128"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="128"/>
         <source>LRC file</source>
         <translation>LRC bestand</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="129"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="129"/>
         <source>LRC files</source>
         <translation>LRC bestanden</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="370"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="370"/>
         <source>Each page to a separate file</source>
         <translation>Elke pagina in een apart bestand</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="371"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="371"/>
         <source>Each part to a separate file</source>
         <translation>Elke partij in een apart bestand</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="372"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="372"/>
         <source>All parts combined in one file</source>
         <translation>Alle partijen gecombineerd in één bestand</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="628"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="628"/>
         <source>Use page layout</source>
         <translation>Gebruik pagina-indeling</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="629"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="629"/>
         <source>Reflow to fit video resolution</source>
         <translation>Aanpassen aan videoresolutie</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="857"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="857"/>
         <source>All layout</source>
         <extracomment>Specifies to which extent layout customizations should be exported to MusicXML.</extracomment>
         <translation>Alle opmaak</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="859"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="859"/>
         <source>System and page breaks</source>
         <extracomment>Specifies to which extent layout customizations should be exported to MusicXML.</extracomment>
         <translation>Systeemomslagen en pagina-eindes</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="861"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="861"/>
         <source>Manually added system and page breaks only</source>
         <extracomment>Specifies to which extent layout customizations should be exported to MusicXML.</extracomment>
         <translation>Alleen handmatig toegevoegde systeemomslagen en pagina-eindes</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/exportdialogmodel.cpp" line="863"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="863"/>
         <source>No system or page breaks</source>
         <extracomment>Specifies to which extent layout customizations should be exported to MusicXML.</extracomment>
         <translation>Geen systeemomslagen of pagina-eindes</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/Mp4SettingsPage.qml" line="51"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/Mp4SettingsPage.qml" line="51"/>
         <source>To export to this file format, an FFmpeg installation is required. You can also configure this in Preferences &gt; Video.</source>
         <translation>Om naar dit bestandsformaat te exporteren, is een FFmpeg-installatie vereist. U kunt dit ook configureren in Voorkeuren &gt; Video.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/Mp4SettingsPage.qml" line="59"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/Mp4SettingsPage.qml" line="59"/>
         <source>Download FFmpeg</source>
         <translation>Download FFmpeg</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/Mp4SettingsPage.qml" line="77"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/Mp4SettingsPage.qml" line="77"/>
         <source>Choose FFmpeg library folder</source>
         <translation>Kies FFmpeg-bibliotheekmap</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/Mp4SettingsPage.qml" line="80"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/Mp4SettingsPage.qml" line="80"/>
         <source>Locate existing installation</source>
         <translation>Lokaliseer bestaande installatie</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/Mp4SettingsPage.qml" line="116"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/Mp4SettingsPage.qml" line="116"/>
         <source>Video resolution</source>
         <translation>Videoresolutie</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Export/Mp4SettingsPage.qml" line="165"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Export/Mp4SettingsPage.qml" line="165"/>
         <source>Each selected part will be exported as a separate video file.</source>
         <translation>Elke gekozen partij wordt geëxporteerd als een apart videobestand.</translation>
     </message>
@@ -36383,53 +36383,53 @@ mislukt: %2</translation>
 <context>
     <name>project/migration</name>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentFor362.qml" line="69"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentForPre362.qml" line="78"/>
-        <source>This file was last saved in MuseScore %1</source>
-        <translation>Dit bestand is voor het laatst opgeslagen in MuseScore %1</translation>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Migration/MigrationContentFor362.qml" line="69"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Migration/MigrationContentForPre362.qml" line="78"/>
+        <source>This file was last saved in DB Score %1</source>
+        <translation>Dit bestand is voor het laatst opgeslagen in DB Score %1</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentFor362.qml" line="75"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Migration/MigrationContentFor362.qml" line="75"/>
         <source>Please note that the appearance of your score will change due to improvements we have made to default settings for beaming, ties, slurs, system objects and horizontal spacing.</source>
         <translation>Houd er rekening mee dat het uiterlijk van uw partituur zal veranderen als gevolg van verbeteringen die we hebben aangebracht in de standaardinstellingen voor waardestrepen, overbindingen, legato-bogen, systeemelementen en horizontale spatiëring.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentFor362.qml" line="85"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Migration/MigrationContentFor362.qml" line="85"/>
         <source>Use our new notation and sound mapping for &lt;a href=&quot;%1&quot;&gt;MDL percussion&lt;/a&gt;</source>
         <translation>Gebruik onze nieuwe notatie en geluidmapping voor &lt;a href=&quot;%1&quot;&gt;MDL percussie&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentFor362.qml" line="100"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Migration/MigrationContentFor362.qml" line="100"/>
         <source>Watch video about changes</source>
         <translation>Bekijk video over de veranderingen</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentForPre362.qml" line="83"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Migration/MigrationContentForPre362.qml" line="83"/>
         <source>Select the engraving improvements you would like to apply to your score</source>
         <translation>Selecteer de verbeteringen die u op uw partituur wilt toepassen</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentForPre362.qml" line="112"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Migration/MigrationContentForPre362.qml" line="112"/>
         <source>Our new notation font, Leland</source>
         <translation>Ons nieuwe muzieknotatie-lettertype, Leland</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentForPre362.qml" line="125"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Migration/MigrationContentForPre362.qml" line="125"/>
         <source>Our new text font, Edwin</source>
         <translation>Ons nieuwe tekstlettertype, Edwin</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentForPre362.qml" line="138"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Migration/MigrationContentForPre362.qml" line="138"/>
         <source>Our new notation and sound mapping for &lt;a href=&quot;%1&quot;&gt;MDL percussion&lt;/a&gt;</source>
         <translation>Onze nieuwe notatie en geluidmapping voor &lt;a href=&quot;%1&quot;&gt;MDL percussie&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentForPre362.qml" line="157"/>
-        <source>Please note: score layouts will be affected by improvements to MuseScore Studio</source>
-        <translation>Let op: de opmaak van de partituur kan worden beïnvloed door verbeteringen in MuseScore Studio.</translation>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Migration/MigrationContentForPre362.qml" line="157"/>
+        <source>Please note: score layouts will be affected by improvements to DB Score</source>
+        <translation>Let op: de opmaak van de partituur kan worden beïnvloed door verbeteringen in DB Score.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentForPre362.qml" line="162"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Migration/MigrationContentForPre362.qml" line="162"/>
         <source>Watch video</source>
         <translation>Bekijk video</translation>
     </message>
@@ -36437,333 +36437,333 @@ mislukt: %2</translation>
 <context>
     <name>project/newscore</name>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/AdditionalInfoView.qml" line="71"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/AdditionalInfoView.qml" line="71"/>
         <source>Score options</source>
         <translation>Partituur opties</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/AdditionalInfoView.qml" line="91"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/AdditionalInfoView.qml" line="91"/>
         <source>Key signature</source>
         <translation>Toonsoort</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/AdditionalInfoView.qml" line="129"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/AdditionalInfoView.qml" line="129"/>
         <source>Time signature</source>
         <translation>Maatsoort</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/AdditionalInfoView.qml" line="164"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/AdditionalInfoView.qml" line="164"/>
         <source>Tempo</source>
         <translation>Tempo</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/AdditionalInfoView.qml" line="199"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/AdditionalInfoView.qml" line="199"/>
         <source>Measures</source>
         <translation>Maten</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/ChooseInstrumentsAndTemplatesPage.qml" line="122"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/ChooseInstrumentsAndTemplatesPage.qml" line="122"/>
         <source>Choose instruments</source>
         <translation>Kies instrumenten</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/ChooseInstrumentsAndTemplatesPage.qml" line="132"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/ChooseInstrumentsAndTemplatesPage.qml" line="132"/>
         <source>Create from template</source>
         <translation>Maak van sjabloon</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/CreateFromTemplatePage.qml" line="70"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/CreateFromTemplatePage.qml" line="70"/>
         <source>Category</source>
         <translation>Categorie</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/CreateFromTemplatePage.qml" line="98"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/CreateFromTemplatePage.qml" line="98"/>
         <source>Template</source>
         <translation>Sjabloon</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/CreateFromTemplatePage.qml" line="150"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/CreateFromTemplatePage.qml" line="150"/>
         <source>Zoom in</source>
         <translation>Zoom in</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/CreateFromTemplatePage.qml" line="163"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/CreateFromTemplatePage.qml" line="163"/>
         <source>Zoom out</source>
         <translation>Zoom uit</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/GeneralInfoView.qml" line="49"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/GeneralInfoView.qml" line="49"/>
         <source>General score info</source>
         <translation>Algemene partituurinformatie</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/KeySignatureListView.qml" line="91"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/KeySignatureListView.qml" line="91"/>
         <source>Not selected</source>
         <translation>Niet geselecteerd</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/KeySignatureSettings.qml" line="100"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/KeySignatureSettings.qml" line="100"/>
         <source>Major</source>
         <comment>key signature mode</comment>
         <extracomment>mode of a key signature, not an interval</extracomment>
         <translation>Majeur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/KeySignatureSettings.qml" line="109"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/KeySignatureSettings.qml" line="109"/>
         <source>Minor</source>
         <comment>key signature mode</comment>
         <extracomment>mode of a key signature, not an interval</extracomment>
         <translation>Mineur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/MeasuresSettings.qml" line="52"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/MeasuresSettings.qml" line="52"/>
         <source>pickup:</source>
         <translation>opmaat: </translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/MeasuresSettings.qml" line="56"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/MeasuresSettings.qml" line="56"/>
         <source>no pickup</source>
         <translation>geen opmaat</translation>
     </message>
     <message numerus="yes">
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/MeasuresSettings.qml" line="60"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/MeasuresSettings.qml" line="60"/>
         <source>%Ln measure(s),</source>
         <translation><numerusform>%Ln maat</numerusform><numerusform>%Ln maten</numerusform></translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/MeasuresSettings.qml" line="103"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/MeasuresSettings.qml" line="103"/>
         <source>Create pickup measure</source>
         <translation>Maak opmaat</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/MeasuresSettings.qml" line="149"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/MeasuresSettings.qml" line="149"/>
         <source>Initial number of measures</source>
         <translation>Initieel aantal maten</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/MeasuresSettings.qml" line="190"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/MeasuresSettings.qml" line="190"/>
         <source>Hint: You can also add &amp; delete measures after you have created your score</source>
         <translation>Hint: maten kunnen nog worden toegevoegd of verwijderd na het maken van een partituur.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/ScoreInfoPage.qml" line="71"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/ScoreInfoPage.qml" line="71"/>
         <source>Additional score information</source>
         <translation>Aanvullende partituurinformatie</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/TemplatePreview.qml" line="48"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/TemplatePreview.qml" line="48"/>
         <source>Preview</source>
         <translation>Voorbeeld</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/TempoSettings.qml" line="99"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/TempoSettings.qml" line="99"/>
         <source>Show tempo marking on my score</source>
         <translation>Toon tempomarkering in partituur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="97"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="118"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="97"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="118"/>
         <source>C major</source>
         <translation>C majeur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="97"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="118"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="97"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="118"/>
         <source>A minor</source>
         <translation>A mineur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="120"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="120"/>
         <source>G major</source>
         <translation>G majeur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="120"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="120"/>
         <source>E minor</source>
         <translation>E mineur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="122"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="122"/>
         <source>D major</source>
         <translation>D majeur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="122"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="122"/>
         <source>B minor</source>
         <translation>B mineur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="124"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="124"/>
         <source>A major</source>
         <translation>A majeur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="124"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="124"/>
         <source>F♯ minor</source>
         <translation>F♯ mineur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="126"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="126"/>
         <source>E major</source>
         <translation>E majeur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="126"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="126"/>
         <source>C♯ minor</source>
         <translation>C♯ mineur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="128"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="128"/>
         <source>B major</source>
         <translation>B majeur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="128"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="128"/>
         <source>G♯ minor</source>
         <translation>G♯ mineur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="130"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="130"/>
         <source>F♯ major</source>
         <translation>F♯ majeur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="130"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="130"/>
         <source>D♯ minor</source>
         <translation>D♯ mineur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="132"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="132"/>
         <source>C♯ major</source>
         <translation>C♯ majeur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="132"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="132"/>
         <source>A♯ minor</source>
         <translation>A♯ mineur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="134"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="134"/>
         <source>Open/Atonal</source>
         <translation>Open/atonaal</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="136"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="136"/>
         <source>F major</source>
         <translation>F majeur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="136"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="136"/>
         <source>D minor</source>
         <translation>D mineur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="138"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="138"/>
         <source>B♭ major</source>
         <translation>B♭ majeur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="138"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="138"/>
         <source>G minor</source>
         <translation>G mineur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="140"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="140"/>
         <source>E♭ major</source>
         <translation>E♭ majeur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="140"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="140"/>
         <source>C minor</source>
         <translation>C mineur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="142"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="142"/>
         <source>A♭ major</source>
         <translation>A♭ majeur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="142"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="142"/>
         <source>F minor</source>
         <translation>F mineur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="144"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="144"/>
         <source>D♭ major</source>
         <translation>D♭ majeur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="144"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="144"/>
         <source>B♭ minor</source>
         <translation>B♭ mineur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="146"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="146"/>
         <source>G♭ major</source>
         <translation>G♭ majeur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="146"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="146"/>
         <source>E♭ minor</source>
         <translation>E♭ mineur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="148"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="148"/>
         <source>C♭ major</source>
         <translation>C♭ majeur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="148"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="148"/>
         <source>A♭ minor</source>
         <translation>A♭ mineur</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="327"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="327"/>
         <source>Dotted 16th note</source>
         <translation>Gepunteerde 16de noot</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="327"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="327"/>
         <source>16th note</source>
         <translation>16de noot</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="329"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="329"/>
         <source>Dotted eighth note</source>
         <translation>Gepunteerde achtste noot</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="329"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="329"/>
         <source>Eighth note</source>
         <translation>Achtste noot</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="331"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="331"/>
         <source>Dotted quarter note</source>
         <translation>Gepunteerde kwartnoot</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="331"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="331"/>
         <source>Quarter note</source>
         <translation>Kwartnoot</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="333"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="333"/>
         <source>Dotted half note</source>
         <translation>Gepunteerde halve noot</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="333"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="333"/>
         <source>Half note</source>
         <translation>Halve noot</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="335"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="335"/>
         <source>Dotted whole note</source>
         <translation>Gepunteerde hele noot</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="335"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/NewScore/additionalinfomodel.cpp" line="335"/>
         <source>Whole note</source>
         <translation>Hele noot</translation>
     </message>
@@ -36771,38 +36771,38 @@ mislukt: %2</translation>
 <context>
     <name>project/properties</name>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/ProjectPropertiesFileInfoPanel.qml" line="51"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/ProjectPropertiesFileInfoPanel.qml" line="51"/>
         <source>File path:</source>
         <translation>Bestandspad:</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/ProjectPropertiesFileInfoPanel.qml" line="81"/>
-        <source>MuseScore Studio version:</source>
-        <translation>MuseScore Studio-versie:</translation>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/ProjectPropertiesFileInfoPanel.qml" line="81"/>
+        <source>DB Score version:</source>
+        <translation>DB Score-versie:</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/ProjectPropertiesFileInfoPanel.qml" line="90"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/ProjectPropertiesFileInfoPanel.qml" line="90"/>
         <source>Revision:</source>
         <translation>Revisie:</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/ProjectPropertiesFileInfoPanel.qml" line="104"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/ProjectPropertiesFileInfoPanel.qml" line="104"/>
         <source>API-Level:</source>
         <translation>API-niveau:</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/PropertyItem.qml" line="76"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/PropertyItem.qml" line="76"/>
         <source>Property</source>
         <translation>Eigenschap</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/PropertyItem.qml" line="106"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/Properties/PropertyItem.qml" line="131"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/PropertyItem.qml" line="106"/>
+        <location filename="../../src/project/qml/DB Score/Project/internal/Properties/PropertyItem.qml" line="131"/>
         <source>Value</source>
         <translation>Waarde</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ProjectPropertiesDialog.qml" line="34"/>
+        <location filename="../../src/project/qml/DB Score/Project/ProjectPropertiesDialog.qml" line="34"/>
         <source>Project properties</source>
         <translation>Project-eigenschappen</translation>
     </message>
@@ -36811,124 +36811,124 @@ mislukt: %2</translation>
     <name>project/save</name>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/RequireAuthorizationDialog.qml" line="75"/>
-        <location filename="../../src/project/qml/MuseScore/Project/AskSaveLocationTypeDialog.qml" line="98"/>
-        <location filename="../../src/project/qml/MuseScore/Project/SaveToCloudDialog.qml" line="248"/>
+        <location filename="../../src/project/qml/DB Score/Project/AskSaveLocationTypeDialog.qml" line="98"/>
+        <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="248"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="408"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="552"/>
         <source>Save to computer</source>
         <translation>Sla op computer op</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AskSaveLocationTypeDialog.qml" line="60"/>
+        <location filename="../../src/project/qml/DB Score/Project/AskSaveLocationTypeDialog.qml" line="60"/>
         <source>How would you like to save?</source>
         <translation>Hoe wilt u opslaan?</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AskSaveLocationTypeDialog.qml" line="78"/>
+        <location filename="../../src/project/qml/DB Score/Project/AskSaveLocationTypeDialog.qml" line="78"/>
         <source>To the cloud (free)</source>
         <translation>In de cloud (gratis)</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AskSaveLocationTypeDialog.qml" line="79"/>
+        <location filename="../../src/project/qml/DB Score/Project/AskSaveLocationTypeDialog.qml" line="79"/>
         <source>Files are saved privately on your own personal account. You can share drafts with others and publish your finished scores publicly too.</source>
         <translation>Bestanden worden privé opgeslagen op uw eigen persoonlijke account. U kunt concepten met anderen delen en uw voltooide partituren ook openbaar publiceren.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AskSaveLocationTypeDialog.qml" line="81"/>
+        <location filename="../../src/project/qml/DB Score/Project/AskSaveLocationTypeDialog.qml" line="81"/>
         <source>Save to the cloud</source>
         <translation>Sla op in de cloud</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AskSaveLocationTypeDialog.qml" line="87"/>
+        <location filename="../../src/project/qml/DB Score/Project/AskSaveLocationTypeDialog.qml" line="87"/>
         <source>Save to the cloud (free)</source>
         <translation>Sla op in de cloud (gratis)</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AskSaveLocationTypeDialog.qml" line="96"/>
+        <location filename="../../src/project/qml/DB Score/Project/AskSaveLocationTypeDialog.qml" line="96"/>
         <source>On your computer</source>
         <translation>Op uw computer</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AskSaveLocationTypeDialog.qml" line="97"/>
+        <location filename="../../src/project/qml/DB Score/Project/AskSaveLocationTypeDialog.qml" line="97"/>
         <source>If you prefer to save your files on your computer, you can do that here.</source>
         <translation>Als u uw bestanden liever op uw computer opslaat, kunt u dat hier doen.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AskSaveLocationTypeDialog.qml" line="104"/>
+        <location filename="../../src/project/qml/DB Score/Project/AskSaveLocationTypeDialog.qml" line="104"/>
         <source>Save on your computer</source>
         <translation>Sla op uw computer op</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AudioGenerationSettings.qml" line="65"/>
+        <location filename="../../src/project/qml/DB Score/Project/AudioGenerationSettings.qml" line="65"/>
         <source>Never</source>
         <translation>Nooit</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AudioGenerationSettings.qml" line="66"/>
+        <location filename="../../src/project/qml/DB Score/Project/AudioGenerationSettings.qml" line="66"/>
         <source>Always</source>
         <translation>Altijd</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AudioGenerationSettings.qml" line="141"/>
+        <location filename="../../src/project/qml/DB Score/Project/AudioGenerationSettings.qml" line="141"/>
         <source>Every %1 saves</source>
         <extracomment>`%1` will be replaced with a number input field. Text before it will appear before that number field, text after will appear after the field.</extracomment>
         <translation>Elke %1 notenbalken</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AudioGenerationSettings.qml" line="174"/>
-        <location filename="../../src/project/qml/MuseScore/Project/AudioGenerationSettings.qml" line="195"/>
+        <location filename="../../src/project/qml/DB Score/Project/AudioGenerationSettings.qml" line="174"/>
+        <location filename="../../src/project/qml/DB Score/Project/AudioGenerationSettings.qml" line="195"/>
         <source>Every N saves</source>
         <extracomment>Accessibility name for &quot;Every N saves&quot; radio button in MP3 generation settings dialog</extracomment>
         <translation>Elke N keer opslaan</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AudioGenerationSettingsDialog.qml" line="77"/>
+        <location filename="../../src/project/qml/DB Score/Project/AudioGenerationSettingsDialog.qml" line="77"/>
         <source>Generate MP3 audio for web playback?</source>
         <translation>MP3-audio genereren voor afspelen op het web?</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/AudioGenerationSettingsDialog.qml" line="87"/>
+        <location filename="../../src/project/qml/DB Score/Project/AudioGenerationSettingsDialog.qml" line="87"/>
         <source>This could take a few minutes each time you save, depending on the size of your score. These settings can always be changed in Preferences.</source>
         <translation>Dit kan enkele minuten duren elke keer dat u opslaat, afhankelijk van de grootte van de partituur. Deze instellingen kunnen altijd worden gewijzigd in Voorkeuren.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/SaveToCloudDialog.qml" line="136"/>
+        <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="136"/>
         <source>Save to cloud</source>
         <translation>Sla op in de cloud</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/SaveToCloudDialog.qml" line="154"/>
+        <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="154"/>
         <source>Options</source>
         <translation>Opties</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/SaveToCloudDialog.qml" line="162"/>
-        <location filename="../../src/project/qml/MuseScore/Project/SaveToCloudDialog.qml" line="172"/>
+        <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="162"/>
+        <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="172"/>
         <source>Name</source>
         <translation>Naam</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/SaveToCloudDialog.qml" line="217"/>
+        <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="217"/>
         <source>Replace existing</source>
         <translation>Vervang bestaande</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/SaveToCloudDialog.qml" line="219"/>
+        <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="219"/>
         <source>Create new</source>
         <translation>Maak een nieuwe</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/SaveToCloudDialog.qml" line="260"/>
+        <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="260"/>
         <source>Save</source>
         <translation>Sla op</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/PublishPage/publishtoolbarmodel.cpp" line="48"/>
-        <source>Share this score and its audio on MuseScore.com</source>
-        <translation>Deel deze partituur en audio op MuseScore.com</translation>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/PublishPage/publishtoolbarmodel.cpp" line="48"/>
+        <source>Share this score and its audio on drumbearai.com</source>
+        <translation>Deel deze partituur en audio op drumbearai.com</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/PublishPage/publishtoolbarmodel.cpp" line="49"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/PublishPage/publishtoolbarmodel.cpp" line="49"/>
         <source>Share the audio from this score on Audio.com</source>
         <translation>Deel de audio van deze partituur op Audio.com</translation>
     </message>
@@ -36949,8 +36949,8 @@ mislukt: %2</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/cloudsmodel.cpp" line="185"/>
-        <source>Publish to MuseScore.com</source>
-        <translation>Publiceer op MuseScore.com</translation>
+        <source>Publish to drumbearai.com</source>
+        <translation>Publiceer op drumbearai.com</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/cloudsmodel.cpp" line="189"/>
@@ -37027,13 +37027,13 @@ mislukt: %2</translation>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="235"/>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1034"/>
-        <source>Log in to MuseScore.com to save this score to the cloud.</source>
-        <translation>Log in op MuseScore.com om deze partituur in de cloud op te slaan.</translation>
+        <source>Log in to drumbearai.com to save this score to the cloud.</source>
+        <translation>Log in op drumbearai.com om deze partituur in de cloud op te slaan.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="236"/>
-        <source>Log in to MuseScore.com to publish this score.</source>
-        <translation>Log in op MuseScore.com om deze partituur te publiceren.</translation>
+        <source>Log in to drumbearai.com to publish this score.</source>
+        <translation>Log in op drumbearai.com om deze partituur te publiceren.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="357"/>
@@ -37053,8 +37053,8 @@ mislukt: %2</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="361"/>
-        <source>All saved changes will be publicly visible on MuseScore.com. If you want to make frequent changes, we recommend saving this score privately until you’re ready to share it to the world.</source>
-        <translation>Alle opgeslagen wijzigingen zijn openbaar zichtbaar op MuseScore.com. Als u regelmatig wijzigingen wilt aanbrengen, raden we u aan deze partituur privé op te slaan totdat u klaar bent om deze aan de wereld te laten zien.</translation>
+        <source>All saved changes will be publicly visible on drumbearai.com. If you want to make frequent changes, we recommend saving this score privately until you’re ready to share it to the world.</source>
+        <translation>Alle opgeslagen wijzigingen zijn openbaar zichtbaar op drumbearai.com. Als u regelmatig wijzigingen wilt aanbrengen, raden we u aan deze partituur privé op te slaan totdat u klaar bent om deze aan de wereld te laten zien.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="391"/>
@@ -37063,8 +37063,8 @@ mislukt: %2</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="401"/>
-        <source>Unable to connect to MuseScore.com</source>
-        <translation>Kan geen verbinding maken met MuseScore.com</translation>
+        <source>Unable to connect to drumbearai.com</source>
+        <translation>Kan geen verbinding maken met drumbearai.com</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="402"/>
@@ -37144,8 +37144,8 @@ mislukt: %2</translation>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="466"/>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="559"/>
-        <source>Log in or create a free account on MuseScore.com to open this score.</source>
-        <translation>Log in of maak gratis een account aan op MuseScore.com om deze partituur te openen.</translation>
+        <source>Log in or create a free account on drumbearai.com to open this score.</source>
+        <translation>Log in of maak gratis een account aan op drumbearai.com om deze partituur te openen.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1401"/>
@@ -37154,8 +37154,8 @@ mislukt: %2</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1404"/>
-        <source>All saved changes will now update to the cloud. You can manage this file in the score manager on MuseScore.com.</source>
-        <translation>Alle opgeslagen wijzigingen zullen nu naar de cloud geüpdatet worden. U kunt dit bestand beheren in de partituur beheerder op MuseScore.com.</translation>
+        <source>All saved changes will now update to the cloud. You can manage this file in the score manager on drumbearai.com.</source>
+        <translation>Alle opgeslagen wijzigingen zullen nu naar de cloud geüpdatet worden. U kunt dit bestand beheren in de partituur beheerder op drumbearai.com.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1480"/>
@@ -37226,7 +37226,7 @@ mislukt: %2</translation>
 <context>
     <name>publish</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/PublishPage/PublishToolBar.qml" line="31"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/PublishPage/PublishToolBar.qml" line="31"/>
         <source>Publish toolbar</source>
         <translation>Publiceer-werkbalk</translation>
     </message>
@@ -37348,24 +37348,24 @@ mislukt: %2</translation>
         <translation>Bepaal sneltoets</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/EditPercussionShortcutDialog.qml" line="38"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/EditPercussionShortcutDialog.qml" line="38"/>
         <source>Enter shortcut</source>
         <translation>Voer sneltoets in</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/EditPercussionShortcutDialog.qml" line="71"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/EditPercussionShortcutDialog.qml" line="71"/>
         <source>Define percussion keyboard shortcut</source>
         <translation>Bepaal percussie-sneltoets</translation>
     </message>
     <message>
         <location filename="../../src/framework/shortcuts/qml/Muse/Shortcuts/editshortcutmodel.cpp" line="223"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/editpercussionshortcutmodel.cpp" line="142"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/editpercussionshortcutmodel.cpp" line="142"/>
         <source>This shortcut is already assigned to: &lt;b&gt;%1&lt;/b&gt;</source>
         <translation>Deze sneltoets is al toegewezen aan: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../src/framework/shortcuts/qml/Muse/Shortcuts/editshortcutmodel.cpp" line="243"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/editpercussionshortcutmodel.cpp" line="191"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/editpercussionshortcutmodel.cpp" line="191"/>
         <source>Are you sure you want to assign it to &lt;b&gt;%1&lt;/b&gt; instead?</source>
         <translation>Weet u zeker dat u hem in plaats daarvan wilt toewijzen aan &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
@@ -37381,8 +37381,8 @@ mislukt: %2</translation>
     </message>
     <message>
         <location filename="../../src/framework/shortcuts/qml/Muse/Shortcuts/shortcutsmodel.cpp" line="37"/>
-        <source>MuseScore Studio shortcuts file</source>
-        <translation>MuseScore Studio-sneltoestenbestand</translation>
+        <source>DB Score shortcuts file</source>
+        <translation>DB Score-sneltoestenbestand</translation>
     </message>
     <message>
         <location filename="../../src/framework/shortcuts/qml/Muse/Shortcuts/shortcutsmodel.cpp" line="192"/>
@@ -37415,17 +37415,17 @@ mislukt: %2</translation>
         <translation>Geen</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/editpercussionshortcutmodel.cpp" line="103"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/editpercussionshortcutmodel.cpp" line="103"/>
         <source>Reassign shortcut for &lt;b&gt;%1&lt;/b&gt;</source>
         <translation>Herbepaal sneltoets voor &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/editpercussionshortcutmodel.cpp" line="186"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/editpercussionshortcutmodel.cpp" line="186"/>
         <source>When this instrument is selected, &lt;b&gt;%1&lt;/b&gt; will no longer run &lt;b&gt;%2&lt;/b&gt;.</source>
         <translation>Als dit instrument geselecteerd is, zal &lt;b&gt;%1&lt;/b&gt; niet langer &lt;b&gt;%2&lt;/b&gt; uitvoeren.</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/percussionpanel/percussionpanelpadmodel.cpp" line="91"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/percussionpanel/percussionpanelpadmodel.cpp" line="91"/>
         <source>Define keyboard shortcut…</source>
         <translation>Bepaal sneltoets…</translation>
     </message>
@@ -37912,155 +37912,155 @@ mislukt: %2</translation>
         <translation>Plak tekst</translation>
     </message>
     <message>
-        <location filename="../../src/engraving/qml/MuseScore/Engraving/devtools/corruptscoredevtoolsmodel.cpp" line="44"/>
+        <location filename="../../src/engraving/qml/DB Score/Engraving/devtools/corruptscoredevtoolsmodel.cpp" line="44"/>
         <source>Corrupt score</source>
         <extracomment>&quot;Corrupt&quot; is used as a verb here, i.e. &quot;Make the current score corrupted&quot; (for testing purposes).</extracomment>
         <translation>Maak partituur corrupt</translation>
     </message>
     <message>
         <location filename="../../src/engraving/tests/voiceswitching_tests.cpp" line="209"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/inspectormodelwithvoiceandpositionoptions.cpp" line="165"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/inspectormodelwithvoiceandpositionoptions.cpp" line="165"/>
         <location filename="../../src/notation/internal/notationinteraction.cpp" line="6109"/>
         <source>Change voice</source>
         <translation>Wijzig stem</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/abstractinspectormodel.cpp" line="478"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/verticalframesettingsmodel.cpp" line="66"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/abstractelementpopupmodel.cpp" line="211"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/abstractelementpopupmodel.cpp" line="223"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/abstractinspectormodel.cpp" line="478"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/verticalframesettingsmodel.cpp" line="66"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/abstractelementpopupmodel.cpp" line="211"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/abstractelementpopupmodel.cpp" line="223"/>
         <source>Edit %1</source>
         <translation>Bewerk %1</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/abstractinspectormodel.cpp" line="511"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/verticalframesettingsmodel.cpp" line="98"/>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="72"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/abstractinspectormodel.cpp" line="511"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/verticalframesettingsmodel.cpp" line="98"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="72"/>
         <source>Reset %1</source>
         <translation>Herstel %1</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/abstractinspectormodel.cpp" line="599"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/abstractinspectormodel.cpp" line="599"/>
         <location filename="../../src/notationscene/widgets/editstyle.cpp" line="1271"/>
         <source>Edit style</source>
         <translation>Bewerk stijl</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/emptystaves/emptystavesvisiblitysettingsmodel.cpp" line="85"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/emptystaves/emptystavesvisiblitysettingsmodel.cpp" line="85"/>
         <source>Hide empty staves</source>
         <translation>Verberg lege notenbalken</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/emptystaves/emptystavesvisiblitysettingsmodel.cpp" line="108"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/emptystaves/emptystavesvisiblitysettingsmodel.cpp" line="108"/>
         <source>Show empty staves</source>
         <translation>Toon lege notenbalken</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/emptystaves/emptystavesvisiblitysettingsmodel.cpp" line="131"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/emptystaves/emptystavesvisiblitysettingsmodel.cpp" line="131"/>
         <source>Reset empty staves visibility</source>
         <translation>Stel zichtbaarheid lege notenbalken opnieuw in</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/generalsettingsmodel.cpp" line="162"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/generalsettingsmodel.cpp" line="162"/>
         <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="501"/>
         <source>Make element(s) visible</source>
         <translation>Maak element(en) zichtbaar</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/general/generalsettingsmodel.cpp" line="163"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/general/generalsettingsmodel.cpp" line="163"/>
         <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="503"/>
         <source>Make element(s) invisible</source>
         <translation>Maak element(en) onzichtbaar</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/barlines/barlinesettingsmodel.cpp" line="234"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/barlines/barlinesettingsmodel.cpp" line="234"/>
         <source>Set barline span interval as staff default</source>
         <translation>Stel maatstreep-omspanning in als standaard voor de notenbalk</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/bends/bendsettingsmodel.cpp" line="455"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/bends/bendsettingsmodel.cpp" line="455"/>
         <source>Edit bend curve</source>
         <translation>Bewerk bend-curve</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/fretframe/fretframechordlistmodel.cpp" line="106"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/fretframe/fretframechordlistmodel.cpp" line="106"/>
         <source>Make chord(s) visible</source>
         <translation>Maak akkoord(en) zichtbaar</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/fretframe/fretframechordlistmodel.cpp" line="107"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/fretframe/fretframechordlistmodel.cpp" line="107"/>
         <source>Make chord(s) invisible</source>
         <translation>Maar akkoord(en) onzichtbaar</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/fretframe/fretframechordlistmodel.cpp" line="135"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/fretframe/fretframechordlistmodel.cpp" line="135"/>
         <source>Move chord(s) up</source>
         <translation>Verplaats akkoord(en) naar boven</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/fretframe/fretframechordlistmodel.cpp" line="157"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/fretframe/fretframechordlistmodel.cpp" line="157"/>
         <source>Move chord(s) down</source>
         <translation>Verplaats akkoord(en) naar beneden</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/fretframe/fretframechordssettingsmodel.cpp" line="130"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/frames/fretframe/fretframechordssettingsmodel.cpp" line="130"/>
         <source>Reset fretboard diagram legend chords list</source>
         <translation>Herstel fretborddiagram akkoordenlijst legenda</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/fretcanvas.cpp" line="273"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/fretcanvas.cpp" line="273"/>
         <source>Edit fretboard diagram</source>
         <translation>Bewerk fretborddiagram</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/fretdiagrams/internal/fretcanvas.cpp" line="382"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/fretdiagrams/internal/fretcanvas.cpp" line="382"/>
         <source>Clear fretboard diagram</source>
         <translation>Wis fretborddiagram</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="54"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="54"/>
         <source>Add notehead parentheses</source>
         <translation>Voeg haakjes toe aan de nootkop</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="57"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/noteheads/noteheadsettingsmodel.cpp" line="57"/>
         <source>Remove notehead parentheses</source>
         <translation>Verwijder de haakjes van de nootkop</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/notes/stems/stemsettingsmodel.cpp" line="115"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/notes/stems/stemsettingsmodel.cpp" line="115"/>
         <source>Change stem direction</source>
         <translation>Wijzig stokrichting</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/ornamentsettingsmodel.cpp" line="257"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/ornamentsettingsmodel.cpp" line="257"/>
         <source>Set ornament interval step</source>
         <translation>Wijzig versiering interval-grootte</translation>
     </message>
     <message>
-        <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/ornaments/ornamentsettingsmodel.cpp" line="289"/>
+        <location filename="../../src/inspector/qml/DB Score/Inspector/notation/ornaments/ornamentsettingsmodel.cpp" line="289"/>
         <source>Set ornament interval type</source>
         <translation>Wijzig versiering interval-type</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/instrumentsettingsmodel.cpp" line="129"/>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/instrumentsettingsmodel.cpp" line="151"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/instrumentsettingsmodel.cpp" line="129"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/instrumentsettingsmodel.cpp" line="151"/>
         <source>Change instrument settings</source>
         <translation>Wijzig instrumentinstellingen</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/staffsettingsmodel.cpp" line="240"/>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/staffsettingsmodel.cpp" line="275"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/staffsettingsmodel.cpp" line="240"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/staffsettingsmodel.cpp" line="275"/>
         <source>Change staff settings</source>
         <translation>Wijzig balkinstellingen</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/systemobjectslayersettingsmodel.cpp" line="99"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/systemobjectslayersettingsmodel.cpp" line="99"/>
         <source>Make system marking(s) visible</source>
         <translation>Maak systeemobject(en) zichtbaar</translation>
     </message>
     <message>
-        <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/systemobjectslayersettingsmodel.cpp" line="100"/>
+        <location filename="../../src/instrumentsscene/qml/DB Score/InstrumentsScene/internal/systemobjectslayersettingsmodel.cpp" line="100"/>
         <source>Make system marking(s) invisible</source>
         <translation>Maak systeemobject(en) onzichtbaar</translation>
     </message>
@@ -38322,7 +38322,7 @@ mislukt: %2</translation>
     <message>
         <location filename="../../src/notation/internal/notationinteraction.cpp" line="5539"/>
         <location filename="../../src/notation/internal/notationinteraction.cpp" line="5579"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/dynamicpopupmodel.cpp" line="207"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/dynamicpopupmodel.cpp" line="207"/>
         <source>Add hairpin</source>
         <translation>Voeg cresc./decresc.-teken toe</translation>
     </message>
@@ -38385,13 +38385,13 @@ mislukt: %2</translation>
     </message>
     <message>
         <location filename="../../src/notation/internal/notationinteraction.cpp" line="5849"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/dynamicpopupmodel.cpp" line="199"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/dynamicpopupmodel.cpp" line="199"/>
         <source>Change hairpin type</source>
         <translation>Wissel tussen cresc./dim.</translation>
     </message>
     <message>
         <location filename="../../src/notation/internal/notationinteraction.cpp" line="5892"/>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/dynamicpopupmodel.cpp" line="159"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/dynamicpopupmodel.cpp" line="159"/>
         <source>Add dynamic</source>
         <translation>Voeg dynamiek toe</translation>
     </message>
@@ -38896,32 +38896,32 @@ mislukt: %2</translation>
         <translation>Getransponeerde toonhoogte weergeven</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/dynamicpopupmodel.cpp" line="196"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/dynamicpopupmodel.cpp" line="196"/>
         <source>Remove hairpin</source>
         <translation>Verwijder cresc./decresc.-teken</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/harppedalpopupmodel.cpp" line="179"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/harppedalpopupmodel.cpp" line="179"/>
         <source>Edit harp pedal diagram</source>
         <translation>Bewerk harppedaal diagram</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/stringtuningssettingsmodel.cpp" line="142"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/stringtuningssettingsmodel.cpp" line="142"/>
         <source>Set string tuning</source>
         <translation>Stel snaarstemming in</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/stringtuningssettingsmodel.cpp" line="230"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/stringtuningssettingsmodel.cpp" line="230"/>
         <source>Load string tunings preset</source>
         <translation>Laad snaarstemming voorinstelling</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/stringtuningssettingsmodel.cpp" line="283"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/stringtuningssettingsmodel.cpp" line="283"/>
         <source>Set number of strings</source>
         <translation>Stel het aantal snaren in</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/qml/MuseScore/NotationScene/elementpopups/stringtuningssettingsmodel.cpp" line="354"/>
+        <location filename="../../src/notationscene/qml/DB Score/NotationScene/elementpopups/stringtuningssettingsmodel.cpp" line="354"/>
         <source>Edit strings</source>
         <translation>Bewerk snaren</translation>
     </message>
@@ -38946,22 +38946,22 @@ mislukt: %2</translation>
         <translation>Bewerk maatsoort-eigenschappen</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/soundflagsettingsmodel.cpp" line="183"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/soundflagsettingsmodel.cpp" line="183"/>
         <source>Toggle sound flag preset</source>
         <translation>Schakel geluidskenmerk instelling in</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/soundflagsettingsmodel.cpp" line="210"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/soundflagsettingsmodel.cpp" line="210"/>
         <source>Toggle sound flag playing technique</source>
         <translation>Schakel geluidskenmerk speeltechniek in</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/soundflagsettingsmodel.cpp" line="333"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/soundflagsettingsmodel.cpp" line="333"/>
         <source>Reset sound flag</source>
         <translation>Herstel geluidskenmerk</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/soundflagsettingsmodel.cpp" line="359"/>
+        <location filename="../../src/playback/qml/DB Score/Playback/soundflagsettingsmodel.cpp" line="359"/>
         <source>Toggle ‘Apply sound flag to all staves’</source>
         <translation>Schakel &apos;Pas geluidskenmerken toe op alle notenbalken&apos; in/uit</translation>
     </message>
@@ -38980,8 +38980,8 @@ mislukt: %2</translation>
     <name>update</name>
     <message>
         <location filename="../../src/framework/update/qml/Muse/Update/AppReleaseInfoDialog.qml" line="81"/>
-        <source>A new version of MuseScore Studio is available!</source>
-        <translation>Een nieuwe versie van MuseScore Studio is beschikbaar!</translation>
+        <source>A new version of DB Score is available!</source>
+        <translation>Een nieuwe versie van DB Score is beschikbaar!</translation>
     </message>
     <message>
         <location filename="../../src/framework/update/qml/Muse/Update/AppReleaseInfoDialog.qml" line="88"/>
@@ -39010,8 +39010,8 @@ mislukt: %2</translation>
     </message>
     <message>
         <location filename="../../src/framework/update/internal/appupdatescenario.cpp" line="135"/>
-        <source>You already have the latest version of MuseScore Studio. Please visit &lt;a href=&quot;%1&quot;&gt;MuseScore.org&lt;/a&gt; for news on what’s coming next.</source>
-        <translation>U heeft reeds de nieuwste versie van MuseScore Studio. Houd &lt;a href=&quot;%1&quot;&gt;MuseScore.org&lt;/a&gt; in de gaten voor nieuws over wat eraan zit te komen.</translation>
+        <source>You already have the latest version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; for news on what’s coming next.</source>
+        <translation>U heeft reeds de nieuwste versie van DB Score. Houd &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; in de gaten voor nieuws over wat eraan zit te komen.</translation>
     </message>
     <message>
         <location filename="../../src/framework/update/internal/appupdatescenario.cpp" line="142"/>
@@ -39030,8 +39030,8 @@ mislukt: %2</translation>
     </message>
     <message>
         <location filename="../../src/framework/update/internal/appupdatescenario.cpp" line="191"/>
-        <source>MuseScore Studio needs to close to complete the installation. If you have any unsaved changes, you will be prompted to save them before MuseScore Studio closes.</source>
-        <translation>MuseScore Studio moet worden afgesloten om de installatie te voltooien. Als u niet-opgeslagen wijzigingen hebt, zult u worden gevraagd die op te slaan voordat MuseScore Studio wordt afgesloten.</translation>
+        <source>DB Score needs to close to complete the installation. If you have any unsaved changes, you will be prompted to save them before DB Score closes.</source>
+        <translation>DB Score moet worden afgesloten om de installatie te voltooien. Als u niet-opgeslagen wijzigingen hebt, zult u worden gevraagd die op te slaan voordat DB Score wordt afgesloten.</translation>
     </message>
     <message>
         <location filename="../../src/framework/update/internal/appupdatescenario.cpp" line="196"/>
@@ -39040,14 +39040,14 @@ mislukt: %2</translation>
     </message>
     <message>
         <location filename="../../src/framework/update/qml/Muse/Update/appupdatemodel.cpp" line="33"/>
-        <source>Updating MuseScore Studio</source>
-        <translation>MuseScore Studio bijwerken</translation>
+        <source>Updating DB Score</source>
+        <translation>DB Score bijwerken</translation>
     </message>
     <message>
         <location filename="../../src/framework/update/qml/Muse/Update/appupdatemodel.cpp" line="63"/>
-        <source>Downloading MuseScore Studio %1</source>
+        <source>Downloading DB Score %1</source>
         <extracomment>Means that the download is currently in progress. %1 will be replaced by the version number of the version that is being downloaded.</extracomment>
-        <translation>MuseScore Studio %1 downloaden...</translation>
+        <translation>DB Score %1 downloaden...</translation>
     </message>
 </context>
 <context>
@@ -39084,7 +39084,7 @@ mislukt: %2</translation>
         <translation>Werkruimtenaam:</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/notationstatusbarmodel.cpp" line="141"/>
+        <location filename="../../src/appshell/qml/DB Score/AppShell/notationstatusbarmodel.cpp" line="141"/>
         <location filename="../../src/web/appshell/view/notationstatusbarmodel.cpp" line="141"/>
         <source>Workspace:</source>
         <translation>Werkruimte:</translation>
