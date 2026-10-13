@@ -24,9 +24,13 @@ Item {
     property double scoreDuration: audioModel.scoreDuration > 0 ? audioModel.scoreDuration : 0
     property double totalDuration: Math.max(audioDuration, scoreDuration) + 30.0
 
-    //! NOTE: 缩放比例以「乐谱轨长度」为固定基准，导入音频后不改变整体缩放，
-    //! 否则音频变长会让 totalDuration 变大、同样的 zoom 显示更多时间，视觉上像被缩小了。
-    property double zoomBaseDuration: scoreDuration + 30.0
+    //! NOTE: 缩放基准做「一次性快照」，一旦确定就不再随乐谱时长变化。
+    //! 否则增加/删除小节会改变每秒像素数，导致音频轨（含右边把手）视觉上漂移。
+    property double zoomBaseDuration: 30.0
+    property bool zoomBaseFixed: false
+
+    //! NOTE: 吸附到最近强拍的开关（仅影响拖动，不影响播放/同步逻辑）。
+    property bool snapEnabled: true
 
     property real zoom: 3.5
     property real scrollSec: 0.0
@@ -42,6 +46,38 @@ Item {
     //! NOTE: 波形全局峰值归一化，只在波形变化时重算，避免每次重绘都扫一遍全部波峰。
     property double wavePeakMax: 1.0
     property bool prevHasTrack: false
+
+    function snapZoomBase() {
+        if (!zoomBaseFixed && audioModel.scoreDuration > 0) {
+            zoomBaseDuration = audioModel.scoreDuration + 30.0
+            zoomBaseFixed = true
+        }
+    }
+
+    function snapToDownbeat(absTime) {
+        if (!snapEnabled) {
+            return absTime
+        }
+        var grid = audioModel.scoreBeatGrid
+        if (!grid || grid.length === 0) {
+            return absTime
+        }
+        var best = absTime
+        var bestDist = Infinity
+        for (var i = 0; i < grid.length; ++i) {
+            var item = grid[i]
+            if (!item.isDownbeat) {
+                continue
+            }
+            var beatTime = item.time + audioModel.scoreOffset
+            var dist = Math.abs(beatTime - absTime)
+            if (dist < bestDist) {
+                bestDist = dist
+                best = beatTime
+            }
+        }
+        return best
+    }
 
     function pad2(n) {
         return (n < 10 ? "0" : "") + n
@@ -87,7 +123,13 @@ Item {
         wavePeakMax = m < 1e-6 ? 1e-6 : m
     }
 
-    Component.onCompleted: root.recomputeWavePeakMax()
+    Component.onCompleted: {
+        root.recomputeWavePeakMax()
+        root.snapZoomBase()
+        audioModel.setPanelVisible(true)
+    }
+
+    Component.onDestruction: audioModel.setPanelVisible(false)
 
     onZoomChanged: repaintTimeline()
     onScrollSecChanged: repaintTimeline()
@@ -99,6 +141,9 @@ Item {
                 scrollSec = 0.0
             }
             prevHasTrack = audioModel.hasTrack
+        }
+        function onScoreDurationChanged() {
+            root.snapZoomBase()
         }
     }
 
@@ -235,6 +280,12 @@ Item {
             }
 
             Item { Layout.fillWidth: true }
+
+            FlatButton {
+                text: root.snapEnabled ? "✓ 吸附" : "吸附"
+                accentButton: root.snapEnabled
+                onClicked: root.snapEnabled = !root.snapEnabled
+            }
 
             StyledTextLabel { text: "轨道缩放" }
             StyledSlider {
@@ -660,7 +711,8 @@ Item {
                                         }
                                         if (moved) {
                                             var d = dx / timeline.pxPerSec
-                                            audioModel.setStartOffset(Math.max(0, startOffsetValue + d))
+                                            var target = Math.max(0, startOffsetValue + d)
+                                            audioModel.setStartOffset(root.snapToDownbeat(target))
                                         }
                                     }
                                 }
@@ -684,10 +736,19 @@ Item {
                             id: leftTrim
                             x: timeline.xAt(audioModel.startOffset)
                             y: 6
-                            width: 8
+                            width: 14
                             height: parent.height - 12
                             color: root.audioColor
                             visible: audioModel.hasTrack
+
+                            Rectangle {
+                                anchors.centerIn: parent
+                                width: 2
+                                height: parent.height * 0.5
+                                radius: 1
+                                color: "#FFFFFF"
+                                opacity: 0.7
+                            }
 
                             MouseArea {
                                 anchors.fill: parent
@@ -705,8 +766,11 @@ Item {
                                     if (pressed) {
                                         var p = mapToItem(timeline, mouse.x, mouse.y)
                                         var d = (p.x - pressTimelineX) / timeline.pxPerSec
-                                        audioModel.setClipStart(Math.max(0, startClip + d))
-                                        audioModel.setStartOffset(Math.max(0, startOff + d))
+                                        var targetOff = Math.max(0, startOff + d)
+                                        var snappedOff = root.snapToDownbeat(targetOff)
+                                        var delta = snappedOff - targetOff
+                                        audioModel.setClipStart(Math.max(0, startClip + d + delta))
+                                        audioModel.setStartOffset(snappedOff)
                                     }
                                 }
                                 onReleased: audioModel.apply()
@@ -719,10 +783,19 @@ Item {
                             id: rightTrim
                             x: timeline.xAt(audioModel.startOffset + ((audioModel.clipEnd > 0 ? audioModel.clipEnd : audioDuration) - Math.max(0, audioModel.clipStart)))
                             y: 6
-                            width: 8
+                            width: 14
                             height: parent.height - 12
                             color: root.audioColor
                             visible: audioModel.hasTrack
+
+                            Rectangle {
+                                anchors.centerIn: parent
+                                width: 2
+                                height: parent.height * 0.5
+                                radius: 1
+                                color: "#FFFFFF"
+                                opacity: 0.7
+                            }
 
                             MouseArea {
                                 anchors.fill: parent
@@ -738,7 +811,9 @@ Item {
                                     if (pressed) {
                                         var p = mapToItem(timeline, mouse.x, mouse.y)
                                         var d = (p.x - pressTimelineX) / timeline.pxPerSec
-                                        audioModel.setClipEnd(Math.max(0, startEnd + d))
+                                        var targetEnd = audioModel.startOffset + (Math.max(0, startEnd + d) - Math.max(0, audioModel.clipStart))
+                                        var snappedEnd = root.snapToDownbeat(targetEnd)
+                                        audioModel.setClipEnd(Math.max(0, snappedEnd - audioModel.startOffset + Math.max(0, audioModel.clipStart)))
                                     }
                                 }
                                 onReleased: audioModel.apply()

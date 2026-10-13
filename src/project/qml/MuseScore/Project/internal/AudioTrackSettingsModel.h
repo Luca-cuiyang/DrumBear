@@ -102,6 +102,7 @@ public:
     Q_INVOKABLE void seek(double seconds);
     Q_INVOKABLE void tapTempo();
     Q_INVOKABLE void setScoreOffset(double offset);
+    Q_INVOKABLE void setPanelVisible(bool visible);
     Q_INVOKABLE void toggleMetronome();
     Q_INVOKABLE void toggleScoreMute();
     Q_INVOKABLE void setMasterVolumeDb(double value);
@@ -152,6 +153,7 @@ private:
     bool m_settingsSubscribed = false;
     bool m_playbackSubscribed = false;
     bool m_projectSubscribed = false;
+    bool m_panelVisible = false;
     double m_originalBpm = 0.0;
     QVariantList m_scoreBeatGrid;
     bool m_scoreMuted = false;

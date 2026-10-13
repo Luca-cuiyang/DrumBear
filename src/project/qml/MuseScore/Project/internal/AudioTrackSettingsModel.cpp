@@ -447,7 +447,10 @@ void AudioTrackSettingsModel::subscribeOnPlayback()
     m_playbackPosition = state->playbackPosition().to_double();
     state->playbackPositionChanged().onReceive(this, [this](muse::audio::secs_t position) {
         m_playbackPosition = position.to_double();
-        emit playbackPositionChanged();
+        //! NOTE: 面板不可见时不转发高频播放位置，减少无意义的 QML 重绘。
+        if (m_panelVisible) {
+            emit playbackPositionChanged();
+        }
     });
 
     //! NOTE: keep the score grid track in sync with the score's actual total play time
@@ -458,6 +461,15 @@ void AudioTrackSettingsModel::subscribeOnPlayback()
             emit scoreDurationChanged();
             updateScoreBeatGrid();
         });
+    }
+}
+
+void AudioTrackSettingsModel::setPanelVisible(bool visible)
+{
+    m_panelVisible = visible;
+    if (visible) {
+        //! 面板打开时补发一次当前位置，避免播放头跳变。
+        emit playbackPositionChanged();
     }
 }
 
