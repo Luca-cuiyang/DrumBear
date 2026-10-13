@@ -232,18 +232,21 @@ VideoWriter::Config VideoWriter::makeConfig() const
 
     // compute bitrate according to Google recommended settings
     // https://support.google.com/youtube/answer/1722171?hl=en
+    //! NOTE: 按总像素数分级，横竖屏同一档分辨率（如 4K 16:9 与 4K 9:16）得到相同码率，
+    //! 修复此前竖屏因 height 不同落入默认 8Mbps、导致 4K 竖屏码率过低画面发糊的问题。
+    const long long pixels = static_cast<long long>(cfg.width) * cfg.height;
     float br = 8;
-    if (cfg.height == 2160) {
+    if (pixels >= 3840LL * 2160) {
         br = cfg.fps < 35 ? 40 : 60;
-    } else if (cfg.height == 1440) {
+    } else if (pixels >= 2560LL * 1440) {
         br = cfg.fps < 35 ? 16 : 24;
-    } else if (cfg.height == 1080) {
+    } else if (pixels >= 1920LL * 1080) {
         br = cfg.fps < 35 ? 10 : 15;
-    } else if (cfg.height == 720) {
+    } else if (pixels >= 1280LL * 720) {
         br = cfg.fps < 35 ? 5 : 7.5;
-    } else if (cfg.height == 480) {
+    } else if (pixels >= 854LL * 480) {
         br = cfg.fps < 35 ? 2.5 : 4;
-    } else if (cfg.height == 360) {
+    } else {
         br = cfg.fps < 35 ? 1 : 1.5;
     }
     cfg.bitrate = int(br * 1000000);
@@ -635,11 +638,6 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
     std::vector<double> pageRenderOffset(pages.size(), 0.0);
     std::vector<double> pageContentTop(pages.size(), 0.0);
     std::vector<double> pageContentHeight(pages.size(), 0.0);
-    struct SystemVert {
-        double top = 0.0;
-        double height = 0.0;
-    };
-    std::vector<SystemVert> systemsVert;
     double scale = config.canvasDpi / engraving::DPI;
     double frameWidthCanvas = config.width / scale;
     double frameHeightCanvas = config.height / scale;
@@ -685,26 +683,11 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
             pageContentTop[i] = y;
             pageContentHeight[i] = contentBottom[i] - contentTop[i];
 
-            for (const System* system : pages[i]->systems()) {
-                SystemVert sv;
-                sv.top = pageRenderOffset[i] + system->pagePos().y();
-                sv.height = system->height();
-                systemsVert.push_back(sv);
-            }
-
             y += pageContentHeight[i] + lineGap;
         }
 
         totalHeightCanvas = y - lineGap;
     }
-
-    //! NOTE: Discrete vertical scroll: when the cursor reaches 1-2 system heights from the
-    //! bottom, glide up by one system height (ease-in-out), then stay still.
-    double viewTop = 0.0;
-    bool scrollAnimating = false;
-    double scrollAnimFrom = 0.0;
-    double scrollAnimTo = 0.0;
-    double scrollAnimStartSec = 0.0;
 
     //! NOTE: Do NOT wrap paintPrint in save()/restore(); paintPrint installs the page
     //! viewport/window transform, and restore() would undo it, breaking the cursor draw.
@@ -757,66 +740,15 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
             int pageIdx = static_cast<int>(page->pageNumber());
             double cursorVertY = pageRenderOffset[pageIdx] + (cursorRect.y() - page->pos().y());
 
-            //! NOTE: Discrete vertical scroll. Trigger when the cursor is within the last
-            //! one or two visible systems, then ease-in-out up by one real system height.
-            int cursorSysIdx = -1;
-            for (int i = 0; i < static_cast<int>(systemsVert.size()); ++i) {
-                if (cursorVertY >= systemsVert[i].top) {
-                    cursorSysIdx = i;
-                } else {
-                    break;
-                }
-            }
-
-            double viewBottom = viewTop + frameHeightCanvas;
-
-            int firstVisibleIdx = -1;
-            for (int i = 0; i < static_cast<int>(systemsVert.size()); ++i) {
-                if (systemsVert[i].top + systemsVert[i].height >= viewTop) {
-                    firstVisibleIdx = i;
-                    break;
-                }
-            }
-
-            int lastVisibleIdx = firstVisibleIdx;
-            for (int i = firstVisibleIdx; i < static_cast<int>(systemsVert.size()); ++i) {
-                if (systemsVert[i].top < viewBottom) {
-                    lastVisibleIdx = i;
-                } else {
-                    break;
-                }
-            }
-
-            int lastSystemIdx = static_cast<int>(systemsVert.size()) - 1;
-
-            if (!scrollAnimating && firstVisibleIdx >= 0 && cursorSysIdx >= 0
-                && cursorSysIdx >= lastVisibleIdx - 1 && lastVisibleIdx < lastSystemIdx) {
-                //! NOTE: Adapt the scroll distance to how many systems fit on screen.
-                //! Portrait canvases show many systems, so glide several lines at once;
-                //! landscape canvases show fewer, so glide fewer lines.
-                int visibleCount = lastVisibleIdx - firstVisibleIdx + 1;
-                int scrollCount = std::max(1, visibleCount / 2);
-                int targetIdx = std::min(firstVisibleIdx + scrollCount, lastSystemIdx);
-                double target = systemsVert[targetIdx].top;
-                double maxTop = std::max(0.0, totalHeightCanvas - frameHeightCanvas);
-                target = std::min(target, maxTop);
-                if (target > viewTop + 1e-3) {
-                    scrollAnimFrom = viewTop;
-                    scrollAnimTo = target;
-                    scrollAnimStartSec = currentTimeSec;
-                    scrollAnimating = true;
-                }
-            }
-
-            if (scrollAnimating) {
-                double p = (static_cast<double>(currentTimeSec) - scrollAnimStartSec) / 1.3;
-                if (p >= 1.0) {
-                    viewTop = scrollAnimTo;
-                    scrollAnimating = false;
-                } else {
-                    double e = p * p * (3.0 - 2.0 * p);
-                    viewTop = scrollAnimFrom + (scrollAnimTo - scrollAnimFrom) * e;
-                }
+            //! NOTE: 指针固定 C 位：视图持续跟随，使指针始终位于画面垂直中心。
+            //! 指针贴近乐谱起止点时自然夹紧到边界，避免露出空白/黑边。
+            double viewTop;
+            if (totalHeightCanvas <= frameHeightCanvas) {
+                //! 乐谱比画布短：垂直居中，避免底部大片留白。
+                viewTop = (totalHeightCanvas - frameHeightCanvas) * 0.5;
+            } else {
+                double desiredTop = cursorVertY - frameHeightCanvas * 0.5;
+                viewTop = std::clamp(desiredTop, 0.0, totalHeightCanvas - frameHeightCanvas);
             }
 
             //! NOTE: Render every page intersecting the vertical viewport (one page normally,
