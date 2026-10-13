@@ -38,7 +38,6 @@
 #include "engraving/dom/stafftype.h"
 
 #include "notation/imasternotation.h"
-#include "notation/inotationundostack.h"
 #include "notation/inotation.h"
 #include "notation/inotationparts.h"
 
@@ -439,11 +438,6 @@ Promise<Ret> OpenProjectScenario::doOpenProject(const muse::io::path_t& filePath
         if (importAsJianpu) {
             auto score = project->masterNotation()->masterScore();
             auto parts = project->masterNotation()->parts();
-            // 导入即转换，不进入撤销历史（与普通导入后的干净状态一致）
-            auto undoStack = project->masterNotation()->notation()->undoStack();
-            if (undoStack) {
-                undoStack->lock();
-            }
             for (engraving::staff_idx_t i = 0; i < score->nstaves(); ++i) {
                 engraving::Staff* staff = score->staff(i);
                 if (staff) {
@@ -452,9 +446,6 @@ Promise<Ret> OpenProjectScenario::doOpenProject(const muse::io::path_t& filePath
                         parts->setStaffType(staff->id(), engraving::StaffTypes::JIANPU);
                     }
                 }
-            }
-            if (undoStack) {
-                undoStack->unlock();
             }
         }
 

@@ -32,8 +32,6 @@
 #include "engraving/dom/stafftype.h"
 #include "engraving/types/fraction.h"
 #include "notation/imasternotation.h"
-#include "notation/inotation.h"
-#include "notation/inotationundostack.h"
 #include "notation/inotationparts.h"
 #include "project/iopenprojectscenario.h"
 #include "types/projectcreateoptions.h"
@@ -78,20 +76,11 @@ void ScoresPageModel::createJianpuScore()
 
     auto score = project->masterNotation()->masterScore();
     auto parts = project->masterNotation()->parts();
-
-    // 新建时把谱表设为简谱不进入撤销历史，避免用户一按撤销就变回五线谱
-    auto undoStack = project->masterNotation()->notation()->undoStack();
-    if (undoStack) {
-        undoStack->lock();
-    }
     for (engraving::staff_idx_t i = 0; i < score->nstaves(); ++i) {
         engraving::Staff* staff = score->staff(i);
         if (staff) {
             parts->setStaffType(staff->id(), engraving::StaffTypes::JIANPU);
         }
-    }
-    if (undoStack) {
-        undoStack->unlock();
     }
 
     globalContext()->setCurrentProject(project);
