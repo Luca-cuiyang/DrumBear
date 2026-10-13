@@ -19,7 +19,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 if (APPLE)
-    # Required to prevent issues with incremental builds of MuseScoreQuickLookPreviewExtension
+    # Required to prevent issues with incremental builds of DBScoreQuickLookPreviewExtension
     # (https://github.com/musescore/MuseScore/pull/33554)
     cmake_minimum_required(VERSION 3.31)
 else()

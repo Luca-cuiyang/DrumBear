@@ -80,12 +80,12 @@ inline muse::Ret make_ret(Err err, const muse::io::path_t& filePath = {})
     case Err::FileTooOld:
         text = muse::mtrc("engraving", "This file was last saved in a version older than 2.0.0. "
                                        "You can convert this score by opening and then "
-                                       "saving in MuseScore version 2.x. "
-                                       "Visit the <a href=\"%1\">MuseScore download page</a> to obtain such a 2.x version.")
+                                       "saving in DB Score version 2.x. "
+                                       "Visit the <a href=\"%1\">DB Score download page</a> to obtain such a 2.x version.")
                .arg(u"https://drumbearai.com/download#older-versions");
         break;
     case Err::FileTooNew:
-        text = muse::mtrc("engraving", "This file was saved using a newer version of MuseScore Studio. "
+        text = muse::mtrc("engraving", "This file was saved using a newer version of DB Score. "
                                        "Please visit <a href=\"%1\">drumbearai.com</a> to obtain the latest version.")
                .arg(u"https://drumbearai.com");
         break;

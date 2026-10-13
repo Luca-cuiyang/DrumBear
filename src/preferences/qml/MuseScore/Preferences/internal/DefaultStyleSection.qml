@@ -52,7 +52,7 @@ BaseSection {
             Layout.fillWidth: true
 
             dialogTitle: qsTrc("preferences/score", "Choose default style for full score")
-            filter: qsTrc("preferences/score", "MuseScore style file") + " (*.mss)"
+            filter: qsTrc("preferences/score", "DB Score style file") + " (*.mss)"
             dir: root.model ? root.model.defaultStylePath : ""
             path: root.model ? root.model.defaultStylePath : ""
 
@@ -78,7 +78,7 @@ BaseSection {
             Layout.fillWidth: true
 
             dialogTitle: qsTrc("preferences", "Choose default style for parts")
-            filter: qsTrc("preferences", "MuseScore style file") + " (*.mss)"
+            filter: qsTrc("preferences", "DB Score style file") + " (*.mss)"
             dir: root.model ? root.model.defaultPartStylePath : ""
             path: root.model ? root.model.defaultPartStylePath : ""
 

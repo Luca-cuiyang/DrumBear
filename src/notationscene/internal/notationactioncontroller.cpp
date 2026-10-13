@@ -2759,8 +2759,8 @@ muse::io::path_t NotationActionController::selectStyleFile(bool forLoad)
 {
     muse::io::path_t dir = configuration()->userStylesPath();
     std::string filterName = forLoad
-                             ? muse::trc("notation", "MuseScore style files")
-                             : muse::trc("notation", "MuseScore style file");
+                             ? muse::trc("notation", "DB Score style files")
+                             : muse::trc("notation", "DB Score style file");
     std::vector<std::string> filter = { filterName + " (*.mss)" };
     return forLoad
            ? interactive()->selectOpeningFileSync(muse::trc("notation", "Load style"), dir, filter)
@@ -2781,7 +2781,7 @@ void NotationActionController::loadStyle()
         if (!notationStyle()->loadStyle(path.toQString(), false)) {
             auto promise = interactive()->warning(
                 muse::trc("notation",
-                          "Since this style file is from a different version of MuseScore Studio, your score is not guaranteed to display correctly."),
+                          "Since this style file is from a different version of DB Score, your score is not guaranteed to display correctly."),
                 muse::trc("notation", "Click OK to load anyway."), { IInteractive::Button::Ok, IInteractive::Button::Cancel },
                 IInteractive::Button::Ok);
 
@@ -3247,7 +3247,7 @@ void NotationActionController::checkForScoreCorruptions()
     } else {
         std::string title = muse::mtrc("project", "File “%1” is corrupted").arg(fileName).toStdString();
         IInteractive::Text text;
-        text.text = muse::trc("project", "This file contains errors that could cause MuseScore Studio to malfunction. "
+        text.text = muse::trc("project", "This file contains errors that could cause DB Score to malfunction. "
                                          "Please fix those at the earliest, to prevent crashes and further corruptions.");
         text.detailedText = ret.text();
 

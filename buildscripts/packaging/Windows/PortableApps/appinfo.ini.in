@@ -1,15 +1,15 @@
 [Format]
 Type=PortableApps.comFormat
-Version=3.7 # Version of the PortableApps format, not of MuseScore
+Version=3.7 # Version of the PortableApps format, not of DB Score
 
 [Details]
-Name=MuseScore Portable
-AppId=MuseScorePortable
-Publisher=MuseScore Limited and Others
-Homepage=PortableApps.com/MuseScorePortable
-Donate=musescore.org/donate
+Name=DB Score Portable
+AppId=DBScorePortable
+Publisher=DB Score
+Homepage=drumbearai.com
+Donate=drumbearai.com/donate
 Category=Music & Video
-Description=MuseScore Portable is the free MuseScore Studio music composition & notation program packaged with a PortableApps.com Launcher as a portable app.
+Description=DB Score Portable is the free DB Score music composition & notation program packaged with a PortableApps.com Launcher as a portable app.
 Language=Multilingual
 
 [License]
@@ -24,11 +24,11 @@ DisplayVersion=@MUSE_APP_VERSION@
 
 [Control]
 Icons=1
-Start=MuseScorePortable.exe
+Start=DBScorePortable.exe
 
 [Associations]
-FileTypes=mscz, mscx, mscs
-Protocols=musescore
+FileTypes=db, mscx, mscs
+Protocols=dbscore
 
 [FileTypeIcons]
 mscz=custom

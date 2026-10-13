@@ -76,7 +76,7 @@ QVariantList ChordSymbolsPageModel::possiblePresetOptions() const
             { "text", muse::qtrc("notation/editstyle/chordsymbols", "Jazz") },
             { "value", mu::engraving::ChordStylePreset::JAZZ } },
         QVariantMap{
-            { "text", muse::qtrc("notation/editstyle/chordsymbols", "Legacy MuseScore") },
+            { "text", muse::qtrc("notation/editstyle/chordsymbols", "Legacy DB Score") },
             { "value", mu::engraving::ChordStylePreset::LEGACY } },
         QVariantMap{
             { "text", muse::qtrc("notation/editstyle/chordsymbols", "Load custom XML…") },
@@ -120,7 +120,7 @@ void ChordSymbolsPageModel::setChordStyle(mu::engraving::ChordStylePreset select
 void ChordSymbolsPageModel::selectChordDescriptionFile()
 {
     muse::io::path_t dir = configuration()->userStylesPath();
-    std::vector<std::string> filter = { muse::trc("notation", "MuseScore chord symbol style files") + " (*.xml)" };
+    std::vector<std::string> filter = { muse::trc("notation", "DB Score chord symbol style files") + " (*.xml)" };
 
     muse::io::path_t path = interactive()->selectOpeningFileSync(muse::trc("notation", "Load style"), dir, filter);
     if (path.empty()) {

@@ -3,8 +3,8 @@
 echo "Package"
 trap 'echo Package failed; exit 1' ERR
 
-APP_NAME="MuseScore Studio"
-VOL_NAME="MuseScore-Studio"
+APP_NAME="DB Score"
+VOL_NAME="DB-Score"
 DO_SIGN=false
 APPLE_TEAM_ID=""
 APPLE_USERNAME=""
@@ -43,14 +43,14 @@ otool -L ${APP_PATH}/Contents/MacOS/dbscore
 
 echo "macdeployqt"
 if $DO_SIGN; then
-    sign_args="-sign-for-notarization=Developer ID Application: MuseScore"
+    sign_args="-sign-for-notarization=Developer ID Application: DB Score"
 else
     sign_args=""
 fi
 macdeployqt ${APP_PATH} \
     -verbose=2 \
     -qmldir=. \
-    -executable="${APP_PATH}/Contents/PlugIns/MuseScoreQuickLookPreviewExtension.appex/Contents/MacOS/MuseScoreQuickLookPreviewExtension" \
+    -executable="${APP_PATH}/Contents/PlugIns/DBScoreQuickLookPreviewExtension.appex/Contents/MacOS/DBScoreQuickLookPreviewExtension" \
     $sign_args
 
 echo "otool -L post-macdeployqt"
@@ -74,22 +74,22 @@ if $DO_SIGN; then
     codesign --force \
         --options runtime \
         --entitlements "src/macos_integration/entitlements.plist" \
-        -s "Developer ID Application: MuseScore" \
-        "${APP_PATH}/Contents/PlugIns/MuseScoreQuickLookPreviewExtension.appex"
+        -s "Developer ID Application: DB Score" \
+        "${APP_PATH}/Contents/PlugIns/DBScoreQuickLookPreviewExtension.appex"
 
     # Sign the bundled dylibs that are loaded at runtime and therefore
     # invisible to macdeployqt's dependency walk (e.g. libsndfile, vorbis)
     echo "Sign bundled dylibs"
     find "${APP_PATH}/Contents/Frameworks" -maxdepth 1 -type f -name "*.dylib" \
         -exec codesign --force --options runtime --timestamp \
-        -s "Developer ID Application: MuseScore" {} +
+        -s "Developer ID Application: DB Score" {} +
 
     # Re-sign main app after removing dSYM files and renaming qml folder
     echo "Re-sign main app"
     codesign --force \
         --options runtime \
         --entitlements "buildscripts/packaging/macOS/entitlements.plist" \
-        -s "Developer ID Application: MuseScore" \
+        -s "Developer ID Application: DB Score" \
         "${APP_PATH}"
 
     echo "Codesign verify"
@@ -204,7 +204,7 @@ hdiutil convert "applebuild/${DMG_NAME}" -format ULFO -o "applebuild/${COMPRESSE
 if $DO_SIGN; then
     echo "Codesign DMG"
     codesign --timestamp \
-        -s "Developer ID Application: MuseScore" \
+        -s "Developer ID Application: DB Score" \
         "applebuild/${COMPRESSED_DMG_NAME}"
 
     codesign --verify --verbose=2 "applebuild/${COMPRESSED_DMG_NAME}"

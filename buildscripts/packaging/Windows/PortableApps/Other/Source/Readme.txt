@@ -1,17 +1,17 @@
-MuseScore Portable Launcher
+DB Score Portable Launcher
 ============================
-Website: https://portableapps.com/apps/music_video/musescore_portable
+Website: https://portableapps.com/apps/music_video/dbscore_portable
 
-ABOUT MUSESCORE PORTABLE
+ABOUT DB SCORE PORTABLE
 =========================
-The MuseScore Portable Launcher allows you to run MuseScore from a removable drive whose 
+The DB Score Portable Launcher allows you to run DB Score from a removable drive whose 
 letter changes as you move it to another computer, or from a local folder. The program can 
 be entirely self-contained on the drive and then used on any Windows computer.
 
 LICENSE
 =======
-MuseScore is released under the GNU GPLv2 license: https://musescore.org/about/gpl
-The source code for MuseScore is available from MuseScore website: https://musescore.org/download
+DB Score is released under the GNU GPLv2 license: https://drumbearai.com/about/gpl
+The source code for DB Score is available from DB Score website: https://drumbearai.com/download
 
 This package's installer and launcher are released under the GPL. The launcher is generated 
 by the PortableApps.com Launcher Generator, available with full source and documentation 
@@ -23,35 +23,35 @@ INSTALLATION / DIRECTORY STRUCTURE
 ===================================
 By default, the program expects the following directory structure:
 
--\ <--- Directory with MuseScorePortable.exe
+-\ <--- Directory with DBScorePortable.exe
 ├── App\
 │   ├── AppInfo\
-│   └── MuseScore\
+│   └── DB Score\
 └── Data\
-    ├── MuseScore5\
+    ├── DB Score5\
     └── settings\
 
-The subfolders of -\Data\MuseScore5 (see above) are the default folders where MuseScore will 
+The subfolders of -\Data\DB Score5 (see above) are the default folders where DB Score will 
 search for user custom data, as well as the default place for the 'Save as...' dialog.
 
 *******************************************************
 ** Be extremely careful when deleting such a folder: **
 ** first check if you saved any document inside      **
-**          -\Data\MuseScore5\Scores                 **
+**          -\Data\DB Score5\Scores                 **
 *******************************************************
 
-The folder -\Data\settings contains MuseScore and Qml settings, as well as custom workspaces, 
-autosaved and recovered files. It also contains MuseScorePortable specific settings. This folder 
-can be deleted to revert MuseScore to factory settings (note: any customization will be lost in 
+The folder -\Data\settings contains DB Score and Qml settings, as well as custom workspaces, 
+autosaved and recovered files. It also contains DBScorePortable specific settings. This folder 
+can be deleted to revert DB Score to factory settings (note: any customization will be lost in 
 that case).
 
-MUSESCOREPORTABLE.INI CONFIGURATION
+DBSCOREPORTABLE.INI CONFIGURATION
 ====================================
 Some configuration in the PortableApps.com Launcher can be overridden by the user in an INI file 
-next to MuseScorePortable.exe called MuseScorePortable.ini.
+next to DBScorePortable.exe called DBScorePortable.ini.
 If you are happy with the default options, it is not necessary, though.  There is an example INI 
 included with this package to get you started.  To use it, copy AppNamePortable.ini from this 
-directory to MuseScorePortable.ini next to MuseScorePortable.exe.
+directory to DBScorePortable.ini next to DBScorePortable.exe.
 The options in the INI file are as follows:
 
    AdditionalParameters=
@@ -61,9 +61,9 @@ The options in the INI file are as follows:
 (There is no need for an INI header in this file; if you have one, though, it won't damage anything.)
 
 The AdditionalParameters entry allows you to pass additional command-line parameters to the 
-application. Whatever you enter here will be appended to the call to MuseScore.exe. The full 
+application. Whatever you enter here will be appended to the call to DB Score.exe. The full 
 list of available options is here:
-https://handbook.musescore.org/appendix/command-line-usage
+https://handbook.drumbearai.com/appendix/command-line-usage
 
 The DisableSplashScreen entry allows you to run the launcher without the PortableApps.com splash 
 screen (if present in -\App\AppInfo\Launcher) showing up. The default is false.

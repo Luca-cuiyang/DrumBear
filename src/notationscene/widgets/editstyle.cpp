@@ -1482,9 +1482,9 @@ void EditStyle::setHeaderFooterMacroInfoText()
           % "</i></td></tr><tr><td>$c</td><td width=\"12\"/><td><i>"_L1
           % muse::qtrc("notation/editstyle", "Copyright, on all pages")
           % "</i></td></tr><tr><td>$v</td><td width=\"12\"/><td><i>"_L1
-          % muse::qtrc("notation/editstyle", "MuseScore Studio version this score was last saved with")
+          % muse::qtrc("notation/editstyle", "DB Score version this score was last saved with")
           % "</i></td></tr><tr><td>$r</td><td width=\"12\"/><td><i>"_L1
-          % muse::qtrc("notation/editstyle", "MuseScore Studio revision this score was last saved with")
+          % muse::qtrc("notation/editstyle", "DB Score revision this score was last saved with")
           % "</i></td></tr><tr><td>$$</td><td width=\"12\"/><td><i>"_L1
           % muse::qtrc("notation/editstyle", "The $ sign itself")
           % "</i></td></tr></table><p>"_L1

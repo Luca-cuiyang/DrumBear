@@ -252,7 +252,7 @@
                 <RegistryValue Name="Content Type" Value="application/x-dbscore+xml" Type="string" />
             </RegistryKey>
 
-            <!-- musescore URL scheme -->
+            <!-- dbscore URL scheme -->
             <RegistryKey Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\DBScore.Url.dbscore.$(var.ProgIdSuffix)">
                 <RegistryValue Value="DB Score 链接" Type="string" />
                 <RegistryValue Key="DefaultIcon" Value="[INSTALL_ROOT]bin\$(var.ExeName),1" Type="string" />

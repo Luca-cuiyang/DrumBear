@@ -35,20 +35,20 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
 # Set up swiftrt.o and runtime library search paths
 include(InitializeSwift)
 
-add_executable(MuseScoreQuickLookPreviewExtension
+add_executable(DBScoreQuickLookPreviewExtension
     MACOSX_BUNDLE
     PreviewProvider.swift
     previewprovider.cpp
     previewprovider.hpp
 )
 
-target_link_libraries(MuseScoreQuickLookPreviewExtension PRIVATE
+target_link_libraries(DBScoreQuickLookPreviewExtension PRIVATE
     muse::global
     iex_imagesexport
     project
 )
 
-target_include_directories(MuseScoreQuickLookPreviewExtension PRIVATE
+target_include_directories(DBScoreQuickLookPreviewExtension PRIVATE
     ${PROJECT_SOURCE_DIR}/src
 
     ${MUSE_FRAMEWORK_PATH}
@@ -63,44 +63,44 @@ target_include_directories(MuseScoreQuickLookPreviewExtension PRIVATE
 )
 
 # if(MUSE_COMPILE_USE_PCH)
-#     target_precompile_headers_clang_ccache(MuseScoreQuickLookPreviewExtension REUSE_FROM muse_pch)
-#     target_link_libraries(MuseScoreQuickLookPreviewExtension PRIVATE muse_pch)
+#     target_precompile_headers_clang_ccache(DBScoreQuickLookPreviewExtension REUSE_FROM muse_pch)
+#     target_link_libraries(DBScoreQuickLookPreviewExtension PRIVATE muse_pch)
 # endif()
 
-target_compile_options(MuseScoreQuickLookPreviewExtension PRIVATE
+target_compile_options(DBScoreQuickLookPreviewExtension PRIVATE
     $<$<COMPILE_LANGUAGE:Swift>:-application-extension>
     "$<$<COMPILE_LANGUAGE:Swift>:-cxx-interoperability-mode=default>"
 )
 
-target_link_options(MuseScoreQuickLookPreviewExtension PRIVATE
+target_link_options(DBScoreQuickLookPreviewExtension PRIVATE
     "$<$<COMPILE_LANGUAGE:Swift>:SHELL:-Xlinker -e>"
     "$<$<COMPILE_LANGUAGE:Swift>:SHELL:-Xlinker _NSExtensionMain>"
 )
 
-set_target_properties(MuseScoreQuickLookPreviewExtension PROPERTIES
+set_target_properties(DBScoreQuickLookPreviewExtension PROPERTIES
     XCODE_PRODUCT_TYPE "com.apple.product-type.app-extension"
     BUNDLE_EXTENSION appex
     XCODE_ATTRIBUTE_WRAPPER_EXTENSION appex
     XCODE_ATTRIBUTE_GENERATE_PKGINFO_FILE YES
     MACOSX_BUNDLE_INFO_PLIST "${CMAKE_CURRENT_SOURCE_DIR}/Info.plist"
-    MACOSX_BUNDLE_BUNDLE_NAME "MuseScoreQuickLookPreviewExtension"
+    MACOSX_BUNDLE_BUNDLE_NAME "DB Score 预览"
     MACOSX_BUNDLE_BUNDLE_VERSION "${CMAKE_BUILD_NUMBER}"
-    MACOSX_BUNDLE_COPYRIGHT "Copyright © 1999-2026 MuseScore Limited and others. Published under the GNU General Public License version 3."
+    MACOSX_BUNDLE_COPYRIGHT "Copyright © 2026 DB Score. Published under the GNU General Public License version 3."
     MACOSX_BUNDLE_GUI_IDENTIFIER "${MUSE_APP_GUI_IDENTIFIER}.QuickLookPreviewExtension"
     MACOSX_BUNDLE_LONG_VERSION_STRING "${MUSE_APP_VERSION}"
     MACOSX_BUNDLE_SHORT_VERSION_STRING "${MUSE_APP_VERSION}"
     OSX_ARCHITECTURES ""
 )
 
-set_target_properties(MuseScoreQuickLookPreviewExtension PROPERTIES
+set_target_properties(DBScoreQuickLookPreviewExtension PROPERTIES
     INSTALL_RPATH "@executable_path/../../../../Frameworks;${QT_INSTALL_LIBS}"
 )
 
-install(TARGETS MuseScoreQuickLookPreviewExtension
+install(TARGETS DBScoreQuickLookPreviewExtension
     BUNDLE DESTINATION dbscore.app/Contents/PlugIns
 )
 
-set(the_appex_path "${CMAKE_INSTALL_PREFIX}/dbscore.app/Contents/PlugIns/MuseScoreQuickLookPreviewExtension.appex")
+set(the_appex_path "${CMAKE_INSTALL_PREFIX}/dbscore.app/Contents/PlugIns/DBScoreQuickLookPreviewExtension.appex")
 
 # Platform plugin is loaded by Qt at runtime, rather than as a linked framework.
 # Due to sandboxing, this does not work if the plugin is outside the .appex
@@ -111,8 +111,8 @@ install(FILES ${QT_INSTALL_PLUGINS}/platforms/libqcocoa.dylib
 )
 
 install(CODE "
-    execute_process(COMMAND rm -f \"${the_appex_path}/Contents/MacOS/MuseScoreQuickLookPreviewExtension.emit-module.d\")
-    execute_process(COMMAND rm -f \"${the_appex_path}/Contents/MacOS/MuseScoreQuickLookPreviewExtension.d\")
+    execute_process(COMMAND rm -f \"${the_appex_path}/Contents/MacOS/DBScoreQuickLookPreviewExtension.emit-module.d\")
+    execute_process(COMMAND rm -f \"${the_appex_path}/Contents/MacOS/DBScoreQuickLookPreviewExtension.d\")
     execute_process(COMMAND codesign --force --sign - --timestamp=none --options runtime --entitlements \"${CMAKE_CURRENT_SOURCE_DIR}/entitlements.plist\" \"${the_appex_path}\")
 ")
 

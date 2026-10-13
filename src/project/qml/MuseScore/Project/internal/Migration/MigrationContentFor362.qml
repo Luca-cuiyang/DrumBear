@@ -66,7 +66,7 @@ ColumnLayout {
 
     StyledTextLabel {
         id: headerTitle
-        text: qsTrc("project/migration", "This file was last saved in MuseScore %1").arg(root.appVersion)
+        text: qsTrc("project/migration", "This file was last saved in DB Score %1").arg(root.appVersion)
         font: ui.theme.tabBoldFont
     }
 
