@@ -2257,14 +2257,6 @@ const UiActionList NotationUiActions::s_actions = {
              TranslatableString("action", "Toggle note input mode: re-pitch existing notes"),
              IconCode::Code::RE_PITCH
              ),
-    UiAction("note-input-jianpu",
-             mu::context::UiCtxProjectOpened,
-             mu::context::CTX_NOTATION_OPENED,
-             TranslatableString("action", "简谱输入"),
-             TranslatableString("action", "切换简谱数字输入模式"),
-             IconCode::Code::NONE,
-             Checkable::Yes
-             ),
     UiAction("note-input-realtime-auto",
              mu::context::UiCtxProjectOpened,
              mu::context::CTX_NOTATION_OPENED,

@@ -251,9 +251,6 @@ bool UiContextResolver::isShortcutContextAllowed(const std::string& scContext) c
         if (!noteInput->isNoteInputMode()) {
             return false;
         }
-        if (!noteInput->usingNoteInputMethod(mu::engraving::NoteEntryMethod::JIANPU)) {
-            return false;
-        }
         auto score = notation->elements()->msScore();
         if (!score) {
             return false;

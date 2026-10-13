@@ -205,7 +205,6 @@ void NotationActionController::init()
     registerNoteInputCommand(TOGGLE_NOTE_INPUT_BY_DURATION_COMMAND, NoteInputMethod::BY_DURATION);
     registerNoteInputCommand(TOGGLE_NOTE_INPUT_RHYTHM_COMMAND, NoteInputMethod::RHYTHM);
     registerNoteInputCommand(TOGGLE_NOTE_INPUT_REPITCH_COMMAND, NoteInputMethod::REPITCH);
-    registerNoteInputCommand(TOGGLE_NOTE_INPUT_JIANPU_COMMAND, NoteInputMethod::JIANPU);
     registerNoteInputCommand(TOGGLE_NOTE_INPUT_REALTIME_AUTO_COMMAND, NoteInputMethod::REALTIME_AUTO);
     registerNoteInputCommand(TOGGLE_NOTE_INPUT_REALTIME_MANUAL_COMMAND, NoteInputMethod::REALTIME_MANUAL);
     registerNoteInputCommand(TOGGLE_NOTE_INPUT_TIMEWISE_COMMAND, NoteInputMethod::TIMEWISE);
@@ -730,7 +729,6 @@ void NotationActionController::init()
             { "note-input-by-duration", TOGGLE_NOTE_INPUT_BY_DURATION_COMMAND, {} },
             { "note-input-rhythm", TOGGLE_NOTE_INPUT_RHYTHM_COMMAND, {} },
             { "note-input-repitch", TOGGLE_NOTE_INPUT_REPITCH_COMMAND, {} },
-            { "note-input-jianpu", TOGGLE_NOTE_INPUT_JIANPU_COMMAND, {} },
             { "note-input-realtime-auto", TOGGLE_NOTE_INPUT_REALTIME_AUTO_COMMAND, {} },
             { "note-input-realtime-manual", TOGGLE_NOTE_INPUT_REALTIME_MANUAL_COMMAND, {} },
             { "note-input-timewise", TOGGLE_NOTE_INPUT_TIMEWISE_COMMAND, {} },
