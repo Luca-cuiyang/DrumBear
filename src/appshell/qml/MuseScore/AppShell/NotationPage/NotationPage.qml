@@ -52,9 +52,15 @@ DockPage {
 
     Timer {
         id: startupGuardTimer
-        interval: 1500
+        interval: 2500
         repeat: false
-        onTriggered: audioTrackInitialLoad = false
+        onTriggered: {
+            audioTrackInitialLoad = false
+            //! 工作区布局恢复可能发生在页面初始化之后，再兜底关闭一次
+            Qt.callLater(function() {
+                audioTrackPanel.close()
+            })
+        }
     }
 
     AudioTrackSettingsModel {
