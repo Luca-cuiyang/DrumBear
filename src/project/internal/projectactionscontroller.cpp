@@ -317,25 +317,11 @@ muse::Ret ProjectActionsController::exportMusicXml()
         return make_ret(Ret::Code::Cancel);
     }
 
-    // 默认保存位置：优先当前工程所在目录，否则落到「文稿」目录
-    muse::io::path_t defaultDir;
-    if (!project->path().empty()) {
-        defaultDir = muse::io::dirpath(project->path());
-    } else {
-        defaultDir = muse::io::path_t(QDir::homePath()) + "/Documents";
-    }
-
-    QString defaultName = project->displayName();
-    if (defaultName.isEmpty()) {
-        defaultName = QStringLiteral("score");
-    }
-    muse::io::path_t defaultPath = defaultDir.appendingComponent(muse::io::path_t(defaultName.toStdString()));
-
     std::vector<std::string> filter {
         muse::trc("project", "MusicXML files") + " (*.musicxml *.xml)"
     };
 
-    muse::io::path_t path = interactive()->selectSavingFileSync(muse::trc("project", "导出简谱 MusicXML"), defaultPath, filter);
+    muse::io::path_t path = interactive()->selectSavingFileSync(muse::trc("project", "导出简谱 MusicXML"), "", filter);
     if (path.empty()) {
         return make_ret(Ret::Code::Cancel);
     }
@@ -346,8 +332,6 @@ muse::Ret ProjectActionsController::exportMusicXml()
     }
 
     if (!mu::iex::musicxml::saveXml(score, path.toString())) {
-        interactive()->error(muse::trc("project", "导出简谱 MusicXML"),
-                             muse::trc("project", "导出 MusicXML 失败，请检查保存位置是否有写入权限。"));
         return make_ret(Ret::Code::InternalError, std::string("导出 MusicXML 失败"));
     }
 

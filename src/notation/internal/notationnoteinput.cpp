@@ -60,7 +60,6 @@ TranslatableString nameOfNoteInputMethod(NoteInputMethod method)
     case NoteInputMethod::REALTIME_AUTO:    return TranslatableString("noteInputMethod", "Metronome real-time input mode");
     case NoteInputMethod::REALTIME_MANUAL:  return TranslatableString("noteInputMethod", "Pedal real-time input mode");
     case NoteInputMethod::TIMEWISE:         return TranslatableString("noteInputMethod", "Insert mode (grow measures)");
-    case NoteInputMethod::JIANPU:           return TranslatableString("noteInputMethod", "简谱数字输入模式");
         // No default case. We want a compiler warning if an enum value is not handled here.
     }
 
