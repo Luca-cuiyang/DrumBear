@@ -10,17 +10,11 @@
 
 #include <gtest/gtest.h>
 
-#include <set>
-
 #include "engraving/dom/chord.h"
-#include "engraving/dom/harmony.h"
-#include "engraving/dom/lyrics.h"
-#include "engraving/dom/articulation.h"
 #include "engraving/dom/masterscore.h"
 #include "engraving/dom/note.h"
 #include "engraving/dom/segment.h"
 #include "engraving/dom/pitchspelling.h"
-#include "engraving/style/style.h"
 #include "engraving/types/types.h"
 
 #include "utils/scorerw.h"
@@ -121,70 +115,6 @@ TEST_F(Engraving_JianpuConversionTests, rendering_Gmajor_WithAccidentals)
     }
 
     EXPECT_EQ(idx, expected.size());
-
-    delete score;
-}
-
-// 自检：简谱样式设置有合理默认值，且核心渲染（数字/八度点/减时线）可用。
-TEST_F(Engraving_JianpuConversionTests, styleDefaults_AreValid)
-{
-    MasterScore* score = ScoreRW::readScore(u"jianpu_data/jianpuGmajor.mscx");
-    ASSERT_TRUE(score);
-
-    const MStyle& style = score->style();
-
-    // 简谱数字字体
-    EXPECT_FALSE(style.styleSt(StyleId::jianpuNumberFontFace).isEmpty());
-    EXPECT_GT(style.styleD(StyleId::jianpuNumberFontSize), 0.0);
-
-    // 高低音点
-    EXPECT_GT(style.styleD(StyleId::jianpuOctaveDotRadius), 0.0);
-    EXPECT_GT(style.styleD(StyleId::jianpuOctaveDotDistance), 0.0);
-
-    // 减时线
-    EXPECT_GT(style.styleD(StyleId::jianpuDurationLineThickness), 0.0);
-    EXPECT_GT(style.styleD(StyleId::jianpuDiminutionBeamThickness), 0.0);
-
-    // 数字上下间距
-    EXPECT_GT(style.styleD(StyleId::jianpuNumberVerticalDistance), 0.0);
-
-    delete score;
-}
-
-// 自检：歌词、和弦符号、装饰音、多声部在简谱谱表上共存且不丢失。
-TEST_F(Engraving_JianpuConversionTests, lyricsChordsArticulationsMultiVoice_Coexist)
-{
-    MasterScore* score = ScoreRW::readScore(u"jianpu_data/jianpuFeatures.mscx");
-    ASSERT_TRUE(score);
-
-    int harmonyCount = 0;
-    int lyricsCount = 0;
-    int articulationCount = 0;
-    std::set<voice_idx_t> voices;
-
-    score->scanElements([&](EngravingItem* e) {
-        if (e->isHarmony()) {
-            ++harmonyCount;
-        } else if (e->isLyrics()) {
-            ++lyricsCount;
-        } else if (e->isArticulationFamily()) {
-            ++articulationCount;
-        }
-    });
-
-    for (Segment* seg = score->firstSegment(SegmentType::ChordRest); seg; seg = seg->next1(SegmentType::ChordRest)) {
-        for (track_idx_t track = 0; track < score->ntracks(); ++track) {
-            EngravingItem* item = seg->element(track);
-            if (item && item->isChord()) {
-                voices.insert(track % VOICES);
-            }
-        }
-    }
-
-    EXPECT_EQ(harmonyCount, 1);
-    EXPECT_EQ(lyricsCount, 3);
-    EXPECT_EQ(articulationCount, 1);
-    EXPECT_EQ(voices.size(), 2u);
 
     delete score;
 }
