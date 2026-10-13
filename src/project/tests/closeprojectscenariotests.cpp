@@ -101,7 +101,7 @@ protected:
     static ::testing::Matcher<const UriQuery&> IsHomePage()
     {
         return ::testing::Truly([](const UriQuery& q) {
-            return q.uri().toString() == "musescore://home";
+            return q.uri().toString() == "dbscore://home";
         });
     }
 

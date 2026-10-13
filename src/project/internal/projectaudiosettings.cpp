@@ -28,6 +28,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QDir>
+#include <QCryptographicHash>
 
 #include "types/bytearray.h"
 
@@ -67,10 +68,22 @@ static QString extractBundledAudioToCache(const QString& name, const muse::ByteA
 {
     QString cacheDir = QDir::temp().filePath("DBScoreAudioTrack");
     QDir().mkpath(cacheDir);
-    QString filePath = cacheDir + "/" + name;
+
+    //! NOTE: 缓存文件名加入内容哈希，避免两个工程打包了同名但内容不同的音频时，
+    //! 在同一个临时目录里互相覆盖导致串音。文件名保持确定性：同一内容永远落在同一缓存。
+    const QByteArray raw = data.toQByteArrayNoCopy();
+    const QString digest = QString::fromLatin1(QCryptographicHash::hash(raw, QCryptographicHash::Sha1).toHex());
+    const QString baseName = QFileInfo(name).completeBaseName();
+    const QString suffix = QFileInfo(name).suffix();
+
+    QString filePath = cacheDir + "/" + baseName + "-" + digest.left(12);
+    if (!suffix.isEmpty()) {
+        filePath += "." + suffix;
+    }
+
     QFile file(filePath);
     if (file.open(QIODevice::WriteOnly)) {
-        file.write(data.toQByteArrayNoCopy());
+        file.write(raw);
         file.close();
     }
     return filePath;

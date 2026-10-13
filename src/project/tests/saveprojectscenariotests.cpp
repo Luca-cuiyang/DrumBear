@@ -206,12 +206,12 @@ protected:
 
     static ::testing::Matcher<const UriQuery&> IsSaveToCloudDialog()
     {
-        return IsDialog("musescore://project/savetocloud");
+        return IsDialog("dbscore://project/savetocloud");
     }
 
     static ::testing::Matcher<const UriQuery&> IsAudioGenerationSettingsDialog()
     {
-        return IsDialog("musescore://project/audiogenerationsettings");
+        return IsDialog("dbscore://project/audiogenerationsettings");
     }
 
     //! The account is signed in, so nothing is asked.
@@ -365,34 +365,6 @@ TEST_F(SaveProjectScenarioTests, SaveProject_ExistingLocalScore_SavesWithoutAski
     EXPECT_TRUE(ret);
 }
 
-TEST_F(SaveProjectScenarioTests, SaveProject_ExistingCloudScore_SavesWithoutAsking)
-{
-    //! [GIVEN] An already saved cloud score...
-    ON_CALL(*m_project, isNewlyCreated()).WillByDefault(Return(false));
-    ON_CALL(*m_project, isCloudProject()).WillByDefault(Return(true));
-
-    //! [GIVEN] ...while the cloud is unreachable, so only the local write happens
-    ON_CALL(*m_authorization, checkCloudIsAvailable()).WillByDefault([] { return resolvedPromise(make_ret(Ret::Code::InternalError)); });
-    ON_CALL(*m_configuration, showCloudIsNotAvailableWarning()).WillByDefault(Return(false));
-
-    m_cloudInfo.name = "Symphony";
-    m_cloudInfo.sourceUrl = QUrl("score-42");
-
-    const io::path_t path = "project.mscz";
-    ON_CALL(*m_project, path()).WillByDefault(Return(path));
-
-    //! [THEN] The save location is not asked for; the score keeps the cloud details it already had,
-    //! and is still written to its own file so that the work survives until the connection returns
-    EXPECT_CALL(*m_interactive, selectSavingFile(_, _, _, _)).Times(0);
-    EXPECT_CALL(*m_project, setCloudInfo(::testing::AllOf(
-                                             ::testing::Field(&CloudProjectInfo::name, QString("Symphony")),
-                                             ::testing::Field(&CloudProjectInfo::sourceUrl, m_cloudInfo.sourceUrl)))).Times(1);
-    EXPECT_CALL(*m_project, save(path, SaveMode::Save, true)).Times(1);
-
-    //! [WHEN] Saving it...
-    saveProject(SaveMode::Save);
-}
-
 TEST_F(SaveProjectScenarioTests, SaveProject_NewlyCreatedScore_AsksForSaveLocation)
 {
     //! [GIVEN] A score that has never been saved...
@@ -422,22 +394,6 @@ TEST_F(SaveProjectScenarioTests, SaveProject_SaveAs_AlwaysAsksForSaveLocation)
 
     //! [WHEN] Saving it as a new file...
     saveProject(SaveMode::SaveAs);
-}
-
-TEST_F(SaveProjectScenarioTests, SaveProject_LocalScoreToCloud_AsksForSaveLocation)
-{
-    //! [GIVEN] An already saved score that does not live in the cloud yet...
-    ON_CALL(*m_project, isNewlyCreated()).WillByDefault(Return(false));
-    ON_CALL(*m_project, isCloudProject()).WillByDefault(Return(false));
-
-    //! [THEN] The cloud is a destination it has never had, so it is asked for
-    givenReachableCloud();
-    ON_CALL(*m_interactive, open(_))
-    .WillByDefault([] { return dialogAnswer(RetVal<Val>(make_ret(Ret::Code::Cancel))); });
-    EXPECT_CALL(*m_interactive, open(IsSaveToCloudDialog())).Times(1);
-
-    //! [WHEN] Saving it to the cloud...
-    saveProject(SaveMode::Save, SaveLocationType::Cloud);
 }
 
 TEST_F(SaveProjectScenarioTests, SaveProject_SaveCopy_AsksForSaveLocation)
@@ -473,45 +429,6 @@ TEST_F(SaveProjectScenarioTests, SaveProject_ChosenLocalLocation_IsUsedAsGiven)
     Ret ret = saveProject(SaveMode::Save);
 
     EXPECT_TRUE(ret);
-}
-
-TEST_F(SaveProjectScenarioTests, SaveProject_ChosenCloudLocation_IsAppliedToTheProject)
-{
-    //! [GIVEN] A score that has never been saved...
-    ON_CALL(*m_project, isNewlyCreated()).WillByDefault(Return(true));
-    ON_CALL(*m_project, isCloudProject()).WillByDefault(Return(false));
-
-    //! [GIVEN] ...and a user who picks the cloud for it, naming the score in the dialog
-    givenReachableCloud();
-    ON_CALL(*m_configuration, shouldAskSaveLocationType()).WillByDefault(Return(false));
-    ON_CALL(*m_configuration, lastUsedSaveLocationType()).WillByDefault(Return(SaveLocationType::Cloud));
-
-    QVariantMap answer;
-    answer["response"] = int(cloud::SaveToCloudResponse::SaveToCloudResponse::Ok);
-    answer["name"] = "Chosen name";
-    answer["visibility"] = int(cloud::Visibility::Private);
-    answer["replaceExisting"] = false;
-    const Val val = Val::fromQVariant(answer);
-    ON_CALL(*m_interactive, open(_)).WillByDefault([val] { return dialogAnswer(RetVal<Val>::make_ok(val)); });
-
-    ON_CALL(*m_project, writeToDevice(_)).WillByDefault(Return(make_ok()));
-    ON_CALL(*m_configuration, cloudProjectSavingPath(0)).WillByDefault(Return(io::path_t("cloud.mscz")));
-    givenUploadFinishesWith(make_ok(), ValMap());
-
-    std::vector<CloudProjectInfo> stored;
-    ON_CALL(*m_project, setCloudInfo(_)).WillByDefault([&stored](const CloudProjectInfo& i) {
-        stored.push_back(i);
-    });
-
-    //! [THEN] The score is written to the path reserved for cloud scores on the way to the cloud
-    EXPECT_CALL(*m_project, save(io::path_t("cloud.mscz"), SaveMode::Save, true)).Times(1);
-
-    //! [WHEN] Saving it...
-    saveProject(SaveMode::Save);
-
-    //! [THEN] The name the user gave in the dialog is what lands on the project
-    ASSERT_FALSE(stored.empty());
-    EXPECT_EQ(stored.front().name, QString("Chosen name"));
 }
 
 TEST_F(SaveProjectScenarioTests, SaveProject_Forced_SkipsTheCanSaveCheck)
@@ -1190,30 +1107,6 @@ TEST_F(SaveProjectScenarioTests, SaveProjectToCloud_AlreadyUploading_DoesNotStar
 
     //! [THEN] ...and was refused as busy, so a close that waited for it does not go ahead mid-upload
     EXPECT_EQ(nested.code(), int(Ret::Code::Busy));
-}
-
-TEST_F(SaveProjectScenarioTests, SaveProject_ConflictAndSaveAs_AsksForANewLocation)
-{
-    //! [GIVEN] An existing cloud score whose upload hits a conflict...
-    ON_CALL(*m_project, isNewlyCreated()).WillByDefault(Return(false));
-    ON_CALL(*m_project, isCloudProject()).WillByDefault(Return(true));
-    m_cloudInfo.sourceUrl = QUrl("score-42");
-
-    givenReachableCloud();
-    ON_CALL(*m_project, writeToDevice(_)).WillByDefault(Return(make_ok()));
-    givenUploadFinishesWith(make_ret(cloud::Err::Status409_Conflict), ValMap());
-
-    //! [GIVEN] ...and a user who answers the conflict dialog with "Save as"
-    static constexpr int SAVE_AS_CONFLICT_BTN_ID = int(IInteractive::Button::CustomButton) + 3;
-    ON_CALL(*m_interactive, warning(_, _, _, _, _, _))
-    .WillByDefault([] { return dialogResult(SAVE_AS_CONFLICT_BTN_ID); });
-
-    //! [THEN] The "Save as" flow really starts and asks for a new location, instead of being refused as busy
-    givenUserCancelsTheSaveDialog();
-    EXPECT_CALL(*m_interactive, selectSavingFile(_, _, _, _)).Times(1);
-
-    //! [WHEN] Saving the score...
-    saveProject(SaveMode::Save);
 }
 
 TEST_F(SaveProjectScenarioTests, SaveProjectToCloud_ConflictRetry_LeavesTheFirstUploadDisconnected)

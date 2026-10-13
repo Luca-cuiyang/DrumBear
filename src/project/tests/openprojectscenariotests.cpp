@@ -285,8 +285,8 @@ TEST_F(OpenProjectScenarioTests, OpenProject_LocalFileUrl_OpensThatFile)
 
 TEST_F(OpenProjectScenarioTests, OpenProject_MuseScoreUrlThatIsNotAScore_IsRejected)
 {
-    //! [GIVEN] A musescore:// url that does not point at a score...
-    ProjectFile file(QUrl("musescore://something-else/42"));
+    //! [GIVEN] A dbscore:// url that does not point at a score...
+    ProjectFile file(QUrl("dbscore://something-else/42"));
 
     //! [THEN] Nothing is loaded
     EXPECT_CALL(*m_project, load(_, _, _)).Times(0);
@@ -300,7 +300,7 @@ TEST_F(OpenProjectScenarioTests, OpenProject_MuseScoreUrlThatIsNotAScore_IsRejec
 
 TEST_F(OpenProjectScenarioTests, OpenProject_ForeignUrl_IsRejected)
 {
-    //! [GIVEN] A url that is neither a local file nor a musescore:// link...
+    //! [GIVEN] A url that is neither a local file nor a dbscore:// link...
     ProjectFile file(QUrl("foreign-url"));
 
     //! [THEN] Nothing is loaded
@@ -734,7 +734,7 @@ TEST_F(OpenProjectScenarioTests, OpenScoreUrl_NotAScoreId_IsRejected)
 {
     //! [GIVEN] An open-score link whose last segment is not a number...
     //! [WHEN] Following it...
-    Ret ret = openProject(ProjectFile(QUrl("musescore://open-score/not-a-number")));
+    Ret ret = openProject(ProjectFile(QUrl("dbscore://open-score/not-a-number")));
 
     //! [THEN] It is refused as malformed
     EXPECT_EQ(ret.code(), int(Err::MalformedOpenScoreUrl));
@@ -755,7 +755,7 @@ TEST_F(OpenProjectScenarioTests, OpenScoreUrl_OwnScoreAlreadyOpenElsewhere_Raise
     EXPECT_CALL(*m_dbScoreCloudService, downloadScore(_, _, _, _)).Times(0);
 
     //! [WHEN] Following the link...
-    Ret ret = openProject(ProjectFile(QUrl("musescore://open-score/42")));
+    Ret ret = openProject(ProjectFile(QUrl("dbscore://open-score/42")));
 
     EXPECT_TRUE(ret);
 }
@@ -771,11 +771,11 @@ TEST_F(OpenProjectScenarioTests, OpenScoreUrl_WindowIsTaken_OpensANewWindowWithT
     ON_CALL(*m_project, path()).WillByDefault(Return(io::path_t("other.mscz")));
 
     //! [THEN] The link and its title go to a new window
-    const QStringList expected { "musescore://open-score/42", "--score-display-name-override", "Cloud title" };
+    const QStringList expected { "dbscore://open-score/42", "--score-display-name-override", "Cloud title" };
     EXPECT_CALL(*m_multiwindows, openNewWindow(expected)).Times(1);
 
     //! [WHEN] Following the link...
-    Ret ret = openProject(ProjectFile(QUrl("musescore://open-score/42")));
+    Ret ret = openProject(ProjectFile(QUrl("dbscore://open-score/42")));
 
     EXPECT_TRUE(ret);
 }
@@ -790,7 +790,7 @@ TEST_F(OpenProjectScenarioTests, OpenScoreUrl_SharedLink_PassesHashAndSecretToTh
     EXPECT_CALL(*m_dbScoreCloudService, downloadScore(42, _, QString("abc"), QString("xyz"))).Times(1);
 
     //! [WHEN] Following the link, and letting it get as far as the download...
-    startOpenProject(ProjectFile(QUrl("musescore://open-score/42?h=abc&secret=xyz")));
+    startOpenProject(ProjectFile(QUrl("dbscore://open-score/42?h=abc&secret=xyz")));
     drainDeferredCalls();
 }
 
@@ -1000,19 +1000,19 @@ TEST_F(OpenProjectScenarioTests, IsUrlSupported_OpenScoreLink_IsAccepted)
 {
     //! [GIVEN] A musescore.com open-score link...
     //! [WHEN] Asking about it...
-    EXPECT_TRUE(m_scenario->isUrlSupported(QUrl("musescore://open-score/42")));
+    EXPECT_TRUE(m_scenario->isUrlSupported(QUrl("dbscore://open-score/42")));
 }
 
 TEST_F(OpenProjectScenarioTests, IsUrlSupported_OtherMuseScoreLink_IsRefused)
 {
-    //! [GIVEN] A musescore:// link that is not about opening a score...
+    //! [GIVEN] A dbscore:// link that is not about opening a score...
     //! [WHEN] Asking about it...
-    EXPECT_FALSE(m_scenario->isUrlSupported(QUrl("musescore://something-else/42")));
+    EXPECT_FALSE(m_scenario->isUrlSupported(QUrl("dbscore://something-else/42")));
 }
 
 TEST_F(OpenProjectScenarioTests, IsUrlSupported_ForeignScheme_IsRefused)
 {
-    //! [GIVEN] A url that is neither a local file nor a musescore:// link...
+    //! [GIVEN] A url that is neither a local file nor a dbscore:// link...
     //! [WHEN] Asking about it...
     EXPECT_FALSE(m_scenario->isUrlSupported(QUrl("foreign-url")));
 }
