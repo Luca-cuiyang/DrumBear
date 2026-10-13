@@ -514,7 +514,6 @@ void AudioTrackSettingsModel::chooseFile()
     m_originalBpm = 0.0;
     emit measuredBpmChanged();
     updateWaveform();
-    updateClipsList();
     apply();
     notifyAll();
 }
@@ -548,7 +547,6 @@ void AudioTrackSettingsModel::replaceFile()
     m_originalBpm = 0.0;
     emit measuredBpmChanged();
     updateWaveform();
-    updateClipsList();
     apply();
     notifyAll();
 }
@@ -570,7 +568,6 @@ void AudioTrackSettingsModel::remove()
     m_waveformPeaks.clear();
     m_originalBpm = 0.0;
     emit measuredBpmChanged();
-    updateClipsList();
     apply();
     notifyAll();
 }
@@ -661,43 +658,10 @@ void AudioTrackSettingsModel::setScoreVolumeDb(double value)
     emit scoreVolumeDbChanged();
 }
 
-double AudioTrackSettingsModel::snapToBeat(double seconds)
-{
-    const notation::IMasterNotationPtr master = globalContext()->currentMasterNotation();
-    if (!master || !master->playback()) {
-        return std::round(seconds * 10.0) / 10.0;
-    }
-
-    const notation::INotationPlaybackPtr playback = master->playback();
-    const muse::midi::tick_t tick = playback->secToTick(muse::audio::secs_t(seconds));
-    const engraving::MeasureBeat beat = playback->beat(tick);
-    const muse::midi::tick_t beatTick = playback->beatToRawTick(beat.measureIndex, int(beat.beat));
-    return playback->playedTickToSec(beatTick).to_double();
-}
-
 IProjectAudioSettingsPtr AudioTrackSettingsModel::audioSettings() const
 {
     const project::INotationProjectPtr project = globalContext()->currentProject();
     return project ? project->audioSettings() : nullptr;
-}
-
-void AudioTrackSettingsModel::updateClipsList()
-{
-    m_clips.clear();
-    for (const AudioClipSettings& clip : m_settings.clips) {
-        QVariantMap map;
-        map.insert("filePath", clip.filePath.toQString());
-        map.insert("startOffset", clip.startOffset.to_double());
-        map.insert("clipStart", clip.clipStart.to_double());
-        map.insert("clipEnd", clip.clipEnd.to_double());
-        map.insert("speed", clip.speed);
-        map.insert("volume", clip.volume.to_double());
-        map.insert("muted", clip.muted);
-        map.insert("fadeIn", clip.fadeIn.to_double());
-        map.insert("fadeOut", clip.fadeOut.to_double());
-        m_clips.append(map);
-    }
-    emit clipsChanged();
 }
 
 const AudioClipSettings* AudioTrackSettingsModel::firstClip() const
@@ -757,13 +721,9 @@ void AudioTrackSettingsModel::notifyAll()
     emit clipEndChanged();
     emit volumeDbChanged();
     emit mutedChanged();
-    emit speedChanged();
     emit durationChanged();
     emit waveformPeaksChanged();
-    emit clipsChanged();
     emit scoreOffsetChanged();
-    emit fadeInChanged();
-    emit fadeOutChanged();
 }
 
 QString AudioTrackSettingsModel::filePath() const { const AudioClipSettings* c = firstClip(); return c ? c->filePath.toQString() : QString(); }
@@ -772,7 +732,6 @@ double AudioTrackSettingsModel::clipStart() const { const AudioClipSettings* c =
 double AudioTrackSettingsModel::clipEnd() const { const AudioClipSettings* c = firstClip(); return c ? c->clipEnd.to_double() : 0.0; }
 double AudioTrackSettingsModel::volumeDb() const { const AudioClipSettings* c = firstClip(); return c ? c->volume.to_double() : 0.0; }
 bool AudioTrackSettingsModel::muted() const { const AudioClipSettings* c = firstClip(); return c ? c->muted : false; }
-double AudioTrackSettingsModel::speed() const { const AudioClipSettings* c = firstClip(); return c ? c->speed : 1.0; }
 bool AudioTrackSettingsModel::hasTrack() const { return m_settings.isValid(); }
 double AudioTrackSettingsModel::duration() const
 {
@@ -784,7 +743,6 @@ double AudioTrackSettingsModel::duration() const
 }
 QVariantList AudioTrackSettingsModel::waveformPeaks() const { return m_waveformPeaks; }
 double AudioTrackSettingsModel::playbackPosition() const { return m_playbackPosition; }
-QVariantList AudioTrackSettingsModel::clips() const { return m_clips; }
 double AudioTrackSettingsModel::measuredBpm() const
 {
     const AudioClipSettings* clip = firstClip();
@@ -797,8 +755,6 @@ double AudioTrackSettingsModel::scoreDuration() const
     const notation::IMasterNotationPtr master = globalContext()->currentMasterNotation();
     return (master && master->playback()) ? master->playback()->totalPlayTime().to_double() : 0.0;
 }
-double AudioTrackSettingsModel::fadeIn() const { const AudioClipSettings* c = firstClip(); return c ? c->fadeIn.to_double() : 0.0; }
-double AudioTrackSettingsModel::fadeOut() const { const AudioClipSettings* c = firstClip(); return c ? c->fadeOut.to_double() : 0.0; }
 QVariantList AudioTrackSettingsModel::scoreBeatGrid() const { return m_scoreBeatGrid; }
 
 void AudioTrackSettingsModel::updateScoreBeatGrid()
@@ -851,131 +807,11 @@ void AudioTrackSettingsModel::updateScoreBeatGrid()
     emit scoreBeatGridChanged();
 }
 
-void AudioTrackSettingsModel::setStartOffset(double value) { if (!m_settings.clips.empty()) { m_settings.clips[0].startOffset = muse::secs_t(value); } emit startOffsetChanged(); updateClipsList(); }
-void AudioTrackSettingsModel::setClipStart(double value) { if (!m_settings.clips.empty()) { m_settings.clips[0].clipStart = muse::secs_t(value); } emit clipStartChanged(); updateClipsList(); }
-void AudioTrackSettingsModel::setClipEnd(double value) { if (!m_settings.clips.empty()) { m_settings.clips[0].clipEnd = muse::secs_t(value); } emit clipEndChanged(); updateClipsList(); }
-void AudioTrackSettingsModel::setVolumeDb(double value) { if (!m_settings.clips.empty()) { m_settings.clips[0].volume = muse::audio::volume_db_t(value); } emit volumeDbChanged(); updateClipsList(); }
-void AudioTrackSettingsModel::setMuted(bool value) { if (!m_settings.clips.empty()) { m_settings.clips[0].muted = value; } emit mutedChanged(); updateClipsList(); }
-void AudioTrackSettingsModel::setSpeed(double value) { if (!m_settings.clips.empty()) { m_settings.clips[0].speed = float(value); } emit speedChanged(); updateClipsList(); }
-
-void AudioTrackSettingsModel::addClipFromFile()
-{
-    const std::vector<std::string> filter {
-        muse::trc("project", "Audio files") + " (*.mp3 *.wav *.m4a *.aac *.flac *.ogg *.aiff *.aif)"
-    };
-    const muse::io::path_t path = interactive()->selectOpeningFileSync(muse::trc("project", "Choose audio track"), "", filter);
-    if (path.empty()) {
-        return;
-    }
-
-    AudioClipSettings clip;
-    clip.filePath = path;
-    m_settings.clips.push_back(clip);
-    updateWaveform();
-    updateClipsList();
-    apply();
-    notifyAll();
-}
-
-void AudioTrackSettingsModel::splitClip(int index, double at)
-{
-    if (index < 0 || index >= int(m_settings.clips.size())) {
-        return;
-    }
-
-    AudioClipSettings& clip = m_settings.clips[index];
-    const double dur = m_duration > 0.0 ? m_duration : 600.0;
-    const double splitSource = clip.clipStart + (at - clip.startOffset);
-    if (splitSource <= clip.clipStart || (clip.clipEnd > 0.0 && splitSource >= clip.clipEnd) || splitSource >= dur) {
-        return;
-    }
-
-    AudioClipSettings right = clip;
-    right.clipStart = muse::secs_t(splitSource);
-    right.startOffset = muse::secs_t(at);
-    clip.clipEnd = muse::secs_t(splitSource);
-
-    m_settings.clips.insert(m_settings.clips.begin() + index + 1, right);
-    updateClipsList();
-    apply();
-    notifyAll();
-}
-
-void AudioTrackSettingsModel::removeClip(int index)
-{
-    if (index < 0 || index >= int(m_settings.clips.size())) {
-        return;
-    }
-    m_settings.clips.erase(m_settings.clips.begin() + index);
-    updateClipsList();
-    apply();
-    notifyAll();
-}
-
-void AudioTrackSettingsModel::moveClip(int index, double startOffset)
-{
-    if (index < 0 || index >= int(m_settings.clips.size())) {
-        return;
-    }
-    m_settings.clips[index].startOffset = muse::secs_t(startOffset);
-    updateClipsList();
-    apply();
-    if (index == 0) {
-        emit startOffsetChanged();
-    }
-}
-
-void AudioTrackSettingsModel::trimClip(int index, double clipStart, double clipEnd)
-{
-    if (index < 0 || index >= int(m_settings.clips.size())) {
-        return;
-    }
-    m_settings.clips[index].clipStart = muse::secs_t(clipStart);
-    m_settings.clips[index].clipEnd = muse::secs_t(clipEnd);
-    updateClipsList();
-    apply();
-}
-
-void AudioTrackSettingsModel::setClipSpeed(int index, double speed)
-{
-    if (index < 0 || index >= int(m_settings.clips.size())) {
-        return;
-    }
-    m_settings.clips[index].speed = float(speed);
-    updateClipsList();
-    apply();
-}
-
-void AudioTrackSettingsModel::setClipVolume(int index, double volume)
-{
-    if (index < 0 || index >= int(m_settings.clips.size())) {
-        return;
-    }
-    m_settings.clips[index].volume = muse::audio::volume_db_t(volume);
-    updateClipsList();
-    apply();
-}
-
-void AudioTrackSettingsModel::setClipMuted(int index, bool muted)
-{
-    if (index < 0 || index >= int(m_settings.clips.size())) {
-        return;
-    }
-    m_settings.clips[index].muted = muted;
-    updateClipsList();
-    apply();
-}
-
-void AudioTrackSettingsModel::setClipFade(int index, double fadeIn, double fadeOut)
-{
-    if (index < 0 || index >= int(m_settings.clips.size())) {
-        return;
-    }
-    m_settings.clips[index].fadeIn = muse::secs_t(fadeIn);
-    m_settings.clips[index].fadeOut = muse::secs_t(fadeOut);
-    updateClipsList();
-    apply();
-}
+void AudioTrackSettingsModel::setStartOffset(double value) { if (!m_settings.clips.empty()) { m_settings.clips[0].startOffset = muse::secs_t(value); } emit startOffsetChanged(); }
+void AudioTrackSettingsModel::setClipStart(double value) { if (!m_settings.clips.empty()) { m_settings.clips[0].clipStart = muse::secs_t(value); } emit clipStartChanged(); }
+void AudioTrackSettingsModel::setClipEnd(double value) { if (!m_settings.clips.empty()) { m_settings.clips[0].clipEnd = muse::secs_t(value); } emit clipEndChanged(); }
+void AudioTrackSettingsModel::setVolumeDb(double value) { if (!m_settings.clips.empty()) { m_settings.clips[0].volume = muse::audio::volume_db_t(value); } emit volumeDbChanged(); }
+void AudioTrackSettingsModel::setMuted(bool value) { if (!m_settings.clips.empty()) { m_settings.clips[0].muted = value; } emit mutedChanged(); }
 
 void AudioTrackSettingsModel::tapTempo()
 {
@@ -984,70 +820,44 @@ void AudioTrackSettingsModel::tapTempo()
         return;
     }
 
-    std::vector<float> mono;
-    unsigned int sampleRate = 0;
     const QString path = clip->filePath.toQString();
 
-    if (!decodeAudioMono(path, mono, sampleRate)) {
-        return;
-    }
+    //! NOTE: 测速在后台线程执行（整段解码 + FFT），避免大音频文件阻塞 UI。
+    QPointer<AudioTrackSettingsModel> self(this);
+    std::thread([self, path]() {
+        std::vector<float> mono;
+        unsigned int sampleRate = 0;
+        if (!decodeAudioMono(path, mono, sampleRate)) {
+            return;
+        }
 
-    double bpm = detectBpm(mono, sampleRate);
-    if (bpm <= 0.0) {
-        return;
-    }
+        double bpm = detectBpm(mono, sampleRate);
+        if (bpm <= 0.0) {
+            return;
+        }
 
-    bpm = std::round(bpm * 100.0) / 100.0;
-    m_originalBpm = bpm;
-    emit measuredBpmChanged();
-}
+        bpm = std::round(bpm * 100.0) / 100.0;
+        if (!self) {
+            return;
+        }
 
-void AudioTrackSettingsModel::setBpm(double bpm)
-{
-    if (m_settings.clips.empty() || !std::isfinite(bpm) || bpm <= 0.0
-        || !std::isfinite(m_originalBpm) || m_originalBpm <= 0.0) {
-        return;
-    }
-
-    const double speed = std::clamp(bpm / m_originalBpm, 0.25, 4.0);
-    m_settings.clips[0].speed = float(speed);
-    updateClipsList();
-    apply();
-    emit speedChanged();
-    emit measuredBpmChanged();
-}
-
-void AudioTrackSettingsModel::resetSpeed()
-{
-    if (m_settings.clips.empty()) {
-        return;
-    }
-
-    m_settings.clips[0].speed = 1.0f;
-    updateClipsList();
-    apply();
-    emit speedChanged();
-    emit measuredBpmChanged();
+        QMetaObject::invokeMethod(self.data(), [self, path, bpm]() {
+            if (!self) {
+                return;
+            }
+            //! 防止结果过期：期间用户已更换/移除了音频时丢弃旧结果。
+            const AudioClipSettings* clip = self->firstClip();
+            if (!clip || clip->filePath.toQString() != path) {
+                return;
+            }
+            self->m_originalBpm = bpm;
+            emit self->measuredBpmChanged();
+        }, Qt::QueuedConnection);
+    }).detach();
 }
 
 void AudioTrackSettingsModel::setScoreOffset(double offset)
 {
     m_settings.scoreOffset = muse::secs_t(offset);
     emit scoreOffsetChanged();
-}
-void AudioTrackSettingsModel::setFadeIn(double value)
-{
-    if (!m_settings.clips.empty()) {
-        m_settings.clips[0].fadeIn = muse::secs_t(value);
-    }
-    emit fadeInChanged();
-    updateClipsList();
-}
-void AudioTrackSettingsModel::setFadeOut(double value)
-{
-    if (!m_settings.clips.empty()) {
-        m_settings.clips[0].fadeOut = muse::secs_t(value);
-    }
-    emit fadeOutChanged();
-    updateClipsList();
 }

@@ -51,17 +51,13 @@ class AudioTrackSettingsModel : public QObject, public muse::Contextable, public
     Q_PROPERTY(double clipEnd READ clipEnd WRITE setClipEnd NOTIFY clipEndChanged)
     Q_PROPERTY(double volumeDb READ volumeDb WRITE setVolumeDb NOTIFY volumeDbChanged)
     Q_PROPERTY(bool muted READ muted WRITE setMuted NOTIFY mutedChanged)
-    Q_PROPERTY(double speed READ speed WRITE setSpeed NOTIFY speedChanged)
     Q_PROPERTY(bool hasTrack READ hasTrack NOTIFY hasTrackChanged)
     Q_PROPERTY(double duration READ duration NOTIFY durationChanged)
     Q_PROPERTY(QVariantList waveformPeaks READ waveformPeaks NOTIFY waveformPeaksChanged)
     Q_PROPERTY(double playbackPosition READ playbackPosition NOTIFY playbackPositionChanged)
-    Q_PROPERTY(QVariantList clips READ clips NOTIFY clipsChanged)
     Q_PROPERTY(double measuredBpm READ measuredBpm NOTIFY measuredBpmChanged)
     Q_PROPERTY(double scoreOffset READ scoreOffset WRITE setScoreOffset NOTIFY scoreOffsetChanged)
     Q_PROPERTY(double scoreDuration READ scoreDuration NOTIFY scoreDurationChanged)
-    Q_PROPERTY(double fadeIn READ fadeIn WRITE setFadeIn NOTIFY fadeInChanged)
-    Q_PROPERTY(double fadeOut READ fadeOut WRITE setFadeOut NOTIFY fadeOutChanged)
     Q_PROPERTY(QVariantList scoreBeatGrid READ scoreBeatGrid NOTIFY scoreBeatGridChanged)
     Q_PROPERTY(bool scoreMuted READ scoreMuted NOTIFY scoreMutedChanged)
     Q_PROPERTY(bool metronomeEnabled READ metronomeEnabled NOTIFY metronomeEnabledChanged)
@@ -78,17 +74,13 @@ public:
     double clipEnd() const;
     double volumeDb() const;
     bool muted() const;
-    double speed() const;
     bool hasTrack() const;
     double duration() const;
     QVariantList waveformPeaks() const;
     double playbackPosition() const;
-    QVariantList clips() const;
     double measuredBpm() const;
     double scoreOffset() const;
     double scoreDuration() const;
-    double fadeIn() const;
-    double fadeOut() const;
     QVariantList scoreBeatGrid() const;
     bool scoreMuted() const;
     bool metronomeEnabled() const;
@@ -101,7 +93,6 @@ public:
     Q_INVOKABLE void setClipEnd(double value);
     Q_INVOKABLE void setVolumeDb(double value);
     Q_INVOKABLE void setMuted(bool value);
-    Q_INVOKABLE void setSpeed(double value);
 
     Q_INVOKABLE void load();
     Q_INVOKABLE void chooseFile();
@@ -109,22 +100,8 @@ public:
     Q_INVOKABLE void apply();
     Q_INVOKABLE void remove();
     Q_INVOKABLE void seek(double seconds);
-    Q_INVOKABLE double snapToBeat(double seconds);
-    Q_INVOKABLE void addClipFromFile();
-    Q_INVOKABLE void splitClip(int index, double at);
-    Q_INVOKABLE void removeClip(int index);
-    Q_INVOKABLE void moveClip(int index, double startOffset);
-    Q_INVOKABLE void trimClip(int index, double clipStart, double clipEnd);
-    Q_INVOKABLE void setClipSpeed(int index, double speed);
-    Q_INVOKABLE void setClipVolume(int index, double volume);
-    Q_INVOKABLE void setClipMuted(int index, bool muted);
-    Q_INVOKABLE void setClipFade(int index, double fadeIn, double fadeOut);
     Q_INVOKABLE void tapTempo();
-    Q_INVOKABLE void setBpm(double bpm);
-    Q_INVOKABLE void resetSpeed();
     Q_INVOKABLE void setScoreOffset(double offset);
-    Q_INVOKABLE void setFadeIn(double value);
-    Q_INVOKABLE void setFadeOut(double value);
     Q_INVOKABLE void toggleMetronome();
     Q_INVOKABLE void toggleScoreMute();
     Q_INVOKABLE void setMasterVolumeDb(double value);
@@ -137,17 +114,13 @@ signals:
     void clipEndChanged();
     void volumeDbChanged();
     void mutedChanged();
-    void speedChanged();
     void hasTrackChanged();
     void durationChanged();
     void waveformPeaksChanged();
     void playbackPositionChanged();
-    void clipsChanged();
     void measuredBpmChanged();
     void scoreOffsetChanged();
     void scoreDurationChanged();
-    void fadeInChanged();
-    void fadeOutChanged();
     void scoreBeatGridChanged();
     void scoreMutedChanged();
     void metronomeEnabledChanged();
@@ -159,7 +132,6 @@ private:
     IProjectAudioSettingsPtr audioSettings() const;
     void updateWaveform();
     void subscribeOnPlayback();
-    void updateClipsList();
     void updateScoreBeatGrid();
     const AudioClipSettings* firstClip() const;
     void notifyAll();
@@ -180,8 +152,6 @@ private:
     bool m_settingsSubscribed = false;
     bool m_playbackSubscribed = false;
     bool m_projectSubscribed = false;
-    QVariantList m_clips;
-    double m_measuredBpm = 0.0;
     double m_originalBpm = 0.0;
     QVariantList m_scoreBeatGrid;
     bool m_scoreMuted = false;
