@@ -696,6 +696,33 @@ void ExportDialogModel::setCustomVideoHeight(int height)
     emit customVideoHeightChanged(height);
 }
 
+QVariantList ExportDialogModel::availableVideoFps() const
+{
+    QVariantList result;
+    for (int fps : { 30, 60, 120 }) {
+        QVariantMap obj;
+        obj["text"] = QString::number(fps) + muse::qtrc("project/export", " 帧/秒");
+        obj["value"] = fps;
+        result << obj;
+    }
+    return result;
+}
+
+int ExportDialogModel::videoFps() const
+{
+    return videoExportConfiguration()->fps();
+}
+
+void ExportDialogModel::setVideoFps(int fps)
+{
+    if (fps <= 0 || fps == videoExportConfiguration()->fps()) {
+        return;
+    }
+
+    videoExportConfiguration()->setFps(fps);
+    emit videoFpsChanged(fps);
+}
+
 QVariantList ExportDialogModel::availableViewModes() const
 {
     std::map<ViewMode, QString> viewModes {

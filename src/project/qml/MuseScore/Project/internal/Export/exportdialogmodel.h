@@ -84,6 +84,7 @@ class ExportDialogModel : public QAbstractListModel, public QQmlParserStatus, pu
     Q_PROPERTY(bool isCustomVideoResolution READ isCustomVideoResolution NOTIFY videoResolutionChanged)
     Q_PROPERTY(int customVideoWidth READ customVideoWidth WRITE setCustomVideoWidth NOTIFY customVideoWidthChanged)
     Q_PROPERTY(int customVideoHeight READ customVideoHeight WRITE setCustomVideoHeight NOTIFY customVideoHeightChanged)
+    Q_PROPERTY(int videoFps READ videoFps WRITE setVideoFps NOTIFY videoFpsChanged)
 
     using ViewMode = mu::iex::videoexport::ViewMode;
     Q_ENUM(ViewMode);
@@ -189,6 +190,7 @@ public:
     void setSvgIllustratorCompat(bool compat);
 
     Q_INVOKABLE QVariantList availableVideoResolutions() const;
+    Q_INVOKABLE QVariantList availableVideoFps() const;
     QString videoResolution() const;
     void setVideoResolution(const QString& resolution);
     bool isCustomVideoResolution() const;
@@ -196,6 +198,8 @@ public:
     void setCustomVideoWidth(int width);
     int customVideoHeight() const;
     void setCustomVideoHeight(int height);
+    int videoFps() const;
+    void setVideoFps(int fps);
 
     Q_INVOKABLE QVariantList availableViewModes() const;
     ViewMode viewMode() const;
@@ -287,6 +291,7 @@ signals:
     void videoResolutionChanged(const QString& resolution);
     void customVideoWidthChanged(int width);
     void customVideoHeightChanged(int height);
+    void videoFpsChanged(int fps);
     void viewModeChanged(ViewMode v);
     void smoothPageTransitionsChanged(bool value);
     void includeAccompanimentAudioChanged(bool value);

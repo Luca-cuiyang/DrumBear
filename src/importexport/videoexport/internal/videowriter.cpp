@@ -25,7 +25,9 @@
 #include <cmath>
 
 #include <QPainter>
+#include <QEventLoop>
 #include <QThread>
+#include <QTimer>
 
 #include "global/concurrency/concurrent.h"
 #include "global/io/filestream.h"
@@ -147,9 +149,11 @@ muse::Ret VideoWriter::write(INotationPtr notation, muse::io::IODevice& device, 
         m_audioRet = muse::make_ok();
     }
 
+    //! NOTE: 用事件循环按小间隔等待，替代忙轮询，避免导出期间主线程空转占满 CPU。
     while (!m_isCompleted || !m_audioCompleted) {
-        application()->processEvents();
-        QThread::yieldCurrentThread();
+        QEventLoop loop;
+        QTimer::singleShot(16, &loop, &QEventLoop::quit);
+        loop.exec();
     }
 
     if (m_audioWriter) {
@@ -313,10 +317,11 @@ void VideoWriter::abort()
         m_audioWriter->abort();
     }
 
-    // Wait abort completion
+    // Wait abort completion（同样用事件循环替代忙轮询）
     while (!m_isCompleted || !m_audioCompleted) {
-        application()->processEvents();
-        QThread::yieldCurrentThread();
+        QEventLoop loop;
+        QTimer::singleShot(16, &loop, &QEventLoop::quit);
+        loop.exec();
     }
 }
 
@@ -353,6 +358,13 @@ std::optional<VideoWriter::ScoreRestoreData> VideoWriter::prepareScore(INotation
         //! page numbers and running text do not appear between the joined pages.
         score->style().set(engraving::Sid::showHeader, false);
         score->style().set(engraving::Sid::showFooter, false);
+
+        //! 动态曲谱：去掉左右页边距并让可打印宽度铺满整页，谱面横向填满画布，
+        //! 避免黑边，也避免谱面内容因页边距被压小或被裁切。
+        const double pageWidth = score->style().styleD(engraving::Sid::pageWidth);
+        score->style().set(engraving::Sid::pageEvenLeftMargin, 0.0);
+        score->style().set(engraving::Sid::pageOddLeftMargin, 0.0);
+        score->style().set(engraving::Sid::pagePrintableWidth, pageWidth);
     }
 
     score->doLayout();
@@ -646,8 +658,7 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
     if (smooth) {
         std::vector<double> contentTop(pages.size(), 0.0);
         std::vector<double> contentBottom(pages.size(), 0.0);
-        double lineGap = 0.0;
-        int gapCount = 0;
+        std::vector<double> gaps;
 
         for (size_t i = 0; i < pages.size(); ++i) {
             const Page* p = pages[i];
@@ -660,14 +671,17 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
             contentBottom[i] = systems.back()->pagePos().y() + systems.back()->height();
 
             for (size_t k = 1; k < systems.size(); ++k) {
-                lineGap += systems[k]->pagePos().y()
-                           - (systems[k - 1]->pagePos().y() + systems[k - 1]->height());
-                ++gapCount;
+                gaps.push_back(systems[k]->pagePos().y()
+                               - (systems[k - 1]->pagePos().y() + systems[k - 1]->height()));
             }
         }
 
-        if (gapCount > 0) {
-            lineGap /= static_cast<double>(gapCount);
+        //! NOTE: 用中位数代替平均值作为系统间距，对带标题/特殊框的页面更稳健，
+        //! 跨页拼接处间距更一致，避免个别异常页把平均间距拉偏。
+        double lineGap = 0.0;
+        if (!gaps.empty()) {
+            std::sort(gaps.begin(), gaps.end());
+            lineGap = gaps[gaps.size() / 2];
         }
 
         double y = 0.0;

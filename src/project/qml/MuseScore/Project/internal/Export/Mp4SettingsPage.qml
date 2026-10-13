@@ -176,6 +176,31 @@ ExportSettingsPage {
                 }
             }
 
+            ExportOptionItem {
+                id: videoFpsLabel
+                text: qsTrc("project/export", "帧率")
+
+                StyledDropdown {
+                    id: videoFpsDropdown
+                    Layout.preferredWidth: 200
+
+                    navigation.name: "VideoFpsDropdown"
+                    navigation.panel: root.navigationPanel
+                    navigation.row: audioSection.navigationOrderEnd + 2
+                    navigation.accessible.name: videoFpsLabel.text + " " + currentText
+
+                    model: root.model ? root.model.availableVideoFps().map(function(obj) {
+                        return { text: obj.text, value: obj.value }
+                    }) : []
+
+                    currentIndex: root.model ? indexOfValue(root.model.videoFps) : -1
+
+                    onActivated: function(index, value) {
+                        root.model.videoFps = value
+                    }
+                }
+            }
+
             RadioButtonGroup {
                 orientation: ListView.Vertical
                 spacing: 8

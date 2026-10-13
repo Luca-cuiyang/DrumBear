@@ -32,7 +32,7 @@ static const int DEFAULT_CUSTOM_HEIGHT = 1080;
 static const int DEFAULT_FPS = 60;
 static const double DEFAULT_LEADING_SEC = 3.0;
 static const double DEFAULT_TRAILING_SECONDS = 3.0;
-static const bool DEFAULT_SMOOTH_PAGE_TRANSITIONS = false;
+static const bool DEFAULT_SMOOTH_PAGE_TRANSITIONS = true;
 static const bool DEFAULT_INCLUDE_AUDIO = true;
 
 static const std::vector<std::string> AVAILABLE_RESOLUTIONS = {
