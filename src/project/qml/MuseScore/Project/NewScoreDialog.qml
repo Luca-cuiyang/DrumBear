@@ -144,20 +144,6 @@ StyledDialogView {
             navigationPanel.order: 100
 
             FlatButton {
-                text: qsTrc("project/newscore", "简谱")
-                buttonRole: ButtonBoxModel.AcceptRole
-                buttonId: ButtonBoxModel.Done
-                accentButton: true
-
-                onClicked: {
-                    if (newScoreModel.createJianpuScore()) {
-                        root.activateParentOnClose = false
-                        root.accept()
-                    }
-                }
-            }
-
-            FlatButton {
                 text: qsTrc("global", "Cancel")
                 buttonRole: ButtonBoxModel.CustomRole
                 buttonId: ButtonBoxModel.CustomButton + 1
