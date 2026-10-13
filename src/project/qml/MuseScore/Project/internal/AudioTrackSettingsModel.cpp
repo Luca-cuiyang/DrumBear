@@ -785,21 +785,16 @@ void AudioTrackSettingsModel::updateScoreBeatGrid()
         return;
     }
 
-    //! NOTE: one vertical line per beat; the first beat of each measure (downbeat) is
-    //! drawn thicker in the UI. Supports any time signature (4/4, 3/4, 6/8, ...).
+    //! NOTE: 乐谱轨每条竖线 = 每个小节的第一拍（强拍）。界面只绘制强拍，
+    //! 因此这里只生成强拍，避免对每一拍做重复展开/速度换算（长谱可显著省时）。
     for (int m = 0; m < measureCount; ++m) {
-        const muse::midi::tick_t measureTick = playback->beatToRawTick(m, 0);
-        const engraving::MeasureBeat mb = playback->beat(measureTick);
-        const int beats = std::max(1, mb.maxBeatIndex + 1);
-        for (int b = 0; b < beats; ++b) {
-            const muse::midi::tick_t rawTick = playback->beatToRawTick(m, b);
-            const muse::RetVal<muse::midi::tick_t> playedTick = playback->playPositionTickByRawTick(rawTick);
-            const double time = playback->playedTickToSec(playedTick.val).to_double();
-            QVariantMap item;
-            item.insert("time", time);
-            item.insert("isDownbeat", b == 0);
-            m_scoreBeatGrid.append(item);
-        }
+        const muse::midi::tick_t rawTick = playback->beatToRawTick(m, 0);
+        const muse::RetVal<muse::midi::tick_t> playedTick = playback->playPositionTickByRawTick(rawTick);
+        const double time = playback->playedTickToSec(playedTick.val).to_double();
+        QVariantMap item;
+        item.insert("time", time);
+        item.insert("isDownbeat", true);
+        m_scoreBeatGrid.append(item);
     }
 
     emit scoreBeatGridChanged();

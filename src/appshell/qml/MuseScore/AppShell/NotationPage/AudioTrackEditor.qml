@@ -20,8 +20,6 @@ Item {
 
     required property AudioTrackSettingsModel audioModel
 
-    property string bpmInput: ""
-
     property double audioDuration: audioModel.duration > 0 ? audioModel.duration : 0
     property double scoreDuration: audioModel.scoreDuration > 0 ? audioModel.scoreDuration : 0
     property double totalDuration: Math.max(audioDuration, scoreDuration) + 30.0
@@ -41,7 +39,6 @@ Item {
     property string playheadColor: "#59BA54"
     property real playheadThickness: 1.0
     property var playheadColors: ["#59BA54", "#2F6FED", "#06B6D4", "#E11D48", "#F59E0B", "#111827"]
-    property color dimColor: Qt.rgba(0.55, 0.60, 0.57, 0.35)
     property bool prevHasTrack: false
 
     function pad2(n) {
@@ -506,18 +503,25 @@ Item {
                             MouseArea {
                                 anchors.fill: parent
                                 cursorShape: Qt.OpenHandCursor
-                                property double pressX: 0
+                                property double pressTimelineX: 0
+                                property double startOffsetValue: 0
                                 property bool moved: false
-                                onPressed: function(mouse) { pressX = mouse.x; moved = false }
+                                onPressed: function(mouse) {
+                                    var p = mapToItem(timeline, mouse.x, mouse.y)
+                                    pressTimelineX = p.x
+                                    startOffsetValue = Math.max(0, audioModel.scoreOffset)
+                                    moved = false
+                                }
                                 onPositionChanged: function(mouse) {
                                     if (pressed) {
-                                        var dx = mouse.x - pressX
+                                        var p = mapToItem(timeline, mouse.x, mouse.y)
+                                        var dx = p.x - pressTimelineX
                                         if (Math.abs(dx) > 3) {
                                             moved = true
                                         }
                                         if (moved) {
                                             var d = dx / timeline.pxPerSec
-                                            audioModel.setScoreOffset(Math.max(0, audioModel.scoreOffset + d))
+                                            audioModel.setScoreOffset(Math.max(0, startOffsetValue + d))
                                         }
                                     }
                                 }
@@ -630,18 +634,25 @@ Item {
                             MouseArea {
                                 anchors.fill: parent
                                 cursorShape: Qt.OpenHandCursor
-                                property double pressX: 0
+                                property double pressTimelineX: 0
+                                property double startOffsetValue: 0
                                 property bool moved: false
-                                onPressed: function(mouse) { pressX = mouse.x; moved = false }
+                                onPressed: function(mouse) {
+                                    var p = mapToItem(timeline, mouse.x, mouse.y)
+                                    pressTimelineX = p.x
+                                    startOffsetValue = Math.max(0, audioModel.startOffset)
+                                    moved = false
+                                }
                                 onPositionChanged: function(mouse) {
                                     if (pressed) {
-                                        var dx = mouse.x - pressX
+                                        var p = mapToItem(timeline, mouse.x, mouse.y)
+                                        var dx = p.x - pressTimelineX
                                         if (Math.abs(dx) > 3) {
                                             moved = true
                                         }
                                         if (moved) {
                                             var d = dx / timeline.pxPerSec
-                                            audioModel.setStartOffset(Math.max(0, audioModel.startOffset + d))
+                                            audioModel.setStartOffset(Math.max(0, startOffsetValue + d))
                                         }
                                     }
                                 }
@@ -675,13 +686,17 @@ Item {
                                 cursorShape: Qt.SplitHCursor
                                 property double startClip: 0
                                 property double startOff: 0
+                                property double pressTimelineX: 0
                                 onPressed: function(mouse) {
+                                    var p = mapToItem(timeline, mouse.x, mouse.y)
+                                    pressTimelineX = p.x
                                     startClip = Math.max(0, audioModel.clipStart)
                                     startOff = Math.max(0, audioModel.startOffset)
                                 }
                                 onPositionChanged: function(mouse) {
                                     if (pressed) {
-                                        var d = mouse.x / timeline.pxPerSec
+                                        var p = mapToItem(timeline, mouse.x, mouse.y)
+                                        var d = (p.x - pressTimelineX) / timeline.pxPerSec
                                         audioModel.setClipStart(Math.max(0, startClip + d))
                                         audioModel.setStartOffset(Math.max(0, startOff + d))
                                     }
@@ -705,12 +720,16 @@ Item {
                                 anchors.fill: parent
                                 cursorShape: Qt.SplitHCursor
                                 property double startEnd: 0
+                                property double pressTimelineX: 0
                                 onPressed: function(mouse) {
+                                    var p = mapToItem(timeline, mouse.x, mouse.y)
+                                    pressTimelineX = p.x
                                     startEnd = audioModel.clipEnd > 0 ? audioModel.clipEnd : audioDuration
                                 }
                                 onPositionChanged: function(mouse) {
                                     if (pressed) {
-                                        var d = mouse.x / timeline.pxPerSec
+                                        var p = mapToItem(timeline, mouse.x, mouse.y)
+                                        var d = (p.x - pressTimelineX) / timeline.pxPerSec
                                         audioModel.setClipEnd(Math.max(0, startEnd + d))
                                     }
                                 }
