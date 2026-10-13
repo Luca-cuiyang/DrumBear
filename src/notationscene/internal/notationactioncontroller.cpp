@@ -34,9 +34,6 @@
 #include "engraving/dom/chord.h"
 #include "engraving/dom/text.h"
 #include "engraving/dom/sig.h"
-#include "engraving/dom/staff.h"
-#include "engraving/dom/stafftype.h"
-#include "engraving/types/fraction.h"
 #include "engraving/editing/noteinput.h"
 
 #include "notation/imasternotation.h"
@@ -50,7 +47,6 @@
 #include "notation/inotationstyle.h"
 #include "notation/inotationundostack.h"
 #include "notation/inotationinteraction.h"
-#include "notation/inotationparts.h"
 
 #include "project/inotationproject.h"
 
@@ -589,7 +585,6 @@ void NotationActionController::init()
 
     registerCommand(TOGGLE_AUTOMATION_COMMAND, &Controller::toggleAutomation);
     registerCommandWithParams(SELECT_AUTOMATION_TYPE_COMMAND, &Controller::selectAutomationType);
-    registerCommand(CREATE_JIANPU_LINKED_STAFF_COMMAND, &Controller::createJianpuLinkedStaff);
 
     // TAB
     registerCommand(SET_DURATION_WHOLE_TAB_COMMAND, [this]() { setDuration(DurationType::V_WHOLE); });
@@ -1063,7 +1058,6 @@ void NotationActionController::init()
             { "scoop", ADD_SCOOP_COMMAND, {} },
             { "hammer-on-pull-off", ADD_HAMMER_ON_PULL_OFF_COMMAND, {} },
             { "toggle-automation", TOGGLE_AUTOMATION_COMMAND, {} },
-            { "create-jianpu-linked-staff", CREATE_JIANPU_LINKED_STAFF_COMMAND, {} },
             { "string-up", GOTO_STRING_ABOVE_COMMAND, {} },
             { "string-down", GOTO_STRING_BELOW_COMMAND, {} },
             { "move-up", MOVE_UP_COMMAND, {} },
@@ -3272,49 +3266,6 @@ void NotationActionController::toggleAutomation()
 
     const bool isEnabled = masterNotation->automation()->isAutomationModeEnabled();
     masterNotation->automation()->setAutomationModeEnabled(!isEnabled);
-}
-
-void NotationActionController::createJianpuLinkedStaff()
-{
-    TRACEFUNC;
-
-    IMasterNotationPtr masterNotation = currentMasterNotation();
-    if (!masterNotation) {
-        return;
-    }
-
-    engraving::MasterScore* score = masterNotation->masterScore();
-    if (!score || score->nstaves() == 0) {
-        return;
-    }
-
-    // 取第一个非简谱谱表作为转换源（常见单乐器场景）；多乐器可继续用谱表设置里的按钮精确指定
-    engraving::Staff* sourceStaff = nullptr;
-    for (staff_idx_t i = 0; i < score->nstaves(); ++i) {
-        engraving::Staff* s = score->staff(i);
-        if (s && !s->isJianpuStaff(engraving::Fraction(0, 1))) {
-            sourceStaff = s;
-            break;
-        }
-    }
-
-    if (!sourceStaff) {
-        return;
-    }
-
-    engraving::Staff* linkedStaff = sourceStaff->clone();
-    const engraving::StaffType* jianpuType = engraving::StaffType::preset(engraving::StaffTypes::JIANPU);
-    if (jianpuType) {
-        linkedStaff->setStaffType(engraving::Fraction(0, 1), *jianpuType);
-    }
-
-    INotationPartsPtr parts = masterNotation->parts();
-    if (!parts || !parts->appendLinkedStaff(linkedStaff, sourceStaff->id(), sourceStaff->part()->id())) {
-        if (linkedStaff) {
-            linkedStaff->unlink();
-            delete linkedStaff;
-        }
-    }
 }
 
 muse::Ret NotationActionController::selectAutomationType(const muse::rcommand::Params& params)
