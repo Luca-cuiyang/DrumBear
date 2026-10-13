@@ -96,8 +96,10 @@ bool computeAudioPeaks(const QString& path, double& duration, QVariantList& peak
                 }
             }
         }
-        // 每个桶存一个 0..1 的峰值幅度（正负统一取绝对值），与 QML 的绘制逻辑一致
-        peaks.append(std::max(std::abs(minV), std::abs(maxV)));
+        QVariantMap item;
+        item.insert("min", minV);
+        item.insert("max", maxV);
+        peaks.append(item);
     }
 
     return true;
