@@ -500,8 +500,12 @@ muse::Ret ProjectActionsController::importAudioToScore()
     progressTimer->start();
 
     QProcess* process = new QProcess();
-    QObject::connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), process,
-                     [this, process, midiPath, progress, progressTimer](int exitCode, QProcess::ExitStatus) mutable {
+    auto progressDone = std::make_shared<bool>(false);
+    auto finishUp = [this, process, midiPath, progress, progressTimer, progressDone](int exitCode) mutable {
+        if (*progressDone) {
+            return;
+        }
+        *progressDone = true;
         progressTimer->stop();
         progressTimer->deleteLater();
         process->deleteLater();
@@ -512,9 +516,12 @@ muse::Ret ProjectActionsController::importAudioToScore()
             interactive()->error(muse::trc("project", "Audio to Score"),
                                  muse::trc("project", "Could not convert the selected audio into a score."));
         }
-    });
-    QObject::connect(process, &QProcess::errorOccurred, [](QProcess::ProcessError error) {
+    };
+    QObject::connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), process,
+                     [finishUp](int exitCode, QProcess::ExitStatus) mutable { finishUp(exitCode); });
+    QObject::connect(process, &QProcess::errorOccurred, process, [finishUp](QProcess::ProcessError error) mutable {
         LOGE() << "Audio to score process error: " << error;
+        finishUp(-1);
     });
 
     process->start(python, QStringList() << script << audioPath.toQString() << midiPath);

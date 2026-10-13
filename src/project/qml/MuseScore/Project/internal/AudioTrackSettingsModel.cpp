@@ -407,8 +407,6 @@ void AudioTrackSettingsModel::load()
         return;
     }
 
-    subscribeOnPlayback();
-
     if (!m_settingsSubscribed) {
         settings->audioTrackSettingsChanged().onNotify(this, [this]() {
             load();
