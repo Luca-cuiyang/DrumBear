@@ -699,7 +699,7 @@ void ExportDialogModel::setCustomVideoHeight(int height)
 QVariantList ExportDialogModel::availableVideoFps() const
 {
     QVariantList result;
-    for (int fps : { 30, 60, 120 }) {
+    for (int fps : { 30, 60, 120, 240 }) {
         QVariantMap obj;
         obj["text"] = QString::number(fps) + muse::qtrc("project/export", " 帧/秒");
         obj["value"] = fps;
