@@ -305,16 +305,12 @@ muse::Ret ProjectActionsController::exportMusicXml()
 {
     auto project = globalContext()->currentProject();
     if (!project) {
-        interactive()->error(muse::trc("project", "导出简谱 MusicXML"),
-                             muse::trc("project", "当前没有打开的乐谱，请先新建或打开一个乐谱。"));
-        return make_ret(Ret::Code::Cancel);
+        return make_ret(Ret::Code::UnknownError, std::string("当前没有打开的乐谱"));
     }
 
     auto score = project->masterNotation()->masterScore();
     if (!score) {
-        interactive()->error(muse::trc("project", "导出简谱 MusicXML"),
-                             muse::trc("project", "无法读取当前乐谱。"));
-        return make_ret(Ret::Code::Cancel);
+        return make_ret(Ret::Code::UnknownError, std::string("无法读取当前乐谱"));
     }
 
     std::vector<std::string> filter {
