@@ -554,8 +554,8 @@ DockPage {
             objectName: "audioTrackPanel"
             title: qsTrc("appshell", "音频伴奏轨")
 
-            height: 300
-            minimumHeight: root.horizontalPanelMinHeight
+            height: 420
+            minimumHeight: 220
             maximumHeight: root.horizontalPanelMaxHeight
 
             minimumWidth: root.panelMinDimension
