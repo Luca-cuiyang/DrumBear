@@ -45,13 +45,6 @@ const UiActionList ProjectUiActions::m_actions = {
              TranslatableString("action", "Import Audio to Score"),
              IconCode::Code::OPEN_FILE
              ),
-    UiAction("file-import-midi-as-jianpu",
-             mu::context::UiCtxAny,
-             mu::context::CTX_ANY,
-             TranslatableString("action", "导入 &MIDI 为简谱…"),
-             TranslatableString("action", "导入 MIDI 并生成简谱谱表"),
-             IconCode::Code::OPEN_FILE
-             ),
     UiAction("file-audio-track",
              mu::context::UiCtxAny,
              mu::context::CTX_ANY,

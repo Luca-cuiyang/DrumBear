@@ -57,13 +57,6 @@ static const std::vector<CommandInfo> s_commandInfos = {
         Decoration(IconCode::Code::OPEN_FILE)
     },
     CommandInfo{
-        PROJECT_IMPORT_MIDI_AS_JIANPU_COMMAND,
-        TranslatableString("project", "导入 &MIDI 为简谱…"),
-        TranslatableString("project", "导入 MIDI 文件并直接生成简谱谱表"),
-        InputSchema(),
-        Decoration(IconCode::Code::OPEN_FILE)
-    },
-    CommandInfo{
         PROJECT_AUDIO_TRACK_COMMAND,
         TranslatableString("project", "Import accompaniment &track…"),
         TranslatableString("project", "Import an audio accompaniment track"),

@@ -77,7 +77,6 @@ public:
     muse::async::Promise<muse::Ret> openProject(const ProjectFile& file) override;
     muse::async::Promise<muse::Ret> openProject(const muse::io::path_t& path, const QString& displayNameOverride = QString()) override;
     muse::async::Promise<muse::Ret> openProject(const muse::rcommand::Params& params) override;
-    void setImportMidiAsJianpu(bool importAsJianpu) override;
 
     muse::async::Promise<muse::Ret> revertToLastSaved() override;
     muse::Ret finishOpening() override;
@@ -145,7 +144,5 @@ private:
 
     ProjectBeingDownloaded m_projectBeingDownloaded;
     muse::async::Notification m_projectBeingDownloadedChanged;
-
-    bool m_importMidiAsJianpu = false;
 };
 }

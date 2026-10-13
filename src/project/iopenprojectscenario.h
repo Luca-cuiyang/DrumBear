@@ -47,7 +47,6 @@ public:
     virtual muse::async::Promise<muse::Ret> openProject(const ProjectFile& file) = 0;
     virtual muse::async::Promise<muse::Ret> openProject(const muse::io::path_t& path, const QString& displayNameOverride = QString()) = 0;
     virtual muse::async::Promise<muse::Ret> openProject(const muse::rcommand::Params& params) = 0;
-    virtual void setImportMidiAsJianpu(bool importAsJianpu) = 0;
 
     virtual muse::async::Promise<muse::Ret> revertToLastSaved() = 0;
 

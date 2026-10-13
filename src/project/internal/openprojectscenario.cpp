@@ -33,13 +33,9 @@
 #include "cloud/cloudtypes.h"
 #include "engraving/engravingerrors.h"
 #include "engraving/infrastructure/mscio.h"
-#include "engraving/dom/masterscore.h"
-#include "engraving/dom/staff.h"
-#include "engraving/dom/stafftype.h"
 
 #include "notation/imasternotation.h"
 #include "notation/inotation.h"
-#include "notation/inotationparts.h"
 
 #include "inotationproject.h"
 #include "projecterrors.h"
@@ -235,11 +231,6 @@ bool OpenProjectScenario::isFileSupported(const muse::io::path_t& path) const
     return false;
 }
 
-void OpenProjectScenario::setImportMidiAsJianpu(bool importAsJianpu)
-{
-    m_importMidiAsJianpu = importAsJianpu;
-}
-
 Promise<Ret> OpenProjectScenario::openProject(const muse::rcommand::Params& params)
 {
     const QString url = params.at("url").toQString();
@@ -427,18 +418,6 @@ Promise<Ret> OpenProjectScenario::doOpenProject(const muse::io::path_t& filePath
         }
 
         globalContext()->setCurrentProject(project);
-
-        if (m_importMidiAsJianpu) {
-            m_importMidiAsJianpu = false;
-            auto score = project->masterNotation()->masterScore();
-            auto parts = project->masterNotation()->parts();
-            for (engraving::staff_idx_t i = 0; i < score->nstaves(); ++i) {
-                engraving::Staff* staff = score->staff(i);
-                if (staff) {
-                    parts->setStaffType(staff->id(), engraving::StaffTypes::JIANPU);
-                }
-            }
-        }
 
         return resolve(finishOpening());
     });

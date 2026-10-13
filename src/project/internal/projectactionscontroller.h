@@ -101,7 +101,6 @@ private:
     muse::Ret openProject(const muse::rcommand::Params& params);
     muse::Ret openProject(const muse::io::path_t& path, const QString& displayNameOverride = QString());
     muse::Ret importAudioToScore();
-    muse::Ret importMidiAsJianpu();
 
     muse::Ret openPageIfNeed(muse::Uri pageUri);
 
