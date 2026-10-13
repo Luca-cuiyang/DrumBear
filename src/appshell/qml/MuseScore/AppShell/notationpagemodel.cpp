@@ -209,6 +209,11 @@ void NotationPageModel::toggleDock(const QString& name)
     dispatcher()->dispatch("dock-toggle", ActionData::make_arg1<QString>(name));
 }
 
+void NotationPageModel::setDockOpen(const QString& name, bool open)
+{
+    dispatcher()->dispatch("dock-set-open", ActionData::make_arg2<QString, bool>(name, open));
+}
+
 void NotationPageModel::scheduleUpdatePercussionPanelVisibility()
 {
     if (m_updatePercussionPanelVisibilityScheduled) {

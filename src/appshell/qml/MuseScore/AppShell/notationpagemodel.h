@@ -82,6 +82,8 @@ public:
 
     Q_INVOKABLE QString statusBarName() const;
 
+    Q_INVOKABLE void setDockOpen(const QString& name, bool open);
+
 signals:
     void isNavigatorVisibleChanged();
     void isBraillePanelVisibleChanged();

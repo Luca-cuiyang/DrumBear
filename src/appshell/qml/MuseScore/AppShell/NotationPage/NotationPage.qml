@@ -58,7 +58,7 @@ DockPage {
             audioTrackInitialLoad = false
             //! 工作区布局恢复可能发生在页面初始化之后，再兜底关闭一次
             Qt.callLater(function() {
-                audioTrackPanel.close()
+                pageModel.setDockOpen("audioTrackPanel", false)
             })
         }
     }
@@ -75,7 +75,7 @@ DockPage {
         startupGuardTimer.start()
         //! 启动时强制关闭音频伴奏轨，覆盖可能残留的工作区状态（防止“默认打开”）。
         Qt.callLater(function() {
-            audioTrackPanel.close()
+            pageModel.setDockOpen("audioTrackPanel", false)
         })
     }
 
@@ -90,7 +90,7 @@ DockPage {
             Qt.callLater(function() {
                 //! 打开已含伴奏轨的乐谱时不自动弹出；只有用户手动导入/替换音频才打开。
                 if (audioTrackInitialLoad || !audioModel.hasTrack) {
-                    audioTrackPanel.close()
+                    pageModel.setDockOpen("audioTrackPanel", false)
                 }
             })
         }
@@ -98,7 +98,7 @@ DockPage {
         function onAudioImported() {
             Qt.callLater(function() {
                 audioTrackPanel.setFloating(false)
-                audioTrackPanel.open()
+                pageModel.setDockOpen("audioTrackPanel", true)
             })
         }
     }
@@ -148,7 +148,7 @@ DockPage {
         //! 页面初始化（工作区布局恢复）完成后，再次强制关闭音频伴奏轨，
         //! 防止用户上次打开过音频轨后，其可见状态被保存并在启动时被恢复。
         Qt.callLater(function() {
-            audioTrackPanel.close()
+            pageModel.setDockOpen("audioTrackPanel", false)
         })
     }
 
