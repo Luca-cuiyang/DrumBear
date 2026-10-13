@@ -212,12 +212,6 @@ StyledDialogView {
                 checked: audioModel.muted
                 onCheckedChanged: { audioModel.setMuted(checked) }
             }
-
-            CheckBox {
-                text: qsTrc("project", "Follow score tempo")
-                checked: audioModel.tempoSync
-                onCheckedChanged: { audioModel.setTempoSync(checked) }
-            }
         }
 
         Item { Layout.fillHeight: true }
