@@ -332,6 +332,8 @@ target_link_libraries(DBScore PRIVATE ${LINK_LIB} ${COVERAGE_LINK_FLAGS})
 
 if (CC_IS_EMCC)
     include(exported_functions.cmake)
+    target_compile_options(DBScore PRIVATE -g)
+    target_link_options(DBScore PRIVATE -g)
     target_link_options(DBScore PRIVATE ${EMCC_LINKER_FLAGS})
     target_link_options(DBScore PRIVATE ${EXPORTED_FUNCTIONS})
 endif()
