@@ -25,6 +25,7 @@ import QtQuick.Layouts
 
 import Muse.Ui 1.0
 import Muse.UiComponents
+import Muse.Interactive
 
 import DBScore.AppShell 1.0
 import DBScore.Playback 1.0

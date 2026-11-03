@@ -109,6 +109,9 @@ const MuImpl = {
 
         this.Module = {
             config: config, // static configuration
+            ENV: {
+                TZ: 'UTC'
+            },
 
             qt: {
                 onLoaded: opt.onLoaded,
