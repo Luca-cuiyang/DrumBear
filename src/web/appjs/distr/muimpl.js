@@ -46,6 +46,16 @@ function setupRpc(Module)
     // port1 - driver
     // port2 - worker
     Module.driver_worker_rpcChannel = new MessageChannel();
+
+    Module.driver_worker_rpcSend = function(data) {
+        Module.driver_worker_rpcChannel.port1.postMessage(data)
+    }
+
+    Module.driver_worker_rpcListen = function(data) {}
+
+    Module.driver_worker_rpcChannel.port1.onmessage = function(event) {
+        Module.driver_worker_rpcListen(event.data)
+    };
 }
 
 async function setupDriver(Module) 
@@ -62,11 +72,7 @@ async function setupDriver(Module)
         Module.ccall('addSoundFont', '', ['string'], [Module.soundFont]);
     }
 
-    if (config.MUSE_MODULE_AUDIO_WORKER == "ON") {
-        await AudioDriver.setup(Module.config, Module.driver_worker_rpcChannel.port1);
-    } else {
-        await AudioDriver.setup(Module.config, Module.main_worker_rpcChannel.port2);
-    }
+    await AudioDriver.setup(Module.config, Module.driver_worker_rpcChannel.port2);
 
 }
 

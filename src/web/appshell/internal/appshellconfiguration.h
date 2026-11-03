@@ -28,12 +28,10 @@
 
 #include "modularity/ioc.h"
 #include "global/iapplication.h"
-#include "ui/iuistate.h"
 
 namespace mu::appshell {
 class AppShellConfiguration : public IAppShellConfiguration, public muse::Contextable, public muse::async::Asyncable
 {
-    muse::ContextInject<muse::ui::IUiState> uistate = { this };
     muse::GlobalInject<muse::IApplication> application;
 
 public:

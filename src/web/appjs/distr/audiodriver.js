@@ -32,7 +32,6 @@ let AudioDriver = (function () {
             try {
 
                 const code = await URLFromFiles([
-                    './MuseAudio.js',
                     './distr/audio_worklet_processor.js'
                 ]);
 
@@ -46,6 +45,7 @@ let AudioDriver = (function () {
 
             } catch (error) {
                 console.error(error)
+                return
             }
 
             // driver (processor) -> main
