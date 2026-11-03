@@ -38,6 +38,8 @@
 #include "notation/inotationstyle.h"
 #include "notation/inotationviewstate.h"
 
+#include "engraving/dom/score.h"
+
 using namespace mu::appshell;
 using namespace mu::notation;
 using namespace muse;

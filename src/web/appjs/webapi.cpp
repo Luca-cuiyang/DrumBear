@@ -63,7 +63,7 @@ void WebApi::init()
 {
     auto onProjectChanged = [this]() {
         if (m_currentProject) {
-            m_currentProject->saveComplited().resetOnReceive(this);
+            m_currentProject->saveComplited().disconnect(this);
         }
 
         m_currentProject = globalContext()->currentProject();
@@ -83,7 +83,7 @@ void WebApi::init()
 void WebApi::deinit()
 {
     if (m_currentProject) {
-        m_currentProject->saveComplited().resetOnReceive(this);
+        m_currentProject->saveComplited().disconnect(this);
     }
 }
 
