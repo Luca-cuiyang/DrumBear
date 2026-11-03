@@ -59,9 +59,9 @@ WebApi* WebApi::instance()
     return &a;
 }
 
-std::shared_ptr<context::IGlobalContext> WebApi::globalContext() const
+std::shared_ptr<mu::context::IGlobalContext> WebApi::globalContext() const
 {
-    return muse::modularity::ioc(m_context)->resolve<context::IGlobalContext>("context");
+    return muse::modularity::ioc(m_context)->resolve<mu::context::IGlobalContext>("context");
 }
 
 std::shared_ptr<muse::IInteractive> WebApi::interactive() const
