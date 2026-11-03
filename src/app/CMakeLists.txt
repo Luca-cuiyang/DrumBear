@@ -64,7 +64,7 @@ elseif(OS_IS_LIN)
 elseif(OS_IS_MAC)
 
     set(MACOSX_BUNDLE_GUI_IDENTIFIER ${MUSE_APP_GUI_IDENTIFIER})
-    set(MACOSX_BUNDLE_BUNDLE_NAME ${MUSE_APP_NAME_HUMAN_READABLE})
+    set(MACOSX_BUNDLE_BUNDLE_NAME "DB score制谱大师")
     set(MACOSX_BUNDLE_LONG_VERSION_STRING ${MUSE_APP_VERSION})
     set(MACOSX_BUNDLE_SHORT_VERSION_STRING ${MUSE_APP_VERSION})
     set(MACOSX_BUNDLE_BUNDLE_VERSION ${CMAKE_BUILD_NUMBER})
@@ -219,10 +219,15 @@ set(APP_SRC
     internal/guiapp.h
 )
 
-if (MUE_ENABLE_CONSOLEAPP)
+if (MUE_ENABLE_CONSOLEAPP OR OS_IS_WASM)
     set(APP_SRC ${APP_SRC}
         internal/commandlineparser.cpp
         internal/commandlineparser.h
+    )
+endif()
+
+if (MUE_ENABLE_CONSOLEAPP)
+    set(APP_SRC ${APP_SRC}
         internal/consoleapp.cpp
         internal/consoleapp.h
     )
@@ -363,6 +368,15 @@ if (OS_IS_WIN)
         install(FILES ${SNDFILE_DLL} DESTINATION bin)
     endif()
 
+    # FFmpeg 动态库：随安装包一起分发到 bin，Windows 上无需单独安装 FFmpeg 即可导出 MP4
+    install(FILES
+        ${PROJECT_SOURCE_DIR}/buildscripts/packaging/Windows/ffmpeg/avcodec-62.dll
+        ${PROJECT_SOURCE_DIR}/buildscripts/packaging/Windows/ffmpeg/avformat-62.dll
+        ${PROJECT_SOURCE_DIR}/buildscripts/packaging/Windows/ffmpeg/avutil-60.dll
+        ${PROJECT_SOURCE_DIR}/buildscripts/packaging/Windows/ffmpeg/swscale-9.dll
+        ${PROJECT_SOURCE_DIR}/buildscripts/packaging/Windows/ffmpeg/swresample-6.dll
+        DESTINATION bin)
+
     if (WIN_PORTABLE)
         # deploy the files and directory structure needed for the PortableApps.com format
         install(DIRECTORY ${PROJECT_SOURCE_DIR}/buildscripts/packaging/Windows/PortableApps/App DESTINATION ${CMAKE_INSTALL_PREFIX}/../..)
@@ -372,7 +386,8 @@ if (OS_IS_WIN)
     endif (WIN_PORTABLE)
 
     if (MUE_RUN_WINDEPLOYQT)
-        set(deploy_tool_options_arg "--plugindir bin --qmldir ${PROJECT_SOURCE_DIR}")
+        set(MUE_WINDEPLOY_QML_DIR "${PROJECT_SOURCE_DIR}" CACHE PATH "QML directory passed to windeployqt")
+        set(deploy_tool_options_arg "--plugindir bin --translationdir locale --qmldir ${MUE_WINDEPLOY_QML_DIR}")
         qt_generate_deploy_qml_app_script(
             TARGET DBScore
             OUTPUT_SCRIPT deploy_script
@@ -445,6 +460,27 @@ elseif(OS_IS_MAC)
         TARGET DBScore
         OUTPUT_SCRIPT deploy_script
         MACOS_BUNDLE_POST_BUILD
+    )
+
+    # Qt 6 ships modular translation catalogs. The aggregate qt_zh_CN.qm is a
+    # dependency-only stub on macOS and cannot be loaded by QTranslator.
+    add_custom_command(
+        TARGET DBScore POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E make_directory
+                "$<TARGET_BUNDLE_CONTENT_DIR:DBScore>/Resources/locale"
+        COMMAND ${CMAKE_COMMAND} -E rm -f
+                "$<TARGET_BUNDLE_CONTENT_DIR:DBScore>/Resources/locale/qt_zh_CN.qm"
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                "${QT_INSTALL_TRANSLATIONS}/qtbase_zh_CN.qm"
+                "$<TARGET_BUNDLE_CONTENT_DIR:DBScore>/Resources/locale/qtbase_zh_CN.qm"
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                "${QT_INSTALL_TRANSLATIONS}/qtmultimedia_zh_CN.qm"
+                "$<TARGET_BUNDLE_CONTENT_DIR:DBScore>/Resources/locale/qtmultimedia_zh_CN.qm"
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                "${QT_INSTALL_TRANSLATIONS}/qtdeclarative_zh_CN.qm"
+                "$<TARGET_BUNDLE_CONTENT_DIR:DBScore>/Resources/locale/qtdeclarative_zh_CN.qm"
+        COMMENT "Copying Qt Chinese translations into the app bundle"
+        VERBATIM
     )
 
 ###########################################
