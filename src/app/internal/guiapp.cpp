@@ -103,7 +103,7 @@ std::shared_ptr<muse::CmdOptions> MuseScoreGuiApp::makeContextOptions(const muse
 QString MuseScoreGuiApp::mainWindowQmlPath(const QString& platform) const
 {
 #ifdef Q_OS_WASM
-    return QString(":/qt/qml/DBScore/AppShell/Main.qml");
+    return QString(":/qml/Main.qml");
 #else
     return QString(":/qt/qml/DBScore/AppShell/platform/%1/Main.qml").arg(platform);
 #endif
