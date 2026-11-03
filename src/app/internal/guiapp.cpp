@@ -111,7 +111,10 @@ QString MuseScoreGuiApp::mainWindowQmlPath(const QString& platform) const
 
 void MuseScoreGuiApp::doStartupScenario(const muse::modularity::ContextPtr& ctxId)
 {
-    auto startupScenario = muse::modularity::ioc(ctxId)->resolve<IStartupScenario>("app");
+    auto startupScenario = muse::modularity::ioc(ctxId)->resolve<IStartupScenario>("appshell");
+    IF_ASSERT_FAILED(startupScenario) {
+        return;
+    }
 
     //! NOTE Apply startup options
     const std::shared_ptr<MuseScoreCmdOptions> options = std::dynamic_pointer_cast<MuseScoreCmdOptions>(contextData(ctxId).options);
