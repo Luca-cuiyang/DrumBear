@@ -18,6 +18,8 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+include(${MUSE_FRAMEWORK_PATH}/buildscripts/cmake/DeclareModuleSetup.cmake)
+
 declare_module(appshell)
 
 set(MODULE_QRC appshell.qrc)
