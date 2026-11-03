@@ -126,16 +126,15 @@ Item {
                 contentItem: StyledTextLabel {
                     id: textLabel
 
-                    width: textMetrics.width
-
                     text: appMenuModel.isNavigationStarted ? radioButtonDelegate.titleWithMnemonicUnderline : radioButtonDelegate.title
                     textFormat: Text.RichText
                     font: ui.theme.bodyFont
+                }
 
-            text: appMenuModel.isNavigationStarted ? radioButtonDelegate.titleWithMnemonicUnderline : radioButtonDelegate.title
-            textFormat: Text.RichText
-            font: ui.theme.bodyFont
-        }
+                backgroundItem: AppButtonBackground {
+                    mouseArea: radioButtonDelegate.mouseArea
+
+                    highlight: radioButtonDelegate.highlight
 
                     color: radioButtonDelegate.normalColor
                 }
