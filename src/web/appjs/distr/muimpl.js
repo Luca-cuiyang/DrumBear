@@ -107,7 +107,7 @@ const MuImpl = {
             qt: {
                 onLoaded: opt.onLoaded,
                 onExit: opt.onExit,
-                entryFunction: window.MuseScoreStudio_entry, // from MuseScoreStudio.js
+                entryFunction: window.DBScore_entry, // from DBScore.js
                 containerElements: [opt.screen],
             },
 
