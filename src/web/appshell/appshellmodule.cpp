@@ -22,6 +22,8 @@
 
 #include "appshellmodule.h"
 
+#include <qqml.h>
+
 #include "modularity/ioc.h"
 
 #include "ui/iuiactionsregister.h"
@@ -72,6 +74,7 @@ void AppShellModule::registerResources()
 
 void AppShellModule::registerUiTypes()
 {
+    qmlRegisterModule("DBScore.AppShell", 1, 0);
 }
 
 void AppShellModule::onPreInit(const IApplication::RunMode& mode)
