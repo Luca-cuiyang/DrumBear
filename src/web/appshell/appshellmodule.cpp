@@ -32,7 +32,6 @@
 #include "internal/applicationuiactions.h"
 #include "internal/applicationactioncontroller.h"
 #include "internal/appshellconfiguration.h"
-#include "internal/applicationactioncontroller.h"
 #include "internal/startupscenario.h"
 
 #include "view/notationpagemodel.h"
@@ -44,6 +43,8 @@ using namespace muse;
 using namespace muse::modularity;
 using namespace muse::dock;
 
+static const std::string mname("appshell");
+
 static void appshell_init_qrc()
 {
     Q_INIT_RESOURCE(appshell);
@@ -51,27 +52,19 @@ static void appshell_init_qrc()
 
 std::string AppShellModule::moduleName() const
 {
-    return "appshell";
+    return mname;
 }
 
 void AppShellModule::registerExports()
 {
-    m_applicationActionController = std::make_shared<ApplicationActionController>(globalCtx());
-    m_applicationUiActions = std::make_shared<ApplicationUiActions>(m_applicationActionController, globalCtx());
     m_appShellConfiguration = std::make_shared<AppShellConfiguration>(globalCtx());
 
-    globalIoc()->registerExport<IAppShellConfiguration>(moduleName(), m_appShellConfiguration);
-    globalIoc()->registerExport<IStartupScenario>(moduleName(), new StartupScenario(globalCtx()));
+    globalIoc()->registerExport<IAppShellConfiguration>(mname, m_appShellConfiguration);
 }
 
 void AppShellModule::resolveImports()
 {
-    auto ar = globalIoc()->resolve<ui::IUiActionsRegister>(moduleName());
-    if (ar) {
-        ar->reg(m_applicationUiActions);
-    }
-
-    auto ir = globalIoc()->resolve<interactive::IInteractiveUriRegister>(moduleName());
+    auto ir = globalIoc()->resolve<interactive::IInteractiveUriRegister>(mname);
     if (ir) {
         ir->registerPageUri(Uri("dbscore://notation"));
         ir->registerPageUri(Uri("dbscore://devtools"));
@@ -95,8 +88,6 @@ void AppShellModule::onPreInit(const IApplication::RunMode& mode)
     if (mode == IApplication::RunMode::AudioPluginRegistration) {
         return;
     }
-
-    m_applicationActionController->preInit();
 }
 
 void AppShellModule::onInit(const IApplication::RunMode& mode)
@@ -106,8 +97,6 @@ void AppShellModule::onInit(const IApplication::RunMode& mode)
     }
 
     m_appShellConfiguration->init();
-    m_applicationActionController->init();
-    m_applicationUiActions->init();
 }
 
 void AppShellModule::onAllInited(const IApplication::RunMode& mode)
@@ -119,4 +108,37 @@ void AppShellModule::onAllInited(const IApplication::RunMode& mode)
 
 void AppShellModule::onDeinit()
 {
+}
+
+muse::modularity::IContextSetup* AppShellModule::newContext(const muse::modularity::ContextPtr& ctx) const
+{
+    return new AppShellContext(ctx);
+}
+
+void AppShellContext::registerExports()
+{
+    m_applicationActionController = std::make_shared<ApplicationActionController>(iocContext());
+    m_applicationUiActions = std::make_shared<ApplicationUiActions>(m_applicationActionController, iocContext());
+    m_startupScenario = std::make_shared<StartupScenario>(iocContext());
+
+    ioc()->registerExport<IStartupScenario>(mname, m_startupScenario);
+}
+
+void AppShellContext::resolveImports()
+{
+    auto ar = ioc()->resolve<ui::IUiActionsRegister>(mname);
+    if (ar) {
+        ar->reg(m_applicationUiActions);
+    }
+}
+
+void AppShellContext::onPreInit(const IApplication::RunMode&)
+{
+    m_applicationActionController->preInit();
+}
+
+void AppShellContext::onInit(const IApplication::RunMode&)
+{
+    m_applicationActionController->init();
+    m_applicationUiActions->init();
 }

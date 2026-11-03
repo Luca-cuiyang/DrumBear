@@ -35,7 +35,7 @@ QSet<int> possibleKeys(QKeyEvent* keyEvent)
 {
     const int key = keyEvent->key() != Qt::Key_unknown
         ? keyEvent->key()
-        : keyEvent->text().left(1).toUpper().unicode();
+        : keyEvent->text().left(1).toUpper().at(0).unicode();
     return { static_cast<int>(Qt::AltModifier) | key };
 }
 
