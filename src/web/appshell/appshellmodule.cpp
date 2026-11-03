@@ -22,8 +22,6 @@
 
 #include "appshellmodule.h"
 
-#include <qqml.h>
-
 #include "modularity/ioc.h"
 
 #include "ui/iuiactionsregister.h"
@@ -33,10 +31,6 @@
 #include "internal/applicationactioncontroller.h"
 #include "internal/appshellconfiguration.h"
 #include "internal/startupscenario.h"
-
-#include "view/notationpagemodel.h"
-#include "view/notationstatusbarmodel.h"
-#include "view/navigableappmenumodel.h"
 
 using namespace mu::appshell;
 using namespace muse;
@@ -78,9 +72,6 @@ void AppShellModule::registerResources()
 
 void AppShellModule::registerUiTypes()
 {
-    qmlRegisterType<NavigableAppMenuModel>("DBScore.AppShell", 1, 0, "AppMenuModel");
-    qmlRegisterType<NotationPageModel>("DBScore.AppShell", 1, 0, "NotationPageModel");
-    qmlRegisterType<NotationStatusBarModel>("DBScore.AppShell", 1, 0, "NotationStatusBarModel");
 }
 
 void AppShellModule::onPreInit(const IApplication::RunMode& mode)
