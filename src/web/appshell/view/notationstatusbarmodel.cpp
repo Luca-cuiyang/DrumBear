@@ -33,6 +33,11 @@
 #include "defer.h"
 #include "log.h"
 
+#include "notation/inotation.h"
+#include "notation/inotationaccessibility.h"
+#include "notation/inotationstyle.h"
+#include "notation/inotationviewstate.h"
+
 using namespace mu::appshell;
 using namespace mu::notation;
 using namespace muse;

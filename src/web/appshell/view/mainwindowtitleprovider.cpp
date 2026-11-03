@@ -22,6 +22,9 @@
 #include "mainwindowtitleprovider.h"
 #include "translation.h"
 
+#include "notation/inotation.h"
+#include "project/inotationproject.h"
+
 using namespace mu::appshell;
 using namespace mu::notation;
 
@@ -40,7 +43,7 @@ void MainWindowTitleProvider::load()
                 update();
             });
 
-            currentProject->needSave().notification.onNotify(this, [this]() {
+            currentProject->needSaveChanged().onNotify(this, [this]() {
                 update();
             });
         }
@@ -101,7 +104,7 @@ void MainWindowTitleProvider::update()
     project::INotationProjectPtr project = context()->currentProject();
 
     if (!project) {
-        setTitle(muse::qtrc("appshell", "MuseScore Studio"));
+        setTitle(muse::qtrc("appshell", "DB Score"));
         setFilePath("");
         setFileModified(false);
         return;
@@ -112,5 +115,5 @@ void MainWindowTitleProvider::update()
 
     setFilePath((project->isNewlyCreated() || project->isCloudProject())
                 ? "" : project->path().toQString());
-    setFileModified(project->needSave().val);
+    setFileModified(project->isNeedSave());
 }
