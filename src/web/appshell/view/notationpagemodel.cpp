@@ -27,6 +27,7 @@
 
 #include "async/async.h"
 
+#include "notation/inotation.h"
 #include "notation/inotationinteraction.h"
 #include "notation/inotationnoteinput.h"
 
@@ -73,14 +74,6 @@ void NotationPageModel::init()
     updateDrumsetPanelVisibility();
     updatePercussionPanelVisibility();
 
-    notationConfiguration()->useNewPercussionPanelChanged().onNotify(this, [this]() {
-        updateDrumsetPanelVisibility();
-        updatePercussionPanelVisibility();
-    });
-
-    notationConfiguration()->percussionPanelAutoShowModeChanged().onNotify(this, [this]() {
-        updatePercussionPanelVisibility();
-    });
 }
 
 QString NotationPageModel::notationToolBarName() const
@@ -215,12 +208,6 @@ void NotationPageModel::updateDrumsetPanelVisibility()
         });
     };
 
-    // This should never be open when the new percussion panel is in use...
-    if (notationConfiguration()->useNewPercussionPanel()) {
-        setDrumsetPanelOpen(false);
-        return;
-    }
-
     const INotationPtr notation = globalContext()->currentNotation();
     if (!notation) {
         setDrumsetPanelOpen(false);
@@ -255,65 +242,5 @@ void NotationPageModel::updatePercussionPanelVisibility()
         });
     };
 
-    // This should never be open when the old drumset panel is in use...
-    if (!notationConfiguration()->useNewPercussionPanel()) {
-        setPercussionPanelOpen(false);
-        return;
-    }
-
-    const PercussionPanelAutoShowMode autoShowMode = notationConfiguration()->percussionPanelAutoShowMode();
-    const INotationPtr notation = globalContext()->currentNotation();
-    if (!notation || !notation->elements() || autoShowMode == PercussionPanelAutoShowMode::NEVER) {
-        return;
-    }
-
-    const INotationNoteInputPtr noteInput = notation->interaction()->noteInput();
-    const bool autoClose = notationConfiguration()->autoClosePercussionPanel();
-    if (noteInput && !noteInput->isNoteInputMode() && autoShowMode == PercussionPanelAutoShowMode::UNPITCHED_STAFF_NOTE_INPUT) {
-        if (autoClose) {
-            setPercussionPanelOpen(false);
-        }
-        return;
-    }
-
-    const mu::engraving::Score* score = notation->elements()->msScore();
-    const INotationSelectionPtr selection = notation->interaction()->selection();
-    if (!score || !selection || selection->isNone()) {
-        if (autoClose) {
-            setPercussionPanelOpen(false);
-        }
-        return;
-    }
-
-    if (selection->isRange()) {
-        const INotationSelectionRangePtr rangeSelection = selection->range();
-        if (!rangeSelection) {
-            if (autoClose) {
-                setPercussionPanelOpen(false);
-            }
-            return;
-        }
-        for (const Part* p : rangeSelection->selectedParts()) {
-            if (p->hasDrumStaff()) {
-                continue;
-            }
-            if (autoClose) {
-                setPercussionPanelOpen(false);
-            }
-            return;
-        }
-    } else {
-        for (const EngravingItem* e : selection->elements()) {
-            const Staff* staff = e->staff();
-            if (staff && staff->isDrumStaff(e->tick())) {
-                continue;
-            }
-            if (autoClose) {
-                setPercussionPanelOpen(false);
-            }
-            return;
-        }
-    }
-
-    setPercussionPanelOpen(true);
+    setPercussionPanelOpen(false);
 }

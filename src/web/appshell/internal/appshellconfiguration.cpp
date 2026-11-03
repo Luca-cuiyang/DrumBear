@@ -44,15 +44,15 @@ std::string AppShellConfiguration::museScoreRevision() const
 
 bool AppShellConfiguration::isNotationNavigatorVisible() const
 {
-    return uiConfiguration()->isVisible(NOTATION_NAVIGATOR_VISIBLE_KEY, false);
+    return uistate()->isVisible(NOTATION_NAVIGATOR_VISIBLE_KEY, false);
 }
 
 void AppShellConfiguration::setIsNotationNavigatorVisible(bool visible) const
 {
-    uiConfiguration()->setIsVisible(NOTATION_NAVIGATOR_VISIBLE_KEY, visible);
+    uistate()->setIsVisible(NOTATION_NAVIGATOR_VISIBLE_KEY, visible);
 }
 
 muse::async::Notification AppShellConfiguration::isNotationNavigatorVisibleChanged() const
 {
-    return uiConfiguration()->isVisibleChanged(NOTATION_NAVIGATOR_VISIBLE_KEY);
+    return uistate()->isVisibleChanged(NOTATION_NAVIGATOR_VISIBLE_KEY);
 }

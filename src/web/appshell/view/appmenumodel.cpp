@@ -21,6 +21,9 @@
  */
 #include "appmenumodel.h"
 
+#include "notation/inotation.h"
+#include "notation/inotationundostack.h"
+
 #include "types/translatablestring.h"
 
 #include "muse_framework_config.h"
