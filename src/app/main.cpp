@@ -25,10 +25,13 @@
 #include <QApplication>
 #include <QStyleHints>
 #include <QQuickWindow>
+#ifndef Q_OS_WASM
 #include <QSslSocket>
+#endif
 
 #include "appfactory.h"
 #include "internal/commandlineparser.h"
+#include "internal/startupfileopenrelay.h"
 #include "global/iapplication.h"
 
 #include "muse_framework_config.h"
@@ -180,6 +183,9 @@ int main(int argc, char** argv)
     opt->runMode = IApplication::RunMode::GuiApp;
 #endif
 
+    StartupFileOpenRelay startupFileOpenRelay;
+    qapp->installEventFilter(&startupFileOpenRelay);
+
     // ====================================================
     // Setup application
     // ====================================================
@@ -201,12 +207,14 @@ int main(int argc, char** argv)
             QMetaObject::invokeMethod(qapp, [&app]() {
                 app->setupNewContext();
 
+#ifndef Q_OS_WASM
                 LOGI() << QString("SSL Info: supported: %1, build: %2, runtime: %3, active backend: %4, available backends: %5")
                     .arg(QSslSocket::supportsSsl())
                     .arg(QSslSocket::sslLibraryBuildVersionString())
                     .arg(QSslSocket::sslLibraryVersionString())
                     .arg(QSslSocket::activeBackend())
                     .arg(QSslSocket::availableBackends().join(", "));
+#endif
             }, Qt::QueuedConnection);
         }, Qt::QueuedConnection);
     }, Qt::QueuedConnection);
