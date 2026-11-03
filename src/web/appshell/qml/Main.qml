@@ -20,14 +20,9 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 import QtQuick
-import QtQuick.Controls
-import QtQuick.Layouts
 
-import Muse.Ui 1.0
-import Muse.UiComponents
 import Muse.Interactive
 
-import DBScore.AppShell 1.0
 import DBScore.Playback 1.0
 
 AppWindow {
@@ -44,56 +39,21 @@ AppWindow {
         }
     }
 
-    AppMenuBar {
-        id: appMenuBar
+    PlaybackToolBar {
+        id: playbackToolBar
+
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
+        anchors.leftMargin: 8
+        anchors.rightMargin: 8
     }
 
-    Item {
-        id: contentItem
-        anchors.top: appMenuBar.bottom
+    NotationFrame {
+        anchors.top: playbackToolBar.bottom
+        anchors.topMargin: 8
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom
-
-        StyledTabBar {
-            id: bar
-            anchors.left: parent.left
-            anchors.margins: 16
-            width: 300
-
-            StyledTabButton {
-                text: "Notation"
-            }
-            StyledTabButton {
-                text: "Dev"
-            }
-        }
-
-        PlaybackToolBar {
-            anchors.left: bar.right
-            anchors.right: parent.right
-            anchors.leftMargin: 16
-        }
-
-        StackLayout {
-            anchors.top: bar.bottom
-            anchors.topMargin: 8
-            anchors.bottom: parent.bottom
-            anchors.left: parent.left
-            anchors.right: parent.right
-            currentIndex: bar.currentIndex
-
-            NotationFrame {
-
-            }
-
-            DevFrame {
-
-            }
-
-        }
     }
 }

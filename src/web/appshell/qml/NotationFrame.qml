@@ -20,89 +20,18 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 import QtQuick
-import QtQuick.Controls
-import QtQuick.Layouts
-
-import Muse.Ui 1.0
-import Muse.UiComponents
 
 import DBScore.NotationScene 1.0
-import DBScore.Palette 1.0
-import DBScore.InstrumentsScene 1.0
-import DBScore.PropertiesPanel
 
 Item {
-
-    Item {
-        id: toolbars
-
-        anchors.left: parent.left
-        anchors.right: parent.right
-        height: notToolBar.height
-
-        NoteInputBar {
-            id: notToolBar
-        }
-    }
-
-    Item {
-        id: leftPanel
-        anchors.top: toolbars.bottom
-        anchors.bottom: parent.bottom
-        anchors.left: parent.left
-        width: 300
-
-        StyledTabBar {
-            id: bar
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.margins: 16
-
-            StyledTabButton {
-                text: qsTrc("appshell", "Palettes")
-            }
-            StyledTabButton {
-                text: qsTrc("appshell", "Layout")
-            }
-            StyledTabButton {
-                text:  qsTrc("appshell", "Properties")
-            }
-        }
-
-        StackLayout {
-            anchors.top: bar.bottom
-            anchors.topMargin: 8
-            anchors.bottom: parent.bottom
-            anchors.left: parent.left
-            anchors.right: parent.right
-            currentIndex: bar.currentIndex
-
-            PalettesPanel {
-
-            }
-
-            LayoutPanel {
-
-            }
-
-            PropertiesPanel {
-                notationView: notationView.paintView
-            }
-        }
-    }
-
     NotationView {
         id: notationView
         name: "MainNotationView"
 
-        anchors.top: toolbars.bottom
-        anchors.left: leftPanel.right
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
+        anchors.fill: parent
 
         isNavigatorVisible: false
         isBraillePanelVisible: false
         isMainView: true
     }
-
 }
