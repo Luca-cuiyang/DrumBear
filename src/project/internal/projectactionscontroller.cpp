@@ -26,7 +26,9 @@
 #include <QDateTime>
 #include <QDir>
 #include <QFileInfo>
+#ifndef Q_OS_WASM
 #include <QProcess>
+#endif
 #include <QTimer>
 #include <QTemporaryFile>
 #include <QUrl>
@@ -441,6 +443,9 @@ muse::Ret ProjectActionsController::openAudioTrackSettings()
 
 muse::Ret ProjectActionsController::importAudioToScore()
 {
+#ifdef Q_OS_WASM
+    return make_ret(Ret::Code::NotSupported);
+#else
     std::vector<std::string> audioFilter {
         muse::trc("project", "Audio files") + " (*.mp3 *.wav *.m4a *.aac *.flac *.ogg *.aiff *.aif)"
     };
@@ -468,9 +473,16 @@ muse::Ret ProjectActionsController::importAudioToScore()
     };
 
     QString python = resolveAdtofPath("ADTOF_PYTHON", QStringLiteral("python/bin/python"),
-                                      QStringLiteral("/Users/luca/.workbuddy/binaries/python/envs/adtof/bin/python"));
+                                      QStringLiteral("python3"));
     QString script = resolveAdtofPath("ADTOF_SCRIPT", QStringLiteral("adtof/transcribe_mdx.py"),
-                                      QStringLiteral("/Users/luca/Documents/Codex/2026-09-04/wo/work/sources/desktop/adtof/transcribe_mdx.py"));
+                                      QString());
+
+    if (!QFileInfo::exists(script)) {
+        interactive()->error(
+            muse::trc("project", "Audio to Score"),
+            muse::trc("project", "The audio transcription engine is not installed."));
+        return make_ret(Ret::Code::InternalError);
+    }
 
     QString midiPath = QDir::temp().filePath(QStringLiteral("dbscore_audio_to_score_%1.mid")
                                              .arg(QDateTime::currentMSecsSinceEpoch()));
@@ -518,6 +530,7 @@ muse::Ret ProjectActionsController::importAudioToScore()
     process->start(python, QStringList() << script << audioPath.toQString() << midiPath);
 
     return make_ok();
+#endif
 }
 
 muse::Ret ProjectActionsController::printScore()
