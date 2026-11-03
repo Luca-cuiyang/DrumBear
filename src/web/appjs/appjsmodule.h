@@ -34,6 +34,16 @@ public:
     void onDeinit() override;
     void onStartApp() override;
 
-private:
+    muse::modularity::IContextSetup* newContext(const muse::modularity::ContextPtr& ctx) const override;
+};
+
+class AppJsContext : public muse::modularity::IContextSetup
+{
+public:
+    AppJsContext(const muse::modularity::ContextPtr& ctx)
+        : muse::modularity::IContextSetup(ctx) {}
+
+    void onInit(const muse::IApplication::RunMode& mode) override;
+    void onDeinit() override;
 };
 }

@@ -35,15 +35,28 @@ std::string AppJsModule::moduleName() const
 
 void AppJsModule::onInit(const muse::IApplication::RunMode&)
 {
-    WebApi::instance()->init();
 }
 
 void AppJsModule::onDeinit()
 {
-    WebApi::instance()->deinit();
 }
 
 void AppJsModule::onStartApp()
 {
     emscripten::val::module_property("onStartApp")();
+}
+
+muse::modularity::IContextSetup* AppJsModule::newContext(const muse::modularity::ContextPtr& ctx) const
+{
+    return new AppJsContext(ctx);
+}
+
+void AppJsContext::onInit(const muse::IApplication::RunMode&)
+{
+    WebApi::instance()->init(iocContext());
+}
+
+void AppJsContext::onDeinit()
+{
+    WebApi::instance()->deinit();
 }

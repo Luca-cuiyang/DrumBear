@@ -59,8 +59,29 @@ WebApi* WebApi::instance()
     return &a;
 }
 
-void WebApi::init()
+std::shared_ptr<context::IGlobalContext> WebApi::globalContext() const
 {
+    return muse::modularity::ioc(m_context)->resolve<context::IGlobalContext>("context");
+}
+
+std::shared_ptr<muse::IInteractive> WebApi::interactive() const
+{
+    return muse::modularity::ioc(m_context)->resolve<muse::IInteractive>("interactive");
+}
+
+std::shared_ptr<muse::actions::IActionsDispatcher> WebApi::dispatcher() const
+{
+    return muse::modularity::ioc(m_context)->resolve<muse::actions::IActionsDispatcher>("actions");
+}
+
+void WebApi::init(const muse::modularity::ContextPtr& context)
+{
+    m_context = context;
+    auto appContext = globalContext();
+    IF_ASSERT_FAILED(appContext) {
+        return;
+    }
+
     auto onProjectChanged = [this]() {
         if (m_currentProject) {
             m_currentProject->saveComplited().disconnect(this);
@@ -75,7 +96,7 @@ void WebApi::init()
         }
     };
 
-    globalContext()->currentProjectChanged().onNotify(this, onProjectChanged);
+    appContext->currentProjectChanged().onNotify(this, onProjectChanged);
 
     onProjectChanged();
 }

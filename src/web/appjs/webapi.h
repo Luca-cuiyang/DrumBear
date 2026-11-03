@@ -35,9 +35,6 @@
 namespace mu::appjs {
 class WebApi : public muse::async::Asyncable
 {
-    inline static muse::ContextInject<muse::IInteractive> interactive = { muse::modularity::globalCtx() };
-    inline static muse::ContextInject<muse::actions::IActionsDispatcher> dispatcher = { muse::modularity::globalCtx() };
-    inline static muse::ContextInject<mu::context::IGlobalContext> globalContext = { muse::modularity::globalCtx() };
     inline static muse::GlobalInject<muse::audio::IStartAudioController> startAudioController;
     inline static muse::GlobalInject<muse::audio::ISoundFontController> soundFontController;
 
@@ -45,7 +42,7 @@ public:
 
     static WebApi* instance();
 
-    void init();
+    void init(const muse::modularity::ContextPtr& context);
     void deinit();
 
     void load(const void* source, unsigned int len);
@@ -56,8 +53,13 @@ private:
 
     WebApi() = default;
 
+    std::shared_ptr<mu::context::IGlobalContext> globalContext() const;
+    std::shared_ptr<muse::IInteractive> interactive() const;
+    std::shared_ptr<muse::actions::IActionsDispatcher> dispatcher() const;
+
     void onProjectSaved(const muse::io::path_t& path, mu::project::SaveMode mode);
 
+    muse::modularity::ContextPtr m_context;
     project::INotationProjectPtr m_currentProject;
 };
 }
