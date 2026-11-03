@@ -75,18 +75,3 @@ bash ./buildscripts/ci/tools/make_release_channel_env.sh -c $MUSE_APP_BUILD_MODE
 bash ./buildscripts/ci/tools/make_version_env.sh $BUILD_NUMBER
 bash ./buildscripts/ci/tools/make_revision_env.sh $MUSESCORE_REVISION
 bash ./buildscripts/ci/tools/make_branch_env.sh
-
-echo "=== BUILD MuseAudio ==="
-
-mkdir -p build.audio.release
-cd build.audio.release
-
-cmake ../src/web/audioengine -GNinja -DCMAKE_BUILD_TYPE="Release" 
-
-if [ $(which nproc) ]; then
-    JOBS=$(nproc --all)
-else
-    JOBS=4
-fi
-
-ninja -j $JOBS
