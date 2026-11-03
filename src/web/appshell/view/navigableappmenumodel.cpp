@@ -25,44 +25,23 @@
 #include <QWindow>
 #include <QKeyEvent>
 
-#include <private/qkeymapper_p.h>
-
 #include "log.h"
 
 using namespace mu::appshell;
 using namespace muse::ui;
 using namespace muse::uicomponents;
 
-QSet<int> convertToSet(QList<int> keys)
-{
-    return QSet<int>(keys.cbegin(), keys.cend());
-}
-
-QSet<int> convertToSet(QList<QKeyCombination> keys)
-{
-    QSet<int> keyset;
-    for (const auto& key : keys) {
-        keyset << key.toCombined();
-    }
-    return keyset;
-}
-
 QSet<int> possibleKeys(QKeyEvent* keyEvent)
 {
-    QKeyEvent* correctedKeyEvent = keyEvent;
-    //! NOTE: correct work only with alt modifier
-    correctedKeyEvent->setModifiers(Qt::AltModifier);
-
-    auto keys = QKeyMapper::possibleKeys(correctedKeyEvent);
-    return convertToSet(keys);
+    const int key = keyEvent->key() != Qt::Key_unknown
+        ? keyEvent->key()
+        : keyEvent->text().left(1).toUpper().unicode();
+    return { static_cast<int>(Qt::AltModifier) | key };
 }
 
 QSet<int> possibleKeys(const QChar& keySymbol)
 {
-    QKeyEvent fakeKey(QKeyEvent::KeyRelease, Qt::Key_unknown, Qt::AltModifier, keySymbol);
-    auto keys = QKeyMapper::possibleKeys(&fakeKey);
-
-    return convertToSet(keys);
+    return { static_cast<int>(Qt::AltModifier) | keySymbol.toUpper().unicode() };
 }
 
 NavigableAppMenuModel::NavigableAppMenuModel(QObject* parent)
