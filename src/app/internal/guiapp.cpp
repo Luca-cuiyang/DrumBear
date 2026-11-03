@@ -4,6 +4,7 @@
 #include "appshell/internal/istartupscenario.h"
 
 #include "commandlineparser.h"
+#include "startupfileopenrelay.h"
 
 #include "muse_framework_config.h"
 #include "app_config.h"
@@ -18,6 +19,10 @@ using namespace mu::appshell;
 MuseScoreGuiApp::MuseScoreGuiApp(const std::shared_ptr<MuseScoreCmdOptions>& options)
     : muse::ui::GuiApplication(options)
 {
+    const std::optional<QUrl> pendingUrl = StartupFileOpenRelay::pendingUrl();
+    if (pendingUrl.has_value() && !options->startup.scoreUrl.has_value()) {
+        options->startup.scoreUrl = pendingUrl.value();
+    }
 }
 
 MuseScoreGuiApp::SplashConfig MuseScoreGuiApp::splashConfig(const std::shared_ptr<CmdOptions>& opt) const
@@ -97,7 +102,11 @@ std::shared_ptr<muse::CmdOptions> MuseScoreGuiApp::makeContextOptions(const muse
 
 QString MuseScoreGuiApp::mainWindowQmlPath(const QString& platform) const
 {
+#ifdef Q_OS_WASM
+    return QString(":/qt/qml/DBScore/AppShell/Main.qml");
+#else
     return QString(":/qt/qml/DBScore/AppShell/platform/%1/Main.qml").arg(platform);
+#endif
 }
 
 void MuseScoreGuiApp::doStartupScenario(const muse::modularity::ContextPtr& ctxId)
@@ -108,6 +117,11 @@ void MuseScoreGuiApp::doStartupScenario(const muse::modularity::ContextPtr& ctxI
     const std::shared_ptr<MuseScoreCmdOptions> options = std::dynamic_pointer_cast<MuseScoreCmdOptions>(contextData(ctxId).options);
     IF_ASSERT_FAILED(options) {
         return;
+    }
+
+    const std::optional<QUrl> pendingUrl = StartupFileOpenRelay::takePendingUrl();
+    if (pendingUrl.has_value() && !options->startup.scoreUrl.has_value()) {
+        options->startup.scoreUrl = pendingUrl.value();
     }
 
     startupScenario->setStartupType(options->startup.type);
