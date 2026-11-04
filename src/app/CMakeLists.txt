@@ -334,6 +334,9 @@ if (CC_IS_EMCC)
     include(exported_functions.cmake)
     target_link_options(DBScore PRIVATE ${EMCC_LINKER_FLAGS})
     target_link_options(DBScore PRIVATE ${EXPORTED_FUNCTIONS})
+    target_link_options(DBScore PRIVATE
+        "SHELL:--post-js=${PROJECT_SOURCE_DIR}/src/web/appjs/distr/runtime_exports.js"
+    )
 endif()
 
 

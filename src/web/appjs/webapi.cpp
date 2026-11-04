@@ -27,7 +27,6 @@
 #endif
 
 #include "global/io/file.h"
-#include "global/io/dir.h"
 
 #include "log.h"
 
@@ -113,13 +112,7 @@ void WebApi::load(const void* source, unsigned int len)
 {
     LOGI() << source << ", len: " << len;
     ByteArray data = ByteArray::fromRawData(reinterpret_cast<const char*>(source), len);
-    const io::path_t tempDirectory = "/tmp/dbscore";
-    const io::path_t tempFilePath = "/tmp/dbscore/current.mscz";
-
-    if (!io::Dir::mkpath(tempDirectory)) {
-        LOGE() << "failed create temporary directory: " << tempDirectory;
-        return;
-    }
+    const io::path_t tempFilePath = "/current.mscz";
 
     io::File::remove(tempFilePath);
 
