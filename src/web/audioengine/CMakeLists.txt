@@ -67,6 +67,7 @@ find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml Quick Widgets)
 set(MUSE_QT_SUPPORT ON)
 set(MUSE_MODULE_AUDIO_WORKMODE 3)
 add_definitions(-DQ_OS_WASM)
+add_definitions(-DKORS_LOGGER_QT_SUPPORT)
 set(GLOBAL_NO_INTERNAL ON)
 
 add_subdirectory(${AUDIO_ROOT}/common common)
