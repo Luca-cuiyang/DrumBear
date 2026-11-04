@@ -172,11 +172,8 @@ int WebApi::playbackState() const
     if (context && context->currentNotation()) {
         state |= 4;
     }
-    if (context && context->currentPlayer()) {
-        state |= 8;
-    }
     if (playback && playback->isPlaying()) {
-        state |= 16;
+        state |= 8;
     }
 
     return state;
