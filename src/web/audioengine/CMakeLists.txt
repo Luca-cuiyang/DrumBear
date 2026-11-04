@@ -98,6 +98,22 @@ set(GLOBAL_NO_INTERNAL ON)
 
 configure_file(${MUSE_FRAMEWORK_PATH}/framework/cmake/muse_framework_config.h.in muse_framework_config.h )
 
+set(MUSE_FETCHED_DEPS_PATH ${MU_ROOT}/build.release/_deps)
+if (EXISTS ${MUSE_FETCHED_DEPS_PATH}/pugixml/pugixml/CMakeLists.txt)
+    add_subdirectory(
+        ${MUSE_FETCHED_DEPS_PATH}/pugixml/pugixml
+        ${CMAKE_CURRENT_BINARY_DIR}/pugixml
+        EXCLUDE_FROM_ALL
+    )
+endif()
+if (EXISTS ${MUSE_FETCHED_DEPS_PATH}/utfcpp/utfcpp/CMakeLists.txt)
+    add_subdirectory(
+        ${MUSE_FETCHED_DEPS_PATH}/utfcpp/utfcpp
+        ${CMAKE_CURRENT_BINARY_DIR}/utfcpp
+        EXCLUDE_FROM_ALL
+    )
+endif()
+
 add_subdirectory(${MUSE_FRAMEWORK_PATH}/framework/global global)
 
 target_link_libraries(MuseAudio PRIVATE
