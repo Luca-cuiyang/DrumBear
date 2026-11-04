@@ -33,6 +33,7 @@ class IRpcChannel;
 
 namespace muse::audio::engine {
 class EngineController;
+class EngineGlobalSetup;
 class WebAudioEngine
 {
 public:
@@ -47,5 +48,6 @@ private:
 
     std::shared_ptr<rpc::IRpcChannel> m_rpcChannel;
     std::shared_ptr<engine::EngineController> m_controller;
+    std::shared_ptr<engine::EngineGlobalSetup> m_globalSetup;
 };
 }

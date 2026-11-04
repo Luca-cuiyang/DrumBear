@@ -28,6 +28,7 @@
 #include "audio/common/rpc/platform/web/webrpcchannel.h"
 
 #include "audio/engine/internal/enginecontroller.h"
+#include "audio/engine/enginesetup.h"
 
 #include "log.h"
 
@@ -48,7 +49,7 @@ static std::string moduleName()
     return "audio_engine";
 }
 
-static modularity::ModulesIoC* ioc()
+static modularity::ModulesGlobalIoC* ioc()
 {
     return modularity::globalIoc();
 }
@@ -81,8 +82,11 @@ void WebAudioEngine::init()
     m_rpcChannel->setupOnEngine();
     ioc()->registerExport<IRpcChannel>(moduleName(), m_rpcChannel);
 
+    m_globalSetup = std::make_shared<EngineGlobalSetup>();
+    m_globalSetup->registerExports();
+    m_globalSetup->resolveImports();
+
     m_controller = std::make_shared<EngineController>(m_rpcChannel);
-    m_controller->registerExports();
     m_controller->onStartRunning();
 
     LOGI() << "Web audio engine running";
