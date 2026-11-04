@@ -175,6 +175,10 @@ const MuImpl = {
 
     togglePlayback: function() {
         this.Module._togglePlayback()
+    },
+
+    playbackState: function() {
+        return this.Module._playbackState()
     }
 }
 

@@ -157,6 +157,31 @@ void WebApi::togglePlayback()
     }
 }
 
+int WebApi::playbackState() const
+{
+    int state = 0;
+    const auto context = globalContext();
+    const auto playback = playbackController();
+
+    if (playback && playback->isPlaybackInited()) {
+        state |= 1;
+    }
+    if (playback && playback->isPlayAllowed()) {
+        state |= 2;
+    }
+    if (context && context->currentNotation()) {
+        state |= 4;
+    }
+    if (context && context->currentPlayer()) {
+        state |= 8;
+    }
+    if (playback && playback->isPlaying()) {
+        state |= 16;
+    }
+
+    return state;
+}
+
 void WebApi::onProjectSaved(const muse::io::path_t& path, mu::project::SaveMode)
 {
     IF_ASSERT_FAILED(io::File::exists(path)) {

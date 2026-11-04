@@ -50,6 +50,7 @@ public:
     void addSoundFont(const std::string& uri);
     void startAudioProcessing();
     void togglePlayback();
+    int playbackState() const;
 
 private:
 

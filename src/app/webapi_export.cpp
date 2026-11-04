@@ -41,4 +41,7 @@ void startAudioProcessing() { WebApi::instance()->startAudioProcessing(); }
 
 EMSCRIPTEN_KEEPALIVE
 void togglePlayback() { WebApi::instance()->togglePlayback(); }
+
+EMSCRIPTEN_KEEPALIVE
+int playbackState() { return WebApi::instance()->playbackState(); }
 }

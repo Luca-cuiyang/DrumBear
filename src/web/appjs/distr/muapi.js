@@ -13,6 +13,7 @@ const MuApi = {
 
     // Playback
     togglePlayback: MuImpl.togglePlayback.bind(MuImpl),
+    playbackState: MuImpl.playbackState.bind(MuImpl),
 }
 
 async function createMuApi(config) {
