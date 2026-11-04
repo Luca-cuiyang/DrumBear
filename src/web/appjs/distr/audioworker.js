@@ -27,6 +27,12 @@ let MuseAudio = {
     console.info("[worker] onRuntimeInitialized")
     try {
       MuseAudio.ccall('Init', '', ['number'], [42]);
+      MuseAudio.mainPort.onmessage = function(event) {
+        MuseAudio.main_worker_rpcListen(event.data)
+      }
+      MuseAudio.driverPort.onmessage = function(event) {
+        MuseAudio.driver_worker_rpcListen(event.data)
+      }
       postMessage({type: "WORKER_INITED" });
     } catch (error) {
       MuseAudio.onLogMessage("ERROR", error)
@@ -44,20 +50,10 @@ function initialize(data)
       MuseAudio.mainPort.postMessage(data)
   }
 
-  MuseAudio.main_worker_rpcListen = function(data) {} // will be overridden
-  MuseAudio.mainPort.onmessage = function(event) {
-    MuseAudio.main_worker_rpcListen(event.data)
-  }
-
   // driver <=> worker
   MuseAudio.driverPort = data.driverPort
   MuseAudio.driver_worker_rpcSend = function(data) {
       MuseAudio.driverPort.postMessage(data)
-  }
-
-  MuseAudio.driver_worker_rpcListen = function(data) {} // will be overridden
-  MuseAudio.driverPort.onmessage = function(event) {
-    MuseAudio.driver_worker_rpcListen(event.data)
   }
 
   // Load wasm
