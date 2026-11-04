@@ -63,7 +63,9 @@ else()
 endif()
 
 set(AUDIO_ROOT ${MUSE_FRAMEWORK_SRC_PATH}/audio)
-add_definitions(-DNO_QT_SUPPORT)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml Quick Widgets)
+set(MUSE_QT_SUPPORT ON)
+set(MUSE_MODULE_AUDIO_WORKMODE 3)
 add_definitions(-DQ_OS_WASM)
 set(GLOBAL_NO_INTERNAL ON)
 
