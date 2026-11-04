@@ -22,6 +22,8 @@
 
 #include "webaudioengine.h"
 
+#include "global/async/processevents.h"
+
 #include "log.h"
 
 using namespace muse::audio::engine;
@@ -43,5 +45,10 @@ void process(uintptr_t ptr, unsigned samplesPerChannel)
     float* stream = reinterpret_cast<float*>(ptr);
     std::memset(stream, 0, samplesPerChannel * 2 * sizeof(float));
     WebAudioEngine::instance()->process(stream, samplesPerChannel);
+}
+
+void pumpMessages()
+{
+    muse::async::processMessages();
 }
 }

@@ -30,6 +30,9 @@ let MuseAudio = {
     console.info("[worker] onRuntimeInitialized")
     try {
       MuseAudio.ccall('Init', '', ['number'], [42]);
+      setInterval(function() {
+        MuseAudio._pumpMessages();
+      }, 16);
       MuseAudio.mainPort.onmessage = function(event) {
         MuseAudio.main_worker_rpcListen(event.data)
       }
