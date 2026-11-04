@@ -48,6 +48,7 @@ public:
     void load(const void* source, unsigned int len);
     void addSoundFont(const std::string& uri);
     void startAudioProcessing();
+    void togglePlayback();
 
 private:
 

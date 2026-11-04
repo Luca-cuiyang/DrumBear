@@ -171,6 +171,10 @@ const MuImpl = {
             console.log("driver not inited, start audio will be later")
             this.Module.isNeedStartAudio = true;
         }
+    },
+
+    togglePlayback: function() {
+        this.Module._togglePlayback()
     }
 }
 

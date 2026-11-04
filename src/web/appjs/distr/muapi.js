@@ -10,6 +10,9 @@ const MuApi = {
 
     // Start audio
     startAudioProcessing: MuImpl.startAudioProcessing.bind(MuImpl),
+
+    // Playback
+    togglePlayback: MuImpl.togglePlayback.bind(MuImpl),
 }
 
 async function createMuApi(config) {

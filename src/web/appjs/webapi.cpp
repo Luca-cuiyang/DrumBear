@@ -27,6 +27,7 @@
 #endif
 
 #include "global/io/file.h"
+#include "playback/playbackcommands.h"
 
 #include "log.h"
 
@@ -132,6 +133,19 @@ void WebApi::addSoundFont(const std::string& uri)
 void WebApi::startAudioProcessing()
 {
     startAudioController()->startAudioProcessing(IApplication::RunMode::GuiApp);
+}
+
+void WebApi::togglePlayback()
+{
+    const auto context = globalContext();
+    IF_ASSERT_FAILED(context && context->playbackState()) {
+        return;
+    }
+
+    const auto command = context->playbackState()->isPlaying()
+                         ? playback::PAUSE_COMMAND
+                         : playback::PLAY_COMMAND;
+    dispatcher()->dispatch(command);
 }
 
 void WebApi::onProjectSaved(const muse::io::path_t& path, mu::project::SaveMode)
