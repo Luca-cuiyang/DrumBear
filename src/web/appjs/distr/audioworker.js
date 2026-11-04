@@ -32,9 +32,6 @@ let MuseAudio = {
       MuseAudio.ccall('Init', '', ['number'], [42]);
       MuseAudio.mainPort.onmessage = function(event) {
         MuseAudio.main_worker_rpcListen(event.data)
-        if (event.data instanceof Uint8Array && event.data.byteLength > 1000000) {
-          postMessage({type: "SOUND_FONT_READY" });
-        }
       }
       MuseAudio.driverPort.onmessage = function(event) {
         MuseAudio.driver_worker_rpcListen(event.data)
