@@ -27,6 +27,7 @@
 #include "interactive/iinteractive.h"
 #include "actions/iactionsdispatcher.h"
 #include "context/iglobalcontext.h"
+#include "rcommand/icommanddispatcher.h"
 #include "audio/main/istartaudiocontroller.h"
 #include "audio/main/isoundfontcontroller.h"
 #include "project/inotationproject.h"
@@ -37,6 +38,7 @@ class WebApi : public muse::async::Asyncable
 {
     inline static muse::GlobalInject<muse::audio::IStartAudioController> startAudioController;
     inline static muse::GlobalInject<muse::audio::ISoundFontController> soundFontController;
+    inline static muse::GlobalInject<muse::rcommand::ICommandDispatcher> commandDispatcher;
 
 public:
 

@@ -145,7 +145,7 @@ void WebApi::togglePlayback()
     const auto command = context->playbackState()->isPlaying()
                          ? playback::PAUSE_COMMAND
                          : playback::PLAY_COMMAND;
-    dispatcher()->dispatch(command);
+    commandDispatcher()->dispatch(command);
 }
 
 void WebApi::onProjectSaved(const muse::io::path_t& path, mu::project::SaveMode)
