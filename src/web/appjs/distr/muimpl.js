@@ -89,6 +89,9 @@ async function setupWorker(Module)
         if (event.data.type == "WORKER_INITED") {
             Module.ccall('addSoundFont', '', ['string'], [Module.soundFont]);
         }
+        if (event.data.type == "SOUND_FONT_READY") {
+            Module.soundFontReady = true;
+        }
     }
 
     Module.worker.postMessage({
@@ -181,6 +184,10 @@ const MuImpl = {
 
     playbackState: function() {
         return this.Module._playbackState()
+    },
+
+    soundFontReady: function() {
+        return this.Module.soundFontReady === true
     }
 }
 

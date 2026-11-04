@@ -23,6 +23,9 @@ let MuseAudio = {
         //     message: error
         // });
     },
+    onSoundFontsLoaded: function() {
+      postMessage({type: "SOUND_FONT_READY" });
+    },
   onRuntimeInitialized: function () {
     console.info("[worker] onRuntimeInitialized")
     try {
