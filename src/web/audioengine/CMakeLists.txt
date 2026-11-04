@@ -30,8 +30,8 @@ option(MUSE_FIX_MUSEAUDIO_FILENAME "Fix MuseAudio.js file name" OFF)
 
 # src/web/audioengine
 set(MU_ROOT ${CMAKE_CURRENT_LIST_DIR}/../../..)
-set(MUSE_FRAMEWORK_PATH ${MU_ROOT})
-set(MUSE_FRAMEWORK_SRC_PATH ${MU_ROOT}/src/framework)
+set(MUSE_FRAMEWORK_PATH ${MU_ROOT}/muse)
+set(MUSE_FRAMEWORK_SRC_PATH ${MUSE_FRAMEWORK_PATH}/framework)
 
 if (NOT EXISTS ${MU_ROOT}/buildscripts)
     message(FATAL_ERROR "not root: ${MU_ROOT}")
@@ -39,9 +39,10 @@ endif()
 
 set(CMAKE_MODULE_PATH
     ${MU_ROOT}
-    ${MU_ROOT}/buildscripts
-    ${MU_ROOT}/buildscripts/cmake
-    ${MU_ROOT}/src/framework/cmake
+    ${MUSE_FRAMEWORK_PATH}
+    ${MUSE_FRAMEWORK_PATH}/buildscripts
+    ${MUSE_FRAMEWORK_PATH}/buildscripts/cmake
+    ${MUSE_FRAMEWORK_PATH}/framework/cmake
     ${CMAKE_MODULE_PATH}
     )
 
@@ -61,7 +62,7 @@ else()
     set(EMCC_LINKER_FLAGS -Os)
 endif()
 
-set(AUDIO_ROOT ${MU_ROOT}/src/framework/audio)
+set(AUDIO_ROOT ${MUSE_FRAMEWORK_SRC_PATH}/audio)
 add_subdirectory(${AUDIO_ROOT}/common common)
 set(WEBWORKER_FACADE_MODE OFF)
 add_subdirectory(${AUDIO_ROOT}/engine engine)
@@ -83,16 +84,11 @@ target_include_directories(MuseAudio PRIVATE
 
     ${PROJECT_SOURCE_DIR}/src
 
-    ${MUSE_FRAMEWORK_PATH}
     ${MUSE_FRAMEWORK_PATH}/framework
     ${MUSE_FRAMEWORK_PATH}/framework/global
     ${MUSE_FRAMEWORK_PATH}/framework/audio
 
     # compat
-    ${MUSE_FRAMEWORK_PATH}/src
-    ${MUSE_FRAMEWORK_PATH}/src/framework
-    ${MUSE_FRAMEWORK_PATH}/src/framework/global
-    ${MUSE_FRAMEWORK_PATH}/src/framework/audio
     # end compat
 )
 
@@ -100,9 +96,9 @@ add_definitions(-DNO_QT_SUPPORT)
 add_definitions(-DQ_OS_WASM)
 set(GLOBAL_NO_INTERNAL ON)
 
-configure_file(${MU_ROOT}/src/framework/cmake/muse_framework_config.h.in muse_framework_config.h )
+configure_file(${MUSE_FRAMEWORK_PATH}/framework/cmake/muse_framework_config.h.in muse_framework_config.h )
 
-add_subdirectory(${MU_ROOT}/src/framework/global global)
+add_subdirectory(${MUSE_FRAMEWORK_PATH}/framework/global global)
 
 target_link_libraries(MuseAudio PRIVATE
     embind
