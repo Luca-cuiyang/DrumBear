@@ -38,7 +38,6 @@ class WebApi : public muse::async::Asyncable
 {
     inline static muse::GlobalInject<muse::audio::IStartAudioController> startAudioController;
     inline static muse::GlobalInject<muse::audio::ISoundFontController> soundFontController;
-    inline static muse::GlobalInject<muse::rcommand::ICommandDispatcher> commandDispatcher;
 
 public:
 
@@ -59,6 +58,7 @@ private:
     std::shared_ptr<mu::context::IGlobalContext> globalContext() const;
     std::shared_ptr<muse::IInteractive> interactive() const;
     std::shared_ptr<muse::actions::IActionsDispatcher> dispatcher() const;
+    std::shared_ptr<muse::rcommand::ICommandDispatcher> commandDispatcher() const;
 
     void onProjectSaved(const muse::io::path_t& path, mu::project::SaveMode mode);
 

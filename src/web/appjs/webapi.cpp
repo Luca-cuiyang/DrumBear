@@ -75,6 +75,11 @@ std::shared_ptr<muse::actions::IActionsDispatcher> WebApi::dispatcher() const
     return muse::modularity::ioc(m_context)->resolve<muse::actions::IActionsDispatcher>("actions");
 }
 
+std::shared_ptr<muse::rcommand::ICommandDispatcher> WebApi::commandDispatcher() const
+{
+    return muse::modularity::ioc(m_context)->resolve<muse::rcommand::ICommandDispatcher>("rcommand");
+}
+
 void WebApi::init(const muse::modularity::ContextPtr& context)
 {
     m_context = context;
@@ -145,7 +150,12 @@ void WebApi::togglePlayback()
     const auto command = context->playbackState()->isPlaying()
                          ? playback::PAUSE_COMMAND
                          : playback::PLAY_COMMAND;
-    commandDispatcher()->dispatch(command);
+    const auto commands = commandDispatcher();
+    IF_ASSERT_FAILED(commands) {
+        return;
+    }
+
+    commands->dispatch(command);
 }
 
 void WebApi::onProjectSaved(const muse::io::path_t& path, mu::project::SaveMode)
