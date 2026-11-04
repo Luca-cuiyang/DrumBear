@@ -79,6 +79,10 @@ add_executable(MuseAudio
     ${CMAKE_CURRENT_LIST_DIR}/webaudioengine.cpp
     ${CMAKE_CURRENT_LIST_DIR}/webaudioengine.h
 
+    ${AUDIO_ROOT}/common/rpc/platform/web/webrpcchannel.cpp
+    ${AUDIO_ROOT}/common/rpc/platform/web/webrpcchannel.h
+    ${AUDIO_ROOT}/engine/platform/web/networksfloader.cpp
+    ${AUDIO_ROOT}/engine/platform/web/networksfloader.h
     ${AUDIO_ROOT}/driver/platform/web/webaudiochannel.cpp
     ${AUDIO_ROOT}/driver/platform/web/webaudiochannel.h
 )
