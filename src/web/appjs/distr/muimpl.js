@@ -69,10 +69,12 @@ async function setupDriver(Module)
             Module._startAudioProcessing()
         }
 
-        Module.ccall('addSoundFont', '', ['string'], [Module.soundFont]);
+        if (Module.config.MUSE_MODULE_AUDIO_WORKER != "ON") {
+            Module.ccall('addSoundFont', '', ['string'], [Module.soundFont]);
+        }
     }
 
-    await AudioDriver.setup(Module.config, Module.driver_worker_rpcChannel.port2);
+    await AudioDriver.setup(Module.config, Module.driver_worker_rpcChannel.port1);
 
 }
 
