@@ -22,8 +22,6 @@
 
 #include "webaudioengine.h"
 
-#include "global/async/processevents.h"
-
 #include "log.h"
 
 using namespace muse::audio::engine;
@@ -47,8 +45,4 @@ void process(uintptr_t ptr, unsigned samplesPerChannel)
     WebAudioEngine::instance()->process(stream, samplesPerChannel);
 }
 
-void pumpMessages()
-{
-    muse::async::processMessages();
-}
 }
