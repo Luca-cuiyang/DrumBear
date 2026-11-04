@@ -67,8 +67,6 @@ add_subdirectory(${AUDIO_ROOT}/common common)
 set(WEBWORKER_FACADE_MODE OFF)
 add_subdirectory(${AUDIO_ROOT}/engine engine)
 
-target_link_libraries(MuseAudio PRIVATE muse_audio_common muse_audio_engine)
-
 add_executable(MuseAudio
     ${CMAKE_CURRENT_LIST_DIR}/engine_export.cpp
     ${CMAKE_CURRENT_LIST_DIR}/webaudioengine.cpp
@@ -77,6 +75,8 @@ add_executable(MuseAudio
     ${AUDIO_ROOT}/driver/platform/web/webaudiochannel.cpp
     ${AUDIO_ROOT}/driver/platform/web/webaudiochannel.h
 )
+
+target_link_libraries(MuseAudio PRIVATE muse_audio_common muse_audio_engine)
 
 target_include_directories(MuseAudio PRIVATE
     ${PROJECT_BINARY_DIR}
