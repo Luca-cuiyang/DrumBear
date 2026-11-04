@@ -27,8 +27,6 @@
 #endif
 
 #include "global/io/file.h"
-#include "playback/playbackcommands.h"
-
 #include "log.h"
 
 using namespace muse;
@@ -75,9 +73,9 @@ std::shared_ptr<muse::actions::IActionsDispatcher> WebApi::dispatcher() const
     return muse::modularity::ioc(m_context)->resolve<muse::actions::IActionsDispatcher>("actions");
 }
 
-std::shared_ptr<muse::rcommand::ICommandDispatcher> WebApi::commandDispatcher() const
+std::shared_ptr<mu::playback::IPlaybackController> WebApi::playbackController() const
 {
-    return muse::modularity::ioc(m_context)->resolve<muse::rcommand::ICommandDispatcher>("rcommand");
+    return muse::modularity::ioc(m_context)->resolve<mu::playback::IPlaybackController>("playback");
 }
 
 void WebApi::init(const muse::modularity::ContextPtr& context)
@@ -147,15 +145,16 @@ void WebApi::togglePlayback()
         return;
     }
 
-    const auto command = context->playbackState()->isPlaying()
-                         ? playback::PAUSE_COMMAND
-                         : playback::PLAY_COMMAND;
-    const auto commands = commandDispatcher();
-    IF_ASSERT_FAILED(commands) {
+    const auto playback = playbackController();
+    IF_ASSERT_FAILED(playback) {
         return;
     }
 
-    commands->dispatch(command);
+    if (context->playbackState()->isPlaying()) {
+        playback->pause();
+    } else {
+        playback->play();
+    }
 }
 
 void WebApi::onProjectSaved(const muse::io::path_t& path, mu::project::SaveMode)

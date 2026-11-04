@@ -27,9 +27,9 @@
 #include "interactive/iinteractive.h"
 #include "actions/iactionsdispatcher.h"
 #include "context/iglobalcontext.h"
-#include "rcommand/icommanddispatcher.h"
 #include "audio/main/istartaudiocontroller.h"
 #include "audio/main/isoundfontcontroller.h"
+#include "playback/iplaybackcontroller.h"
 #include "project/inotationproject.h"
 #include "project/types/projecttypes.h"
 
@@ -58,7 +58,7 @@ private:
     std::shared_ptr<mu::context::IGlobalContext> globalContext() const;
     std::shared_ptr<muse::IInteractive> interactive() const;
     std::shared_ptr<muse::actions::IActionsDispatcher> dispatcher() const;
-    std::shared_ptr<muse::rcommand::ICommandDispatcher> commandDispatcher() const;
+    std::shared_ptr<mu::playback::IPlaybackController> playbackController() const;
 
     void onProjectSaved(const muse::io::path_t& path, mu::project::SaveMode mode);
 
