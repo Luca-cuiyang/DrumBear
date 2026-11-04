@@ -26,7 +26,6 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 option(MUSE_MODULE_AUDIO_WORKER "Enable audio worker" OFF)
-option(MUSE_FIX_MUSEAUDIO_FILENAME "Fix MuseAudio.js file name" OFF)
 
 # src/web/audioengine
 set(MU_ROOT ${CMAKE_CURRENT_LIST_DIR}/../../..)
@@ -148,12 +147,3 @@ else()
 endif()
 
 
-if (MUSE_FIX_MUSEAUDIO_FILENAME)
-    add_custom_command(
-        TARGET MuseAudio POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E rename
-                "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/MuseAudio"
-                "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/MuseAudio.js"
-        COMMENT "Fix output js file name"
-    )
-endif()

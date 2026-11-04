@@ -83,8 +83,7 @@ cd build.audio.release
 
 cmake ../src/web/audioengine -GNinja \
     -DCMAKE_BUILD_TYPE="Release" \
-    -DMUSE_MODULE_AUDIO_WORKER=ON \
-    -DMUSE_FIX_MUSEAUDIO_FILENAME=ON
+    -DMUSE_MODULE_AUDIO_WORKER=ON
 
 if [ "$(which nproc)" ]; then
     JOBS=$(nproc --all)
