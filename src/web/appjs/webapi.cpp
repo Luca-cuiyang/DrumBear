@@ -111,7 +111,7 @@ void WebApi::deinit()
 void WebApi::load(const void* source, unsigned int len)
 {
     LOGI() << source << ", len: " << len;
-    ByteArray data = ByteArray::fromRawData(reinterpret_cast<const char*>(source), len);
+    ByteArray data(reinterpret_cast<const uint8_t*>(source), len);
     const io::path_t tempFilePath = "/current.mscz";
 
     io::File::remove(tempFilePath);
