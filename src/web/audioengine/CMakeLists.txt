@@ -63,6 +63,10 @@ else()
 endif()
 
 set(AUDIO_ROOT ${MUSE_FRAMEWORK_SRC_PATH}/audio)
+add_definitions(-DNO_QT_SUPPORT)
+add_definitions(-DQ_OS_WASM)
+set(GLOBAL_NO_INTERNAL ON)
+
 add_subdirectory(${AUDIO_ROOT}/common common)
 set(WEBWORKER_FACADE_MODE OFF)
 add_subdirectory(${AUDIO_ROOT}/engine engine)
@@ -91,10 +95,6 @@ target_include_directories(MuseAudio PRIVATE
     # compat
     # end compat
 )
-
-add_definitions(-DNO_QT_SUPPORT)
-add_definitions(-DQ_OS_WASM)
-set(GLOBAL_NO_INTERNAL ON)
 
 configure_file(${MUSE_FRAMEWORK_PATH}/framework/cmake/muse_framework_config.h.in muse_framework_config.h )
 
