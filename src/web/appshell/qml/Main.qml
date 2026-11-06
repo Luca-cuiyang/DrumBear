@@ -23,7 +23,6 @@ import QtQuick
 
 import Muse.Interactive
 
-import DBScore.AppShell 1.0
 import DBScore.Playback 1.0
 
 AppWindow {
@@ -32,8 +31,7 @@ AppWindow {
     flags: Qt.FramelessWindowHint
 
     readonly property bool studioPlayerMode:
-        WebAppMode.studioPlayerMode
-        || Qt.application.arguments.indexOf("--db-product-mode=studio-player") !== -1
+        Qt.application.arguments.indexOf("--db-product-mode=studio-player") !== -1
 
     InteractiveProvider {
         id: interactiveProvider

@@ -125,6 +125,9 @@ const MuImpl = {
                 onExit: opt.onExit,
                 entryFunction: window.DBScore_entry, // from DBScore.js
                 containerElements: [opt.screen],
+                environment: {
+                    DB_PRODUCT_MODE: opt.productMode ?? ''
+                },
             },
 
             soundFont: opt.soundFont,
