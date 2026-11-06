@@ -91,6 +91,7 @@ struct PlayerLayoutState {
     bool verticalSpread = false;
     bool backgroundUseColor = true;
     QColor backgroundColor;
+    QColor notationColor;
     bool showUnprintable = true;
     bool showFrames = true;
     int viewMode = 0;
@@ -331,6 +332,7 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         state->verticalSpread = style.styleB(engraving::Sid::enableVerticalSpread);
         state->backgroundUseColor = notationConfiguration()->backgroundUseColor();
         state->backgroundColor = notationConfiguration()->backgroundColor();
+        state->notationColor = notationConfiguration()->notationColor();
         state->showUnprintable = score->showUnprintable();
         state->showFrames = score->showFrames();
         state->viewMode = static_cast<int>(notation->viewMode());
@@ -389,6 +391,7 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         score->undoChangeStyleValues(std::move(styles));
         notationConfiguration()->setBackgroundUseColor(true);
         notationConfiguration()->setBackgroundColor(Qt::white);
+        notationConfiguration()->setNotationColor(Qt::black);
         score->setShowUnprintable(false);
         score->setShowFrames(false);
 
@@ -445,6 +448,7 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         score->undoChangeStyleValues(std::move(styles));
         notationConfiguration()->setBackgroundColor(state.backgroundColor);
         notationConfiguration()->setBackgroundUseColor(state.backgroundUseColor);
+        notationConfiguration()->setNotationColor(state.notationColor);
         score->setShowUnprintable(state.showUnprintable);
         score->setShowFrames(state.showFrames);
 
