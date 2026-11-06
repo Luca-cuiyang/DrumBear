@@ -40,6 +40,13 @@ FocusScope {
     property alias name: notationView.objectName
     property alias publishMode: notationView.publishMode
     property alias readOnly: notationView.readOnly
+    property bool showTabPanel: true
+    property bool playerChromeVisible: false
+    property bool webPlayerMode: false
+    readonly property int playerChromeHeight: 60
+    readonly property bool compactPortraitPlayer: webPlayerMode && width < height
+    readonly property int playerTopChromeHeight: compactPortraitPlayer ? 35 : playerChromeHeight
+    readonly property int playerBottomChromeHeight: playerChromeHeight
 
     property alias paintView: notationView
 
@@ -74,11 +81,14 @@ FocusScope {
 
     ColumnLayout {
         anchors.fill: parent
+        anchors.topMargin: root.playerChromeVisible && !root.compactPortraitPlayer ? root.playerTopChromeHeight : 0
+        anchors.bottomMargin: root.playerChromeVisible && !root.compactPortraitPlayer ? root.playerBottomChromeHeight : 0
         spacing: 0
 
         NotationSwitchPanel {
             id: tabPanel
             Layout.fillWidth: true
+            visible: root.showTabPanel && !root.readOnly
 
             navigationPanel.section: navSec
             navigationPanel.order: 1
@@ -98,10 +108,10 @@ FocusScope {
                 SplitView.fillWidth: true
                 SplitView.fillHeight: true
 
-                horizontalScrollbarSize: notationView.horizontalScrollbarSize
+                horizontalScrollbarSize: root.readOnly ? 0 : notationView.horizontalScrollbarSize
                 startHorizontalScrollPosition: notationView.startHorizontalScrollPosition
 
-                verticalScrollbarSize: notationView.verticalScrollbarSize
+                verticalScrollbarSize: root.readOnly ? 0 : notationView.verticalScrollbarSize
                 startVerticalScrollPosition: notationView.startVerticalScrollPosition
 
                 NotationPaintView {
@@ -233,15 +243,21 @@ FocusScope {
                 }
 
                 onPinchToZoom: function(scale, pos) {
-                    notationView.pinchToZoom(scale, pos)
+                    if (!root.readOnly) {
+                        notationView.pinchToZoom(scale, pos)
+                    }
                 }
 
                 onScrollHorizontal: function(newPos) {
-                    notationView.scrollHorizontal(newPos)
+                    if (!root.readOnly) {
+                        notationView.scrollHorizontal(newPos)
+                    }
                 }
 
                 onScrollVertical: function(newPos) {
-                    notationView.scrollVertical(newPos)
+                    if (!root.readOnly) {
+                        notationView.scrollVertical(newPos)
+                    }
                 }
             }
 
@@ -352,6 +368,65 @@ FocusScope {
             onClosed: {
                 fakeNavCtrl.requestActive()
             }
+        }
+    }
+
+    Rectangle {
+        id: playerTopBar
+
+        visible: root.playerChromeVisible
+        x: 0
+        y: 0
+        width: root.width
+        height: root.playerTopChromeHeight
+        z: 200
+        color: root.compactPortraitPlayer ? "#241b16" : ui.theme.backgroundSecondaryColor
+
+        Rectangle {
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            height: 1
+            color: ui.theme.strokeColor
+        }
+
+        StyledTextLabel {
+            anchors.left: parent.left
+            anchors.leftMargin: 20
+            anchors.verticalCenter: parent.verticalCenter
+            text: root.compactPortraitPlayer ? "DB Player 练鼓神器" : "DB player"
+            font: ui.theme.bodyBoldFont
+            color: root.compactPortraitPlayer ? "#ffc18f" : ui.theme.fontPrimaryColor
+        }
+    }
+
+    Rectangle {
+        id: playerBottomBar
+
+        visible: root.playerChromeVisible
+        x: 0
+        y: root.height - height
+        width: root.width
+        height: root.playerBottomChromeHeight
+        z: 200
+        color: root.compactPortraitPlayer ? "transparent" : ui.theme.backgroundSecondaryColor
+
+        Rectangle {
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.top: parent.top
+            height: 1
+            color: ui.theme.strokeColor
+        }
+
+        PlaybackToolBar {
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: root.compactPortraitPlayer ? 4 : 15
+            anchors.horizontalCenter: parent.horizontalCenter
+            width: Math.min(parent.width - (root.compactPortraitPlayer ? 20 : 32), root.compactPortraitPlayer ? 370 : 620)
+            height: root.compactPortraitPlayer ? 52 : 30
+            floating: false
+            compactMode: root.compactPortraitPlayer
         }
     }
 }

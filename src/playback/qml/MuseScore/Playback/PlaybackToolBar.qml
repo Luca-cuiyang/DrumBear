@@ -32,6 +32,7 @@ Item {
     id: root
 
     property alias floating: thePlaybackModel.isToolbarFloating
+    property bool compactMode: false
 
     property NavigationPanel navigationPanel: NavigationPanel {
         id: navPanel
@@ -68,6 +69,7 @@ Item {
 
             playbackModel: thePlaybackModel
             floating: root.floating
+            compactMode: root.compactMode
 
             navPanel: root.navigationPanel
         }

@@ -21,6 +21,9 @@
  */
 #pragma once
 
+#include <memory>
+#include <vector>
+
 #include "global/async/asyncable.h"
 
 #include "global/modularity/ioc.h"
@@ -34,6 +37,10 @@
 #include "project/types/projecttypes.h"
 
 namespace mu::appjs {
+namespace detail {
+struct PlayerLayoutState;
+}
+
 class WebApi : public muse::async::Asyncable
 {
     inline static muse::GlobalInject<muse::audio::IStartAudioController> startAudioController;
@@ -42,6 +49,7 @@ class WebApi : public muse::async::Asyncable
 public:
 
     static WebApi* instance();
+    ~WebApi();
 
     void init(const muse::modularity::ContextPtr& context);
     void deinit();
@@ -51,6 +59,8 @@ public:
     void startAudioProcessing();
     void togglePlayback();
     int playbackState() const;
+    int scoreRevision() const;
+    bool setPlayerLayout(const std::string& layout, int viewportWidth, int viewportHeight);
 
 private:
 
@@ -65,5 +75,7 @@ private:
 
     muse::modularity::ContextPtr m_context;
     project::INotationProjectPtr m_currentProject;
+
+    std::unique_ptr<detail::PlayerLayoutState> m_playerLayoutState;
 };
 }
