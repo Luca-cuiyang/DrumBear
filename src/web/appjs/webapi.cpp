@@ -26,9 +26,11 @@
 #include <emscripten/val.h>
 #endif
 
+#include <algorithm>
 #include <unordered_map>
 #include <QTimer>
 
+#include "draw/types/transform.h"
 #include "global/io/file.h"
 #include "log.h"
 
@@ -463,18 +465,36 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
     score->update();
 
     const bool portraitLayout = m_playerLayoutState && m_playerLayoutState->portraitApplied;
-    QTimer::singleShot(120, [this, portraitLayout]() {
-        if (portraitLayout) {
-            dispatcher()->dispatch(muse::actions::ActionCode("command://notation/view/top-of-first-page"));
-        } else {
-            dispatcher()->dispatch(muse::actions::ActionCode("command://notation/view/zoom-to-page-width"));
-        }
-        QTimer::singleShot(350, [this, portraitLayout]() {
-            if (portraitLayout) {
-                dispatcher()->dispatch(muse::actions::ActionCode("command://notation/view/zoom-to-whole-page"));
+    if (portraitLayout) {
+        constexpr int PLAYER_CHROME_HEIGHT = 95;
+        const int scoreViewportHeight = viewportHeight > PLAYER_CHROME_HEIGHT
+                                        ? viewportHeight - PLAYER_CHROME_HEIGHT
+                                        : viewportHeight;
+        auto fitFirstPage = [notation, viewportWidth, scoreViewportHeight]() {
+            const engraving::Score* currentScore = notation->elements()->msScore();
+            if (!currentScore || currentScore->pages().empty()) {
+                return;
             }
+            const engraving::Page* page = currentScore->pages().front();
+            const double pageWidth = page->width();
+            const double pageHeight = page->height();
+            if (pageWidth <= 0.0 || pageHeight <= 0.0) {
+                return;
+            }
+            const double scale = std::min(viewportWidth / pageWidth, scoreViewportHeight / pageHeight);
+            const double x = (viewportWidth - pageWidth * scale) * 0.5;
+            const double y = (scoreViewportHeight - pageHeight * scale) * 0.5;
+            notation->viewState()->setMatrix(
+                muse::draw::Transform(scale, 0.0, 0.0, scale, x, y),
+                nullptr);
+        };
+        QTimer::singleShot(150, fitFirstPage);
+        QTimer::singleShot(650, fitFirstPage);
+    } else {
+        QTimer::singleShot(120, [this]() {
+            dispatcher()->dispatch(muse::actions::ActionCode("command://notation/view/zoom-to-page-width"));
         });
-    });
+    }
     return true;
 }
 
