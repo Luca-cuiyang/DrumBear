@@ -44,6 +44,8 @@ qt_add_qml_module(appshell_qml
         notationpagemodel.h
         notationstatusbarmodel.cpp
         notationstatusbarmodel.h
+        webappmode.cpp
+        webappmode.h
         welcomedialogmodel.cpp
         welcomedialogmodel.h
     QML_FILES
