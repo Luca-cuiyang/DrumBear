@@ -44,4 +44,16 @@ void togglePlayback() { WebApi::instance()->togglePlayback(); }
 
 EMSCRIPTEN_KEEPALIVE
 int playbackState() { return WebApi::instance()->playbackState(); }
+
+EMSCRIPTEN_KEEPALIVE
+int scoreRevision() { return WebApi::instance()->scoreRevision(); }
+
+EMSCRIPTEN_KEEPALIVE
+int playerLayoutDiagnostics() { return WebApi::instance()->playerLayoutDiagnostics(); }
+
+EMSCRIPTEN_KEEPALIVE
+bool setPlayerLayout(const char* layout, int viewportWidth, int viewportHeight)
+{
+    return WebApi::instance()->setPlayerLayout(layout ? layout : "", viewportWidth, viewportHeight);
+}
 }
