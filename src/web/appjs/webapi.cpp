@@ -398,24 +398,6 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         score->setShowUnprintable(false);
         score->setShowFrames(false);
 
-        int measureIndex = 0;
-        for (engraving::MeasureBase* item = score->first(); item; item = item->next()) {
-            if (!item->isMeasure()) {
-                continue;
-            }
-            ++measureIndex;
-            const bool hasNextMeasure = item->nextMeasure() != nullptr;
-            item->setLineBreak(false);
-            item->setPageBreak(false);
-            item->setSectionBreak(false);
-            item->setNoBreak(false);
-            if (hasNextMeasure) {
-                item->undoSetBreak(measureIndex % 6 == 0,
-                                   measureIndex % 6 == 0
-                                   ? engraving::LayoutBreakType::PAGE
-                                   : engraving::LayoutBreakType::LINE);
-            }
-        }
         state.portraitApplied = true;
         changed = true;
     } else if (!portrait && state.portraitApplied) {
