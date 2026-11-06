@@ -357,7 +357,7 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
     bool changed = false;
     if (portrait && !state.portraitApplied) {
         constexpr double MM_TO_INCH = 1.0 / 25.4;
-        const double pageWidthMm = 50.8;
+        const double pageWidthMm = 70.0;
         constexpr int PLAYER_CHROME_HEIGHT = 95;
         const int scoreViewportHeight = viewportHeight > PLAYER_CHROME_HEIGHT
                                         ? viewportHeight - PLAYER_CHROME_HEIGHT
@@ -378,20 +378,21 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         std::unordered_map<engraving::Sid, engraving::PropertyValue> styles;
         styles.emplace(engraving::Sid::pageWidth, pageWidthMm * MM_TO_INCH);
         styles.emplace(engraving::Sid::pageHeight, pageHeightMm * MM_TO_INCH);
-        styles.emplace(engraving::Sid::pagePrintableWidth, (pageWidthMm - 2.5) * MM_TO_INCH);
-        styles.emplace(engraving::Sid::pageEvenLeftMargin, 1.25 * MM_TO_INCH);
-        styles.emplace(engraving::Sid::pageOddLeftMargin, 1.25 * MM_TO_INCH);
-        styles.emplace(engraving::Sid::pageEvenTopMargin, 1.25 * MM_TO_INCH);
-        styles.emplace(engraving::Sid::pageEvenBottomMargin, 1.25 * MM_TO_INCH);
-        styles.emplace(engraving::Sid::pageOddTopMargin, 1.25 * MM_TO_INCH);
-        styles.emplace(engraving::Sid::pageOddBottomMargin, 1.25 * MM_TO_INCH);
+        styles.emplace(engraving::Sid::pagePrintableWidth, (pageWidthMm - 3.6) * MM_TO_INCH);
+        styles.emplace(engraving::Sid::pageEvenLeftMargin, 1.8 * MM_TO_INCH);
+        styles.emplace(engraving::Sid::pageOddLeftMargin, 1.8 * MM_TO_INCH);
+        styles.emplace(engraving::Sid::pageEvenTopMargin, 1.8 * MM_TO_INCH);
+        styles.emplace(engraving::Sid::pageEvenBottomMargin, 1.8 * MM_TO_INCH);
+        styles.emplace(engraving::Sid::pageOddTopMargin, 1.8 * MM_TO_INCH);
+        styles.emplace(engraving::Sid::pageOddBottomMargin, 1.8 * MM_TO_INCH);
         styles.emplace(engraving::Sid::pageTwosided, false);
-        styles.emplace(engraving::Sid::spatium, 1.4);
+        styles.emplace(engraving::Sid::spatium, 1.6);
         styles.emplace(engraving::Sid::staffUpperBorder, engraving::Spatium(0.5));
         styles.emplace(engraving::Sid::staffLowerBorder, engraving::Spatium(0.5));
         styles.emplace(engraving::Sid::minSystemDistance, engraving::Spatium(0.5));
         styles.emplace(engraving::Sid::maxSystemDistance, engraving::Spatium(1.0));
-        styles.emplace(engraving::Sid::enableVerticalSpread, false);
+        styles.emplace(engraving::Sid::enableVerticalSpread, true);
+        styles.emplace(engraving::Sid::minMeasureWidth, engraving::Spatium(0.0));
         score->undoChangeStyleValues(std::move(styles));
         notationConfiguration()->setBackgroundUseColor(true);
         notationConfiguration()->setBackgroundColor(Qt::white);
