@@ -196,7 +196,12 @@ const MuImpl = {
     },
 
     playerLayoutDiagnostics: function() {
-        return UTF8ToString(this.Module._playerLayoutDiagnostics())
+        return this.Module.ccall(
+            'playerLayoutDiagnostics',
+            'string',
+            [],
+            [],
+        )
     },
 
     setPlayerLayout: function(layout, viewportWidth, viewportHeight) {
