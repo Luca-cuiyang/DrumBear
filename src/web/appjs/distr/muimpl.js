@@ -114,8 +114,10 @@ const MuImpl = {
 
         this.Module = {
             config: config, // static configuration
+            arguments: opt.arguments ?? [],
             ENV: {
-                TZ: 'UTC'
+                TZ: 'UTC',
+                DB_PRODUCT_MODE: opt.productMode ?? ''
             },
 
             qt: {
@@ -184,6 +186,28 @@ const MuImpl = {
 
     playbackState: function() {
         return this.Module._playbackState()
+    },
+
+    scoreRevision: function() {
+        return this.Module._scoreRevision()
+    },
+
+    setPlayerLayout: function(layout, viewportWidth, viewportHeight) {
+        return this.Module.ccall(
+            'setPlayerLayout',
+            'number',
+            ['string', 'number', 'number'],
+            [layout, viewportWidth, viewportHeight],
+        ) === 1
+    },
+
+    isReadOnly: function() {
+        return window.DB_PRODUCT_MODE === 'studio-player'
+            && this.Module.ENV?.DB_PRODUCT_MODE === 'studio-player'
+    },
+
+    isInputReadOnly: function() {
+        return window.DB_PLAYER_READONLY_MODE === true
     },
 
     soundFontReady: function() {
