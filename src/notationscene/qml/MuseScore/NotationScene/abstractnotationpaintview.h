@@ -69,6 +69,7 @@ class AbstractNotationPaintView : public muse::uicomponents::QuickPaintedView, p
 
     Q_PROPERTY(bool isMainView READ isMainView WRITE setIsMainView NOTIFY isMainViewChanged)
     Q_PROPERTY(bool hasNotation READ hasNotation NOTIFY hasNotationChanged)
+    Q_PROPERTY(bool portraitGrouped READ portraitGrouped WRITE setPortraitGrouped NOTIFY portraitGroupedChanged)
 
     Q_PROPERTY(bool readOnly READ readonly WRITE setReadonly NOTIFY readonlyChanged)
 
@@ -164,6 +165,8 @@ public:
     bool isMainView() const override;
     void setIsMainView(bool isMainView);
     bool hasNotation() const;
+    bool portraitGrouped() const;
+    void setPortraitGrouped(bool grouped);
 
     bool readonly() const;
     void setReadonly(bool readonly);
@@ -191,6 +194,7 @@ signals:
 
     void isMainViewChanged(bool isMainView);
     void hasNotationChanged();
+    void portraitGroupedChanged();
 
     void readonlyChanged();
 
@@ -280,6 +284,7 @@ private:
     bool shouldAdjustCanvasVerticallyDuringPlayback(const muse::RectF& cursorRect);
 
     void onPlaybackCursorRectChanged();
+    void alignPortraitGroup();
 
     void updateLoopMarkers();
     void updateShadowNoteVisibility();
@@ -294,6 +299,7 @@ private:
 
     INotationPtr m_notation;
     muse::draw::Transform m_matrix;
+    muse::draw::Transform m_portraitBaseMatrix;
 
     bool m_loadCalled = false;
     std::unique_ptr<NotationViewInputController> m_inputController;
@@ -311,6 +317,8 @@ private:
 
     bool m_readonly = false;
     bool m_publishMode = false;
+    bool m_portraitGrouped = false;
+    int m_portraitGroupStart = -1;
     int m_lastAcceptedKey = -1;
     bool m_isMainView = false;
 

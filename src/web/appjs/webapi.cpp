@@ -26,6 +26,7 @@
 #include <emscripten/val.h>
 #endif
 
+#include <algorithm>
 #include <unordered_map>
 #include <QTimer>
 #include <QString>
@@ -383,7 +384,15 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         const double aspect = viewportWidth > 0 && scoreViewportHeight > 0
                               ? static_cast<double>(scoreViewportHeight) / viewportWidth
                               : 844.0 / 390.0;
-        const double pageHeightMm = pageWidthMm * aspect;
+        int measureCount = 0;
+        for (const detail::PlayerLayoutState::BreakState& item : state.breaks) {
+            if (item.item->isMeasure()) {
+                ++measureCount;
+            }
+        }
+        const double pageHeightMm = std::max(
+            pageWidthMm * aspect,
+            static_cast<double>(measureCount) * 24.0 + 10.0);
 
         for (const detail::PlayerLayoutState::BoxState& boxState : state.boxes) {
             boxState.box->setVisible(false);
@@ -407,9 +416,9 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         styles.emplace(engraving::Sid::spatium, 2.33 * engraving::DPMM);
         styles.emplace(engraving::Sid::staffUpperBorder, engraving::Spatium(0.5));
         styles.emplace(engraving::Sid::staffLowerBorder, engraving::Spatium(0.5));
-        styles.emplace(engraving::Sid::minSystemDistance, engraving::Spatium(0.5));
-        styles.emplace(engraving::Sid::maxSystemDistance, engraving::Spatium(1.0));
-        styles.emplace(engraving::Sid::enableVerticalSpread, true);
+        styles.emplace(engraving::Sid::minSystemDistance, engraving::Spatium(3.0));
+        styles.emplace(engraving::Sid::maxSystemDistance, engraving::Spatium(4.0));
+        styles.emplace(engraving::Sid::enableVerticalSpread, false);
         styles.emplace(engraving::Sid::minMeasureWidth, engraving::Spatium(0.0));
         score->undoChangeStyleValues(std::move(styles));
         notationConfiguration()->setBackgroundUseColor(true);
@@ -473,7 +482,7 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
     }
 
     const auto targetViewMode = portrait
-                                ? notation::ViewMode::PAGE
+                                ? notation::ViewMode::SYSTEM
                                 : static_cast<notation::ViewMode>(state.viewMode);
     notation->viewState()->setViewMode(notation::ViewMode::LINE);
     notation->painting()->setViewMode(notation::ViewMode::LINE);

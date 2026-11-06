@@ -32,9 +32,11 @@
 #include "log.h"
 
 #include "actions/actiontypes.h"
+#include "engraving/dom/measure.h"
 #include "engraving/dom/mscore.h"
 #include "engraving/dom/page.h"
 #include "engraving/dom/shadownote.h"
+#include "engraving/dom/system.h"
 
 #include "notation/imasternotation.h" // IWYU pragma: keep
 #include "notation/inotationaccessibility.h" // IWYU pragma: keep
@@ -1325,10 +1327,15 @@ bool AbstractNotationPaintView::fitPageToViewport()
     }
 
     const qreal guiScaling = notationContextConfiguration()->guiScaling();
-    const qreal visualScale = std::min(width() / pageWidth, height() / pageHeight);
+    const bool verticalSystems = score->layoutMode() == engraving::LayoutMode::SYSTEM;
+    const qreal visualScale = verticalSystems
+                              ? width() / pageWidth
+                              : std::min(width() / pageWidth, height() / pageHeight);
     const qreal scale = visualScale / guiScaling;
     const qreal x = (width() / guiScaling - pageWidth * scale) * 0.5;
-    const qreal y = (height() / guiScaling - pageHeight * scale) * 0.5;
+    const qreal y = verticalSystems
+                    ? 0.0
+                    : (height() / guiScaling - pageHeight * scale) * 0.5;
     LOGI() << "DB_PLAYER_PAGE_FIT"
            << "view=" << width() << "x" << height()
            << "page=" << pageWidth << "x" << pageHeight
@@ -1336,7 +1343,12 @@ bool AbstractNotationPaintView::fitPageToViewport()
            << "visualScale=" << visualScale
            << "matrixScale=" << scale
            << "offset=" << x << y;
-    setMatrix(muse::draw::Transform(scale, 0.0, 0.0, scale, x, y));
+    m_portraitBaseMatrix = muse::draw::Transform(scale, 0.0, 0.0, scale, x, y);
+    setMatrix(m_portraitBaseMatrix);
+    if (m_portraitGrouped) {
+        m_portraitGroupStart = -1;
+        alignPortraitGroup();
+    }
     return true;
 }
 
@@ -1533,6 +1545,7 @@ void AbstractNotationPaintView::dropEvent(QDropEvent* event)
 void AbstractNotationPaintView::setNotation(INotationPtr notation)
 {
     m_notation = notation;
+    m_portraitGroupStart = -1;
     emit hasNotationChanged();
 
     if (publishMode() && isNoteEnterMode()) {
@@ -1550,6 +1563,25 @@ void AbstractNotationPaintView::setNotation(INotationPtr notation)
 bool AbstractNotationPaintView::hasNotation() const
 {
     return bool(m_notation);
+}
+
+bool AbstractNotationPaintView::portraitGrouped() const
+{
+    return m_portraitGrouped;
+}
+
+void AbstractNotationPaintView::setPortraitGrouped(bool grouped)
+{
+    if (m_portraitGrouped == grouped) {
+        return;
+    }
+
+    m_portraitGrouped = grouped;
+    m_portraitGroupStart = -1;
+    emit portraitGroupedChanged();
+    if (m_portraitGrouped) {
+        alignPortraitGroup();
+    }
 }
 
 bool AbstractNotationPaintView::readonly() const
@@ -1666,6 +1698,51 @@ void AbstractNotationPaintView::updatePlaybackCursorInterpolated()
     movePlaybackCursor(estimatedTick);
 }
 
+void AbstractNotationPaintView::alignPortraitGroup()
+{
+    if (!m_portraitGrouped || !m_notation) {
+        return;
+    }
+
+    engraving::Score* score = m_notation->elements()->msScore();
+    if (!score || score->pages().empty()) {
+        return;
+    }
+
+    const std::vector<engraving::System*>& systems = score->pages().front()->systems();
+    if (systems.empty() || systems.size() <= 6) {
+        setMatrix(m_portraitBaseMatrix);
+        m_portraitGroupStart = 0;
+        return;
+    }
+
+    const engraving::Fraction cursorTick = engraving::Fraction::fromTicks(m_lastCursorTick);
+    size_t currentSystem = systems.size() - 1;
+    for (size_t i = 0; i < systems.size(); ++i) {
+        if (cursorTick < systems[i]->endTick()) {
+            currentSystem = i;
+            break;
+        }
+    }
+
+    const size_t maxGroupStart = systems.size() - 6;
+    const size_t groupStart = std::min((currentSystem / 3) * 3, maxGroupStart);
+    if (m_portraitGroupStart == static_cast<int>(groupStart)) {
+        return;
+    }
+
+    const qreal offset = systems[groupStart]->y() - systems.front()->y();
+    const qreal scale = m_portraitBaseMatrix.m11();
+    setMatrix(muse::draw::Transform(
+                  scale,
+                  m_portraitBaseMatrix.m12(),
+                  m_portraitBaseMatrix.m21(),
+                  m_portraitBaseMatrix.m22(),
+                  m_portraitBaseMatrix.dx(),
+                  m_portraitBaseMatrix.dy() - offset * scale));
+    m_portraitGroupStart = static_cast<int>(groupStart);
+}
+
 void AbstractNotationPaintView::movePlaybackCursor(muse::midi::tick_t tick)
 {
     TRACEFUNC;
@@ -1681,6 +1758,11 @@ void AbstractNotationPaintView::movePlaybackCursor(muse::midi::tick_t tick)
     }
 
     if (!m_playbackCursor->visible() || newCursorRect.isNull()) {
+        return;
+    }
+
+    if (m_portraitGrouped) {
+        alignPortraitGroup();
         return;
     }
 

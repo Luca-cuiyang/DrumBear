@@ -151,6 +151,7 @@ FocusScope {
                 NotationPaintView {
                     id: notationView
                     anchors.fill: parent
+                    portraitGrouped: root.compactPortraitPlayer
 
                     property NavigationPanel navigationPanel: NavigationPanel {
                         name: "ScoreView"
