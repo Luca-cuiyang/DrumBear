@@ -49,7 +49,12 @@ EMSCRIPTEN_KEEPALIVE
 int scoreRevision() { return WebApi::instance()->scoreRevision(); }
 
 EMSCRIPTEN_KEEPALIVE
-int playerLayoutDiagnostics() { return WebApi::instance()->playerLayoutDiagnostics(); }
+const char* playerLayoutDiagnostics()
+{
+    static std::string diagnostics;
+    diagnostics = WebApi::instance()->playerLayoutDiagnostics();
+    return diagnostics.c_str();
+}
 
 EMSCRIPTEN_KEEPALIVE
 bool setPlayerLayout(const char* layout, int viewportWidth, int viewportHeight)

@@ -28,6 +28,7 @@
 
 #include <unordered_map>
 #include <QTimer>
+#include <QString>
 
 #include "global/io/file.h"
 #include "log.h"
@@ -274,16 +275,16 @@ int WebApi::scoreRevision() const
     return static_cast<int>(undoStack->currentStateIndex());
 }
 
-int WebApi::playerLayoutDiagnostics() const
+std::string WebApi::playerLayoutDiagnostics() const
 {
     const auto context = globalContext();
     if (!context || !context->currentNotation()) {
-        return -1;
+        return "{}";
     }
 
     const engraving::Score* score = context->currentNotation()->elements()->msScore();
     if (!score) {
-        return -2;
+        return "{}";
     }
 
     const int pages = static_cast<int>(score->npages());
@@ -291,7 +292,24 @@ int WebApi::playerLayoutDiagnostics() const
     const int measures = systems > 0
                          ? static_cast<int>(score->pages().front()->system(0)->measures().size())
                          : 0;
-    return pages * 10000 + systems * 100 + measures;
+    const engraving::MStyle& style = score->style();
+    const double pageWidthMm = style.styleD(engraving::Sid::pageWidth) * 25.4;
+    const double pageHeightMm = style.styleD(engraving::Sid::pageHeight) * 25.4;
+    const double printableWidthMm = style.styleD(engraving::Sid::pagePrintableWidth) * 25.4;
+    const double spatiumMm = style.styleD(engraving::Sid::spatium) / engraving::DPMM;
+
+    return QStringLiteral(
+        "{\"pages\":%1,\"systems\":%2,\"measures\":%3,"
+        "\"pageWidthMm\":%4,\"pageHeightMm\":%5,"
+        "\"printableWidthMm\":%6,\"spatiumMm\":%7}")
+        .arg(pages)
+        .arg(systems)
+        .arg(measures)
+        .arg(pageWidthMm, 0, 'f', 3)
+        .arg(pageHeightMm, 0, 'f', 3)
+        .arg(printableWidthMm, 0, 'f', 3)
+        .arg(spatiumMm, 0, 'f', 3)
+        .toStdString();
 }
 
 bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int viewportHeight)

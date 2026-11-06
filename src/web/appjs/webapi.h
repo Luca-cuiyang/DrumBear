@@ -62,7 +62,7 @@ public:
     void togglePlayback();
     int playbackState() const;
     int scoreRevision() const;
-    int playerLayoutDiagnostics() const;
+    std::string playerLayoutDiagnostics() const;
     bool setPlayerLayout(const std::string& layout, int viewportWidth, int viewportHeight);
 
 private:
