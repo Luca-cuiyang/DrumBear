@@ -4,7 +4,7 @@ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
 -->
 
 <!doctype html>
-<html lang="en-us">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -14,7 +14,7 @@ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
         and Qt device independent pixels. -->
     <meta name="viewport" content="width=device-width, height=device-height, user-scalable=0"/>
 
-    <title>MuseScoreStudio</title>
+    <title>DB Studio Web</title>
     <style>
       html, body { padding: 0; margin: 0; overflow: hidden; height: 100% }
       #spinner {
@@ -40,16 +40,16 @@ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
         padding: 0 4px;
         cursor: pointer;
       }
-      #screen { width: 100%; height: calc(100% - 40px); }
+      #screen { width: 100%; height: 100%; }
     </style>
   </head>
   <body>
 
     <figure id="spinner">
       <center style="margin-top:1.5em; line-height:150%">
-        <strong>MuseScoreStudio</strong>
+        <strong id="product-name">DB Studio Web</strong>
         <div id="status"></div>
-        <noscript>JavaScript is disabled. Please enable JavaScript to use this application.</noscript>
+        <noscript>请启用 JavaScript 后使用 DB Studio Web。</noscript>
       </center>
     </figure>
 
@@ -68,6 +68,88 @@ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
       const spinner = document.querySelector('#spinner');
       const screen = document.querySelector('#screen');
       const status = document.querySelector('#status');
+      const productName = document.querySelector('#product-name');
+      const viewerParams = new URLSearchParams(window.location.search);
+      const mode = viewerParams.get('mode') === 'score-editor'
+          ? 'score-editor'
+          : 'studio-player';
+      let playerLayout = viewerParams.get('layout') === 'landscape' ? 'landscape' : 'portrait';
+      const productTitle = mode === 'studio-player' ? 'DB Studio Web' : 'DB Score Web';
+      document.title = productTitle;
+      productName.textContent = productTitle;
+      window.DB_PRODUCT_MODE = mode;
+      window.DB_PLAYER_READONLY_MODE = false;
+
+      const applyPlayerLayout = () => {
+        if (mode !== 'studio-player' || !window.muapi?.setPlayerLayout) {
+          return;
+        }
+        window.muapi.setPlayerLayout(playerLayout, window.innerWidth, window.innerHeight);
+      };
+
+      let layoutTimer = 0;
+      window.addEventListener('resize', () => {
+        window.clearTimeout(layoutTimer);
+        layoutTimer = window.setTimeout(applyPlayerLayout, 120);
+      });
+
+      window.addEventListener('message', (event) => {
+        if (event.origin !== window.location.origin || event.source !== window.parent) {
+          return;
+        }
+        if (event.data?.type === 'DB_PLAYER_SET_LAYOUT') {
+          playerLayout = event.data.layout === 'landscape' ? 'landscape' : 'portrait';
+          applyPlayerLayout();
+          return;
+        }
+        if (event.data?.type !== 'DB_PLAYER_LOAD_SCORE') {
+          return;
+        }
+
+        const reply = (result) => {
+          event.source.postMessage({
+            type: 'DB_PLAYER_LOAD_SCORE_RESULT',
+            id: event.data.id,
+            ...result,
+          }, window.location.origin)
+        }
+
+        try {
+          if (!window.muapi) throw new Error('DB Score 内核尚未就绪')
+          if (mode === 'studio-player' && window.muapi.isReadOnly() !== true) {
+            throw new Error('只读播放器内核未就绪')
+          }
+          if (!(event.data.bytes instanceof Uint8Array)) {
+            throw new Error('课件数据格式无效')
+          }
+          window.muapi.loadScoreData(event.data.bytes)
+          const startedAt = performance.now()
+          const waitForScore = () => {
+            const scoreReady = (window.muapi.playbackState() & 4) !== 0
+            const readOnlyReady = mode !== 'studio-player'
+                || window.muapi.isInputReadOnly() === true
+            if (scoreReady && readOnlyReady) {
+              applyPlayerLayout();
+              reply({ ok: true })
+            } else if (performance.now() - startedAt > 30_000) {
+              reply({
+                ok: false,
+                error: scoreReady
+                    ? '只读播放器输入锁未就绪'
+                    : 'DB Score 解析课件超时',
+              })
+            } else {
+              setTimeout(waitForScore, 100)
+            }
+          }
+          waitForScore()
+        } catch (error) {
+          reply({
+            ok: false,
+            error: error instanceof Error ? error.message : String(error),
+          })
+        }
+      })
 
       const showUi = (ui) => {
           [spinner, screen].forEach(element => element.style.display = 'none');
@@ -85,6 +167,8 @@ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
 
           // properties
           screen: screen,
+          arguments: [`--db-product-mode=${mode}`],
+          productMode: mode,
 
           // runtime
           onLoaded: () => showUi(screen),
@@ -97,7 +181,14 @@ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
 
           // api callbacks
           onProjectSaved: function(data) {
-            console.log("[html] onProjectSaved len: ", data.length)
+            const blob = new Blob([data], { type: "application/octet-stream" });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            const stamp = new Date().toISOString().replace(/[:.]/g, "-");
+            link.href = url;
+            link.download = `DB-Score-${stamp}.db`;
+            link.click();
+            setTimeout(() => URL.revokeObjectURL(url), 1000);
           }   
         })
 

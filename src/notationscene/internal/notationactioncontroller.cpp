@@ -1167,8 +1167,13 @@ bool NotationActionController::canReceiveAction(const ActionCode& code) const
         return false;
     }
 
+    if (m_viewController && m_viewController->isReadOnly()) {
+        return false;
+    }
+
     // All actions are disabled on the review page
-    if (interactive()->currentUri().val == NOTATION_REVIEW_PAGE_URI) {
+    auto interactive = this->interactive();
+    if (interactive && interactive->currentUri().val == NOTATION_REVIEW_PAGE_URI) {
         return false;
     }
 

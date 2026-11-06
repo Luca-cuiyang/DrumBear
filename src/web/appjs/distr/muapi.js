@@ -14,7 +14,11 @@ const MuApi = {
     // Playback
     togglePlayback: MuImpl.togglePlayback.bind(MuImpl),
     playbackState: MuImpl.playbackState.bind(MuImpl),
+    scoreRevision: MuImpl.scoreRevision.bind(MuImpl),
+    isReadOnly: MuImpl.isReadOnly.bind(MuImpl),
+    isInputReadOnly: MuImpl.isInputReadOnly.bind(MuImpl),
     soundFontReady: MuImpl.soundFontReady.bind(MuImpl),
+    setPlayerLayout: MuImpl.setPlayerLayout.bind(MuImpl),
 }
 
 async function createMuApi(config) {
