@@ -55,6 +55,7 @@ FocusScope {
     property alias isMainView: notationView.isMainView
 
     property alias defaultNavigationControl: fakeNavCtrl
+    property bool fittingPlayerPage: false
 
     readonly property alias navigationSection: navSec
     readonly property alias navigationOrderEnd: searchPopup.navigationOrderEnd
@@ -77,6 +78,39 @@ FocusScope {
 
     Component.onCompleted: {
         notationView.load()
+    }
+
+    Connections {
+        target: notationView
+
+        function onHasNotationChanged() {
+            if (root.webPlayerMode && notationView.hasNotation) {
+                playerFitTimer.restart()
+            }
+        }
+
+        function onViewportChanged() {
+            if (root.webPlayerMode && notationView.hasNotation && !root.fittingPlayerPage) {
+                playerFitTimer.restart()
+            }
+        }
+    }
+
+    Timer {
+        id: playerFitTimer
+
+        interval: 350
+        repeat: false
+        onTriggered: {
+            if (!root.webPlayerMode || !notationView.hasNotation) {
+                return
+            }
+            root.fittingPlayerPage = true
+            notationView.fitPageToViewport()
+            Qt.callLater(function() {
+                root.fittingPlayerPage = false
+            })
+        }
     }
 
     ColumnLayout {

@@ -68,6 +68,7 @@ class AbstractNotationPaintView : public muse::uicomponents::QuickPaintedView, p
     Q_PROPERTY(bool automationMode READ automationMode NOTIFY automationModeChanged)
 
     Q_PROPERTY(bool isMainView READ isMainView WRITE setIsMainView NOTIFY isMainViewChanged)
+    Q_PROPERTY(bool hasNotation READ hasNotation NOTIFY hasNotationChanged)
 
     Q_PROPERTY(bool readOnly READ readonly WRITE setReadonly NOTIFY readonlyChanged)
 
@@ -121,6 +122,7 @@ public:
     void scale(qreal factor, const muse::PointF& pos, bool overrideZoomType = true);
 
     Q_INVOKABLE void pinchToZoom(qreal scaleFactor, const QPointF& pos);
+    Q_INVOKABLE bool fitPageToViewport();
 
     bool isNoteEnterMode() const override;
 
@@ -161,6 +163,7 @@ public:
 
     bool isMainView() const override;
     void setIsMainView(bool isMainView);
+    bool hasNotation() const;
 
     bool readonly() const;
     void setReadonly(bool readonly);
@@ -187,6 +190,7 @@ signals:
     void activeFocusRequested();
 
     void isMainViewChanged(bool isMainView);
+    void hasNotationChanged();
 
     void readonlyChanged();
 

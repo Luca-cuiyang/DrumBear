@@ -22,6 +22,8 @@
 
 #include "abstractnotationpaintview.h"
 
+#include <algorithm>
+
 #include <QCursor>
 #include <QPainter>
 #include <QMimeData>
@@ -30,6 +32,7 @@
 #include "log.h"
 
 #include "actions/actiontypes.h"
+#include "engraving/dom/page.h"
 #include "engraving/dom/shadownote.h"
 
 #include "notation/imasternotation.h" // IWYU pragma: keep
@@ -1302,6 +1305,29 @@ void AbstractNotationPaintView::pinchToZoom(qreal scaleFactor, const QPointF& po
     }
 }
 
+bool AbstractNotationPaintView::fitPageToViewport()
+{
+    if (!m_notation || viewport().isEmpty()) {
+        return false;
+    }
+
+    engraving::Score* score = m_notation->elements()->msScore();
+    if (!score || score->pages().empty()) {
+        return false;
+    }
+
+    const engraving::Page* page = score->pages().front();
+    if (page->width() <= 0.0 || page->height() <= 0.0) {
+        return false;
+    }
+
+    const qreal scale = std::min(width() / page->width(), height() / page->height());
+    const qreal x = (width() - page->width() * scale) * 0.5;
+    const qreal y = (height() - page->height() * scale) * 0.5;
+    setMatrix(muse::draw::Transform(scale, 0.0, 0.0, scale, x, y));
+    return true;
+}
+
 void AbstractNotationPaintView::wheelEvent(QWheelEvent* event)
 {
     TRACEFUNC;
@@ -1495,6 +1521,7 @@ void AbstractNotationPaintView::dropEvent(QDropEvent* event)
 void AbstractNotationPaintView::setNotation(INotationPtr notation)
 {
     m_notation = notation;
+    emit hasNotationChanged();
 
     if (publishMode() && isNoteEnterMode()) {
         notationNoteInput()->endNoteInput(true);
@@ -1506,6 +1533,11 @@ void AbstractNotationPaintView::setNotation(INotationPtr notation)
         m_loopInMarker->setNotation(m_notation);
         m_loopOutMarker->setNotation(m_notation);
     }
+}
+
+bool AbstractNotationPaintView::hasNotation() const
+{
+    return bool(m_notation);
 }
 
 bool AbstractNotationPaintView::readonly() const
