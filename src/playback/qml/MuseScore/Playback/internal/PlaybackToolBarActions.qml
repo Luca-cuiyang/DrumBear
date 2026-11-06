@@ -85,10 +85,11 @@ Item {
 
             iconFont: ui.theme.toolbarIconsFont
             iconColor: root.compactMode
-                       ? (accentButton ? "#111132" : "#f7ede4")
+                       ? (accentButton ? "#ffffff" : "#f7ede4")
                        : ui.theme.fontPrimaryColor
 
             accentButton: (Boolean(item) && item.checked) || menuLoader.isMenuOpened
+            accentColor: root.compactMode ? "#e88024" : ui.theme.accentColor
             transparent: !accentButton
 
             navigation.panel: root.navPanel
