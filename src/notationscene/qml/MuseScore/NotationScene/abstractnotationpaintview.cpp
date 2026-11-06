@@ -1324,13 +1324,17 @@ bool AbstractNotationPaintView::fitPageToViewport()
         return false;
     }
 
-    const qreal scale = std::min(width() / pageWidth, height() / pageHeight);
-    const qreal x = (width() - pageWidth * scale) * 0.5;
-    const qreal y = (height() - pageHeight * scale) * 0.5;
+    const qreal guiScaling = notationContextConfiguration()->guiScaling();
+    const qreal visualScale = std::min(width() / pageWidth, height() / pageHeight);
+    const qreal scale = visualScale / guiScaling;
+    const qreal x = (width() / guiScaling - pageWidth * scale) * 0.5;
+    const qreal y = (height() / guiScaling - pageHeight * scale) * 0.5;
     LOGI() << "DB_PLAYER_PAGE_FIT"
            << "view=" << width() << "x" << height()
            << "page=" << pageWidth << "x" << pageHeight
-           << "scale=" << scale
+           << "guiScaling=" << guiScaling
+           << "visualScale=" << visualScale
+           << "matrixScale=" << scale
            << "offset=" << x << y;
     setMatrix(muse::draw::Transform(scale, 0.0, 0.0, scale, x, y));
     return true;
