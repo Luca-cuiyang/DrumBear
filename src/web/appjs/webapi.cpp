@@ -295,9 +295,6 @@ int WebApi::playerLayoutDiagnostics() const
 
 bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int viewportHeight)
 {
-    (void)viewportWidth;
-    (void)viewportHeight;
-
     const auto context = globalContext();
     if (!context || !context->currentNotation()) {
         return false;
@@ -360,7 +357,13 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
     if (portrait && !state.portraitApplied) {
         constexpr double MM_TO_INCH = 1.0 / 25.4;
         const double pageWidthMm = 50.8;
-        constexpr double aspect = 844.0 / 390.0;
+        constexpr int PLAYER_CHROME_HEIGHT = 95;
+        const int scoreViewportHeight = viewportHeight > PLAYER_CHROME_HEIGHT
+                                        ? viewportHeight - PLAYER_CHROME_HEIGHT
+                                        : viewportHeight;
+        const double aspect = viewportWidth > 0 && scoreViewportHeight > 0
+                              ? static_cast<double>(scoreViewportHeight) / viewportWidth
+                              : 844.0 / 390.0;
         const double pageHeightMm = pageWidthMm * aspect;
 
         for (const detail::PlayerLayoutState::BoxState& boxState : state.boxes) {
@@ -478,7 +481,11 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
     score->update();
 
     QTimer::singleShot(120, [this]() {
-        dispatcher()->dispatch(muse::actions::ActionCode("command://notation/view/zoom-to-page-width"));
+        const bool portrait = m_playerLayoutState && m_playerLayoutState->portraitApplied;
+        dispatcher()->dispatch(muse::actions::ActionCode(
+                                   portrait
+                                   ? "command://notation/view/zoom-to-whole-page"
+                                   : "command://notation/view/zoom-to-page-width"));
         QTimer::singleShot(300, [this]() {
             if (m_playerLayoutState && m_playerLayoutState->portraitApplied) {
                 dispatcher()->dispatch(muse::actions::ActionCode("command://notation/view/top-of-first-page"));
