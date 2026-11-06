@@ -90,6 +90,8 @@ struct PlayerLayoutState {
     double staffLowerBorder = 0.0;
     double minSystemDistance = 0.0;
     double maxSystemDistance = 0.0;
+    double lastSystemFillLimit = 0.0;
+    bool firstSystemIndentation = false;
     bool pageTwosided = false;
     bool verticalSpread = false;
     bool backgroundUseColor = true;
@@ -345,6 +347,8 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         state->staffLowerBorder = style.styleAbsolute(engraving::Sid::staffLowerBorder);
         state->minSystemDistance = style.styleAbsolute(engraving::Sid::minSystemDistance);
         state->maxSystemDistance = style.styleAbsolute(engraving::Sid::maxSystemDistance);
+        state->lastSystemFillLimit = style.styleD(engraving::Sid::lastSystemFillLimit);
+        state->firstSystemIndentation = style.styleB(engraving::Sid::enableIndentationOnFirstSystem);
         state->pageTwosided = style.styleB(engraving::Sid::pageTwosided);
         state->verticalSpread = style.styleB(engraving::Sid::enableVerticalSpread);
         state->backgroundUseColor = notationConfiguration()->backgroundUseColor();
@@ -420,6 +424,8 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         styles.emplace(engraving::Sid::maxSystemDistance, engraving::Spatium(4.0));
         styles.emplace(engraving::Sid::enableVerticalSpread, false);
         styles.emplace(engraving::Sid::minMeasureWidth, engraving::Spatium(0.0));
+        styles.emplace(engraving::Sid::lastSystemFillLimit, 0.0);
+        styles.emplace(engraving::Sid::enableIndentationOnFirstSystem, false);
         score->undoChangeStyleValues(std::move(styles));
         notationConfiguration()->setBackgroundUseColor(true);
         notationConfiguration()->setBackgroundColor(Qt::white);
@@ -459,6 +465,8 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         styles.emplace(engraving::Sid::maxSystemDistance, engraving::Spatium::fromAbsolute(
                            state.maxSystemDistance, state.spatium));
         styles.emplace(engraving::Sid::enableVerticalSpread, state.verticalSpread);
+        styles.emplace(engraving::Sid::lastSystemFillLimit, state.lastSystemFillLimit);
+        styles.emplace(engraving::Sid::enableIndentationOnFirstSystem, state.firstSystemIndentation);
         score->undoChangeStyleValues(std::move(styles));
         notationConfiguration()->setBackgroundColor(state.backgroundColor);
         notationConfiguration()->setBackgroundUseColor(state.backgroundUseColor);
