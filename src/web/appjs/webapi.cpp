@@ -480,15 +480,16 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
     score->doLayout();
     score->update();
 
-    QTimer::singleShot(120, [this]() {
-        const bool portrait = m_playerLayoutState && m_playerLayoutState->portraitApplied;
-        dispatcher()->dispatch(muse::actions::ActionCode(
-                                   portrait
-                                   ? "command://notation/view/zoom-to-whole-page"
-                                   : "command://notation/view/zoom-to-page-width"));
-        QTimer::singleShot(300, [this]() {
-            if (m_playerLayoutState && m_playerLayoutState->portraitApplied) {
-                dispatcher()->dispatch(muse::actions::ActionCode("command://notation/view/top-of-first-page"));
+    const bool portraitLayout = m_playerLayoutState && m_playerLayoutState->portraitApplied;
+    QTimer::singleShot(120, [this, portraitLayout]() {
+        if (portraitLayout) {
+            dispatcher()->dispatch(muse::actions::ActionCode("command://notation/view/top-of-first-page"));
+        } else {
+            dispatcher()->dispatch(muse::actions::ActionCode("command://notation/view/zoom-to-page-width"));
+        }
+        QTimer::singleShot(350, [this, portraitLayout]() {
+            if (portraitLayout) {
+                dispatcher()->dispatch(muse::actions::ActionCode("command://notation/view/zoom-to-whole-page"));
             }
         });
     });
