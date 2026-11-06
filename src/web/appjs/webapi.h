@@ -32,6 +32,7 @@
 #include "context/iglobalcontext.h"
 #include "audio/main/istartaudiocontroller.h"
 #include "audio/main/isoundfontcontroller.h"
+#include "notation/inotationconfiguration.h"
 #include "playback/iplaybackcontroller.h"
 #include "project/inotationproject.h"
 #include "project/types/projecttypes.h"
@@ -45,6 +46,7 @@ class WebApi : public muse::async::Asyncable
 {
     inline static muse::GlobalInject<muse::audio::IStartAudioController> startAudioController;
     inline static muse::GlobalInject<muse::audio::ISoundFontController> soundFontController;
+    inline static muse::GlobalInject<mu::notation::INotationConfiguration> notationConfiguration;
 
 public:
 

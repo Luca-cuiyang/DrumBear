@@ -80,6 +80,8 @@ struct PlayerLayoutState {
     double maxSystemDistance = 0.0;
     bool pageTwosided = false;
     bool verticalSpread = false;
+    bool backgroundUseColor = true;
+    QColor backgroundColor;
     bool showUnprintable = true;
     bool showFrames = true;
     int viewMode = 0;
@@ -324,6 +326,8 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         state->maxSystemDistance = style.styleAbsolute(engraving::Sid::maxSystemDistance);
         state->pageTwosided = style.styleB(engraving::Sid::pageTwosided);
         state->verticalSpread = style.styleB(engraving::Sid::enableVerticalSpread);
+        state->backgroundUseColor = notationConfiguration()->backgroundUseColor();
+        state->backgroundColor = notationConfiguration()->backgroundColor();
         state->showUnprintable = score->showUnprintable();
         state->showFrames = score->showFrames();
         state->viewMode = static_cast<int>(notation->viewMode());
@@ -372,6 +376,8 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         styles.emplace(engraving::Sid::maxSystemDistance, engraving::Spatium(1.0));
         styles.emplace(engraving::Sid::enableVerticalSpread, false);
         score->undoChangeStyleValues(std::move(styles));
+        notationConfiguration()->setBackgroundUseColor(true);
+        notationConfiguration()->setBackgroundColor(Qt::white);
         score->setShowUnprintable(false);
         score->setShowFrames(false);
 
@@ -426,6 +432,8 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
                            state.maxSystemDistance, state.spatium));
         styles.emplace(engraving::Sid::enableVerticalSpread, state.verticalSpread);
         score->undoChangeStyleValues(std::move(styles));
+        notationConfiguration()->setBackgroundColor(state.backgroundColor);
+        notationConfiguration()->setBackgroundUseColor(state.backgroundUseColor);
         score->setShowUnprintable(state.showUnprintable);
         score->setShowFrames(state.showFrames);
 
@@ -464,6 +472,9 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
 
     QTimer::singleShot(120, [this]() {
         dispatcher()->dispatch(muse::actions::ActionCode("command://notation/view/zoom-to-page-width"));
+        QTimer::singleShot(300, [this]() {
+            dispatcher()->dispatch(muse::actions::ActionCode("command://notation/view/top-of-first-page"));
+        });
     });
     return true;
 }
