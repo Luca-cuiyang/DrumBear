@@ -81,8 +81,8 @@ FocusScope {
 
     ColumnLayout {
         anchors.fill: parent
-        anchors.topMargin: root.playerChromeVisible && !root.compactPortraitPlayer ? root.playerTopChromeHeight : 0
-        anchors.bottomMargin: root.playerChromeVisible && !root.compactPortraitPlayer ? root.playerBottomChromeHeight : 0
+        anchors.topMargin: root.playerChromeVisible ? root.playerTopChromeHeight : 0
+        anchors.bottomMargin: root.playerChromeVisible ? root.playerBottomChromeHeight : 0
         spacing: 0
 
         NotationSwitchPanel {
