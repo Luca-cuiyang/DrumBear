@@ -41,10 +41,12 @@ Item {
     property bool floating: false
     property bool compactMode: false
 
+    readonly property real compactTempoWidth: 8 + tempoLoader.tempoViewWidth
+
     // Not `+ endSeparator.width`: this way, the separator itself is outside the view,
     // which means that it will be exactly at the position of the KDDockWidgets separator
     // between this toolbar and the undo/redo toolbar.
-    width: root.compactMode ? buttonsListView.width
+    width: root.compactMode ? buttonsListView.width + compactTempoWidth
                             : (endSeparator.visible ? endSeparator.x : tempoLoader.x + tempoLoader.width)
     height: 30
 
@@ -183,11 +185,11 @@ Item {
     Loader {
         id: tempoLoader
 
-        anchors.left: measureAndBeatFields.right
-        anchors.leftMargin: 6
+        anchors.left: root.compactMode ? buttonsListView.right : measureAndBeatFields.right
+        anchors.leftMargin: root.compactMode ? 8 : 6
 
         readonly property int navigationOrderEnd: item?.navigation?.order ?? measureAndBeatFields.navigationOrderEnd
-        visible: !root.compactMode
+        visible: true
 
         // Fixed width prevents items from jumping around; but we
         // scale it according to the font size to prevent clipping
@@ -239,6 +241,7 @@ Item {
 
                     noteSymbol: root.playbackModel.tempo.noteSymbol
                     tempoValue: root.playbackModel.tempo.value
+                    textColor: root.compactMode ? "#f7ede4" : ui.theme.fontPrimaryColor
 
                     noteSymbolFont.pixelSize: ui.theme.iconsFont.pixelSize
                     tempoValueFont: timeField.font
