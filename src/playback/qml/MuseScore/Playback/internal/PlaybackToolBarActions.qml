@@ -82,6 +82,9 @@ Item {
             toolTipShortcut: Boolean(item) ? item.shortcuts : ""
 
             iconFont: ui.theme.toolbarIconsFont
+            iconColor: root.compactMode
+                       ? (accentButton ? "#111132" : "#f7ede4")
+                       : ui.theme.fontPrimaryColor
 
             accentButton: (Boolean(item) && item.checked) || menuLoader.isMenuOpened
             transparent: !accentButton

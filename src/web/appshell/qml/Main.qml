@@ -23,12 +23,17 @@ import QtQuick
 
 import Muse.Interactive
 
+import DBScore.AppShell 1.0
 import DBScore.Playback 1.0
 
 AppWindow {
     id: root
 
     flags: Qt.FramelessWindowHint
+
+    readonly property bool studioPlayerMode:
+        WebAppMode.studioPlayerMode
+        || Qt.application.arguments.indexOf("--db-product-mode=studio-player") !== -1
 
     InteractiveProvider {
         id: interactiveProvider
@@ -42,6 +47,7 @@ AppWindow {
     PlaybackToolBar {
         id: playbackToolBar
 
+        visible: !root.studioPlayerMode
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
@@ -50,8 +56,10 @@ AppWindow {
     }
 
     NotationFrame {
-        anchors.top: playbackToolBar.bottom
-        anchors.topMargin: 8
+        playerMode: root.studioPlayerMode
+
+        anchors.top: root.studioPlayerMode ? parent.top : playbackToolBar.bottom
+        anchors.topMargin: root.studioPlayerMode ? 0 : 8
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom

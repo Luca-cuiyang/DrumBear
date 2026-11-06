@@ -24,12 +24,20 @@ import QtQuick
 import DBScore.NotationScene 1.0
 
 Item {
+    id: root
+
+    property bool playerMode: false
+
     NotationView {
         id: notationView
         name: "MainNotationView"
 
         anchors.fill: parent
 
+        readOnly: root.playerMode
+        showTabPanel: !root.playerMode
+        playerChromeVisible: root.playerMode
+        webPlayerMode: root.playerMode
         isNavigatorVisible: false
         isBraillePanelVisible: false
         isMainView: true
