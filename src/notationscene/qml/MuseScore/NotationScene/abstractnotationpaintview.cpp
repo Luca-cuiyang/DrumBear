@@ -32,6 +32,7 @@
 #include "log.h"
 
 #include "actions/actiontypes.h"
+#include "engraving/dom/mscore.h"
 #include "engraving/dom/page.h"
 #include "engraving/dom/shadownote.h"
 
@@ -1316,14 +1317,16 @@ bool AbstractNotationPaintView::fitPageToViewport()
         return false;
     }
 
-    const engraving::Page* page = score->pages().front();
-    if (page->width() <= 0.0 || page->height() <= 0.0) {
+    const engraving::MStyle& style = score->style();
+    const double pageWidth = style.styleD(engraving::Sid::pageWidth) * engraving::DPI;
+    const double pageHeight = style.styleD(engraving::Sid::pageHeight) * engraving::DPI;
+    if (pageWidth <= 0.0 || pageHeight <= 0.0) {
         return false;
     }
 
-    const qreal scale = std::min(width() / page->width(), height() / page->height());
-    const qreal x = (width() - page->width() * scale) * 0.5;
-    const qreal y = (height() - page->height() * scale) * 0.5;
+    const qreal scale = std::min(width() / pageWidth, height() / pageHeight);
+    const qreal x = (width() - pageWidth * scale) * 0.5;
+    const qreal y = (height() - pageHeight * scale) * 0.5;
     setMatrix(muse::draw::Transform(scale, 0.0, 0.0, scale, x, y));
     return true;
 }

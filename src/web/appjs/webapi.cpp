@@ -38,6 +38,7 @@
 #include "engraving/dom/masterscore.h"
 #include "engraving/dom/measure.h"
 #include "engraving/dom/measurebase.h"
+#include "engraving/dom/mscore.h"
 #include "engraving/dom/page.h"
 #include "engraving/dom/score.h"
 #include "engraving/dom/system.h"
@@ -475,9 +476,9 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
             if (!currentScore || currentScore->pages().empty()) {
                 return;
             }
-            const engraving::Page* page = currentScore->pages().front();
-            const double pageWidth = page->width();
-            const double pageHeight = page->height();
+            const engraving::MStyle& style = currentScore->style();
+            const double pageWidth = style.styleD(engraving::Sid::pageWidth) * engraving::DPI;
+            const double pageHeight = style.styleD(engraving::Sid::pageHeight) * engraving::DPI;
             if (pageWidth <= 0.0 || pageHeight <= 0.0) {
                 return;
             }
