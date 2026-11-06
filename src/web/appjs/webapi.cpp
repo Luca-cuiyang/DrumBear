@@ -473,7 +473,9 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
     QTimer::singleShot(120, [this]() {
         dispatcher()->dispatch(muse::actions::ActionCode("command://notation/view/zoom-to-page-width"));
         QTimer::singleShot(300, [this]() {
-            dispatcher()->dispatch(muse::actions::ActionCode("command://notation/view/top-of-first-page"));
+            if (m_playerLayoutState && m_playerLayoutState->portraitApplied) {
+                dispatcher()->dispatch(muse::actions::ActionCode("command://notation/view/top-of-first-page"));
+            }
         });
     });
     return true;
