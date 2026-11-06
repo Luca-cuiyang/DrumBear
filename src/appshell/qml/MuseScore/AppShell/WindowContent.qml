@@ -30,6 +30,7 @@ import Muse.Dock
 import Muse.Interactive
 import Muse.Ui
 import Muse.UiComponents
+import Muse.Update
 import Muse.Cloud as Cloud
 import DBScore.AppShell
 
@@ -45,6 +46,18 @@ DockWindow {
     objectName: "WindowContent"
 
     property int sendCooldown: 0
+
+    readonly property string productMode: {
+        const prefix = "--db-product-mode="
+        const appArguments = Qt.application.arguments
+        for (let i = 0; i < appArguments.length; ++i) {
+            if (appArguments[i].startsWith(prefix)) {
+                return appArguments[i].substring(prefix.length)
+            }
+        }
+        return WebAppMode.productMode
+    }
+    readonly property bool studioPlayerMode: productMode === "studio-player"
 
     Cloud.DbScoreAccountModel {
         id: accountModel
@@ -88,6 +101,7 @@ DockWindow {
 
             objectName: "mainToolBar"
             title: qsTrc("appshell", "Main toolbar")
+            visible: !root.studioPlayerMode && !notationPage.playerModeActive
 
             floatable: false
             closable: false
@@ -121,24 +135,52 @@ DockWindow {
     pages: [
         HomePage {
             window: root.window
+            visible: !root.studioPlayerMode
         },
 
         NotationPage {
+            id: notationPage
             topToolbarKeyNavSec: topToolbarKeyNavSec
+            studioPlayerMode: root.studioPlayerMode
         },
 
         NotationReviewPage {
             topToolbarKeyNavSec: topToolbarKeyNavSec
+            visible: !root.studioPlayerMode
         },
 
-        DevToolsPage {},
+        DevToolsPage {
+            visible: !root.studioPlayerMode
+        },
 
-        AccountPage {}
+        AccountPage {
+            visible: !root.studioPlayerMode
+        }
     ]
+
+    Loader {
+        id: updateBannerLoader
+
+        active: !root.studioPlayerMode
+                && root.currentPageUri.indexOf("dbscore://home") === 0
+                && accountModel.phoneLoggedIn
+        anchors.top: parent.top
+        anchors.topMargin: 16
+        anchors.horizontalCenter: parent.horizontalCenter
+        width: Math.min(720, root.width - 48)
+        z: 900
+        sourceComponent: updateBannerComponent
+    }
+
+    Component {
+        id: updateBannerComponent
+
+        UpdateBanner {}
+    }
 
     // 登录墙：未登录时覆盖整个窗口，必须先登录/注册
     Rectangle {
-        visible: !accountModel.phoneLoggedIn
+        visible: !root.studioPlayerMode && !accountModel.phoneLoggedIn
         anchors.fill: parent
         z: 1000
         color: ui.theme.backgroundPrimaryColor
