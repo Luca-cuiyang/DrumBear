@@ -32,6 +32,7 @@ AppWindow {
 
     readonly property bool studioPlayerMode:
         Qt.application.arguments.indexOf("--db-product-mode=studio-player") !== -1
+    readonly property bool portraitPlayerMode: root.studioPlayerMode && root.width < root.height
 
     InteractiveProvider {
         id: interactiveProvider
@@ -45,7 +46,7 @@ AppWindow {
     PlaybackToolBar {
         id: playbackToolBar
 
-        visible: !root.studioPlayerMode
+        visible: !root.portraitPlayerMode
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
@@ -55,9 +56,10 @@ AppWindow {
 
     NotationFrame {
         playerMode: root.studioPlayerMode
+        showPlayerChrome: root.portraitPlayerMode
 
-        anchors.top: root.studioPlayerMode ? parent.top : playbackToolBar.bottom
-        anchors.topMargin: root.studioPlayerMode ? 0 : 8
+        anchors.top: root.portraitPlayerMode ? parent.top : playbackToolBar.bottom
+        anchors.topMargin: root.portraitPlayerMode ? 0 : 8
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom

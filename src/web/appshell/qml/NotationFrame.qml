@@ -27,6 +27,7 @@ Item {
     id: root
 
     property bool playerMode: false
+    property bool showPlayerChrome: false
 
     NotationView {
         id: notationView
@@ -36,8 +37,8 @@ Item {
 
         readOnly: root.playerMode
         showTabPanel: !root.playerMode
-        playerChromeVisible: root.playerMode
-        webPlayerMode: root.playerMode
+        playerChromeVisible: root.showPlayerChrome
+        webPlayerMode: root.showPlayerChrome
         isNavigatorVisible: false
         isBraillePanelVisible: false
         isMainView: true
