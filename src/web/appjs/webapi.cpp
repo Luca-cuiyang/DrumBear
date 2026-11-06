@@ -358,6 +358,14 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         constexpr double aspect = 844.0 / 390.0;
         const double pageHeightMm = pageWidthMm * aspect;
 
+        if (state.titleBox) {
+            state.titleBox->setVisible(false);
+            state.titleBox->setAutoSizeEnabled(false);
+            state.titleBox->setBoxHeight(engraving::Spatium(0.0));
+            state.titleBox->setTopGap(engraving::Spatium(0.0));
+            state.titleBox->setBottomGap(engraving::Spatium(0.0));
+        }
+
         std::unordered_map<engraving::Sid, engraving::PropertyValue> styles;
         styles.emplace(engraving::Sid::pageWidth, pageWidthMm * MM_TO_INCH);
         styles.emplace(engraving::Sid::pageHeight, pageHeightMm * MM_TO_INCH);
@@ -381,14 +389,6 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         score->setShowUnprintable(false);
         score->setShowFrames(false);
 
-        if (state.titleBox) {
-            state.titleBox->setVisible(false);
-            state.titleBox->setAutoSizeEnabled(false);
-            state.titleBox->setBoxHeight(engraving::Spatium(0.0));
-            state.titleBox->setTopGap(engraving::Spatium(0.0));
-            state.titleBox->setBottomGap(engraving::Spatium(0.0));
-        }
-
         int measureIndex = 0;
         for (engraving::MeasureBase* item = score->first(); item; item = item->next()) {
             if (!item->isMeasure()) {
@@ -410,6 +410,14 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         state.portraitApplied = true;
         changed = true;
     } else if (!portrait && state.portraitApplied) {
+        if (state.titleBox) {
+            state.titleBox->setVisible(state.titleVisible);
+            state.titleBox->setAutoSizeEnabled(state.titleAutoSize);
+            state.titleBox->setBoxHeight(engraving::Spatium::fromAbsolute(state.titleHeight, state.spatium));
+            state.titleBox->setTopGap(engraving::Spatium::fromAbsolute(state.titleTopGap, state.spatium));
+            state.titleBox->setBottomGap(engraving::Spatium::fromAbsolute(state.titleBottomGap, state.spatium));
+        }
+
         std::unordered_map<engraving::Sid, engraving::PropertyValue> styles;
         styles.emplace(engraving::Sid::pageWidth, state.pageWidth);
         styles.emplace(engraving::Sid::pageHeight, state.pageHeight);
@@ -436,14 +444,6 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         notationConfiguration()->setBackgroundUseColor(state.backgroundUseColor);
         score->setShowUnprintable(state.showUnprintable);
         score->setShowFrames(state.showFrames);
-
-        if (state.titleBox) {
-            state.titleBox->setVisible(state.titleVisible);
-            state.titleBox->setAutoSizeEnabled(state.titleAutoSize);
-            state.titleBox->setBoxHeight(engraving::Spatium::fromAbsolute(state.titleHeight, state.spatium));
-            state.titleBox->setTopGap(engraving::Spatium::fromAbsolute(state.titleTopGap, state.spatium));
-            state.titleBox->setBottomGap(engraving::Spatium::fromAbsolute(state.titleBottomGap, state.spatium));
-        }
 
         for (const detail::PlayerLayoutState::BreakState& item : state.breaks) {
             item.item->setLineBreak(item.lineBreak);
