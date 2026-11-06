@@ -1247,7 +1247,7 @@ void PlaybackController::doAddTrack(const InstrumentTrackId& instrumentTrackId, 
     trackParams.control = trackControlParams(instrumentTrackId, originParams);
 
     playback()->addTrack(title, std::move(playbackData), trackParams)
-    .onResolve(this, [=](const TrackId trackId, const TrackParams& appliedParams) {
+    .onResolve(this, [=, this](const TrackId trackId, const TrackParams& appliedParams) {
         //! NOTE It may be that while we were adding a track, the notation was already closed (or opened another)
         //! This situation can be if the notation was opened and immediately closed.
         if (notationPlaybackKey() != playbackKey) {
@@ -1319,7 +1319,7 @@ void PlaybackController::addAuxTrack(aux_channel_idx_t index, bool projectHadNoA
     uint64_t playbackKey = notationPlaybackKey();
 
     playback()->addAuxTrack(title, trackParams)
-    .onResolve(this, [=](const TrackId trackId, const TrackParams& appliedParams) {
+    .onResolve(this, [=, this](const TrackId trackId, const TrackParams& appliedParams) {
         //! NOTE It may be that while we were adding a track, the notation was already closed (or opened another)
         //! This situation can be if the notation was opened and immediately closed.
         if (notationPlaybackKey() != playbackKey) {
@@ -1356,6 +1356,21 @@ void PlaybackController::addAudioTrack(const AudioTrackSettings& settings, const
 
     m_lastAppliedAudioTrackSettings = settings;
     uint64_t playbackKey = notationPlaybackKey();
+    if (trackLoading) {
+        m_loadingTrackCount++;
+    }
+
+    auto finished = std::make_shared<bool>(false);
+    auto finishOnce = [onFinished, finished]() {
+        if (*finished) {
+            return;
+        }
+
+        *finished = true;
+        onFinished();
+    };
+
+    bool playbackRequested = false;
 
     for (const AudioClipSettings& clip : settings.clips) {
         if (!clip.isValid()) {
@@ -1368,6 +1383,7 @@ void PlaybackController::addAudioTrack(const AudioTrackSettings& settings, const
             continue;
         }
 
+        playbackRequested = true;
         TrackParams trackParams;
         trackParams.source = {};
         trackParams.control.volume = clip.volume;
@@ -1380,25 +1396,25 @@ void PlaybackController::addAudioTrack(const AudioTrackSettings& settings, const
         trackParams.soundTrack.fadeOut = clip.fadeOut;
 
         playback()->addTrack("Accompaniment", file.get(), trackParams)
-        .onResolve(this, [this, playbackKey, onFinished](const TrackId trackId, const TrackParams&) {
+        .onResolve(this, [this, playbackKey, finishOnce](const TrackId trackId, const TrackParams&) {
             if (notationPlaybackKey() != playbackKey) {
                 return;
             }
 
             m_audioTrackIds.push_back(trackId);
             m_trackAdded.send(trackId);
-            onFinished();
+            finishOnce();
         })
-        .onReject(this, [onFinished](int code, const std::string& msg) {
+        .onReject(this, [finishOnce](int code, const std::string& msg) {
             LOGE() << "can't add audio clip, code: [" << code << "] " << msg;
-            onFinished();
+            finishOnce();
         });
 
         m_audioTrackFiles.push_back(file);
     }
 
-    if (trackLoading) {
-        m_loadingTrackCount++;
+    if (!playbackRequested) {
+        finishOnce();
     }
 }
 
