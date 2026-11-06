@@ -126,6 +126,10 @@ void AbstractNotationPaintView::load()
 
     m_inputController->setReadonly(m_readonly);
     m_inputController->init();
+    if (m_inputController->isReadOnly() && !m_readonly) {
+        m_readonly = true;
+        emit readonlyChanged();
+    }
 
     m_elapsedTimer.start();
 
@@ -150,15 +154,6 @@ void AbstractNotationPaintView::load()
     m_isSmoothPanningEnabled = configuration()->isSmoothPanning();
     configuration()->isSmoothPanningChanged().onNotify(this, [this]() {
         m_isSmoothPanningEnabled = configuration()->isSmoothPanning();
-    }, async::Asyncable::Mode::SetReplace);
-
-    globalContext()->playbackState()->playbackPositionChanged().onReceive(this, [this](secs_t secs) {
-        m_lastPlaybackPosition = secs;
-        m_lastPlaybackPositionUpdateTimeNs = m_elapsedTimer.nsecsElapsed();
-    }, async::Asyncable::Mode::SetReplace);
-
-    globalContext()->playbackState()->playbackStatusChanged().onReceive(this, [this](audio::PlaybackStatus) {
-        onPlayingChanged();
     }, async::Asyncable::Mode::SetReplace);
 
     scheduleRedraw();
@@ -268,6 +263,15 @@ void AbstractNotationPaintView::onCurrentNotationChanged()
 
 void AbstractNotationPaintView::onLoadNotation(INotationPtr)
 {
+    globalContext()->playbackState()->playbackPositionChanged().onReceive(this, [this](secs_t secs) {
+        m_lastPlaybackPosition = secs;
+        m_lastPlaybackPositionUpdateTimeNs = m_elapsedTimer.nsecsElapsed();
+    }, async::Asyncable::Mode::SetReplace);
+
+    globalContext()->playbackState()->playbackStatusChanged().onReceive(this, [this](audio::PlaybackStatus) {
+        onPlayingChanged();
+    }, async::Asyncable::Mode::SetReplace);
+
     if (viewport().isValid() && !m_notation->viewState()->isMatrixInited()) {
         initZoomAndPosition();
     }
@@ -413,12 +417,15 @@ void AbstractNotationPaintView::onLoadNotation(INotationPtr)
     emit automationModeChanged();
 }
 
-void AbstractNotationPaintView::onUnloadNotation(INotationPtr)
+void AbstractNotationPaintView::onUnloadNotation(INotationPtr notation)
 {
     m_pageCache.clear();
 
-    m_notation->notationChanged().disconnect(this);
-    INotationInteractionPtr interaction = m_notation->interaction();
+    globalContext()->playbackState()->playbackPositionChanged().disconnect(this);
+    globalContext()->playbackState()->playbackStatusChanged().disconnect(this);
+
+    notation->notationChanged().disconnect(this);
+    INotationInteractionPtr interaction = notation->interaction();
     interaction->noteInput()->stateChanged().disconnect(this);
     interaction->noteInput()->noteInputStarted().disconnect(this);
     interaction->selectionChanged().disconnect(this);
@@ -427,15 +434,21 @@ void AbstractNotationPaintView::onUnloadNotation(INotationPtr)
     interaction->textEditingEnded().disconnect(this);
     interaction->dropChanged().disconnect(this);
     interaction->shadowNoteChanged().disconnect(this);
-    notationPlayback()->loopBoundariesChanged().disconnect(this);
-    m_notation->viewModeChanged().disconnect(this);
+    notation->masterNotation()->playback()->loopBoundariesChanged().disconnect(this);
+    notation->viewModeChanged().disconnect(this);
     notationAutomation()->automationModeEnabledChanged().disconnect(this);
 
     if (isMainView()) {
         disconnect(this, &QQuickPaintedItem::focusChanged, this, nullptr);
-        m_notation->accessibility()->setMapToScreenFunc(nullptr);
-        m_notation->interaction()->setGetViewRectFunc(nullptr);
+        notation->accessibility()->setMapToScreenFunc(nullptr);
+        notation->interaction()->setGetViewRectFunc(nullptr);
     }
+
+    m_playbackCursor->setVisible(false);
+    m_playbackCursor->setNotation(nullptr);
+    m_continuousPanel->setNotation(nullptr);
+    m_loopInMarker->setNotation(nullptr);
+    m_loopOutMarker->setNotation(nullptr);
 }
 
 void AbstractNotationPaintView::initZoomAndPosition()
@@ -1407,6 +1420,11 @@ bool AbstractNotationPaintView::event(QEvent* event)
                                || eventType == QEvent::Type::ContextMenu) && hasFocus();
 
     if (isContextMenuEvent) {
+        if (m_inputController->isReadOnly()) {
+            event->accept();
+            return true;
+        }
+
         QContextMenuEvent* contextMenuEvent = dynamic_cast<QContextMenuEvent*>(event);
         if (contextMenuEvent && contextMenuEvent->reason() == QContextMenuEvent::Mouse
             && m_inputController->ignoreNextMouseContextMenuEvent()) {

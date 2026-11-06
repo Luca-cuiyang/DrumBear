@@ -21,6 +21,8 @@
  */
 #include "playbacktoolbarmodel.h"
 
+#include <QCoreApplication>
+
 #include <vector>
 
 #include "global/containers.h"
@@ -41,6 +43,11 @@ using namespace muse::uicomponents;
 using namespace muse::audio;
 
 static const QString PLAY_TOGGLE_ID("play-toggle");
+
+static bool isStudioPlayerMode()
+{
+    return QCoreApplication::arguments().contains("--db-product-mode=studio-player");
+}
 
 static const ToolConfig& defaultPlaybackToolConfig()
 {
@@ -100,6 +107,7 @@ void PlaybackToolBarModel::setupConnections()
 
 void PlaybackToolBarModel::updateActions()
 {
+    const bool studioPlayerMode = isStudioPlayerMode();
     MenuItemList result;
     MenuItemList settingsItems = {
         makeMenuItem(MIDI_TOGGLE_COMMAND),
@@ -123,7 +131,7 @@ void PlaybackToolBarModel::updateActions()
             result << makePlayItem();
         } else {
             const rcommand::Command command(item.intent);
-            if (isAdditionalCommand(command) && !m_isToolbarFloating) {
+            if (isAdditionalCommand(command) && !m_isToolbarFloating && !studioPlayerMode) {
                 //! NOTE In this case, we want to see the actions' description instead of the title
                 settingsItems << makeMenuItem(command);
             } else {
@@ -132,9 +140,13 @@ void PlaybackToolBarModel::updateActions()
         }
     }
 
-    MenuItem* settingsItem = makeMenu(TranslatableString("action", "播放设置"), settingsItems);
-    settingsItem->setIcon(ui::IconCode::Code::SETTINGS_COG);
-    result << settingsItem;
+    if (studioPlayerMode) {
+        result << makeMenuItem(REPEATS_TOGGLE_COMMAND);
+    } else {
+        MenuItem* settingsItem = makeMenu(TranslatableString("action", "播放设置"), settingsItems);
+        settingsItem->setIcon(ui::IconCode::Code::SETTINGS_COG);
+        result << settingsItem;
+    }
 
     setItems(result);
 }
