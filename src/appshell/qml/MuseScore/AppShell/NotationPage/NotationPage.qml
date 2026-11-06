@@ -44,8 +44,10 @@ DockPage {
     uri: "dbscore://notation"
 
     required property NavigationSection topToolbarKeyNavSec
+    property bool studioPlayerMode: false
 
     property NotationPageModel pageModel: NotationPageModel {}
+    property bool playerModeActive: studioPlayerMode
 
     AudioTrackSettingsModel {
         id: audioModel
@@ -53,17 +55,6 @@ DockPage {
         Component.onCompleted: {
             Qt.callLater(audioModel.load)
         }
-    }
-
-    //! 【固定逻辑 · 永不可改】
-    //! 音频伴奏轨面板只有两个入口能打开：
-    //!   1) 文件 → 导入伴奏轨（C++ 里导入成功后 dock-set-open(true)）
-    //!   2) 顶部「音频伴奏轨」按钮（dock-toggle 命令）
-    //! 新建乐谱 / 打开软件时，默认必须关闭，不能自动弹出。
-    Component.onCompleted: {
-        Qt.callLater(function() {
-            pageModel.setDockOpen("audioTrackPanel", false)
-        })
     }
 
     property NavigationSection noteInputKeyNavSec: NavigationSection {
@@ -108,11 +99,27 @@ DockPage {
 
     onInited: {
         Qt.callLater(pageModel.init)
-        //! 页面初始化（工作区布局恢复）完成后，再次强制关闭音频伴奏轨，
-        //! 防止用户上次打开过音频轨后，其可见状态被保存并在启动时被恢复。
-        Qt.callLater(function() {
-            pageModel.setDockOpen("audioTrackPanel", false)
-        })
+        if (root.studioPlayerMode) {
+            Qt.callLater(root.closeEditorPanels)
+        }
+    }
+
+    function closeEditorPanels() {
+        const panels = [
+            pageModel.palettesPanelName(),
+            pageModel.layoutPanelName(),
+            pageModel.propertiesPanelName(),
+            pageModel.selectionFiltersPanelName(),
+            pageModel.undoHistoryPanelName(),
+            pageModel.mixerPanelName(),
+            pageModel.pianoKeyboardPanelName(),
+            pageModel.timelinePanelName(),
+            pageModel.percussionPanelName()
+        ]
+
+        for (let i = 0; i < panels.length; ++i) {
+            pageModel.setDockOpen(panels[i], false)
+        }
     }
 
     readonly property int verticalPanelDefaultWidth: 300
@@ -144,6 +151,7 @@ DockPage {
 
             objectName: "notationToolBar"
             title: qsTrc("appshell", "Notation toolbar")
+            visible: !root.playerModeActive
 
             floatable: false
             closable: false
@@ -170,6 +178,7 @@ DockPage {
 
             objectName: root.pageModel.playbackToolBarName()
             title: qsTrc("appshell", "Playback controls")
+            visible: !root.playerModeActive
 
             separatorsVisible: false
             alignment: DockToolBarAlignment.Right
@@ -228,6 +237,7 @@ DockPage {
 
             objectName: root.pageModel.undoRedoToolBarName()
             title: qsTrc("appshell", "Undo/redo")
+            visible: !root.playerModeActive
 
             floatable: false
             closable: false
@@ -252,6 +262,7 @@ DockPage {
 
             objectName: root.pageModel.noteInputBarName()
             title: qsTrc("appshell", "Note input")
+            visible: !root.playerModeActive
 
             dropDestinations: [
                 root.toolBarTopDropDestination,
@@ -627,23 +638,37 @@ DockPage {
         id: notationView
         name: "MainNotationView"
 
-        isNavigatorVisible: root.pageModel.isNavigatorVisible
-        isBraillePanelVisible: root.pageModel.isBraillePanelVisible
+        readOnly: root.studioPlayerMode
+        showTabPanel: !root.studioPlayerMode
+        playerChromeVisible: root.playerModeActive
+        webPlayerMode: root.studioPlayerMode
+        isNavigatorVisible: !root.studioPlayerMode && root.pageModel.isNavigatorVisible
+        isBraillePanelVisible: !root.studioPlayerMode && root.pageModel.isBraillePanelVisible
         isMainView: true
 
         Component.onCompleted: {
             root.notationView = notationView.paintView
-
             root.setDefaultNavigationControl(notationView.defaultNavigationControl)
         }
 
         Component.onDestruction: {
             root.setDefaultNavigationControl(null)
         }
+
+        Connections {
+            target: notationView
+
+            function onReadOnlyChanged() {
+                if (notationView.readOnly) {
+                    Qt.callLater(root.closeEditorPanels)
+                }
+            }
+        }
     }
 
     statusBar: DockStatusBar {
         objectName: root.pageModel.statusBarName()
+        visible: !root.playerModeActive
 
         navigationSection: content.navigationSection
 

@@ -159,7 +159,7 @@ public:
 
     bool automationMode() const;
 
-    bool isMainView() const;
+    bool isMainView() const override;
     void setIsMainView(bool isMainView);
 
     bool readonly() const;

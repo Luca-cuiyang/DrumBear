@@ -39,12 +39,13 @@ Item {
     readonly property int navigationOrderEnd: tempoLoader.navigationOrderEnd
 
     property bool floating: false
+    property bool compactMode: false
 
     // Not `+ endSeparator.width`: this way, the separator itself is outside the view,
     // which means that it will be exactly at the position of the KDDockWidgets separator
     // between this toolbar and the undo/redo toolbar.
-    width: endSeparator.visible ? endSeparator.x
-                                : tempoLoader.x + tempoLoader.width
+    width: root.compactMode ? buttonsListView.width
+                            : (endSeparator.visible ? endSeparator.x : tempoLoader.x + tempoLoader.width)
     height: 30
 
     ListView {
@@ -119,7 +120,7 @@ Item {
         anchors.bottomMargin: 2
 
         orientation: Qt.Vertical
-        visible: !root.floating
+        visible: !root.floating && !root.compactMode
     }
 
     TimeInputField {
@@ -134,6 +135,7 @@ Item {
         // when a score is being played
         // See: https://github.com/musescore/MuseScore/issues/9633
         width: 64
+        visible: !root.compactMode
 
         maxTime: root.playbackModel.maxPlayTime
         maxMillisecondsNumber: 9
@@ -161,6 +163,7 @@ Item {
         maxBeatNumber: root.playbackModel.maxBeatNumber
 
         font: timeField.font
+        visible: !root.compactMode
 
         navigationPanel: root.navPanel
         navigationOrderStart: timeField.navigationOrderEnd + 1
@@ -181,6 +184,7 @@ Item {
         anchors.leftMargin: 6
 
         readonly property int navigationOrderEnd: item?.navigation?.order ?? measureAndBeatFields.navigationOrderEnd
+        visible: !root.compactMode
 
         // Fixed width prevents items from jumping around; but we
         // scale it according to the font size to prevent clipping
@@ -254,6 +258,6 @@ Item {
         anchors.bottomMargin: 2
 
         orientation: Qt.Vertical
-        visible: !root.floating
+        visible: !root.floating && !root.compactMode
     }
 }

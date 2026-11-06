@@ -28,9 +28,14 @@ import Muse.UiComponents
 AppWindow {
     id: root
 
+    readonly property bool studioPlayerMode:
+        WebAppMode.studioPlayerMode
+        || Qt.application.arguments.indexOf("--db-product-mode=studio-player") !== -1
+
     Loader {
         id: appMenuBar
 
+        visible: !root.studioPlayerMode
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
@@ -38,6 +43,8 @@ AppWindow {
 
     Loader {
         id: platformMenuBar
+
+        active: !root.studioPlayerMode
     }
 
     Component.onCompleted: {
@@ -56,7 +63,7 @@ AppWindow {
     WindowContent {
         id: window
 
-        anchors.top: appMenuBar.bottom
+        anchors.top: appMenuBar.visible ? appMenuBar.bottom : parent.top
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom

@@ -34,6 +34,7 @@ class INotationViewController
 public:
     virtual ~INotationViewController() = default;
 
+    virtual bool isReadOnly() const { return false; }
     virtual void zoomIn() = 0;
     virtual void zoomOut() = 0;
     virtual void zoomToPageWidth() = 0;

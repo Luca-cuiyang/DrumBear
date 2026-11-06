@@ -23,12 +23,19 @@
 #include "notationviewinputcontroller.h"
 
 #include <set>
+#include <string>
 
 #include <QApplication>
+#include <QCoreApplication>
 #include <QMimeData>
 #include <QQuickItem>
 #include <QTimer>
+#include <QUrlQuery>
 #include <QtMath>
+
+#ifdef Q_OS_WASM
+#include <emscripten/val.h>
+#endif
 
 #include "defer.h"
 #include "log.h"
@@ -59,6 +66,51 @@ using namespace muse::actions;
 
 static constexpr int PIXELSSTEPSFACTOR = 5;
 
+static bool isWebReadOnlyMode()
+{
+    static const QString studioPlayerMode = QStringLiteral("studio-player");
+
+    if (qEnvironmentVariable("DB_PRODUCT_MODE") == studioPlayerMode) {
+        return true;
+    }
+
+#ifdef Q_OS_WASM
+    const emscripten::val location = emscripten::val::global("location");
+    const emscripten::val searchValue = location["search"];
+    if (searchValue.isString()) {
+        const QString search = QString::fromStdString(searchValue.as<std::string>());
+        const QString mode = QUrlQuery(search.mid(search.startsWith(QLatin1Char('?')) ? 1 : 0))
+                                 .queryItemValue(QStringLiteral("mode"));
+        if (mode == studioPlayerMode) {
+            return true;
+        }
+    }
+
+    const emscripten::val globalMode = emscripten::val::global("DB_PRODUCT_MODE");
+    if (globalMode.isString() && QString::fromStdString(globalMode.as<std::string>()) == studioPlayerMode) {
+        return true;
+    }
+#endif
+
+    const QString prefix = QStringLiteral("--db-product-mode=");
+    for (const QString& argument : QCoreApplication::arguments()) {
+        if (argument == prefix + studioPlayerMode) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+static void publishWebReadOnlyMode(bool readonly)
+{
+#ifdef Q_OS_WASM
+    emscripten::val::global("window").set("DB_PLAYER_READONLY_MODE", readonly);
+#else
+    (void)readonly;
+#endif
+}
+
 static bool seekAllowed(const mu::engraving::EngravingItem* element)
 {
     if (!element) {
@@ -76,6 +128,21 @@ static bool seekAllowed(const mu::engraving::EngravingItem* element)
     return muse::contains(ALLOWED_TYPES, element->type());
 }
 
+static bool isPlaybackPointerTarget(const mu::engraving::EngravingItem* element)
+{
+    if (!element) {
+        return false;
+    }
+
+    static const ElementTypeSet PLAYBACK_POINTER_TYPES {
+        ElementType::NOTE,
+        ElementType::REST,
+        ElementType::MMREST
+    };
+
+    return muse::contains(PLAYBACK_POINTER_TYPES, element->type());
+}
+
 NotationViewInputController::NotationViewInputController(IControlledView* view, const muse::modularity::ContextPtr& iocCtx)
     : muse::Contextable(iocCtx), m_view(view)
 {
@@ -88,10 +155,16 @@ NotationViewInputController::~NotationViewInputController()
 void NotationViewInputController::init()
 {
     m_possibleZoomPercentages = configuration()->possibleZoomPercentageList();
+    if (isWebReadOnlyMode()) {
+        m_readonlyLocked = true;
+        m_readonly = true;
+    }
+    publishWebReadOnlyMode(m_readonlyLocked && m_readonly);
+    if (!m_readonly || m_view->isMainView()) {
+        commandsController()->setViewController(this);
+    }
 
     if (!m_readonly) {
-        commandsController()->setViewController(this);
-
         onNotationChanged();
         globalContext()->currentNotationChanged().onNotify(this, [this]() {
             onNotationChanged();
@@ -265,9 +338,23 @@ bool NotationViewInputController::readonly() const
     return m_readonly;
 }
 
+bool NotationViewInputController::isReadOnly() const
+{
+    return m_readonly;
+}
+
 void NotationViewInputController::setReadonly(bool readonly)
 {
+    if (m_readonlyLocked && !readonly) {
+        return;
+    }
+
+    if (m_readonly == readonly) {
+        return;
+    }
+
     m_readonly = readonly;
+    publishWebReadOnlyMode(m_readonlyLocked && m_readonly);
 }
 
 INotationPtr NotationViewInputController::currentNotation() const
@@ -583,12 +670,21 @@ void NotationViewInputController::endOfScore()
 
 void NotationViewInputController::pinchToZoom(qreal scaleFactor, const QPointF& pos)
 {
+    if (m_readonly) {
+        return;
+    }
+
     double scale = m_view->currentScaling() * scaleFactor;
     setScaling(scale, PointF::fromQPointF(pos));
 }
 
 void NotationViewInputController::wheelEvent(QWheelEvent* event)
 {
+    if (m_readonly) {
+        event->accept();
+        return;
+    }
+
     QPoint pixelsScrolled = event->pixelDelta();
     QPoint stepsScrolled = event->angleDelta();
 
@@ -659,14 +755,20 @@ void NotationViewInputController::mousePressEvent(QMouseEvent* event)
     EngravingItem* hitElement = nullptr;
     staff_idx_t hitStaffIndex = muse::nidx;
 
-    if (!m_readonly) {
-        INotationInteraction::HitElementContext context;
-        context.element = viewInteraction()->hitElement(logicPos, hitWidth());
-        context.staff = viewInteraction()->hitStaff(logicPos);
-        viewInteraction()->setHitElementContext(context);
+    INotationInteraction::HitElementContext context;
+    context.element = viewInteraction()->hitElement(logicPos, hitWidth());
+    context.staff = viewInteraction()->hitStaff(logicPos);
+    viewInteraction()->setHitElementContext(context);
 
-        hitElement = context.element;
-        hitStaffIndex = context.staff ? context.staff->idx() : muse::nidx;
+    hitElement = context.element;
+    hitStaffIndex = context.staff ? context.staff->idx() : muse::nidx;
+
+    if (m_readonly) {
+        if (button == Qt::LeftButton && isPlaybackPointerTarget(hitElement)) {
+            playbackController()->seekElement(hitElement);
+        }
+        event->accept();
+        return;
     }
 
     // note enter mode
@@ -1046,6 +1148,11 @@ bool NotationViewInputController::tryPercussionShortcut(QKeyEvent* event)
 
 void NotationViewInputController::mouseMoveEvent(QMouseEvent* event)
 {
+    if (m_readonly) {
+        event->accept();
+        return;
+    }
+
     if (m_mouseDownInfo.dragAction == MouseDownInfo::Nothing) {
         return;
     }
@@ -1190,6 +1297,12 @@ void NotationViewInputController::startDragElements(ElementType elementsType, co
 
 void NotationViewInputController::mouseReleaseEvent(QMouseEvent* event)
 {
+    if (m_readonly) {
+        m_mouseDownInfo.dragAction = MouseDownInfo::Nothing;
+        event->accept();
+        return;
+    }
+
     if (m_mouseDownInfo.dragAction == MouseDownInfo::Nothing) {
         return;
     }
@@ -1309,6 +1422,11 @@ void NotationViewInputController::handleLeftClickRelease(const QPointF& releaseP
 
 void NotationViewInputController::mouseDoubleClickEvent(QMouseEvent* event)
 {
+    if (m_readonly) {
+        event->accept();
+        return;
+    }
+
     if (m_view->isNoteEnterMode()) {
         return;
     }
@@ -1440,6 +1558,10 @@ bool NotationViewInputController::isAnchorEditingEvent(QKeyEvent* event) const
 
 bool NotationViewInputController::shortcutOverrideEvent(QKeyEvent* event)
 {
+    if (m_readonly) {
+        return false;
+    }
+
     auto key = event->key();
 
     const bool editTextKeysFound = key == Qt::Key_Return || key == Qt::Key_Enter;
@@ -1464,6 +1586,13 @@ bool NotationViewInputController::shortcutOverrideEvent(QKeyEvent* event)
 
 void NotationViewInputController::keyPressEvent(QKeyEvent* event)
 {
+    if (m_readonly) {
+        if (event->key() != Qt::Key_Space && event->key() != Qt::Key_Escape) {
+            event->accept();
+        }
+        return;
+    }
+
     auto key = event->key();
 
     if (startTextEditingAllowed() && (event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter)) {
@@ -1493,6 +1622,13 @@ void NotationViewInputController::keyPressEvent(QKeyEvent* event)
 
 void NotationViewInputController::keyReleaseEvent(QKeyEvent* event)
 {
+    if (m_readonly) {
+        if (event->key() != Qt::Key_Space && event->key() != Qt::Key_Escape) {
+            event->accept();
+        }
+        return;
+    }
+
     if (event->key() != Qt::Key_Shift) {
         return;
     }
@@ -1504,6 +1640,11 @@ void NotationViewInputController::keyReleaseEvent(QKeyEvent* event)
 
 void NotationViewInputController::inputMethodEvent(QInputMethodEvent* event)
 {
+    if (m_readonly) {
+        event->accept();
+        return;
+    }
+
     if (viewInteraction()->isTextEditingStarted()) {
         viewInteraction()->editText(event);
     }
@@ -1620,6 +1761,11 @@ void NotationViewInputController::dragEnterEvent(QDragEnterEvent* event)
 
 void NotationViewInputController::dragMoveEvent(QDragMoveEvent* event)
 {
+    if (m_readonly) {
+        event->ignore();
+        return;
+    }
+
     const QMimeData* mimeData = dragController()->mimeData(event);
     IF_ASSERT_FAILED(mimeData) {
         return;

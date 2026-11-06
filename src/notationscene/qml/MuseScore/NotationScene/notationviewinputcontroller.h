@@ -76,6 +76,7 @@ public:
     virtual muse::RectF fromLogical(const muse::RectF& r) const = 0;
 
     virtual bool isNoteEnterMode() const = 0;
+    virtual bool isMainView() const { return false; }
 
     virtual void showContextMenu(const ElementType& elementType, const QPointF& pos) = 0;
     virtual void hideContextMenu() = 0;
@@ -148,6 +149,7 @@ public:
 
     void initCanvasPos();
 
+    bool isReadOnly() const override;
     bool readonly() const;
     void setReadonly(bool readonly);
 
@@ -238,6 +240,7 @@ private:
     QList<int> m_possibleZoomPercentages;
 
     bool m_readonly = false;
+    bool m_readonlyLocked = false;
     bool m_isCanvasDragged = false;
     bool m_tripleClickPending = false;
 
