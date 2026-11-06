@@ -26,11 +26,9 @@
 #include <emscripten/val.h>
 #endif
 
-#include <algorithm>
 #include <unordered_map>
 #include <QTimer>
 
-#include "draw/types/transform.h"
 #include "global/io/file.h"
 #include "log.h"
 
@@ -465,33 +463,7 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
     score->doLayout();
     score->update();
 
-    const bool portraitLayout = m_playerLayoutState && m_playerLayoutState->portraitApplied;
-    if (portraitLayout) {
-        constexpr int PLAYER_CHROME_HEIGHT = 95;
-        const int scoreViewportHeight = viewportHeight > PLAYER_CHROME_HEIGHT
-                                        ? viewportHeight - PLAYER_CHROME_HEIGHT
-                                        : viewportHeight;
-        auto fitFirstPage = [notation, viewportWidth, scoreViewportHeight]() {
-            const engraving::Score* currentScore = notation->elements()->msScore();
-            if (!currentScore || currentScore->pages().empty()) {
-                return;
-            }
-            const engraving::MStyle& style = currentScore->style();
-            const double pageWidth = style.styleD(engraving::Sid::pageWidth) * engraving::DPI;
-            const double pageHeight = style.styleD(engraving::Sid::pageHeight) * engraving::DPI;
-            if (pageWidth <= 0.0 || pageHeight <= 0.0) {
-                return;
-            }
-            const double scale = std::min(viewportWidth / pageWidth, scoreViewportHeight / pageHeight);
-            const double x = (viewportWidth - pageWidth * scale) * 0.5;
-            const double y = (scoreViewportHeight - pageHeight * scale) * 0.5;
-            notation->viewState()->setMatrix(
-                muse::draw::Transform(scale, 0.0, 0.0, scale, x, y),
-                nullptr);
-        };
-        QTimer::singleShot(150, fitFirstPage);
-        QTimer::singleShot(650, fitFirstPage);
-    } else {
+    if (!portrait) {
         QTimer::singleShot(120, [this]() {
             dispatcher()->dispatch(muse::actions::ActionCode("command://notation/view/zoom-to-page-width"));
         });
