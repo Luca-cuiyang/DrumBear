@@ -55,6 +55,15 @@ using namespace mu::appjs;
 
 namespace mu::appjs::detail {
 struct PlayerLayoutState {
+    struct BoxState {
+        engraving::Box* box = nullptr;
+        double height = 0.0;
+        double topGap = 0.0;
+        double bottomGap = 0.0;
+        bool autoSize = true;
+        bool visible = true;
+    };
+
     struct BreakState {
         engraving::MeasureBase* item = nullptr;
         bool lineBreak = false;
@@ -86,13 +95,7 @@ struct PlayerLayoutState {
     bool showFrames = true;
     int viewMode = 0;
 
-    engraving::Box* titleBox = nullptr;
-    double titleHeight = 0.0;
-    double titleTopGap = 0.0;
-    double titleBottomGap = 0.0;
-    bool titleAutoSize = true;
-    bool titleVisible = true;
-
+    std::vector<BoxState> boxes;
     std::vector<BreakState> breaks;
     bool portraitApplied = false;
 };
@@ -332,13 +335,13 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         state->showFrames = score->showFrames();
         state->viewMode = static_cast<int>(notation->viewMode());
 
-        if (score->first() && score->first()->isVBox()) {
-            state->titleBox = static_cast<engraving::Box*>(score->first());
-            state->titleHeight = state->titleBox->boxHeight().val();
-            state->titleTopGap = state->titleBox->topGap().val();
-            state->titleBottomGap = state->titleBox->bottomGap().val();
-            state->titleAutoSize = state->titleBox->isAutoSizeEnabled();
-            state->titleVisible = state->titleBox->visible();
+        for (engraving::MeasureBase* item = score->first(); item && !item->isMeasure(); item = item->next()) {
+            if (!item->isVBox()) {
+                continue;
+            }
+            engraving::Box* box = static_cast<engraving::Box*>(item);
+            state->boxes.push_back({ box, box->boxHeight().val(), box->topGap().val(), box->bottomGap().val(),
+                                     box->isAutoSizeEnabled(), box->visible() });
         }
 
         for (engraving::MeasureBase* item = score->first(); item; item = item->next()) {
@@ -358,12 +361,12 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         constexpr double aspect = 844.0 / 390.0;
         const double pageHeightMm = pageWidthMm * aspect;
 
-        if (state.titleBox) {
-            state.titleBox->setVisible(false);
-            state.titleBox->setAutoSizeEnabled(false);
-            state.titleBox->setBoxHeight(engraving::Spatium(0.0));
-            state.titleBox->setTopGap(engraving::Spatium(0.0));
-            state.titleBox->setBottomGap(engraving::Spatium(0.0));
+        for (const detail::PlayerLayoutState::BoxState& boxState : state.boxes) {
+            boxState.box->setVisible(false);
+            boxState.box->setAutoSizeEnabled(false);
+            boxState.box->setBoxHeight(engraving::Spatium(0.0));
+            boxState.box->setTopGap(engraving::Spatium(0.0));
+            boxState.box->setBottomGap(engraving::Spatium(0.0));
         }
 
         std::unordered_map<engraving::Sid, engraving::PropertyValue> styles;
@@ -410,12 +413,12 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         state.portraitApplied = true;
         changed = true;
     } else if (!portrait && state.portraitApplied) {
-        if (state.titleBox) {
-            state.titleBox->setVisible(state.titleVisible);
-            state.titleBox->setAutoSizeEnabled(state.titleAutoSize);
-            state.titleBox->setBoxHeight(engraving::Spatium::fromAbsolute(state.titleHeight, state.spatium));
-            state.titleBox->setTopGap(engraving::Spatium::fromAbsolute(state.titleTopGap, state.spatium));
-            state.titleBox->setBottomGap(engraving::Spatium::fromAbsolute(state.titleBottomGap, state.spatium));
+        for (const detail::PlayerLayoutState::BoxState& boxState : state.boxes) {
+            boxState.box->setVisible(boxState.visible);
+            boxState.box->setAutoSizeEnabled(boxState.autoSize);
+            boxState.box->setBoxHeight(engraving::Spatium::fromAbsolute(boxState.height, state.spatium));
+            boxState.box->setTopGap(engraving::Spatium::fromAbsolute(boxState.topGap, state.spatium));
+            boxState.box->setBottomGap(engraving::Spatium::fromAbsolute(boxState.bottomGap, state.spatium));
         }
 
         std::unordered_map<engraving::Sid, engraving::PropertyValue> styles;
