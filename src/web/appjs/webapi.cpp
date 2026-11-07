@@ -397,6 +397,9 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         const double pageHeightMm = std::max(
             pageWidthMm * aspect,
             static_cast<double>(measureCount) * 24.0 + 10.0);
+        constexpr double spatiumMm = 4.5;
+        const double spatiumUnits = spatiumMm * engraving::DPMM;
+        const double printableWidthUnits = (pageWidthMm - 3.6) * MM_TO_INCH * engraving::DPI;
 
         for (const detail::PlayerLayoutState::BoxState& boxState : state.boxes) {
             boxState.box->setVisible(false);
@@ -417,13 +420,13 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         styles.emplace(engraving::Sid::pageOddTopMargin, 1.8 * MM_TO_INCH);
         styles.emplace(engraving::Sid::pageOddBottomMargin, 1.8 * MM_TO_INCH);
         styles.emplace(engraving::Sid::pageTwosided, false);
-        styles.emplace(engraving::Sid::spatium, 4.5 * engraving::DPMM);
+        styles.emplace(engraving::Sid::spatium, spatiumUnits);
         styles.emplace(engraving::Sid::staffUpperBorder, engraving::Spatium(0.5));
         styles.emplace(engraving::Sid::staffLowerBorder, engraving::Spatium(0.5));
         styles.emplace(engraving::Sid::minSystemDistance, engraving::Spatium(3.5));
         styles.emplace(engraving::Sid::maxSystemDistance, engraving::Spatium(4.0));
         styles.emplace(engraving::Sid::enableVerticalSpread, false);
-        styles.emplace(engraving::Sid::minMeasureWidth, engraving::Spatium(0.0));
+        styles.emplace(engraving::Sid::minMeasureWidth, engraving::Spatium(printableWidthUnits / spatiumUnits));
         styles.emplace(engraving::Sid::lastSystemFillLimit, 0.0);
         styles.emplace(engraving::Sid::enableIndentationOnFirstSystem, false);
         score->undoChangeStyleValues(std::move(styles));
