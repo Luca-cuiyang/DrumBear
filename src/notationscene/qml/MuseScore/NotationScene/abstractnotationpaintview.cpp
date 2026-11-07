@@ -1340,12 +1340,24 @@ bool AbstractNotationPaintView::fitPageToViewport()
         std::vector<engraving::System*>& systems = score->pages().front()->systems();
         if (!systems.empty()) {
             qreal maxSystemHeight = 0.0;
+            bool hasMultipleVoices = false;
             for (const engraving::System* system : systems) {
                 maxSystemHeight = std::max(
                     maxSystemHeight, system->canvasBoundingRect().height() * visualScale);
+                for (const engraving::MeasureBase* measure : system->measures()) {
+                    if (measure->isMeasure()
+                            && static_cast<const engraving::Measure*>(measure)->hasVoices(0)) {
+                        hasMultipleVoices = true;
+                        break;
+                    }
+                }
+                if (hasMultipleVoices) {
+                    break;
+                }
             }
             const qreal defaultRowHeight = height() / PORTRAIT_DEFAULT_ROWS;
-            if (maxSystemHeight + PORTRAIT_MIN_SYSTEM_GAP_PX > defaultRowHeight) {
+            if (hasMultipleVoices
+                    || maxSystemHeight + PORTRAIT_MIN_SYSTEM_GAP_PX > defaultRowHeight) {
                 m_portraitRowsPerPage = PORTRAIT_DENSE_ROWS;
             }
 
