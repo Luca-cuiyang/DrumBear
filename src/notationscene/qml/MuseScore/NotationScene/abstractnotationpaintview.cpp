@@ -1344,7 +1344,7 @@ bool AbstractNotationPaintView::fitPageToViewport()
     const qreal scale = visualScale;
     const qreal x = (width() - pageWidth * scale) * 0.5;
     const qreal y = verticalSystems
-                    ? 20.0
+                    ? 0.0
                     : (height() - pageHeight * scale) * 0.5;
     LOGI() << "DB_PLAYER_PAGE_FIT"
            << "view=" << width() << "x" << height()
