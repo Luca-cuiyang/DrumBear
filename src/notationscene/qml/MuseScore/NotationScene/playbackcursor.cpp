@@ -22,6 +22,7 @@
 
 #include "playbackcursor.h"
 
+#include <algorithm>
 #include <cmath>
 
 #include "draw/painter.h"
@@ -105,11 +106,15 @@ void PlaybackCursor::setNotation(INotationPtr notation)
 
     m_notation = notation;
     m_cache.clear();
+    m_rect = RectF();
 }
 
 void PlaybackCursor::move(muse::midi::tick_t tick)
 {
-    m_rect = resolveCursorRectByTick(tick);
+    const RectF resolvedRect = resolveCursorRectByTick(tick);
+    if (!resolvedRect.isNull()) {
+        m_rect = resolvedRect;
+    }
 }
 
 muse::RectF PlaybackCursor::resolveCursorRectByTick(int _tick) const
@@ -127,12 +132,14 @@ muse::RectF PlaybackCursor::resolveCursorRectByTick(int _tick) const
                : segmentStartX;
     };
 
-    const Fraction tick = Fraction::fromTicks(_tick);
+    const int scoreEndTick = score->endTick().ticks();
+    const int tickValue = std::clamp(_tick, 0, std::max(0, scoreEndTick - 1));
+    const Fraction tick = Fraction::fromTicks(tickValue);
     const double thickness = configuration()->playbackCursorThickness();
     const double length = configuration()->playbackCursorLength();
 
     if (m_cache.segment && tick >= m_cache.segmentStartTick && tick < m_cache.segmentEndTick) {
-        const double x = interpolateXByTicks(_tick, m_cache.segmentStartTick.ticks(), m_cache.segmentEndTick.ticks(),
+        const double x = interpolateXByTicks(tickValue, m_cache.segmentStartTick.ticks(), m_cache.segmentEndTick.ticks(),
                                              m_cache.segmentStartX, m_cache.segmentEndX);
         return calculateRect(x, score, m_cache.system, m_cache.systemBottomY, thickness, length);
     }
@@ -198,7 +205,7 @@ muse::RectF PlaybackCursor::resolveCursorRectByTick(int _tick) const
         m_cache.segmentStartX = segmentStartX;
         m_cache.segmentEndX = segmentEndX;
 
-        const double x = interpolateXByTicks(_tick, segmentStartTick.ticks(), segmentEndTick.ticks(),
+        const double x = interpolateXByTicks(tickValue, segmentStartTick.ticks(), segmentEndTick.ticks(),
                                              segmentStartX, segmentEndX);
         return calculateRect(x, score, system, m_cache.systemBottomY, thickness, length);
     }
