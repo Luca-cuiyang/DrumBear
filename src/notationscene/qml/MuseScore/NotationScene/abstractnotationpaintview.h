@@ -320,7 +320,6 @@ private:
     bool m_publishMode = false;
     bool m_portraitGrouped = false;
     int m_portraitGroupStart = -1;
-    int m_portraitRowsPerPage = 6;
     bool m_portraitScrollActive = false;
     int m_lastAcceptedKey = -1;
     bool m_isMainView = false;

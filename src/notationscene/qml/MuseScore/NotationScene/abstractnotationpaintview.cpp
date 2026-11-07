@@ -56,9 +56,7 @@ using namespace muse::draw;
 using namespace muse::actions;
 
 static constexpr qreal SCROLL_LIMIT_OFF_OVERSCROLL_FACTOR = 0.75;
-static constexpr int PORTRAIT_DEFAULT_ROWS = 6;
-static constexpr int PORTRAIT_DENSE_ROWS = 5;
-static constexpr qreal PORTRAIT_MIN_SYSTEM_GAP_PX = 24.0;
+static constexpr int PORTRAIT_ROWS_PER_PAGE = 5;
 static constexpr int PORTRAIT_SCROLL_UPDATE_INTERVAL_MS = 8;
 static constexpr qreal PORTRAIT_SCROLL_INTERPOLATION = 0.14;
 
@@ -1335,33 +1333,10 @@ bool AbstractNotationPaintView::fitPageToViewport()
     const qreal visualScale = verticalSystems
                               ? width() / pageWidth
                               : std::min(width() / pageWidth, height() / pageHeight);
-    m_portraitRowsPerPage = PORTRAIT_DEFAULT_ROWS;
     if (verticalSystems && m_portraitGrouped) {
         std::vector<engraving::System*>& systems = score->pages().front()->systems();
         if (!systems.empty()) {
-            qreal maxSystemHeight = 0.0;
-            bool hasMultipleVoices = false;
-            for (const engraving::System* system : systems) {
-                maxSystemHeight = std::max(
-                    maxSystemHeight, system->canvasBoundingRect().height() * visualScale);
-                for (const engraving::MeasureBase* measure : system->measures()) {
-                    if (measure->isMeasure()
-                            && static_cast<const engraving::Measure*>(measure)->hasVoices(0)) {
-                        hasMultipleVoices = true;
-                        break;
-                    }
-                }
-                if (hasMultipleVoices) {
-                    break;
-                }
-            }
-            const qreal defaultRowHeight = height() / PORTRAIT_DEFAULT_ROWS;
-            if (hasMultipleVoices
-                    || maxSystemHeight + PORTRAIT_MIN_SYSTEM_GAP_PX > defaultRowHeight) {
-                m_portraitRowsPerPage = PORTRAIT_DENSE_ROWS;
-            }
-
-            const qreal rowPitch = height() / m_portraitRowsPerPage / visualScale;
+            const qreal rowPitch = height() / PORTRAIT_ROWS_PER_PAGE / visualScale;
             const qreal firstSystemY = systems.front()->y();
             for (size_t i = 0; i < systems.size(); ++i) {
                 systems[i]->setPos(systems[i]->x(), firstSystemY + rowPitch * static_cast<qreal>(i));
@@ -1780,7 +1755,7 @@ void AbstractNotationPaintView::alignPortraitGroup(bool immediate)
     }
 
     const std::vector<engraving::System*>& systems = score->pages().front()->systems();
-    const size_t rowsPerPage = static_cast<size_t>(m_portraitRowsPerPage);
+    constexpr size_t rowsPerPage = PORTRAIT_ROWS_PER_PAGE;
     if (systems.empty() || systems.size() <= rowsPerPage) {
         setMatrix(m_portraitBaseMatrix);
         m_portraitGroupStart = 0;
