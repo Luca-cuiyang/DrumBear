@@ -417,7 +417,7 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         styles.emplace(engraving::Sid::pageOddTopMargin, 1.8 * MM_TO_INCH);
         styles.emplace(engraving::Sid::pageOddBottomMargin, 1.8 * MM_TO_INCH);
         styles.emplace(engraving::Sid::pageTwosided, false);
-        styles.emplace(engraving::Sid::spatium, 2.33 * engraving::DPMM);
+        styles.emplace(engraving::Sid::spatium, 4.5 * engraving::DPMM);
         styles.emplace(engraving::Sid::staffUpperBorder, engraving::Spatium(0.5));
         styles.emplace(engraving::Sid::staffLowerBorder, engraving::Spatium(0.5));
         styles.emplace(engraving::Sid::minSystemDistance, engraving::Spatium(3.0));
