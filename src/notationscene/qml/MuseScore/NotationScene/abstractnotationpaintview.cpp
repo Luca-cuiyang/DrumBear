@@ -1728,7 +1728,16 @@ void AbstractNotationPaintView::updatePlaybackCursorInterpolated()
     const qint64 elapsed = m_elapsedTimer.nsecsElapsed();
     const secs_t deltaSecs = (elapsed - m_lastPlaybackPositionUpdateTimeNs) / 1e9;
     const secs_t estimatedSecs = m_lastPlaybackPosition + deltaSecs;
-    const midi::tick_t estimatedTick = playback->secToTick(estimatedSecs);
+    midi::tick_t estimatedTick = playback->secToTick(estimatedSecs);
+
+    if (playback->isLoopEnabled()) {
+        const LoopBoundaries& loop = playback->loopBoundaries();
+        const midi::tick_t loopInTick = loop.loopInTick.ticks();
+        const midi::tick_t loopOutTick = loop.loopOutTick.ticks();
+        if (loopInTick < loopOutTick) {
+            estimatedTick = std::clamp(estimatedTick, loopInTick, loopOutTick - 1);
+        }
+    }
 
     movePlaybackCursor(estimatedTick);
 }
