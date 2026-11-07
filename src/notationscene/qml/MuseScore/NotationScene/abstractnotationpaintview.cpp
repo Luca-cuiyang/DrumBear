@@ -1593,6 +1593,11 @@ void AbstractNotationPaintView::setPortraitGrouped(bool grouped)
     }
 }
 
+int AbstractNotationPaintView::portraitGroupStart() const
+{
+    return m_portraitGroupStart;
+}
+
 bool AbstractNotationPaintView::readonly() const
 {
     return m_readonly;
@@ -1722,6 +1727,7 @@ void AbstractNotationPaintView::alignPortraitGroup()
     if (systems.empty() || systems.size() <= 6) {
         setMatrix(m_portraitBaseMatrix);
         m_portraitGroupStart = 0;
+        emit portraitGroupChanged();
         return;
     }
 
@@ -1752,6 +1758,7 @@ void AbstractNotationPaintView::alignPortraitGroup()
                   m_portraitBaseMatrix.dx(),
                   m_portraitBaseMatrix.dy() - offset * scale));
     m_portraitGroupStart = static_cast<int>(groupStart);
+    emit portraitGroupChanged();
 }
 
 void AbstractNotationPaintView::movePlaybackCursor(muse::midi::tick_t tick)
