@@ -1593,9 +1593,24 @@ void AbstractNotationPaintView::setPortraitGrouped(bool grouped)
     }
 }
 
-int AbstractNotationPaintView::portraitGroupStart() const
+void AbstractNotationPaintView::revealPlaybackCursor(const engraving::EngravingItem* element)
 {
-    return m_portraitGroupStart;
+    if (!element || !m_playbackCursor || !notationPlayback()) {
+        return;
+    }
+
+    const RetVal<midi::tick_t> tick = notationPlayback()->playPositionTickByElement(element);
+    if (!tick.ret) {
+        return;
+    }
+
+    m_playbackCursor->setVisible(true);
+    if (m_playbackCursorItem) {
+        m_playbackCursorItem->setVisible(true);
+    }
+
+    movePlaybackCursor(tick.val);
+    scheduleRedraw();
 }
 
 bool AbstractNotationPaintView::readonly() const
@@ -1727,7 +1742,6 @@ void AbstractNotationPaintView::alignPortraitGroup()
     if (systems.empty() || systems.size() <= 6) {
         setMatrix(m_portraitBaseMatrix);
         m_portraitGroupStart = 0;
-        emit portraitGroupChanged();
         return;
     }
 
@@ -1758,7 +1772,6 @@ void AbstractNotationPaintView::alignPortraitGroup()
                   m_portraitBaseMatrix.dx(),
                   m_portraitBaseMatrix.dy() - offset * scale));
     m_portraitGroupStart = static_cast<int>(groupStart);
-    emit portraitGroupChanged();
 }
 
 void AbstractNotationPaintView::movePlaybackCursor(muse::midi::tick_t tick)

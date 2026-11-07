@@ -95,6 +95,8 @@ public:
 
     virtual QQuickItem* asItem() = 0;
 
+    virtual void revealPlaybackCursor(const engraving::EngravingItem* element) = 0;
+
     virtual void scheduleRedraw(const muse::RectF& rect = muse::RectF()) = 0;
 };
 

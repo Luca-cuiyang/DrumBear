@@ -67,6 +67,8 @@ public:
 
     MOCK_METHOD(QQuickItem*, asItem, (), (override));
 
+    MOCK_METHOD(void, revealPlaybackCursor, (const engraving::EngravingItem*), (override));
+
     MOCK_METHOD(void, scheduleRedraw, (const muse::RectF&), (override));
 };
 }

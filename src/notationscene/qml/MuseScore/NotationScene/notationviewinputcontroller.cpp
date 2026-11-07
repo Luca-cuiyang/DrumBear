@@ -766,6 +766,7 @@ void NotationViewInputController::mousePressEvent(QMouseEvent* event)
     if (m_readonly) {
         if (button == Qt::LeftButton && isPlaybackPointerTarget(hitElement)) {
             playbackController()->seekElement(hitElement);
+            m_view->revealPlaybackCursor(hitElement);
         }
         event->accept();
         return;

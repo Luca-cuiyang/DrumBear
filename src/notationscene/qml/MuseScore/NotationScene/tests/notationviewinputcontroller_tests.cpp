@@ -277,6 +277,47 @@ TEST_F(NotationViewInputControllerTests, DISABLED_WheelEvent_Zoom)
     m_controller->wheelEvent(make_wheelEvent(QPoint(), QPoint(0, 120), Qt::ControlModifier, QPointF(100, 100)));
 }
 
+TEST_F(NotationViewInputControllerTests, Mouse_Press_Readonly_Note_Seeks_And_Reveals_Cursor)
+{
+    engraving::MasterScore* score = engraving::ScoreRW::readScore(TEST_SCORE_PATH);
+    INotationInteraction::HitElementContext context = hitContext(score, { ElementType::NOTE });
+
+    m_controller->setReadonly(true);
+
+    EXPECT_CALL(*m_interaction, hitElement(_, _))
+    .WillOnce(Return(context.element));
+    EXPECT_CALL(*m_interaction, hitStaff(_))
+    .WillOnce(Return(context.element->staff()));
+    EXPECT_CALL(*m_interaction, setHitElementContext(context))
+    .Times(1);
+    EXPECT_CALL(*m_playbackController, seekElement(context.element, FLUSH_SOUND))
+    .Times(1);
+    EXPECT_CALL(m_view, revealPlaybackCursor(context.element))
+    .Times(1);
+
+    m_controller->mousePressEvent(make_mousePressEvent(Qt::LeftButton, Qt::NoModifier, QPointF(100, 100)));
+}
+
+TEST_F(NotationViewInputControllerTests, Mouse_Press_Readonly_Blank_Does_Not_Move_Cursor)
+{
+    INotationInteraction::HitElementContext context;
+
+    m_controller->setReadonly(true);
+
+    EXPECT_CALL(*m_interaction, hitElement(_, _))
+    .WillOnce(Return(nullptr));
+    EXPECT_CALL(*m_interaction, hitStaff(_))
+    .WillOnce(Return(nullptr));
+    EXPECT_CALL(*m_interaction, setHitElementContext(context))
+    .Times(1);
+    EXPECT_CALL(*m_playbackController, seekElement(_, _))
+    .Times(0);
+    EXPECT_CALL(m_view, revealPlaybackCursor(_))
+    .Times(0);
+
+    m_controller->mousePressEvent(make_mousePressEvent(Qt::LeftButton, Qt::NoModifier, QPointF(100, 100)));
+}
+
 /**
  * @brief Mouse_Press_Range_Start_Drag_From_Selected_Element
  * @details User pressed left mouse button on already selected note

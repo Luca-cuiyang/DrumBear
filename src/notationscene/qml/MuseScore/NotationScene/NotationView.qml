@@ -172,16 +172,6 @@ FocusScope {
                     anchors.fill: parent
                     portraitGrouped: root.compactPortraitPlayer
 
-                    Rectangle {
-                        anchors.top: parent.top
-                        anchors.left: parent.left
-                        anchors.right: parent.right
-                        height: 35
-                        z: 1
-                        visible: root.compactPortraitPlayer && notationView.portraitGroupStart > 0
-                        color: "#ffffff"
-                    }
-
                     property NavigationPanel navigationPanel: NavigationPanel {
                         name: "ScoreView"
                         section: navSec

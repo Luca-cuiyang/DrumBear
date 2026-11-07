@@ -70,7 +70,6 @@ class AbstractNotationPaintView : public muse::uicomponents::QuickPaintedView, p
     Q_PROPERTY(bool isMainView READ isMainView WRITE setIsMainView NOTIFY isMainViewChanged)
     Q_PROPERTY(bool hasNotation READ hasNotation NOTIFY hasNotationChanged)
     Q_PROPERTY(bool portraitGrouped READ portraitGrouped WRITE setPortraitGrouped NOTIFY portraitGroupedChanged)
-    Q_PROPERTY(int portraitGroupStart READ portraitGroupStart NOTIFY portraitGroupChanged)
 
     Q_PROPERTY(bool readOnly READ readonly WRITE setReadonly NOTIFY readonlyChanged)
 
@@ -168,7 +167,7 @@ public:
     bool hasNotation() const;
     bool portraitGrouped() const;
     void setPortraitGrouped(bool grouped);
-    int portraitGroupStart() const;
+    void revealPlaybackCursor(const engraving::EngravingItem* element) override;
 
     bool readonly() const;
     void setReadonly(bool readonly);
@@ -197,7 +196,6 @@ signals:
     void isMainViewChanged(bool isMainView);
     void hasNotationChanged();
     void portraitGroupedChanged();
-    void portraitGroupChanged();
 
     void readonlyChanged();
 
