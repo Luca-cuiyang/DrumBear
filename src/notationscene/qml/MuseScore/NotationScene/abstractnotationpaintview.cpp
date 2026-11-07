@@ -57,6 +57,7 @@ using namespace muse::actions;
 
 static constexpr qreal SCROLL_LIMIT_OFF_OVERSCROLL_FACTOR = 0.75;
 static constexpr int PORTRAIT_ROWS_PER_PAGE = 5;
+static constexpr int PORTRAIT_SCROLL_ROWS = 2;
 static constexpr int PORTRAIT_SCROLL_UPDATE_INTERVAL_MS = 8;
 static constexpr qreal PORTRAIT_SCROLL_INTERPOLATION = 0.14;
 
@@ -1772,7 +1773,7 @@ void AbstractNotationPaintView::alignPortraitGroup(bool immediate)
         }
     }
 
-    const size_t advanceRows = rowsPerPage > 3 ? rowsPerPage - 3 : 1;
+    constexpr size_t advanceRows = PORTRAIT_SCROLL_ROWS;
     const size_t triggerRow = advanceRows + 1;
     const size_t maxGroupStart = systems.size() - rowsPerPage;
     const size_t groupStart = std::min(
