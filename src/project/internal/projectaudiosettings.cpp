@@ -31,6 +31,7 @@
 #include <QCryptographicHash>
 
 #include "types/bytearray.h"
+#include "global/io/file.h"
 
 #include "audio/common/audioutils.h"
 #include "vst/vstpluginattrs.h"
@@ -81,11 +82,22 @@ static QString extractBundledAudioToCache(const QString& name, const muse::ByteA
         filePath += "." + suffix;
     }
 
+#ifdef Q_OS_WASM
+    const Ret ret = io::File::writeFile(
+        io::path_t(filePath.toStdString()),
+        ByteArray::fromQByteArrayNoCopy(raw));
+    if (!ret) {
+        return {};
+    }
+#else
     QFile file(filePath);
     if (file.open(QIODevice::WriteOnly)) {
         file.write(raw);
         file.close();
+    } else {
+        return {};
     }
+#endif
     return filePath;
 }
 
