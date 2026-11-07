@@ -301,11 +301,18 @@ std::string WebApi::playerLayoutDiagnostics() const
     const double pageHeightMm = style.styleD(engraving::Sid::pageHeight) * 25.4;
     const double printableWidthMm = style.styleD(engraving::Sid::pagePrintableWidth) * 25.4;
     const double spatiumMm = style.styleD(engraving::Sid::spatium) / engraving::DPMM;
+    double systemPitch = 0.0;
+    if (pages > 0) {
+        const std::vector<engraving::System*>& pageSystems = score->pages().front()->systems();
+        if (pageSystems.size() > 1) {
+            systemPitch = pageSystems[1]->y() - pageSystems[0]->y();
+        }
+    }
 
     return QStringLiteral(
         "{\"pages\":%1,\"systems\":%2,\"measures\":%3,"
         "\"pageWidthMm\":%4,\"pageHeightMm\":%5,"
-        "\"printableWidthMm\":%6,\"spatiumMm\":%7}")
+        "\"printableWidthMm\":%6,\"spatiumMm\":%7,\"systemPitch\":%8}")
         .arg(pages)
         .arg(systems)
         .arg(measures)
@@ -313,6 +320,7 @@ std::string WebApi::playerLayoutDiagnostics() const
         .arg(pageHeightMm, 0, 'f', 3)
         .arg(printableWidthMm, 0, 'f', 3)
         .arg(spatiumMm, 0, 'f', 3)
+        .arg(systemPitch, 0, 'f', 3)
         .toStdString();
 }
 
