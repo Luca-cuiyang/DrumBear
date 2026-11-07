@@ -56,6 +56,9 @@ using namespace muse::draw;
 using namespace muse::actions;
 
 static constexpr qreal SCROLL_LIMIT_OFF_OVERSCROLL_FACTOR = 0.75;
+static constexpr int PORTRAIT_DEFAULT_ROWS = 6;
+static constexpr int PORTRAIT_DENSE_ROWS = 5;
+static constexpr qreal PORTRAIT_MIN_SYSTEM_GAP_PX = 24.0;
 static constexpr int PORTRAIT_SCROLL_UPDATE_INTERVAL_MS = 8;
 static constexpr qreal PORTRAIT_SCROLL_INTERPOLATION = 0.14;
 
@@ -1332,10 +1335,21 @@ bool AbstractNotationPaintView::fitPageToViewport()
     const qreal visualScale = verticalSystems
                               ? width() / pageWidth
                               : std::min(width() / pageWidth, height() / pageHeight);
+    m_portraitRowsPerPage = PORTRAIT_DEFAULT_ROWS;
     if (verticalSystems && m_portraitGrouped) {
         std::vector<engraving::System*>& systems = score->pages().front()->systems();
         if (!systems.empty()) {
-            const qreal rowPitch = 124.0 / visualScale;
+            qreal maxSystemHeight = 0.0;
+            for (const engraving::System* system : systems) {
+                maxSystemHeight = std::max(
+                    maxSystemHeight, system->canvasBoundingRect().height() * visualScale);
+            }
+            const qreal defaultRowHeight = height() / PORTRAIT_DEFAULT_ROWS;
+            if (maxSystemHeight + PORTRAIT_MIN_SYSTEM_GAP_PX > defaultRowHeight) {
+                m_portraitRowsPerPage = PORTRAIT_DENSE_ROWS;
+            }
+
+            const qreal rowPitch = height() / m_portraitRowsPerPage / visualScale;
             const qreal firstSystemY = systems.front()->y();
             for (size_t i = 0; i < systems.size(); ++i) {
                 systems[i]->setPos(systems[i]->x(), firstSystemY + rowPitch * static_cast<qreal>(i));
@@ -1754,7 +1768,8 @@ void AbstractNotationPaintView::alignPortraitGroup(bool immediate)
     }
 
     const std::vector<engraving::System*>& systems = score->pages().front()->systems();
-    if (systems.empty() || systems.size() <= 6) {
+    const size_t rowsPerPage = static_cast<size_t>(m_portraitRowsPerPage);
+    if (systems.empty() || systems.size() <= rowsPerPage) {
         setMatrix(m_portraitBaseMatrix);
         m_portraitGroupStart = 0;
         m_portraitScrollActive = false;
@@ -1770,9 +1785,11 @@ void AbstractNotationPaintView::alignPortraitGroup(bool immediate)
         }
     }
 
-    const size_t maxGroupStart = systems.size() - 6;
+    const size_t advanceRows = rowsPerPage > 3 ? rowsPerPage - 3 : 1;
+    const size_t triggerRow = advanceRows + 1;
+    const size_t maxGroupStart = systems.size() - rowsPerPage;
     const size_t groupStart = std::min(
-        currentSystem < 4 ? 0 : ((currentSystem - 1) / 3) * 3,
+        currentSystem < triggerRow ? 0 : ((currentSystem - 1) / advanceRows) * advanceRows,
         maxGroupStart);
     if (m_portraitGroupStart != static_cast<int>(groupStart)) {
         m_portraitGroupStart = static_cast<int>(groupStart);
