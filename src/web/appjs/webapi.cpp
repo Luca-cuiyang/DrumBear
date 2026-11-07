@@ -73,6 +73,7 @@ struct PlayerLayoutState {
         bool pageBreak = false;
         bool sectionBreak = false;
         bool noBreak = false;
+        double measureStretch = 1.0;
     };
 
     engraving::Score* score = nullptr;
@@ -92,6 +93,7 @@ struct PlayerLayoutState {
     double maxSystemDistance = 0.0;
     double lastSystemFillLimit = 0.0;
     bool firstSystemIndentation = false;
+    bool generateClef = true;
     bool pageTwosided = false;
     bool verticalSpread = false;
     bool backgroundUseColor = true;
@@ -349,6 +351,7 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         state->maxSystemDistance = style.styleAbsolute(engraving::Sid::maxSystemDistance);
         state->lastSystemFillLimit = style.styleD(engraving::Sid::lastSystemFillLimit);
         state->firstSystemIndentation = style.styleB(engraving::Sid::enableIndentationOnFirstSystem);
+        state->generateClef = style.styleB(engraving::Sid::genClef);
         state->pageTwosided = style.styleB(engraving::Sid::pageTwosided);
         state->verticalSpread = style.styleB(engraving::Sid::enableVerticalSpread);
         state->backgroundUseColor = notationConfiguration()->backgroundUseColor();
@@ -368,8 +371,11 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         }
 
         for (engraving::MeasureBase* item = score->first(); item; item = item->next()) {
+            const double measureStretch = item->isMeasure()
+                                          ? static_cast<engraving::Measure*>(item)->userStretch()
+                                          : 1.0;
             state->breaks.push_back({ item, item->lineBreak(), item->pageBreak(), item->sectionBreak(),
-                                      item->noBreak() });
+                                      item->noBreak(), measureStretch });
         }
 
         m_playerLayoutState = std::move(state);
@@ -429,7 +435,13 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         styles.emplace(engraving::Sid::minMeasureWidth, engraving::Spatium(printableWidthUnits / spatiumUnits));
         styles.emplace(engraving::Sid::lastSystemFillLimit, 0.0);
         styles.emplace(engraving::Sid::enableIndentationOnFirstSystem, false);
+        styles.emplace(engraving::Sid::genClef, false);
         score->undoChangeStyleValues(std::move(styles));
+        for (const detail::PlayerLayoutState::BreakState& item : state.breaks) {
+            if (item.item->isMeasure()) {
+                static_cast<engraving::Measure*>(item.item)->setUserStretch(3.0);
+            }
+        }
         notationConfiguration()->setBackgroundUseColor(true);
         notationConfiguration()->setBackgroundColor(Qt::white);
         notationConfiguration()->setNotationColor(Qt::black);
@@ -470,6 +482,7 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         styles.emplace(engraving::Sid::enableVerticalSpread, state.verticalSpread);
         styles.emplace(engraving::Sid::lastSystemFillLimit, state.lastSystemFillLimit);
         styles.emplace(engraving::Sid::enableIndentationOnFirstSystem, state.firstSystemIndentation);
+        styles.emplace(engraving::Sid::genClef, state.generateClef);
         score->undoChangeStyleValues(std::move(styles));
         notationConfiguration()->setBackgroundColor(state.backgroundColor);
         notationConfiguration()->setBackgroundUseColor(state.backgroundUseColor);
@@ -482,6 +495,9 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
             item.item->setPageBreak(item.pageBreak);
             item.item->setSectionBreak(item.sectionBreak);
             item.item->setNoBreak(item.noBreak);
+            if (item.item->isMeasure()) {
+                static_cast<engraving::Measure*>(item.item)->setUserStretch(item.measureStretch);
+            }
             item.item->cleanupLayoutBreaks(false);
         }
         state.portraitApplied = false;
