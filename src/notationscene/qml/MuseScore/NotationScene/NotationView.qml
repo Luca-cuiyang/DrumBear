@@ -177,7 +177,7 @@ FocusScope {
                         anchors.left: parent.left
                         anchors.right: parent.right
                         height: 35
-                        z: 50
+                        z: 1
                         visible: root.compactPortraitPlayer && notationView.portraitGroupStart > 0
                         color: "#ffffff"
                     }
@@ -218,6 +218,7 @@ FocusScope {
 
                     Rectangle {
                         id: playbackCursor
+                        z: 10
 
                         Component.onCompleted: {
                             notationView.setPlaybackCursorItem(playbackCursor)
