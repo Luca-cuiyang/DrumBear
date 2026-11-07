@@ -448,11 +448,11 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         styles.emplace(engraving::Sid::enableVerticalSpread, false);
         styles.emplace(engraving::Sid::minMeasureWidth, engraving::Spatium(printableWidthUnits / spatiumUnits));
         styles.emplace(engraving::Sid::lastSystemFillLimit, 0.0);
-        styles.emplace(engraving::Sid::tempoFontSize, std::max(8.0, state.tempoFontSize - 1.0));
+        styles.emplace(engraving::Sid::tempoFontSize, std::max(7.0, state.tempoFontSize - 3.0));
         styles.emplace(engraving::Sid::tempoChangeFontSize, std::max(
-                           8.0, state.tempoChangeFontSize - 1.0));
+                           7.0, state.tempoChangeFontSize - 3.0));
         styles.emplace(engraving::Sid::stickingFontSize, std::max(
-                           8.0, state.stickingFontSize - 1.0));
+                           7.0, state.stickingFontSize - 3.0));
         styles.emplace(engraving::Sid::enableIndentationOnFirstSystem, false);
         styles.emplace(engraving::Sid::genClef, false);
         score->undoChangeStyleValues(std::move(styles));
