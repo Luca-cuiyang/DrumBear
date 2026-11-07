@@ -56,6 +56,8 @@ using namespace muse::draw;
 using namespace muse::actions;
 
 static constexpr qreal SCROLL_LIMIT_OFF_OVERSCROLL_FACTOR = 0.75;
+static constexpr int PORTRAIT_SCROLL_UPDATE_INTERVAL_MS = 8;
+static constexpr qreal PORTRAIT_SCROLL_INTERPOLATION = 0.14;
 
 AbstractNotationPaintView::AbstractNotationPaintView(QQuickItem* parent)
     : muse::uicomponents::QuickPaintedView(parent), muse::Contextable(muse::iocCtxForQmlObject(this))
@@ -1356,7 +1358,7 @@ bool AbstractNotationPaintView::fitPageToViewport()
     setMatrix(m_portraitBaseMatrix);
     if (m_portraitGrouped) {
         m_portraitGroupStart = -1;
-        alignPortraitGroup();
+        alignPortraitGroup(true);
     }
     return true;
 }
@@ -1587,9 +1589,10 @@ void AbstractNotationPaintView::setPortraitGrouped(bool grouped)
 
     m_portraitGrouped = grouped;
     m_portraitGroupStart = -1;
+    m_portraitScrollActive = false;
     emit portraitGroupedChanged();
     if (m_portraitGrouped) {
-        alignPortraitGroup();
+        alignPortraitGroup(true);
     }
 }
 
@@ -1609,7 +1612,7 @@ void AbstractNotationPaintView::revealPlaybackCursor(const engraving::EngravingI
         m_playbackCursorItem->setVisible(true);
     }
 
-    movePlaybackCursor(tick.val);
+    movePlaybackCursor(tick.val, true);
     scheduleRedraw();
 }
 
@@ -1691,11 +1694,13 @@ void AbstractNotationPaintView::onPlayingChanged()
 {
     TRACEFUNC;
 
-    bool isPlaying = globalContext()->playbackState()->isPlaying();
-    m_playbackCursor->setVisible(isPlaying);
+    const bool isPlaying = globalContext()->playbackState()->isPlaying();
+    const bool keepPortraitCursorVisible = m_portraitGrouped && m_playbackCursor->visible();
+    const bool showPlaybackCursor = isPlaying || keepPortraitCursorVisible;
+    m_playbackCursor->setVisible(showPlaybackCursor);
 
     if (m_playbackCursorItem) {
-        m_playbackCursorItem->setVisible(isPlaying);
+        m_playbackCursorItem->setVisible(showPlaybackCursor);
     }
 
     m_autoScrollEnabled = true;
@@ -1705,7 +1710,8 @@ void AbstractNotationPaintView::onPlayingChanged()
         m_lastPlaybackPosition = globalContext()->playbackState()->playbackPosition();
         m_lastPlaybackPositionUpdateTimeNs = m_elapsedTimer.nsecsElapsed();
         updatePlaybackCursorInterpolated();
-        m_updatePlaybackCursorInterpolatedTimer.start(23); // ~43 FPS (1024 buffer + 44100)
+        m_updatePlaybackCursorInterpolatedTimer.start(
+            m_portraitGrouped ? PORTRAIT_SCROLL_UPDATE_INTERVAL_MS : 23);
     } else {
         m_updatePlaybackCursorInterpolatedTimer.stop();
         scheduleRedraw();
@@ -1727,7 +1733,7 @@ void AbstractNotationPaintView::updatePlaybackCursorInterpolated()
     movePlaybackCursor(estimatedTick);
 }
 
-void AbstractNotationPaintView::alignPortraitGroup()
+void AbstractNotationPaintView::alignPortraitGroup(bool immediate)
 {
     if (!m_portraitGrouped || !m_notation) {
         return;
@@ -1742,6 +1748,7 @@ void AbstractNotationPaintView::alignPortraitGroup()
     if (systems.empty() || systems.size() <= 6) {
         setMatrix(m_portraitBaseMatrix);
         m_portraitGroupStart = 0;
+        m_portraitScrollActive = false;
         return;
     }
 
@@ -1758,23 +1765,53 @@ void AbstractNotationPaintView::alignPortraitGroup()
     const size_t groupStart = std::min(
         currentSystem < 4 ? 0 : ((currentSystem - 1) / 3) * 3,
         maxGroupStart);
-    if (m_portraitGroupStart == static_cast<int>(groupStart)) {
+    if (m_portraitGroupStart != static_cast<int>(groupStart)) {
+        m_portraitGroupStart = static_cast<int>(groupStart);
+        m_portraitScrollActive = true;
+    } else if (!m_portraitScrollActive) {
         return;
     }
 
     const qreal offset = systems[groupStart]->y() - systems.front()->y();
     const qreal scale = m_portraitBaseMatrix.m11();
-    setMatrix(muse::draw::Transform(
-                  scale,
-                  m_portraitBaseMatrix.m12(),
-                  m_portraitBaseMatrix.m21(),
-                  m_portraitBaseMatrix.m22(),
-                  m_portraitBaseMatrix.dx(),
-                  m_portraitBaseMatrix.dy() - offset * scale));
-    m_portraitGroupStart = static_cast<int>(groupStart);
+    const qreal targetY = m_portraitBaseMatrix.dy() - offset * scale;
+    if (immediate) {
+        m_portraitScrollActive = false;
+        setMatrix(muse::draw::Transform(
+                      scale,
+                      m_portraitBaseMatrix.m12(),
+                      m_portraitBaseMatrix.m21(),
+                      m_portraitBaseMatrix.m22(),
+                      m_portraitBaseMatrix.dx(),
+                      targetY));
+        return;
+    }
+
+    const qreal delta = targetY - m_matrix.dy();
+    if (std::abs(delta) < 0.15) {
+        m_portraitScrollActive = false;
+        setMatrix(muse::draw::Transform(
+                      scale,
+                      m_portraitBaseMatrix.m12(),
+                      m_portraitBaseMatrix.m21(),
+                      m_portraitBaseMatrix.m22(),
+                      m_portraitBaseMatrix.dx(),
+                      targetY));
+        return;
+    }
+
+    Transform oldMatrix = m_matrix;
+    m_matrix = muse::draw::Transform(
+        scale,
+        m_portraitBaseMatrix.m12(),
+        m_portraitBaseMatrix.m21(),
+        m_portraitBaseMatrix.m22(),
+        m_portraitBaseMatrix.dx(),
+        m_matrix.dy() + delta * PORTRAIT_SCROLL_INTERPOLATION);
+    onMatrixChanged(oldMatrix, m_matrix, false);
 }
 
-void AbstractNotationPaintView::movePlaybackCursor(muse::midi::tick_t tick)
+void AbstractNotationPaintView::movePlaybackCursor(muse::midi::tick_t tick, bool snapPortraitScroll)
 {
     TRACEFUNC;
 
@@ -1793,7 +1830,7 @@ void AbstractNotationPaintView::movePlaybackCursor(muse::midi::tick_t tick)
     }
 
     if (m_portraitGrouped) {
-        alignPortraitGroup();
+        alignPortraitGroup(snapPortraitScroll);
         return;
     }
 

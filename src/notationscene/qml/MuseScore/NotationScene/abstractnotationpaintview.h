@@ -280,12 +280,12 @@ private:
 
     void onPlayingChanged();
     void updatePlaybackCursorInterpolated();
-    void movePlaybackCursor(muse::midi::tick_t tick);
+    void movePlaybackCursor(muse::midi::tick_t tick, bool snapPortraitScroll = false);
     void refreshPlaybackCursorStyle();
     bool shouldAdjustCanvasVerticallyDuringPlayback(const muse::RectF& cursorRect);
 
     void onPlaybackCursorRectChanged();
-    void alignPortraitGroup();
+    void alignPortraitGroup(bool immediate = false);
 
     void updateLoopMarkers();
     void updateShadowNoteVisibility();
@@ -320,6 +320,7 @@ private:
     bool m_publishMode = false;
     bool m_portraitGrouped = false;
     int m_portraitGroupStart = -1;
+    bool m_portraitScrollActive = false;
     int m_lastAcceptedKey = -1;
     bool m_isMainView = false;
 
