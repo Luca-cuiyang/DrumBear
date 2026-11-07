@@ -85,7 +85,7 @@ static QString extractBundledAudioToCache(const QString& name, const muse::ByteA
 #ifdef Q_OS_WASM
     const Ret ret = io::File::writeFile(
         io::path_t(filePath.toStdString()),
-        ByteArray::fromQByteArrayNoCopy(raw));
+        ByteArray::fromQByteArray(raw));
     if (!ret) {
         return {};
     }
