@@ -1724,7 +1724,9 @@ void AbstractNotationPaintView::alignPortraitGroup()
     }
 
     const size_t maxGroupStart = systems.size() - 6;
-    const size_t groupStart = std::min((currentSystem / 3) * 3, maxGroupStart);
+    const size_t groupStart = std::min(
+        currentSystem < 4 ? 0 : ((currentSystem - 1) / 3) * 3,
+        maxGroupStart);
     if (m_portraitGroupStart == static_cast<int>(groupStart)) {
         return;
     }
