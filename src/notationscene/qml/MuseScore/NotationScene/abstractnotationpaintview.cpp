@@ -1326,20 +1326,18 @@ bool AbstractNotationPaintView::fitPageToViewport()
         return false;
     }
 
-    const qreal guiScaling = notationContextConfiguration()->guiScaling();
     const bool verticalSystems = score->layoutMode() == engraving::LayoutMode::SYSTEM;
     const qreal visualScale = verticalSystems
                               ? width() / pageWidth
                               : std::min(width() / pageWidth, height() / pageHeight);
-    const qreal scale = visualScale / guiScaling;
-    const qreal x = (width() / guiScaling - pageWidth * scale) * 0.5;
+    const qreal scale = visualScale;
+    const qreal x = (width() - pageWidth * scale) * 0.5;
     const qreal y = verticalSystems
                     ? 0.0
-                    : (height() / guiScaling - pageHeight * scale) * 0.5;
+                    : (height() - pageHeight * scale) * 0.5;
     LOGI() << "DB_PLAYER_PAGE_FIT"
            << "view=" << width() << "x" << height()
            << "page=" << pageWidth << "x" << pageHeight
-           << "guiScaling=" << guiScaling
            << "visualScale=" << visualScale
            << "matrixScale=" << scale
            << "offset=" << x << y;
