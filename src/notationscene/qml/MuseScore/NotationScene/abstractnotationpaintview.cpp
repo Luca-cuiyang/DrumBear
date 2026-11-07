@@ -1330,6 +1330,17 @@ bool AbstractNotationPaintView::fitPageToViewport()
     const qreal visualScale = verticalSystems
                               ? width() / pageWidth
                               : std::min(width() / pageWidth, height() / pageHeight);
+    if (verticalSystems && m_portraitGrouped) {
+        std::vector<engraving::System*>& systems = score->pages().front()->systems();
+        if (!systems.empty()) {
+            const qreal rowPitch = 124.0 / visualScale;
+            const qreal firstSystemY = systems.front()->y();
+            for (size_t i = 0; i < systems.size(); ++i) {
+                systems[i]->setPos(systems[i]->x(), firstSystemY + rowPitch * static_cast<qreal>(i));
+            }
+            score->pages().front()->invalidateBspTree();
+        }
+    }
     const qreal scale = visualScale;
     const qreal x = (width() - pageWidth * scale) * 0.5;
     const qreal y = verticalSystems
