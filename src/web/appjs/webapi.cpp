@@ -93,7 +93,6 @@ struct PlayerLayoutState {
     double maxSystemDistance = 0.0;
     double lastSystemFillLimit = 0.0;
     bool firstSystemIndentation = false;
-    bool generateClef = true;
     bool pageTwosided = false;
     bool verticalSpread = false;
     bool backgroundUseColor = true;
@@ -351,7 +350,6 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         state->maxSystemDistance = style.styleAbsolute(engraving::Sid::maxSystemDistance);
         state->lastSystemFillLimit = style.styleD(engraving::Sid::lastSystemFillLimit);
         state->firstSystemIndentation = style.styleB(engraving::Sid::enableIndentationOnFirstSystem);
-        state->generateClef = style.styleB(engraving::Sid::genClef);
         state->pageTwosided = style.styleB(engraving::Sid::pageTwosided);
         state->verticalSpread = style.styleB(engraving::Sid::enableVerticalSpread);
         state->backgroundUseColor = notationConfiguration()->backgroundUseColor();
@@ -435,7 +433,6 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         styles.emplace(engraving::Sid::minMeasureWidth, engraving::Spatium(printableWidthUnits / spatiumUnits));
         styles.emplace(engraving::Sid::lastSystemFillLimit, 0.0);
         styles.emplace(engraving::Sid::enableIndentationOnFirstSystem, false);
-        styles.emplace(engraving::Sid::genClef, false);
         score->undoChangeStyleValues(std::move(styles));
         for (const detail::PlayerLayoutState::BreakState& item : state.breaks) {
             if (item.item->isMeasure()) {
@@ -482,7 +479,6 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         styles.emplace(engraving::Sid::enableVerticalSpread, state.verticalSpread);
         styles.emplace(engraving::Sid::lastSystemFillLimit, state.lastSystemFillLimit);
         styles.emplace(engraving::Sid::enableIndentationOnFirstSystem, state.firstSystemIndentation);
-        styles.emplace(engraving::Sid::genClef, state.generateClef);
         score->undoChangeStyleValues(std::move(styles));
         notationConfiguration()->setBackgroundColor(state.backgroundColor);
         notationConfiguration()->setBackgroundUseColor(state.backgroundUseColor);
