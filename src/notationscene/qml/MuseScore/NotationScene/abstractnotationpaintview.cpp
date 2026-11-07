@@ -1342,7 +1342,13 @@ bool AbstractNotationPaintView::fitPageToViewport()
             for (size_t i = 0; i < systems.size(); ++i) {
                 systems[i]->setPos(systems[i]->x(), firstSystemY + rowPitch * static_cast<qreal>(i));
             }
-            score->pages().front()->invalidateBspTree();
+            engraving::Page* page = score->pages().front();
+            muse::RectF pageBoundingRect = page->ldata()->bbox();
+            for (const engraving::System* system : systems) {
+                pageBoundingRect.unite(system->pageBoundingRect());
+            }
+            page->setbbox(pageBoundingRect);
+            page->invalidateBspTree();
         }
     }
     const qreal scale = visualScale;
