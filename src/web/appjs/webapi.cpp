@@ -92,6 +92,9 @@ struct PlayerLayoutState {
     double minSystemDistance = 0.0;
     double maxSystemDistance = 0.0;
     double lastSystemFillLimit = 0.0;
+    double tempoFontSize = 12.0;
+    double tempoChangeFontSize = 12.0;
+    double stickingFontSize = 10.0;
     bool firstSystemIndentation = false;
     bool generateClef = true;
     bool pageTwosided = false;
@@ -358,6 +361,9 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         state->minSystemDistance = style.styleAbsolute(engraving::Sid::minSystemDistance);
         state->maxSystemDistance = style.styleAbsolute(engraving::Sid::maxSystemDistance);
         state->lastSystemFillLimit = style.styleD(engraving::Sid::lastSystemFillLimit);
+        state->tempoFontSize = style.styleD(engraving::Sid::tempoFontSize);
+        state->tempoChangeFontSize = style.styleD(engraving::Sid::tempoChangeFontSize);
+        state->stickingFontSize = style.styleD(engraving::Sid::stickingFontSize);
         state->firstSystemIndentation = style.styleB(engraving::Sid::enableIndentationOnFirstSystem);
         state->generateClef = style.styleB(engraving::Sid::genClef);
         state->pageTwosided = style.styleB(engraving::Sid::pageTwosided);
@@ -442,6 +448,11 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         styles.emplace(engraving::Sid::enableVerticalSpread, false);
         styles.emplace(engraving::Sid::minMeasureWidth, engraving::Spatium(printableWidthUnits / spatiumUnits));
         styles.emplace(engraving::Sid::lastSystemFillLimit, 0.0);
+        styles.emplace(engraving::Sid::tempoFontSize, std::max(8.0, state.tempoFontSize - 1.0));
+        styles.emplace(engraving::Sid::tempoChangeFontSize, std::max(
+                           8.0, state.tempoChangeFontSize - 1.0));
+        styles.emplace(engraving::Sid::stickingFontSize, std::max(
+                           8.0, state.stickingFontSize - 1.0));
         styles.emplace(engraving::Sid::enableIndentationOnFirstSystem, false);
         styles.emplace(engraving::Sid::genClef, false);
         score->undoChangeStyleValues(std::move(styles));
@@ -489,6 +500,9 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
                            state.maxSystemDistance, state.spatium));
         styles.emplace(engraving::Sid::enableVerticalSpread, state.verticalSpread);
         styles.emplace(engraving::Sid::lastSystemFillLimit, state.lastSystemFillLimit);
+        styles.emplace(engraving::Sid::tempoFontSize, state.tempoFontSize);
+        styles.emplace(engraving::Sid::tempoChangeFontSize, state.tempoChangeFontSize);
+        styles.emplace(engraving::Sid::stickingFontSize, state.stickingFontSize);
         styles.emplace(engraving::Sid::enableIndentationOnFirstSystem, state.firstSystemIndentation);
         styles.emplace(engraving::Sid::genClef, state.generateClef);
         score->undoChangeStyleValues(std::move(styles));
