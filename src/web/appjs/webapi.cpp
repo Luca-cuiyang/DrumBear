@@ -400,6 +400,7 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
     bool changed = false;
     if (portrait && !state.portraitApplied) {
         constexpr double MM_TO_INCH = 1.0 / 25.4;
+        constexpr double PLAYER_PORTRAIT_BOTTOM_PADDING_MM = 34.0;
         const double pageWidthMm = 70.0;
         constexpr int PLAYER_CHROME_HEIGHT = 95;
         const int scoreViewportHeight = viewportHeight > PLAYER_CHROME_HEIGHT
@@ -416,7 +417,7 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         }
         const double pageHeightMm = std::max(
             pageWidthMm * aspect,
-            static_cast<double>(measureCount) * 24.0 + 10.0);
+            static_cast<double>(measureCount) * 24.0 + PLAYER_PORTRAIT_BOTTOM_PADDING_MM);
         constexpr double spatiumMm = 2.33;
         const double spatiumUnits = spatiumMm * engraving::DPMM;
         const double printableWidthUnits = (pageWidthMm - 3.6) * MM_TO_INCH * engraving::DPI;
