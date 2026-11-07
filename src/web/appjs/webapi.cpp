@@ -401,7 +401,7 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         const double pageHeightMm = std::max(
             pageWidthMm * aspect,
             static_cast<double>(measureCount) * 24.0 + 10.0);
-        constexpr double spatiumMm = 4.5;
+        constexpr double spatiumMm = 2.33;
         const double spatiumUnits = spatiumMm * engraving::DPMM;
         const double printableWidthUnits = (pageWidthMm - 3.6) * MM_TO_INCH * engraving::DPI;
 
