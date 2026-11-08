@@ -472,6 +472,7 @@ void PlaybackController::seekElement(const notation::EngravingItem* element, boo
         return;
     }
 
+    m_currentTick = element->tick().ticks();
     seek(playedTickToSecs(tick.val), flushSound);
 }
 
@@ -1051,11 +1052,7 @@ muse::Ret PlaybackController::reloadPlaybackCache()
 
 muse::Ret PlaybackController::addLoopBoundary(LoopBoundaryType type)
 {
-    if (isPlaying()) {
-        addLoopBoundaryToTick(type, m_currentTick);
-    } else {
-        addLoopBoundaryToTick(type, INotationPlayback::SelectedNoteTick);
-    }
+    addLoopBoundaryToTick(type, m_currentTick);
 
     return make_ok();
 }
