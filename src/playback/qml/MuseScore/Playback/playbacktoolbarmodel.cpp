@@ -37,6 +37,8 @@
 #include "engraving/dom/measure.h"
 #include "engraving/dom/score.h"
 #include "notation/imasternotation.h"
+#include "notation/inotation.h"
+#include "notation/inotationelements.h"
 #include "notation/inotationplayback.h"
 #include "notation/inotationparts.h"
 #include "project/inotationproject.h"
@@ -387,8 +389,9 @@ void PlaybackToolBarModel::handleMenuItem(const QString& itemId)
 void PlaybackToolBarModel::toggleLoopMarker(LoopBoundaryType type)
 {
     const notation::INotationPtr notation = globalContext()->currentNotation();
-    const notation::INotationPlaybackPtr playback = notation ? notation->playback() : nullptr;
-    const Score* score = notation ? notation->elements()->msScore() : nullptr;
+    const notation::INotationPlaybackPtr playback =
+        notation ? notation->masterNotation()->playback() : nullptr;
+    Score* score = notation ? notation->elements()->msScore() : nullptr;
     if (!playback || !score || !score->firstMeasure() || !score->lastMeasure()) {
         return;
     }
@@ -400,14 +403,14 @@ void PlaybackToolBarModel::toggleLoopMarker(LoopBoundaryType type)
 
     if (type == LoopBoundaryType::LoopIn) {
         if (inSet) {
-            playback->setLoopInTick(firstTick);
+            score->setLoopInTick(firstTick);
         } else {
             playbackController()->addLoopBoundary(type);
             return;
         }
     } else if (type == LoopBoundaryType::LoopOut) {
         if (outSet) {
-            playback->setLoopOutTick(lastTick);
+            score->setLoopOutTick(lastTick);
         } else {
             playbackController()->addLoopBoundary(type);
             return;
