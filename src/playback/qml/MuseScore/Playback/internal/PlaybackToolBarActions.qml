@@ -137,6 +137,7 @@ Item {
                     text: btn.text
                     color: btn.accentButton ? "#ffffff" : "#f7ede4"
                     font: ui.theme.bodyBoldFont
+                    font.pixelSize: 10
                     textFormat: Text.PlainText
                     wrapMode: Text.NoWrap
                     horizontalAlignment: Text.AlignHCenter
