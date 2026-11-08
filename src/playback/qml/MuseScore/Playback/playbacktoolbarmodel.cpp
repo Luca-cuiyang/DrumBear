@@ -350,7 +350,7 @@ void PlaybackToolBarModel::updatePlayPosition(secs_t secs)
 
 void PlaybackToolBarModel::rewind(secs_t secs)
 {
-    if (m_playbackPositionSecs == secs || secs > totalPlayTime()) {
+    if (secs > totalPlayTime()) {
         return;
     }
 
