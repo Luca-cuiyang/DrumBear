@@ -48,6 +48,7 @@ class PlaybackToolBarModel : public muse::uicomponents::AbstractMenuModel
     Q_PROPERTY(int maxBeatNumber READ maxBeatNumber NOTIFY playPositionChanged)
 
     Q_PROPERTY(QVariant tempo READ tempo NOTIFY tempoChanged)
+    Q_PROPERTY(int tempoBpm READ tempoBpm WRITE setTempoBpm NOTIFY tempoChanged)
     Q_PROPERTY(qreal tempoMultiplier READ tempoMultiplier WRITE setTempoMultiplier NOTIFY tempoChanged)
 
     Q_PROPERTY(QColor playbackCursorColor READ playbackCursorColor WRITE setPlaybackCursorColor NOTIFY playbackCursorStyleChanged)
@@ -77,6 +78,7 @@ public:
     int maxBeatNumber() const;
 
     QVariant tempo() const;
+    int tempoBpm() const;
     qreal tempoMultiplier() const;
 
     QColor playbackCursorColor() const;
@@ -92,7 +94,9 @@ public slots:
     void setPlayTime(const QTime& time);
     void setMeasureNumber(int measureNumber);
     void setBeatNumber(int beatNumber);
+    void setTempoBpm(int bpm);
     void setTempoMultiplier(qreal multiplier);
+    void resetTempo();
     void setPlaybackCursorColor(const QColor& color);
     void setPlaybackCursorThickness(qreal thickness);
     void setPlaybackCursorOpacity(qreal opacity);

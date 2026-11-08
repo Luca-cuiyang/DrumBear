@@ -546,9 +546,17 @@ void AbstractNotationPaintView::updateLoopMarkers()
     TRACEFUNC;
 
     const LoopBoundaries& loop = notationPlayback()->loopBoundaries();
+    const engraving::Score* score = m_notation ? m_notation->elements()->msScore() : nullptr;
+    const engraving::Measure* firstMeasure = score ? score->firstMeasure() : nullptr;
+    const engraving::Measure* lastMeasure = score ? score->lastMeasure() : nullptr;
+    const bool loopInSet = loop.enabled && firstMeasure
+                           && loop.loopInTick != firstMeasure->tick();
+    const bool loopOutSet = loop.enabled && firstMeasure && lastMeasure
+                            && loop.loopOutTick > firstMeasure->tick()
+                            && loop.loopOutTick != lastMeasure->endTick();
 
-    m_loopInMarker->setVisible(loop.enabled);
-    m_loopOutMarker->setVisible(loop.enabled);
+    m_loopInMarker->setVisible(loopInSet);
+    m_loopOutMarker->setVisible(loopOutSet);
 
     if (loop.enabled) {
         m_loopInMarker->updatePosition(loop.loopInTick);

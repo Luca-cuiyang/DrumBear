@@ -493,7 +493,7 @@ FocusScope {
             anchors.bottom: parent.bottom
             anchors.bottomMargin: 15
             anchors.horizontalCenter: parent.horizontalCenter
-            width: root.compactPortraitPlayer ? 317 : Math.min(parent.width - 32, 620)
+            width: root.compactPortraitPlayer ? 360 : Math.min(parent.width - 32, 620)
             height: 30
             floating: false
             compactMode: root.compactPortraitPlayer

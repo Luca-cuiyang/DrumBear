@@ -92,14 +92,14 @@ static const std::vector<CommandInfo> s_commandInfos = {
         TranslatableString("playback", "循环起点"),
         TranslatableString("playback", "设置循环左标记"),
         InputSchema(),
-        Decoration(IconCode::Code::LOOP_IN)
+        Decoration(IconCode::Code::LOOP_IN, rcommand::Checkable::Yes)
     },
     CommandInfo{
         LOOP_OUT_COMMAND,
         TranslatableString("playback", "循环终点"),
         TranslatableString("playback", "设置循环右标记"),
         InputSchema(),
-        Decoration(IconCode::Code::LOOP_OUT)
+        Decoration(IconCode::Code::LOOP_OUT, rcommand::Checkable::Yes)
     },
     CommandInfo{
         METRONOME_TOGGLE_COMMAND,

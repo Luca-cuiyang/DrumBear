@@ -320,12 +320,28 @@ void PlaybackToolBarModel::setBeatNumber(int beatNumber)
 
 void PlaybackToolBarModel::setTempoMultiplier(qreal multiplier)
 {
-    if (muse::RealIsEqual(multiplier, tempoMultiplier())) {
+    // DB Player: notation events, metronome and accompaniment share one rate.
+    multiplier = qBound<qreal>(0.01, multiplier, 10.0);
+
+    // Refresh the controller cache even when returning to the original tempo.
+    playbackController()->setTempoMultiplier(multiplier);
+    emit tempoChanged();
+}
+
+void PlaybackToolBarModel::setTempoBpm(int bpm)
+{
+    const int currentBpm = tempoBpm();
+    if (bpm <= 0 || currentBpm <= 0) {
         return;
     }
 
-    playbackController()->setTempoMultiplier(multiplier);
-    emit tempoChanged();
+    const qreal nextMultiplier = tempoMultiplier() * qreal(bpm) / qreal(currentBpm);
+    setTempoMultiplier(nextMultiplier);
+}
+
+void PlaybackToolBarModel::resetTempo()
+{
+    setTempoMultiplier(1.0);
 }
 
 int PlaybackToolBarModel::maxBeatNumber() const
@@ -352,6 +368,11 @@ QVariant PlaybackToolBarModel::tempo() const
     obj["value"] = tempo.valueBpm;
 
     return obj;
+}
+
+int PlaybackToolBarModel::tempoBpm() const
+{
+    return tempo().toMap().value("value").toInt();
 }
 
 qreal PlaybackToolBarModel::tempoMultiplier() const

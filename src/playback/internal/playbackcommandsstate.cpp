@@ -22,7 +22,10 @@
 
 #include "playbackcommandsstate.h"
 
+#include "engraving/dom/measure.h"
+#include "engraving/dom/score.h"
 #include "notation/inotation.h"
+#include "notation/inotationelements.h"
 #include "notation/inotationinteraction.h"
 
 #include "../playbackcommands.h"
@@ -58,6 +61,10 @@ void PlaybackCommandsState::init()
 
         interaction->isEditingElementChanged().onNotify(this, [this]() {
             updateCommandStates({ PLAY_SELECTION_COMMAND });
+        }, Asyncable::Mode::SetReplace);
+
+        currNotation->playback()->loopBoundariesChanged().onNotify(this, [this]() {
+            updateCommandStates({ LOOP_IN_COMMAND, LOOP_OUT_COMMAND });
         }, Asyncable::Mode::SetReplace);
     });
 
@@ -180,6 +187,19 @@ CommandState PlaybackCommandsState::commandState(const Command& command) const
         return CommandState(enabled, false);
     } else if (command == LOOP_TOGGLE_COMMAND) {
         return CommandState(true, playbackController()->isLoopEnabled());
+    } else if (command == LOOP_IN_COMMAND || command == LOOP_OUT_COMMAND) {
+        const INotationPtr notation = globalContext()->currentNotation();
+        const engraving::Score* score = notation ? notation->elements()->msScore() : nullptr;
+        if (!score || !score->firstMeasure() || !score->lastMeasure()) {
+            return CommandState(true, false);
+        }
+
+        const engraving::Fraction firstTick = score->firstMeasure()->tick();
+        const engraving::Fraction lastTick = score->lastMeasure()->endTick();
+        const bool checked = command == LOOP_IN_COMMAND
+                             ? score->loopInTick() != firstTick
+                             : score->loopOutTick() != lastTick;
+        return CommandState(true, checked);
     } else if (command == METRONOME_TOGGLE_COMMAND) {
         return CommandState(true, notationConfiguration()->isMetronomeEnabled());
     } else if (command == MIDI_TOGGLE_COMMAND) {

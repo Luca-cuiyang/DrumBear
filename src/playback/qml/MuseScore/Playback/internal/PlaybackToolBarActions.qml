@@ -74,16 +74,44 @@ Item {
             required property MenuItem item
             required property int index
 
-            width: 30
+            readonly property bool textMarkerAction:
+                item.id === "command://playback/loop-in"
+                || item.id === "command://playback/loop-out"
+            readonly property bool compactTextAction: root.compactMode
+            readonly property bool textOnlyAction:
+                compactTextAction || textMarkerAction
+            readonly property string markerText:
+                item.id === "command://playback/loop-in" ? "起点" : "终点"
+            readonly property string compactText: {
+                if (item.id === "command://playback/rewind") return "回退"
+                if (item.id === "play-toggle") return item.checked ? "暂停" : "播放"
+                if (item.id === "command://playback/loop-toggle") return "循环"
+                if (item.id === "command://playback/loop-in") return "起点"
+                if (item.id === "command://playback/loop-out") return "终点"
+                if (item.id === "command://playback/metronome-toggle") return "节拍"
+                if (item.id === "command://playback/repeats-toggle") return "反复"
+                return item.title
+            }
+
+            width: compactTextAction || textMarkerAction ? 38 : 30
             height: width
 
-            icon: Boolean(item) ? item.icon : IconCode.NONE
+            icon: Boolean(item) && !textOnlyAction ? item.icon : IconCode.NONE
+            text: compactTextAction
+                  ? compactText
+                  : (textMarkerAction ? markerText : "")
+            textFormat: Text.PlainText
+            maximumLineCount: 1
+            buttonType: textOnlyAction ? FlatButton.TextOnly : FlatButton.IconOnly
+            contentItem: compactTextAction ? compactTextContent : null
 
             toolTipTitle: Boolean(item) ? item.title : ""
             toolTipDescription: Boolean(item) ? item.description : ""
             toolTipShortcut: Boolean(item) ? item.shortcuts : ""
 
             iconFont: ui.theme.toolbarIconsFont
+            textFont: ui.theme.bodyBoldFont
+            textFont.pixelSize: root.compactMode ? 10 : ui.theme.bodyBoldFont.pixelSize
             iconColor: root.compactMode
                        ? (accentButton ? "#ffffff" : "#f7ede4")
                        : ui.theme.fontPrimaryColor
@@ -97,6 +125,22 @@ Item {
             navigation.order: index
             accessible.name: (item.checkable ? (item.checked ? item.title + "  " + qsTrc("global", "On") :
                                                                item.title + "  " + qsTrc("global", "Off")) : item.title)
+
+            Component {
+                id: compactTextContent
+
+                StyledTextLabel {
+                    text: btn.text
+                    color: btn.accentButton ? "#ffffff" : "#f7ede4"
+                    font: ui.theme.bodyBoldFont
+                    textFormat: Text.PlainText
+                    wrapMode: Text.NoWrap
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    implicitWidth: Math.max(contentWidth, 24)
+                    implicitHeight: 20
+                }
+            }
 
             onClicked: {
                 if (menuLoader.isMenuOpened || item.subitems.length) {
@@ -236,22 +280,40 @@ Item {
                 navigation.panel: root.navPanel
                 navigation.order: measureAndBeatFields.navigationOrderEnd + 1
 
-                contentItem: TempoView {
-                    anchors.centerIn: parent
-                    anchors.verticalCenterOffset: 1 // for nicer visual alignment
-
-                    noteSymbol: root.playbackModel.tempo.noteSymbol
-                    tempoValue: root.playbackModel.tempo.value
-                    textColor: root.compactMode ? "#f7ede4" : ui.theme.fontPrimaryColor
-
-                    noteSymbolFont.pixelSize: ui.theme.iconsFont.pixelSize
-                    tempoValueFont: timeField.font
-                }
+                contentItem: root.compactMode ? compactTempoContent : tempoContent
 
                 property PlaybackToolBarModel playbackModel: root.playbackModel
 
                 popupComponent: PlaybackSpeedPopup {
                     playbackModel: playbackSpeedButton.playbackModel
+                }
+
+                Component {
+                    id: tempoContent
+
+                    TempoView {
+                        anchors.centerIn: parent
+                        anchors.verticalCenterOffset: 1 // for nicer visual alignment
+
+                        noteSymbol: root.playbackModel.tempo.noteSymbol
+                        tempoValue: root.playbackModel.tempo.value
+                        textColor: ui.theme.fontPrimaryColor
+
+                        noteSymbolFont.pixelSize: ui.theme.iconsFont.pixelSize
+                        tempoValueFont: timeField.font
+                    }
+                }
+
+                Component {
+                    id: compactTempoContent
+
+                    StyledTextLabel {
+                        text: "BPM " + root.playbackModel.tempo.value
+                        color: "#f7ede4"
+                        font: ui.theme.bodyBoldFont
+                        textFormat: Text.PlainText
+                        wrapMode: Text.NoWrap
+                    }
                 }
             }
         }

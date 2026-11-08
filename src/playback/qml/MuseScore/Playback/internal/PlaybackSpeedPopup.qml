@@ -58,58 +58,70 @@ StyledPopupView {
 
         StyledTextLabel {
             Layout.fillWidth: true
+            Layout.preferredWidth: 288
             text: "速度"
             horizontalAlignment: Text.AlignLeft
+            wrapMode: Text.NoWrap
         }
 
+        // Absolute quarter-note tempo, for example quarter note = 120.
         RowLayout {
-            spacing: 12
+            spacing: 6
+
+            StyledTextLabel {
+                text: "BPM"
+                wrapMode: Text.NoWrap
+                font: ui.theme.bodyBoldFont
+            }
 
             IncrementalPropertyControl {
-                Layout.preferredWidth: 76
-                currentValue: root.playbackModel.tempoMultiplier * 100
+                Layout.preferredWidth: 88
+                currentValue: root.playbackModel.tempoBpm
 
-                maxValue: 300
-                minValue: 10
-                step: 5
-                measureUnitsSymbol: "%"
+                maxValue: 999
+                minValue: 1
+                step: 1
                 decimals: 0
 
                 navigation.panel: navPanel
-                navigation.accessible.name: "速度"
+                navigation.accessible.name: "四分音符速度"
 
-                onValueEdited: function(newValue) {
-                    root.playbackModel.tempoMultiplier = newValue / 100
+                onValueEditingFinished: function(newValue) {
+                    root.playbackModel.tempoBpm = newValue
                 }
             }
 
-            StyledSlider {
-                Layout.preferredWidth: 200
+            FlatButton {
+                Layout.preferredWidth: 58
                 Layout.preferredHeight: 30
 
-                value: root.playbackModel.tempoMultiplier
-                from: 0.1
-                to: 3.0
-                stepSize: 0.05
+                text: "原速"
+                toolTipTitle: "恢复谱面原速"
+                maximumLineCount: 1
 
-                fillBackground: false
+                navigation.panel: navPanel
+                navigation.order: 2
 
-                onMoved: {
-                    root.playbackModel.tempoMultiplier = value
-                }
+                onClicked: root.playbackModel.resetTempo()
             }
         }
 
         StyledTextLabel {
             Layout.fillWidth: true
+            Layout.preferredWidth: 288
             text: "播放指针"
             horizontalAlignment: Text.AlignLeft
+            wrapMode: Text.NoWrap
         }
 
         RowLayout {
             spacing: 8
 
-            StyledTextLabel { text: "颜色" }
+            StyledTextLabel {
+                Layout.preferredWidth: 48
+                text: "颜色"
+                wrapMode: Text.NoWrap
+            }
 
             Repeater {
                 model: root.cursorColors
@@ -133,7 +145,11 @@ StyledPopupView {
         RowLayout {
             spacing: 8
 
-            StyledTextLabel { text: "长短" }
+            StyledTextLabel {
+                Layout.preferredWidth: 48
+                text: "长短"
+                wrapMode: Text.NoWrap
+            }
             StyledSlider {
                 Layout.preferredWidth: 160
                 from: 0.2
@@ -147,7 +163,11 @@ StyledPopupView {
         RowLayout {
             spacing: 8
 
-            StyledTextLabel { text: "粗细" }
+            StyledTextLabel {
+                Layout.preferredWidth: 48
+                text: "粗细"
+                wrapMode: Text.NoWrap
+            }
             StyledSlider {
                 Layout.preferredWidth: 160
                 from: 0.15
@@ -161,7 +181,11 @@ StyledPopupView {
         RowLayout {
             spacing: 8
 
-            StyledTextLabel { text: "透明度" }
+            StyledTextLabel {
+                Layout.preferredWidth: 48
+                text: "透明度"
+                wrapMode: Text.NoWrap
+            }
             StyledSlider {
                 Layout.preferredWidth: 160
                 from: 0.15
