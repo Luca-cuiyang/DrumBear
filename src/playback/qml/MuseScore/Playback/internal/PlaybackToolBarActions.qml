@@ -115,7 +115,6 @@ Item {
 
             iconFont: ui.theme.toolbarIconsFont
             textFont: ui.theme.bodyBoldFont
-            textFont.pixelSize: root.compactMode ? 10 : ui.theme.bodyBoldFont.pixelSize
             iconColor: root.compactMode
                        ? (accentButton ? "#ffffff" : "#f7ede4")
                        : ui.theme.fontPrimaryColor
