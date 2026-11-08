@@ -104,7 +104,6 @@ void PlaybackToolBarModel::setupConnections()
 
     globalContext()->playbackState()->playbackStatusChanged().onReceive(this, [this](audio::PlaybackStatus) {
         updatePlayItem();
-        emit isPlayingChanged();
     });
 
     globalContext()->playbackState()->playbackPositionChanged().onReceive(this, [this](secs_t secs) {
@@ -190,6 +189,7 @@ MenuItem* PlaybackToolBarModel::makeDrumsMuteItem()
     item->setId(DRUMS_MUTE_ID);
     item->setTitle(TranslatableString("playback", "鼓声"));
     item->setDescription(TranslatableString("playback", "切换鼓声静音"));
+    item->setIcon(ui::IconCode::Code::PERCUSSION);
     item->setCheckable(true);
     item->setChecked(m_drumsMuted);
     return item;
@@ -209,6 +209,7 @@ MenuItem* PlaybackToolBarModel::makeAccompanimentMuteItem()
     item->setId(ACCOMPANIMENT_MUTE_ID);
     item->setTitle(TranslatableString("playback", "伴奏"));
     item->setDescription(TranslatableString("playback", "切换伴奏静音"));
+    item->setIcon(ui::IconCode::Code::AUDIO);
     item->setCheckable(true);
     item->setChecked(m_accompanimentMuted);
     return item;
@@ -255,13 +256,6 @@ bool PlaybackToolBarModel::isAdditionalCommand(const muse::rcommand::Command& co
 bool PlaybackToolBarModel::isPlayAllowed() const
 {
     return playbackController()->isPlayAllowed();
-}
-
-bool PlaybackToolBarModel::isPlaying() const
-{
-    return globalContext() && globalContext()->playbackState()
-        ? globalContext()->playbackState()->isPlaying()
-        : false;
 }
 
 bool PlaybackToolBarModel::isToolbarFloating() const

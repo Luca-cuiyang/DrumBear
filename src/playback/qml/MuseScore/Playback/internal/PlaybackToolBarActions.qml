@@ -74,18 +74,12 @@ Item {
             required property MenuItem item
             required property int index
 
-            readonly property bool textMarkerAction:
-                item.id === "command://playback/loop-in"
-                || item.id === "command://playback/loop-out"
-            readonly property string markerText:
-                item.id === "command://playback/loop-in" ? "起点" : "终点"
-
             width: 30
             height: 30
 
-            icon: Boolean(item) && !textMarkerAction ? item.icon : IconCode.NONE
-            text: textMarkerAction ? markerText : ""
-            buttonType: textMarkerAction ? FlatButton.TextOnly : FlatButton.IconOnly
+            icon: Boolean(item) ? item.icon : IconCode.NONE
+            text: ""
+            buttonType: FlatButton.IconOnly
 
             toolTipTitle: Boolean(item) ? item.title : ""
             toolTipDescription: Boolean(item) ? item.description : ""
@@ -96,7 +90,6 @@ Item {
             iconColor: accentButton ? "#ffffff" : ui.theme.fontPrimaryColor
 
             accentButton: (Boolean(item) && item.checked)
-                          || (item.id === "play-toggle" && root.playbackModel.isPlaying)
                           || menuLoader.isMenuOpened
             accentColor: ui.theme.accentColor
             transparent: !accentButton
