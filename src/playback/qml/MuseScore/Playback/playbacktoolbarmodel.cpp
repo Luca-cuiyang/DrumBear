@@ -63,6 +63,11 @@ static bool isStudioPlayerMode()
     return QCoreApplication::arguments().contains("--db-product-mode=studio-player");
 }
 
+static bool isWebPlayerMode()
+{
+    return QCoreApplication::arguments().contains("--db-web-player");
+}
+
 static const ToolConfig& defaultPlaybackToolConfig()
 {
     static ToolConfig config;
@@ -143,6 +148,9 @@ void PlaybackToolBarModel::updateActions()
     //! NOTE At the moment no customization ability
     ToolConfig config = defaultPlaybackToolConfig();
     for (const ToolConfig::Item& item : config.items) {
+        if (isWebPlayerMode() && item.intent == LOOP_TOGGLE_COMMAND) {
+            continue;
+        }
         if (item.intent == PLAY_TOGGLE_ID) {
             result << makePlayItem();
         } else if (item.intent == DRUMS_MUTE_ID) {
