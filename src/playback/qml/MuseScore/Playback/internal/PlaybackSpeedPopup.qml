@@ -63,6 +63,7 @@ StyledPopupView {
             horizontalAlignment: Text.AlignLeft
             wrapMode: Text.NoWrap
             font: ui.theme.bodyFont
+            font.family: "Noto Sans CJK SC"
         }
 
         // Absolute quarter-note tempo, for example quarter note = 120.
@@ -73,6 +74,7 @@ StyledPopupView {
                 text: "BPM"
                 wrapMode: Text.NoWrap
                 font: ui.theme.bodyBoldFont
+                font.family: "Noto Sans CJK SC"
             }
 
             IncrementalPropertyControl {
@@ -97,7 +99,9 @@ StyledPopupView {
                 Layout.preferredHeight: 30
 
                 text: "原速"
-                textFont: ui.theme.bodyBoldFont
+                textFont: Qt.font(Object.assign({}, ui.theme.bodyBoldFont, {
+                    family: "Noto Sans CJK SC"
+                }))
                 toolTipTitle: "恢复谱面原速"
                 maximumLineCount: 1
 
@@ -115,6 +119,7 @@ StyledPopupView {
             horizontalAlignment: Text.AlignLeft
             wrapMode: Text.NoWrap
             font: ui.theme.bodyBoldFont
+            font.family: "Noto Sans CJK SC"
         }
 
         RowLayout {
@@ -125,6 +130,7 @@ StyledPopupView {
                 text: "颜色"
                 wrapMode: Text.NoWrap
                 font: ui.theme.bodyFont
+                font.family: "Noto Sans CJK SC"
             }
 
             Repeater {
@@ -154,6 +160,7 @@ StyledPopupView {
                 text: "长短"
                 wrapMode: Text.NoWrap
                 font: ui.theme.bodyFont
+                font.family: "Noto Sans CJK SC"
             }
             StyledSlider {
                 Layout.preferredWidth: 160
@@ -173,6 +180,7 @@ StyledPopupView {
                 text: "粗细"
                 wrapMode: Text.NoWrap
                 font: ui.theme.bodyFont
+                font.family: "Noto Sans CJK SC"
             }
             StyledSlider {
                 Layout.preferredWidth: 160
@@ -192,6 +200,7 @@ StyledPopupView {
                 text: "透明度"
                 wrapMode: Text.NoWrap
                 font: ui.theme.bodyFont
+                font.family: "Noto Sans CJK SC"
             }
             StyledSlider {
                 Layout.preferredWidth: 160
