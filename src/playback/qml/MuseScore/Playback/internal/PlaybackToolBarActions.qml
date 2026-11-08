@@ -84,7 +84,9 @@ Item {
                 item.id === "command://playback/loop-in" ? "起点" : "终点"
             readonly property string compactText: {
                 if (item.id === "command://playback/rewind") return "回退"
-                if (item.id === "play-toggle") return item.checked ? "暂停" : "播放"
+                if (item.id === "play-toggle") {
+                    return root.playbackModel.isPlaying ? "暂停" : "播放"
+                }
                 if (item.id === "command://playback/loop-toggle") return "循环"
                 if (item.id === "command://playback/loop-in") return "起点"
                 if (item.id === "command://playback/loop-out") return "终点"
@@ -119,7 +121,9 @@ Item {
                        ? (accentButton ? "#ffffff" : "#f7ede4")
                        : ui.theme.fontPrimaryColor
 
-            accentButton: (Boolean(item) && item.checked) || menuLoader.isMenuOpened
+            accentButton: (Boolean(item) && item.checked)
+                          || (item.id === "play-toggle" && root.playbackModel.isPlaying)
+                          || menuLoader.isMenuOpened
             accentColor: root.compactMode ? "#e88024" : ui.theme.accentColor
             transparent: !accentButton
 

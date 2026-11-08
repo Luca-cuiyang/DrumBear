@@ -37,6 +37,7 @@ class PlaybackToolBarModel : public muse::uicomponents::AbstractMenuModel
 
     Q_PROPERTY(bool isToolbarFloating READ isToolbarFloating WRITE setIsToolbarFloating NOTIFY isToolbarFloatingChanged)
     Q_PROPERTY(bool isPlayAllowed READ isPlayAllowed NOTIFY isPlayAllowedChanged)
+    Q_PROPERTY(bool isPlaying READ isPlaying NOTIFY isPlayingChanged)
 
     Q_PROPERTY(QTime maxPlayTime READ maxPlayTime NOTIFY maxPlayTimeChanged)
 
@@ -67,6 +68,7 @@ public:
 
     bool isToolbarFloating() const;
     bool isPlayAllowed() const;
+    bool isPlaying() const;
 
     QTime maxPlayTime() const;
     QTime playTime() const;
@@ -106,6 +108,7 @@ public slots:
 signals:
     void isToolbarFloatingChanged(bool floating);
     void isPlayAllowedChanged();
+    void isPlayingChanged();
     void maxPlayTimeChanged();
     void playPositionChanged();
     void tempoChanged();
