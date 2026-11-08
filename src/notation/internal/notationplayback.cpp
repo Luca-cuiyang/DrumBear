@@ -225,6 +225,8 @@ void NotationPlayback::updateLoopBoundaries()
     newBoundaries.loopInTick = score()->loopInTick();
     newBoundaries.loopOutTick = score()->loopOutTick();
     newBoundaries.enabled = m_loopBoundaries.enabled;
+    newBoundaries.loopInSet = m_loopBoundaries.loopInSet;
+    newBoundaries.loopOutSet = m_loopBoundaries.loopOutSet;
 
     if (m_loopBoundaries != newBoundaries) {
         m_loopBoundaries = newBoundaries;
@@ -360,6 +362,7 @@ void NotationPlayback::addLoopIn(int _tick)
     }
 
     score()->setLoopInTick(tick);
+    setLoopBoundarySet(LoopBoundaryType::LoopIn, true);
 }
 
 void NotationPlayback::addLoopOut(int _tick)
@@ -379,6 +382,24 @@ void NotationPlayback::addLoopOut(int _tick)
     }
 
     score()->setLoopOutTick(tick);
+    setLoopBoundarySet(LoopBoundaryType::LoopOut, true);
+}
+
+void NotationPlayback::setLoopBoundarySet(LoopBoundaryType boundaryType, bool isSet)
+{
+    bool changed = false;
+    if (boundaryType == LoopBoundaryType::LoopIn
+        && m_loopBoundaries.loopInSet != isSet) {
+        m_loopBoundaries.loopInSet = isSet;
+        changed = true;
+    } else if (boundaryType == LoopBoundaryType::LoopOut
+               && m_loopBoundaries.loopOutSet != isSet) {
+        m_loopBoundaries.loopOutSet = isSet;
+        changed = true;
+    }
+    if (changed) {
+        m_loopBoundariesChanged.notify();
+    }
 }
 
 void NotationPlayback::setLoopBoundariesEnabled(bool enabled)

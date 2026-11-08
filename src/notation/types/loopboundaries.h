@@ -33,6 +33,8 @@ struct LoopBoundaries
     engraving::Fraction loopInTick;
     engraving::Fraction loopOutTick;
     bool enabled = false;
+    bool loopInSet = false;
+    bool loopOutSet = false;
 
     bool isNull() const
     {
@@ -46,6 +48,8 @@ struct LoopBoundaries
         equals &= loopInTick == boundaries.loopInTick;
         equals &= loopOutTick == boundaries.loopOutTick;
         equals &= enabled == boundaries.enabled;
+        equals &= loopInSet == boundaries.loopInSet;
+        equals &= loopOutSet == boundaries.loopOutSet;
 
         return equals;
     }

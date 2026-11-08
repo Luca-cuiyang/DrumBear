@@ -501,7 +501,7 @@ FocusScope {
         width: root.width
         height: root.playerBottomChromeHeight
         z: 200
-        color: root.compactPortraitPlayer ? "transparent" : ui.theme.backgroundSecondaryColor
+        color: ui.theme.backgroundSecondaryColor
 
         Rectangle {
             anchors.left: parent.left
@@ -509,21 +509,7 @@ FocusScope {
             anchors.top: parent.top
             height: 1
             color: ui.theme.strokeColor
-            visible: !root.compactPortraitPlayer
-        }
-
-        Rectangle {
-            visible: root.compactPortraitPlayer
-            width: Math.min(parent.width - 20, 370)
-            height: 52
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: 4
-            radius: 18
-            color: "#241b16"
-            opacity: 0.94
-            border.width: 1
-            border.color: "transparent"
+            visible: true
         }
 
         PlaybackToolBar {
@@ -532,7 +518,7 @@ FocusScope {
             anchors.bottom: parent.bottom
             anchors.bottomMargin: 15
             anchors.horizontalCenter: parent.horizontalCenter
-            width: root.compactPortraitPlayer ? 368 : Math.min(parent.width - 32, 620)
+            width: Math.min(parent.width - 10, 620)
             height: 30
             floating: false
             compactMode: root.compactPortraitPlayer

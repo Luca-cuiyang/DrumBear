@@ -84,6 +84,7 @@ public:
     };
 
     virtual void addLoopBoundary(LoopBoundaryType boundaryType, muse::midi::tick_t tick) = 0;
+    virtual void setLoopBoundarySet(LoopBoundaryType boundaryType, bool isSet) = 0;
     virtual void setLoopBoundariesEnabled(bool enabled) = 0;
     virtual bool isLoopEnabled() const = 0;
     virtual muse::async::Channel<bool> loopEnabledChanged() const = 0;

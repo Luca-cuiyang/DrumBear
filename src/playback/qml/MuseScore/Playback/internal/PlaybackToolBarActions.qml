@@ -74,42 +74,12 @@ Item {
             required property MenuItem item
             required property int index
 
-            readonly property bool textMarkerAction:
-                item.id === "command://playback/loop-in"
-                || item.id === "command://playback/loop-out"
-            readonly property bool compactTextAction: root.compactMode
-            readonly property bool textOnlyAction:
-                compactTextAction || textMarkerAction
-            readonly property string markerText:
-                item.id === "command://playback/loop-in" ? "起点" : "终点"
-            readonly property string compactText: {
-                if (item.id === "command://playback/rewind") return "回退"
-                if (item.id === "play-toggle") {
-                    return root.playbackModel.isPlaying ? "暂停" : "播放"
-                }
-                if (item.id === "command://playback/loop-toggle") return "循环"
-                if (item.id === "command://playback/loop-in") return "起点"
-                if (item.id === "command://playback/loop-out") return "终点"
-                if (item.id === "command://playback/metronome-toggle") return "节拍"
-                if (item.id === "command://playback/repeats-toggle") return "反复"
-                if (item.id === "drums-mute") return "鼓声"
-                if (item.id === "accompaniment-mute") return "伴奏"
-                return item.title
-            }
+            width: 30
+            height: 30
 
-            width: compactTextAction
-                   ? (item.id === "play-toggle" ? 34 : 29)
-                   : (textMarkerAction ? 38 : 30)
-            height: width
-
-            icon: Boolean(item) && !textOnlyAction ? item.icon : IconCode.NONE
-            text: compactTextAction
-                  ? compactText
-                  : (textMarkerAction ? markerText : "")
-            textFormat: Text.PlainText
-            maximumLineCount: 1
-            buttonType: textOnlyAction ? FlatButton.TextOnly : FlatButton.IconOnly
-            contentItem: compactTextAction ? compactTextContent : null
+            icon: Boolean(item) ? item.icon : IconCode.NONE
+            text: ""
+            buttonType: FlatButton.IconOnly
 
             toolTipTitle: Boolean(item) ? item.title : ""
             toolTipDescription: Boolean(item) ? item.description : ""
@@ -117,14 +87,12 @@ Item {
 
             iconFont: ui.theme.toolbarIconsFont
             textFont: ui.theme.bodyBoldFont
-            iconColor: root.compactMode
-                       ? (accentButton ? "#ffffff" : "#f7ede4")
-                       : ui.theme.fontPrimaryColor
+            iconColor: accentButton ? "#ffffff" : ui.theme.fontPrimaryColor
 
             accentButton: (Boolean(item) && item.checked)
                           || (item.id === "play-toggle" && root.playbackModel.isPlaying)
                           || menuLoader.isMenuOpened
-            accentColor: root.compactMode ? "#e88024" : ui.theme.accentColor
+            accentColor: ui.theme.accentColor
             transparent: !accentButton
 
             navigation.panel: root.navPanel
@@ -132,22 +100,6 @@ Item {
             navigation.order: index
             accessible.name: (item.checkable ? (item.checked ? item.title + "  " + qsTrc("global", "On") :
                                                                item.title + "  " + qsTrc("global", "Off")) : item.title)
-
-            Component {
-                id: compactTextContent
-
-                StyledTextLabel {
-                    text: btn.text
-                    color: btn.accentButton ? "#ffffff" : "#f7ede4"
-                    font: Qt.font(Object.assign({}, ui.theme.bodyBoldFont, {
-                        family: "Noto Sans CJK SC"
-                    }))
-                    textFormat: Text.PlainText
-                    wrapMode: Text.NoWrap
-                    horizontalAlignment: Text.AlignHCenter
-                    verticalAlignment: Text.AlignVCenter
-                }
-            }
 
             onClicked: {
                 if (menuLoader.isMenuOpened || item.subitems.length) {
@@ -287,7 +239,7 @@ Item {
                 navigation.panel: root.navPanel
                 navigation.order: measureAndBeatFields.navigationOrderEnd + 1
 
-                contentItem: root.compactMode ? compactTempoContent : tempoContent
+                contentItem: tempoContent
 
                 property PlaybackToolBarModel playbackModel: root.playbackModel
 
@@ -311,19 +263,6 @@ Item {
                     }
                 }
 
-                Component {
-                    id: compactTempoContent
-
-                    StyledTextLabel {
-                        text: "BPM " + root.playbackModel.tempo.value
-                        color: "#f7ede4"
-                        font: Qt.font(Object.assign({}, ui.theme.bodyBoldFont, {
-                            family: "Noto Sans CJK SC"
-                        }))
-                        textFormat: Text.PlainText
-                        wrapMode: Text.NoWrap
-                    }
-                }
             }
         }
     }

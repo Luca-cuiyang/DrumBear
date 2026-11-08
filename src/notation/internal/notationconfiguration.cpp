@@ -686,7 +686,7 @@ bool NotationConfiguration::thinNoteInputCursor() const
 
 QColor NotationConfiguration::loopMarkerColor() const
 {
-    return QColor(0x2456AA);
+    return playbackCursorColor();
 }
 
 QColor NotationConfiguration::selectionColor(engraving::voice_idx_t voiceIndex) const

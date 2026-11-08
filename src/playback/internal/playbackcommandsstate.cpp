@@ -195,11 +195,11 @@ CommandState PlaybackCommandsState::commandState(const Command& command) const
             return CommandState(true, false);
         }
 
-        const engraving::Fraction firstTick = score->firstMeasure()->tick();
-        const engraving::Fraction lastTick = score->lastMeasure()->endTick();
+        const notation::LoopBoundaries& loop =
+            notation->masterNotation()->playback()->loopBoundaries();
         const bool checked = command == LOOP_IN_COMMAND
-                             ? score->loopInTick() != firstTick
-                             : score->loopOutTick() != lastTick;
+                             ? loop.loopInSet
+                             : loop.loopOutSet;
         return CommandState(true, checked);
     } else if (command == METRONOME_TOGGLE_COMMAND) {
         return CommandState(true, notationConfiguration()->isMetronomeEnabled());

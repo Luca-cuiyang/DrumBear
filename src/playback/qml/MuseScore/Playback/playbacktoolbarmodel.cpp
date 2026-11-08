@@ -406,8 +406,9 @@ void PlaybackToolBarModel::toggleLoopMarker(LoopBoundaryType type)
 
     const Fraction firstTick = score->firstMeasure()->tick();
     const Fraction lastTick = score->lastMeasure()->endTick();
-    const bool inSet = score->loopInTick() > firstTick;
-    const bool outSet = score->loopOutTick() > firstTick && score->loopOutTick() < lastTick;
+    const LoopBoundaries boundaries = playback->loopBoundaries();
+    const bool inSet = boundaries.loopInSet;
+    const bool outSet = boundaries.loopOutSet;
 
     if (type == LoopBoundaryType::LoopIn) {
         if (inSet) {
@@ -428,6 +429,7 @@ void PlaybackToolBarModel::toggleLoopMarker(LoopBoundaryType type)
     }
 
     const bool keepLoop = type == LoopBoundaryType::LoopIn ? outSet : inSet;
+    playback->setLoopBoundarySet(type, false);
     playback->setLoopBoundariesEnabled(keepLoop);
 }
 

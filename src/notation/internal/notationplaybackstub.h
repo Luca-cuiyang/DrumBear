@@ -63,6 +63,7 @@ public:
     muse::RetVal<muse::midi::tick_t> playPositionTickByElement(const EngravingItem* element) const override;
 
     void addLoopBoundary(LoopBoundaryType boundaryType, muse::midi::tick_t tick) override;
+    void setLoopBoundarySet(LoopBoundaryType boundaryType, bool isSet) override;
     void setLoopBoundariesEnabled(bool enabled) override;
     bool isLoopEnabled() const override;
     const LoopBoundaries& loopBoundaries() const override;

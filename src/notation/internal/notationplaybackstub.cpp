@@ -145,6 +145,10 @@ void NotationPlaybackStub::addLoopBoundary(LoopBoundaryType, tick_t)
 {
 }
 
+void NotationPlaybackStub::setLoopBoundarySet(LoopBoundaryType, bool)
+{
+}
+
 void NotationPlaybackStub::setLoopBoundariesEnabled(bool)
 {
 }
