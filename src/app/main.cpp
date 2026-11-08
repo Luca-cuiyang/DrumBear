@@ -23,6 +23,7 @@
 #include <csignal>
 
 #include <QApplication>
+#include <QFontDatabase>
 #include <QStyleHints>
 #include <QQuickWindow>
 #ifndef Q_OS_WASM
@@ -74,6 +75,13 @@ static void app_init_qrc()
 #ifdef Q_OS_WIN
     Q_INIT_RESOURCE(app_win);
 #endif
+}
+
+static void app_init_fonts()
+{
+    if (QFontDatabase::addApplicationFont(":/fonts/NotoSansSC-DBUI.otf") < 0) {
+        LOGE() << "Failed to load application UI font";
+    }
 }
 
 int main(int argc, char** argv)
@@ -170,6 +178,7 @@ int main(int argc, char** argv)
     }
 
     fixSslBackend();
+    app_init_fonts();
 
     commandLineParser.processBuiltinArgs(*qapp);
     std::shared_ptr<MuseScoreCmdOptions> opt = commandLineParser.options();
@@ -178,6 +187,7 @@ int main(int argc, char** argv)
     QCoreApplication* qapp = new QApplication(argc, argv);
 
     fixSslBackend();
+    app_init_fonts();
 
     std::shared_ptr<MuseScoreCmdOptions> opt = std::make_shared<MuseScoreCmdOptions>();
     opt->runMode = IApplication::RunMode::GuiApp;

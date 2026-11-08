@@ -456,13 +456,15 @@ FocusScope {
 
         StyledTextLabel {
             visible: root.compactPortraitPlayer
+            width: 80
             anchors.right: parent.right
             anchors.rightMargin: 20
             anchors.verticalCenter: parent.verticalCenter
-            text: playerPlaybackToolBar.playbackModel.measureNumber
-                  + "." + playerPlaybackToolBar.playbackModel.beatNumber
+            text: Number(playerPlaybackToolBar.playbackModel.measureNumber)
+                  + "." + Number(playerPlaybackToolBar.playbackModel.beatNumber)
             font: ui.theme.bodyBoldFont
             color: "#ffc18f"
+            horizontalAlignment: Text.AlignRight
         }
 
         Rectangle {
