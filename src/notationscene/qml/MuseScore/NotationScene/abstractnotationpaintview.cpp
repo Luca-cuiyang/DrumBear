@@ -58,8 +58,9 @@ using namespace muse::actions;
 static constexpr qreal SCROLL_LIMIT_OFF_OVERSCROLL_FACTOR = 0.75;
 static constexpr int PORTRAIT_ROWS_PER_PAGE = 5;
 static constexpr int PORTRAIT_SCROLL_ROWS = 3;
-static constexpr int PORTRAIT_SCROLL_UPDATE_INTERVAL_MS = 8;
-static constexpr qreal PORTRAIT_SCROLL_INTERPOLATION = 0.14;
+static constexpr int PORTRAIT_SCROLL_UPDATE_INTERVAL_MS = 16;
+static constexpr qreal PORTRAIT_SCROLL_INTERPOLATION = 0.08;
+static constexpr qreal PORTRAIT_VERTICAL_SAFE_MARGIN_PX = 8.0;
 
 AbstractNotationPaintView::AbstractNotationPaintView(QQuickItem* parent)
     : muse::uicomponents::QuickPaintedView(parent), muse::Contextable(muse::iocCtxForQmlObject(this))
@@ -1798,7 +1799,21 @@ void AbstractNotationPaintView::alignPortraitGroup(bool immediate)
 
     const qreal offset = systems[groupStart]->y() - systems.front()->y();
     const qreal scale = m_portraitBaseMatrix.m11();
-    const qreal targetY = m_portraitBaseMatrix.dy() - offset * scale;
+    const size_t lastVisibleSystem = std::min(
+        groupStart + rowsPerPage - 1, systems.size() - 1);
+    const qreal firstVisibleTop = systems[groupStart]->pageBoundingRect().top();
+    const qreal lastVisibleBottom = systems[lastVisibleSystem]->pageBoundingRect().bottom();
+    const qreal topLimit = -firstVisibleTop * scale + PORTRAIT_VERTICAL_SAFE_MARGIN_PX;
+    const qreal bottomLimit = height() - PORTRAIT_VERTICAL_SAFE_MARGIN_PX
+                              - lastVisibleBottom * scale;
+    qreal targetY = m_portraitBaseMatrix.dy() - offset * scale;
+    if (topLimit <= bottomLimit) {
+        targetY = std::clamp(targetY, topLimit, bottomLimit);
+    } else {
+        // A single system can be taller than the available row. Keep its complete
+        // bottom visible because truncating the final system is never acceptable.
+        targetY = bottomLimit;
+    }
     if (immediate) {
         m_portraitScrollActive = false;
         setMatrix(muse::draw::Transform(
