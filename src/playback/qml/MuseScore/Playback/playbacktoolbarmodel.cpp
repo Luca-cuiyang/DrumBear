@@ -148,7 +148,7 @@ void PlaybackToolBarModel::updateActions()
     //! NOTE At the moment no customization ability
     ToolConfig config = defaultPlaybackToolConfig();
     for (const ToolConfig::Item& item : config.items) {
-        if (isWebPlayerMode() && item.intent == LOOP_TOGGLE_COMMAND) {
+        if (isWebPlayerMode() && rcommand::Command(item.intent) == LOOP_TOGGLE_COMMAND) {
             continue;
         }
         if (item.intent == PLAY_TOGGLE_ID) {
