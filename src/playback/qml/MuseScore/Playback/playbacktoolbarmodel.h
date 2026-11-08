@@ -134,6 +134,7 @@ private:
     void updateAccompanimentMuteItem();
     void setAccompanimentMuted(bool muted);
     void applyAccompanimentMute(bool muted);
+    void toggleLoopMarker(LoopBoundaryType type);
 
     void updatePlayPosition(muse::audio::secs_t secs);
 

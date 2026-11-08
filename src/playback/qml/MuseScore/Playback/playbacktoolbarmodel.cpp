@@ -34,7 +34,10 @@
 
 #include "async/notifylist.h"
 #include "engraving/dom/instrument.h"
+#include "engraving/dom/measure.h"
+#include "engraving/dom/score.h"
 #include "notation/imasternotation.h"
+#include "notation/inotationplayback.h"
 #include "notation/inotationparts.h"
 #include "project/inotationproject.h"
 #include "project/iprojectaudiosettings.h"
@@ -368,7 +371,53 @@ void PlaybackToolBarModel::handleMenuItem(const QString& itemId)
         return;
     }
 
+    if (itemId == "command://playback/loop-in") {
+        toggleLoopMarker(LoopBoundaryType::LoopIn);
+        return;
+    }
+
+    if (itemId == "command://playback/loop-out") {
+        toggleLoopMarker(LoopBoundaryType::LoopOut);
+        return;
+    }
+
     AbstractMenuModel::handleMenuItem(itemId);
+}
+
+void PlaybackToolBarModel::toggleLoopMarker(LoopBoundaryType type)
+{
+    const notation::INotationPtr notation = globalContext()->currentNotation();
+    const notation::INotationPlaybackPtr playback = notation ? notation->playback() : nullptr;
+    const Score* score = notation ? notation->elements()->msScore() : nullptr;
+    if (!playback || !score || !score->firstMeasure() || !score->lastMeasure()) {
+        return;
+    }
+
+    const Fraction firstTick = score->firstMeasure()->tick();
+    const Fraction lastTick = score->lastMeasure()->endTick();
+    const bool inSet = score->loopInTick() > firstTick;
+    const bool outSet = score->loopOutTick() > firstTick && score->loopOutTick() < lastTick;
+
+    if (type == LoopBoundaryType::LoopIn) {
+        if (inSet) {
+            playback->setLoopInTick(firstTick);
+        } else {
+            playbackController()->addLoopBoundary(type);
+            return;
+        }
+    } else if (type == LoopBoundaryType::LoopOut) {
+        if (outSet) {
+            playback->setLoopOutTick(lastTick);
+        } else {
+            playbackController()->addLoopBoundary(type);
+            return;
+        }
+    } else {
+        return;
+    }
+
+    const bool keepLoop = type == LoopBoundaryType::LoopIn ? outSet : inSet;
+    playback->setLoopBoundariesEnabled(keepLoop);
 }
 
 void PlaybackToolBarModel::applyDrumsMute(bool muted)
