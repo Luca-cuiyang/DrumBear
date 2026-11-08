@@ -406,7 +406,7 @@ void PlaybackToolBarModel::toggleLoopMarker(LoopBoundaryType type)
 
     const Fraction firstTick = score->firstMeasure()->tick();
     const Fraction lastTick = score->lastMeasure()->endTick();
-    const LoopBoundaries boundaries = playback->loopBoundaries();
+    const notation::LoopBoundaries boundaries = playback->loopBoundaries();
     const bool inSet = boundaries.loopInSet;
     const bool outSet = boundaries.loopOutSet;
 
