@@ -271,6 +271,23 @@ void PlaybackToolBarModel::rewind(secs_t secs)
     dispatchCommand(REWIND_COMMAND, { { "position", Val(secs) } });
 }
 
+void PlaybackToolBarModel::rewindToStart()
+{
+    playbackController()->rewind(muse::secs_t(0));
+    m_playbackPositionSecs = 0.0;
+    emit playPositionChanged();
+}
+
+void PlaybackToolBarModel::handleMenuItem(const QString& itemId)
+{
+    if (itemId == "command://playback/rewind") {
+        rewindToStart();
+        return;
+    }
+
+    AbstractMenuModel::handleMenuItem(itemId);
+}
+
 void PlaybackToolBarModel::rewindToBeat(const MeasureBeat& beat)
 {
     secs_t secs = playbackController()->beatToSecs(beat.measureIndex, static_cast<int>(beat.beat));

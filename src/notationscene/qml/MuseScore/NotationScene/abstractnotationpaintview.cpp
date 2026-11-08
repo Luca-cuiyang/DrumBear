@@ -1376,6 +1376,13 @@ bool AbstractNotationPaintView::fitPageToViewport()
     if (m_portraitGrouped) {
         m_portraitGroupStart = -1;
         alignPortraitGroup(true);
+        if (m_playbackCursor) {
+            m_playbackCursor->setVisible(true);
+            if (m_playbackCursorItem) {
+                m_playbackCursorItem->setVisible(true);
+            }
+            movePlaybackCursor(m_lastCursorTick, true);
+        }
     }
     return true;
 }
@@ -1585,6 +1592,13 @@ void AbstractNotationPaintView::setNotation(INotationPtr notation)
         m_playbackCursor->setNotation(m_notation);
         m_loopInMarker->setNotation(m_notation);
         m_loopOutMarker->setNotation(m_notation);
+        if (m_portraitGrouped) {
+            m_playbackCursor->setVisible(true);
+            if (m_playbackCursorItem) {
+                m_playbackCursorItem->setVisible(true);
+            }
+            movePlaybackCursor(0, true);
+        }
     }
 }
 
@@ -2053,7 +2067,8 @@ void AbstractNotationPaintView::setPlaybackCursorItem(QQuickItem* cursor)
     m_playbackCursorItem = cursor;
 
     if (m_playbackCursorItem) {
-        m_playbackCursorItem->setVisible(globalContext()->playbackState()->isPlaying());
+        m_playbackCursorItem->setVisible(
+            globalContext()->playbackState()->isPlaying() || m_portraitGrouped);
         m_playbackCursorItem->setEnabled(false); // ignore mouse & keyboard events
         m_playbackCursorItem->setProperty("color", notationConfiguration()->playbackCursorColor());
         m_playbackCursorItem->setProperty("opacity", notationConfiguration()->playbackCursorOpacity());

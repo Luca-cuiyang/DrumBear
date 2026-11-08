@@ -97,6 +97,7 @@ public slots:
     void setTempoBpm(int bpm);
     void setTempoMultiplier(qreal multiplier);
     void resetTempo();
+    void handleMenuItem(const QString& itemId) override;
     void setPlaybackCursorColor(const QColor& color);
     void setPlaybackCursorThickness(qreal thickness);
     void setPlaybackCursorOpacity(qreal opacity);
@@ -127,6 +128,7 @@ private:
     void updatePlayPosition(muse::audio::secs_t secs);
 
     void rewind(muse::audio::secs_t secs);
+    void rewindToStart();
     void rewindToBeat(const engraving::MeasureBeat& beat);
 
     bool m_isToolbarFloating = false;
