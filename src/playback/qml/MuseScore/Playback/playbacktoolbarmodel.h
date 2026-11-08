@@ -125,6 +125,16 @@ private:
     muse::uicomponents::MenuItem* makePlayItem();
     void updatePlayItem();
 
+    muse::uicomponents::MenuItem* makeDrumsMuteItem();
+    void updateDrumsMuteItem();
+    void setDrumsMuted(bool muted);
+    void applyDrumsMute(bool muted);
+
+    muse::uicomponents::MenuItem* makeAccompanimentMuteItem();
+    void updateAccompanimentMuteItem();
+    void setAccompanimentMuted(bool muted);
+    void applyAccompanimentMute(bool muted);
+
     void updatePlayPosition(muse::audio::secs_t secs);
 
     void rewind(muse::audio::secs_t secs);
@@ -133,5 +143,7 @@ private:
 
     bool m_isToolbarFloating = false;
     muse::secs_t m_playbackPositionSecs = 0.0;
+    bool m_drumsMuted = false;
+    bool m_accompanimentMuted = false;
 };
 }

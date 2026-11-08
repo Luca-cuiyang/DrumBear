@@ -90,10 +90,14 @@ Item {
                 if (item.id === "command://playback/loop-out") return "终点"
                 if (item.id === "command://playback/metronome-toggle") return "节拍"
                 if (item.id === "command://playback/repeats-toggle") return "反复"
+                if (item.id === "drums-mute") return "鼓声"
+                if (item.id === "accompaniment-mute") return "伴奏"
                 return item.title
             }
 
-            width: compactTextAction || textMarkerAction ? 38 : 30
+            width: compactTextAction
+                   ? (item.id === "play-toggle" ? 34 : 29)
+                   : (textMarkerAction ? 38 : 30)
             height: width
 
             icon: Boolean(item) && !textOnlyAction ? item.icon : IconCode.NONE

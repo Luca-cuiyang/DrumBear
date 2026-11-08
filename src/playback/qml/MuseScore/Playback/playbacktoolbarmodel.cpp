@@ -32,6 +32,13 @@
 #include "playback/playbacktypes.h"
 #include "playback/playbackcommands.h"
 
+#include "async/notifylist.h"
+#include "engraving/dom/instrument.h"
+#include "notation/imasternotation.h"
+#include "notation/inotationparts.h"
+#include "project/inotationproject.h"
+#include "project/iprojectaudiosettings.h"
+
 #include "ui/toolconfig.h"
 
 using namespace mu::playback;
@@ -43,6 +50,8 @@ using namespace muse::uicomponents;
 using namespace muse::audio;
 
 static const QString PLAY_TOGGLE_ID("play-toggle");
+static const QString DRUMS_MUTE_ID("drums-mute");
+static const QString ACCOMPANIMENT_MUTE_ID("accompaniment-mute");
 
 static bool isStudioPlayerMode()
 {
@@ -60,6 +69,8 @@ static const ToolConfig& defaultPlaybackToolConfig()
             { LOOP_IN_COMMAND, true },
             { LOOP_OUT_COMMAND, true },
             { METRONOME_TOGGLE_COMMAND, true },
+            { "drums-mute", true }, // virtual code
+            { "accompaniment-mute", true }, // virtual code
         };
     }
     return config;
@@ -129,6 +140,10 @@ void PlaybackToolBarModel::updateActions()
     for (const ToolConfig::Item& item : config.items) {
         if (item.intent == PLAY_TOGGLE_ID) {
             result << makePlayItem();
+        } else if (item.intent == DRUMS_MUTE_ID) {
+            result << makeDrumsMuteItem();
+        } else if (item.intent == ACCOMPANIMENT_MUTE_ID) {
+            result << makeAccompanimentMuteItem();
         } else {
             const rcommand::Command command(item.intent);
             if (isAdditionalCommand(command) && !m_isToolbarFloating && !studioPlayerMode) {
@@ -161,6 +176,64 @@ MenuItem* PlaybackToolBarModel::makeInputPitchMenu()
     MenuItem* menu = makeMenu(muse::TranslatableString("playback", "MIDI 输入音高"), items);
     menu->setIcon(ui::IconCode::Code::MUSIC_NOTES);
     return menu;
+}
+
+MenuItem* PlaybackToolBarModel::makeDrumsMuteItem()
+{
+    MenuItem* item = new MenuItem(this);
+    item->setId(DRUMS_MUTE_ID);
+    item->setTitle(TranslatableString("playback", "鼓声"));
+    item->setDescription(TranslatableString("playback", "切换鼓声静音"));
+    item->setCheckable(true);
+    item->setChecked(m_drumsMuted);
+    return item;
+}
+
+void PlaybackToolBarModel::updateDrumsMuteItem()
+{
+    MenuItem& item = findItem(DRUMS_MUTE_ID);
+    if (item.isValid()) {
+        item.setChecked(m_drumsMuted);
+    }
+}
+
+MenuItem* PlaybackToolBarModel::makeAccompanimentMuteItem()
+{
+    MenuItem* item = new MenuItem(this);
+    item->setId(ACCOMPANIMENT_MUTE_ID);
+    item->setTitle(TranslatableString("playback", "伴奏"));
+    item->setDescription(TranslatableString("playback", "切换伴奏静音"));
+    item->setCheckable(true);
+    item->setChecked(m_accompanimentMuted);
+    return item;
+}
+
+void PlaybackToolBarModel::updateAccompanimentMuteItem()
+{
+    MenuItem& item = findItem(ACCOMPANIMENT_MUTE_ID);
+    if (item.isValid()) {
+        item.setChecked(m_accompanimentMuted);
+    }
+}
+
+void PlaybackToolBarModel::setDrumsMuted(bool muted)
+{
+    if (m_drumsMuted == muted) {
+        return;
+    }
+    m_drumsMuted = muted;
+    applyDrumsMute(muted);
+    updateDrumsMuteItem();
+}
+
+void PlaybackToolBarModel::setAccompanimentMuted(bool muted)
+{
+    if (m_accompanimentMuted == muted) {
+        return;
+    }
+    m_accompanimentMuted = muted;
+    applyAccompanimentMute(muted);
+    updateAccompanimentMuteItem();
 }
 
 bool PlaybackToolBarModel::isAdditionalCommand(const muse::rcommand::Command& command) const
@@ -285,7 +358,59 @@ void PlaybackToolBarModel::handleMenuItem(const QString& itemId)
         return;
     }
 
+    if (itemId == DRUMS_MUTE_ID) {
+        setDrumsMuted(!m_drumsMuted);
+        return;
+    }
+
+    if (itemId == ACCOMPANIMENT_MUTE_ID) {
+        setAccompanimentMuted(!m_accompanimentMuted);
+        return;
+    }
+
     AbstractMenuModel::handleMenuItem(itemId);
+}
+
+void PlaybackToolBarModel::applyDrumsMute(bool muted)
+{
+    notation::IMasterNotationPtr masterNotation = globalContext()->currentMasterNotation();
+    if (!masterNotation) {
+        return;
+    }
+
+    const async::NotifyList<const Part*> parts = masterNotation->parts()->partList();
+    for (const Part* part : parts) {
+        if (!part || !part->instrument() || !part->instrument()->drumset()) {
+            continue;
+        }
+
+        for (const InstrumentTrackId& trackId : part->instrumentTrackIdList()) {
+            IPlaybackController::SoloMuteState state = playbackController()->trackSoloMuteState(trackId);
+            state.mute = muted;
+            playbackController()->setTrackSoloMuteState(trackId, state);
+        }
+    }
+}
+
+void PlaybackToolBarModel::applyAccompanimentMute(bool muted)
+{
+    project::INotationProjectPtr project = globalContext()->currentProject();
+    project::IProjectAudioSettingsPtr audioSettings = project ? project->audioSettings() : nullptr;
+    if (!audioSettings) {
+        return;
+    }
+
+    project::AudioTrackSettings settings = audioSettings->audioTrackSettings();
+    bool changed = false;
+    for (project::AudioClipSettings& clip : settings.clips) {
+        if (clip.muted != muted) {
+            clip.muted = muted;
+            changed = true;
+        }
+    }
+    if (changed) {
+        audioSettings->setAudioTrackSettings(settings);
+    }
 }
 
 void PlaybackToolBarModel::rewindToBeat(const MeasureBeat& beat)

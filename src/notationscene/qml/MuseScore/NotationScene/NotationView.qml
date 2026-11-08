@@ -68,6 +68,12 @@ FocusScope {
         enabled: root.visible
     }
 
+    PlaybackToolBarModel {
+        id: compactPlayerSummary
+
+        Component.onCompleted: load()
+    }
+
     QtObject {
         id: prv
         readonly property int scrollbarMargin: 4
@@ -453,6 +459,34 @@ FocusScope {
             font: ui.theme.bodyBoldFont
             color: root.compactPortraitPlayer ? "#ffc18f" : ui.theme.fontPrimaryColor
         }
+
+        StyledTextLabel {
+            visible: root.compactPortraitPlayer
+            anchors.right: parent.right
+            anchors.rightMargin: 20
+            anchors.verticalCenter: parent.verticalCenter
+            text: compactPlayerSummary.measureNumber + "." + compactPlayerSummary.beatNumber
+            font: ui.theme.bodyBoldFont
+            color: "#ffc18f"
+        }
+
+        Rectangle {
+            visible: root.compactPortraitPlayer
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            height: 2
+            color: "#3a2d25"
+        }
+
+        Rectangle {
+            visible: root.compactPortraitPlayer
+            anchors.left: parent.left
+            anchors.bottom: parent.bottom
+            width: parent.width * Math.max(0, Math.min(1, compactPlayerSummary.playPosition))
+            height: 2
+            color: "#e88024"
+        }
     }
 
     Rectangle {
@@ -493,7 +527,7 @@ FocusScope {
             anchors.bottom: parent.bottom
             anchors.bottomMargin: 15
             anchors.horizontalCenter: parent.horizontalCenter
-            width: root.compactPortraitPlayer ? 360 : Math.min(parent.width - 32, 620)
+            width: root.compactPortraitPlayer ? 368 : Math.min(parent.width - 32, 620)
             height: 30
             floating: false
             compactMode: root.compactPortraitPlayer
