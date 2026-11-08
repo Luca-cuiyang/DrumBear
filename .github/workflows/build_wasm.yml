@@ -74,7 +74,7 @@ jobs:
         target: 'wasm'
         arch: wasm_singlethread
         modules: 'qt5compat qtshadertools'
-        cache: true
+        cache: false
 
     - name: Setup environment
       run: |
