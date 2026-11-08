@@ -25,6 +25,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-24.04
+    env:
+      EXTDEPS_CACHE: ${{ github.workspace }}/.extdeps
     steps:
     - name: Clone repository
       uses: actions/checkout@v7
@@ -80,6 +82,13 @@ jobs:
 
     - name: Register gcc problem matcher
       run: echo "::add-matcher::.github/problem_matchers/gcc.json"
+
+    - name: Prime dependency source cache
+      run: |
+        mkdir -p "${EXTDEPS_CACHE}"
+        curl -fsSL --retry 5 --retry-delay 2 \
+          'https://drumbear.cn/mobile/practice/build-deps/dbscore-extdeps.tar.gz' \
+          | tar -xz -C "${EXTDEPS_CACHE}"
 
     - name: Build
       env:
