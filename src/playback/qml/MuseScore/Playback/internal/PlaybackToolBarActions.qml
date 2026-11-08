@@ -142,8 +142,6 @@ Item {
                     wrapMode: Text.NoWrap
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
-                    implicitWidth: Math.max(contentWidth, 24)
-                    implicitHeight: 20
                 }
             }
 
