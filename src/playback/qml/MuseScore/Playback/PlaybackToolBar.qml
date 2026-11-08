@@ -32,6 +32,7 @@ Item {
     id: root
 
     property alias floating: thePlaybackModel.isToolbarFloating
+    readonly property alias playbackModel: thePlaybackModel
     property bool compactMode: false
 
     property NavigationPanel navigationPanel: NavigationPanel {

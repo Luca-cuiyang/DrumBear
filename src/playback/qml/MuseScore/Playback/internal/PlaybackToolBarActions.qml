@@ -135,9 +135,7 @@ Item {
                 StyledTextLabel {
                     text: btn.text
                     color: btn.accentButton ? "#ffffff" : "#f7ede4"
-                    font.family: ui.theme.bodyBoldFont.family
-                    font.pixelSize: 10
-                    font.bold: true
+                    font: ui.theme.bodyBoldFont
                     textFormat: Text.PlainText
                     wrapMode: Text.NoWrap
                     horizontalAlignment: Text.AlignHCenter
