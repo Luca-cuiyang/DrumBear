@@ -24,6 +24,7 @@
 
 #include "engraving/dom/measure.h"
 #include "engraving/dom/score.h"
+#include "notation/imasternotation.h"
 #include "notation/inotation.h"
 #include "notation/inotationelements.h"
 #include "notation/inotationinteraction.h"
@@ -63,7 +64,7 @@ void PlaybackCommandsState::init()
             updateCommandStates({ PLAY_SELECTION_COMMAND });
         }, Asyncable::Mode::SetReplace);
 
-        currNotation->playback()->loopBoundariesChanged().onNotify(this, [this]() {
+        currNotation->masterNotation()->playback()->loopBoundariesChanged().onNotify(this, [this]() {
             updateCommandStates({ LOOP_IN_COMMAND, LOOP_OUT_COMMAND });
         }, Asyncable::Mode::SetReplace);
     });
