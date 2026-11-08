@@ -135,8 +135,9 @@ Item {
                 StyledTextLabel {
                     text: btn.text
                     color: btn.accentButton ? "#ffffff" : "#f7ede4"
-                    font: ui.theme.bodyBoldFont
-                    font.family: "Noto Sans CJK SC"
+                    font: Qt.font(Object.assign({}, ui.theme.bodyBoldFont, {
+                        family: "Noto Sans CJK SC"
+                    }))
                     textFormat: Text.PlainText
                     wrapMode: Text.NoWrap
                     horizontalAlignment: Text.AlignHCenter
@@ -312,8 +313,9 @@ Item {
                     StyledTextLabel {
                         text: "BPM " + root.playbackModel.tempo.value
                         color: "#f7ede4"
-                        font: ui.theme.bodyBoldFont
-                        font.family: "Noto Sans CJK SC"
+                        font: Qt.font(Object.assign({}, ui.theme.bodyBoldFont, {
+                            family: "Noto Sans CJK SC"
+                        }))
                         textFormat: Text.PlainText
                         wrapMode: Text.NoWrap
                     }

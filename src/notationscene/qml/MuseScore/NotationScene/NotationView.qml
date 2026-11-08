@@ -450,8 +450,9 @@ FocusScope {
             anchors.leftMargin: 20
             anchors.verticalCenter: parent.verticalCenter
             text: root.compactPortraitPlayer ? "DB Player 练鼓神器" : "DB player"
-            font: ui.theme.bodyBoldFont
-            font.family: "Noto Sans CJK SC"
+            font: Qt.font(Object.assign({}, ui.theme.bodyBoldFont, {
+                family: "Noto Sans CJK SC"
+            }))
             color: root.compactPortraitPlayer ? "#ffc18f" : ui.theme.fontPrimaryColor
         }
 
@@ -463,8 +464,9 @@ FocusScope {
             anchors.verticalCenter: parent.verticalCenter
             text: Number(playerPlaybackToolBar.playbackModel.measureNumber)
                   + "." + Number(playerPlaybackToolBar.playbackModel.beatNumber)
-            font: ui.theme.bodyBoldFont
-            font.family: "Noto Sans CJK SC"
+            font: Qt.font(Object.assign({}, ui.theme.bodyBoldFont, {
+                family: "Noto Sans CJK SC"
+            }))
             color: "#ffc18f"
             horizontalAlignment: Text.AlignRight
         }
