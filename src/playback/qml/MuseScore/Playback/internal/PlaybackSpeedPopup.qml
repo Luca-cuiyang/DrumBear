@@ -62,6 +62,7 @@ StyledPopupView {
             text: "速度"
             horizontalAlignment: Text.AlignLeft
             wrapMode: Text.NoWrap
+            font: ui.theme.bodyFont
         }
 
         // Absolute quarter-note tempo, for example quarter note = 120.
@@ -96,6 +97,7 @@ StyledPopupView {
                 Layout.preferredHeight: 30
 
                 text: "原速"
+                textFont: ui.theme.bodyBoldFont
                 toolTipTitle: "恢复谱面原速"
                 maximumLineCount: 1
 
@@ -112,6 +114,7 @@ StyledPopupView {
             text: "播放指针"
             horizontalAlignment: Text.AlignLeft
             wrapMode: Text.NoWrap
+            font: ui.theme.bodyBoldFont
         }
 
         RowLayout {
@@ -121,6 +124,7 @@ StyledPopupView {
                 Layout.preferredWidth: 48
                 text: "颜色"
                 wrapMode: Text.NoWrap
+                font: ui.theme.bodyFont
             }
 
             Repeater {
@@ -149,6 +153,7 @@ StyledPopupView {
                 Layout.preferredWidth: 48
                 text: "长短"
                 wrapMode: Text.NoWrap
+                font: ui.theme.bodyFont
             }
             StyledSlider {
                 Layout.preferredWidth: 160
@@ -167,6 +172,7 @@ StyledPopupView {
                 Layout.preferredWidth: 48
                 text: "粗细"
                 wrapMode: Text.NoWrap
+                font: ui.theme.bodyFont
             }
             StyledSlider {
                 Layout.preferredWidth: 160
@@ -185,6 +191,7 @@ StyledPopupView {
                 Layout.preferredWidth: 48
                 text: "透明度"
                 wrapMode: Text.NoWrap
+                font: ui.theme.bodyFont
             }
             StyledSlider {
                 Layout.preferredWidth: 160
