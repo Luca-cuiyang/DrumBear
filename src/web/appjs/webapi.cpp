@@ -65,6 +65,7 @@ struct PlayerLayoutState {
         double bottomGap = 0.0;
         bool autoSize = true;
         bool visible = true;
+        std::vector<std::pair<engraving::EngravingItem*, bool>> textItems;
     };
 
     struct BreakState {
@@ -382,6 +383,11 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
             engraving::Box* box = static_cast<engraving::Box*>(item);
             state->boxes.push_back({ box, box->boxHeight().val(), box->topGap().val(), box->bottomGap().val(),
                                      box->isAutoSizeEnabled(), box->visible() });
+            for (engraving::EngravingItem* child : box->childrenItems(true)) {
+                if (child->isTextBase()) {
+                    state->boxes.back().textItems.emplace_back(child, child->visible());
+                }
+            }
         }
 
         for (engraving::MeasureBase* item = score->first(); item; item = item->next()) {
@@ -428,6 +434,9 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
             boxState.box->setBoxHeight(engraving::Spatium(0.0));
             boxState.box->setTopGap(engraving::Spatium(0.0));
             boxState.box->setBottomGap(engraving::Spatium(0.0));
+            for (const auto& textItem : boxState.textItems) {
+                textItem.first->setVisible(false);
+            }
         }
 
         std::unordered_map<engraving::Sid, engraving::PropertyValue> styles;
@@ -478,6 +487,9 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
             boxState.box->setBoxHeight(engraving::Spatium::fromAbsolute(boxState.height, state.spatium));
             boxState.box->setTopGap(engraving::Spatium::fromAbsolute(boxState.topGap, state.spatium));
             boxState.box->setBottomGap(engraving::Spatium::fromAbsolute(boxState.bottomGap, state.spatium));
+            for (const auto& textItem : boxState.textItems) {
+                textItem.first->setVisible(textItem.second);
+            }
         }
 
         std::unordered_map<engraving::Sid, engraving::PropertyValue> styles;
