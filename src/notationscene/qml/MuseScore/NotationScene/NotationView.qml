@@ -45,7 +45,7 @@ FocusScope {
     property bool webPlayerMode: false
     readonly property int playerChromeHeight: 60
     readonly property bool compactPortraitPlayer: webPlayerMode && width < height
-    readonly property int playerTopChromeHeight: compactPortraitPlayer ? 35 : playerChromeHeight
+    readonly property int playerTopChromeHeight: compactPortraitPlayer ? 20 : playerChromeHeight
     readonly property int playerBottomChromeHeight: playerChromeHeight
 
     property alias paintView: notationView
@@ -134,7 +134,9 @@ FocusScope {
 
     ColumnLayout {
         anchors.fill: parent
-        anchors.topMargin: root.playerChromeVisible ? root.playerTopChromeHeight : 0
+        anchors.topMargin: root.playerChromeVisible && !root.compactPortraitPlayer
+                            ? root.playerTopChromeHeight
+                            : 0
         anchors.bottomMargin: root.playerChromeVisible ? root.playerBottomChromeHeight : 0
         spacing: 0
 
@@ -435,7 +437,7 @@ FocusScope {
         width: root.width
         height: root.playerTopChromeHeight
         z: 200
-        color: root.compactPortraitPlayer ? "#241b16" : ui.theme.backgroundSecondaryColor
+        color: root.compactPortraitPlayer ? "transparent" : ui.theme.backgroundSecondaryColor
 
         Rectangle {
             anchors.left: parent.left
@@ -443,31 +445,35 @@ FocusScope {
             anchors.bottom: parent.bottom
             height: 1
             color: ui.theme.strokeColor
+            visible: !root.compactPortraitPlayer
         }
 
         StyledTextLabel {
+            visible: !root.compactPortraitPlayer
             anchors.left: parent.left
             anchors.leftMargin: 20
             anchors.verticalCenter: parent.verticalCenter
-            text: root.compactPortraitPlayer ? "DB Player 练鼓神器" : "DB player"
+            text: "DB player"
             font: Qt.font(Object.assign({}, ui.theme.bodyBoldFont, {
                 family: "Noto Sans CJK SC"
             }))
-            color: root.compactPortraitPlayer ? "#ffc18f" : ui.theme.fontPrimaryColor
+            color: ui.theme.fontPrimaryColor
         }
 
         StyledTextLabel {
             visible: root.compactPortraitPlayer
-            width: 80
+            width: 60
             anchors.right: parent.right
-            anchors.rightMargin: 20
-            anchors.verticalCenter: parent.verticalCenter
+            anchors.rightMargin: 10
+            anchors.top: parent.top
+            anchors.topMargin: 1
             text: Number(playerPlaybackToolBar.playbackModel.measureNumber)
                   + "." + Number(playerPlaybackToolBar.playbackModel.beatNumber)
             font: Qt.font(Object.assign({}, ui.theme.bodyBoldFont, {
-                family: "Noto Sans CJK SC"
+                family: "Noto Sans CJK SC",
+                pixelSize: 12
             }))
-            color: "#ffc18f"
+            color: "#e88024"
             horizontalAlignment: Text.AlignRight
         }
 
@@ -475,20 +481,40 @@ FocusScope {
             visible: root.compactPortraitPlayer
             anchors.left: parent.left
             anchors.right: parent.right
+            anchors.leftMargin: 12
+            anchors.rightMargin: 76
             anchors.bottom: parent.bottom
-            height: 2
-            color: "#3a2d25"
-        }
+            height: 4
+            radius: 2
+            color: "#d7d7d7"
 
-        Rectangle {
-            visible: root.compactPortraitPlayer
-            anchors.left: parent.left
-            anchors.bottom: parent.bottom
-            width: parent.width * Math.max(
-                       0,
-                       Math.min(1, playerPlaybackToolBar.playbackModel.playPosition))
-            height: 2
-            color: "#e88024"
+            Rectangle {
+                width: parent.width * Math.max(
+                           0,
+                           Math.min(1, playerPlaybackToolBar.playbackModel.playPosition))
+                height: parent.height
+                radius: parent.radius
+                color: "#e88024"
+            }
+
+            MouseArea {
+                anchors.fill: parent
+
+                function seekAt(x) {
+                    playerPlaybackToolBar.playbackModel.playPosition =
+                        Math.max(0, Math.min(1, x / width))
+                }
+
+                onPressed: function(mouse) {
+                    seekAt(mouse.x)
+                }
+
+                onPositionChanged: function(mouse) {
+                    if (pressed) {
+                        seekAt(mouse.x)
+                    }
+                }
+            }
         }
     }
 

@@ -402,7 +402,7 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         constexpr double MM_TO_INCH = 1.0 / 25.4;
         constexpr double PLAYER_PORTRAIT_BOTTOM_PADDING_MM = 34.0;
         const double pageWidthMm = 70.0;
-        constexpr int PLAYER_CHROME_HEIGHT = 95;
+        constexpr int PLAYER_CHROME_HEIGHT = 60;
         const int scoreViewportHeight = viewportHeight > PLAYER_CHROME_HEIGHT
                                         ? viewportHeight - PLAYER_CHROME_HEIGHT
                                         : viewportHeight;
@@ -436,9 +436,9 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         styles.emplace(engraving::Sid::pagePrintableWidth, (pageWidthMm - 3.6) * MM_TO_INCH);
         styles.emplace(engraving::Sid::pageEvenLeftMargin, 1.8 * MM_TO_INCH);
         styles.emplace(engraving::Sid::pageOddLeftMargin, 1.8 * MM_TO_INCH);
-        styles.emplace(engraving::Sid::pageEvenTopMargin, 1.8 * MM_TO_INCH);
+        styles.emplace(engraving::Sid::pageEvenTopMargin, 0.7 * MM_TO_INCH);
         styles.emplace(engraving::Sid::pageEvenBottomMargin, 1.8 * MM_TO_INCH);
-        styles.emplace(engraving::Sid::pageOddTopMargin, 1.8 * MM_TO_INCH);
+        styles.emplace(engraving::Sid::pageOddTopMargin, 0.7 * MM_TO_INCH);
         styles.emplace(engraving::Sid::pageOddBottomMargin, 1.8 * MM_TO_INCH);
         styles.emplace(engraving::Sid::pageTwosided, false);
         styles.emplace(engraving::Sid::spatium, spatiumUnits);
@@ -465,6 +465,7 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         notationConfiguration()->setBackgroundUseColor(true);
         notationConfiguration()->setBackgroundColor(Qt::white);
         notationConfiguration()->setNotationColor(Qt::black);
+        notationConfiguration()->setPlaybackCursorLength(0.7);
         score->setShowUnprintable(false);
         score->setShowFrames(false);
 

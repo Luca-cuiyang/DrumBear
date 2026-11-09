@@ -220,7 +220,7 @@ void NotationConfiguration::init()
     settings()->setDefaultValue(PLAYBACK_CURSOR_COLOR, Val(QColor("#F57C00")));
     settings()->setDefaultValue(PLAYBACK_CURSOR_THICKNESS, Val(0.4));
     settings()->setDefaultValue(PLAYBACK_CURSOR_OPACITY, Val(0.7));
-    settings()->setDefaultValue(PLAYBACK_CURSOR_LENGTH, Val(1.0));
+    settings()->setDefaultValue(PLAYBACK_CURSOR_LENGTH, Val(0.7));
 
     settings()->valueChanged(PLAYBACK_CURSOR_COLOR).onReceive(nullptr, [this](const Val&) {
         m_playbackCursorStyleChanged.notify();
