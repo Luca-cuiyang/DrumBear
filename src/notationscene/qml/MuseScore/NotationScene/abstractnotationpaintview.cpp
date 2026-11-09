@@ -1372,8 +1372,14 @@ bool AbstractNotationPaintView::fitPageToViewport()
     }
     const qreal scale = visualScale;
     const qreal x = (width() - pageWidth * scale) * 0.5;
+    const qreal portraitStaffTop = 100.0;
+    const qreal portraitY =
+        verticalSystems && m_portraitGrouped && !score->pages().front()->systems().empty()
+        ? portraitStaffTop
+          - score->pages().front()->systems().front()->staffCanvasYpage(0) * scale
+        : 0.0;
     const qreal y = verticalSystems
-                    ? 0.0
+                    ? portraitY
                     : (height() - pageHeight * scale) * 0.5;
     LOGI() << "DB_PLAYER_PAGE_FIT"
            << "view=" << width() << "x" << height()
@@ -1840,7 +1846,9 @@ void AbstractNotationPaintView::alignPortraitGroup(bool immediate)
         groupStart + rowsPerPage - 1, systems.size() - 1);
     const qreal firstVisibleTop = systems[groupStart]->pageBoundingRect().top();
     const qreal lastVisibleBottom = systems[lastVisibleSystem]->pageBoundingRect().bottom();
-    const qreal topLimit = -firstVisibleTop * scale + PORTRAIT_VERTICAL_SAFE_MARGIN_PX;
+    const qreal topLimit = m_portraitBaseMatrix.dy()
+                           - firstVisibleTop * scale
+                           + PORTRAIT_VERTICAL_SAFE_MARGIN_PX;
     const qreal bottomLimit = height() - PORTRAIT_VERTICAL_SAFE_MARGIN_PX
                               - lastVisibleBottom * scale;
     qreal targetY = m_portraitBaseMatrix.dy() - offset * scale;
