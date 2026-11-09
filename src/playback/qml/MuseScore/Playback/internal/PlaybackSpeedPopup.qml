@@ -87,7 +87,7 @@ StyledPopupView {
                 minValue: 1
                 step: 1
                 decimals: 0
-                selectAllOnFocus: true
+                replaceOnInput: true
 
                 navigation.panel: navPanel
                 navigation.accessible.name: "四分音符速度"
