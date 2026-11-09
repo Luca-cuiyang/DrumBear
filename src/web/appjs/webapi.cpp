@@ -103,6 +103,7 @@ struct PlayerLayoutState {
     bool backgroundUseColor = true;
     QColor backgroundColor;
     QColor notationColor;
+    bool showInvisible = true;
     bool showUnprintable = true;
     bool showFrames = true;
     int viewMode = 0;
@@ -372,6 +373,7 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         state->backgroundUseColor = notationConfiguration()->backgroundUseColor();
         state->backgroundColor = notationConfiguration()->backgroundColor();
         state->notationColor = notationConfiguration()->notationColor();
+        state->showInvisible = score->isShowInvisible();
         state->showUnprintable = score->showUnprintable();
         state->showFrames = score->showFrames();
         state->viewMode = static_cast<int>(notation->viewMode());
@@ -475,6 +477,7 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         notationConfiguration()->setBackgroundColor(Qt::white);
         notationConfiguration()->setNotationColor(Qt::black);
         notationConfiguration()->setPlaybackCursorLength(0.7);
+        score->setShowInvisible(false);
         score->setShowUnprintable(false);
         score->setShowFrames(false);
 
@@ -523,6 +526,7 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         notationConfiguration()->setBackgroundColor(state.backgroundColor);
         notationConfiguration()->setBackgroundUseColor(state.backgroundUseColor);
         notationConfiguration()->setNotationColor(state.notationColor);
+        score->setShowInvisible(state.showInvisible);
         score->setShowUnprintable(state.showUnprintable);
         score->setShowFrames(state.showFrames);
 
