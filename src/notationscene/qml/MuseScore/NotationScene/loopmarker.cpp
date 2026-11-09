@@ -163,8 +163,10 @@ void LoopMarker::paint(muse::draw::Painter* painter)
     PolygonF triangle(3);
 
     const double x = m_rect.left();
-    const double y = m_rect.top();
-    const double h = m_notation->style()->styleValue(StyleId::spatium).toDouble() * 2;
+    const double fullHeight = m_rect.height();
+    const double height = fullHeight * configuration()->playbackCursorLength();
+    const double y = m_rect.top() + (fullHeight - height) / 2.0;
+    const double h = m_notation->style()->styleValue(StyleId::spatium).toDouble() * 1.3;
 
     const QColor color = configuration()->loopMarkerColor();
 
@@ -188,7 +190,7 @@ void LoopMarker::paint(muse::draw::Painter* painter)
     const double lineWidth = 0.15 * spatium;
 
     painter->setPen(Pen(color, lineWidth, PenStyle::SolidLine, PenCapStyle::FlatCap, PenJoinStyle::MiterJoin));
-    painter->drawLine(x, y, x, m_rect.bottom());
+    painter->drawLine(x, y, x, y + height);
     painter->setBrush(color);
     painter->drawConvexPolygon(triangle);
 }
