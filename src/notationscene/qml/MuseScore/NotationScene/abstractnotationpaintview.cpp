@@ -1852,7 +1852,9 @@ void AbstractNotationPaintView::alignPortraitGroup(bool immediate)
     const qreal bottomLimit = height() - PORTRAIT_VERTICAL_SAFE_MARGIN_PX
                               - lastVisibleBottom * scale;
     qreal targetY = m_portraitBaseMatrix.dy() - offset * scale;
-    if (topLimit <= bottomLimit) {
+    if (groupStart == 0) {
+        targetY = m_portraitBaseMatrix.dy();
+    } else if (topLimit <= bottomLimit) {
         targetY = std::clamp(targetY, topLimit, bottomLimit);
     } else {
         // A single system can be taller than the available row. Keep its complete
