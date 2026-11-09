@@ -77,6 +77,7 @@ public:
 
     bool isPlaying() const override;
     muse::async::Channel<bool> isPlayingChanged() const override;
+    muse::async::Channel<muse::midi::tick_t> playbackTickChanged() const override;
 
     muse::Ret togglePlay() override;
     muse::Ret play(bool showErrors = true) override;
@@ -256,6 +257,7 @@ private:
 
     muse::async::Channel<bool> m_isPlayAllowedChanged;
     muse::async::Channel<bool> m_isPlayingChanged;
+    muse::async::Channel<muse::midi::tick_t> m_playbackTickChanged;
     muse::async::Channel<bool> m_loopEnabledChanged;
     muse::async::Notification m_totalPlayTimeChanged;
     muse::async::Notification m_currentTempoChanged;

@@ -33,6 +33,7 @@ public:
 
     bool isPlaying() const override;
     muse::async::Channel<bool> isPlayingChanged() const override;
+    muse::async::Channel<muse::midi::tick_t> playbackTickChanged() const override;
 
     bool isPlaybackInited() const override;
     muse::async::Channel<bool> playbackInitedChanged() const override;

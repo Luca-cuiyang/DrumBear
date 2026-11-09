@@ -58,6 +58,7 @@ public:
 
     virtual bool isPlaying() const = 0;
     virtual muse::async::Channel<bool> isPlayingChanged() const = 0;
+    virtual muse::async::Channel<muse::midi::tick_t> playbackTickChanged() const = 0;
 
     virtual muse::Ret togglePlay() = 0;
     virtual muse::Ret play(bool showErrors = true) = 0;

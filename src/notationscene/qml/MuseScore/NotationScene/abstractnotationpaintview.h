@@ -36,6 +36,7 @@
 #include "ui/iuiactionsregister.h"
 #include "ui/iuiconfiguration.h"
 #include "ui/iuicontextresolver.h"
+#include "playback/iplaybackcontroller.h"
 #include "uicomponents/qml/Muse/UiComponents/quickpaintedview.h"
 
 #include "notationscene/inotationsceneconfiguration.h"
@@ -82,6 +83,7 @@ class AbstractNotationPaintView : public muse::uicomponents::QuickPaintedView, p
     muse::ContextInject<muse::ui::IUiContextResolver> uiContextResolver = { this };
     muse::ContextInject<muse::ui::IMainWindow> mainWindow = { this };
     muse::ContextInject<muse::ui::IUiActionsRegister> actionsRegister = { this };
+    muse::ContextInject<playback::IPlaybackController> playbackController = { this };
 
 public:
     explicit AbstractNotationPaintView(QQuickItem* parent = nullptr);

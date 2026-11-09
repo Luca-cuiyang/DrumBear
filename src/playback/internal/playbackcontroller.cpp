@@ -255,6 +255,11 @@ Channel<bool> PlaybackController::isPlayingChanged() const
     return m_isPlayingChanged;
 }
 
+Channel<midi::tick_t> PlaybackController::playbackTickChanged() const
+{
+    return m_playbackTickChanged;
+}
+
 bool PlaybackController::isPaused() const
 {
     if (!currentPlayer()) {
@@ -294,6 +299,8 @@ void PlaybackController::seekRawTick(const midi::tick_t tick, const bool flushSo
         return;
     }
 
+    m_currentTick = tick;
+    m_playbackTickChanged.send(m_currentTick);
     seek(playedTickToSecs(playedTick.val), flushSound);
 }
 
@@ -473,6 +480,7 @@ void PlaybackController::seekElement(const notation::EngravingItem* element, boo
     }
 
     m_currentTick = element->tick().ticks();
+    m_playbackTickChanged.send(m_currentTick);
     seek(playedTickToSecs(tick.val), flushSound);
 }
 
@@ -820,6 +828,8 @@ void PlaybackController::doRewind(secs_t newPosition)
     secs_t endSecs = totalPlayTime();
     newPosition = std::clamp(newPosition, startSecs, endSecs);
 
+    m_currentTick = notationPlayback()->secToTick(newPosition);
+    m_playbackTickChanged.send(m_currentTick);
     seek(newPosition);
 }
 
@@ -1844,6 +1854,7 @@ void PlaybackController::setupPlayer()
 {
     currentPlayer()->playbackPositionChanged().onReceive(this, [this](const audio::secs_t pos) {
         m_currentTick = notationPlayback()->secToTick(pos);
+        m_playbackTickChanged.send(m_currentTick);
 
         updateCurrentTempo();
 

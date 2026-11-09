@@ -124,6 +124,17 @@ void AbstractNotationPaintView::load()
     m_notationAutomationController = std::make_unique<NotationAutomationController>(m_automationLinesContainer, iocContext());
     m_playbackCursor = std::make_unique<PlaybackCursor>(iocContext());
     m_playbackCursor->setVisible(false);
+    playbackController()->playbackTickChanged().onReceive(this, [this](midi::tick_t tick) {
+        if (!m_playbackCursor) {
+            return;
+        }
+        m_playbackCursor->setVisible(true);
+        if (m_playbackCursorItem) {
+            m_playbackCursorItem->setVisible(true);
+        }
+        movePlaybackCursor(tick, true);
+        scheduleRedraw();
+    });
     notationConfiguration()->playbackCursorStyleChanged().onNotify(this, [this]() {
         refreshPlaybackCursorStyle();
     });

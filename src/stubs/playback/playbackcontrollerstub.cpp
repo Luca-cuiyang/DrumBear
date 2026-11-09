@@ -43,6 +43,11 @@ muse::async::Channel<bool> PlaybackControllerStub::isPlayingChanged() const
     return {};
 }
 
+muse::async::Channel<muse::midi::tick_t> PlaybackControllerStub::playbackTickChanged() const
+{
+    return {};
+}
+
 bool PlaybackControllerStub::isPlaybackInited() const
 {
     return false;

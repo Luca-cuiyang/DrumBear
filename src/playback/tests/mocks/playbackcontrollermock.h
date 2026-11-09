@@ -39,6 +39,7 @@ public:
 
     MOCK_METHOD(bool, isPlaying, (), (const, override));
     MOCK_METHOD(muse::async::Channel<bool>, isPlayingChanged, (), (const, override));
+    MOCK_METHOD(muse::async::Channel<muse::midi::tick_t>, playbackTickChanged, (), (const, override));
 
     MOCK_METHOD(muse::Ret, togglePlay, (), (override));
     MOCK_METHOD(muse::Ret, play, (bool), (override));
