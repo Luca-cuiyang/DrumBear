@@ -175,6 +175,7 @@ FocusScope {
                 NotationPaintView {
                     id: notationView
                     anchors.fill: parent
+                    anchors.bottomMargin: root.compactPortraitPlayer ? -166 : 0
                     portraitGrouped: root.compactPortraitPlayer
                     transform: Translate {
                         y: root.compactPortraitPlayer ? -166 : 0
