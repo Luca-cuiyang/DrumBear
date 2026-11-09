@@ -86,7 +86,7 @@ set(MUSESCORE_REVISION "" CACHE STRING "Build revision")
 # DBScore: keep the musescore.com service compiled so cloud-dependent services
 # (e.g. "Convert file to score") don't crash at startup. All user-facing
 # musescore.com UI (account, learn, publish, cloud scores) is removed separately.
-set(MUSE_MODULE_CLOUD_DBSCORECLOUD ON CACHE BOOL "Enable DB Score cloud account" FORCE)
+set(MUSE_MODULE_CLOUD_DBSCORECLOUD OFF CACHE BOOL "Legacy DB Score cloud publishing" FORCE)
 
 set(MUSE_ADTOF_SOURCE_DIR "" CACHE PATH "Path to the ADTOF transcription source (scripts + models) to bundle")
 set(MUSE_ADTOF_PYTHON_DIR "" CACHE PATH "Path to a portable Python runtime to bundle")
@@ -229,6 +229,14 @@ endif(MUSE_COMPILE_USE_COMPILER_CACHE)
 ###########################################
 set(FETCHCONTENT_QUIET OFF)
 set(FETCHCONTENT_BASE_DIR ${PROJECT_BINARY_DIR}/_deps)
+
+if (OS_IS_WASM)
+    # Qt's FindWrapRt probes libc symbols with a native-link test that fails
+    # under Emscripten. WASM has no librt dependency, so mark the probes valid
+    # and let FindWrapRt create its empty interface target.
+    set(HAVE_GETTIME TRUE CACHE INTERNAL "" FORCE)
+    set(HAVE_SHM_OPEN_SHM_UNLINK TRUE CACHE INTERNAL "" FORCE)
+endif()
 
 include(SetupQt6)
 
