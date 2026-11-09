@@ -101,8 +101,16 @@ StyledPopupView {
                     anchors.fill: parent
                     anchors.rightMargin: 18
                     cursorShape: Qt.IBeamCursor
+                    propagateComposedEvents: true
 
-                    onClicked: bpmInput.beginReplacement()
+                    onPressed: function(mouse) {
+                        mouse.accepted = false
+                    }
+
+                    onReleased: function(mouse) {
+                        bpmInput.beginReplacement()
+                        mouse.accepted = false
+                    }
                 }
             }
 

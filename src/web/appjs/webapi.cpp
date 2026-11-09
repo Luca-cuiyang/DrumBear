@@ -545,6 +545,10 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
     }
 
     if (!changed) {
+        if (portrait) {
+            score->doLayout();
+            score->update();
+        }
         return true;
     }
 
