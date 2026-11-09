@@ -176,6 +176,9 @@ FocusScope {
                     id: notationView
                     anchors.fill: parent
                     portraitGrouped: root.compactPortraitPlayer
+                    transform: Translate {
+                        y: root.compactPortraitPlayer ? -166 : 0
+                    }
 
                     property NavigationPanel navigationPanel: NavigationPanel {
                         name: "ScoreView"
