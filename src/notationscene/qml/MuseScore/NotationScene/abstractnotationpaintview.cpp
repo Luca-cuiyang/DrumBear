@@ -1354,7 +1354,7 @@ bool AbstractNotationPaintView::fitPageToViewport()
         engraving::Page* page = score->pages().front();
         std::vector<engraving::System*>& systems = page->systems();
         if (!systems.empty()) {
-            constexpr qreal bottomControlsHeight = 70.0;
+            constexpr qreal bottomControlsHeight = 180.0;
             const qreal rowPitch =
                 std::max(1.0, height() - bottomControlsHeight)
                 / PORTRAIT_ROWS_PER_PAGE / visualScale;
