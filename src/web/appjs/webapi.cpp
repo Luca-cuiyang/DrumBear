@@ -376,7 +376,7 @@ bool WebApi::setPlayerLayout(const std::string& layout, int viewportWidth, int v
         state->viewMode = static_cast<int>(notation->viewMode());
 
         for (engraving::MeasureBase* item = score->first(); item && !item->isMeasure(); item = item->next()) {
-            if (!item->isVBox()) {
+            if (!item->isBox()) {
                 continue;
             }
             engraving::Box* box = static_cast<engraving::Box*>(item);
