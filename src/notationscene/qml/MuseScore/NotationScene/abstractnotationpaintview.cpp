@@ -1429,6 +1429,9 @@ void AbstractNotationPaintView::mousePressEvent(QMouseEvent* event)
     forceFocusIn();
 
     if (isInited()) {
+        if (m_portraitGrouped && event->button() == Qt::LeftButton) {
+            emit playbackChromeRequested();
+        }
         m_inputController->mousePressEvent(event);
     }
 }

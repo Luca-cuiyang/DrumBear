@@ -194,6 +194,7 @@ signals:
     void automationModeChanged();
 
     void activeFocusRequested();
+    void playbackChromeRequested();
 
     void isMainViewChanged(bool isMainView);
     void hasNotationChanged();

@@ -109,6 +109,7 @@ void PlaybackToolBarModel::setupConnections()
 
     globalContext()->playbackState()->playbackStatusChanged().onReceive(this, [this](audio::PlaybackStatus) {
         updatePlayItem();
+        emit isPlayingChanged();
     });
 
     globalContext()->playbackState()->playbackPositionChanged().onReceive(this, [this](secs_t secs) {
@@ -264,6 +265,11 @@ bool PlaybackToolBarModel::isAdditionalCommand(const muse::rcommand::Command& co
 bool PlaybackToolBarModel::isPlayAllowed() const
 {
     return playbackController()->isPlayAllowed();
+}
+
+bool PlaybackToolBarModel::isPlaying() const
+{
+    return globalContext()->playbackState()->isPlaying();
 }
 
 bool PlaybackToolBarModel::isToolbarFloating() const

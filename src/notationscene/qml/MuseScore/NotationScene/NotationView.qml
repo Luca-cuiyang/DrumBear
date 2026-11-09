@@ -46,7 +46,8 @@ FocusScope {
     readonly property int playerChromeHeight: 60
     readonly property bool compactPortraitPlayer: webPlayerMode && width < height
     readonly property int playerTopChromeHeight: compactPortraitPlayer ? 20 : playerChromeHeight
-    readonly property int playerBottomChromeHeight: playerChromeHeight
+    readonly property int playerBottomChromeHeight: compactPortraitPlayer ? 66 : playerChromeHeight
+    property bool playerBottomBarShown: true
 
     property alias paintView: notationView
 
@@ -137,7 +138,9 @@ FocusScope {
         anchors.topMargin: root.playerChromeVisible && !root.compactPortraitPlayer
                             ? root.playerTopChromeHeight
                             : 0
-        anchors.bottomMargin: root.playerChromeVisible ? root.playerBottomChromeHeight : 0
+        anchors.bottomMargin: root.playerChromeVisible && !root.compactPortraitPlayer
+                               ? root.playerBottomChromeHeight
+                               : 0
         spacing: 0
 
         NotationSwitchPanel {
@@ -219,6 +222,15 @@ FocusScope {
 
                     onActiveFocusRequested: {
                         fakeNavCtrl.requestActive()
+                    }
+
+                    onPlaybackChromeRequested: {
+                        if (root.compactPortraitPlayer) {
+                            root.playerBottomBarShown = true
+                            if (playerPlaybackToolBar.playbackModel.isPlaying) {
+                                playerBottomAutoHideTimer.restart()
+                            }
+                        }
                     }
 
                     onShowContextMenuRequested: function (elementType, viewPos) {
@@ -523,11 +535,71 @@ FocusScope {
 
         visible: root.playerChromeVisible
         x: 0
-        y: root.height - height
+        y: root.compactPortraitPlayer
+           ? (root.playerBottomBarShown ? root.height - height : root.height + 2)
+           : root.height - height
         width: root.width
         height: root.playerBottomChromeHeight
         z: 200
-        color: ui.theme.backgroundSecondaryColor
+        color: "transparent"
+        enabled: !root.compactPortraitPlayer || root.playerBottomBarShown
+
+        Behavior on y {
+            NumberAnimation {
+                duration: 180
+                easing.type: Easing.OutCubic
+            }
+        }
+
+        Timer {
+            id: playerBottomAutoHideTimer
+            interval: 1000
+            repeat: false
+            onTriggered: root.playerBottomBarShown = false
+        }
+
+        Connections {
+            target: playerPlaybackToolBar.playbackModel
+
+            function onIsPlayingChanged() {
+                if (!root.compactPortraitPlayer) {
+                    return
+                }
+                if (playerPlaybackToolBar.playbackModel.isPlaying) {
+                    root.playerBottomBarShown = true
+                    playerBottomAutoHideTimer.restart()
+                } else {
+                    playerBottomAutoHideTimer.stop()
+                }
+            }
+        }
+
+        Rectangle {
+            id: playerBottomCapsule
+
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 4
+            width: Math.min(parent.width - 28, 620)
+            height: 58
+            radius: height / 2
+            color: Qt.rgba(1, 1, 1, 0.62)
+            border.width: 2
+            border.color: playerPlaybackToolBar.playbackModel.playbackCursorColor
+            clip: true
+            visible: root.compactPortraitPlayer
+
+            Rectangle {
+                anchors.fill: parent
+                anchors.margins: 2
+                radius: parent.radius - 2
+                color: Qt.rgba(
+                    playerPlaybackToolBar.playbackModel.playbackCursorColor.r,
+                    playerPlaybackToolBar.playbackModel.playbackCursorColor.g,
+                    playerPlaybackToolBar.playbackModel.playbackCursorColor.b,
+                    0.10)
+            }
+        }
 
         Rectangle {
             anchors.left: parent.left
@@ -535,16 +607,18 @@ FocusScope {
             anchors.top: parent.top
             height: 1
             color: ui.theme.strokeColor
-            visible: true
+            visible: !root.compactPortraitPlayer
         }
 
         PlaybackToolBar {
             id: playerPlaybackToolBar
 
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: 15
+            anchors.bottomMargin: root.compactPortraitPlayer ? 18 : 15
             anchors.horizontalCenter: parent.horizontalCenter
-            width: Math.min(parent.width - 10, 620)
+            width: root.compactPortraitPlayer
+                   ? Math.min(parent.width - 34, 620)
+                   : Math.min(parent.width - 10, 620)
             height: 30
             floating: false
             compactMode: root.compactPortraitPlayer
