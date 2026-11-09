@@ -323,6 +323,8 @@ private:
     bool m_portraitGrouped = false;
     int m_portraitGroupStart = -1;
     bool m_portraitScrollActive = false;
+    qreal m_portraitScrollStartY = 0.0;
+    qint64 m_portraitScrollStartTimeNs = 0;
     int m_lastAcceptedKey = -1;
     bool m_isMainView = false;
 

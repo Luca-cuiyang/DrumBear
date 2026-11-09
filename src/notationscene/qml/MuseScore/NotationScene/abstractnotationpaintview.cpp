@@ -59,7 +59,7 @@ static constexpr qreal SCROLL_LIMIT_OFF_OVERSCROLL_FACTOR = 0.75;
 static constexpr int PORTRAIT_ROWS_PER_PAGE = 5;
 static constexpr int PORTRAIT_SCROLL_ROWS = 3;
 static constexpr int PORTRAIT_SCROLL_UPDATE_INTERVAL_MS = 16;
-static constexpr qreal PORTRAIT_SCROLL_INTERPOLATION = 0.08;
+static constexpr int PORTRAIT_SCROLL_DURATION_MS = 180;
 static constexpr qreal PORTRAIT_VERTICAL_SAFE_MARGIN_PX = 8.0;
 
 AbstractNotationPaintView::AbstractNotationPaintView(QQuickItem* parent)
@@ -1822,6 +1822,8 @@ void AbstractNotationPaintView::alignPortraitGroup(bool immediate)
     if (m_portraitGroupStart != static_cast<int>(groupStart)) {
         m_portraitGroupStart = static_cast<int>(groupStart);
         m_portraitScrollActive = true;
+        m_portraitScrollStartY = m_matrix.dy();
+        m_portraitScrollStartTimeNs = m_elapsedTimer.nsecsElapsed();
     } else if (!m_portraitScrollActive) {
         return;
     }
@@ -1855,7 +1857,7 @@ void AbstractNotationPaintView::alignPortraitGroup(bool immediate)
         return;
     }
 
-    const qreal delta = targetY - m_matrix.dy();
+    const qreal delta = targetY - m_portraitScrollStartY;
     if (std::abs(delta) < 0.15) {
         m_portraitScrollActive = false;
         setMatrix(muse::draw::Transform(
@@ -1868,6 +1870,24 @@ void AbstractNotationPaintView::alignPortraitGroup(bool immediate)
         return;
     }
 
+    const qreal elapsedMs =
+        (m_elapsedTimer.nsecsElapsed() - m_portraitScrollStartTimeNs) / 1e6;
+    const qreal progress = std::clamp(
+        elapsedMs / PORTRAIT_SCROLL_DURATION_MS, 0.0, 1.0);
+    if (progress >= 1.0) {
+        m_portraitScrollActive = false;
+        setMatrix(muse::draw::Transform(
+                      scale,
+                      m_portraitBaseMatrix.m12(),
+                      m_portraitBaseMatrix.m21(),
+                      m_portraitBaseMatrix.m22(),
+                      m_portraitBaseMatrix.dx(),
+                      targetY));
+        return;
+    }
+
+    const qreal inverse = 1.0 - progress;
+    const qreal eased = 1.0 - inverse * inverse * inverse;
     Transform oldMatrix = m_matrix;
     m_matrix = muse::draw::Transform(
         scale,
@@ -1875,7 +1895,7 @@ void AbstractNotationPaintView::alignPortraitGroup(bool immediate)
         m_portraitBaseMatrix.m21(),
         m_portraitBaseMatrix.m22(),
         m_portraitBaseMatrix.dx(),
-        m_matrix.dy() + delta * PORTRAIT_SCROLL_INTERPOLATION);
+        m_portraitScrollStartY + delta * eased);
     onMatrixChanged(oldMatrix, m_matrix, false);
 }
 
