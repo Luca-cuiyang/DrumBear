@@ -27,6 +27,7 @@
 #include "async/promise.h"
 #include "audio/common/audiotypes.h"
 #include "global/progress.h"
+#include "midi/miditypes.h"
 #include "modularity/imoduleinterface.h"
 
 #include "engraving/dom/noteval.h"
