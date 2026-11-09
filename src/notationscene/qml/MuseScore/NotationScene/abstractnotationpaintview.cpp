@@ -1355,11 +1355,10 @@ bool AbstractNotationPaintView::fitPageToViewport()
         std::vector<engraving::System*>& systems = page->systems();
         if (!systems.empty()) {
             const qreal rowPitch = height() / PORTRAIT_ROWS_PER_PAGE / visualScale;
-            constexpr qreal firstContentTop = 22.0;
-            const qreal currentContentTop =
-                (systems.front()->pageBoundingRect().top() + page->canvasPos().y()) * visualScale;
+            constexpr qreal staffTop = 100.0;
+            const qreal currentStaffTop = systems.front()->staffCanvasYpage(0);
             const qreal firstSystemY =
-                systems.front()->y() + (firstContentTop - currentContentTop) / visualScale;
+                systems.front()->y() + staffTop / visualScale - currentStaffTop;
             for (size_t i = 0; i < systems.size(); ++i) {
                 systems[i]->setPos(systems[i]->x(), firstSystemY + rowPitch * static_cast<qreal>(i));
             }

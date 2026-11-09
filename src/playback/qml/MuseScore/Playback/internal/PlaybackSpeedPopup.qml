@@ -80,6 +80,8 @@ StyledPopupView {
             }
 
             IncrementalPropertyControl {
+                id: bpmInput
+
                 Layout.preferredWidth: 88
                 currentValue: root.playbackModel.tempoBpm
 
@@ -87,13 +89,20 @@ StyledPopupView {
                 minValue: 1
                 step: 1
                 decimals: 0
-                replaceOnInput: true
 
                 navigation.panel: navPanel
                 navigation.accessible.name: "四分音符速度"
 
                 onValueEditingFinished: function(newValue) {
                     root.playbackModel.tempoBpm = newValue
+                }
+
+                MouseArea {
+                    anchors.fill: parent
+                    anchors.rightMargin: 18
+                    cursorShape: Qt.IBeamCursor
+
+                    onClicked: bpmInput.beginReplacement()
                 }
             }
 
