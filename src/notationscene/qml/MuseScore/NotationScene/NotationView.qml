@@ -587,7 +587,7 @@ FocusScope {
             width: Math.min(parent.width - 28, 620)
             height: 58
             radius: height / 2
-            color: Qt.rgba(1, 1, 1, 0.62)
+            color: "#ffffff"
             border.width: 2
             border.color: playerPlaybackToolBar.playbackModel.playbackCursorColor
             clip: true
