@@ -57,7 +57,6 @@ FocusScope {
 
     property alias defaultNavigationControl: fakeNavCtrl
     property bool fittingPlayerPage: false
-    property int playerFitAttempts: 0
 
     readonly property alias navigationSection: navSec
     readonly property alias navigationOrderEnd: searchPopup.navigationOrderEnd
@@ -88,8 +87,6 @@ FocusScope {
         function onHasNotationChanged() {
             if (root.webPlayerMode && notationView.hasNotation) {
                 playerFitTimer.restart()
-                root.playerFitAttempts = 0
-                playerFitSettleTimer.restart()
             }
         }
 
@@ -114,22 +111,6 @@ FocusScope {
             Qt.callLater(function() {
                 root.fittingPlayerPage = false
             })
-        }
-    }
-
-    Timer {
-        id: playerFitSettleTimer
-
-        interval: 350
-        repeat: true
-        onTriggered: {
-            if (!root.webPlayerMode || !notationView.hasNotation
-                    || root.playerFitAttempts >= 18) {
-                stop()
-                return
-            }
-            root.playerFitAttempts += 1
-            notationView.fitPageToViewport()
         }
     }
 
@@ -173,11 +154,8 @@ FocusScope {
                 NotationPaintView {
                     id: notationView
                     anchors.fill: parent
-                    anchors.bottomMargin: root.compactPortraitPlayer ? -166 : 0
+                    anchors.topMargin: root.compactPortraitPlayer ? -166 : 0
                     portraitGrouped: root.compactPortraitPlayer
-                    transform: Translate {
-                        y: root.compactPortraitPlayer ? -166 : 0
-                    }
 
                     property NavigationPanel navigationPanel: NavigationPanel {
                         name: "ScoreView"
