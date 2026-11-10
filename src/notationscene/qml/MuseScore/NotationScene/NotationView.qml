@@ -45,7 +45,7 @@ FocusScope {
     property bool webPlayerMode: false
     readonly property int playerChromeHeight: 60
     readonly property bool compactPortraitPlayer: webPlayerMode && width < height
-    readonly property int playerTopChromeHeight: compactPortraitPlayer ? 20 : playerChromeHeight
+    readonly property int playerTopChromeHeight: compactPortraitPlayer ? 22 : playerChromeHeight
     readonly property int playerBottomChromeHeight: compactPortraitPlayer ? 66 : playerChromeHeight
     property bool playerBottomBarShown: true
 
@@ -135,9 +135,7 @@ FocusScope {
 
     ColumnLayout {
         anchors.fill: parent
-        anchors.topMargin: root.playerChromeVisible && !root.compactPortraitPlayer
-                            ? root.playerTopChromeHeight
-                            : 0
+        anchors.topMargin: root.playerChromeVisible ? root.playerTopChromeHeight : 0
         anchors.bottomMargin: root.playerChromeVisible && !root.compactPortraitPlayer
                                ? root.playerBottomChromeHeight
                                : 0
@@ -478,30 +476,31 @@ FocusScope {
 
         StyledTextLabel {
             visible: root.compactPortraitPlayer
-            width: 60
+            width: 64
             anchors.right: parent.right
-            anchors.rightMargin: 10
-            anchors.top: parent.top
-            anchors.topMargin: 1
+            anchors.rightMargin: 8
+            anchors.verticalCenter: parent.verticalCenter
             text: Number(playerPlaybackToolBar.playbackModel.measureNumber)
                   + "." + Number(playerPlaybackToolBar.playbackModel.beatNumber)
             font: Qt.font(Object.assign({}, ui.theme.bodyBoldFont, {
                 family: "Noto Sans CJK SC",
-                pixelSize: 12
+                pixelSize: 11
             }))
-            color: "#e88024"
+            color: playerPlaybackToolBar.playbackModel.playbackCursorColor
             horizontalAlignment: Text.AlignRight
         }
 
         Rectangle {
+            id: playerTopProgressTrack
+
             visible: root.compactPortraitPlayer
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.leftMargin: 12
             anchors.rightMargin: 76
-            anchors.bottom: parent.bottom
-            height: 4
-            radius: 2
+            anchors.verticalCenter: parent.verticalCenter
+            height: 5
+            radius: 2.5
             color: "#d7d7d7"
 
             Rectangle {
@@ -510,7 +509,24 @@ FocusScope {
                            Math.min(1, playerPlaybackToolBar.playbackModel.playPosition))
                 height: parent.height
                 radius: parent.radius
-                color: "#e88024"
+                color: playerPlaybackToolBar.playbackModel.playbackCursorColor
+            }
+
+            Rectangle {
+                width: 14
+                height: 14
+                radius: 7
+                y: (parent.height - height) / 2
+                x: Math.max(
+                       0,
+                       Math.min(parent.width - width,
+                                parent.width * Math.max(
+                                    0,
+                                    Math.min(1, playerPlaybackToolBar.playbackModel.playPosition))
+                                - width / 2))
+                color: playerPlaybackToolBar.playbackModel.playbackCursorColor
+                border.width: 2
+                border.color: "#ffffff"
             }
 
             MouseArea {
