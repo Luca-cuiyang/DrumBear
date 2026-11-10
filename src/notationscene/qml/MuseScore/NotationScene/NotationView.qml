@@ -154,7 +154,7 @@ FocusScope {
                 NotationPaintView {
                     id: notationView
                     anchors.fill: parent
-                    anchors.topMargin: root.compactPortraitPlayer ? -166 : 0
+                    anchors.topMargin: root.compactPortraitPlayer ? -198 : 0
                     portraitGrouped: root.compactPortraitPlayer
 
                     property NavigationPanel navigationPanel: NavigationPanel {
