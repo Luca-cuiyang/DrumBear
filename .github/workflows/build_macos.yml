@@ -263,10 +263,6 @@ jobs:
           --signsecret "${MAC_SIGN_CERTIFICATE_ENCRYPT_SECRET}"
           --signpass "${MAC_SIGN_CERTIFICATE_PASSWORD}"
         )
-        if [ -z "${MAC_SIGN_CERTIFICATE_ENCRYPT_SECRET}" ]; then
-          echo "No Developer ID signing certificate configured; creating an ad-hoc signed DMG."
-          PACKAGE_ARGS+=(--allow-adhoc)
-        fi
         if [ "$DO_NOTARIZE" = "true" ]; then
           PACKAGE_ARGS+=(
             --user "${APPLE_USERNAME}"

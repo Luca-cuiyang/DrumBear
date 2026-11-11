@@ -29,6 +29,7 @@ APPLE_USERNAME=""
 APPLE_PASSWORD=""
 
 SIGN_ARGS=""
+ALLOW_ADHOC_ARGS=""
 
 while [[ "$#" -gt 0 ]]; do
     case $1 in
@@ -65,6 +66,13 @@ if [ -n "$SIGN_CERTIFICATE_ENCRYPT_SECRET" ]; then
     SIGN_ARGS="--sign"
 fi
 
+# Without a Developer ID certificate CI still needs a DMG for testing/updates.
+# Use an ad-hoc signed package instead of failing outright.
+if [ -z "$SIGN_CERTIFICATE_ENCRYPT_SECRET" ]; then
+    echo "warning: no Developer ID certificate; creating an ad-hoc signed DMG"
+    ALLOW_ADHOC_ARGS="--allow-adhoc"
+fi
+
 BUILD_MODE=$(cat $ARTIFACTS_DIR/env/build_mode.env)
 BUILD_VERSION=$(cat $ARTIFACTS_DIR/env/build_version.env)
 BUILD_REVISION=$(cat $ARTIFACTS_DIR/env/build_revision.env)
@@ -93,7 +101,7 @@ if [ "$BUILD_MODE" == "stable" ]; then
     VOL_NAME="MuseScore-Studio-${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}"
 fi
 
-buildscripts/packaging/macOS/package.sh --app-name "$APP_NAME" --vol-name "$VOL_NAME" --user "$APPLE_USERNAME" --password "$APPLE_PASSWORD" --team-id "$APPLE_TEAM_ID" $SIGN_ARGS
+buildscripts/packaging/macOS/package.sh --app-name "$APP_NAME" --vol-name "$VOL_NAME" --user "$APPLE_USERNAME" --password "$APPLE_PASSWORD" --team-id "$APPLE_TEAM_ID" $SIGN_ARGS $ALLOW_ADHOC_ARGS
 
 DMGFILE="$(ls applebuild/*.dmg)"
 echo "DMGFILE: $DMGFILE"
