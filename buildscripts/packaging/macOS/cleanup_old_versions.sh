@@ -4,7 +4,7 @@
 # Keep only current macOS app/build artifacts and the newest installer package
 # for each platform. This script is called after every successful macOS package.
 
-set -euo pipefail
+set -eo pipefail
 
 PROJECT_DIR="$(cd "$(dirname "$0")/../../.." && pwd)"
 SOURCE_ROOT="$(dirname "$PROJECT_DIR")"
