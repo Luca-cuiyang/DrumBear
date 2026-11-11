@@ -84,7 +84,9 @@ VERSION_PATCH="$(cut -d'.' -f3 <<<"$BUILD_VERSION")"
 
 # TODO: rename to MuseScore Studio (https://github.com/musescore/MuseScore/issues/32235)
 APP_NAME="DB score制谱大师"
-VOL_NAME="DB-Score-${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}"
+# Keep the DMG volume name out of the "*db*score*.dmg" cleanup pattern so the
+# freshly built image is not removed before it is moved to build.artifacts.
+VOL_NAME="MuseScore-Studio-${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}"
 
 buildscripts/packaging/macOS/package.sh --app-name "$APP_NAME" --vol-name "$VOL_NAME" --user "$APPLE_USERNAME" --password "$APPLE_PASSWORD" --team-id "$APPLE_TEAM_ID" $SIGN_ARGS $ALLOW_ADHOC_ARGS
 
