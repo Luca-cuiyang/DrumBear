@@ -42,8 +42,7 @@
             CloseMessage="yes"
             RebootPrompt="no"
             PromptToContinue="yes"
-            TerminateProcess="yes"
-            Timeout="30" />
+            TerminateProcess="30" />
 
         <MajorUpgrade
             AllowSameVersionUpgrades="yes"
