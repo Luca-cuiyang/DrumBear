@@ -235,7 +235,11 @@ cleanup_packages
 cleanup_windows_packages
 
 echo "Kept applications:"
-printf '  %s\n' "${kept_apps[@]}"
+if [[ ${#kept_apps[@]} -eq 0 ]]; then
+    echo "  none"
+else
+    printf '  %s\n' "${kept_apps[@]}"
+fi
 echo "Kept installer packages:"
 if [[ ${#kept_dmgs[@]} -eq 0 ]]; then
     echo "  none"
