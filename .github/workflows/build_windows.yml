@@ -220,7 +220,7 @@ jobs:
       run: |
         mkdir -p buildscripts/packaging/Windows/ffmpeg
         for f in avcodec-62.dll avformat-62.dll avutil-60.dll swscale-9.dll swresample-6.dll; do
-          curl -fsSL --retry 3 "https://drumbear.cn/build-deps/ffmpeg/$f" -o "buildscripts/packaging/Windows/ffmpeg/$f"
+          curl -fsSL --retry 3 "https://drumbear.cn/downloads/ffmpeg/$f" -o "buildscripts/packaging/Windows/ffmpeg/$f"
         done
         ls -lh buildscripts/packaging/Windows/ffmpeg
 
