@@ -41,15 +41,12 @@ FocusScope {
     readonly property bool isProcessing: root.processingStatus !== undefined
     property int convertType: 0
     property int convertId: 0
-    property bool isCloud: false
-    property int cloudScoreId: 0
     property bool showRemoveFromRecentFiles: false
 
     property alias navigation: navCtrl
 
     signal clicked()
     signal revealInFileBrowserRequested(string scorePath)
-    signal viewOnlineRequested(int scoreId)
     signal removeFromRecentFilesRequested(string scorePath)
     signal retryRequested()
     signal cancelRequested(int convertType, int convertId)
@@ -226,7 +223,6 @@ FocusScope {
 
                 isCreateNew: root.isCreateNew
                 isNoResultsFound: root.isNoResultsFound
-                isCloud: root.isCloud
                 showRemoveFromRecentFiles: root.showRemoveFromRecentFiles
 
                 navigation.panel: root.navigation.panel
@@ -234,68 +230,8 @@ FocusScope {
                 navigation.column: root.navigation.column + 1
 
                 onOpenRequested: root.clicked()
-                onViewOnlineRequested: root.viewOnlineRequested(root.cloudScoreId)
                 onRevealInFileBrowserRequested: root.revealInFileBrowserRequested(root.path)
                 onRemoveFromRecentFilesRequested: root.removeFromRecentFilesRequested(root.path)
-            }
-
-            Loader {
-                active: root.isCloud
-
-                anchors.left: parent.left
-                anchors.leftMargin: 8
-                anchors.right: parent.right
-                anchors.rightMargin: 8
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 8
-
-                sourceComponent: RowLayout {
-                    visible: root.isCloud
-
-                    spacing: 8
-
-                    CloudScoreStatusWatcher {
-                        id: cloudScoreStatusWatcher
-                    }
-
-                    Component.onCompleted: {
-                        cloudScoreStatusWatcher.load(root.cloudScoreId)
-                    }
-
-                    ProgressBar {
-                        Layout.fillWidth: true
-                        Layout.preferredHeight: 16
-
-                        visible: cloudScoreStatusWatcher.isProgress
-
-                        from: 0
-                        to: cloudScoreStatusWatcher.progressTotal
-                        value: cloudScoreStatusWatcher.progressCurrent
-
-                        navigation.panel: root.navigation.panel
-                        navigation.row: root.navigation.row
-                        navigation.column: root.navigation.column + 2
-                    }
-
-                    CloudScoreIndicatorButton {
-                        Layout.alignment: Qt.AlignTrailing | Qt.AlignVCenter
-
-                        isProgress: cloudScoreStatusWatcher.isProgress
-                        isDownloadedAndUpToDate: cloudScoreStatusWatcher.isDownloadedAndUpToDate
-
-                        navigation.panel: root.navigation.panel
-                        navigation.row: root.navigation.row
-                        navigation.column: root.navigation.column + 3
-
-                        onClicked: {
-                            if (isProgress) {
-                                cloudScoreStatusWatcher.cancel()
-                            } else {
-                                root.clicked()
-                            }
-                        }
-                    }
-                }
             }
         }
 

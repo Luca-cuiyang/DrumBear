@@ -9663,13 +9663,13 @@ followed by dashes</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectuiactions.cpp" line="89"/>
-        <source>Publish to &amp;drumbearai.com…</source>
-        <translation>О&amp;публиковать на drumbearai.com…</translation>
+        <source>Publish to &amp;drumbear.cn…</source>
+        <translation>О&amp;публиковать на drumbear.cn…</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectuiactions.cpp" line="90"/>
-        <source>Publish to drumbearai.com</source>
-        <translation>Публикация на drumbearai.com</translation>
+        <source>Publish to drumbear.cn</source>
+        <translation>Публикация на drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectuiactions.cpp" line="96"/>
@@ -10469,8 +10469,8 @@ Copyright 2004 - 2017 the Contributors to the MusicXML Specification, published 
     </message>
     <message>
         <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="52"/>
-        <source>Save your scores privately on drumbearai.com to revisit past versions and invite others to view and comment – and when you’re ready, share your music with the world.</source>
-        <translation>Сохраняйте свои партитуры на drumbearai.com в закрытом доступе, чтобы возвращаться к предыдущим версиям и приглашать других для просмотра и комментирования. А когда вы будете готовы — поделитесь своей музыкой со всем миром.</translation>
+        <source>Save your scores privately on drumbear.cn to revisit past versions and invite others to view and comment – and when you’re ready, share your music with the world.</source>
+        <translation>Сохраняйте свои партитуры на drumbear.cn в закрытом доступе, чтобы возвращаться к предыдущим версиям и приглашать других для просмотра и комментирования. А когда вы будете готовы — поделитесь своей музыкой со всем миром.</translation>
     </message>
     <message>
         <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="54"/>
@@ -11503,8 +11503,8 @@ Fret %1 on strings %2</source>
     </message>
     <message>
         <location filename="../../src/engraving/engravingerrors.h" line="88"/>
-        <source>This file was saved using a newer version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; to obtain the latest version.</source>
-        <translation>Этот файл был сохранён в более новой версии DB Score. Пожалуйста, посетите &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;, чтобы получить последнюю версию программы.</translation>
+        <source>This file was saved using a newer version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; to obtain the latest version.</source>
+        <translation>Этот файл был сохранён в более новой версии DB Score. Пожалуйста, посетите &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;, чтобы получить последнюю версию программы.</translation>
     </message>
     <message>
         <location filename="../../src/engraving/engravingerrors.h" line="93"/>
@@ -34378,13 +34378,13 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PublishDB ScoreComSection.qml" line="30"/>
-        <source>Publish to drumbearai.com</source>
-        <translation>Публикация на drumbearai.com</translation>
+        <source>Publish to drumbear.cn</source>
+        <translation>Публикация на drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PublishDB ScoreComSection.qml" line="41"/>
-        <source>Always prompt to share on Audio.com after publishing to drumbearai.com</source>
-        <translation>Всегда предлагать поделиться на Audio.com после публикации на drumbearai.com</translation>
+        <source>Always prompt to share on Audio.com after publishing to drumbear.cn</source>
+        <translation>Всегда предлагать поделиться на Audio.com после публикации на drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/preferences/qml/DB Score/Preferences/internal/RemoteControlSection.qml" line="31"/>
@@ -34788,8 +34788,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="130"/>
-        <source>Scores will appear here when you save a file to the cloud, or publish a score on &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;.</source>
-        <translation>Когда вы сохраните файл в облаке или опубликуете партитуру на &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;, здесь появятся партитуры.</translation>
+        <source>Scores will appear here when you save a file to the cloud, or publish a score on &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;.</source>
+        <translation>Когда вы сохраните файл в облаке или опубликуете партитуру на &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;, здесь появятся партитуры.</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="154"/>
@@ -34798,8 +34798,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="155"/>
-        <source>Log in or create a new account on &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; to view online scores.</source>
-        <translation>Для просмотра онлайн-партитур войдите или создайте новый аккаунт на &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;.</translation>
+        <source>Log in or create a new account on &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; to view online scores.</source>
+        <translation>Для просмотра онлайн-партитур войдите или создайте новый аккаунт на &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="218"/>
@@ -34827,7 +34827,7 @@ failed: %2</source>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="252"/>
         <source>Views</source>
         <comment>number of views</comment>
-        <extracomment>Stands for &quot;The number of times this score was viewed on drumbearai.com&quot;. Used as the header of this column in the scores list.</extracomment>
+        <extracomment>Stands for &quot;The number of times this score was viewed on drumbear.cn&quot;. Used as the header of this column in the scores list.</extracomment>
         <translation>Просмотров</translation>
     </message>
     <message>
@@ -34911,8 +34911,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="162"/>
-        <source>Publish your finished scores on drumbearai.com</source>
-        <translation>Опубликуйте свои завершённые партитуры на drumbearai.com</translation>
+        <source>Publish your finished scores on drumbear.cn</source>
+        <translation>Опубликуйте свои завершённые партитуры на drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="187"/>
@@ -35085,8 +35085,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1534"/>
-        <source>This score has become corrupted and contains errors. You can fix the errors manually, or save the score to your computer and get help for this issue on drumbearai.com.</source>
-        <translation>Эта партитура повреждена и содержит ошибки. Вы можете исправить ошибки вручную или сохранить партитуру на свой компьютер и получить справку по этой проблеме на сайте drumbearai.com.</translation>
+        <source>This score has become corrupted and contains errors. You can fix the errors manually, or save the score to your computer and get help for this issue on drumbear.cn.</source>
+        <translation>Эта партитура повреждена и содержит ошибки. Вы можете исправить ошибки вручную или сохранить партитуру на свой компьютер и получить справку по этой проблеме на сайте drumbear.cn.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1542"/>
@@ -35106,13 +35106,13 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1574"/>
-        <source>You can continue saving it locally, although the file may become unusable. You can try to fix the errors manually, or get help for this issue on drumbearai.com.</source>
-        <translation>Вы можете продолжить сохранять его локально, хотя файл может стать непригодным для использования. Вы можете попытаться исправить ошибки вручную или получить справку по этой проблеме на сайте drumbearai.com.</translation>
+        <source>You can continue saving it locally, although the file may become unusable. You can try to fix the errors manually, or get help for this issue on drumbear.cn.</source>
+        <translation>Вы можете продолжить сохранять его локально, хотя файл может стать непригодным для использования. Вы можете попытаться исправить ошибки вручную или получить справку по этой проблеме на сайте drumbear.cn.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1576"/>
-        <source>You can continue saving it locally, although the file may become unusable. To preserve your score, revert to the last saved version, or fix the errors manually. You can also get help for this issue on drumbearai.com.</source>
-        <translation>Вы можете продолжить сохранять его локально, хотя файл может стать непригодным для использования. Чтобы сохранить партитуру, вернитесь к последней сохраненной версии или исправьте ошибки вручную. Вы также можете получить справку по этой проблеме на сайте drumbearai.com.</translation>
+        <source>You can continue saving it locally, although the file may become unusable. To preserve your score, revert to the last saved version, or fix the errors manually. You can also get help for this issue on drumbear.cn.</source>
+        <translation>Вы можете продолжить сохранять его локально, хотя файл может стать непригодным для использования. Чтобы сохранить партитуру, вернитесь к последней сохраненной версии или исправьте ошибки вручную. Вы также можете получить справку по этой проблеме на сайте drumbear.cn.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1584"/>
@@ -35126,8 +35126,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1626"/>
-        <source>This score is corrupted. You can get help for this issue on drumbearai.com.</source>
-        <translation>Эта партитура повреждена. Вы можете получить помощь по этой проблеме на drumbearai.com.</translation>
+        <source>This score is corrupted. You can get help for this issue on drumbear.cn.</source>
+        <translation>Эта партитура повреждена. Вы можете получить помощь по этой проблеме на drumbear.cn.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1629"/>
@@ -35164,8 +35164,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1788"/>
-        <source>This file was saved using a newer version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; to obtain the latest version.</source>
-        <translation>Этот файл был сохранён в более новой версии DB Score. Пожалуйста, посетите &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;, чтобы получить последнюю версию программы.</translation>
+        <source>This file was saved using a newer version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; to obtain the latest version.</source>
+        <translation>Этот файл был сохранён в более новой версии DB Score. Пожалуйста, посетите &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;, чтобы получить последнюю версию программы.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1797"/>
@@ -35179,8 +35179,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1814"/>
-        <source>Get help for this issue on drumbearai.com.</source>
-        <translation>Обратитесь за помощью по этому вопросу на сайте drumbearai.com.</translation>
+        <source>Get help for this issue on drumbear.cn.</source>
+        <translation>Обратитесь за помощью по этому вопросу на сайте drumbear.cn.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1836"/>
@@ -35360,7 +35360,7 @@ failed: %2</source>
         <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="186"/>
         <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="199"/>
         <source>Visibility</source>
-        <extracomment>visibility of a score on drumbearai.com: private, public or unlisted</extracomment>
+        <extracomment>visibility of a score on drumbear.cn: private, public or unlisted</extracomment>
         <translation>Видимость</translation>
     </message>
     <message>
@@ -35394,30 +35394,30 @@ failed: %2</source>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="450"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="456"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="462"/>
-        <source>drumbearai.com returned an error code: %1.</source>
-        <extracomment>%1 will be replaced with the error code that drumbearai.com returned; this might contain english text that is deliberately not translated</extracomment>
-        <translation>drumbearai.com вернул код ошибки: %1.</translation>
+        <source>drumbear.cn returned an error code: %1.</source>
+        <extracomment>%1 will be replaced with the error code that drumbear.cn returned; this might contain english text that is deliberately not translated</extracomment>
+        <translation>drumbear.cn вернул код ошибки: %1.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="468"/>
-        <source>drumbearai.com returned an unknown error code: %1.</source>
-        <extracomment>%1 will be replaced with the error code that drumbearai.com returned, which is a number.</extracomment>
-        <translation>drumbearai.com вернул неизвестный код ошибки: %1.</translation>
+        <source>drumbear.cn returned an unknown error code: %1.</source>
+        <extracomment>%1 will be replaced with the error code that drumbear.cn returned, which is a number.</extracomment>
+        <translation>drumbear.cn вернул неизвестный код ошибки: %1.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="471"/>
-        <source>drumbearai.com returned an unknown error code.</source>
-        <translation>drumbearai.com вернул неизвестный код ошибки.</translation>
+        <source>drumbear.cn returned an unknown error code.</source>
+        <translation>drumbear.cn вернул неизвестный код ошибки.</translation>
     </message>
     <message>
-        <source>Please try again later, or get help for this problem on drumbearai.com.</source>
-        <translation>Пожалуйста, попробуйте еще раз позже или обратитесь за помощью по этой проблеме на drumbearai.com.</translation>
+        <source>Please try again later, or get help for this problem on drumbear.cn.</source>
+        <translation>Пожалуйста, попробуйте еще раз позже или обратитесь за помощью по этой проблеме на drumbear.cn.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="477"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="609"/>
-        <source>Please try again later, or get help for this problem on drumbearai.com.</source>
-        <translation>Пожалуйста, попробуйте еще раз позже или обратитесь за помощью по этой проблеме на drumbearai.com.</translation>
+        <source>Please try again later, or get help for this problem on drumbear.cn.</source>
+        <translation>Пожалуйста, попробуйте еще раз позже или обратитесь за помощью по этой проблеме на drumbear.cn.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="493"/>
@@ -35427,8 +35427,8 @@ failed: %2</source>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="496"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="563"/>
-        <source>Your drumbearai.com account needs to be verified first. Please activate your account via the link in the activation email.</source>
-        <translation>Сначала необходимо подтвердить вашу учетную запись drumbearai.com. Пожалуйста, активируйте свою учетную запись по ссылке в электронном письме для активации.</translation>
+        <source>Your drumbear.cn account needs to be verified first. Please activate your account via the link in the activation email.</source>
+        <translation>Сначала необходимо подтвердить вашу учетную запись drumbear.cn. Пожалуйста, активируйте свою учетную запись по ссылке в электронном письме для активации.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="500"/>
@@ -35443,8 +35443,8 @@ failed: %2</source>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="517"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="604"/>
-        <source>Could not connect to &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;. Please check your internet connection or try again later.</source>
-        <translation>Не удалось подключиться к &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;. Пожалуйста, проверьте подключение к интернету или повторите попытку позже.</translation>
+        <source>Could not connect to &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;. Please check your internet connection or try again later.</source>
+        <translation>Не удалось подключиться к &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;. Пожалуйста, проверьте подключение к интернету или повторите попытку позже.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="522"/>
@@ -35498,7 +35498,7 @@ failed: %2</source>
     <message>
         <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="190"/>
         <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="398"/>
-        <source>Log in or create a free account on drumbearai.com to convert a file.</source>
+        <source>Log in or create a free account on drumbear.cn to convert a file.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -35521,8 +35521,8 @@ failed: %2</source>
         <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="269"/>
         <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="340"/>
         <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="703"/>
-        <source>Unable to connect to drumbearai.com</source>
-        <translation>Не удалось подключиться к drumbearai.com</translation>
+        <source>Unable to connect to drumbear.cn</source>
+        <translation>Не удалось подключиться к drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="270"/>
@@ -36268,7 +36268,7 @@ failed: %2</source>
     <message>
         <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="117"/>
         <source>Braille (basic bar-over-bar)</source>
-        <extracomment>Meaning like &quot;measure-over-measure&quot;, but called &quot;bar-over-bar&quot; even in US English. Not to be confused with &quot;bar-by-bar&quot; format. See https://handbook.drumbearai.com/file-management/file-export#braille</extracomment>
+        <extracomment>Meaning like &quot;measure-over-measure&quot;, but called &quot;bar-over-bar&quot; even in US English. Not to be confused with &quot;bar-by-bar&quot; format. See https://handbook.drumbear.cn/file-management/file-export#braille</extracomment>
         <translation>Брайль (простой такт-за-тактом)</translation>
     </message>
     <message>
@@ -36930,8 +36930,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/appshell/qml/DB Score/AppShell/PublishPage/publishtoolbarmodel.cpp" line="48"/>
-        <source>Share this score and its audio on drumbearai.com</source>
-        <translation>Поделиться партитурой и ее аудиозаписью на drumbearai.com</translation>
+        <source>Share this score and its audio on drumbear.cn</source>
+        <translation>Поделиться партитурой и ее аудиозаписью на drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/appshell/qml/DB Score/AppShell/PublishPage/publishtoolbarmodel.cpp" line="49"/>
@@ -36955,8 +36955,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/cloudsmodel.cpp" line="185"/>
-        <source>Publish to drumbearai.com</source>
-        <translation>Опубликовать на drumbearai.com</translation>
+        <source>Publish to drumbear.cn</source>
+        <translation>Опубликовать на drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/cloudsmodel.cpp" line="189"/>
@@ -37033,13 +37033,13 @@ failed: %2</source>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="235"/>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1034"/>
-        <source>Log in to drumbearai.com to save this score to the cloud.</source>
-        <translation>Войдите в drumbearai.com, чтобы сохранить эту партитуру в облаке.</translation>
+        <source>Log in to drumbear.cn to save this score to the cloud.</source>
+        <translation>Войдите в drumbear.cn, чтобы сохранить эту партитуру в облаке.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="236"/>
-        <source>Log in to drumbearai.com to publish this score.</source>
-        <translation>Войдите на drumbearai.com, чтобы опубликовать эту партитуру.</translation>
+        <source>Log in to drumbear.cn to publish this score.</source>
+        <translation>Войдите на drumbear.cn, чтобы опубликовать эту партитуру.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="357"/>
@@ -37059,8 +37059,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="361"/>
-        <source>All saved changes will be publicly visible on drumbearai.com. If you want to make frequent changes, we recommend saving this score privately until you’re ready to share it to the world.</source>
-        <translation>Все сохранённые изменения будут доступны публично на drumbearai.com. Если вы хотите часто делать правки, мы рекомендуем сохранить эту партитуру приватно до тех пор, пока вы не будете готовы поделиться ей со всем миром.</translation>
+        <source>All saved changes will be publicly visible on drumbear.cn. If you want to make frequent changes, we recommend saving this score privately until you’re ready to share it to the world.</source>
+        <translation>Все сохранённые изменения будут доступны публично на drumbear.cn. Если вы хотите часто делать правки, мы рекомендуем сохранить эту партитуру приватно до тех пор, пока вы не будете готовы поделиться ей со всем миром.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="391"/>
@@ -37069,8 +37069,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="401"/>
-        <source>Unable to connect to drumbearai.com</source>
-        <translation>Не удалось подключиться к drumbearai.com</translation>
+        <source>Unable to connect to drumbear.cn</source>
+        <translation>Не удалось подключиться к drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="402"/>
@@ -37150,8 +37150,8 @@ failed: %2</source>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="466"/>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="559"/>
-        <source>Log in or create a free account on drumbearai.com to open this score.</source>
-        <translation>Войдите в систему или создайте бесплатную учетную запись на drumbearai.com, чтобы открыть эту партитуру.</translation>
+        <source>Log in or create a free account on drumbear.cn to open this score.</source>
+        <translation>Войдите в систему или создайте бесплатную учетную запись на drumbear.cn, чтобы открыть эту партитуру.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1401"/>
@@ -37160,8 +37160,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1404"/>
-        <source>All saved changes will now update to the cloud. You can manage this file in the score manager on drumbearai.com.</source>
-        <translation>All saved changes will now update to the cloud. Вы можете управлять этим файлом в «Мои партитуры» на drumbearai.com.</translation>
+        <source>All saved changes will now update to the cloud. You can manage this file in the score manager on drumbear.cn.</source>
+        <translation>All saved changes will now update to the cloud. Вы можете управлять этим файлом в «Мои партитуры» на drumbear.cn.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1480"/>
@@ -39017,8 +39017,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/framework/update/internal/appupdatescenario.cpp" line="135"/>
-        <source>You already have the latest version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; for news on what’s coming next.</source>
-        <translation>У вас уже стоит последняя версия DB Score. Приглашаем посетить &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; для получения информации о предстоящих выпусках.</translation>
+        <source>You already have the latest version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; for news on what’s coming next.</source>
+        <translation>У вас уже стоит последняя версия DB Score. Приглашаем посетить &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; для получения информации о предстоящих выпусках.</translation>
     </message>
     <message>
         <location filename="../../src/framework/update/internal/appupdatescenario.cpp" line="142"/>

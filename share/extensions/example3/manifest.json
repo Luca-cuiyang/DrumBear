@@ -1,5 +1,5 @@
 {
-    "uri": "musescore://extensions/dev/example_3",
+    "uri": "extension://extensions/dev/example_3",
     "type": "composite",
     "title": "Example 3 (default)",
 

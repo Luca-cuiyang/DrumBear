@@ -9662,13 +9662,13 @@ etterfulgt av bindestreker</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectuiactions.cpp" line="89"/>
-        <source>Publish to &amp;drumbearai.com…</source>
-        <translation>Publiser til &amp;drumbearai.com …</translation>
+        <source>Publish to &amp;drumbear.cn…</source>
+        <translation>Publiser til &amp;drumbear.cn …</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectuiactions.cpp" line="90"/>
-        <source>Publish to drumbearai.com</source>
-        <translation>Publiser til drumbearai.com</translation>
+        <source>Publish to drumbear.cn</source>
+        <translation>Publiser til drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectuiactions.cpp" line="96"/>
@@ -10466,7 +10466,7 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
     </message>
     <message>
         <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="52"/>
-        <source>Save your scores privately on drumbearai.com to revisit past versions and invite others to view and comment – and when you’re ready, share your music with the world.</source>
+        <source>Save your scores privately on drumbear.cn to revisit past versions and invite others to view and comment – and when you’re ready, share your music with the world.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -11500,8 +11500,8 @@ Bånd %1 på streng %2</translation>
     </message>
     <message>
         <location filename="../../src/engraving/engravingerrors.h" line="88"/>
-        <source>This file was saved using a newer version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; to obtain the latest version.</source>
-        <translation>Filen ble lagret med en nyere versjon av DB Score. Besøk &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; for å få tak i den nyeste versjonen.</translation>
+        <source>This file was saved using a newer version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; to obtain the latest version.</source>
+        <translation>Filen ble lagret med en nyere versjon av DB Score. Besøk &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; for å få tak i den nyeste versjonen.</translation>
     </message>
     <message>
         <location filename="../../src/engraving/engravingerrors.h" line="93"/>
@@ -34370,13 +34370,13 @@ feilet: %2</translation>
     </message>
     <message>
         <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PublishDB ScoreComSection.qml" line="30"/>
-        <source>Publish to drumbearai.com</source>
-        <translation>Publiser til drumbearai.com</translation>
+        <source>Publish to drumbear.cn</source>
+        <translation>Publiser til drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PublishDB ScoreComSection.qml" line="41"/>
-        <source>Always prompt to share on Audio.com after publishing to drumbearai.com</source>
-        <translation>Alltid spør om å dele på Audio.com etter publisering på drumbearai.com</translation>
+        <source>Always prompt to share on Audio.com after publishing to drumbear.cn</source>
+        <translation>Alltid spør om å dele på Audio.com etter publisering på drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/preferences/qml/DB Score/Preferences/internal/RemoteControlSection.qml" line="31"/>
@@ -34780,8 +34780,8 @@ feilet: %2</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="130"/>
-        <source>Scores will appear here when you save a file to the cloud, or publish a score on &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;.</source>
-        <translation>Det vil dukke opp partitur her når du lagrer dem i skyen, eller publiserer dem på &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;.</translation>
+        <source>Scores will appear here when you save a file to the cloud, or publish a score on &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;.</source>
+        <translation>Det vil dukke opp partitur her når du lagrer dem i skyen, eller publiserer dem på &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="154"/>
@@ -34790,8 +34790,8 @@ feilet: %2</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="155"/>
-        <source>Log in or create a new account on &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; to view online scores.</source>
-        <translation>Logg inn eller lag en bruker på  &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; for å se partitur på nett.</translation>
+        <source>Log in or create a new account on &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; to view online scores.</source>
+        <translation>Logg inn eller lag en bruker på  &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; for å se partitur på nett.</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="218"/>
@@ -34819,7 +34819,7 @@ feilet: %2</translation>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="252"/>
         <source>Views</source>
         <comment>number of views</comment>
-        <extracomment>Stands for &quot;The number of times this score was viewed on drumbearai.com&quot;. Used as the header of this column in the scores list.</extracomment>
+        <extracomment>Stands for &quot;The number of times this score was viewed on drumbear.cn&quot;. Used as the header of this column in the scores list.</extracomment>
         <translation>Visninger</translation>
     </message>
     <message>
@@ -34903,7 +34903,7 @@ feilet: %2</translation>
     </message>
     <message>
         <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="162"/>
-        <source>Publish your finished scores on drumbearai.com</source>
+        <source>Publish your finished scores on drumbear.cn</source>
         <translation>Publiser dine ferdige partiturer på Musescore.com</translation>
     </message>
     <message>
@@ -35078,8 +35078,8 @@ før lukking?</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1534"/>
-        <source>This score has become corrupted and contains errors. You can fix the errors manually, or save the score to your computer and get help for this issue on drumbearai.com.</source>
-        <translation>Dette partituret har blitt skadet og inneholder feil. Du kan fikse feilene manuelt, eller lagre partituret på datamaskinen din og få hjelp med problemet på drumbearai.com.</translation>
+        <source>This score has become corrupted and contains errors. You can fix the errors manually, or save the score to your computer and get help for this issue on drumbear.cn.</source>
+        <translation>Dette partituret har blitt skadet og inneholder feil. Du kan fikse feilene manuelt, eller lagre partituret på datamaskinen din og få hjelp med problemet på drumbear.cn.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1542"/>
@@ -35099,13 +35099,13 @@ før lukking?</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1574"/>
-        <source>You can continue saving it locally, although the file may become unusable. You can try to fix the errors manually, or get help for this issue on drumbearai.com.</source>
-        <translation>Du kan fortsette med å lagre lokalt, men det er en risiko for at filen blir ubrukelig. Du kan prøve å fikse feilene manuelt, eller få hjelp med problemet på drumbearai.com.</translation>
+        <source>You can continue saving it locally, although the file may become unusable. You can try to fix the errors manually, or get help for this issue on drumbear.cn.</source>
+        <translation>Du kan fortsette med å lagre lokalt, men det er en risiko for at filen blir ubrukelig. Du kan prøve å fikse feilene manuelt, eller få hjelp med problemet på drumbear.cn.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1576"/>
-        <source>You can continue saving it locally, although the file may become unusable. To preserve your score, revert to the last saved version, or fix the errors manually. You can also get help for this issue on drumbearai.com.</source>
-        <translation>Du kan fortsette med å lagre lokalt, men det er en risiko for at filen blir ubrukelig. For å bevare partituret, tilbakestill det til siste lagrede versjon, eller fiks feilene manuelt. Du kan også få hjelp med dette problemet på drumbearai.com.</translation>
+        <source>You can continue saving it locally, although the file may become unusable. To preserve your score, revert to the last saved version, or fix the errors manually. You can also get help for this issue on drumbear.cn.</source>
+        <translation>Du kan fortsette med å lagre lokalt, men det er en risiko for at filen blir ubrukelig. For å bevare partituret, tilbakestill det til siste lagrede versjon, eller fiks feilene manuelt. Du kan også få hjelp med dette problemet på drumbear.cn.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1584"/>
@@ -35119,8 +35119,8 @@ før lukking?</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1626"/>
-        <source>This score is corrupted. You can get help for this issue on drumbearai.com.</source>
-        <translation>Dette partituret er skadet. Du kan få hjelp med dette problemet på drumbearai.com</translation>
+        <source>This score is corrupted. You can get help for this issue on drumbear.cn.</source>
+        <translation>Dette partituret er skadet. Du kan få hjelp med dette problemet på drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1629"/>
@@ -35157,8 +35157,8 @@ før lukking?</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1788"/>
-        <source>This file was saved using a newer version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; to obtain the latest version.</source>
-        <translation>Filen ble lagret med en nyere versjon av DB Score. Besøk &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; for å få tak i den nyeste versjonen.</translation>
+        <source>This file was saved using a newer version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; to obtain the latest version.</source>
+        <translation>Filen ble lagret med en nyere versjon av DB Score. Besøk &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; for å få tak i den nyeste versjonen.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1797"/>
@@ -35172,8 +35172,8 @@ før lukking?</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1814"/>
-        <source>Get help for this issue on drumbearai.com.</source>
-        <translation>Få hjelp med dette problemet på drumbearai.com</translation>
+        <source>Get help for this issue on drumbear.cn.</source>
+        <translation>Få hjelp med dette problemet på drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1836"/>
@@ -35353,7 +35353,7 @@ før lukking?</translation>
         <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="186"/>
         <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="199"/>
         <source>Visibility</source>
-        <extracomment>visibility of a score on drumbearai.com: private, public or unlisted</extracomment>
+        <extracomment>visibility of a score on drumbear.cn: private, public or unlisted</extracomment>
         <translation>Synlighet</translation>
     </message>
     <message>
@@ -35387,29 +35387,29 @@ før lukking?</translation>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="450"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="456"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="462"/>
-        <source>drumbearai.com returned an error code: %1.</source>
-        <extracomment>%1 will be replaced with the error code that drumbearai.com returned; this might contain english text that is deliberately not translated</extracomment>
-        <translation>drumbearai.com ga en feilkode: %1</translation>
+        <source>drumbear.cn returned an error code: %1.</source>
+        <extracomment>%1 will be replaced with the error code that drumbear.cn returned; this might contain english text that is deliberately not translated</extracomment>
+        <translation>drumbear.cn ga en feilkode: %1</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="468"/>
-        <source>drumbearai.com returned an unknown error code: %1.</source>
-        <extracomment>%1 will be replaced with the error code that drumbearai.com returned, which is a number.</extracomment>
-        <translation>drumbearai.com ga en ukjent feilkode: %1</translation>
+        <source>drumbear.cn returned an unknown error code: %1.</source>
+        <extracomment>%1 will be replaced with the error code that drumbear.cn returned, which is a number.</extracomment>
+        <translation>drumbear.cn ga en ukjent feilkode: %1</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="471"/>
-        <source>drumbearai.com returned an unknown error code.</source>
-        <translation>drumbearai.com ga en ukjent feilkode.</translation>
+        <source>drumbear.cn returned an unknown error code.</source>
+        <translation>drumbear.cn ga en ukjent feilkode.</translation>
     </message>
     <message>
-        <source>Please try again later, or get help for this problem on drumbearai.com.</source>
-        <translation>Prøv igjen senere, eller få hjelp med dette problemet på drumbearai.com.</translation>
+        <source>Please try again later, or get help for this problem on drumbear.cn.</source>
+        <translation>Prøv igjen senere, eller få hjelp med dette problemet på drumbear.cn.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="477"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="609"/>
-        <source>Please try again later, or get help for this problem on drumbearai.com.</source>
+        <source>Please try again later, or get help for this problem on drumbear.cn.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -35420,8 +35420,8 @@ før lukking?</translation>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="496"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="563"/>
-        <source>Your drumbearai.com account needs to be verified first. Please activate your account via the link in the activation email.</source>
-        <translation>Din konto på drumbearai.com må først verifiseres. Aktiver din konto via linken du har mottatt på e-post.</translation>
+        <source>Your drumbear.cn account needs to be verified first. Please activate your account via the link in the activation email.</source>
+        <translation>Din konto på drumbear.cn må først verifiseres. Aktiver din konto via linken du har mottatt på e-post.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="500"/>
@@ -35436,8 +35436,8 @@ før lukking?</translation>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="517"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="604"/>
-        <source>Could not connect to &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;. Please check your internet connection or try again later.</source>
-        <translation>Kunne ikke koble til  &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;. Sjekk koblingen din til internett eller prøv igjen senere.</translation>
+        <source>Could not connect to &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;. Please check your internet connection or try again later.</source>
+        <translation>Kunne ikke koble til  &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;. Sjekk koblingen din til internett eller prøv igjen senere.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="522"/>
@@ -35491,7 +35491,7 @@ før lukking?</translation>
     <message>
         <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="190"/>
         <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="398"/>
-        <source>Log in or create a free account on drumbearai.com to convert a file.</source>
+        <source>Log in or create a free account on drumbear.cn to convert a file.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -35514,8 +35514,8 @@ før lukking?</translation>
         <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="269"/>
         <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="340"/>
         <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="703"/>
-        <source>Unable to connect to drumbearai.com</source>
-        <translation>Klarte ikke opprette kontakt med drumbearai.com</translation>
+        <source>Unable to connect to drumbear.cn</source>
+        <translation>Klarte ikke opprette kontakt med drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="270"/>
@@ -36261,7 +36261,7 @@ før lukking?</translation>
     <message>
         <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="117"/>
         <source>Braille (basic bar-over-bar)</source>
-        <extracomment>Meaning like &quot;measure-over-measure&quot;, but called &quot;bar-over-bar&quot; even in US English. Not to be confused with &quot;bar-by-bar&quot; format. See https://handbook.drumbearai.com/file-management/file-export#braille</extracomment>
+        <extracomment>Meaning like &quot;measure-over-measure&quot;, but called &quot;bar-over-bar&quot; even in US English. Not to be confused with &quot;bar-by-bar&quot; format. See https://handbook.drumbear.cn/file-management/file-export#braille</extracomment>
         <translation>Braille (grunnleggende takt-over-takt)</translation>
     </message>
     <message>
@@ -36923,8 +36923,8 @@ før lukking?</translation>
     </message>
     <message>
         <location filename="../../src/appshell/qml/DB Score/AppShell/PublishPage/publishtoolbarmodel.cpp" line="48"/>
-        <source>Share this score and its audio on drumbearai.com</source>
-        <translation>Del dette partituret og lyden fra det på drumbearai.com</translation>
+        <source>Share this score and its audio on drumbear.cn</source>
+        <translation>Del dette partituret og lyden fra det på drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/appshell/qml/DB Score/AppShell/PublishPage/publishtoolbarmodel.cpp" line="49"/>
@@ -36948,8 +36948,8 @@ før lukking?</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/cloudsmodel.cpp" line="185"/>
-        <source>Publish to drumbearai.com</source>
-        <translation>Publiser til drumbearai.com</translation>
+        <source>Publish to drumbear.cn</source>
+        <translation>Publiser til drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/cloudsmodel.cpp" line="189"/>
@@ -37026,13 +37026,13 @@ før lukking?</translation>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="235"/>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1034"/>
-        <source>Log in to drumbearai.com to save this score to the cloud.</source>
-        <translation>Logg inn på drumbearai.com for å lagre partituret i skyen.</translation>
+        <source>Log in to drumbear.cn to save this score to the cloud.</source>
+        <translation>Logg inn på drumbear.cn for å lagre partituret i skyen.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="236"/>
-        <source>Log in to drumbearai.com to publish this score.</source>
-        <translation>Logg inn på drumbearai.com for å publisere partituret.</translation>
+        <source>Log in to drumbear.cn to publish this score.</source>
+        <translation>Logg inn på drumbear.cn for å publisere partituret.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="357"/>
@@ -37052,8 +37052,8 @@ før lukking?</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="361"/>
-        <source>All saved changes will be publicly visible on drumbearai.com. If you want to make frequent changes, we recommend saving this score privately until you’re ready to share it to the world.</source>
-        <translation>Alle lagrede endringer blir offentlig synlige på drumbearai.com. Hvis du vil gjøre endringer ofte, anbefaler vi at du lagrer partituret privat inntil du er klar for å dele det med verden.</translation>
+        <source>All saved changes will be publicly visible on drumbear.cn. If you want to make frequent changes, we recommend saving this score privately until you’re ready to share it to the world.</source>
+        <translation>Alle lagrede endringer blir offentlig synlige på drumbear.cn. Hvis du vil gjøre endringer ofte, anbefaler vi at du lagrer partituret privat inntil du er klar for å dele det med verden.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="391"/>
@@ -37062,8 +37062,8 @@ før lukking?</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="401"/>
-        <source>Unable to connect to drumbearai.com</source>
-        <translation>Klarte ikke opprette kontakt med drumbearai.com</translation>
+        <source>Unable to connect to drumbear.cn</source>
+        <translation>Klarte ikke opprette kontakt med drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="402"/>
@@ -37143,8 +37143,8 @@ før lukking?</translation>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="466"/>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="559"/>
-        <source>Log in or create a free account on drumbearai.com to open this score.</source>
-        <translation>Logg inn eller opprett en brukerkonto på drumbearai.com for å åpne dette partituret.</translation>
+        <source>Log in or create a free account on drumbear.cn to open this score.</source>
+        <translation>Logg inn eller opprett en brukerkonto på drumbear.cn for å åpne dette partituret.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1401"/>
@@ -37153,8 +37153,8 @@ før lukking?</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1404"/>
-        <source>All saved changes will now update to the cloud. You can manage this file in the score manager on drumbearai.com.</source>
-        <translation>Alle lagrede endringer vil nå bli oppdatert til skyen. Du kan administrere denne filen i partitur-administratoren på drumbearai.com.</translation>
+        <source>All saved changes will now update to the cloud. You can manage this file in the score manager on drumbear.cn.</source>
+        <translation>Alle lagrede endringer vil nå bli oppdatert til skyen. Du kan administrere denne filen i partitur-administratoren på drumbear.cn.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1480"/>
@@ -39009,8 +39009,8 @@ før lukking?</translation>
     </message>
     <message>
         <location filename="../../src/framework/update/internal/appupdatescenario.cpp" line="135"/>
-        <source>You already have the latest version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; for news on what’s coming next.</source>
-        <translation>Du har allerede den nyeste versjonen av DB Score. Besøk &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; for nyheter om kommende versjoner.</translation>
+        <source>You already have the latest version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; for news on what’s coming next.</source>
+        <translation>Du har allerede den nyeste versjonen av DB Score. Besøk &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; for nyheter om kommende versjoner.</translation>
     </message>
     <message>
         <location filename="../../src/framework/update/internal/appupdatescenario.cpp" line="142"/>

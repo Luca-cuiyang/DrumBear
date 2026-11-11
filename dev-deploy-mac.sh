@@ -6,7 +6,8 @@
 set -e
 
 PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
-QT_BIN="/Users/luca/Desktop/DB score源码/Qt/6.10.2/macos/bin"
+PROJECT_PARENT="$(cd "$PROJECT_DIR/.." && pwd)"
+QT_BIN="${QT_BIN:-$PROJECT_PARENT/Qt/6.10.2/macos/bin}"
 BUILD_DIR="$PROJECT_DIR/builds/Mac-Qt6.10.2-macos-Ninja-Release"
 BUILT_APP="$BUILD_DIR/src/app/dbscore.app"
 TARGET_APP="/Applications/DB score制谱大师.app"

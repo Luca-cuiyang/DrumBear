@@ -26,7 +26,9 @@
 #include <QDragEnterEvent>
 #include <QDragMoveEvent>
 #include <QDropEvent>
+#include <QFileInfo>
 #include <QFileOpenEvent>
+#include <QProcess>
 #include <QWindow>
 #include <QMimeData>
 
@@ -342,6 +344,29 @@ void AppshellCommandsController::doQuit(bool isAllInstances, const muse::io::pat
         if (!applied) {
 #if defined(Q_OS_LINUX)
             platformInteractive()->revealInFileBrowser(installerPath);
+#elif defined(Q_OS_WIN)
+            bool installerStarted = false;
+            const QString package = installerPath.toQString();
+            if (QFileInfo(package).suffix().compare(QStringLiteral("msi"), Qt::CaseInsensitive) == 0) {
+                const QString appPath = QCoreApplication::applicationFilePath();
+                const QString escapedPackage = QString(package).replace(QLatin1Char('\''), QStringLiteral("''"));
+                const QString escapedApp = QString(appPath).replace(QLatin1Char('\''), QStringLiteral("''"));
+                const QString script =
+                    QStringLiteral(
+                        "$p = Start-Process -FilePath 'msiexec.exe' "
+                        "-ArgumentList @('/i','%1','/passive','/norestart') -PassThru -Wait; "
+                        "if ($p.ExitCode -eq 0 -or $p.ExitCode -eq 3010) { "
+                        "Start-Process -FilePath '%2' }")
+                        .arg(escapedPackage, escapedApp);
+                installerStarted = QProcess::startDetached(
+                    QStringLiteral("powershell.exe"),
+                    { QStringLiteral("-NoProfile"), QStringLiteral("-NonInteractive"),
+                      QStringLiteral("-WindowStyle"), QStringLiteral("Hidden"),
+                      QStringLiteral("-Command"), script });
+            }
+            if (!installerStarted) {
+                platformInteractive()->openUrl(QUrl::fromLocalFile(package));
+            }
 #else
             platformInteractive()->openUrl(QUrl::fromLocalFile(installerPath.toQString()));
 #endif

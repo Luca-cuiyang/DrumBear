@@ -82,15 +82,9 @@ void ProjectModule::resolveImports()
     auto ir = globalIoc()->resolve<muse::interactive::IInteractiveUriRegister>(mname);
     if (ir) {
         ir->registerQmlUri(Uri("dbscore://project/newscore"), "DBScore.Project", "NewScoreDialog");
-        ir->registerQmlUri(Uri("dbscore://project/asksavelocationtype"), "DBScore.Project", "AskSaveLocationTypeDialog");
-        ir->registerQmlUri(Uri("dbscore://project/savetocloud"), "DBScore.Project", "SaveToCloudDialog");
-        ir->registerQmlUri(Uri("dbscore://project/alsosharedbscoreaudio"), "DBScore.Project", "AlsoShareDBScoreAudioDialog");
         ir->registerQmlUri(Uri("dbscore://project/export"), "DBScore.Project", "ExportDialog");
         ir->registerQmlUri(Uri("dbscore://project/migration"), "DBScore.Project", "MigrationDialog");
         ir->registerQmlUri(Uri("dbscore://project/properties"), "DBScore.Project", "ProjectPropertiesDialog");
-        ir->registerQmlUri(Uri("dbscore://project/upload/progress"), "DBScore.Project", "UploadProgressDialog");
-        ir->registerQmlUri(Uri("dbscore://project/upload/success"), "DBScore.Project", "ProjectUploadedDialog");
-        ir->registerQmlUri(Uri("dbscore://project/audiogenerationsettings"), "DBScore.Project", "AudioGenerationSettingsDialog");
     }
 
     auto cr = globalIoc()->resolve<muse::rcommand::ICommandsRegister>(mname);

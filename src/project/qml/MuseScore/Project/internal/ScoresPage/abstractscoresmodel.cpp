@@ -36,10 +36,6 @@ const QString AbstractScoresModel::IS_NO_RESULTS_FOUND_KEY("isNoResultsFound");
 const QString AbstractScoresModel::PROCESSING_STATUS_KEY("processingStatus");
 const QString AbstractScoresModel::CONVERT_ID_KEY("convertId");
 const QString AbstractScoresModel::CONVERT_TYPE_KEY("convertType");
-const QString AbstractScoresModel::IS_CLOUD_KEY("isCloud");
-const QString AbstractScoresModel::CLOUD_SCORE_ID_KEY("scoreId");
-const QString AbstractScoresModel::CLOUD_VISIBILITY_KEY("cloudVisibility");
-const QString AbstractScoresModel::CLOUD_VIEW_COUNT_KEY("cloudViewCount");
 
 AbstractScoresModel::AbstractScoresModel(QObject* parent)
     : QAbstractListModel(parent)

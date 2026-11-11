@@ -38,9 +38,6 @@ void SaveAndPublishPreferencesModel::load()
         emit autoSaveIntervalChanged(minutes);
     });
 
-    projectConfiguration()->alsoShareDBScoreAudioChanged().onReceive(this, [this](bool share) {
-        emit alsoShareDBScoreAudioChanged(share);
-    });
 }
 
 bool SaveAndPublishPreferencesModel::isAutoSaveEnabled() const
@@ -51,11 +48,6 @@ bool SaveAndPublishPreferencesModel::isAutoSaveEnabled() const
 int SaveAndPublishPreferencesModel::autoSaveInterval() const
 {
     return projectConfiguration()->autoSaveIntervalMinutes();
-}
-
-bool SaveAndPublishPreferencesModel::alsoShareDBScoreAudio() const
-{
-    return projectConfiguration()->alsoShareDBScoreAudio();
 }
 
 void SaveAndPublishPreferencesModel::setAutoSaveEnabled(bool enabled)
@@ -74,13 +66,4 @@ void SaveAndPublishPreferencesModel::setAutoSaveInterval(int minutes)
     }
 
     projectConfiguration()->setAutoSaveInterval(minutes);
-}
-
-void SaveAndPublishPreferencesModel::setAlsoShareDBScoreAudio(bool share)
-{
-    if (share == alsoShareDBScoreAudio()) {
-        return;
-    }
-
-    projectConfiguration()->setAlsoShareDBScoreAudio(share);
 }

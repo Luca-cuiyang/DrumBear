@@ -24,10 +24,8 @@
 
 #include <algorithm>
 
-#include <QDesktopServices>
 #include <QItemSelectionModel>
 #include <QTimer>
-#include <QUrl>
 
 #include "notation/iexcerptnotation.h" // IWYU pragma: keep
 #include "notation/imasternotation.h"
@@ -119,7 +117,7 @@ ExportDialogModel::ExportDialogModel(QObject* parent)
         ExportType::makeWithSuffixes({ "brf" },
                                      //: Meaning like "measure-over-measure", but called "bar-over-bar"
                                      //: even in US English. Not to be confused with "bar-by-bar" format.
-                                     //: See https://handbook.drumbearai.com/file-management/file-export#braille
+                                     //: Braille export guidance
                                      muse::qtrc("project/export", "Braille (basic bar-over-bar)"),
                                      muse::qtrc("project/export", "Braille files")),
         ExportType::makeWithSuffixes({ "mei" },
@@ -324,13 +322,6 @@ bool ExportDialogModel::mp4ExportLocked() const
     // 试用期会员与正式会员（在有效期内）都可导出 MP4；
     // 试用到期、会员过期、停用、未登录才锁定。
     return !authorization()->hasProAccess();
-}
-
-void ExportDialogModel::openMembershipPage()
-{
-    if (authorization()) {
-        QDesktopServices::openUrl(QUrl(authorization()->purchasePageUrl()));
-    }
 }
 
 int ExportDialogModel::selectionLength() const

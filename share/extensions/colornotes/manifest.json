@@ -1,8 +1,8 @@
 {
     "uri": "extension://notation/colornotes",
     "type": "macros",
-    "title": "Color Notes",
-    "description": "This plugin colors notes in the selection depending on their pitch as per the Boomwhackers convention",
+    "title": "音符着色",
+    "description": "按音高为所选音符着色（遵循 Boomwhackers 配色约定）",
     "category": "color-notes",
     "thumbnail": "color_notes.png",
     "version":  "3.5",

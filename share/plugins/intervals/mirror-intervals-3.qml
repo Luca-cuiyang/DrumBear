@@ -23,8 +23,8 @@ import Muse.UiComponents
 
 MuseScore {
     version: "3.0.2"
-    title: "Mirror Intervals"
-    description: "Mirrors (inverts) intervals about a given pivot note"
+    title: "镜像音程"
+    description: "以指定枢轴音镜像（反转）音程"
     pluginType: "dialog"
     categoryCode: "composing-arranging-tools"
     thumbnailName: "mirror_intervals.png"
@@ -197,7 +197,7 @@ MuseScore {
             anchors.fill: parent
             anchors.margins: 10
             Label {
-                text: "Pivot"
+                text: "枢轴音"
             }
             StyledDropdown {
                 id: pivotNote
@@ -240,7 +240,7 @@ MuseScore {
 
     MessageDialog {
         id: errorDialog
-        title: "Error"
+        title: "错误"
         text: ""
         onAccepted: {
             quit()

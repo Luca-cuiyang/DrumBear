@@ -7,16 +7,15 @@
 # Usage:
 #   ./buildscripts/bundle_adtof.sh [--build <build_dir>] [--adtof <dir>] [--python <dir>]
 #
-# Defaults (edit or override):
-#   ADTOF dir:  $HOME/Documents/Codex/2026-09-04/wo/work/sources/desktop/adtof
-#   Python dir: $HOME/.workbuddy/binaries/python/envs/adtof
+# Provide the engine and Python paths explicitly, or set ADTOF_HOME and
+# ADTOF_PYTHON_HOME in the build environment.
 
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-DEFAULT_ADTOF_DIR="$HOME/Documents/Codex/2026-09-04/wo/work/sources/desktop/adtof"
-DEFAULT_PYTHON_DIR="$HOME/.workbuddy/binaries/python/envs/adtof"
+DEFAULT_ADTOF_DIR="${ADTOF_HOME:-}"
+DEFAULT_PYTHON_DIR="${ADTOF_PYTHON_HOME:-}"
 
 ADTOF_DIR="${DEFAULT_ADTOF_DIR}"
 PYTHON_DIR="${DEFAULT_PYTHON_DIR}"

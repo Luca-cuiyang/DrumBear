@@ -36,9 +36,13 @@
 #include "draw/painter.h"
 #include "draw/types/drawtypes.h"
 
+#include "engraving/dom/box.h"
 #include "engraving/dom/masterscore.h"
 #include "engraving/dom/page.h"
 #include "engraving/dom/repeatlist.h"
+#include "engraving/dom/system.h"
+#include "engraving/dom/text.h"
+#include "engraving/dom/textbase.h"
 
 #include "notation/imasternotation.h"
 #include "notation/inotation.h"
@@ -57,6 +61,111 @@ using namespace mu::project;
 using namespace mu::notation;
 using namespace muse::draw;
 using namespace muse::midi;
+
+namespace {
+// Locked DB Studio drum-player layout contract.
+constexpr double DB_STUDIO_PAGE_MARGIN_MM = 5.0;
+constexpr double DB_STUDIO_PAGE_WIDTH_MM = 210.0;
+constexpr double DB_STUDIO_PAGE_HEIGHT_MM = 297.0;
+constexpr double DB_STUDIO_PRINTABLE_WIDTH_MM = DB_STUDIO_PAGE_WIDTH_MM - 2.0 * DB_STUDIO_PAGE_MARGIN_MM;
+constexpr double DB_STUDIO_SPATIUM_MM = 1.75;
+constexpr double DB_STUDIO_SYSTEM_DISTANCE_SP = 10.6;
+constexpr double DB_STUDIO_TITLE_TO_SYSTEM_DISTANCE_SP = 8.0;
+constexpr double DB_STUDIO_TITLE_FRAME_HEIGHT_SP = 3.5;
+constexpr double DB_STUDIO_TEMPO_FONT_SIZE = 12.0;
+constexpr double DB_STUDIO_MEASURE_NUMBER_FONT_SIZE = 7.0;
+constexpr double DB_STUDIO_TITLE_FONT_SIZE_PT = 16.0;
+constexpr double DB_STUDIO_STAFF_TEXT_FONT_SIZE = 10.0;
+constexpr double DB_STUDIO_SYSTEM_TEXT_FONT_SIZE = 10.0;
+constexpr double DB_STUDIO_REHEARSAL_MARK_FONT_SIZE = 14.0;
+constexpr double DB_STUDIO_PLAYBACK_FOLLOW_INTERVAL_SEC = 0.008;
+constexpr double DB_STUDIO_PLAYBACK_FOLLOW_INTERPOLATION = 0.14;
+constexpr double DB_STUDIO_PLAYBACK_FOLLOW_EPSILON = 0.15;
+constexpr int DB_STUDIO_PLAYBACK_SCROLL_SYSTEM_INTERVAL = 2;
+constexpr double DB_STUDIO_PLAYBACK_EXTRA_DISTANCE_SP = 11.5;
+constexpr int DB_STUDIO_PLAYBACK_TRIGGER_MEASURE = 3;
+
+double dbStudioPageMarginInches()
+{
+    return DB_STUDIO_PAGE_MARGIN_MM / mu::engraving::INCH;
+}
+
+void applyDbStudioLandscapeStyle(mu::engraving::Score* score)
+{
+    mu::engraving::MStyle& style = score->style();
+    const double pageMargin = dbStudioPageMarginInches();
+
+    style.set(mu::engraving::Sid::spatium, DB_STUDIO_SPATIUM_MM * mu::engraving::DPMM);
+    style.set(mu::engraving::Sid::pageEvenLeftMargin, pageMargin);
+    style.set(mu::engraving::Sid::pageOddLeftMargin, pageMargin);
+    style.set(mu::engraving::Sid::pageEvenTopMargin, pageMargin);
+    style.set(mu::engraving::Sid::pageEvenBottomMargin, pageMargin);
+    style.set(mu::engraving::Sid::pageOddTopMargin, pageMargin);
+    style.set(mu::engraving::Sid::pageOddBottomMargin, pageMargin);
+    style.set(mu::engraving::Sid::pageTwosided, false);
+
+    style.set(mu::engraving::Sid::enableVerticalSpread, false);
+    style.set(mu::engraving::Sid::staffUpperBorder, mu::engraving::Spatium(6.2));
+    style.set(mu::engraving::Sid::staffLowerBorder, mu::engraving::Spatium(6.2));
+    style.set(mu::engraving::Sid::staffLineWidth, mu::engraving::Spatium(0.125));
+    style.set(mu::engraving::Sid::barWidth, mu::engraving::Spatium(0.1875));
+    style.set(mu::engraving::Sid::minSystemDistance, mu::engraving::Spatium(DB_STUDIO_SYSTEM_DISTANCE_SP));
+    style.set(mu::engraving::Sid::maxSystemDistance, mu::engraving::Spatium(DB_STUDIO_SYSTEM_DISTANCE_SP));
+    style.set(mu::engraving::Sid::systemFrameDistance, mu::engraving::Spatium(0.0));
+    style.set(mu::engraving::Sid::frameSystemDistance, mu::engraving::Spatium(DB_STUDIO_TITLE_TO_SYSTEM_DISTANCE_SP));
+    style.set(mu::engraving::Sid::enableIndentationOnFirstSystem, false);
+
+    style.set(mu::engraving::Sid::tempoFontSize, DB_STUDIO_TEMPO_FONT_SIZE);
+    style.set(mu::engraving::Sid::tempoFontSpatiumDependent, true);
+    style.set(mu::engraving::Sid::measureNumberFontSize, DB_STUDIO_MEASURE_NUMBER_FONT_SIZE);
+    style.set(mu::engraving::Sid::measureNumberFontSpatiumDependent, false);
+    style.set(mu::engraving::Sid::titleFontSize, DB_STUDIO_TITLE_FONT_SIZE_PT);
+    style.set(mu::engraving::Sid::titleFontSpatiumDependent, false);
+
+    style.set(mu::engraving::Sid::showHeader, false);
+    style.set(mu::engraving::Sid::showFooter, false);
+    style.set(mu::engraving::Sid::showPageNumber, false);
+    style.set(mu::engraving::Sid::showPageNumberOne, false);
+    style.set(mu::engraving::Sid::lyricsOddPosition, mu::engraving::AlignH::HCENTER);
+    style.set(mu::engraving::Sid::lyricsEvenPosition, mu::engraving::AlignH::HCENTER);
+
+    score->styleChanged();
+}
+
+void applyDbStudioLandscapePageSize(mu::engraving::Score* score)
+{
+    mu::engraving::MStyle& style = score->style();
+    style.set(mu::engraving::Sid::pageWidth, DB_STUDIO_PAGE_WIDTH_MM / mu::engraving::INCH);
+    style.set(mu::engraving::Sid::pageHeight, DB_STUDIO_PAGE_HEIGHT_MM / mu::engraving::INCH);
+    style.set(mu::engraving::Sid::pagePrintableWidth, DB_STUDIO_PRINTABLE_WIDTH_MM / mu::engraving::INCH);
+}
+
+bool isLandscapeVideo(int width, int height)
+{
+    return width > height;
+}
+
+muse::RectF visibleSystemBoundingBox(const mu::engraving::System* system)
+{
+    muse::RectF result = system->pageBoundingRect();
+
+    //! Title glyphs may extend above the title frame's geometric bbox.
+    if (const mu::engraving::Box* box = system->vbox(); box && box->isTBox()) {
+        if (const mu::engraving::Text* title = mu::engraving::toTBox(box)->text()) {
+            result.unite(title->pageBoundingRect());
+        }
+    }
+
+    //! Staff lines are the hard lower boundary. Their geometric extent is not
+    //! always identical to the system bbox, especially on the final system.
+    for (const mu::engraving::SysStaff* staff : system->staves()) {
+        if (staff && staff->show() && !staff->bbox().isEmpty()) {
+            result.unite(staff->bbox().translated(system->pagePos()));
+        }
+    }
+    return result;
+}
+}
 
 static muse::String notationTitle(const INotationPtr notation)
 {
@@ -255,8 +364,9 @@ VideoWriter::Config VideoWriter::makeConfig() const
     }
     cfg.bitrate = int(br * 1000000);
 
-    cfg.leadingSec = configuration()->leadingSec();
-    cfg.trailingSec = configuration()->trailingSec();
+    // 片头封面与片尾停留全部关闭：视频从第一帧起就是乐谱画面，播放结束立即结束。
+    cfg.leadingSec = 0.0;
+    cfg.trailingSec = 0.0;
 
     cfg.viewMode = configuration()->viewMode();
     cfg.smoothPageTransitions = configuration()->smoothPageTransitions();
@@ -329,6 +439,7 @@ std::optional<VideoWriter::ScoreRestoreData> VideoWriter::prepareScore(INotation
 {
     ScoreRestoreData result;
     engraving::Score* score = notation->elements()->msScore();
+    const bool landscape = isLandscapeVideo(config.width, config.height);
 
     result.style = score->style();
 
@@ -342,6 +453,64 @@ std::optional<VideoWriter::ScoreRestoreData> VideoWriter::prepareScore(INotation
     result.showVBox = score->layoutOptions().isShowVBox;
 
     score->setLayoutMode(engraving::LayoutMode::PAGE);
+
+    //! 导出视频统一行距：关闭「竖向散布」。否则行距走 min/maxSystemSpread（默认 8.5~32），
+    //! 内容、分节、方括号都会把各行间距撑得时宽时窄；关闭后改用 min/maxSystemDistance 控制。
+    score->style().set(engraving::Sid::enableVerticalSpread, false);
+
+    if (landscape) {
+        applyDbStudioLandscapePageSize(score);
+        applyDbStudioLandscapeStyle(score);
+
+        // Imported scores often carry explicit per-text font sizes that override
+        // the video style. Normalize only the structural labels that otherwise
+        // become oversized in 4K landscape exports, and preserve the original
+        // rich text so the editor is restored unchanged after export.
+        score->scanElements([&result](engraving::EngravingItem* item) {
+            engraving::TextBase* text = dynamic_cast<engraving::TextBase*>(item);
+            if (!text) {
+                return;
+            }
+
+            double targetSize = -1.0;
+            switch (text->textStyleType()) {
+            case engraving::TextStyleType::TITLE:
+                targetSize = DB_STUDIO_TITLE_FONT_SIZE_PT;
+                break;
+            case engraving::TextStyleType::STAFF:
+                targetSize = DB_STUDIO_STAFF_TEXT_FONT_SIZE;
+                break;
+            case engraving::TextStyleType::SYSTEM:
+                targetSize = DB_STUDIO_SYSTEM_TEXT_FONT_SIZE;
+                break;
+            case engraving::TextStyleType::REHEARSAL_MARK:
+                targetSize = DB_STUDIO_REHEARSAL_MARK_FONT_SIZE;
+                break;
+            default:
+                return;
+            }
+
+            if (text->size() <= targetSize) {
+                return;
+            }
+
+            result.normalizedTexts.push_back({ text, text->xmlText() });
+            text->setPlainText(text->plainText());
+            text->setSize(targetSize);
+        });
+
+        engraving::MeasureBase* firstBox = score->first();
+        if (firstBox && firstBox->isVBox()) {
+            engraving::Box* titleBox = engraving::toBox(firstBox);
+            result.hasTitleFrame = true;
+            result.titleFrameAutoSize = titleBox->isAutoSizeEnabled();
+            result.titleFrameHeight = titleBox->boxHeight();
+            result.titleFrameTopMargin = titleBox->topMargin();
+            titleBox->setAutoSizeEnabled(false);
+            titleBox->setBoxHeight(engraving::Spatium(DB_STUDIO_TITLE_FRAME_HEIGHT_SP));
+            titleBox->setTopMargin(DB_STUDIO_PAGE_MARGIN_MM);
+        }
+    }
 
     score->setShowFrames(false);
     score->setShowInvisible(false);
@@ -359,12 +528,16 @@ std::optional<VideoWriter::ScoreRestoreData> VideoWriter::prepareScore(INotation
         score->style().set(engraving::Sid::showHeader, false);
         score->style().set(engraving::Sid::showFooter, false);
 
-        //! 动态曲谱：去掉左右页边距并让可打印宽度铺满整页，谱面横向填满画布，
-        //! 避免黑边，也避免谱面内容因页边距被压小或被裁切。
-        const double pageWidth = score->style().styleD(engraving::Sid::pageWidth);
-        score->style().set(engraving::Sid::pageEvenLeftMargin, 0.0);
-        score->style().set(engraving::Sid::pageOddLeftMargin, 0.0);
-        score->style().set(engraving::Sid::pagePrintableWidth, pageWidth);
+        if (!landscape) {
+            //! 竖屏继续使用原有导出排版。横屏使用 DB Studio 的锁定排版参数。
+            score->style().set(engraving::Sid::minSystemDistance, engraving::Spatium(10));
+            score->style().set(engraving::Sid::maxSystemDistance, engraving::Spatium(10));
+
+            const double pageWidth = score->style().styleD(engraving::Sid::pageWidth);
+            score->style().set(engraving::Sid::pageEvenLeftMargin, 0.0);
+            score->style().set(engraving::Sid::pageOddLeftMargin, 0.0);
+            score->style().set(engraving::Sid::pagePrintableWidth, pageWidth);
+        }
     }
 
     score->doLayout();
@@ -405,18 +578,24 @@ std::optional<VideoWriter::ScoreRestoreData> VideoWriter::prepareScore(INotation
                        - score->style().styleD(engraving::Sid::pageOddLeftMargin)
                        - score->style().styleD(engraving::Sid::pageEvenLeftMargin));
 
-    score->style().set(engraving::Sid::pageEvenTopMargin, 0.0);
-    score->style().set(engraving::Sid::pageEvenBottomMargin, 0.0);
-    score->style().set(engraving::Sid::pageOddTopMargin, 0.0);
-    score->style().set(engraving::Sid::pageOddBottomMargin, 0.0);
+    if (landscape) {
+        applyDbStudioLandscapeStyle(score);
+    } else {
+        score->style().set(engraving::Sid::pageEvenTopMargin, 0.0);
+        score->style().set(engraving::Sid::pageEvenBottomMargin, 0.0);
+        score->style().set(engraving::Sid::pageOddTopMargin, 0.0);
+        score->style().set(engraving::Sid::pageOddBottomMargin, 0.0);
+    }
     score->style().set(engraving::Sid::pageTwosided, false);
     score->style().set(engraving::Sid::showHeader, false);
     score->style().set(engraving::Sid::showFooter, false);
 
-    score->style().set(engraving::Sid::minSystemDistance, engraving::Spatium(10));
-    score->style().set(engraving::Sid::maxSystemDistance, engraving::Spatium(10));
-    score->style().set(engraving::Sid::staffLowerBorder, engraving::Spatium(5));
-    score->style().set(engraving::Sid::staffUpperBorder, engraving::Spatium(7));
+    if (!landscape) {
+        score->style().set(engraving::Sid::minSystemDistance, engraving::Spatium(10));
+        score->style().set(engraving::Sid::maxSystemDistance, engraving::Spatium(10));
+        score->style().set(engraving::Sid::staffLowerBorder, engraving::Spatium(5));
+        score->style().set(engraving::Sid::staffUpperBorder, engraving::Spatium(7));
+    }
 
     score->setLayoutAll();
     score->doLayout();
@@ -436,6 +615,22 @@ void VideoWriter::restoreScore(INotationPtr notation, const ScoreRestoreData& da
     score->setShowPageborders(data.showPageborders);
     score->setShowUnprintable(data.showUnprintable);
     score->setShowVBox(data.showVBox);
+
+    if (data.hasTitleFrame) {
+        engraving::MeasureBase* firstBox = score->first();
+        if (firstBox && firstBox->isVBox()) {
+            engraving::Box* titleBox = engraving::toBox(firstBox);
+            titleBox->setAutoSizeEnabled(data.titleFrameAutoSize);
+            titleBox->setBoxHeight(data.titleFrameHeight);
+            titleBox->setTopMargin(data.titleFrameTopMargin);
+        }
+    }
+
+    for (const ScoreRestoreData::TextRestoreData& text : data.normalizedTexts) {
+        if (text.text) {
+            text.text->setXmlText(text.xmlText);
+        }
+    }
 
     score->setLayoutMode(data.layoutMode);
 
@@ -650,41 +845,113 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
     std::vector<double> pageRenderOffset(pages.size(), 0.0);
     std::vector<double> pageContentTop(pages.size(), 0.0);
     std::vector<double> pageContentHeight(pages.size(), 0.0);
+    std::vector<System*> playbackSystems;
+    std::vector<double> playbackSystemTop;
+    std::vector<double> playbackSystemBottom;
     double scale = config.canvasDpi / engraving::DPI;
     double frameWidthCanvas = config.width / scale;
     double frameHeightCanvas = config.height / scale;
     double totalHeightCanvas = 0.0;
+    const bool landscape = isLandscapeVideo(config.width, config.height);
 
     if (smooth) {
-        std::vector<double> contentTop(pages.size(), 0.0);
-        std::vector<double> contentBottom(pages.size(), 0.0);
         std::vector<double> gaps;
 
+        //! 统计页内相邻两行（跳过标题框 VBox）之间的空白间距，用于计算统一行距。
         for (size_t i = 0; i < pages.size(); ++i) {
-            const Page* p = pages[i];
-            const std::vector<System*>& systems = p->systems();
+            const std::vector<System*>& systems = pages[i]->systems();
             if (systems.empty()) {
                 continue;
             }
 
-            contentTop[i] = systems.front()->pagePos().y();
-            contentBottom[i] = systems.back()->pagePos().y() + systems.back()->height();
-
             for (size_t k = 1; k < systems.size(); ++k) {
+                if (systems[k - 1]->vbox() || systems[k]->vbox()) {
+                    continue;
+                }
                 gaps.push_back(systems[k]->pagePos().y()
                                - (systems[k - 1]->pagePos().y() + systems[k - 1]->height()));
             }
         }
 
-        //! NOTE: 用中位数代替平均值作为系统间距，对带标题/特殊框的页面更稳健，
-        //! 跨页拼接处间距更一致，避免个别异常页把平均间距拉偏。
         double lineGap = 0.0;
         if (!gaps.empty()) {
             std::sort(gaps.begin(), gaps.end());
             lineGap = gaps[gaps.size() / 2];
         }
 
-        double y = 0.0;
+        const engraving::Score* score = notation->elements()->msScore();
+        const double titleGap = landscape
+                                ? score->style().styleAbsolute(engraving::Sid::frameSystemDistance)
+                                : lineGap;
+        if (landscape) {
+            lineGap = score->style().styleAbsolute(engraving::Sid::minSystemDistance);
+        }
+
+        //! 横屏沿用 DB Studio 的上下 5 mm 边距；底部额外预留谱表下边界，
+        //! 避免最后一行的谱线被视频画布裁切。
+        const double layoutTopMargin = dbStudioPageMarginInches();
+        const double topMargin = landscape ? layoutTopMargin : 0.0;
+        const double bottomMargin = landscape
+                                    ? layoutTopMargin
+                                    + score->style().styleAbsolute(engraving::Sid::staffLowerBorder)
+                                    : (lineGap > 0.0 ? lineGap : frameHeightCanvas * 0.08);
+
+        //! 强制统一每一行的上下间距：直接把每个 System 的 Y 坐标重排成「统一行距」。
+        //! 这样页内、以及上一页末行到下一页首行，都用同一个 gap，彻底消除翻页处变宽、
+        //! 以及内容轮廓把个别行距撑开的问题（16:9 与 9:16 都适用）。
+        for (size_t i = 0; i < pages.size(); ++i) {
+            Page* p = pages[i];
+            const std::vector<System*>& systems = p->systems();
+            if (systems.empty()) {
+                continue;
+            }
+
+            if (landscape) {
+                //! System 的 bbox 包含标题、重音、手法和高低音谱线等实际可见内容，
+                //! 而 pos.y()/height() 只是系统几何基准。横屏播放必须按可见 bbox
+                //! 定位，否则标题会贴顶，最后一行的谱线也会落到画面之外。
+                System* previous = nullptr;
+                muse::RectF previousVisibleBox;
+                for (System* s : systems) {
+                    const double visibleTop = previous
+                                              ? previousVisibleBox.bottom() + (previous->vbox() ? titleGap : lineGap)
+                                              : topMargin;
+                    const muse::RectF currentVisibleBox = visibleSystemBoundingBox(s);
+                    s->setPos(s->pos().x(), s->pos().y() + visibleTop - currentVisibleBox.y());
+                    previous = s;
+                    previousVisibleBox = visibleSystemBoundingBox(s);
+                }
+                continue;
+            }
+
+            double y = systems.front()->pos().y();
+            System* previous = nullptr;
+            for (System* s : systems) {
+                if (previous) {
+                    y = previous->pos().y() + previous->height() + lineGap;
+                }
+                s->setPos(s->pos().x(), y);
+                previous = s;
+            }
+        }
+
+        std::vector<double> contentTop(pages.size(), 0.0);
+        std::vector<double> contentBottom(pages.size(), 0.0);
+        for (size_t i = 0; i < pages.size(); ++i) {
+            const std::vector<System*>& systems = pages[i]->systems();
+            if (systems.empty()) {
+                continue;
+            }
+            if (landscape) {
+                contentTop[i] = visibleSystemBoundingBox(systems.front()).y();
+                contentBottom[i] = visibleSystemBoundingBox(systems.back()).bottom();
+            } else {
+                contentTop[i] = systems.front()->pagePos().y();
+                contentBottom[i] = systems.back()->pagePos().y() + systems.back()->height();
+            }
+        }
+
+        double y = topMargin;
         for (size_t i = 0; i < pages.size(); ++i) {
             if (pages[i]->systems().empty()) {
                 pageRenderOffset[i] = y;
@@ -700,7 +967,18 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
             y += pageContentHeight[i] + lineGap;
         }
 
-        totalHeightCanvas = y - lineGap;
+        totalHeightCanvas = y - lineGap + bottomMargin;
+
+        for (size_t i = 0; i < pages.size(); ++i) {
+            for (System* system : pages[i]->systems()) {
+                playbackSystems.push_back(system);
+                const muse::RectF systemRect = visibleSystemBoundingBox(system);
+                playbackSystemTop.push_back(
+                    pageRenderOffset[i] + (systemRect.top() - pages[i]->pos().y()));
+                playbackSystemBottom.push_back(
+                    pageRenderOffset[i] + (systemRect.bottom() - pages[i]->pos().y()));
+            }
+        }
     }
 
     //! NOTE: Do NOT wrap paintPrint in save()/restore(); paintPrint installs the page
@@ -716,6 +994,59 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
         painting->paintPrint(&painter, opt);
         painter.translate(-offsetX, -offsetY);
     };
+
+    auto playbackPage = [&pageByTick, &pages](tick_t tick) -> const Page* {
+        const Page* page = pageByTick(pages, tick);
+        return page ? page : pages.back();
+    };
+
+    auto targetViewTop = [&](const Page* page, const muse::RectF& cursorRect) {
+        if (totalHeightCanvas <= frameHeightCanvas) {
+            //! Landscape video starts at the DB Studio 5 mm top margin. Portrait
+            //! keeps the original centred layout.
+            return landscape ? 0.0 : (totalHeightCanvas - frameHeightCanvas) * 0.5;
+        }
+
+        const int pageIdx = static_cast<int>(page->pageNumber());
+        const double cursorCenterY = pageRenderOffset[pageIdx]
+                                     + (cursorRect.center().y() - page->pos().y());
+        return std::clamp(
+            cursorCenterY - frameHeightCanvas * 0.5,
+            0.0,
+            totalHeightCanvas - frameHeightCanvas);
+    };
+
+    auto systemIndexAt = [&](double cursorCenterY) {
+        for (size_t i = 0; i < playbackSystems.size(); ++i) {
+            if (cursorCenterY >= playbackSystemTop[i]
+                    && cursorCenterY <= playbackSystemBottom[i]) {
+                return static_cast<int>(i);
+            }
+        }
+        return -1;
+    };
+
+    auto measureOrdinalAt = [](const System* system, tick_t playbackTick) {
+        const Fraction tick = Fraction::fromTicks(playbackTick);
+        int ordinal = 0;
+        for (const engraving::MeasureBase* measure : system->measures()) {
+            if (!measure->isMeasure()) {
+                continue;
+            }
+            ++ordinal;
+            if (tick >= measure->tick() && tick < measure->endTick()) {
+                return ordinal;
+            }
+        }
+        return ordinal;
+    };
+
+    double viewTop = 0.0;
+    bool playbackFollowInitialised = false;
+    int playbackFollowSystemIndex = -1;
+    bool playbackFollowScrollActive = false;
+    double playbackFollowTargetTop = 0.0;
+    double nextPlaybackFollowUpdate = 0.0;
 
     for (int f = 0; f < scoreFrameCount; f++) {
         if (m_abort) {
@@ -733,11 +1064,82 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
 
         tick_t tick = playback->secToTick(currentTimeSec);
 
-        const Page* page = pageByTick(pages, tick);
-        if (!page) {
-            break;
+        //! DB Studio follows the cursor with a precise 8 ms timer and an
+        //! interpolation factor of 0.14. Reproduce that timeline inside the
+        //! export instead of snapping the viewport to every video frame.
+        while (nextPlaybackFollowUpdate <= currentTimeSec + 1e-9) {
+            const tick_t followTick = playback->secToTick(nextPlaybackFollowUpdate);
+            const Page* followPage = playbackPage(followTick);
+            if (followPage->firstMeasure()) {
+                cursor.move(followTick);
+                const muse::RectF followCursorRect = cursor.rect();
+                const int pageIdx = static_cast<int>(followPage->pageNumber());
+                const double cursorCenterY = pageRenderOffset[pageIdx]
+                                             + (followCursorRect.center().y() - followPage->pos().y());
+                const bool cursorVisible = cursorCenterY >= viewTop
+                                           && cursorCenterY <= viewTop + frameHeightCanvas;
+                const int systemIndex = systemIndexAt(cursorCenterY);
+
+                // DB player moves the score when playback reaches the third
+                // measure of the third system. After that, it repeats every two
+                // systems. An explicit jump outside the viewport is always followed.
+                bool shouldRetargetView = !playbackFollowInitialised
+                                          || systemIndex < 0
+                                          || playbackFollowSystemIndex < 0
+                                          || systemIndex < playbackFollowSystemIndex
+                                          || !cursorVisible;
+                bool regularBlockScroll = false;
+                if (!shouldRetargetView) {
+                    const int systemsAdvanced = systemIndex - playbackFollowSystemIndex;
+                    const int measureOrdinal =
+                        systemIndex < static_cast<int>(playbackSystems.size())
+                        ? measureOrdinalAt(playbackSystems[systemIndex], followTick)
+                        : -1;
+                    regularBlockScroll = systemsAdvanced
+                                         >= DB_STUDIO_PLAYBACK_SCROLL_SYSTEM_INTERVAL
+                                         && (systemsAdvanced
+                                             > DB_STUDIO_PLAYBACK_SCROLL_SYSTEM_INTERVAL
+                                             || measureOrdinal <= 0
+                                             || measureOrdinal >= DB_STUDIO_PLAYBACK_TRIGGER_MEASURE);
+                    shouldRetargetView = regularBlockScroll;
+                }
+
+                if (shouldRetargetView) {
+                    playbackFollowSystemIndex = systemIndex;
+                    playbackFollowScrollActive = true;
+                    playbackFollowTargetTop = targetViewTop(followPage, followCursorRect);
+
+                    if (regularBlockScroll && systemIndex > 0
+                            && systemIndex < static_cast<int>(playbackSystems.size())) {
+                        const double extraDistance = DB_STUDIO_PLAYBACK_EXTRA_DISTANCE_SP
+                                                     * notation->elements()->msScore()->style().spatium();
+                        playbackFollowTargetTop += extraDistance;
+
+                        playbackFollowTargetTop = std::min(
+                            playbackFollowTargetTop,
+                            playbackSystemTop[systemIndex - 1]);
+                    }
+                }
+
+                if (playbackFollowScrollActive) {
+                    if (!playbackFollowInitialised) {
+                        viewTop = playbackFollowTargetTop;
+                        playbackFollowInitialised = true;
+                        playbackFollowScrollActive = false;
+                    } else if (std::abs(playbackFollowTargetTop - viewTop)
+                               < DB_STUDIO_PLAYBACK_FOLLOW_EPSILON) {
+                        viewTop = playbackFollowTargetTop;
+                        playbackFollowScrollActive = false;
+                    } else {
+                        viewTop += (playbackFollowTargetTop - viewTop)
+                                   * DB_STUDIO_PLAYBACK_FOLLOW_INTERPOLATION;
+                    }
+                }
+            }
+            nextPlaybackFollowUpdate += DB_STUDIO_PLAYBACK_FOLLOW_INTERVAL_SEC;
         }
 
+        const Page* page = playbackPage(tick);
         if (!page->firstMeasure()) {
             // Skip pages with no notation
             continue;
@@ -751,19 +1153,9 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
             cursor.move(tick);
             muse::RectF cursorRect = cursor.rect();
 
-            int pageIdx = static_cast<int>(page->pageNumber());
-            double cursorVertY = pageRenderOffset[pageIdx] + (cursorRect.y() - page->pos().y());
-
-            //! NOTE: 指针固定 C 位：视图持续跟随，使指针始终位于画面垂直中心。
-            //! 指针贴近乐谱起止点时自然夹紧到边界，避免露出空白/黑边。
-            double viewTop;
-            if (totalHeightCanvas <= frameHeightCanvas) {
-                //! 乐谱比画布短：垂直居中，避免底部大片留白。
-                viewTop = (totalHeightCanvas - frameHeightCanvas) * 0.5;
-            } else {
-                double desiredTop = cursorVertY - frameHeightCanvas * 0.5;
-                viewTop = std::clamp(desiredTop, 0.0, totalHeightCanvas - frameHeightCanvas);
-            }
+            const int pageIdx = static_cast<int>(page->pageNumber());
+            const double cursorVertY = pageRenderOffset[pageIdx]
+                                       + (cursorRect.y() - page->pos().y());
 
             //! NOTE: Render every page intersecting the vertical viewport (one page normally,
             //! two while crossing a page boundary), shifted up by the scroll offset.

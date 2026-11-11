@@ -1,5 +1,5 @@
 {
-    "uri": "musescore://extensions/dev/batch_example",
+    "uri": "extension://extensions/dev/batch_example",
     "type": "composite",
     "title": "Batch example (default)",
     "ui_context": "Any",

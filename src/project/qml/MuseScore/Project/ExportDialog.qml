@@ -21,9 +21,11 @@
  */
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Controls
 
 import Muse.Ui
 import Muse.UiComponents
+import Muse.Cloud
 import DBScore.Project
 
 import "internal/Export"
@@ -39,6 +41,38 @@ StyledDialogView {
 
     ExportDialogModel {
         id: exportModel
+    }
+
+    DbScoreAccountModel {
+        id: accountModel
+    }
+
+    PaymentDialog {
+        id: paymentDialog
+
+        visible: false
+        qrSource: accountModel.paymentQrSource
+        planName: accountModel.paymentPlanName
+        amountText: accountModel.paymentAmountText
+        orderNumber: accountModel.paymentOrderNumber
+        statusText: accountModel.paymentStatusText
+        checking: accountModel.paymentChecking
+        creating: accountModel.paymentCreating
+
+        onCheckRequested: accountModel.checkPaymentNow()
+        onClosed: accountModel.closePaymentDialog()
+    }
+
+    Connections {
+        target: accountModel
+
+        function onPaymentVisibleChanged() {
+            if (accountModel.paymentVisible) {
+                paymentDialog.open()
+            } else {
+                paymentDialog.close()
+            }
+        }
     }
 
     onNavigationActivateRequested: {
@@ -142,6 +176,7 @@ StyledDialogView {
                     width: parent.width
 
                     exportModel: exportModel
+                    accountModel: accountModel
                     navigation.section: root.navigationSection
                     navigation.order: 3
                 }

@@ -30,7 +30,7 @@ Item {
     property bool zoomBaseFixed: false
 
     //! NOTE: 吸附到最近强拍的开关（仅影响拖动，不影响播放/同步逻辑）。
-    property bool snapEnabled: true
+    property bool snapEnabled: false
 
     property real zoom: 3.5
     property real scrollSec: 0.0
@@ -39,6 +39,8 @@ Item {
 
     property color scoreColor: "#32584B"
     property color audioColor: "#9E5242"
+    //! NOTE: 音频轨两端裁剪堵头的颜色（黄色，便于和音波线区分），仅影响外观。
+    property color trimHandleColor: "#F5C518"
     //! NOTE: 播放指针样式可调（颜色/粗细），仅影响外观，不影响任何功能与同步逻辑。
     property string playheadColor: "#59BA54"
     property real playheadThickness: 1.0
@@ -164,6 +166,55 @@ Item {
             FlatButton { text: "选择音频"; accentButton: !audioModel.hasTrack; onClicked: audioModel.chooseFile() }
             FlatButton { text: "替换音频"; enabled: audioModel.hasTrack; onClicked: audioModel.replaceFile() }
             FlatButton { text: "移除伴奏轨"; enabled: audioModel.hasTrack; onClicked: audioModel.remove() }
+
+            StyledTextLabel { text: "乐谱" }
+            StyledSlider {
+                id: scoreVolumeSlider
+                Layout.preferredWidth: 72
+                from: -60
+                to: 12
+                stepSize: 0.5
+                onMoved: audioModel.setScoreVolumeDb(value)
+
+                Component.onCompleted: scoreVolumeSlider.value = audioModel.scoreVolumeDb
+                Connections {
+                    target: audioModel
+                    function onScoreVolumeDbChanged() { scoreVolumeSlider.value = audioModel.scoreVolumeDb }
+                }
+            }
+
+            StyledTextLabel { text: "伴奏轨" }
+            StyledSlider {
+                id: accompanimentVolumeSlider
+                Layout.preferredWidth: 72
+                from: -60
+                to: 12
+                stepSize: 0.5
+                onMoved: { audioModel.setVolumeDb(value); audioModel.apply() }
+
+                Component.onCompleted: accompanimentVolumeSlider.value = audioModel.volumeDb
+                Connections {
+                    target: audioModel
+                    function onVolumeDbChanged() { accompanimentVolumeSlider.value = audioModel.volumeDb }
+                }
+            }
+
+            StyledTextLabel { text: "总" }
+            StyledSlider {
+                id: masterVolumeSlider
+                Layout.preferredWidth: 72
+                from: -60
+                to: 12
+                stepSize: 0.5
+                onMoved: audioModel.setMasterVolumeDb(value)
+
+                Component.onCompleted: masterVolumeSlider.value = audioModel.masterVolumeDb
+                Connections {
+                    target: audioModel
+                    function onMasterVolumeDbChanged() { masterVolumeSlider.value = audioModel.masterVolumeDb }
+                }
+            }
+
             Item { Layout.fillWidth: true }
             FlatButton {
                 text: audioModel.metronomeEnabled ? "✓ 节拍器" : "节拍器"
@@ -182,64 +233,6 @@ Item {
         }
 
         SeparatorLine { Layout.fillWidth: true }
-
-        // 音量
-        RowLayout {
-            Layout.fillWidth: true
-            spacing: 12
-
-            StyledTextLabel {
-                text: "音量"
-                font.bold: true
-            }
-            StyledTextLabel { text: "乐谱" }
-            StyledSlider {
-                id: scoreVolumeSlider
-                Layout.preferredWidth: 100
-                from: -60
-                to: 12
-                stepSize: 0.5
-                onMoved: audioModel.setScoreVolumeDb(value)
-
-                Component.onCompleted: scoreVolumeSlider.value = audioModel.scoreVolumeDb
-                Connections {
-                    target: audioModel
-                    function onScoreVolumeDbChanged() { scoreVolumeSlider.value = audioModel.scoreVolumeDb }
-                }
-            }
-
-            StyledTextLabel { text: "伴奏轨" }
-            StyledSlider {
-                id: accompanimentVolumeSlider
-                Layout.preferredWidth: 100
-                from: -60
-                to: 12
-                stepSize: 0.5
-                onMoved: { audioModel.setVolumeDb(value); audioModel.apply() }
-
-                Component.onCompleted: accompanimentVolumeSlider.value = audioModel.volumeDb
-                Connections {
-                    target: audioModel
-                    function onVolumeDbChanged() { accompanimentVolumeSlider.value = audioModel.volumeDb }
-                }
-            }
-
-            StyledTextLabel { text: "总" }
-            StyledSlider {
-                id: masterVolumeSlider
-                Layout.preferredWidth: 100
-                from: -60
-                to: 12
-                stepSize: 0.5
-                onMoved: audioModel.setMasterVolumeDb(value)
-
-                Component.onCompleted: masterVolumeSlider.value = audioModel.masterVolumeDb
-                Connections {
-                    target: audioModel
-                    function onMasterVolumeDbChanged() { masterVolumeSlider.value = audioModel.masterVolumeDb }
-                }
-            }
-        }
 
         // 播放指针样式 + 轨道缩放
         RowLayout {
@@ -339,6 +332,7 @@ Item {
 
                 // 左侧轨道名标签
                 Column {
+                    z: 2
                     width: 86
                     height: parent.height
 
@@ -365,27 +359,13 @@ Item {
                                 font.bold: true
                             }
 
-                            Rectangle {
+                            FlatButton {
                                 anchors.horizontalCenter: parent.horizontalCenter
                                 width: 60
                                 height: 22
-                                radius: 4
-                                color: audioModel.scoreMuted ? root.scoreColor : "transparent"
-                                border.width: 1
-                                border.color: root.scoreColor
-
-                                Text {
-                                    anchors.centerIn: parent
-                                    text: audioModel.scoreMuted ? "✓ 静音" : "静音"
-                                    color: audioModel.scoreMuted ? "#FFFFFF" : root.scoreColor
-                                    font.pixelSize: 11
-                                }
-
-                                MouseArea {
-                                    anchors.fill: parent
-                                    cursorShape: Qt.PointingHandCursor
-                                    onClicked: audioModel.toggleScoreMute()
-                                }
+                                text: audioModel.scoreMuted ? "✓ 静音" : "静音"
+                                accentButton: audioModel.scoreMuted
+                                onClicked: audioModel.toggleScoreMute()
                             }
                         }
                     }
@@ -407,31 +387,17 @@ Item {
                                 font.bold: true
                             }
 
-                            Rectangle {
+                            FlatButton {
                                 anchors.horizontalCenter: parent.horizontalCenter
                                 width: 60
                                 height: 22
-                                radius: 4
-                                color: audioModel.muted ? root.audioColor : "transparent"
-                                border.width: 1
-                                border.color: root.audioColor
                                 opacity: audioModel.hasTrack ? 1.0 : 0.4
-
-                                Text {
-                                    anchors.centerIn: parent
-                                    text: audioModel.muted ? "✓ 静音" : "静音"
-                                    color: audioModel.muted ? "#FFFFFF" : root.audioColor
-                                    font.pixelSize: 11
-                                }
-
-                                MouseArea {
-                                    anchors.fill: parent
-                                    cursorShape: Qt.PointingHandCursor
-                                    enabled: audioModel.hasTrack
-                                    onClicked: {
-                                        audioModel.setMuted(!audioModel.muted)
-                                        audioModel.apply()
-                                    }
+                                text: audioModel.muted ? "✓ 静音" : "静音"
+                                accentButton: audioModel.muted
+                                enabled: audioModel.hasTrack
+                                onClicked: {
+                                    audioModel.setMuted(!audioModel.muted)
+                                    audioModel.apply()
                                 }
                             }
                         }
@@ -441,8 +407,10 @@ Item {
                 // 右侧时间线内容
                 Item {
                     id: timeline
+                    z: 1
                     width: parent.width - 86
                     height: parent.height
+                    clip: true
 
                     property double pxPerSec: width > 0 ? width / visibleDuration : 0
                     function xAt(t) { return (t - scrollSec) * pxPerSec }
@@ -736,22 +704,15 @@ Item {
                             id: leftTrim
                             x: timeline.xAt(audioModel.startOffset)
                             y: 6
-                            width: 14
+                            width: Math.max(2, root.playheadThickness)
                             height: parent.height - 12
-                            color: root.audioColor
+                            color: root.trimHandleColor
                             visible: audioModel.hasTrack
-
-                            Rectangle {
-                                anchors.centerIn: parent
-                                width: 2
-                                height: parent.height * 0.5
-                                radius: 1
-                                color: "#FFFFFF"
-                                opacity: 0.7
-                            }
 
                             MouseArea {
                                 anchors.fill: parent
+                                anchors.leftMargin: -7
+                                anchors.rightMargin: -7
                                 cursorShape: Qt.SplitHCursor
                                 property double startClip: 0
                                 property double startOff: 0
@@ -783,22 +744,15 @@ Item {
                             id: rightTrim
                             x: timeline.xAt(audioModel.startOffset + ((audioModel.clipEnd > 0 ? audioModel.clipEnd : audioDuration) - Math.max(0, audioModel.clipStart)))
                             y: 6
-                            width: 14
+                            width: Math.max(2, root.playheadThickness)
                             height: parent.height - 12
-                            color: root.audioColor
+                            color: root.trimHandleColor
                             visible: audioModel.hasTrack
-
-                            Rectangle {
-                                anchors.centerIn: parent
-                                width: 2
-                                height: parent.height * 0.5
-                                radius: 1
-                                color: "#FFFFFF"
-                                opacity: 0.7
-                            }
 
                             MouseArea {
                                 anchors.fill: parent
+                                anchors.leftMargin: -7
+                                anchors.rightMargin: -7
                                 cursorShape: Qt.SplitHCursor
                                 property double startEnd: 0
                                 property double pressTimelineX: 0

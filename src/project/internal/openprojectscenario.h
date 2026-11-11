@@ -30,7 +30,6 @@
 #include "modularity/ioc.h"
 #include "async/asyncable.h"
 #include "context/iglobalcontext.h"
-#include "cloud/dbscorecloud/idbscorecloudservice.h"
 #include "interactive/iinteractive.h"
 #include "interactive/iplatforminteractive.h"
 #include "io/ifilesystem.h"
@@ -54,7 +53,6 @@ public:
     muse::GlobalInject<IProjectConfiguration> configuration;
     muse::GlobalInject<muse::io::IFileSystem> fileSystem;
     muse::GlobalInject<muse::mi::IMultiWindowsProvider> multiwindowsProvider;
-    muse::GlobalInject<muse::cloud::IDBScoreCloudService> dbScoreCloudService;
     muse::GlobalInject<IProjectCreator> projectCreator;
     muse::GlobalInject<INotationReadersRegister> readers;
     muse::GlobalInject<IMscMetaReader> mscMetaReader;
@@ -106,23 +104,9 @@ private:
                                                      const std::string& format);
 
     muse::async::Promise<muse::Ret> doOpenProject(const muse::io::path_t& filePath);
-    muse::async::Promise<muse::Ret> doOpenCloudProject(const muse::io::path_t& filePath, const CloudProjectInfo& info, bool isOwner = true);
     muse::async::Promise<muse::Ret> doOpenCloudProjectOffline(const muse::io::path_t& filePath, const QString& displayNameOverride);
 
-    muse::async::Promise<muse::Ret> downloadAndOpenCloudProject(int scoreId,
-                                                                const QString& hash = QString(),
-                                                                const QString& secret = QString(), bool isOwner = true);
-    muse::async::Promise<muse::Ret> doDownloadAndOpenCloudProject(int scoreId, const QString& hash, const QString& secret, bool isOwner);
-    muse::async::Promise<muse::Ret> downloadCloudProject(int scoreId, const muse::io::path_t& localPath, const QString& hash,
-                                                         const QString& secret, const CloudProjectInfo& info, bool isOwner);
-    muse::async::Promise<muse::Ret> openMuseScoreUrl(const QUrl& url);
-    muse::async::Promise<muse::Ret> openScoreFromDBScoreCloud(const QUrl& url);
-    muse::async::Promise<muse::Ret> openScoreFromDBScoreCloud(const QUrl& url, int scoreId, const muse::cloud::ScoreInfo& scoreInfo);
-
     muse::Ret openPageIfNeed(muse::Uri pageUri);
-
-    muse::async::Promise<muse::RetVal<muse::Val> > openDialog(const muse::UriQuery& query) const;
-    muse::async::Promise<muse::RetVal<muse::Val> > ensureAuthorization() const;
 
     muse::async::Promise<bool> shouldRetryLoadAfterError(const muse::Ret& ret, const muse::io::path_t& filepath);
     muse::async::Promise<bool> askIfUserAgreesToOpenProjectWithIncompatibleVersion(const std::string& errorText);
@@ -130,8 +114,6 @@ private:
     muse::async::Promise<bool> askIfUserAgreesToOpenCorruptedProject(const muse::String& projectName, const std::string& errorText);
     void warnProjectCriticallyCorrupted(const muse::String& projectName, const std::string& errorText);
     void warnProjectCannotBeOpened(const muse::Ret& ret, const muse::io::path_t& filepath);
-
-    void showCloudOpenError(const muse::Ret& ret) const;
 
     muse::async::Promise<muse::io::path_t> selectScoreOpeningFile() const;
 

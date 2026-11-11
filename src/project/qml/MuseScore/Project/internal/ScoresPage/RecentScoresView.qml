@@ -71,10 +71,6 @@ ScoresView {
                 root.revealInFileBrowserRequested(scorePath)
             }
 
-            onViewOnlineRequested: function(scoreId) {
-                root.viewOnlineRequested(scoreId)
-            }
-
             onRemoveFromRecentFilesRequested: function(scorePath) {
                 recentScoresModel.removeRecentScore(scorePath)
             }
@@ -113,10 +109,6 @@ ScoresView {
 
             onRevealInFileBrowserRequested: function(scorePath) {
                 root.revealInFileBrowserRequested(scorePath)
-            }
-
-            onViewOnlineRequested: function(scoreId) {
-                root.viewOnlineRequested(scoreId)
             }
 
             onRemoveFromRecentFilesRequested: function(scorePath) {

@@ -267,8 +267,6 @@ public:
     void setFFmpegDir(const QString& dir);
 
     bool mp4ExportLocked() const;
-    Q_INVOKABLE void openMembershipPage();
-
     Q_INVOKABLE void updateExportInfo();
 
 signals:

@@ -57,24 +57,5 @@ PreferencesPage {
             }
         }
 
-        SeparatorLine { }
-
-        SaveToCloudSection {
-            navigation.section: root.navigationSection
-            navigation.order: root.navigationOrderStart + 2
-        }
-
-        SeparatorLine { }
-
-        PublishDBScoreCloudSection {
-            alsoShareDBScoreAudio: preferencesModel.alsoShareDBScoreAudio
-
-            navigation.section: root.navigationSection
-            navigation.order: root.navigationOrderStart + 3
-
-            onAlsoShareDBScoreAudioChangeRequested: function(share) {
-                preferencesModel.alsoShareDBScoreAudio = share;
-            }
-        }
     }
 }

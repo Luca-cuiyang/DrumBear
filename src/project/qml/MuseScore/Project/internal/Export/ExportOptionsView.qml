@@ -34,6 +34,7 @@ Column {
     id: root
 
     required property ExportDialogModel exportModel
+    required property var accountModel
     property alias navigation: navPanel
 
     readonly property bool isExportAvailable: Boolean(pageLoader.item)
@@ -141,6 +142,7 @@ Column {
 
             var properties = {
                 model: Qt.binding(() => root.exportModel),
+                accountModel: root.accountModel,
                 navigationPanel: navPanel,
                 navigationOrder: 3
             }

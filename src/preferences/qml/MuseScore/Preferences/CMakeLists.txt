@@ -117,9 +117,7 @@ qt_add_qml_module(preferences_qml
         internal/PreferencesButtonsPanel.qml
         internal/PreferencesMenu.qml
         internal/ProgramStartSection.qml
-        internal/PublishDBScoreCloudSection.qml
         internal/RemoteControlSection.qml
-        internal/SaveToCloudSection.qml
         internal/ScrollPagesSection.qml
         internal/ThemeAdditionalOptionsSection.qml
         internal/ThemeColorSection.qml

@@ -1,5 +1,5 @@
 {
-    "uri": "musescore://extensions/dev/apitests",
+    "uri": "extension://extensions/dev/apitests",
     "type": "composite",
     "title": "Api tests",
     "description": "This is a development extension for API tests.",

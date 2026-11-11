@@ -57,9 +57,10 @@ static const std::string SESSION_RESOURCE_NAME("SESSION");
 
 void AppShellConfiguration::init()
 {
-    settings()->setDefaultValue(HAS_COMPLETED_FIRST_LAUNCH_SETUP, Val(false));
-
-    settings()->setDefaultValue(WELCOME_DIALOG_SHOW_ON_STARTUP_KEY, Val(true));
+    // DB Score opens directly into the workspace. The inherited first-run and
+    // version-welcome dialogs must never block the application at startup.
+    settings()->setSharedValue(HAS_COMPLETED_FIRST_LAUNCH_SETUP, Val(true));
+    settings()->setSharedValue(WELCOME_DIALOG_SHOW_ON_STARTUP_KEY, Val(false));
     settings()->valueChanged(WELCOME_DIALOG_SHOW_ON_STARTUP_KEY).onReceive(this, [this](const Val&) {
         m_welcomeDialogShowOnStartupChanged.notify();
     });

@@ -44,10 +44,6 @@ AppWindow {
         mainWindowTitleBarMoveArea: appTitleBar.titleMoveAreaRect
     }
 
-    Component.onCompleted: {
-        window.init()
-    }
-
     AppTitleBar {
         id: appTitleBar
 

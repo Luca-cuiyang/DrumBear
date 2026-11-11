@@ -518,6 +518,12 @@ Ret ConverterController::convertFullNotation(INotationWriterPtr writer, INotatio
         return make_ret(Err::OutFileFailedWrite);
     }
 
+    // VideoWriter owns and writes the destination file itself through FFmpeg.
+    // Copying the empty in-memory buffer back over it truncates the finished MP4.
+    if (io::suffix(out) == "mp4") {
+        return make_ret(Ret::Code::Ok);
+    }
+
     outBuf.close();
     ret = File::writeFile(out, outBuf.data());
     if (!ret) {

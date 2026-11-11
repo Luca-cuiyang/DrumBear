@@ -29,6 +29,7 @@ import DBScore.Project
 ExportSettingsPage {
     id: root
 
+    required property var accountModel
     property bool isFFmpegAvailable: Boolean(root.model) && root.model.isFFmpegAvailable
     readonly property bool mp4ExportLocked: Boolean(root.model) && root.model.mp4ExportLocked
 
@@ -73,10 +74,17 @@ ExportSettingsPage {
                 navigation.row: root.navigationOrder
 
                 onClicked: {
-                    if (root.model) {
-                        root.model.openMembershipPage()
-                    }
+                    root.accountModel.openPurchasePage()
                 }
+            }
+
+            StyledTextLabel {
+                width: parent.width
+                visible: root.accountModel.lastError.length > 0
+                text: root.accountModel.lastError
+                color: ui.theme.accentColor
+                font: ui.theme.bodyFont
+                wrapMode: Text.WordWrap
             }
         }
     }
@@ -90,49 +98,9 @@ ExportSettingsPage {
 
             StyledTextLabel {
                 width: parent.width
-                text: qsTrc("project/export", "To export to this file format, an FFmpeg installation is required. You can also configure this in Preferences > Video.")
+                text: qsTrc("project/export", "内置视频组件加载失败。请退出并重新安装最新版 DB Score；安装包已内置视频导出组件，无需另行安装 FFmpeg。")
                 horizontalAlignment: Text.AlignLeft
                 wrapMode: Text.WordWrap
-            }
-
-            FlatButton {
-                id: downloadButton
-
-                text: qsTrc("project/export", "Download FFmpeg")
-                icon: IconCode.OPEN_LINK
-                isNarrow: true
-                orientation: Qt.Horizontal
-
-                navigation.name: "ExportDownloadFFmpeg"
-                navigation.panel: root.navigationPanel
-                navigation.row: root.navigationOrder
-
-                onClicked: {
-                    api.launcher.openUrl("https://handbook.drumbearai.com/video/installing-ffmpeg")
-                }
-            }
-
-            FilePicker {
-                width: parent.width
-
-                pickerType: FilePicker.PickerType.Directory
-                dialogTitle: qsTrc("project/export", "Choose FFmpeg library folder")
-
-                buttonType: FlatButton.TextOnly
-                buttonText: qsTrc("project/export", "Locate existing installation")
-                showPathField: false
-
-                dir: root.model ? root.model.ffmpegDir : ""
-                path: root.model ? root.model.ffmpegDir : ""
-
-                navigation: root.navigationPanel
-                navigationRowOrderStart: downloadButton.navigation.order + 1
-
-                onPathEdited: function(newPath) {
-                    if (root.model) {
-                        root.model.ffmpegDir = newPath
-                    }
-                }
             }
         }
     }

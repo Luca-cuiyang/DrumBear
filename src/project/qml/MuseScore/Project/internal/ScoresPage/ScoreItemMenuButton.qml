@@ -29,7 +29,6 @@ FlatButton {
 
     property bool isCreateNew: false
     property bool isNoResultsFound: false
-    property bool isCloud: false
     property bool showRemoveFromRecentFiles: false
     property alias isMenuOpened: menuLoader.isMenuOpened
     property bool isMenuOpenedByButton: menuLoader.isMenuOpened && menuLoader.parent === root
@@ -39,7 +38,6 @@ FlatButton {
 
     signal openRequested()
     signal revealInFileBrowserRequested()
-    signal viewOnlineRequested()
     signal removeFromRecentFilesRequested()
 
     function show(position, item) {
@@ -79,11 +77,7 @@ FlatButton {
             { id: "open", title: qsTrc("project", "打开") }
         ]
 
-        if (root.isCloud) {
-            result.push({ id: "view-online", title: qsTrc("project", "在线查看"), icon: IconCode.OPEN_LINK })
-        } else {
-            result.push({ id: "reveal-in-file-browser", title: root.revealInFileBrowserTitle })
-        }
+        result.push({ id: "reveal-in-file-browser", title: root.revealInFileBrowserTitle })
 
         if (root.showRemoveFromRecentFiles) {
             result.push({}) // separator
@@ -110,9 +104,6 @@ FlatButton {
             switch (itemId) {
             case "open":
                 root.openRequested()
-                break
-            case "view-online":
-                root.viewOnlineRequested()
                 break
             case "reveal-in-file-browser":
                 root.revealInFileBrowserRequested()

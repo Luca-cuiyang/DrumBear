@@ -45,7 +45,6 @@ Item {
     signal createNewScoreRequested()
     signal openScoreRequested(var scorePath, var displayName)
     signal revealInFileBrowserRequested(var scorePath)
-    signal viewOnlineRequested(var scoreId)
     signal removeFromRecentFilesRequested(var scorePath)
     signal retryRequested()
     signal cancelRequested(int convertType, int convertId)
@@ -167,8 +166,6 @@ Item {
                 processingStatus: score.processingStatus
                 convertType: score.convertType ?? 0
                 convertId: score.convertId ?? 0
-                isCloud: score.isCloud
-                cloudScoreId: score.scoreId ?? 0
                 timeSinceModified: score.timeSinceModified ?? ""
                 showRemoveFromRecentFiles: root.allowRemoveFromRecentFiles
 
@@ -182,10 +179,6 @@ Item {
 
                 onRevealInFileBrowserRequested: function(scorePath) {
                     root.revealInFileBrowserRequested(scorePath)
-                }
-
-                onViewOnlineRequested: function(scoreId) {
-                    root.viewOnlineRequested(scoreId)
                 }
 
                 onRemoveFromRecentFilesRequested: function(scorePath) {

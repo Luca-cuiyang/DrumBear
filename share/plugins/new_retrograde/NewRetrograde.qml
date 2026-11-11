@@ -13,8 +13,8 @@ import QtQuick
 import MuseScore 3.0
 
 MuseScore {
-    title: qsTr("Retrograde")
-    description: qsTr("Takes a selection of notes and reverses them.")
+    title: qsTr("逆行")
+    description: qsTr("将所选音符反向排列。")
     version: "1.0"
     categoryCode: "composing-arranging-tools"
     thumbnailName: "retrograde.png"
@@ -314,7 +314,7 @@ MuseScore {
         c.addTuplet(tuplet.ratio, tuplet.duration)
         c.rewindToFraction(t)
         if (!c.element.tuplet) {
-            throw new Error(qsTr("Unable to add tuplet, possibly overlaps measure boundaries"))
+            throw new Error(qsTr("无法添加连音，可能跨越了小节边界"))
         }
         c.element.tuplet.bracketType = tuplet.bracketType
         c.element.tuplet.numberType = tuplet.numberType

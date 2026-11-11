@@ -487,6 +487,8 @@ static void addConsoleModules(std::shared_ptr<MuseScoreConsoleApp> app)
     }
 #endif
 
+    app->addModule(new muse::media::MediaModule());
+    app->addModule(new muse::network::NetworkModule());
 #ifdef MUSE_MODULE_UI
     app->addModule(new muse::ui::UiModule());
 #endif
@@ -499,6 +501,9 @@ static void addConsoleModules(std::shared_ptr<MuseScoreConsoleApp> app)
     app->addModule(new muse::testflow::TestflowModule());
 #endif
 
+    // Console exports use the same account and membership contract as the GUI.
+    // Without this module the video writer's authorization dependency is null.
+    app->addModule(new muse::cloud::CloudModule());
     app->addModule(new mu::context::ContextModule());
 
 #ifdef MUE_BUILD_CONVERTER_MODULE

@@ -174,9 +174,9 @@ Rectangle {
             width: 200
             navigation.panel: navPanel
             navigation.row: 6
-            text: "Open drumbearai.com"
+            text: "Open drumbear.cn"
             onClicked: {
-                api.launcher.openUrl("https://drumbearai.com/")
+                api.launcher.openUrl("https://drumbear.cn/")
             }
         }
 

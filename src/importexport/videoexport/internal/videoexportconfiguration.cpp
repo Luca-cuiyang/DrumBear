@@ -30,8 +30,9 @@ static const std::string DEFAULT_RESOLUTION = "1080p_16x9";
 static const int DEFAULT_CUSTOM_WIDTH = 1920;
 static const int DEFAULT_CUSTOM_HEIGHT = 1080;
 static const int DEFAULT_FPS = 60;
-static const double DEFAULT_LEADING_SEC = 3.0;
-static const double DEFAULT_TRAILING_SECONDS = 3.0;
+// 导出视频不生成片头封面，也不生成片尾停留画面，开头结尾都与乐谱播放严格对齐。
+static const double DEFAULT_LEADING_SEC = 0.0;
+static const double DEFAULT_TRAILING_SECONDS = 0.0;
 static const bool DEFAULT_SMOOTH_PAGE_TRANSITIONS = true;
 static const bool DEFAULT_INCLUDE_AUDIO = true;
 

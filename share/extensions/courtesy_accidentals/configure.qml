@@ -76,7 +76,7 @@ MuseScore {
         spacing: 12
 
         StyledGroupBox {
-            title: "Add courtesy accidentals for"
+            title: "为以下情况添加提示性变音记号"
 
             ColumnLayout {
                 spacing: 12
@@ -87,7 +87,7 @@ MuseScore {
 
                 RoundedRadioButton {
                     id: optNextMeasure
-                    text: "notes up to the next measure"
+                    text: "直到下一小节的音符"
                     checked: true
                     ButtonGroup.group: typeGroup
                 }
@@ -97,7 +97,7 @@ MuseScore {
 
                     RoundedRadioButton {
                         id: optNumMeasures
-                        text: "notes up to the next"
+                        text: "直到后续"
                         ButtonGroup.group: typeGroup
                     }
 
@@ -115,7 +115,7 @@ MuseScore {
 
                     StyledTextLabel {
                         Layout.fillWidth: true
-                        text: "measures"
+                        text: "小节"
                         font: ui.theme.bodyFont
                         horizontalAlignment: Text.AlignLeft
                     }
@@ -127,7 +127,7 @@ MuseScore {
                     RoundedRadioButton {
                         id: optEvent
                         Layout.alignment: Qt.AlignTop | Qt.AlignLeft
-                        text: "notes up to the"
+                        text: "直到"
                         ButtonGroup.group: typeGroup
                     }
 
@@ -135,7 +135,7 @@ MuseScore {
                         CheckBox {
                             id: optFullRest
                             Layout.fillWidth: true
-                            text: "next full measure rest"
+                            text: "下一个整小节休止"
                             // TODO: this option hasn't worked since MuseScore 3
                             // checked: true
                             enabled: false
@@ -145,7 +145,7 @@ MuseScore {
                         CheckBox {
                             id: optDoubleBar
                             Layout.fillWidth: true
-                            text: "next double bar line"
+                            text: "下一条双小节线"
                             // TODO: this option hasn't worked since MuseScore 3
                             // checked: true
                             enabled: false
@@ -155,7 +155,7 @@ MuseScore {
                         CheckBox {
                             id: optRehearsalMark
                             Layout.fillWidth: true
-                            text: "next rehearsal mark"
+                            text: "下一个排练标记"
                             // TODO: this option hasn't worked since MuseScore 3
                             // checked: false
                             enabled: false
@@ -165,7 +165,7 @@ MuseScore {
                         CheckBox {
                             id: optEndScore
                             Layout.fillWidth: true
-                            text: "end of the score"
+                            text: "乐谱末尾"
                             checked: true
                             onClicked: checked = !checked
                         }
@@ -174,7 +174,7 @@ MuseScore {
 
                 RoundedRadioButton {
                     id: optDodecaphonic
-                    text: "all notes (dodecaphonic style)"
+                    text: "所有音符（十二音风格）"
                     ButtonGroup.group: typeGroup
                 }
             }
@@ -183,7 +183,7 @@ MuseScore {
         CheckBox {
             id: optUseBracket
             Layout.fillWidth: true
-            text: "Put accidentals in parenthesis"
+            text: "将变音记号放在括号中"
             enabled: !optDodecaphonic.checked
             checked: false
             onClicked: checked = !checked
@@ -200,7 +200,7 @@ MuseScore {
             }
 
             FlatButton {
-                text: "Add accidentals"
+                text: "添加变音记号"
                 buttonRole: ButtonBoxModel.AcceptRole
                 buttonId: ButtonBoxModel.Done
 
@@ -235,7 +235,7 @@ MuseScore {
                             // show error: at least one item needs to be selected
                             //console.log("ERROR: configuration");
                             hasError = true
-                            errorDialog.text = "No terminating event selected"
+                            errorDialog.text = "未选择终止事件"
                             errorDialog.visible = true
                         }
                     } else if (optDodecaphonic.checked) {

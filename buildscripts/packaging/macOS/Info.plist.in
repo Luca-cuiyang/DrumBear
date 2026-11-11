@@ -590,6 +590,16 @@
 	<string>${CMAKE_OSX_DEPLOYMENT_TARGET}</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>${MACOSX_BUNDLE_COPYRIGHT}</string>
+	<key>NSDesktopFolderUsageDescription</key>
+	<string>用于打开和保存您选择的 DB Score 鼓谱文件。</string>
+	<key>NSDocumentsFolderUsageDescription</key>
+	<string>用于打开和保存您选择的 DB Score 鼓谱文件。</string>
+	<key>NSDownloadsFolderUsageDescription</key>
+	<string>用于打开和保存您选择的 DB Score 鼓谱文件。</string>
+	<key>NSNetworkVolumesUsageDescription</key>
+	<string>用于打开您放置在网络磁盘上的 DB Score 鼓谱文件。</string>
+	<key>NSRemovableVolumesUsageDescription</key>
+	<string>用于打开您放置在移动磁盘上的 DB Score 鼓谱文件。</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.music</string>
 	<key>ATSApplicationFontsPath</key>

@@ -21,6 +21,9 @@
  */
 #include "recentfilescontroller.h"
 
+#include <QDir>
+#include <QStandardPaths>
+
 #include "global/async/async.h"
 #include "global/defer.h"
 #include "global/serialization/json.h"
@@ -40,6 +43,30 @@ using namespace muse;
 using namespace muse::async;
 
 static const std::string RECENT_FILES_RESOURCE_NAME("RECENT_FILES");
+
+namespace {
+bool isProtectedUserLocation(const muse::io::path_t& path)
+{
+#if defined(Q_OS_MACOS) || defined(Q_OS_MAC)
+    const QString candidate = QDir::cleanPath(path.toQString());
+    const QList<QStandardPaths::StandardLocation> locations {
+        QStandardPaths::DesktopLocation,
+        QStandardPaths::DocumentsLocation,
+        QStandardPaths::DownloadLocation
+    };
+    for (const QStandardPaths::StandardLocation location : locations) {
+        const QString root = QDir::cleanPath(QStandardPaths::writableLocation(location));
+        if (!root.isEmpty()
+                && (candidate == root || candidate.startsWith(root + QLatin1Char('/')))) {
+            return true;
+        }
+    }
+#else
+    (void)path;
+#endif
+    return false;
+}
+}
 
 void RecentFilesController::init()
 {
@@ -78,7 +105,7 @@ Notification RecentFilesController::recentFilesListChanged() const
 
 void RecentFilesController::prependRecentFile(const RecentFile& newFile)
 {
-    if (!newFile.isValid()) {
+    if (!newFile.isValid() || isProtectedUserLocation(newFile.path)) {
         return;
     }
 
@@ -195,13 +222,18 @@ void RecentFilesController::loadRecentFilesList()
         const JsonValue val = array.at(i);
 
         if (val.isString()) {
-            newList.emplace_back(muse::io::path_t(val.toStdString()));
+            RecentFile file(muse::io::path_t(val.toStdString()));
+            if (!isProtectedUserLocation(file.path)) {
+                newList.emplace_back(std::move(file));
+            }
         } else if (val.isObject()) {
             const JsonObject obj = val.toObject();
             RecentFile file;
             file.path = obj["path"].toStdString();
             file.displayNameOverride = QString::fromStdString(obj["displayName"].toStdString());
-            newList.emplace_back(std::move(file));
+            if (!isProtectedUserLocation(file.path)) {
+                newList.emplace_back(std::move(file));
+            }
         } else {
             continue;
         }

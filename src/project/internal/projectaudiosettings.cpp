@@ -32,6 +32,7 @@
 
 #include "types/bytearray.h"
 #include "global/io/file.h"
+#include "log.h"
 
 #include "audio/common/audioutils.h"
 #include "vst/vstpluginattrs.h"
@@ -386,9 +387,20 @@ Ret ProjectAudioSettings::read(const engraving::MscReader& reader)
             }
 
             const muse::ByteArray data = reader.readAudioFile(muse::String::fromQString(bundledName));
-            if (!data.empty()) {
-                clip.filePath = muse::io::path_t(extractBundledAudioToCache(bundledName, data));
+            if (data.empty()) {
+                LOGE() << "bundled audio not found in project: " << bundledName.toStdString()
+                       << ", clip index: " << i;
+                continue;
             }
+
+            const QString extractedPath = extractBundledAudioToCache(bundledName, data);
+            if (extractedPath.isEmpty()) {
+                // 不要留下空路径：播放层遇到空路径会直接失败，空路径也不应进入音频引擎。
+                LOGE() << "failed to extract bundled audio to cache: " << bundledName.toStdString();
+                continue;
+            }
+
+            clip.filePath = muse::io::path_t(extractedPath);
         }
     }
 

@@ -41,7 +41,6 @@ ListItemBlank {
     property bool showRemoveFromRecentFiles: false
 
     signal revealInFileBrowserRequested(string scorePath)
-    signal viewOnlineRequested(int scoreId)
     signal removeFromRecentFilesRequested(string scorePath)
     signal retryRequested()
     signal cancelRequested(int convertType, int convertId)
@@ -140,9 +139,8 @@ ListItemBlank {
             }
 
             Loader {
-                active: root.isProcessing || (root.score.isCloud ?? false)
-
-                sourceComponent: root.isProcessing ? processingStatusComp : cloudStatusComp
+                active: root.isProcessing
+                sourceComponent: processingStatusComp
             }
 
             Component {
@@ -186,67 +184,6 @@ ListItemBlank {
                 }
             }
 
-            Component {
-                id: cloudStatusComp
-
-                RowLayout {
-                    visible: root.score.isCloud
-
-                    spacing: 24
-
-                    CloudScoreStatusWatcher {
-                        id: cloudScoreStatusWatcher
-                    }
-
-                    Component.onCompleted: {
-                        cloudScoreStatusWatcher.load(root.score.scoreId)
-                    }
-
-                    ProgressBar {
-                        Layout.preferredWidth: 118
-                        Layout.preferredHeight: 16
-
-                        visible: cloudScoreStatusWatcher.isProgress
-
-                        from: 0
-                        to: cloudScoreStatusWatcher.progressTotal
-                        value: cloudScoreStatusWatcher.progressCurrent
-
-                        navigation.panel: root.navigation.panel
-                        navigation.row: root.navigation.row
-                        navigation.column: 2
-                        navigation.onActiveChanged: {
-                            if (navigation.active) {
-                                root.scrollIntoView()
-                            }
-                        }
-                    }
-
-                    CloudScoreIndicatorButton {
-                        Layout.alignment: Qt.AlignTrailing | Qt.AlignVCenter
-
-                        isProgress: cloudScoreStatusWatcher.isProgress
-                        isDownloadedAndUpToDate: cloudScoreStatusWatcher.isDownloadedAndUpToDate
-
-                        navigation.panel: root.navigation.panel
-                        navigation.row: root.navigation.row
-                        navigation.column: 3
-                        navigation.onActiveChanged: {
-                            if (navigation.active) {
-                                root.scrollIntoView()
-                            }
-                        }
-
-                        onClicked: {
-                            if (isProgress) {
-                                cloudScoreStatusWatcher.cancel()
-                            } else {
-                                root.clicked(null)
-                            }
-                        }
-                    }
-                }
-            }
         }
 
         Repeater {
@@ -280,7 +217,6 @@ ListItemBlank {
 
         isCreateNew: root.score.isCreateNew ?? false
         isNoResultsFound: root.score.isNoResultsFound ?? false
-        isCloud: root.score.isCloud ?? false
         showRemoveFromRecentFiles: root.showRemoveFromRecentFiles
 
         visible: root.mouseArea.containsMouse
@@ -294,7 +230,6 @@ ListItemBlank {
         navigation.column: 100 * (root.columns.length + 1) + 1
 
         onOpenRequested: root.clicked(null)
-        onViewOnlineRequested: root.viewOnlineRequested(root.score.scoreId ?? 0)
         onRevealInFileBrowserRequested: root.revealInFileBrowserRequested(root.score.path ?? "")
         onRemoveFromRecentFilesRequested: root.removeFromRecentFilesRequested(root.score.path ?? "")
     }

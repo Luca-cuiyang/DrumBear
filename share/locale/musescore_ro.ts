@@ -9663,13 +9663,13 @@ urmate de cratime</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectuiactions.cpp" line="89"/>
-        <source>Publish to &amp;drumbearai.com…</source>
-        <translation>Publică pe &amp;drumbearai.com…</translation>
+        <source>Publish to &amp;drumbear.cn…</source>
+        <translation>Publică pe &amp;drumbear.cn…</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectuiactions.cpp" line="90"/>
-        <source>Publish to drumbearai.com</source>
-        <translation>Publică pe drumbearai.com</translation>
+        <source>Publish to drumbear.cn</source>
+        <translation>Publică pe drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectuiactions.cpp" line="96"/>
@@ -10469,8 +10469,8 @@ unde vei găsi tutoriale pentru a te pune pe picioare
     </message>
     <message>
         <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="52"/>
-        <source>Save your scores privately on drumbearai.com to revisit past versions and invite others to view and comment – and when you’re ready, share your music with the world.</source>
-        <translation>Salvează-ți partiturile în mod privat pe drumbearai.com pentru a revizita versiuni mai vechi și pentru a invita alte persoane să vizualizeze sau să comenteze. Când ești pregătit, partajează-ți muzica cu întreaga lume.</translation>
+        <source>Save your scores privately on drumbear.cn to revisit past versions and invite others to view and comment – and when you’re ready, share your music with the world.</source>
+        <translation>Salvează-ți partiturile în mod privat pe drumbear.cn pentru a revizita versiuni mai vechi și pentru a invita alte persoane să vizualizeze sau să comenteze. Când ești pregătit, partajează-ți muzica cu întreaga lume.</translation>
     </message>
     <message>
         <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="54"/>
@@ -11503,8 +11503,8 @@ Tasta %1 pe coardele %2</translation>
     </message>
     <message>
         <location filename="../../src/engraving/engravingerrors.h" line="88"/>
-        <source>This file was saved using a newer version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; to obtain the latest version.</source>
-        <translation>Acest fișier a fost salvat într-o versiune mai nouă de DB Score. Vizitează &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; pentru a obține ultima versiune.</translation>
+        <source>This file was saved using a newer version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; to obtain the latest version.</source>
+        <translation>Acest fișier a fost salvat într-o versiune mai nouă de DB Score. Vizitează &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; pentru a obține ultima versiune.</translation>
     </message>
     <message>
         <location filename="../../src/engraving/engravingerrors.h" line="93"/>
@@ -34373,13 +34373,13 @@ a eșuat: %2</translation>
     </message>
     <message>
         <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PublishDB ScoreComSection.qml" line="30"/>
-        <source>Publish to drumbearai.com</source>
-        <translation>Publică pe drumbearai.com</translation>
+        <source>Publish to drumbear.cn</source>
+        <translation>Publică pe drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PublishDB ScoreComSection.qml" line="41"/>
-        <source>Always prompt to share on Audio.com after publishing to drumbearai.com</source>
-        <translation>Sugerează mereu să partajezi și pe Audio.com după publicarea pe drumbearai.com</translation>
+        <source>Always prompt to share on Audio.com after publishing to drumbear.cn</source>
+        <translation>Sugerează mereu să partajezi și pe Audio.com după publicarea pe drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/preferences/qml/DB Score/Preferences/internal/RemoteControlSection.qml" line="31"/>
@@ -34783,8 +34783,8 @@ a eșuat: %2</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="130"/>
-        <source>Scores will appear here when you save a file to the cloud, or publish a score on &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;.</source>
-        <translation>Partiturile vor apărea aici când le vei salva în cloud sau când le vei publica pe &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;.</translation>
+        <source>Scores will appear here when you save a file to the cloud, or publish a score on &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;.</source>
+        <translation>Partiturile vor apărea aici când le vei salva în cloud sau când le vei publica pe &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="154"/>
@@ -34793,8 +34793,8 @@ a eșuat: %2</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="155"/>
-        <source>Log in or create a new account on &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; to view online scores.</source>
-        <translation>Autentifică-te sau creează un cont nou pe &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; pentru a vedea partiturile online.</translation>
+        <source>Log in or create a new account on &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; to view online scores.</source>
+        <translation>Autentifică-te sau creează un cont nou pe &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; pentru a vedea partiturile online.</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="218"/>
@@ -34822,7 +34822,7 @@ a eșuat: %2</translation>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="252"/>
         <source>Views</source>
         <comment>number of views</comment>
-        <extracomment>Stands for &quot;The number of times this score was viewed on drumbearai.com&quot;. Used as the header of this column in the scores list.</extracomment>
+        <extracomment>Stands for &quot;The number of times this score was viewed on drumbear.cn&quot;. Used as the header of this column in the scores list.</extracomment>
         <translation>Vizualizări</translation>
     </message>
     <message>
@@ -34906,8 +34906,8 @@ a eșuat: %2</translation>
     </message>
     <message>
         <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="162"/>
-        <source>Publish your finished scores on drumbearai.com</source>
-        <translation>Publică partiturile tale finalizate pe drumbearai.com</translation>
+        <source>Publish your finished scores on drumbear.cn</source>
+        <translation>Publică partiturile tale finalizate pe drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="187"/>
@@ -35080,8 +35080,8 @@ a eșuat: %2</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1534"/>
-        <source>This score has become corrupted and contains errors. You can fix the errors manually, or save the score to your computer and get help for this issue on drumbearai.com.</source>
-        <translation>Această partitură a devenit coruptă și conține erori. Poți repara erorile manual sau să salvezi partitura pe calculator și să obții ajutor pentru această problemă pe drumbearai.com.</translation>
+        <source>This score has become corrupted and contains errors. You can fix the errors manually, or save the score to your computer and get help for this issue on drumbear.cn.</source>
+        <translation>Această partitură a devenit coruptă și conține erori. Poți repara erorile manual sau să salvezi partitura pe calculator și să obții ajutor pentru această problemă pe drumbear.cn.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1542"/>
@@ -35101,13 +35101,13 @@ a eșuat: %2</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1574"/>
-        <source>You can continue saving it locally, although the file may become unusable. You can try to fix the errors manually, or get help for this issue on drumbearai.com.</source>
-        <translation>Poți continua să o salvezi local, dar fișierul ar putea deveni inutilizabil. Poți încerca să repari erorile manual sau să obții ajutor pentru această problemă pe drumbearai.com.</translation>
+        <source>You can continue saving it locally, although the file may become unusable. You can try to fix the errors manually, or get help for this issue on drumbear.cn.</source>
+        <translation>Poți continua să o salvezi local, dar fișierul ar putea deveni inutilizabil. Poți încerca să repari erorile manual sau să obții ajutor pentru această problemă pe drumbear.cn.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1576"/>
-        <source>You can continue saving it locally, although the file may become unusable. To preserve your score, revert to the last saved version, or fix the errors manually. You can also get help for this issue on drumbearai.com.</source>
-        <translation>Poți continua să o salvezi local, dar fișierul ar putea deveni inutilizabil. Pentru a-ți păstra partitura, revino la ultima versiune salvată sau repară erorile manual. Poți de asemenea să obții ajutor pentru această problemă pe drumbearai.com.</translation>
+        <source>You can continue saving it locally, although the file may become unusable. To preserve your score, revert to the last saved version, or fix the errors manually. You can also get help for this issue on drumbear.cn.</source>
+        <translation>Poți continua să o salvezi local, dar fișierul ar putea deveni inutilizabil. Pentru a-ți păstra partitura, revino la ultima versiune salvată sau repară erorile manual. Poți de asemenea să obții ajutor pentru această problemă pe drumbear.cn.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1584"/>
@@ -35121,8 +35121,8 @@ a eșuat: %2</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1626"/>
-        <source>This score is corrupted. You can get help for this issue on drumbearai.com.</source>
-        <translation>Partitura este coruptă. Poți obține ajutor pentru această problemă pe drumbearai.com.</translation>
+        <source>This score is corrupted. You can get help for this issue on drumbear.cn.</source>
+        <translation>Partitura este coruptă. Poți obține ajutor pentru această problemă pe drumbear.cn.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1629"/>
@@ -35159,8 +35159,8 @@ a eșuat: %2</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1788"/>
-        <source>This file was saved using a newer version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; to obtain the latest version.</source>
-        <translation>Acest fișier a fost salvat într-o versiune mai nouă de DB Score. Vizitează &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; pentru a obține ultima versiune.</translation>
+        <source>This file was saved using a newer version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; to obtain the latest version.</source>
+        <translation>Acest fișier a fost salvat într-o versiune mai nouă de DB Score. Vizitează &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; pentru a obține ultima versiune.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1797"/>
@@ -35174,8 +35174,8 @@ a eșuat: %2</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1814"/>
-        <source>Get help for this issue on drumbearai.com.</source>
-        <translation>Obține ajutor cu privire la această problemă pe drumbearai.com.</translation>
+        <source>Get help for this issue on drumbear.cn.</source>
+        <translation>Obține ajutor cu privire la această problemă pe drumbear.cn.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1836"/>
@@ -35355,7 +35355,7 @@ a eșuat: %2</translation>
         <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="186"/>
         <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="199"/>
         <source>Visibility</source>
-        <extracomment>visibility of a score on drumbearai.com: private, public or unlisted</extracomment>
+        <extracomment>visibility of a score on drumbear.cn: private, public or unlisted</extracomment>
         <translation>Vizibilitate</translation>
     </message>
     <message>
@@ -35389,30 +35389,30 @@ a eșuat: %2</translation>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="450"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="456"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="462"/>
-        <source>drumbearai.com returned an error code: %1.</source>
-        <extracomment>%1 will be replaced with the error code that drumbearai.com returned; this might contain english text that is deliberately not translated</extracomment>
-        <translation>drumbearai.com a returnat un cod de eroare: %1.</translation>
+        <source>drumbear.cn returned an error code: %1.</source>
+        <extracomment>%1 will be replaced with the error code that drumbear.cn returned; this might contain english text that is deliberately not translated</extracomment>
+        <translation>drumbear.cn a returnat un cod de eroare: %1.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="468"/>
-        <source>drumbearai.com returned an unknown error code: %1.</source>
-        <extracomment>%1 will be replaced with the error code that drumbearai.com returned, which is a number.</extracomment>
-        <translation>drumbearai.com a returnat un cod de eroare necunoscut: %1.</translation>
+        <source>drumbear.cn returned an unknown error code: %1.</source>
+        <extracomment>%1 will be replaced with the error code that drumbear.cn returned, which is a number.</extracomment>
+        <translation>drumbear.cn a returnat un cod de eroare necunoscut: %1.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="471"/>
-        <source>drumbearai.com returned an unknown error code.</source>
-        <translation>drumbearai.com a returnat un cod de eroare necunoscut.</translation>
+        <source>drumbear.cn returned an unknown error code.</source>
+        <translation>drumbear.cn a returnat un cod de eroare necunoscut.</translation>
     </message>
     <message>
-        <source>Please try again later, or get help for this problem on drumbearai.com.</source>
-        <translation>Încearcă mai târziu sau obține ajutor pentru această problemă pe drumbearai.com.</translation>
+        <source>Please try again later, or get help for this problem on drumbear.cn.</source>
+        <translation>Încearcă mai târziu sau obține ajutor pentru această problemă pe drumbear.cn.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="477"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="609"/>
-        <source>Please try again later, or get help for this problem on drumbearai.com.</source>
-        <translation>Încearcă mai târziu sau obține ajutor pentru această problemă pe drumbearai.com.</translation>
+        <source>Please try again later, or get help for this problem on drumbear.cn.</source>
+        <translation>Încearcă mai târziu sau obține ajutor pentru această problemă pe drumbear.cn.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="493"/>
@@ -35422,8 +35422,8 @@ a eșuat: %2</translation>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="496"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="563"/>
-        <source>Your drumbearai.com account needs to be verified first. Please activate your account via the link in the activation email.</source>
-        <translation>Contul tău drumbearai.com necesită o verificare inițială. Activează-ți contul folosind link-ul primit în email-ul de activare.</translation>
+        <source>Your drumbear.cn account needs to be verified first. Please activate your account via the link in the activation email.</source>
+        <translation>Contul tău drumbear.cn necesită o verificare inițială. Activează-ți contul folosind link-ul primit în email-ul de activare.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="500"/>
@@ -35438,8 +35438,8 @@ a eșuat: %2</translation>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="517"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="604"/>
-        <source>Could not connect to &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;. Please check your internet connection or try again later.</source>
-        <translation>Nu s-a putut realiza conexiunea la &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;. Verifică conexiunea la internet sau încearcă din nou mai târziu.</translation>
+        <source>Could not connect to &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;. Please check your internet connection or try again later.</source>
+        <translation>Nu s-a putut realiza conexiunea la &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;. Verifică conexiunea la internet sau încearcă din nou mai târziu.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="522"/>
@@ -35493,8 +35493,8 @@ a eșuat: %2</translation>
     <message>
         <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="190"/>
         <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="398"/>
-        <source>Log in or create a free account on drumbearai.com to convert a file.</source>
-        <translation>Autentifică-te sau creează un cont gratuit pe drumbearai.com pentru a converti un fișier.</translation>
+        <source>Log in or create a free account on drumbear.cn to convert a file.</source>
+        <translation>Autentifică-te sau creează un cont gratuit pe drumbear.cn pentru a converti un fișier.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="216"/>
@@ -35516,8 +35516,8 @@ a eșuat: %2</translation>
         <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="269"/>
         <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="340"/>
         <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="703"/>
-        <source>Unable to connect to drumbearai.com</source>
-        <translation>Nu se poate realiza conexiunea la drumbearai.com</translation>
+        <source>Unable to connect to drumbear.cn</source>
+        <translation>Nu se poate realiza conexiunea la drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="270"/>
@@ -36263,7 +36263,7 @@ a eșuat: %2</translation>
     <message>
         <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="117"/>
         <source>Braille (basic bar-over-bar)</source>
-        <extracomment>Meaning like &quot;measure-over-measure&quot;, but called &quot;bar-over-bar&quot; even in US English. Not to be confused with &quot;bar-by-bar&quot; format. See https://handbook.drumbearai.com/file-management/file-export#braille</extracomment>
+        <extracomment>Meaning like &quot;measure-over-measure&quot;, but called &quot;bar-over-bar&quot; even in US English. Not to be confused with &quot;bar-by-bar&quot; format. See https://handbook.drumbear.cn/file-management/file-export#braille</extracomment>
         <translation>Braille (măsură deasupra măsurii)</translation>
     </message>
     <message>
@@ -36925,8 +36925,8 @@ a eșuat: %2</translation>
     </message>
     <message>
         <location filename="../../src/appshell/qml/DB Score/AppShell/PublishPage/publishtoolbarmodel.cpp" line="48"/>
-        <source>Share this score and its audio on drumbearai.com</source>
-        <translation>Partajează această partitură și audioul asociat ei pe drumbearai.com</translation>
+        <source>Share this score and its audio on drumbear.cn</source>
+        <translation>Partajează această partitură și audioul asociat ei pe drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/appshell/qml/DB Score/AppShell/PublishPage/publishtoolbarmodel.cpp" line="49"/>
@@ -36950,8 +36950,8 @@ a eșuat: %2</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/cloudsmodel.cpp" line="185"/>
-        <source>Publish to drumbearai.com</source>
-        <translation>Publică pe drumbearai.com</translation>
+        <source>Publish to drumbear.cn</source>
+        <translation>Publică pe drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/cloudsmodel.cpp" line="189"/>
@@ -37028,13 +37028,13 @@ a eșuat: %2</translation>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="235"/>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1034"/>
-        <source>Log in to drumbearai.com to save this score to the cloud.</source>
-        <translation>Autentifică-te pe drumbearai.com pentru a salva această partitură în Cloud.</translation>
+        <source>Log in to drumbear.cn to save this score to the cloud.</source>
+        <translation>Autentifică-te pe drumbear.cn pentru a salva această partitură în Cloud.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="236"/>
-        <source>Log in to drumbearai.com to publish this score.</source>
-        <translation>Autentifică-te pe drumbearai.com pentru a publica această partitură.</translation>
+        <source>Log in to drumbear.cn to publish this score.</source>
+        <translation>Autentifică-te pe drumbear.cn pentru a publica această partitură.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="357"/>
@@ -37054,8 +37054,8 @@ a eșuat: %2</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="361"/>
-        <source>All saved changes will be publicly visible on drumbearai.com. If you want to make frequent changes, we recommend saving this score privately until you’re ready to share it to the world.</source>
-        <translation>Toate modificările salvate vor fi vizibile public pe drumbearai.com. Dacă dorești să faci modificări frecvente, îți recomandăm să salvezi această partitură privat până când ești gata să o partajezi cu întreaga lume.</translation>
+        <source>All saved changes will be publicly visible on drumbear.cn. If you want to make frequent changes, we recommend saving this score privately until you’re ready to share it to the world.</source>
+        <translation>Toate modificările salvate vor fi vizibile public pe drumbear.cn. Dacă dorești să faci modificări frecvente, îți recomandăm să salvezi această partitură privat până când ești gata să o partajezi cu întreaga lume.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="391"/>
@@ -37064,8 +37064,8 @@ a eșuat: %2</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="401"/>
-        <source>Unable to connect to drumbearai.com</source>
-        <translation>Nu se poate realiza conexiunea la drumbearai.com</translation>
+        <source>Unable to connect to drumbear.cn</source>
+        <translation>Nu se poate realiza conexiunea la drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="402"/>
@@ -37145,8 +37145,8 @@ a eșuat: %2</translation>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="466"/>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="559"/>
-        <source>Log in or create a free account on drumbearai.com to open this score.</source>
-        <translation>Autentifică-te sau creează un cont gratuit pe drumbearai.com pentru a deschide această partitură.</translation>
+        <source>Log in or create a free account on drumbear.cn to open this score.</source>
+        <translation>Autentifică-te sau creează un cont gratuit pe drumbear.cn pentru a deschide această partitură.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1401"/>
@@ -37155,8 +37155,8 @@ a eșuat: %2</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1404"/>
-        <source>All saved changes will now update to the cloud. You can manage this file in the score manager on drumbearai.com.</source>
-        <translation>Toate modificările salvate vor fi încărcate acum în cloud. Poți administra acest fișier pe drumbearai.com în managerul de partituri.</translation>
+        <source>All saved changes will now update to the cloud. You can manage this file in the score manager on drumbear.cn.</source>
+        <translation>Toate modificările salvate vor fi încărcate acum în cloud. Poți administra acest fișier pe drumbear.cn în managerul de partituri.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1480"/>
@@ -39011,8 +39011,8 @@ a eșuat: %2</translation>
     </message>
     <message>
         <location filename="../../src/framework/update/internal/appupdatescenario.cpp" line="135"/>
-        <source>You already have the latest version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; for news on what’s coming next.</source>
-        <translation>Ai deja cea mai nouă versiune de DB Score. Vizitează &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; pentru noutăți legate de ce va urma.</translation>
+        <source>You already have the latest version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; for news on what’s coming next.</source>
+        <translation>Ai deja cea mai nouă versiune de DB Score. Vizitează &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; pentru noutăți legate de ce va urma.</translation>
     </message>
     <message>
         <location filename="../../src/framework/update/internal/appupdatescenario.cpp" line="142"/>

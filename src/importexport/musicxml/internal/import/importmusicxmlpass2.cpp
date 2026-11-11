@@ -453,6 +453,30 @@ static bool hasDrumset(const MusicXmlInstruments& instruments)
     return res;
 }
 
+static bool isDrumInstrumentName(const String& name)
+{
+    //! Sibelius / Dolet 等软件导出鼓谱时，可能只写 <unpitched> 而不写 <midi-unpitched>。
+    //! 此时需要根据乐器名/声部名兜底识别鼓组（同时兼容中英文）。
+    String n = name.toLower();
+    return n.contains(u"drum") || n.contains(u"percussion")
+           || n.contains(u"鼓") || n.contains(u"打击") || n.contains(u"敲击");
+}
+
+static bool hasDrumsetByName(const MusicXmlInstruments& instruments, const String& partName)
+{
+    if (isDrumInstrumentName(partName)) {
+        return true;
+    }
+
+    for (const auto& p : instruments) {
+        if (isDrumInstrumentName(p.second.name)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 //---------------------------------------------------------
 //   initDrumset
 //---------------------------------------------------------
@@ -683,12 +707,20 @@ static void setPartInstruments(MusicXmlLogger* logger, const XmlStreamReader* xm
         return;
     }
 
-    if (hasDrumset(instruments)) {
+    const bool drumsetByName = !hasDrumset(instruments) && hasDrumsetByName(instruments, partName);
+
+    if (hasDrumset(instruments) || drumsetByName) {
         // do not create multiple instruments for a drum part
         //LOGD("hasDrumset");
         MusicXmlInstrument mxmlInstr = instruments.begin()->second;
-        if (instruments.size() > 1) {
+        if (instruments.size() > 1 && !drumsetByName) {
             setPercussionInstrument(mxmlInstr, partName);
+        }
+        if (drumsetByName) {
+            //! 用标准鼓组模板重新初始化，保证 useDrumset 与鼓映射（Drum）正确，
+            //! 否则后续 <unpitched> 音符无法按谱表行映射到正确的鼓。
+            mxmlInstr = MusicXmlInstrument();
+            mxmlInstr.name = u"Drum Kit";
         }
         updatePartWithInstrument(part, mxmlInstr, {}, true);
         return;
@@ -2233,12 +2265,13 @@ void MusicXmlParserPass2::part()
     initPartState(id);
 
     const MusicXmlInstruments& instruments = m_pass1.getInstruments(id);
-    m_hasDrumset = hasDrumset(instruments);
+    const String rawPartName = m_pass1.getMusicXmlPart(id).getName();
+    m_hasDrumset = hasDrumset(instruments) || hasDrumsetByName(instruments, rawPartName);
 
     // set the part name
     Part* part = m_pass1.getPart(id);
     MusicXmlPart mxmlPart = m_pass1.getMusicXmlPart(id);
-    String partName = mxmlPart.getName();
+    String partName = rawPartName;
     setPartInstruments(m_logger, &m_e, part, id, m_score, m_pass1.getInstrList(id), m_pass1.getIntervals(id), instruments, partName);
     partName = replacePartNameAccidentals(partName);
     const bool inconsistentVisibility = mxmlPart.getPrintName() != mxmlPart.getPrintAbbr();
@@ -2411,13 +2444,23 @@ void MusicXmlParserPass2::part()
     m_unendedTieNotes.clear();
 
     if (m_hasDrumset) {
-        Drumset* drumset = new Drumset;
-        const MusicXmlInstruments& instrumentsAfterPass2 = m_pass1.getInstruments(id);
-        initDrumset(drumset, instrumentsAfterPass2);
         // set staff type to percussion if incorrectly imported as pitched staff
         // Note: part has been read, staff type already set based on clef type and staff-details
         // but may be incorrect for a percussion staff that does not use a percussion clef
-        setStaffTypePercussion(part, drumset);
+        if (hasDrumset(instruments)) {
+            Drumset* drumset = new Drumset;
+            const MusicXmlInstruments& instrumentsAfterPass2 = m_pass1.getInstruments(id);
+            initDrumset(drumset, instrumentsAfterPass2);
+            setStaffTypePercussion(part, drumset);
+        } else {
+            //! 名称兜底识别的鼓组：保留模板自带的鼓映射（Drum），只把谱表改成打击乐谱表。
+            for (staff_idx_t j = 0; j < part->nstaves(); ++j) {
+                if (part->staff(j)->lines(Fraction(0, 1)) == 5 && !part->staff(j)->isDrumStaff(Fraction(0, 1))) {
+                    part->staff(j)->setStaffType(Fraction(0, 1), *StaffType::preset(StaffTypes::PERC_DEFAULT));
+                }
+            }
+            part->instrument()->channel(0)->setBank(128);
+        }
     }
 
     bool showPart = false;

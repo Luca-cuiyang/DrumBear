@@ -9662,13 +9662,13 @@ followed by dashes</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectuiactions.cpp" line="89"/>
-        <source>Publish to &amp;drumbearai.com…</source>
-        <translation>drumbearai.com에 게시(&amp;M)…</translation>
+        <source>Publish to &amp;drumbear.cn…</source>
+        <translation>drumbear.cn에 게시(&amp;M)…</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectuiactions.cpp" line="90"/>
-        <source>Publish to drumbearai.com</source>
-        <translation>drumbearai.com에 게시</translation>
+        <source>Publish to drumbear.cn</source>
+        <translation>drumbear.cn에 게시</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectuiactions.cpp" line="96"/>
@@ -10467,8 +10467,8 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
     </message>
     <message>
         <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="52"/>
-        <source>Save your scores privately on drumbearai.com to revisit past versions and invite others to view and comment – and when you’re ready, share your music with the world.</source>
-        <translation>악보를 drumbearai.com에 비공개로 저장하여 이전 버전을 다시 확인하거나 다른 사람을 초대하여 감상 및 의견을 나눌 수 있습니다. 준비가 되면 전 세계와 음악을 공유해 보세요.</translation>
+        <source>Save your scores privately on drumbear.cn to revisit past versions and invite others to view and comment – and when you’re ready, share your music with the world.</source>
+        <translation>악보를 drumbear.cn에 비공개로 저장하여 이전 버전을 다시 확인하거나 다른 사람을 초대하여 감상 및 의견을 나눌 수 있습니다. 준비가 되면 전 세계와 음악을 공유해 보세요.</translation>
     </message>
     <message>
         <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="54"/>
@@ -11501,8 +11501,8 @@ Fret %1 on strings %2</source>
     </message>
     <message>
         <location filename="../../src/engraving/engravingerrors.h" line="88"/>
-        <source>This file was saved using a newer version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; to obtain the latest version.</source>
-        <translation>이 파일은 최신 버전의 DB Score에서 저장되었습니다. &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;를 방문하여 최신 버전을 받으세요.</translation>
+        <source>This file was saved using a newer version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; to obtain the latest version.</source>
+        <translation>이 파일은 최신 버전의 DB Score에서 저장되었습니다. &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;를 방문하여 최신 버전을 받으세요.</translation>
     </message>
     <message>
         <location filename="../../src/engraving/engravingerrors.h" line="93"/>
@@ -34370,13 +34370,13 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PublishDB ScoreComSection.qml" line="30"/>
-        <source>Publish to drumbearai.com</source>
-        <translation>drumbearai.com에 게시</translation>
+        <source>Publish to drumbear.cn</source>
+        <translation>drumbear.cn에 게시</translation>
     </message>
     <message>
         <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PublishDB ScoreComSection.qml" line="41"/>
-        <source>Always prompt to share on Audio.com after publishing to drumbearai.com</source>
-        <translation>drumbearai.com에 게시 후 항상 Audio.com 공유 여부 묻기</translation>
+        <source>Always prompt to share on Audio.com after publishing to drumbear.cn</source>
+        <translation>drumbear.cn에 게시 후 항상 Audio.com 공유 여부 묻기</translation>
     </message>
     <message>
         <location filename="../../src/preferences/qml/DB Score/Preferences/internal/RemoteControlSection.qml" line="31"/>
@@ -34780,8 +34780,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="130"/>
-        <source>Scores will appear here when you save a file to the cloud, or publish a score on &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;.</source>
-        <translation>파일을 클라우드에 저장하거나 &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;에 악보를 게시하면 여기에 표시됩니다.</translation>
+        <source>Scores will appear here when you save a file to the cloud, or publish a score on &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;.</source>
+        <translation>파일을 클라우드에 저장하거나 &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;에 악보를 게시하면 여기에 표시됩니다.</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="154"/>
@@ -34790,8 +34790,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="155"/>
-        <source>Log in or create a new account on &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; to view online scores.</source>
-        <translation>온라인 악보를 보려면 &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;에 로그인하거나 새 계정을 만드세요.</translation>
+        <source>Log in or create a new account on &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; to view online scores.</source>
+        <translation>온라인 악보를 보려면 &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;에 로그인하거나 새 계정을 만드세요.</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="218"/>
@@ -34819,7 +34819,7 @@ failed: %2</source>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="252"/>
         <source>Views</source>
         <comment>number of views</comment>
-        <extracomment>Stands for &quot;The number of times this score was viewed on drumbearai.com&quot;. Used as the header of this column in the scores list.</extracomment>
+        <extracomment>Stands for &quot;The number of times this score was viewed on drumbear.cn&quot;. Used as the header of this column in the scores list.</extracomment>
         <translation>조회수</translation>
     </message>
     <message>
@@ -34903,8 +34903,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="162"/>
-        <source>Publish your finished scores on drumbearai.com</source>
-        <translation>완성된 악보를 drumbearai.com에 게시합니다</translation>
+        <source>Publish your finished scores on drumbear.cn</source>
+        <translation>완성된 악보를 drumbear.cn에 게시합니다</translation>
     </message>
     <message>
         <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="187"/>
@@ -35077,8 +35077,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1534"/>
-        <source>This score has become corrupted and contains errors. You can fix the errors manually, or save the score to your computer and get help for this issue on drumbearai.com.</source>
-        <translation>이 악보가 손상되어 오류가 발생했습니다. 오류를 수동으로 수정하거나, 악보를 컴퓨터에 저장한 후 drumbearai.com에서 이 문제에 대한 도움을 받으실 수 있습니다.</translation>
+        <source>This score has become corrupted and contains errors. You can fix the errors manually, or save the score to your computer and get help for this issue on drumbear.cn.</source>
+        <translation>이 악보가 손상되어 오류가 발생했습니다. 오류를 수동으로 수정하거나, 악보를 컴퓨터에 저장한 후 drumbear.cn에서 이 문제에 대한 도움을 받으실 수 있습니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1542"/>
@@ -35098,13 +35098,13 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1574"/>
-        <source>You can continue saving it locally, although the file may become unusable. You can try to fix the errors manually, or get help for this issue on drumbearai.com.</source>
-        <translation>로컬 저장을 계속할 수 있지만, 파일을 나중에 사용할 수 없게 될 수도 있습니다. 오류를 직접 수정하거나 drumbearai.com에서 도움을 받으실 수 있습니다.</translation>
+        <source>You can continue saving it locally, although the file may become unusable. You can try to fix the errors manually, or get help for this issue on drumbear.cn.</source>
+        <translation>로컬 저장을 계속할 수 있지만, 파일을 나중에 사용할 수 없게 될 수도 있습니다. 오류를 직접 수정하거나 drumbear.cn에서 도움을 받으실 수 있습니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1576"/>
-        <source>You can continue saving it locally, although the file may become unusable. To preserve your score, revert to the last saved version, or fix the errors manually. You can also get help for this issue on drumbearai.com.</source>
-        <translation>로컬 저장을 계속할 수 있지만, 파일을 나중에 사용할 수 없게 될 수도 있습니다. 악보를 보존하려면 마지막으로 저장된 버전으로 되돌리거나 오류를 직접 수정합니다. drumbearai.com에서 도움을 받으실 수도 있습니다.</translation>
+        <source>You can continue saving it locally, although the file may become unusable. To preserve your score, revert to the last saved version, or fix the errors manually. You can also get help for this issue on drumbear.cn.</source>
+        <translation>로컬 저장을 계속할 수 있지만, 파일을 나중에 사용할 수 없게 될 수도 있습니다. 악보를 보존하려면 마지막으로 저장된 버전으로 되돌리거나 오류를 직접 수정합니다. drumbear.cn에서 도움을 받으실 수도 있습니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1584"/>
@@ -35118,8 +35118,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1626"/>
-        <source>This score is corrupted. You can get help for this issue on drumbearai.com.</source>
-        <translation>이 악보는 손상되었습니다. drumbearai.com에서 도움을 받으실 수 있습니다.</translation>
+        <source>This score is corrupted. You can get help for this issue on drumbear.cn.</source>
+        <translation>이 악보는 손상되었습니다. drumbear.cn에서 도움을 받으실 수 있습니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1629"/>
@@ -35156,8 +35156,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1788"/>
-        <source>This file was saved using a newer version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; to obtain the latest version.</source>
-        <translation>이 파일은 더 최신 버전의 DB Score에서 저장되었습니다. &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;를 방문하여 최신 버전을 설치합니다.</translation>
+        <source>This file was saved using a newer version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; to obtain the latest version.</source>
+        <translation>이 파일은 더 최신 버전의 DB Score에서 저장되었습니다. &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;를 방문하여 최신 버전을 설치합니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1797"/>
@@ -35171,8 +35171,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1814"/>
-        <source>Get help for this issue on drumbearai.com.</source>
-        <translation>drumbearai.com에서 이 문제에 대한 도움을 받으실 수 있습니다.</translation>
+        <source>Get help for this issue on drumbear.cn.</source>
+        <translation>drumbear.cn에서 이 문제에 대한 도움을 받으실 수 있습니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1836"/>
@@ -35352,7 +35352,7 @@ failed: %2</source>
         <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="186"/>
         <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="199"/>
         <source>Visibility</source>
-        <extracomment>visibility of a score on drumbearai.com: private, public or unlisted</extracomment>
+        <extracomment>visibility of a score on drumbear.cn: private, public or unlisted</extracomment>
         <translation>공개 설정</translation>
     </message>
     <message>
@@ -35386,29 +35386,29 @@ failed: %2</source>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="450"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="456"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="462"/>
-        <source>drumbearai.com returned an error code: %1.</source>
-        <extracomment>%1 will be replaced with the error code that drumbearai.com returned; this might contain english text that is deliberately not translated</extracomment>
-        <translation>drumbearai.com에서 오류 코드를 반환했습니다: %1.</translation>
+        <source>drumbear.cn returned an error code: %1.</source>
+        <extracomment>%1 will be replaced with the error code that drumbear.cn returned; this might contain english text that is deliberately not translated</extracomment>
+        <translation>drumbear.cn에서 오류 코드를 반환했습니다: %1.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="468"/>
-        <source>drumbearai.com returned an unknown error code: %1.</source>
-        <extracomment>%1 will be replaced with the error code that drumbearai.com returned, which is a number.</extracomment>
-        <translation>drumbearai.com에서 알 수 없는 오류 코드를 반환했습니다: %1.</translation>
+        <source>drumbear.cn returned an unknown error code: %1.</source>
+        <extracomment>%1 will be replaced with the error code that drumbear.cn returned, which is a number.</extracomment>
+        <translation>drumbear.cn에서 알 수 없는 오류 코드를 반환했습니다: %1.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="471"/>
-        <source>drumbearai.com returned an unknown error code.</source>
-        <translation>drumbearai.com에서 알 수 없는 오류 코드를 반환했습니다.</translation>
+        <source>drumbear.cn returned an unknown error code.</source>
+        <translation>drumbear.cn에서 알 수 없는 오류 코드를 반환했습니다.</translation>
     </message>
     <message>
-        <source>Please try again later, or get help for this problem on drumbearai.com.</source>
-        <translation>나중에 다시 시도하거나 drumbearai.com에서 이 문제에 대한 도움을 받으세요.</translation>
+        <source>Please try again later, or get help for this problem on drumbear.cn.</source>
+        <translation>나중에 다시 시도하거나 drumbear.cn에서 이 문제에 대한 도움을 받으세요.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="477"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="609"/>
-        <source>Please try again later, or get help for this problem on drumbearai.com.</source>
+        <source>Please try again later, or get help for this problem on drumbear.cn.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -35419,8 +35419,8 @@ failed: %2</source>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="496"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="563"/>
-        <source>Your drumbearai.com account needs to be verified first. Please activate your account via the link in the activation email.</source>
-        <translation>먼저 drumbearai.com 계정 인증이 필요합니다. 활성화 이메일의 링크를 통해 계정을 활성화해 주세요.</translation>
+        <source>Your drumbear.cn account needs to be verified first. Please activate your account via the link in the activation email.</source>
+        <translation>먼저 drumbear.cn 계정 인증이 필요합니다. 활성화 이메일의 링크를 통해 계정을 활성화해 주세요.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="500"/>
@@ -35435,8 +35435,8 @@ failed: %2</source>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="517"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="604"/>
-        <source>Could not connect to &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;. Please check your internet connection or try again later.</source>
-        <translation>&lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;에 연결할 수 없습니다. 인터넷 연결을 확인하거나 나중에 다시 시도하세요.</translation>
+        <source>Could not connect to &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;. Please check your internet connection or try again later.</source>
+        <translation>&lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;에 연결할 수 없습니다. 인터넷 연결을 확인하거나 나중에 다시 시도하세요.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="522"/>
@@ -35490,7 +35490,7 @@ failed: %2</source>
     <message>
         <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="190"/>
         <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="398"/>
-        <source>Log in or create a free account on drumbearai.com to convert a file.</source>
+        <source>Log in or create a free account on drumbear.cn to convert a file.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -35513,8 +35513,8 @@ failed: %2</source>
         <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="269"/>
         <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="340"/>
         <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="703"/>
-        <source>Unable to connect to drumbearai.com</source>
-        <translation>drumbearai.com에 연결할 수 없습니다.</translation>
+        <source>Unable to connect to drumbear.cn</source>
+        <translation>drumbear.cn에 연결할 수 없습니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="270"/>
@@ -36260,7 +36260,7 @@ failed: %2</source>
     <message>
         <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="117"/>
         <source>Braille (basic bar-over-bar)</source>
-        <extracomment>Meaning like &quot;measure-over-measure&quot;, but called &quot;bar-over-bar&quot; even in US English. Not to be confused with &quot;bar-by-bar&quot; format. See https://handbook.drumbearai.com/file-management/file-export#braille</extracomment>
+        <extracomment>Meaning like &quot;measure-over-measure&quot;, but called &quot;bar-over-bar&quot; even in US English. Not to be confused with &quot;bar-by-bar&quot; format. See https://handbook.drumbear.cn/file-management/file-export#braille</extracomment>
         <translation>점자 (기본 세로 쌓기형)</translation>
     </message>
     <message>
@@ -36922,8 +36922,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/appshell/qml/DB Score/AppShell/PublishPage/publishtoolbarmodel.cpp" line="48"/>
-        <source>Share this score and its audio on drumbearai.com</source>
-        <translation>drumbearai.com에 이 악보와 오디오를 공유합니다</translation>
+        <source>Share this score and its audio on drumbear.cn</source>
+        <translation>drumbear.cn에 이 악보와 오디오를 공유합니다</translation>
     </message>
     <message>
         <location filename="../../src/appshell/qml/DB Score/AppShell/PublishPage/publishtoolbarmodel.cpp" line="49"/>
@@ -36947,8 +36947,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/cloudsmodel.cpp" line="185"/>
-        <source>Publish to drumbearai.com</source>
-        <translation>drumbearai.com에 게시</translation>
+        <source>Publish to drumbear.cn</source>
+        <translation>drumbear.cn에 게시</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/cloudsmodel.cpp" line="189"/>
@@ -37025,13 +37025,13 @@ failed: %2</source>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="235"/>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1034"/>
-        <source>Log in to drumbearai.com to save this score to the cloud.</source>
-        <translation>악보를 클라우드에 저장하려면 drumbearai.com에 로그인합니다.</translation>
+        <source>Log in to drumbear.cn to save this score to the cloud.</source>
+        <translation>악보를 클라우드에 저장하려면 drumbear.cn에 로그인합니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="236"/>
-        <source>Log in to drumbearai.com to publish this score.</source>
-        <translation>악보를 게시하려면 drumbearai.com에 로그인합니다.</translation>
+        <source>Log in to drumbear.cn to publish this score.</source>
+        <translation>악보를 게시하려면 drumbear.cn에 로그인합니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="357"/>
@@ -37051,8 +37051,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="361"/>
-        <source>All saved changes will be publicly visible on drumbearai.com. If you want to make frequent changes, we recommend saving this score privately until you’re ready to share it to the world.</source>
-        <translation>저장된 모든 변경 사항은 drumbearai.com에 공개됩니다. 수정이 빈번할 경우, 전체 공개 준비가 될 때까지 이 악보를 비공개로 저장하는 것이 좋습니다.</translation>
+        <source>All saved changes will be publicly visible on drumbear.cn. If you want to make frequent changes, we recommend saving this score privately until you’re ready to share it to the world.</source>
+        <translation>저장된 모든 변경 사항은 drumbear.cn에 공개됩니다. 수정이 빈번할 경우, 전체 공개 준비가 될 때까지 이 악보를 비공개로 저장하는 것이 좋습니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="391"/>
@@ -37061,8 +37061,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="401"/>
-        <source>Unable to connect to drumbearai.com</source>
-        <translation>drumbearai.com에 연결할 수 없습니다.</translation>
+        <source>Unable to connect to drumbear.cn</source>
+        <translation>drumbear.cn에 연결할 수 없습니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="402"/>
@@ -37142,8 +37142,8 @@ failed: %2</source>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="466"/>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="559"/>
-        <source>Log in or create a free account on drumbearai.com to open this score.</source>
-        <translation>악보를 열려면 로그인하거나 drumbearai.com에서 무료 계정을 만들기합니다.</translation>
+        <source>Log in or create a free account on drumbear.cn to open this score.</source>
+        <translation>악보를 열려면 로그인하거나 drumbear.cn에서 무료 계정을 만들기합니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1401"/>
@@ -37152,8 +37152,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1404"/>
-        <source>All saved changes will now update to the cloud. You can manage this file in the score manager on drumbearai.com.</source>
-        <translation>저장된 모든 변경 사항이 클라우드에 업데이트됩니다. 이 파일은 drumbearai.com의 악보 관리자에서 관리할 수 있습니다.</translation>
+        <source>All saved changes will now update to the cloud. You can manage this file in the score manager on drumbear.cn.</source>
+        <translation>저장된 모든 변경 사항이 클라우드에 업데이트됩니다. 이 파일은 drumbear.cn의 악보 관리자에서 관리할 수 있습니다.</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1480"/>
@@ -39008,8 +39008,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/framework/update/internal/appupdatescenario.cpp" line="135"/>
-        <source>You already have the latest version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; for news on what’s coming next.</source>
-        <translation>이미 DB Score 최신 버전을 사용 중입니다. 새로운 소식은 &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;를 참조하세요.</translation>
+        <source>You already have the latest version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; for news on what’s coming next.</source>
+        <translation>이미 DB Score 최신 버전을 사용 중입니다. 새로운 소식은 &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;를 참조하세요.</translation>
     </message>
     <message>
         <location filename="../../src/framework/update/internal/appupdatescenario.cpp" line="142"/>

@@ -1,6 +1,6 @@
 /*
  * SPDX-License-Identifier: GPL-3.0-only
- * DB Score - 个人中心
+ * DB Score - DB后台端账号中心
  */
 pragma ComponentBehavior: Bound
 
@@ -11,8 +11,8 @@ import QtQuick.Layouts
 import Muse.Ui
 import Muse.UiComponents
 import Muse.Dock
+import Muse.Interactive
 import Muse.Cloud
-import DBScore.Project
 
 DockPage {
     id: root
@@ -22,14 +22,21 @@ DockPage {
 
     property int currentPage: 0
     property int sendCooldown: 0
+    property bool avatarUpdatePending: false
+    property string avatarPreviewSource: ""
+    property string avatarUpdateMessage: ""
 
-    onCurrentPageChanged: {
-        if (root.currentPage === 0 || root.currentPage === 1) {
+    onVisibleChanged: {
+        if (visible) {
+            root.refreshCurrentPage()
+        }
+    }
+
+    function refreshCurrentPage() {
+        if (root.currentPage <= 1) {
             accountModel.refresh()
         } else if (root.currentPage === 2) {
             accountModel.loadOrders()
-        } else if (root.currentPage === 3) {
-            accountModel.loadInvite()
         }
     }
 
@@ -37,8 +44,69 @@ DockPage {
         id: accountModel
     }
 
+    PaymentDialog {
+        id: paymentDialog
+
+        visible: false
+        qrSource: accountModel.paymentQrSource
+        planName: accountModel.paymentPlanName
+        amountText: accountModel.paymentAmountText
+        orderNumber: accountModel.paymentOrderNumber
+        statusText: accountModel.paymentStatusText
+        checking: accountModel.paymentChecking
+        creating: accountModel.paymentCreating
+
+        onCheckRequested: accountModel.checkPaymentNow()
+        onClosed: accountModel.closePaymentDialog()
+    }
+
+    Connections {
+        target: accountModel
+
+        function onPaymentVisibleChanged() {
+            if (accountModel.paymentVisible) {
+                paymentDialog.open()
+            } else {
+                paymentDialog.close()
+            }
+        }
+
+        function onLastErrorChanged() {
+            if (root.avatarUpdatePending && accountModel.lastError.length > 0) {
+                root.avatarUpdatePending = false
+                root.avatarUpdateMessage = accountModel.lastError
+            }
+        }
+
+        function onModelChanged() {
+            if (root.avatarUpdatePending && !accountModel.busy
+                    && accountModel.lastError.length === 0) {
+                root.avatarUpdatePending = false
+                root.avatarPreviewSource = ""
+                root.avatarUpdateMessage = ""
+            }
+        }
+    }
+
+    FileDialog {
+        id: avatarDialog
+        title: qsTrc("appshell", "选择头像")
+        nameFilters: [
+            qsTrc("appshell", "图片 (*.jpg *.jpeg *.png *.webp)")
+        ]
+        onAccepted: {
+            const selected = currentFile.toString()
+            if (selected) {
+                root.avatarUpdatePending = true
+                root.avatarPreviewSource = selected
+                root.avatarUpdateMessage = qsTrc("appshell", "正在更新头像…")
+                accountModel.clearTransientMessages()
+                accountModel.updateAvatar(selected)
+            }
+        }
+    }
+
     Timer {
-        id: cooldownTimer
         interval: 1000
         repeat: true
         running: root.sendCooldown > 0
@@ -49,173 +117,88 @@ DockPage {
         }
     }
 
-    central: RowLayout {
-        spacing: 0
+    central: Rectangle {
+        implicitWidth: 900
+        implicitHeight: 700
+        color: ui.theme.backgroundPrimaryColor
 
-        Rectangle {
-            Layout.preferredWidth: 220
-            Layout.fillHeight: true
-            color: ui.theme.backgroundSecondaryColor
+        ColumnLayout {
+            anchors.fill: parent
+            anchors.margins: 28
+            spacing: 16
 
-            Column {
-                anchors.fill: parent
-                anchors.margins: 12
-                spacing: 2
+            RowLayout {
+                Layout.fillWidth: true
+                spacing: 10
 
-                Rectangle {
-                    width: 196
-                    height: 64
-                    radius: 10
-                    color: ui.theme.backgroundPrimaryColor
-
-                    RowLayout {
-                        anchors.fill: parent
-                        anchors.margins: 10
-                        spacing: 10
-
-                        Rectangle {
-                            width: 36
-                            height: 36
-                            radius: 18
-                            color: ui.theme.accentColor
-
-                            StyledTextLabel {
-                                anchors.centerIn: parent
-                                text: accountModel.phoneLoggedIn ? accountModel.avatarLetter : "👤"
-                                font: ui.theme.largeBodyBoldFont
-                            }
-                        }
-
-                        ColumnLayout {
-                            spacing: 2
-
-                            StyledTextLabel {
-                                text: accountModel.phoneLoggedIn
-                                      ? (accountModel.phoneNickname.length > 0 ? accountModel.phoneNickname : accountModel.phoneMasked)
-                                      : qsTrc("appshell", "未登录")
-                                font: ui.theme.bodyFont
-                            }
-
-                            StyledTextLabel {
-                                visible: accountModel.phoneLoggedIn
-                                text: accountModel.phoneMasked
-                                font: ui.theme.bodyFont
-                                opacity: 0.6
-                            }
-                        }
-                    }
+                StyledTextLabel {
+                    Layout.fillWidth: true
+                    text: qsTrc("appshell", "账号中心")
+                    font: ui.theme.titleBoldFont
                 }
 
-                Flickable {
-                    width: 196
-                    height: parent.height - 76
-                    contentWidth: width
-                    contentHeight: navContent.implicitHeight
-                    clip: true
-
-                    Column {
-                        id: navContent
-                        width: parent.width
-                        spacing: 2
-
-                        StyledTextLabel {
-                            text: qsTrc("appshell", "账户")
-                            font: ui.theme.bodyFont
-                            opacity: 0.5
-                            leftPadding: 8
-                            topPadding: 10
-                            bottomPadding: 4
-                        }
-                        FlatButton {
-                            width: parent.width
-                            text: qsTrc("appshell", "账号概览")
-                            accentButton: root.currentPage === 0
-                            onClicked: root.currentPage = 0
-                        }
-                        FlatButton {
-                            width: parent.width
-                            text: qsTrc("appshell", "我的会员")
-                            accentButton: root.currentPage === 1
-                            onClicked: root.currentPage = 1
-                        }
-                        FlatButton {
-                            width: parent.width
-                            text: qsTrc("appshell", "订单记录")
-                            accentButton: root.currentPage === 2
-                            onClicked: root.currentPage = 2
-                        }
-
-                        StyledTextLabel {
-                            text: qsTrc("appshell", "成长")
-                            font: ui.theme.bodyFont
-                            opacity: 0.5
-                            leftPadding: 8
-                            topPadding: 10
-                            bottomPadding: 4
-                        }
-                        FlatButton {
-                            width: parent.width
-                            text: qsTrc("appshell", "推广赚佣")
-                            accentButton: root.currentPage === 3
-                            onClicked: root.currentPage = 3
-                        }
-                        FlatButton {
-                            width: parent.width
-                            text: qsTrc("appshell", "软件分享")
-                            accentButton: root.currentPage === 4
-                            onClicked: root.currentPage = 4
-                        }
-
-                        StyledTextLabel {
-                            text: qsTrc("appshell", "支持")
-                            font: ui.theme.bodyFont
-                            opacity: 0.5
-                            leftPadding: 8
-                            topPadding: 10
-                            bottomPadding: 4
-                        }
-                        FlatButton {
-                            width: parent.width
-                            text: qsTrc("appshell", "联系客服")
-                            accentButton: root.currentPage === 5
-                            onClicked: root.currentPage = 5
-                        }
-                        FlatButton {
-                            width: parent.width
-                            text: qsTrc("appshell", "软件更新")
-                            accentButton: root.currentPage === 6
-                            onClicked: root.currentPage = 6
-                        }
-
-                        Rectangle {
-                            width: parent.width
-                            height: 1
-                            color: ui.theme.strokeColor
-                        }
-
-                        FlatButton {
-                            width: parent.width
-                            text: qsTrc("appshell", "设置")
-                            accentButton: root.currentPage === 7
-                            onClicked: root.currentPage = 7
-                        }
-                    }
+                FlatButton {
+                    text: qsTrc("appshell", "刷新")
+                    enabled: !accountModel.busy
+                    onClicked: root.refreshCurrentPage()
                 }
             }
-        }
 
-        Rectangle {
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            color: ui.theme.backgroundPrimaryColor
+            RowLayout {
+                Layout.fillWidth: true
+                spacing: 8
+
+                FlatButton {
+                    text: qsTrc("appshell", "账号概览")
+                    accentButton: root.currentPage === 0
+                    onClicked: {
+                        root.currentPage = 0
+                        accountModel.refresh()
+                    }
+                }
+                FlatButton {
+                    text: qsTrc("appshell", "我的会员")
+                    accentButton: root.currentPage === 1
+                    onClicked: {
+                        root.currentPage = 1
+                        accountModel.refresh()
+                    }
+                }
+                FlatButton {
+                    text: qsTrc("appshell", "订单记录")
+                    accentButton: root.currentPage === 2
+                    onClicked: {
+                        root.currentPage = 2
+                        accountModel.loadOrders()
+                    }
+                }
+                Item { Layout.fillWidth: true }
+            }
+
+            StyledTextLabel {
+                Layout.fillWidth: true
+                visible: accountModel.lastError.length > 0
+                text: accountModel.lastError
+                color: ui.theme.accentColor
+                font: ui.theme.bodyFont
+                wrapMode: Text.WordWrap
+            }
 
             StackLayout {
-                anchors.fill: parent
+                Layout.fillWidth: true
+                Layout.fillHeight: true
                 currentIndex: root.currentPage
 
-                Item {
-                    PageFrame {
-                        title: qsTrc("appshell", "账号概览")
+                // 账号概览
+                Flickable {
+                    clip: true
+                    contentWidth: width
+                    contentHeight: overviewColumn.implicitHeight
+
+                    ColumnLayout {
+                        id: overviewColumn
+                        width: parent.width
+                        spacing: 16
 
                         PageCard {
                             visible: !accountModel.phoneLoggedIn
@@ -229,7 +212,7 @@ DockPage {
                                 }
 
                                 StyledTextLabel {
-                                    text: qsTrc("appshell", "未注册手机号将自动注册，注册即送3天免费试用")
+                                    text: qsTrc("appshell", "账号由 DB后台端统一管理，首次登录赠送 3 天试用")
                                     font: ui.theme.bodyFont
                                     opacity: 0.7
                                 }
@@ -237,23 +220,23 @@ DockPage {
                                 RowLayout {
                                     spacing: 10
 
-                                    StyledTextLabel { text: qsTrc("appshell", "手机号"); font: ui.theme.bodyFont }
                                     TextField {
                                         id: phoneField
-                                        Layout.preferredWidth: 190
+                                        Layout.preferredWidth: 210
                                         placeholderText: qsTrc("appshell", "请输入手机号")
                                         inputMethodHints: Qt.ImhDigitsOnly
                                     }
-                                    StyledTextLabel { text: qsTrc("appshell", "验证码"); font: ui.theme.bodyFont }
+
                                     TextField {
                                         id: codeField
-                                        Layout.preferredWidth: 130
+                                        Layout.preferredWidth: 150
                                         placeholderText: qsTrc("appshell", "6位验证码")
                                         inputMethodHints: Qt.ImhDigitsOnly
                                     }
+
                                     FlatButton {
                                         text: root.sendCooldown > 0
-                                              ? (root.sendCooldown + qsTrc("appshell", "s 后重发"))
+                                              ? (root.sendCooldown + qsTrc("appshell", " 秒后重发"))
                                               : qsTrc("appshell", "获取验证码")
                                         enabled: !accountModel.busy && root.sendCooldown === 0
                                         onClicked: {
@@ -261,28 +244,22 @@ DockPage {
                                             root.sendCooldown = 60
                                         }
                                     }
+
                                     FlatButton {
                                         text: qsTrc("appshell", "登录 / 注册")
                                         accentButton: true
                                         enabled: !accountModel.busy
-                                        onClicked: accountModel.loginByPhone(phoneField.text, codeField.text)
+                                        onClicked: accountModel.loginByPhone(
+                                                       phoneField.text,
+                                                       codeField.text)
                                     }
-                                }
-
-                                StyledTextLabel {
-                                    visible: accountModel.lastError.length > 0
-                                    text: accountModel.lastError
-                                    color: ui.theme.accentColor
-                                    font: ui.theme.bodyFont
-                                    wrapMode: Text.WordWrap
                                 }
 
                                 StyledTextLabel {
                                     visible: accountModel.sendCodeMessage.length > 0
                                     text: accountModel.sendCodeMessage
-                                    color: ui.theme.fontPrimaryColor
+                                    color: "#2ECC71"
                                     font: ui.theme.bodyFont
-                                    wrapMode: Text.WordWrap
                                 }
                             }
                         }
@@ -291,34 +268,91 @@ DockPage {
                             visible: accountModel.phoneLoggedIn
 
                             RowLayout {
-                                spacing: 16
+                                spacing: 18
 
-                                Rectangle {
-                                    width: 56
-                                    height: 56
-                                    radius: 28
-                                    color: ui.theme.accentColor
+                                ColumnLayout {
+                                    spacing: 8
+
+                                    Rectangle {
+                                        width: 76
+                                        height: 76
+                                        radius: 38
+                                        color: ui.theme.accentColor
+                                        clip: true
+
+                                        Image {
+                                            id: avatarImage
+                                            anchors.fill: parent
+                                            source: root.avatarPreviewSource.length > 0
+                                                    ? root.avatarPreviewSource
+                                                    : accountModel.avatarUrl
+                                            visible: source.toString().length > 0
+                                                     && status === Image.Ready
+                                            fillMode: Image.PreserveAspectCrop
+                                            asynchronous: true
+                                            cache: false
+                                        }
+
+                                        StyledTextLabel {
+                                            anchors.centerIn: parent
+                                            visible: accountModel.avatarUrl.length === 0
+                                                     || avatarImage.status !== Image.Ready
+                                            text: accountModel.avatarLetter
+                                            font: ui.theme.titleBoldFont
+                                        }
+                                    }
+
+                                    FlatButton {
+                                        Layout.alignment: Qt.AlignHCenter
+                                        minWidth: 76
+                                        margins: 10
+                                        text: root.avatarUpdatePending
+                                              ? qsTrc("appshell", "正在更新头像…")
+                                              : qsTrc("appshell", "更换头像")
+                                        transparent: true
+                                        enabled: !accountModel.busy
+                                        onClicked: avatarDialog.show()
+                                    }
+
                                     StyledTextLabel {
-                                        anchors.centerIn: parent
-                                        text: accountModel.avatarLetter
-                                        font: ui.theme.titleBoldFont
+                                        Layout.alignment: Qt.AlignHCenter
+                                        Layout.maximumWidth: 180
+                                        visible: root.avatarUpdateMessage.length > 0
+                                        text: root.avatarUpdateMessage
+                                        color: accountModel.lastError.length > 0
+                                               ? ui.theme.accentColor
+                                               : ui.theme.fontPrimaryColor
+                                        font: ui.theme.bodyFont
+                                        horizontalAlignment: Text.AlignHCenter
+                                        wrapMode: Text.WordWrap
                                     }
                                 }
 
                                 ColumnLayout {
-                                    spacing: 4
+                                    Layout.fillWidth: true
+                                    spacing: 5
+
                                     StyledTextLabel {
-                                        text: accountModel.phoneNickname.length > 0 ? accountModel.phoneNickname : accountModel.phoneMasked
+                                        text: accountModel.phoneNickname.length > 0
+                                              ? accountModel.phoneNickname
+                                              : accountModel.phoneMasked
                                         font: ui.theme.largeBodyBoldFont
                                     }
                                     StyledTextLabel {
-                                        text: accountModel.phoneMasked
+                                        text: qsTrc("appshell", "手机号：%1").arg(accountModel.phoneNumber)
                                         font: ui.theme.bodyFont
                                         opacity: 0.7
                                     }
+                                    StyledTextLabel {
+                                        text: qsTrc("appshell", "注册日期：%1").arg(accountModel.accountCreatedAtText)
+                                        font: ui.theme.bodyFont
+                                        opacity: 0.7
+                                    }
+                                    StyledTextLabel {
+                                        text: accountModel.statusText
+                                        font: ui.theme.bodyFont
+                                    }
                                 }
-
-                                Item { Layout.fillWidth: true }
 
                                 FlatButton {
                                     text: qsTrc("appshell", "退出登录")
@@ -326,131 +360,107 @@ DockPage {
                                 }
                             }
                         }
+                    }
+                }
+
+                // 我的会员
+                Flickable {
+                    clip: true
+                    contentWidth: width
+                    contentHeight: membershipColumn.implicitHeight
+
+                    ColumnLayout {
+                        id: membershipColumn
+                        width: parent.width
+                        spacing: 16
 
                         PageCard {
                             RowLayout {
                                 spacing: 16
 
                                 ColumnLayout {
-                                    spacing: 6
+                                    Layout.fillWidth: true
+                                    spacing: 5
                                     StyledTextLabel {
-                                        text: qsTrc("appshell", "会员状态")
-                                        font: ui.theme.bodyFont
-                                        opacity: 0.7
+                                        text: qsTrc("appshell", "DB Score 会员")
+                                        font: ui.theme.largeBodyBoldFont
                                     }
                                     StyledTextLabel {
                                         text: accountModel.statusText
-                                        font: ui.theme.largeBodyFont
+                                        font: ui.theme.bodyFont
+                                        color: accountModel.hasProAccess
+                                               ? "#2ECC71"
+                                               : ui.theme.accentColor
                                     }
                                 }
 
-                                Item { Layout.fillWidth: true }
-
                                 FlatButton {
-                                    visible: accountModel.licenseState !== 3
-                                    text: qsTrc("appshell", "开通会员 ¥199/年")
+                                    text: accountModel.paidMembershipActive
+                                          ? qsTrc("appshell", "会员续费 %1")
+                                            .arg(accountModel.renewalPriceText)
+                                          : qsTrc("appshell", "开通会员 %1")
+                                            .arg(accountModel.renewalPriceText)
                                     accentButton: true
-                                    onClicked: accountModel.openPurchasePage()
-                                }
-                                FlatButton {
-                                    visible: accountModel.licenseState === 3
-                                    text: qsTrc("appshell", "会员续费 ¥199/年")
-                                    accentButton: true
+                                    enabled: !accountModel.busy
                                     onClicked: accountModel.openPurchasePage()
                                 }
                             }
+                        }
+
+                        PageCard {
+                            GridLayout {
+                                columns: 2
+                                columnSpacing: 48
+                                rowSpacing: 12
+
+                                StyledTextLabel { text: qsTrc("appshell", "会员类型"); opacity: 0.6 }
+                                StyledTextLabel { text: accountModel.membershipKindText; font: ui.theme.bodyBoldFont }
+
+                                StyledTextLabel { text: qsTrc("appshell", "会员方案"); opacity: 0.6 }
+                                StyledTextLabel {
+                                    text: accountModel.membershipPlan.length > 0
+                                          ? accountModel.membershipPlan
+                                          : qsTrc("appshell", "未开通")
+                                    font: ui.theme.bodyBoldFont
+                                }
+
+                                StyledTextLabel { text: qsTrc("appshell", "开通日期"); opacity: 0.6 }
+                                StyledTextLabel { text: accountModel.membershipStartedAtText; font: ui.theme.bodyBoldFont }
+
+                                StyledTextLabel { text: qsTrc("appshell", "到期日期"); opacity: 0.6 }
+                                StyledTextLabel { text: accountModel.membershipExpiresAtText; font: ui.theme.bodyBoldFont }
+
+                                StyledTextLabel { text: qsTrc("appshell", "权益来源"); opacity: 0.6 }
+                                StyledTextLabel { text: accountModel.membershipSourceText; font: ui.theme.bodyBoldFont }
+                            }
+                        }
+
+                        StyledTextLabel {
+                            Layout.fillWidth: true
+                            text: qsTrc("appshell", "会员由 DB后台端统一管理，支付成功后自动更新权益和到期时间。")
+                            font: ui.theme.bodyFont
+                            opacity: 0.65
+                            wrapMode: Text.WordWrap
                         }
                     }
                 }
 
-                Item {
-                    PageFrame {
-                        title: qsTrc("appshell", "我的会员")
+                // 订单记录
+                Flickable {
+                    clip: true
+                    contentWidth: width
+                    contentHeight: ordersColumn.implicitHeight
 
-                        PageCard {
-                            RowLayout {
-                                spacing: 16
-                                ColumnLayout {
-                                    spacing: 6
-                                    StyledTextLabel {
-                                        text: qsTrc("appshell", "会员状态")
-                                        font: ui.theme.bodyFont
-                                        opacity: 0.7
-                                    }
-                                    StyledTextLabel {
-                                        text: accountModel.statusText
-                                        font: ui.theme.largeBodyFont
-                                    }
-                                }
-                                Item { Layout.fillWidth: true }
-                                FlatButton {
-                                    visible: accountModel.licenseState !== 3
-                                    text: qsTrc("appshell", "开通会员 ¥199/年")
-                                    accentButton: true
-                                    onClicked: accountModel.openPurchasePage()
-                                }
-                                FlatButton {
-                                    visible: accountModel.licenseState === 3
-                                    text: qsTrc("appshell", "会员续费 ¥199/年")
-                                    accentButton: true
-                                    onClicked: accountModel.openPurchasePage()
-                                }
-                            }
-                        }
-
-                        PageCard {
-                            ColumnLayout {
-                                spacing: 8
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "会员专属权益")
-                                    font: ui.theme.largeBodyBoldFont
-                                }
-                                StyledTextLabel { text: qsTrc("appshell", "✅ 导入音频并与曲谱AI对齐"); font: ui.theme.bodyFont }
-                                StyledTextLabel { text: qsTrc("appshell", "✅ 生成并导出动态.dbscore工程文件"); font: ui.theme.bodyFont }
-                                StyledTextLabel { text: qsTrc("appshell", "✅ 批量导出MP4视频（1080P/2K/4K）"); font: ui.theme.bodyFont }
-                                StyledTextLabel { text: qsTrc("appshell", "✅ 无水印输出文件"); font: ui.theme.bodyFont }
-                                StyledTextLabel { text: qsTrc("appshell", "✅ 工程云备份与云端乐谱"); font: ui.theme.bodyFont }
-                            }
-                        }
-
-                        PageCard {
-                            ColumnLayout {
-                                spacing: 8
-                                RowLayout {
-                                    spacing: 10
-                                    StyledTextLabel { text: qsTrc("appshell", "激活码"); font: ui.theme.bodyFont }
-                                    TextField {
-                                        id: licenseCodeField
-                                        Layout.fillWidth: true
-                                        placeholderText: qsTrc("appshell", "线下购买的用户在此输入激活码")
-                                    }
-                                    FlatButton {
-                                        text: qsTrc("appshell", "激活")
-                                        accentButton: true
-                                        enabled: !accountModel.busy
-                                        onClicked: accountModel.activate(licenseCodeField.text)
-                                    }
-                                }
-
-                                StyledTextLabel {
-                                    visible: accountModel.activationMessage.length > 0
-                                    text: accountModel.activationMessage
-                                    color: ui.theme.fontPrimaryColor
-                                    font: ui.theme.bodyFont
-                                    wrapMode: Text.WordWrap
-                                }
-                            }
-                        }
-                    }
-                }
-
-                Item {
-                    PageFrame {
-                        title: qsTrc("appshell", "订单记录")
+                    ColumnLayout {
+                        id: ordersColumn
+                        width: parent.width
+                        spacing: 12
 
                         StyledTextLabel {
                             visible: accountModel.ordersList.length === 0
-                            text: qsTrc("appshell", "暂无订单记录")
+                            text: accountModel.busy
+                                  ? qsTrc("appshell", "正在加载订单…")
+                                  : qsTrc("appshell", "暂无订单记录")
                             font: ui.theme.bodyFont
                             opacity: 0.7
                         }
@@ -464,26 +474,40 @@ DockPage {
 
                                     delegate: RowLayout {
                                         required property var modelData
-                                        width: parent ? parent.width : 0
-                                        height: 48
+                                        Layout.fillWidth: true
+                                        Layout.preferredHeight: 54
                                         spacing: 12
 
                                         StyledTextLabel {
                                             Layout.fillWidth: true
-                                            text: modelData.planName || modelData.orderNo || ""
+                                            text: (modelData.product
+                                                   ? modelData.product + " · "
+                                                   : "")
+                                                  + (modelData.planName
+                                                     || modelData.orderNo
+                                                     || qsTrc("appshell", "会员订单"))
                                             font: ui.theme.bodyFont
                                             elide: Text.ElideMiddle
                                         }
-
                                         StyledTextLabel {
                                             text: "¥" + ((modelData.amountCents || 0) / 100).toFixed(2)
                                             font: ui.theme.bodyFont
                                         }
-
                                         StyledTextLabel {
-                                            text: modelData.status === "paid" ? qsTrc("appshell", "已支付")
-                                                  : modelData.status === "pending" ? qsTrc("appshell", "待支付")
-                                                  : qsTrc("appshell", "已取消")
+                                            Layout.preferredWidth: 76
+                                            text: modelData.sourceLabel
+                                                  || qsTrc("appshell", "历史订单")
+                                            font: ui.theme.bodyFont
+                                            opacity: 0.72
+                                        }
+                                        StyledTextLabel {
+                                            text: modelData.status === "paid"
+                                                  ? qsTrc("appshell", "已支付")
+                                                  : modelData.status === "pending"
+                                                    ? qsTrc("appshell", "待支付")
+                                                    : modelData.status === "refunded"
+                                                      ? qsTrc("appshell", "已退款")
+                                                      : qsTrc("appshell", "已关闭")
                                             font: ui.theme.bodyFont
                                             opacity: 0.7
                                         }
@@ -491,291 +515,9 @@ DockPage {
                                 }
                             }
                         }
-
-                        FlatButton {
-                            text: qsTrc("appshell", "开通会员")
-                            accentButton: true
-                            onClicked: accountModel.openPurchasePage()
-                        }
                     }
                 }
 
-
-                Item {
-                    PageFrame {
-                        title: qsTrc("appshell", "推广赚佣")
-                        PageCard {
-                            ColumnLayout {
-                                spacing: 10
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "邀请好友，赚取 15% 佣金")
-                                    font: ui.theme.largeBodyBoldFont
-                                }
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "好友通过你的邀请链接注册并开通会员，你将获得其付费金额的 15% 作为佣金。")
-                                    font: ui.theme.bodyFont
-                                    wrapMode: Text.WordWrap
-                                }
-
-                                StyledTextLabel {
-                                    visible: !accountModel.phoneLoggedIn
-                                    text: qsTrc("appshell", "登录后查看你的邀请码和佣金。")
-                                    font: ui.theme.bodyFont
-                                    opacity: 0.7
-                                }
-
-                                ColumnLayout {
-                                    visible: accountModel.phoneLoggedIn
-                                    spacing: 6
-
-                                    StyledTextLabel {
-                                        text: qsTrc("appshell", "邀请码：") + accountModel.inviteCode
-                                        font: ui.theme.bodyFont
-                                    }
-                                    StyledTextLabel {
-                                        text: qsTrc("appshell", "佣金余额：¥") + (accountModel.commissionBalanceCents / 100).toFixed(2)
-                                        font: ui.theme.bodyFont
-                                    }
-                                    StyledTextLabel {
-                                        text: qsTrc("appshell", "累计赚取：¥") + (accountModel.totalEarnedCents / 100).toFixed(2)
-                                        font: ui.theme.bodyFont
-                                    }
-                                    StyledTextLabel {
-                                        text: qsTrc("appshell", "已邀请好友：") + accountModel.inviteeCount + qsTrc("appshell", " 人")
-                                        font: ui.theme.bodyFont
-                                    }
-                                }
-
-                                FlatButton {
-                                    visible: accountModel.phoneLoggedIn && accountModel.inviteUrl.length > 0
-                                    text: qsTrc("appshell", "复制邀请链接")
-                                    accentButton: true
-                                    onClicked: accountModel.copyText(accountModel.inviteUrl)
-                                }
-                            }
-                        }
-                    }
-                }
-
-                Item {
-                    PageFrame {
-                        title: qsTrc("appshell", "软件分享")
-                        PageCard {
-                            ColumnLayout {
-                                spacing: 10
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "把 DB Score 分享给好友")
-                                    font: ui.theme.largeBodyBoldFont
-                                }
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "分享链接：")
-                                    font: ui.theme.bodyFont
-                                }
-                                StyledTextLabel {
-                                    text: "https://drumbearai.com/dbscore"
-                                    font: ui.theme.bodyFont
-                                    opacity: 0.8
-                                }
-                                FlatButton {
-                                    text: qsTrc("appshell", "复制分享链接")
-                                    accentButton: true
-                                    onClicked: {
-                                        accountModel.copyText("https://drumbearai.com/dbscore")
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-
-                Item {
-                    PageFrame {
-                        title: qsTrc("appshell", "联系客服")
-                        PageCard {
-                            ColumnLayout {
-                                spacing: 10
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "联系我们")
-                                    font: ui.theme.largeBodyBoldFont
-                                }
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "客服微信：drumbear_ai")
-                                    font: ui.theme.bodyFont
-                                }
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "客服邮箱：support@drumbearai.com")
-                                    font: ui.theme.bodyFont
-                                }
-                            }
-                        }
-
-                        PageCard {
-                            ColumnLayout {
-                                spacing: 10
-
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "意见反馈")
-                                    font: ui.theme.largeBodyBoldFont
-                                }
-
-                                TextField {
-                                    id: feedbackContact
-                                    Layout.fillWidth: true
-                                    placeholderText: qsTrc("appshell", "联系方式（选填）")
-                                }
-
-                                TextArea {
-                                    id: feedbackContent
-                                    Layout.fillWidth: true
-                                    height: 100
-                                    placeholderText: qsTrc("appshell", "请描述你的问题或建议…")
-                                }
-
-                                StyledTextLabel {
-                                    visible: accountModel.lastError.length > 0
-                                    text: accountModel.lastError
-                                    color: ui.theme.accentColor
-                                    font: ui.theme.bodyFont
-                                    wrapMode: Text.WordWrap
-                                }
-
-                                FlatButton {
-                                    text: qsTrc("appshell", "提交反馈")
-                                    accentButton: true
-                                    enabled: !accountModel.busy
-                                    onClicked: accountModel.submitFeedback(feedbackContent.text, feedbackContact.text)
-                                }
-                            }
-                        }
-                    }
-                }
-
-                Item {
-                    PageFrame {
-                        title: qsTrc("appshell", "软件更新")
-
-                        PageCard {
-                            ColumnLayout {
-                                spacing: 10
-
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "当前版本：") + accountModel.currentVersion
-                                    font: ui.theme.bodyFont
-                                }
-
-                                StyledTextLabel {
-                                    visible: accountModel.latestVersion.length > 0
-                                    text: qsTrc("appshell", "最新版本：") + accountModel.latestVersion
-                                    font: ui.theme.bodyFont
-                                }
-
-                                StyledTextLabel {
-                                    visible: accountModel.updateNotes.length > 0
-                                    text: accountModel.updateNotes
-                                    font: ui.theme.bodyFont
-                                    opacity: 0.8
-                                    wrapMode: Text.WordWrap
-                                }
-
-                                StyledTextLabel {
-                                    visible: accountModel.lastError.length > 0
-                                    text: accountModel.lastError
-                                    color: ui.theme.accentColor
-                                    font: ui.theme.bodyFont
-                                    wrapMode: Text.WordWrap
-                                }
-
-                                RowLayout {
-                                    spacing: 10
-
-                                    FlatButton {
-                                        text: qsTrc("appshell", "检查更新")
-                                        enabled: !accountModel.busy
-                                        onClicked: accountModel.checkForUpdate()
-                                    }
-
-                                    FlatButton {
-                                        visible: accountModel.updateAvailable
-                                        text: qsTrc("appshell", "下载安装包")
-                                        accentButton: true
-                                        onClicked: accountModel.openUpdateDownload()
-                                    }
-                                }
-                            }
-                        }
-
-                        PageCard {
-                            ColumnLayout {
-                                spacing: 8
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "如何更新")
-                                    font: ui.theme.largeBodyBoldFont
-                                }
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "点击“检查更新”，如有新版本，点击“下载安装包”下载后手动安装即可。")
-                                    font: ui.theme.bodyFont
-                                    opacity: 0.7
-                                    wrapMode: Text.WordWrap
-                                }
-                            }
-                        }
-                    }
-                }
-
-                Item {
-                    PageFrame {
-                        title: qsTrc("appshell", "设置")
-
-                        PageCard {
-                            ColumnLayout {
-                                spacing: 10
-
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "关于软件")
-                                    font: ui.theme.largeBodyBoldFont
-                                }
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "当前版本：") + accountModel.currentVersion
-                                    font: ui.theme.bodyFont
-                                }
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "DB Score 制谱大师")
-                                    font: ui.theme.bodyFont
-                                    opacity: 0.7
-                                }
-                            }
-                        }
-
-                        PageCard {
-                            ColumnLayout {
-                                spacing: 10
-
-                                StyledTextLabel {
-                                    text: qsTrc("appshell", "账号")
-                                    font: ui.theme.largeBodyBoldFont
-                                }
-
-                                FlatButton {
-                                    text: qsTrc("appshell", "刷新授权")
-                                    onClicked: accountModel.refresh()
-                                }
-
-                                FlatButton {
-                                    visible: accountModel.phoneLoggedIn
-                                    text: qsTrc("appshell", "退出登录")
-                                    onClicked: accountModel.logout()
-                                }
-
-                                FlatButton {
-                                    visible: !accountModel.phoneLoggedIn
-                                    text: qsTrc("appshell", "清除授权")
-                                    onClicked: accountModel.clearLicense()
-                                }
-                            }
-                        }
-                    }
-                }
             }
         }
     }

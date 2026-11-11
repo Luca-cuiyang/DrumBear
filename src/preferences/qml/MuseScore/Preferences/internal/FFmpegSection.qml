@@ -27,7 +27,7 @@ import Muse.UiComponents
 BaseSection {
     id: root
 
-    title: qsTrc("preferences", "Video converter")
+    title: qsTrc("preferences", "视频导出组件")
 
     property var model: null
 
@@ -40,57 +40,10 @@ BaseSection {
         StyledTextLabel {
             id: titleLabel
             Layout.fillWidth: true
-            text: qsTrc("preferences", "FFmpeg library version:") + " " + (model && model.ffmpegVersion !== -1
-                                                                          ? model.ffmpegVersion
-                                                                          : qsTrc("preferences", "FFmpeg library not found"))
+            text: model && model.ffmpegVersion !== -1
+                  ? qsTrc("preferences", "内置视频组件已就绪")
+                  : qsTrc("preferences", "内置视频组件加载失败，请重新安装最新版 DB Score")
             horizontalAlignment: Text.AlignLeft
-        }
-
-        RowLayout {
-            Layout.fillWidth: true
-            height: 24
-
-            spacing: 8
-
-            FilePicker {
-                id: ffmpegDirPicker
-                Layout.fillWidth: true
-
-                pickerType: FilePicker.PickerType.Directory
-                dialogTitle: qsTrc("preferences", "Choose %1 folder").arg(root.title)
-
-                buttonType: FlatButton.TextOnly
-                buttonText: qsTrc("preferences", "Locate existing installation")
-
-                dir: model ? model.ffmpegDir : ""
-                path: model ? model.ffmpegDir : ""
-
-                navigation: root.navigation
-                pathFieldTitle: titleLabel.text
-
-                spacing: 8
-
-                onPathEdited: function(newPath) {
-                    if (model) {
-                        model.ffmpegDir = newPath
-                    }
-                }
-            }
-
-            FlatButton {
-                text: qsTrc("preferences", "Download FFmpeg")
-                icon: IconCode.OPEN_LINK
-                isNarrow: true
-                orientation: Qt.Horizontal
-
-                navigation.panel: root.navigation
-                navigation.row: ffmpegDirPicker.navigationRowOrderStart
-                navigation.column: 100
-
-                onClicked: {
-                    api.launcher.openUrl("https://handbook.drumbearai.com/video/installing-ffmpeg")
-                }
-            }
         }
     }
 }

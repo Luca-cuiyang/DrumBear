@@ -428,12 +428,17 @@ muse::Ret ProjectActionsController::openAudioTrackSettings()
         return make_ret(Ret::Code::UnknownError);
     }
 
-    AudioTrackSettings settings = project->audioSettings()->audioTrackSettings();
+    const auto audioSettings = project->audioSettings();
+    if (!audioSettings) {
+        return make_ret(Ret::Code::UnknownError);
+    }
+
+    AudioTrackSettings settings = audioSettings->audioTrackSettings();
     AudioClipSettings clip;
     clip.filePath = path;
     settings.clips.clear();
     settings.clips.push_back(clip);
-    project->audioSettings()->setAudioTrackSettings(settings);
+    audioSettings->setAudioTrackSettings(settings);
 
     //! 【固定逻辑 · 永不可改】文件「导入伴奏轨」成功后，打开音频伴奏轨面板。
     dispatcher()->dispatch("dock-set-open", ActionData::make_arg2<QString, bool>("audioTrackPanel", true));

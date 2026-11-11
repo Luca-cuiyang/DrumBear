@@ -24,8 +24,6 @@ qt_add_qml_module(project_qml
     URI DBScore.Project
     VERSION 1.0
     SOURCES
-        audiogenerationsettingsmodel.cpp
-        audiogenerationsettingsmodel.h
         enums.cpp
         enums.h
         internal/AudioTrackSettingsModel.cpp
@@ -44,8 +42,6 @@ qt_add_qml_module(project_qml
         internal/Properties/projectpropertiesmodel.h
         internal/ScoresPage/abstractscoresmodel.cpp
         internal/ScoresPage/abstractscoresmodel.h
-        internal/ScoresPage/cloudscorestatuswatcher.cpp
-        internal/ScoresPage/cloudscorestatuswatcher.h
         internal/ScoresPage/pixmapscorethumbnailview.cpp
         internal/ScoresPage/pixmapscorethumbnailview.h
         internal/ScoresPage/recentscoresmodel.cpp
@@ -55,10 +51,6 @@ qt_add_qml_module(project_qml
         internal/ScoresPage/scorethumbnailloader.cpp
         internal/ScoresPage/scorethumbnailloader.h
     QML_FILES
-        AlsoShareDBScoreAudioDialog.qml
-        AskSaveLocationTypeDialog.qml
-        AudioGenerationSettings.qml
-        AudioGenerationSettingsDialog.qml
         ExportDialog.qml
         internal/Export/AudioSettings.qml
         internal/Export/ExportOptionItem.qml
@@ -100,8 +92,6 @@ qt_add_qml_module(project_qml
         internal/Properties/ProjectPropertiesFileInfoPanel.qml
         internal/Properties/ProjectPropertiesView.qml
         internal/Properties/PropertyItem.qml
-        internal/SaveToCloud/SaveLocationOption.qml
-        internal/ScoresPage/CloudScoreIndicatorButton.qml
         internal/ScoresPage/RecentScoresView.qml
         internal/ScoresPage/ScoreGridItem.qml
         internal/ScoresPage/ScoreItemMenuButton.qml
@@ -115,22 +105,15 @@ qt_add_qml_module(project_qml
         MigrationDialog.qml
         NewScoreDialog.qml
         ProjectPropertiesDialog.qml
-        ProjectUploadedDialog.qml
-        SaveToCloudDialog.qml
         ScoresPage.qml
-        UploadProgressDialog.qml
     RESOURCES
         internal/Migration/migration.png
-        internal/SaveToCloud/images/Cloud.png
-        internal/SaveToCloud/images/Laptop.png
         internal/ScoresPage/images/Placeholder_GP.png
         internal/ScoresPage/images/Placeholder_MEI.png
         internal/ScoresPage/images/Placeholder_MIDI.png
         internal/ScoresPage/images/Placeholder_MXML.png
         internal/ScoresPage/images/Placeholder_Other.png
         resources/DBScoreAudio_Waveform.png
-        resources/PublishScores.png
-        resources/ScoreProcessing.png
     IMPORTS
         TARGET muse_cloud_qml
         TARGET muse_ui_qml

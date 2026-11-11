@@ -330,10 +330,6 @@ muse::io::path_t ProjectConfiguration::defaultSavingFilePath(INotationProjectPtr
             projectPath = engraving::containerPath(projectPath);
             folderPath = io::dirpath(projectPath);
             filename = io::filename(projectPath, false);
-
-            if (theSuffix.empty()) {
-                theSuffix = io::suffix(projectPath);
-            }
         }
     }
 
@@ -641,23 +637,23 @@ QUrl ProjectConfiguration::supportForumUrl() const
 {
     if (languagesService()->currentLanguage().code.startsWith("en")) {
         // The English support forum
-        return QUrl("https://drumbearai.com/forum/6");
+        return QUrl("https://drumbear.cn/forum/6");
     }
 
     // The general forum page, where the support forum is linked at the top
     // (except in English; there you have the Announcements forum)
-    return QUrl("https://drumbearai.com/forum");
+    return QUrl("https://drumbear.cn/forum");
 }
 
 QUrl ProjectConfiguration::dotComBugReportUrl() const
 {
     // The general .com bug report page
-    return QUrl("https://drumbearai.com/groups/bug-reports");
+    return QUrl("https://drumbear.cn/groups/bug-reports");
 }
 
 QUrl ProjectConfiguration::scoreUploadingGuidelinesUrl() const
 {
-    return QUrl("https://drumbearai.com/score-uploading-guidelines");
+    return QUrl("https://drumbear.cn/score-uploading-guidelines");
 }
 
 bool ProjectConfiguration::openDetailedProjectUploadedDialog() const

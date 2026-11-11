@@ -590,7 +590,7 @@ bool TRead::readItemProperties(EngravingItem* item, XmlReader& e, ReadContext& c
 
 static Spanner* tryCreateSpanner(const AsciiStringView& tag, ReadContext& ctx, bool requireNoteAnchor)
 {
-    ElementType type = TConv::fromXml(tag, ElementType::INVALID);
+    ElementType type = TConv::fromXml(tag, ElementType::INVALID, /*silent*/ true);
     if (type == ElementType::INVALID) {
         return nullptr;
     }

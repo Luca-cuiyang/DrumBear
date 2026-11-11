@@ -67,14 +67,30 @@ bool decodeAudioFile(const QString& path, std::vector<float>& interleaved,
 
 bool computeAudioPeaks(const QString& path, double& duration, QVariantList& peaks, int buckets = 2048)
 {
-    std::vector<float> samples;
-    unsigned int channels = 0;
-    unsigned int sampleRate = 0;
-    if (!decodeAudioFile(path, samples, channels, sampleRate)) {
+    // 直接在解码器上计算峰值，避免把整段音频再复制一份。
+    // 7MB 的 MP3 解码后约 150MB，复制一份会在打开伴奏轨时造成明显的内存峰值。
+    muse::io::File file(path.toStdString());
+    if (!file.open(muse::io::IODevice::ReadOnly)) {
         return false;
     }
 
+    muse::audio::engine::AudioFileDecoder decoder;
+    if (!decoder.open(&file)) {
+        return false;
+    }
+
+    const unsigned int channels = decoder.channels();
+    const unsigned int sampleRate = decoder.sampleRate();
+    if (!decoder.isValid() || channels == 0 || sampleRate == 0) {
+        return false;
+    }
+
+    const std::vector<float>& samples = decoder.data();
     const uint64_t actualFrames = samples.size() / channels;
+    if (actualFrames == 0) {
+        return false;
+    }
+
     duration = double(actualFrames) / sampleRate;
 
     const int bucketCount = std::min(buckets, int(actualFrames));

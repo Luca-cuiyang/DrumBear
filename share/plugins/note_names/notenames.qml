@@ -21,8 +21,8 @@ import MuseScore 3.0
 
 MuseScore {
    version: "4.7"
-   description: "This plugin names notes as per your language setting"
-   title: "Note Names"
+   description: "按语言设置为音符添加名称"
+   title: "音符名称"
    categoryCode: "composing-arranging-tools"
    thumbnailName: "note_names.png"
 
@@ -90,10 +90,10 @@ MuseScore {
 
     onRun: {
         if (curScore.selection.elements.length == 0) {
-            curScore.startCmd("Add note names to score")
+            curScore.startCmd("为乐谱添加音符名称")
             cmd("select-all")
         } else {
-            curScore.startCmd("Add note names selection")
+            curScore.startCmd("为所选音符添加名称")
         }
 
         // Get list of chords (saves calculations)

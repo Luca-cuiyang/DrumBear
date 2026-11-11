@@ -10,8 +10,8 @@ import Muse.UiComponents
 MuseScore {
     // 06 - September - 2025 // Save lirics if the plugin is closed
     version: "1.2"
-    description: qsTr("Apply lyrics in lilypond format.")
-    title: "Lilypond Lyrics"
+    description: qsTr("以 Lilypond 格式应用歌词。")
+    title: "Lilypond 歌词"
     categoryCode: "lyrics"
     thumbnailName: "lilyrics.png"
     pluginType: "dialog"
@@ -121,14 +121,14 @@ MuseScore {
         // PASTE
         FlatButton {
             id : buttonPaste
-            text: qsTr("Paste")
+            text: qsTr("粘贴")
             anchors.right: window.right
             anchors.top: window.top
             anchors.topMargin: 10
             anchors.bottomMargin: 5
             anchors.rightMargin: 10
             height: 50
-            toolTipTitle: qsTr("Copy the text to the score");
+            toolTipTitle: qsTr("将文本复制到乐谱");
             onClicked: {
                 curScore.startCmd();
                 pasteGlobal();
@@ -139,14 +139,14 @@ MuseScore {
         // DUMP
         FlatButton {
             id : buttonDump
-            text: qsTr("Dump")
+            text: qsTr("导出")
             anchors.right: window.right
             anchors.top: buttonPaste.bottom
             anchors.topMargin: 5
             anchors.bottomMargin: 5
             anchors.leftMargin: 10
             anchors.rightMargin: 10
-            toolTipTitle: qsTr("Copy the lyrics of the score to the text area");
+            toolTipTitle: qsTr("将乐谱中的歌词复制到文本区");
             onClicked: {
                 //curScore.startCmd();
                 dumpLyrics();
@@ -157,13 +157,13 @@ MuseScore {
         // MERGE
         FlatButton {
             id : buttonMerge
-            text: qsTr("Merge")
+            text: qsTr("合并")
             anchors.right: window.right
             anchors.top: buttonDump.bottom
             anchors.topMargin: 5
             anchors.bottomMargin: 5
             anchors.rightMargin: 10
-            toolTipTitle: qsTr("Combines several lyrics sections into one");
+            toolTipTitle: qsTr("将多个歌词段落合并为一个");
             onClicked: {
                 //curScore.startCmd();
                 mergeLyrics();
@@ -174,13 +174,13 @@ MuseScore {
         // CLEAN
         FlatButton {
             id : buttonClean
-            text: qsTr("Clean")
+            text: qsTr("清理")
             anchors.right: window.right
             anchors.top: buttonMerge.bottom
             anchors.topMargin: 5
             anchors.bottomMargin: 5
             anchors.rightMargin: 10
-            toolTipTitle: qsTr("Delete comments and lilypond commands");
+            toolTipTitle: qsTr("删除注释和 lilypond 命令");
             onClicked: {
                 //curScore.startCmd();
                 cleanLyrics();
@@ -191,13 +191,13 @@ MuseScore {
         // UNTIE
         FlatButton {
             id : buttonTies
-            text: qsTr("Untie")
+            text: qsTr("解除连线")
             anchors.right: window.right
             anchors.top: buttonClean.bottom
             anchors.topMargin: 20
             anchors.bottomMargin: 5
             anchors.rightMargin: 10
-            toolTipTitle: qsTr("Transform tied notes into dotted notes");
+            toolTipTitle: qsTr("将连线音符转换为附点音符");
             onClicked: {
                 curScore.startCmd();
                 var track=(spinStaff.value-1)*4+spinVoice.value-1;
@@ -209,13 +209,13 @@ MuseScore {
         // UNTIE ALL
         FlatButton {
             id : buttonTiesAll
-            text: qsTr("Untie all")
+            text: qsTr("全部解除")
             anchors.right: window.right
             anchors.top: buttonTies.bottom
             anchors.topMargin: 2
             anchors.bottomMargin: 5
             anchors.rightMargin: 10
-            toolTipTitle: qsTr("Transform tied notes into dotted notes in all the voices");
+            toolTipTitle: qsTr("将所有声部的连线音符转换为附点音符");
             onClicked: {
                 curScore.startCmd();
                 console.log(curScore.ntracks);
@@ -230,13 +230,13 @@ MuseScore {
         // CONDENSE
         FlatButton {
             id : buttonCondense
-            text: qsTr("Condense")
+            text: qsTr("压缩")
             anchors.right: window.right
             anchors.top: buttonTiesAll.bottom
             anchors.topMargin: 20
             anchors.bottomMargin: 0
             anchors.rightMargin: 10
-            toolTipTitle: qsTr("Convert the text to a more readable format.\n(it is necessary to expand it again in order to paste it into the score)");
+            toolTipTitle: qsTr("将文本转换为更易读的格式。\n（粘贴到乐谱前需再次展开）");
             onClicked: {
                 //curScore.startCmd();
                 var s=textLily.text;
@@ -250,13 +250,13 @@ MuseScore {
         // EXPAND
         FlatButton {
             id : buttonExpand
-            text: qsTr("Expand")
+            text: qsTr("展开")
             anchors.right: window.right
             anchors.top: buttonCondense.bottom
             anchors.topMargin: 2
             anchors.bottomMargin: 5
             anchors.rightMargin: 10
-            toolTipTitle: qsTr("Convert the text back to lilypond format");
+            toolTipTitle: qsTr("将文本转换回 lilypond 格式");
             onClicked: {
                 //curScore.startCmd();
                 var s=textLily.text;
@@ -269,7 +269,7 @@ MuseScore {
         // CANCEL
         FlatButton {
             id : buttonCancel
-            text: qsTr("Cancel")
+            text: qsTr("取消")
             anchors.bottom: window.bottom
             anchors.right: window.right
             anchors.topMargin: 10
@@ -304,7 +304,7 @@ MuseScore {
 
                     anchors.verticalCenter: spinStaff.verticalCenter
 
-                    text: qsTr("Staff: ")
+                    text: qsTr("谱表：")
                 }
 
                 SpinBox {
@@ -325,7 +325,7 @@ MuseScore {
 
                     anchors.verticalCenter: spinVoice.verticalCenter
 
-                    text: qsTr("Voice: ")
+                    text: qsTr("声部：")
                 }
 
                 SpinBox {
@@ -346,7 +346,7 @@ MuseScore {
 
                     anchors.verticalCenter: spinVerse.verticalCenter
 
-                    text: qsTr("Verse: ")
+                    text: qsTr("段：")
                 }
 
                 SpinBox {
@@ -364,7 +364,7 @@ MuseScore {
 
                 anchors.verticalCenter: comboElision.verticalCenter
 
-                model: [qsTr("Above"), qsTr("Below")]
+                model: [qsTr("上方"), qsTr("下方")]
                 currentIndex: 1
                 width: 80
             }
@@ -375,7 +375,7 @@ MuseScore {
                 anchors.verticalCenter: comboElision.verticalCenter
 
                 checked: true
-                text: qsTr("Skip ties")
+                text: qsTr("跳过连线")
 
                 onClicked: checked = !checked
             }
@@ -386,7 +386,7 @@ MuseScore {
                 anchors.verticalCenter: comboElision.verticalCenter
 
                 checked: true
-                text: qsTr("Extender")
+                text: qsTr("延长线")
 
                 onClicked: checked = !checked
             }
@@ -398,7 +398,7 @@ MuseScore {
 
                 text: qsTr("~")
                 width: 20
-                toolTipTitle: qsTr("Character to use in synalepha:\n1: MuseScore elision\n2: Unicode undertie\n3: ASCII underscore");
+                toolTipTitle: qsTr("连音符号：\n1：MuseScore 连读\n2：Unicode 下连符\n3：ASCII 下划线");
 
             }
 

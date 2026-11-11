@@ -10,8 +10,8 @@ be entirely self-contained on the drive and then used on any Windows computer.
 
 LICENSE
 =======
-DB Score is released under the GNU GPLv2 license: https://drumbearai.com/about/gpl
-The source code for DB Score is available from DB Score website: https://drumbearai.com/download
+DB Score is released under the GNU GPLv2 license: https://drumbear.cn/about/gpl
+The source code for DB Score is available from DB Score website: https://drumbear.cn/download
 
 This package's installer and launcher are released under the GPL. The launcher is generated 
 by the PortableApps.com Launcher Generator, available with full source and documentation 
@@ -63,7 +63,7 @@ The options in the INI file are as follows:
 The AdditionalParameters entry allows you to pass additional command-line parameters to the 
 application. Whatever you enter here will be appended to the call to DB Score.exe. The full 
 list of available options is here:
-https://handbook.drumbearai.com/appendix/command-line-usage
+https://handbook.drumbear.cn/appendix/command-line-usage
 
 The DisableSplashScreen entry allows you to run the launcher without the PortableApps.com splash 
 screen (if present in -\App\AppInfo\Launcher) showing up. The default is false.

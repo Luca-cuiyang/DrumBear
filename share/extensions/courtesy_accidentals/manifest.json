@@ -1,15 +1,15 @@
 {
     "uri": "extension://notation/courtesy_accidentals",
     "type": "composite",
-    "title": "Courtesy Accidentals",
-    "description": "This plugin adds courtesy accidentals",
+    "title": "礼貌变音记号",
+    "description": "添加提示性变音记号（礼貌变音记号）",
     "category": "composing-arranging-tools",
     "thumbnail": "accidentals.png",
     "apiversion": 1,
 
     "actions": [
-        {"code": "configure", "type": "form", "title": "Configure", "path": "configure.qml"},
-        {"code": "add", "type": "macros", "title": "Add", "path": "add.js"},
-        {"code": "remove", "type": "macros", "title": "Remove", "path": "remove.js"}
+        {"code": "configure", "type": "form", "title": "配置", "path": "configure.qml"},
+        {"code": "add", "type": "macros", "title": "添加", "path": "add.js"},
+        {"code": "remove", "type": "macros", "title": "移除", "path": "remove.js"}
     ]
 }

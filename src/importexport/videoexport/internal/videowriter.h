@@ -23,6 +23,7 @@
 #pragma once
 
 #include <memory>
+#include <vector>
 
 #include "async/asyncable.h"
 
@@ -43,6 +44,10 @@
 #include "cloud/dbscoreauthorization/idbscoreauthorizationservice.h"
 
 class QImage;
+
+namespace mu::engraving {
+class TextBase;
+}
 
 namespace muse::draw {
 class Painter;
@@ -80,8 +85,8 @@ private:
         int height = 1080;
         int fps = 24;
         int bitrate = 800000;
-        float leadingSec = 3.;
-        float trailingSec = 3.;
+        float leadingSec = 0.;
+        float trailingSec = 0.;
         double canvasDpi = 300.0;
         ViewMode viewMode = ViewMode::PageFull;
         bool smoothPageTransitions = false;
@@ -117,6 +122,16 @@ private:
         bool showPageborders = false;
         bool showUnprintable = true;
         bool showVBox = true;
+        bool hasTitleFrame = false;
+        bool titleFrameAutoSize = true;
+        double titleFrameTopMargin = 0.0;
+        engraving::Spatium titleFrameHeight;
+        struct TextRestoreData
+        {
+            engraving::TextBase* text = nullptr;
+            muse::String xmlText;
+        };
+        std::vector<TextRestoreData> normalizedTexts;
     };
 
     std::optional<ScoreRestoreData> prepareScore(notation::INotationPtr notation, Config& config);

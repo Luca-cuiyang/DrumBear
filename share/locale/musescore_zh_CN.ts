@@ -9826,13 +9826,13 @@ followed by dashes</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectuiactions.cpp" line="89"/>
-        <source>Publish to &amp;drumbearai.com…</source>
-        <translation>发布到 &amp;drumbearai.com…</translation>
+        <source>Publish to &amp;drumbear.cn…</source>
+        <translation>发布到 &amp;drumbear.cn…</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectuiactions.cpp" line="90"/>
-        <source>Publish to drumbearai.com</source>
-        <translation>发布到 drumbearai.com</translation>
+        <source>Publish to drumbear.cn</source>
+        <translation>发布到 drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectuiactions.cpp" line="96"/>
@@ -11167,8 +11167,8 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
     </message>
     <message>
         <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="52"/>
-        <source>Save your scores privately on drumbearai.com to revisit past versions and invite others to view and comment – and when you’re ready, share your music with the world.</source>
-        <translation>在 drumbearai.com 上保存你的私人乐谱，以访问它们的历史版本、或者邀请他人来查看和评价。当你准备好的时候，将你的音乐分享到全世界！</translation>
+        <source>Save your scores privately on drumbear.cn to revisit past versions and invite others to view and comment – and when you’re ready, share your music with the world.</source>
+        <translation>在 drumbear.cn 上保存你的私人乐谱，以访问它们的历史版本、或者邀请他人来查看和评价。当你准备好的时候，将你的音乐分享到全世界！</translation>
     </message>
     <message>
         <location filename="../../src/appshell/qml/DB Score/AppShell/welcomedialogmodel.cpp" line="54"/>
@@ -12201,8 +12201,8 @@ Fret %1 on strings %2</source>
     </message>
     <message>
         <location filename="../../src/engraving/engravingerrors.h" line="88"/>
-        <source>This file was saved using a newer version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; to obtain the latest version.</source>
-        <translation>此文件使用了 DB Score 的较新版本保存。请访问 &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; 以获取最新版本。</translation>
+        <source>This file was saved using a newer version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; to obtain the latest version.</source>
+        <translation>此文件使用了 DB Score 的较新版本保存。请访问 &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; 以获取最新版本。</translation>
     </message>
     <message>
         <location filename="../../src/engraving/engravingerrors.h" line="93"/>
@@ -35327,13 +35327,13 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PublishDB ScoreComSection.qml" line="30"/>
-        <source>Publish to drumbearai.com</source>
-        <translation>发布到 drumbearai.com</translation>
+        <source>Publish to drumbear.cn</source>
+        <translation>发布到 drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/preferences/qml/DB Score/Preferences/internal/PublishDB ScoreComSection.qml" line="41"/>
-        <source>Always prompt to share on Audio.com after publishing to drumbearai.com</source>
-        <translation>发布到 drumbearai.com 后总是提示分享到 Audio.com</translation>
+        <source>Always prompt to share on Audio.com after publishing to drumbear.cn</source>
+        <translation>发布到 drumbear.cn 后总是提示分享到 Audio.com</translation>
     </message>
     <message>
         <location filename="../../src/preferences/qml/DB Score/Preferences/internal/RemoteControlSection.qml" line="31"/>
@@ -35769,8 +35769,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="130"/>
-        <source>Scores will appear here when you save a file to the cloud, or publish a score on &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;.</source>
-        <translation>当您将文件保存到云或在 &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; 上发布乐谱时，乐谱将会在此出现。</translation>
+        <source>Scores will appear here when you save a file to the cloud, or publish a score on &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;.</source>
+        <translation>当您将文件保存到云或在 &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; 上发布乐谱时，乐谱将会在此出现。</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="154"/>
@@ -35779,8 +35779,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="155"/>
-        <source>Log in or create a new account on &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; to view online scores.</source>
-        <translation>在 &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; 上登录或创建新账户以查看在线乐谱。</translation>
+        <source>Log in or create a new account on &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; to view online scores.</source>
+        <translation>在 &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; 上登录或创建新账户以查看在线乐谱。</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="218"/>
@@ -35808,7 +35808,7 @@ failed: %2</source>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="252"/>
         <source>Views</source>
         <comment>number of views</comment>
-        <extracomment>Stands for &quot;The number of times this score was viewed on drumbearai.com&quot;. Used as the header of this column in the scores list.</extracomment>
+        <extracomment>Stands for &quot;The number of times this score was viewed on drumbear.cn&quot;. Used as the header of this column in the scores list.</extracomment>
         <translation>视图</translation>
     </message>
     <message>
@@ -35892,8 +35892,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="162"/>
-        <source>Publish your finished scores on drumbearai.com</source>
-        <translation>在drumbearai.com上发布您的已作成的乐谱</translation>
+        <source>Publish your finished scores on drumbear.cn</source>
+        <translation>在drumbear.cn上发布您的已作成的乐谱</translation>
     </message>
     <message>
         <location filename="../../src/project/qml/DB Score/Project/ProjectUploadedDialog.qml" line="187"/>
@@ -36066,8 +36066,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1534"/>
-        <source>This score has become corrupted and contains errors. You can fix the errors manually, or save the score to your computer and get help for this issue on drumbearai.com.</source>
-        <translation>此乐谱已损坏且包含错误。您可以手动修复这些错误，或将乐谱保存到您的计算机里并到 drumbearai.com 上获取此问题的帮助。</translation>
+        <source>This score has become corrupted and contains errors. You can fix the errors manually, or save the score to your computer and get help for this issue on drumbear.cn.</source>
+        <translation>此乐谱已损坏且包含错误。您可以手动修复这些错误，或将乐谱保存到您的计算机里并到 drumbear.cn 上获取此问题的帮助。</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1542"/>
@@ -36087,13 +36087,13 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1574"/>
-        <source>You can continue saving it locally, although the file may become unusable. You can try to fix the errors manually, or get help for this issue on drumbearai.com.</source>
-        <translation>尽管该文件或将无法使用，但您仍然可以继续将其保存到本地。您可以尝试手动修复这些错误，或到 drumbearai.com 上获取此问题的帮助。</translation>
+        <source>You can continue saving it locally, although the file may become unusable. You can try to fix the errors manually, or get help for this issue on drumbear.cn.</source>
+        <translation>尽管该文件或将无法使用，但您仍然可以继续将其保存到本地。您可以尝试手动修复这些错误，或到 drumbear.cn 上获取此问题的帮助。</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1576"/>
-        <source>You can continue saving it locally, although the file may become unusable. To preserve your score, revert to the last saved version, or fix the errors manually. You can also get help for this issue on drumbearai.com.</source>
-        <translation>尽管该文件或将无法使用，但您仍然可以继续将其保存到本地。为了妥善地保留您的乐谱，请恢复它到上次保存的版本，或手动修复错误。您也可以到 drumbearai.com 上获取此问题的帮助。</translation>
+        <source>You can continue saving it locally, although the file may become unusable. To preserve your score, revert to the last saved version, or fix the errors manually. You can also get help for this issue on drumbear.cn.</source>
+        <translation>尽管该文件或将无法使用，但您仍然可以继续将其保存到本地。为了妥善地保留您的乐谱，请恢复它到上次保存的版本，或手动修复错误。您也可以到 drumbear.cn 上获取此问题的帮助。</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1584"/>
@@ -36107,8 +36107,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1626"/>
-        <source>This score is corrupted. You can get help for this issue on drumbearai.com.</source>
-        <translation>该乐谱已损坏。您可在drumbearai.com上获取对于此问题的帮助。</translation>
+        <source>This score is corrupted. You can get help for this issue on drumbear.cn.</source>
+        <translation>该乐谱已损坏。您可在drumbear.cn上获取对于此问题的帮助。</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1629"/>
@@ -36145,8 +36145,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1788"/>
-        <source>This file was saved using a newer version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; to obtain the latest version.</source>
-        <translation>此文件使用 DB Score 的新版本保存。请访问 &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; 以获取最新版本。</translation>
+        <source>This file was saved using a newer version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; to obtain the latest version.</source>
+        <translation>此文件使用 DB Score 的新版本保存。请访问 &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; 以获取最新版本。</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1797"/>
@@ -36160,8 +36160,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1814"/>
-        <source>Get help for this issue on drumbearai.com.</source>
-        <translation>在drumbearai.com上获取有关此问题的帮助。</translation>
+        <source>Get help for this issue on drumbear.cn.</source>
+        <translation>在drumbear.cn上获取有关此问题的帮助。</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1836"/>
@@ -36542,8 +36542,8 @@ failed: %2</source>
             <translation>打印工程</translation>
         </message>
         <message>
-            <source>Publish the project to drumbearai.com</source>
-            <translation>将工程发布到 drumbearai.com</translation>
+            <source>Publish the project to drumbear.cn</source>
+            <translation>将工程发布到 drumbear.cn</translation>
         </message>
         <message>
             <source>Save a copy of the project</source>
@@ -36593,7 +36593,7 @@ failed: %2</source>
         <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="186"/>
         <location filename="../../src/project/qml/DB Score/Project/SaveToCloudDialog.qml" line="199"/>
         <source>Visibility</source>
-        <extracomment>visibility of a score on drumbearai.com: private, public or unlisted</extracomment>
+        <extracomment>visibility of a score on drumbear.cn: private, public or unlisted</extracomment>
         <translation>公开性设置</translation>
     </message>
     <message>
@@ -36627,30 +36627,30 @@ failed: %2</source>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="450"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="456"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="462"/>
-        <source>drumbearai.com returned an error code: %1.</source>
-        <extracomment>%1 will be replaced with the error code that drumbearai.com returned; this might contain english text that is deliberately not translated</extracomment>
-        <translation>drumbearai.com 返回了错误代码：%1。</translation>
+        <source>drumbear.cn returned an error code: %1.</source>
+        <extracomment>%1 will be replaced with the error code that drumbear.cn returned; this might contain english text that is deliberately not translated</extracomment>
+        <translation>drumbear.cn 返回了错误代码：%1。</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="468"/>
-        <source>drumbearai.com returned an unknown error code: %1.</source>
-        <extracomment>%1 will be replaced with the error code that drumbearai.com returned, which is a number.</extracomment>
-        <translation>drumbearai.com返回了未知的错误代码：%1。</translation>
+        <source>drumbear.cn returned an unknown error code: %1.</source>
+        <extracomment>%1 will be replaced with the error code that drumbear.cn returned, which is a number.</extracomment>
+        <translation>drumbear.cn返回了未知的错误代码：%1。</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="471"/>
-        <source>drumbearai.com returned an unknown error code.</source>
-        <translation>drumbearai.com返回了未知的错误代码。</translation>
+        <source>drumbear.cn returned an unknown error code.</source>
+        <translation>drumbear.cn返回了未知的错误代码。</translation>
     </message>
     <message>
-        <source>Please try again later, or get help for this problem on drumbearai.com.</source>
-        <translation>请稍后再试，或在drumbearai.com上获取此问题的帮助。</translation>
+        <source>Please try again later, or get help for this problem on drumbear.cn.</source>
+        <translation>请稍后再试，或在drumbear.cn上获取此问题的帮助。</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="477"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="609"/>
-        <source>Please try again later, or get help for this problem on drumbearai.com.</source>
-        <translation>请稍后再试，或在 drumbearai.com 上获取此问题的帮助。</translation>
+        <source>Please try again later, or get help for this problem on drumbear.cn.</source>
+        <translation>请稍后再试，或在 drumbear.cn 上获取此问题的帮助。</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="493"/>
@@ -36660,8 +36660,8 @@ failed: %2</source>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="496"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="563"/>
-        <source>Your drumbearai.com account needs to be verified first. Please activate your account via the link in the activation email.</source>
-        <translation>需要先验证您的drumbearai.com账户。请通过激活电子邮件中的链接激活您的账户。</translation>
+        <source>Your drumbear.cn account needs to be verified first. Please activate your account via the link in the activation email.</source>
+        <translation>需要先验证您的drumbear.cn账户。请通过激活电子邮件中的链接激活您的账户。</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="500"/>
@@ -36676,8 +36676,8 @@ failed: %2</source>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="517"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="604"/>
-        <source>Could not connect to &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;. Please check your internet connection or try again later.</source>
-        <translation>无法连接到 &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;。请检查您的互联网连接或稍后再尝试。</translation>
+        <source>Could not connect to &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;. Please check your internet connection or try again later.</source>
+        <translation>无法连接到 &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;。请检查您的互联网连接或稍后再尝试。</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="522"/>
@@ -36731,8 +36731,8 @@ failed: %2</source>
     <message>
         <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="190"/>
         <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="398"/>
-        <source>Log in or create a free account on drumbearai.com to convert a file.</source>
-        <translation>登录到 drumbearai.com 或创建一个免费账户即可转换文件。</translation>
+        <source>Log in or create a free account on drumbear.cn to convert a file.</source>
+        <translation>登录到 drumbear.cn 或创建一个免费账户即可转换文件。</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="216"/>
@@ -36754,8 +36754,8 @@ failed: %2</source>
         <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="269"/>
         <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="340"/>
         <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="703"/>
-        <source>Unable to connect to drumbearai.com</source>
-        <translation>无法连接到drumbearai.com</translation>
+        <source>Unable to connect to drumbear.cn</source>
+        <translation>无法连接到drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="270"/>
@@ -37509,7 +37509,7 @@ failed: %2</source>
     <message>
         <location filename="../../src/project/qml/DB Score/Project/internal/Export/exportdialogmodel.cpp" line="117"/>
         <source>Braille (basic bar-over-bar)</source>
-        <extracomment>Meaning like &quot;measure-over-measure&quot;, but called &quot;bar-over-bar&quot; even in US English. Not to be confused with &quot;bar-by-bar&quot; format. See https://handbook.drumbearai.com/file-management/file-export#braille</extracomment>
+        <extracomment>Meaning like &quot;measure-over-measure&quot;, but called &quot;bar-over-bar&quot; even in US English. Not to be confused with &quot;bar-by-bar&quot; format. See https://handbook.drumbear.cn/file-management/file-export#braille</extracomment>
         <translation>盲文（基本小节堆叠模）</translation>
     </message>
     <message>
@@ -38171,8 +38171,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/appshell/qml/DB Score/AppShell/PublishPage/publishtoolbarmodel.cpp" line="48"/>
-        <source>Share this score and its audio on drumbearai.com</source>
-        <translation>将此乐谱及其音频在drumbearai.com上分享</translation>
+        <source>Share this score and its audio on drumbear.cn</source>
+        <translation>将此乐谱及其音频在drumbear.cn上分享</translation>
     </message>
     <message>
         <location filename="../../src/appshell/qml/DB Score/AppShell/PublishPage/publishtoolbarmodel.cpp" line="49"/>
@@ -38196,8 +38196,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/cloudsmodel.cpp" line="185"/>
-        <source>Publish to drumbearai.com</source>
-        <translation>发布到drumbearai.com</translation>
+        <source>Publish to drumbear.cn</source>
+        <translation>发布到drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/cloudsmodel.cpp" line="189"/>
@@ -38274,13 +38274,13 @@ failed: %2</source>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="235"/>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1034"/>
-        <source>Log in to drumbearai.com to save this score to the cloud.</source>
-        <translation>登录drumbearai.com以将此乐谱保存到云端。</translation>
+        <source>Log in to drumbear.cn to save this score to the cloud.</source>
+        <translation>登录drumbear.cn以将此乐谱保存到云端。</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="236"/>
-        <source>Log in to drumbearai.com to publish this score.</source>
-        <translation>登录到drumbearai.com以发布此乐谱。</translation>
+        <source>Log in to drumbear.cn to publish this score.</source>
+        <translation>登录到drumbear.cn以发布此乐谱。</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="357"/>
@@ -38300,8 +38300,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="361"/>
-        <source>All saved changes will be publicly visible on drumbearai.com. If you want to make frequent changes, we recommend saving this score privately until you’re ready to share it to the world.</source>
-        <translation>所有既存更改都将在drumbearai.com上公开可见。若您想经常更改此谱，我们建议将其保存为私密，直到其准备好问世。</translation>
+        <source>All saved changes will be publicly visible on drumbear.cn. If you want to make frequent changes, we recommend saving this score privately until you’re ready to share it to the world.</source>
+        <translation>所有既存更改都将在drumbear.cn上公开可见。若您想经常更改此谱，我们建议将其保存为私密，直到其准备好问世。</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="391"/>
@@ -38310,8 +38310,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="401"/>
-        <source>Unable to connect to drumbearai.com</source>
-        <translation>无法连接到drumbearai.com</translation>
+        <source>Unable to connect to drumbear.cn</source>
+        <translation>无法连接到drumbear.cn</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="402"/>
@@ -38391,8 +38391,8 @@ failed: %2</source>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="466"/>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="559"/>
-        <source>Log in or create a free account on drumbearai.com to open this score.</source>
-        <translation>在 drumbearai.com 上登录或创建一个免费账户以打开此乐谱。</translation>
+        <source>Log in or create a free account on drumbear.cn to open this score.</source>
+        <translation>在 drumbear.cn 上登录或创建一个免费账户以打开此乐谱。</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1401"/>
@@ -38401,8 +38401,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1404"/>
-        <source>All saved changes will now update to the cloud. You can manage this file in the score manager on drumbearai.com.</source>
-        <translation>所有既存更改现在都会更新到云端。您能在 drumbearai.com 上的乐谱管理器中管理此文件。</translation>
+        <source>All saved changes will now update to the cloud. You can manage this file in the score manager on drumbear.cn.</source>
+        <translation>所有既存更改现在都会更新到云端。您能在 drumbear.cn 上的乐谱管理器中管理此文件。</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1480"/>
@@ -40309,8 +40309,8 @@ failed: %2</source>
     </message>
     <message>
         <location filename="../../src/framework/update/internal/appupdatescenario.cpp" line="135"/>
-        <source>You already have the latest version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt; for news on what’s coming next.</source>
-        <translation>您已拥有最新版本的DB Score。请访问&lt;a href=&quot;%1&quot;&gt;drumbearai.com&lt;/a&gt;了解更多前瞻性内容。</translation>
+        <source>You already have the latest version of DB Score. Please visit &lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt; for news on what’s coming next.</source>
+        <translation>您已拥有最新版本的DB Score。请访问&lt;a href=&quot;%1&quot;&gt;drumbear.cn&lt;/a&gt;了解更多前瞻性内容。</translation>
     </message>
     <message>
         <location filename="../../src/framework/update/internal/appupdatescenario.cpp" line="142"/>
@@ -40347,6 +40347,12 @@ failed: %2</source>
         <source>Downloading DB Score %1</source>
         <extracomment>Means that the download is currently in progress. %1 will be replaced by the version number of the version that is being downloaded.</extracomment>
         <translation>正在下载DB Score %1</translation>
+    </message>
+    <message>
+        <location filename="../../src/framework/update/internal/updatecommandsregister.cpp" line="34"/>
+        <location filename="../../src/framework/update/internal/appupdatescenario.cpp" line="178"/>
+        <source>Check for update</source>
+        <translation>检查更新</translation>
     </message>
 </context>
 <context>

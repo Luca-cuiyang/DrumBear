@@ -25,8 +25,8 @@ import MuseScore 3.0
 
 MuseScore {
     version: "4.7"
-    title: qsTr("Tuning and temperaments")
-    description: qsTr("Apply various temperaments and tunings")
+    title: qsTr("调音与律制")
+    description: qsTr("应用各种律制与调音")
     pluginType: "dialog"
     categoryCode: "playback"
     thumbnailName: "modal_tuning.png"
@@ -48,11 +48,11 @@ MuseScore {
      */
     function readDefaults() {
         return [
-            { "id": "separatorLine", "name": qsTr("Western tuning systems") },
-            { "id": "w01",      "name": qsTr("Equal"),                          "offsets": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],                                                   "root": 0, "pure": 0, "globalOffset": 0 },
-            { "id": "w02",      "name": qsTr("Pure I-IV-V"),                    "offsets": [0.0, 2.0, 3.9, -15.6, -13.7, -11.7, -9.8, -7.8, 13.7, 15.6, 17.6, -2.0],               "root": 0, "pure": 0, "globalOffset": 0 },
-            { "id": "w03",      "name": qsTr("Pure I-II-V"),                    "offsets": [0.0, 2.0, 3.9, 5.9, -13.7, -11.7, -9.8, -7.8, 0.0, 15.6, 17.6, 19.6],                  "root": 0, "pure": 0, "globalOffset": 0 },
-            { "id": "w04",      "name": qsTr("Pythagorean"),                    "offsets": [0.0, 2.0, 3.9, 5.9, 7.8, 9.8, 11.7, 13.7, 15.6, -5.9, -3.9, -2.0],                     "root": 0, "pure": 0, "globalOffset": 0 },
+            { "id": "separatorLine", "name": qsTr("西方律制") },
+            { "id": "w01",      "name": qsTr("十二平均律"),                          "offsets": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],                                                   "root": 0, "pure": 0, "globalOffset": 0 },
+            { "id": "w02",      "name": qsTr("纯律 I-IV-V"),                    "offsets": [0.0, 2.0, 3.9, -15.6, -13.7, -11.7, -9.8, -7.8, 13.7, 15.6, 17.6, -2.0],               "root": 0, "pure": 0, "globalOffset": 0 },
+            { "id": "w03",      "name": qsTr("纯律 I-II-V"),                    "offsets": [0.0, 2.0, 3.9, 5.9, -13.7, -11.7, -9.8, -7.8, 0.0, 15.6, 17.6, 19.6],                  "root": 0, "pure": 0, "globalOffset": 0 },
+            { "id": "w04",      "name": qsTr("毕达哥拉斯律"),                    "offsets": [0.0, 2.0, 3.9, 5.9, 7.8, 9.8, 11.7, 13.7, 15.6, -5.9, -3.9, -2.0],                     "root": 0, "pure": 0, "globalOffset": 0 },
             { "id": "w05",      "name": "Aaron",                                "offsets": [0, -3.5, -7, -10.5, -14, -17.5, -21, -24.5, -28, -31.5, -35, -38.5],                   "root": 0, "pure": 0, "globalOffset": 0 },
             { "id": "w06",      "name": "Silberman",                            "offsets": [0, -1.7, -3.3, -5, -6.7, -8.3, -10, -11.7, -13.3, -15, -16.7, -18.3],                  "root": 0, "pure": 0, "globalOffset": 0 },
             { "id": "w07",      "name": "Salinas",                              "offsets": [0, -5.3, -10.7, -16, -21.3, -26.7, -32, -37.3, -42.7, -48, -53.3, -58.7],              "root": 0, "pure": 0, "globalOffset": 0 },
@@ -60,35 +60,35 @@ MuseScore {
             { "id": "w09",      "name": "Vallotti",                             "offsets": [0.0, -2.0, -3.9, -5.9, -7.8, -9.8, -7.8, -5.9, -3.9, -2.0, 0.0, 2.0],                  "root": 0, "pure": 0, "globalOffset": 0 },
             { "id": "w10",      "name": "Werckmeister III",                     "offsets": [0.0, -3.9, -7.8, -11.7, -9.8, -7.8, -11.7, -9.8, -7.8, -5.9, -3.9, -2.0],              "root": 0, "pure": 0, "globalOffset": 0 },
             { "id": "w11",      "name": "Marpurg",                              "offsets": [0, 2, 4, 6, 0, 2, 4, 6, 0, 2, 4, 6],                                                   "root": 0, "pure": 0, "globalOffset": 0 },
-            { "id": "w12",      "name": qsTr("Just"),                           "offsets": [0, 2, 4, -16, -14, -12, -10, -30, -28, 16, 18, -2],                                    "root": 0, "pure": 0, "globalOffset": 0 },
-            { "id": "w13",      "name": qsTr("Just Small Ratios"),              "offsets": [0.0, 2.0, 3.9, -15.6, -13.7, -11.7, -17.5, 19.4, 13.7, 15.6, -66.9, -2.0],             "root": 0, "pure": 0, "globalOffset": 0 },
-            { "id": "w14",      "name": qsTr("Just Septimal m3"),               "offsets": [0.0, 2.0, 3.9, -15.6, -13.7, -50.6, -17.5, 28.3, 13.7, -33.1, -66.9, -2.0],            "root": 0, "pure": 0, "globalOffset": 0 },
-            { "id": "w15",      "name": qsTr("Just Septimal M3"),               "offsets": [0.0, 2.0, 3.9, -15.6, 35.1, -50.6, -17.5, 28.3, 13.7, -33.1, -66.9, -2.0],             "root": 0, "pure": 0, "globalOffset": 0 },
-            { "id": "w16",      "name": qsTr("Mean semitone"),                  "offsets": [0, -3.5, -7, -10.5, -14, 3.5, 0, -3.5, -7, -10.5, -14, -17.5],                         "root": 0, "pure": 0, "globalOffset": 0 },
+            { "id": "w12",      "name": qsTr("纯律（自然律）"),                           "offsets": [0, 2, 4, -16, -14, -12, -10, -30, -28, 16, 18, -2],                                    "root": 0, "pure": 0, "globalOffset": 0 },
+            { "id": "w13",      "name": qsTr("纯律·小整数比"),              "offsets": [0.0, 2.0, 3.9, -15.6, -13.7, -11.7, -17.5, 19.4, 13.7, 15.6, -66.9, -2.0],             "root": 0, "pure": 0, "globalOffset": 0 },
+            { "id": "w14",      "name": qsTr("纯律·七度小三度"),               "offsets": [0.0, 2.0, 3.9, -15.6, -13.7, -50.6, -17.5, 28.3, 13.7, -33.1, -66.9, -2.0],            "root": 0, "pure": 0, "globalOffset": 0 },
+            { "id": "w15",      "name": qsTr("纯律·七度大三度"),               "offsets": [0.0, 2.0, 3.9, -15.6, 35.1, -50.6, -17.5, 28.3, 13.7, -33.1, -66.9, -2.0],             "root": 0, "pure": 0, "globalOffset": 0 },
+            { "id": "w16",      "name": qsTr("平均半音"),                  "offsets": [0, -3.5, -7, -10.5, -14, 3.5, 0, -3.5, -7, -10.5, -14, -17.5],                         "root": 0, "pure": 0, "globalOffset": 0 },
             { "id": "w17",      "name": "Grammateus",                           "offsets": [0, 2, 4, 6, 8, 10, 12, 2, 4, 6, 8, 10],                                                "root": 0, "pure": 0, "globalOffset": 0 },
-            { "id": "w18",      "name": qsTr("French"),                         "offsets": [0, -2.5, -5, -7.5, -10, -12.5, -13, -13, -11, -6, -1.5, 2.5],                          "root": 0, "pure": 0, "globalOffset": 0 },
-            { "id": "w19",      "name": qsTr("Tempérament Ordinaire"),          "offsets": [0, -3.5, -7, -10.5, -14, -17.5, -18.2, -19, -17, -10.5, -3.5, 3.5],                    "root": 0, "pure": 0, "globalOffset": 0 },
+            { "id": "w18",      "name": qsTr("法国律制"),                         "offsets": [0, -2.5, -5, -7.5, -10, -12.5, -13, -13, -11, -6, -1.5, 2.5],                          "root": 0, "pure": 0, "globalOffset": 0 },
+            { "id": "w19",      "name": qsTr("普通律制（法国古律）"),          "offsets": [0, -3.5, -7, -10.5, -14, -17.5, -18.2, -19, -17, -10.5, -3.5, 3.5],                    "root": 0, "pure": 0, "globalOffset": 0 },
             { "id": "w20",      "name": "Rameau",                               "offsets": [0.0, -3.4, -6.8, -10.3, -13.7, -17.1, -15.2, -13.2, -11.2, -2.2, 6.8, 3.4],            "root": 0, "pure": 0, "globalOffset": 0 },
-            { "id": "w21",      "name": qsTr("Irr Fr 17e"),                     "offsets": [-17, -11, -6, -9, -12, -15, -18, -21, -24, -27, -30, -33],                             "root": 0, "pure": 0, "globalOffset": 0 },
+            { "id": "w21",      "name": qsTr("不规则法国 17 律"),                     "offsets": [-17, -11, -6, -9, -12, -15, -18, -21, -24, -27, -30, -33],                             "root": 0, "pure": 0, "globalOffset": 0 },
             { "id": "w22",      "name": "Bach/Lehman",                          "offsets": [-5.9, -7.9, -9.8, -11.8, -13.7, -11.8, -9.8, -7.9, -7.9, -7.9, -7.9, -3.9],            "root": 0, "pure": 0, "globalOffset": 0 },
             { "id": "w23",      "name": "Lehman",                               "offsets": [0.0, -1.6, -3.3, -4.9, -6.5, -4.6, -2.6, -0.7, -0.5, -0.5, -0.3, 1.6],                 "root": 0, "pure": 0, "globalOffset": 0 },
             { "id": "w24",      "name": "Prinz",                                "offsets": [0.0, -3.4, -6.8, -10.3, -13.7, -11.7, -11.7, -9.8, -7.8, -5.9, -3.9, -2.0],            "root": 0, "pure": 0, "globalOffset": 0 },
-            { "id": "w25",      "name": qsTr("Neidhardt (Kleine Stadt)"),       "offsets": [0.0, -2.0, -3.9, -5.9, -7.8, -7.8, -7.8, -5.9, -3.9, -3.9, -3.9, -2.0],                "root": 0, "pure": 0, "globalOffset": 0 },
-            { "id": "w26",      "name": qsTr("Victorian (1885)"),               "offsets": [0.0, 0.0, -2.0, -5.0, -7.0, -6.0, -5.0, -4.0, -3.0, -2.0, -1.0, 0.0],                  "root": 0, "pure": 0, "globalOffset": 0 },
-            { "id": "w27",      "name": qsTr("Meantone 1/4-comma"),             "offsets": [0, -3.5, -6.9, -10.3, -13.7, -17.1, -20.6, -24, -27.4, 10.2, 6.8, 3.4],                "root": 0, "pure": 0, "globalOffset": 0 },
-            { "id": "w28",      "name": qsTr("Meantone (1/4) 5 flats"),         "offsets": [0, -3.5, -6.9, -10.3, -13.7, -17.1, 20.5, 17.1, 13.7, 10.2, 6.8, 3.4],                 "root": 0, "pure": 0, "globalOffset": 0 },
-            { "id": "w29",      "name": qsTr("Meantone (1/4) 5 sharps"),        "offsets": [0, -3.5, -6.9, -10.3, -13.7, -17.1, -20.6, -24, -27.4, -30.8, -34.3, 3.4],             "root": 0, "pure": 0, "globalOffset": 0 },
-            { "id": "w30",      "name": qsTr("Meantone (1/4) 7 flats"),         "offsets": [0.0, -3.4, -6.8, -10.3, 27.4, 24.0, 20.5, 17.1, 13.7, 10.3, 6.8, 3.4],                 "root": 0, "pure": 0, "globalOffset": 0 },
-            { "id": "w31",      "name": qsTr("Meantone (1/4) 7 sharps"),        "offsets": [41.1, -3.4, -6.8, -10.3, -13.7, -17.1, -20.5, -24.0, -27.4, -30.8, -34.2, -37.6],      "root": 0, "pure": 0, "globalOffset": 0 },
-            { "id": "w32",      "name": qsTr("Meantone 1/5-comma"),             "offsets": [0, -2.3, -4.7, -7, -9.3, -11.7, -14, -16.4, -18.7, 7.1, 4.7, 2.4],                     "root": 0, "pure": 0, "globalOffset": 0 },
-            { "id": "w33",      "name": qsTr("Meantone 1/6-comma"),             "offsets": [0, -1.6, -3.3, -4.9, -6.5, -8.2, -9.8, -11.4, -13, 4.9, 3.2, 1.6],                     "root": 0, "pure": 0, "globalOffset": 0 },
+            { "id": "w25",      "name": qsTr("奈德哈特律（小城市）"),       "offsets": [0.0, -2.0, -3.9, -5.9, -7.8, -7.8, -7.8, -5.9, -3.9, -3.9, -3.9, -2.0],                "root": 0, "pure": 0, "globalOffset": 0 },
+            { "id": "w26",      "name": qsTr("维多利亚律（1885）"),               "offsets": [0.0, 0.0, -2.0, -5.0, -7.0, -6.0, -5.0, -4.0, -3.0, -2.0, -1.0, 0.0],                  "root": 0, "pure": 0, "globalOffset": 0 },
+            { "id": "w27",      "name": qsTr("中庸全音律（1/4 音差）"),             "offsets": [0, -3.5, -6.9, -10.3, -13.7, -17.1, -20.6, -24, -27.4, 10.2, 6.8, 3.4],                "root": 0, "pure": 0, "globalOffset": 0 },
+            { "id": "w28",      "name": qsTr("中庸全音律（1/4）五降"),         "offsets": [0, -3.5, -6.9, -10.3, -13.7, -17.1, 20.5, 17.1, 13.7, 10.2, 6.8, 3.4],                 "root": 0, "pure": 0, "globalOffset": 0 },
+            { "id": "w29",      "name": qsTr("中庸全音律（1/4）五升"),        "offsets": [0, -3.5, -6.9, -10.3, -13.7, -17.1, -20.6, -24, -27.4, -30.8, -34.3, 3.4],             "root": 0, "pure": 0, "globalOffset": 0 },
+            { "id": "w30",      "name": qsTr("中庸全音律（1/4）七降"),         "offsets": [0.0, -3.4, -6.8, -10.3, 27.4, 24.0, 20.5, 17.1, 13.7, 10.3, 6.8, 3.4],                 "root": 0, "pure": 0, "globalOffset": 0 },
+            { "id": "w31",      "name": qsTr("中庸全音律（1/4）七升"),        "offsets": [41.1, -3.4, -6.8, -10.3, -13.7, -17.1, -20.5, -24.0, -27.4, -30.8, -34.2, -37.6],      "root": 0, "pure": 0, "globalOffset": 0 },
+            { "id": "w32",      "name": qsTr("中庸全音律（1/5 音差）"),             "offsets": [0, -2.3, -4.7, -7, -9.3, -11.7, -14, -16.4, -18.7, 7.1, 4.7, 2.4],                     "root": 0, "pure": 0, "globalOffset": 0 },
+            { "id": "w33",      "name": qsTr("中庸全音律（1/6 音差）"),             "offsets": [0, -1.6, -3.3, -4.9, -6.5, -8.2, -9.8, -11.4, -13, 4.9, 3.2, 1.6],                     "root": 0, "pure": 0, "globalOffset": 0 },
             { "id": "w34",      "name": "Werckmeister III",                     "offsets": [0, -3.9, -7.8, -11.7, -9.7, -7.8, -11.7, -9.7, -7.8, -5.8, -3.9, -1.9],                "root": 0, "pure": 0, "globalOffset": 0 },
             { "id": "w35",      "name": "Kirnberger III",                       "offsets": [0, -3.5, -6.9, -10.3, -13.7, -11.8, -9.8, -9.8, -7.9, -5.9, -3.9, -2],                 "root": 0, "pure": 0, "globalOffset": 0 },
             { "id": "w36",      "name": "Young I",                              "offsets": [0.0, -2.1, -4.2, -6.3, -8.3, -8.2, -8.1, -6.1, -4.2, -2.2, -0.2, -0.1],                "root": 0, "pure": 0, "globalOffset": 0 },
             { "id": "w37",      "name": "Young II",                             "offsets": [0.0, -2.0, -3.9, -5.9, -7.8, -9.8, -11.7, -9.8, -7.8, -5.9, -3.9, -2.0],               "root": 0, "pure": 0, "globalOffset": 0 },
             { "id": "w38",      "name": "Kellner",                              "offsets": [0.0, -2.7, -5.5, -8.2, -10.9, -13.7, -11.7, -9.8, -7.8, -5.9, -3.9, -2.0],             "root": 0, "pure": 0, "globalOffset": 0 },
-            { "id": "w39",      "name": qsTr("Simple Ratios"),                  "offsets": [0, 2, 31.2, -15.6, -13.7, -28.3, -17.5, 38.6, 13.7, 15.6, -31.2, -2],                  "root": 0, "pure": 0, "globalOffset": 0 },
-            { "id": "w40",      "name": qsTr("Alternate Ratios"),               "offsets": [0, 2, 3.9, -15.6, -13.7, -11.7, 17.5, 28.3, 13.7, 15.6, 17.6, -2],                     "root": 0, "pure": 0, "globalOffset": 0 },
+            { "id": "w39",      "name": qsTr("简单整数比"),                  "offsets": [0, 2, 31.2, -15.6, -13.7, -28.3, -17.5, 38.6, 13.7, 15.6, -31.2, -2],                  "root": 0, "pure": 0, "globalOffset": 0 },
+            { "id": "w40",      "name": qsTr("替代整数比"),               "offsets": [0, 2, 3.9, -15.6, -13.7, -11.7, 17.5, 28.3, 13.7, 15.6, 17.6, -2],                     "root": 0, "pure": 0, "globalOffset": 0 },
             { "id": "w41",      "name": "Fernando Martin 1/45 comma",           "offsets": [0.0, -2.7, -5.0, -6.6, -7.8, -8.5, -8.6, -8.2, -7.3, -5.9, -3.9, -2.0],                "root": 0, "pure": 0, "globalOffset": 0 },
             { "id": "w42",      "name": "C Cm D♭ Dm E♭ E♭m Em F Fm A♭ Am B♭",    "offsets": [0, 2, -17.6, -15.6, -13.7, -11.7, 31.3, 11.7, 13.7, 15.6, 17.6, -2],                   "root": 0, "pure": 0, "globalOffset": 0 },
             { "id": "w43",      "name": "C Cm C♯m D Dm E Em F F♯m A Am B♭",     "offsets": [0, 2, -17.6, -15.6, -13.7, -11.7, -31.3, -29.3, -27.4, 15.6, -3.9, -2],                 "root": 0, "pure": 0, "globalOffset": 0 },
@@ -97,7 +97,7 @@ MuseScore {
             { "id": "w46",      "name": "C Cm D Dm E♭ Em F♯m G Gm A♭ B♭ Bm",    "offsets": [0, 2, 3.9, 5.9, -13.7, -11.7, -9.8, -7.8, 13.7, 15.6, 17.6, 19.6],                      "root": 0, "pure": 0, "globalOffset": 0 },
             { "id": "w47",      "name": "C D E♭m E Em F♯ F♯m G G♯m B♭m B Bm",   "offsets": [0, 2, 3.9, 5.9, -13.7, -11.7, -9.8, -7.8, -27.4, -25.4, -23.5, -21.5],                  "root": 0, "pure": 0, "globalOffset": 0 },
             
-            { "id": "separatorLine", "name": qsTr("Arabic modal systems") },
+            { "id": "separatorLine", "name": qsTr("阿拉伯调式律制") },
             { "id": "a01",      "name": "Melodic 1♯ 2♭",                        "offsets": [0, 2, 3.9, 5.9, 7.8, 9.8, -9.8, -7.8, -7.8, -5.9, -3.9, -2],          "root": 0, "pure": 0, "globalOffset": 0 },
             { "id": "a02",      "name": "Harmonic 1♯ 2♭",                       "offsets": [0, 2, 3.9, -15.6, -13.7, -11.7, -9.8, 11.7, 13.7, 15.6, 17.6, -2],    "root": 0, "pure": 0, "globalOffset": 0 },
             { "id": "a03",      "name": "Rast, Sikah",                          "offsets": [0, 2, 3.9, 5.9, -35.2, -33.2, -9.8, -7.8, -7.8, -25.4, -3.9, -2],     "root": 0, "pure": 0, "globalOffset": 0 },
@@ -123,12 +123,12 @@ MuseScore {
             { "id": "a23",      "name": "Sikah Baladi",                         "offsets": [0, 2, 3.9, 5.9, -35.2, -33.2, -9.8, 39.4, 41.4, -25.4, -3.9, -2],     "root": 0, "pure": 0, "globalOffset": 0 },
             { "id": "a24",      "name": "Iraq (Cadence)",                       "offsets": [0, 2, 3.9, 5.9, -56.7, -33.2, -31.3, -7.8, 13.7, -5.9, -23.5, -2],    "root": 0, "pure": 0, "globalOffset": 0 },
             
-            { "id": "separatorLine", "name": qsTr("Custom tunings") },
-            { "id": "c01",      "name": qsTr("Custom 1"),   "offsets": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "root": 0,  "pure": 0, "globalOffset": 0 },
-            { "id": "c02",      "name": qsTr("Custom 2"),   "offsets": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "root": 0,  "pure": 0, "globalOffset": 0 },
-            { "id": "c03",      "name": qsTr("Custom 3"),   "offsets": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "root": 0,  "pure": 0, "globalOffset": 0 },
-            { "id": "c04",      "name": qsTr("Custom 4"),   "offsets": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "root": 0,  "pure": 0, "globalOffset": 0 },
-            { "id": "c05",      "name": qsTr("Custom 5"),   "offsets": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "root": 0,  "pure": 0, "globalOffset": 0 }
+            { "id": "separatorLine", "name": qsTr("自定义律制") },
+            { "id": "c01",      "name": qsTr("自定义 1"),   "offsets": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "root": 0,  "pure": 0, "globalOffset": 0 },
+            { "id": "c02",      "name": qsTr("自定义 2"),   "offsets": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "root": 0,  "pure": 0, "globalOffset": 0 },
+            { "id": "c03",      "name": qsTr("自定义 3"),   "offsets": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "root": 0,  "pure": 0, "globalOffset": 0 },
+            { "id": "c04",      "name": qsTr("自定义 4"),   "offsets": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "root": 0,  "pure": 0, "globalOffset": 0 },
+            { "id": "c05",      "name": qsTr("自定义 5"),   "offsets": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "root": 0,  "pure": 0, "globalOffset": 0 }
         ]
     }
 
@@ -362,7 +362,7 @@ MuseScore {
         Row {
             spacing: defaultSpacing
             MU.StyledGroupBox {
-                title: qsTr("Tuning systems and temperaments")
+                title: qsTr("调音系统与律制")
                 width: tuningsFlickable.width + defaultSpacing + tuningsFlickable.visualScrollBarInset - tuningsFlickable.scrollBarThickness
                 height: configureRow.height
 
@@ -435,13 +435,13 @@ MuseScore {
 
             MU.StyledGroupBox {
                 id: configureRow
-                title: qsTr("Configure tuning")
+                title: qsTr("配置调音")
                 ColumnLayout {
                     id: configureRowColumn
                     spacing: defaultSpacing
                     RowLayout {
                         MU.StyledGroupBox {
-                            title: qsTr("Root note")
+                            title: qsTr("根音")
                             GridLayout {
                                 columns: 4
                                 anchors.margins: defaultSpacing
@@ -461,7 +461,7 @@ MuseScore {
                         }
 
                         MU.StyledGroupBox {
-                            title: qsTr("Pure tone")
+                            title: qsTr("纯音")
                             GridLayout {
                                 columns: 4
                                 anchors.margins: defaultSpacing
@@ -482,7 +482,7 @@ MuseScore {
                     }
 
                     MU.StyledGroupBox {
-                        title: qsTr("Pitch offsets")
+                        title: qsTr("音高偏移")
                         Layout.fillWidth: true
                         GridLayout {
                             columns: 4
@@ -526,7 +526,7 @@ MuseScore {
                     RowLayout {
                         spacing: defaultSpacing
                         MU.StyledTextLabel {
-                            text: qsTr("Global tuning offset:")
+                            text: qsTr("全局调音偏移：")
                             Layout.alignment: Qt.AlignVCenter
                         }
                         MU.IncrementalPropertyControl {
@@ -551,7 +551,7 @@ MuseScore {
                             Layout.fillWidth: true
                         }
                         MU.CheckBox {
-                            text: qsTr("Display pitches chromatically")
+                            text: qsTr("半音阶显示音高")
                             checked: chromatic
                             onClicked: {
                                 chromatic = !chromatic
@@ -606,7 +606,7 @@ MuseScore {
             MU.CheckBox {
                 Layout.fillWidth: true
                 id: annotateBox
-                text: qsTr("Annotate tunings in score")
+                text: qsTr("在乐谱中标注调音")
                 checked: false
                 onClicked: {
                     checked = !checked
@@ -633,7 +633,7 @@ MuseScore {
 
     MessageDialog {
         id: errorDialog
-        title: "Error"
+        title: "错误"
         onAccepted: {
             errorDialog.close()
             quit()
