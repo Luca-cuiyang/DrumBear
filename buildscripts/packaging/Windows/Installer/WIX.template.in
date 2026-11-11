@@ -41,7 +41,7 @@
             Description="安装程序需要先关闭正在运行的 DB Score。请保存好你的乐谱，然后点击“确定”继续安装。"
             CloseMessage="yes"
             RebootPrompt="no"
-            PromptToContinue="yes"
+            PromptToContinue="no"
             TerminateProcess="30" />
 
         <MajorUpgrade
