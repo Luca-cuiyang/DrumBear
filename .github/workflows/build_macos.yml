@@ -221,10 +221,14 @@ jobs:
 
     - name: Prepare universal FFmpeg libraries
       run: |
-        # The Qt SDK ships universal FFmpeg 7 libraries; point the bundler at them
+        # CI's Qt SDK does not ship FFmpeg dylibs. Fetch the universal FFmpeg 7 set
         # so the app can export MP4 on both Intel and Apple Silicon.
-        echo "DBSCORE_FFMPEG_DIR=${QT_ROOT_DIR}/lib" >> "$GITHUB_ENV"
-        ls -lh "${QT_ROOT_DIR}/lib"/libavcodec*.dylib || true
+        mkdir -p buildscripts/packaging/macOS/ffmpeg
+        for f in libavcodec.61.dylib libavformat.61.dylib libavutil.59.dylib libswscale.8.dylib libswresample.5.dylib; do
+          curl -fsSL --retry 3 "https://drumbear.cn/downloads/ffmpeg-mac/$f" -o "buildscripts/packaging/macOS/ffmpeg/$f"
+        done
+        echo "DBSCORE_FFMPEG_DIR=$GITHUB_WORKSPACE/buildscripts/packaging/macOS/ffmpeg" >> "$GITHUB_ENV"
+        ls -lh buildscripts/packaging/macOS/ffmpeg
 
     - parallel:
       - name: Generate _en.ts files
