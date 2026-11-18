@@ -39,7 +39,7 @@ DockPage {
     readonly property bool strictValid: currentReport.valid === true
 
     readonly property int currentStep:
-        transcription.completed ? 5
+        transcription.completed ? 6
         : transcription.reviewRequired ? 4
         : transcription.busy ? 2
         : (imagePaths.length > 0 || midiPath.length > 0) ? 2 : 1
@@ -927,7 +927,7 @@ DockPage {
                                                    : (index + 1) < root.currentStep ? "#E8F8F0" : "#F1F4F9"
                                             StyledTextLabel {
                                                 anchors.centerIn: parent
-                                                text: modelData.n
+                                                text: (index + 1) < root.currentStep ? "✓" : modelData.n
                                                 color: (index + 1) === root.currentStep ? "#FFFFFF"
                                                        : (index + 1) < root.currentStep ? "#278A5B" : "#94A1B6"
                                                 font: ui.theme.bodyBoldFont
@@ -965,8 +965,9 @@ DockPage {
 
                                 FlatButton {
                                     Layout.fillWidth: true
-                                    text: transcription.busy ? qsTr("停止") : qsTr("开始转谱")
-                                    accentButton: !transcription.busy
+                                    text: transcription.busy ? qsTr("停止")
+                                          : (transcription.completed ? qsTr("重新转谱") : qsTr("开始转谱"))
+                                    accentButton: !transcription.busy && !transcription.completed
                                     enabled: !transcription.busy
                                              && root.outputPath.length > 0
                                              && (root.imageMode ? root.imagePaths.length > 0 : root.midiPath.length > 0)
