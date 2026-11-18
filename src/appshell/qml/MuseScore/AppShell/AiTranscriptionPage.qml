@@ -138,8 +138,8 @@ DockPage {
         fileMode: FileDialog.OpenFiles
         nameFilters: [qsTr("鼓谱图片或 PDF (*.png *.jpg *.jpeg *.tif *.tiff *.bmp *.webp *.pdf)")]
         onAccepted: {
+            var urls = (typeof files !== "undefined") ? files : []
             var paths = []
-            var urls = fileUrls || []
             for (var i = 0; i < urls.length; ++i)
                 paths.push(root.pathText(urls[i]))
             root.imagePaths = paths
@@ -147,6 +147,9 @@ DockPage {
                 root.outputPath = root.suggestedOutput(paths[0])
                 if (!root.imageTitle)
                     root.imageTitle = root.suggestedTitle(paths[0])
+                transcription.showError("")
+            } else {
+                transcription.showError(qsTr("未读取到所选图片，请重试"))
             }
             transcription.reset()
         }
@@ -189,7 +192,7 @@ DockPage {
             id: contentColumn
             x: 48
             y: 32
-            width: Math.max(1, root.width - 96)
+            width: Math.max(1, scroller.width - 96)
             spacing: 18
 
             RowLayout {
