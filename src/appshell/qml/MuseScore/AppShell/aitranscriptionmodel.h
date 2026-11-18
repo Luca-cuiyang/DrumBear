@@ -11,6 +11,7 @@
 #include <QQmlEngine>
 #include <QStringList>
 #include <QTemporaryDir>
+#include <QTimer>
 #include <QVariantList>
 #include <QVariantMap>
 
@@ -144,6 +145,7 @@ private:
     void setOutputPath(const QString& value);
     void setSourceKind(const QString& value);
     void setReport(const QVariantMap& value);
+    void clearReviewState();
     bool loadReview(const QVariantMap& report);
     bool saveReview();
     bool applyReviewEvents(int measureNumber, const QVariantList& events);
@@ -169,16 +171,20 @@ private:
     QString resolvePdfToPpm() const;
     QString applicationExecutable() const;
     QString applicationResourcePath(const QString& relativePath) const;
+    QString pythonHomeFor(const QString& pythonPath) const;
     QString findInParents(const QString& relativePath) const;
     QString normalizedBpm(const QString& mode, const QString& value) const;
 
     QProcess m_process;
+    QTimer m_jobTimeoutTimer;
     std::unique_ptr<QTemporaryDir> m_jobDir;
     QString m_reportPath;
     QString m_statusBuffer;
+    int m_processGeneration = 0;
     bool m_busy = false;
     bool m_completed = false;
     bool m_cancelRequested = false;
+    bool m_timeoutRequested = false;
     QString m_statusText;
     QString m_logText;
     QString m_inputSummary;

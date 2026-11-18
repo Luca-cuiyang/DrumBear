@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import re
+import subprocess
 import tempfile
 import unittest
 import zipfile
@@ -1627,6 +1628,35 @@ class ImageToDbPipelineTests(unittest.TestCase):
                 Path("/tmp/out.pdf"),
             )
         self.assertEqual(run_once.call_count, 2)
+
+    def test_dbscore_exit_one_is_retried(self) -> None:
+        with patch.object(
+            run_pipeline,
+            "_run_dbscore_without_audio_once",
+            side_effect=[
+                RuntimeError("DB Score failed (1)"),
+                None,
+            ],
+        ) as run_once, patch.object(run_pipeline.time, "sleep"):
+            run_pipeline.run_dbscore_without_audio(
+                Path("/dbscore"),
+                ["-o", "/tmp/out.pdf", "/tmp/score.mscx"],
+                Path("/tmp/out.pdf"),
+            )
+        self.assertEqual(run_once.call_count, 2)
+
+    def test_pipeline_command_timeout_includes_stderr(self) -> None:
+        expired = subprocess.TimeoutExpired(
+            cmd=["slow-command"],
+            timeout=2,
+            stderr="still working",
+        )
+        with patch.object(run_pipeline.subprocess, "run", side_effect=expired):
+            with self.assertRaisesRegex(
+                RuntimeError,
+                "still working",
+            ):
+                run_pipeline.run(["slow-command"], timeout=2)
 
     def test_visual_proof_builds_side_by_side_page(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:

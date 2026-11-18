@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import subprocess
 import tempfile
 import unittest
 import zipfile
@@ -16,6 +17,19 @@ import visual_compare
 
 
 class ImageReviewTests(unittest.TestCase):
+    def test_command_timeout_is_reported_as_job_error(self) -> None:
+        expired = subprocess.TimeoutExpired(
+            cmd=["slow-command"],
+            timeout=1,
+            output="partial output",
+        )
+        with patch.object(ai_transcribe.subprocess, "run", side_effect=expired):
+            with self.assertRaisesRegex(
+                ai_transcribe.JobError,
+                "timed out after 1s",
+            ):
+                ai_transcribe.run(["slow-command"], timeout=1)
+
     def test_existing_manifest_keeps_its_layout_reference(self) -> None:
         self.assertEqual(
             ai_transcribe.template_layout_reference(

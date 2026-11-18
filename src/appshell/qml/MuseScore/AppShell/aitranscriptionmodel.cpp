@@ -49,21 +49,73 @@ static double fractionValue(const QString& value, bool* ok = nullptr)
     return valid ? numerator / denominator : 0.0;
 }
 
+static int jobTimeoutMilliseconds()
+{
+    bool ok = false;
+    const int configured = qEnvironmentVariableIntValue(
+        "DBSCORE_AI_JOB_TIMEOUT_MS",
+        &ok);
+    if (ok && configured >= 30000 && configured <= 4 * 60 * 60 * 1000) {
+        return configured;
+    }
+    return 30 * 60 * 1000;
+}
+
+static QString localizedJobError(const QString& value)
+{
+    const QString detail = value.trimmed();
+    if (detail.contains("No module named 'cv2'")) {
+        return QObject::tr("图片转谱运行库缺少 OpenCV，请安装完整程序包后重试");
+    }
+    if (detail.contains("No module named 'numpy'")) {
+        return QObject::tr("图片转谱运行库缺少 NumPy，请安装完整程序包后重试");
+    }
+    if (detail.contains("No module named 'PIL'")) {
+        return QObject::tr("图片转谱运行库缺少 Pillow，请安装完整程序包后重试");
+    }
+    if (detail.contains("Command timed out")) {
+        return QObject::tr("转谱命令超时，任务已停止；请查看日志后重试");
+    }
+    if (detail.contains("DB Score timed out")) {
+        return QObject::tr("DB Score 生成文件超时，请关闭其他乐谱窗口后重试");
+    }
+    if (detail.contains("DB Score failed")) {
+        return QObject::tr("DB Score 生成文件失败，请查看日志后重试");
+    }
+    return detail.left(1200);
+}
+
 AiTranscriptionModel::AiTranscriptionModel(QObject* parent)
     : QObject(parent), muse::Contextable(muse::iocCtxForQmlObject(this))
 {
+    m_jobTimeoutTimer.setSingleShot(true);
     m_process.setProcessChannelMode(QProcess::MergedChannels);
     m_process.setProcessEnvironment(QProcessEnvironment::systemEnvironment());
 
     connect(&m_process, &QProcess::readyReadStandardOutput, this, [this]() {
         readProcessOutput();
     });
-    connect(&m_process, &QProcess::readyReadStandardError, this, [this]() {
-        readProcessOutput();
+    connect(&m_jobTimeoutTimer, &QTimer::timeout, this, [this]() {
+        if (!busy() || m_process.state() == QProcess::NotRunning) {
+            return;
+        }
+        const int generation = m_processGeneration;
+        m_timeoutRequested = true;
+        setStatusText(tr("转谱超过 %1 分钟仍未完成，正在停止任务…")
+                          .arg(jobTimeoutMilliseconds() / 60000));
+        m_process.terminate();
+        QTimer::singleShot(3000, this, [this, generation]() {
+            if (generation == m_processGeneration
+                && m_process.state() != QProcess::NotRunning) {
+                m_process.kill();
+            }
+        });
     });
     connect(&m_process, &QProcess::errorOccurred, this, [this](QProcess::ProcessError error) {
         if (error == QProcess::FailedToStart) {
+            m_jobTimeoutTimer.stop();
             setBusy(false);
+            setCompleted(false);
             setStatusText(tr("无法启动 AI 转谱引擎：%1").arg(m_process.errorString()));
             appendLog(m_process.errorString());
         }
@@ -79,6 +131,7 @@ AiTranscriptionModel::AiTranscriptionModel(QObject* parent)
 
 AiTranscriptionModel::~AiTranscriptionModel()
 {
+    m_jobTimeoutTimer.stop();
     if (m_process.state() != QProcess::NotRunning) {
         m_process.kill();
         m_process.waitForFinished(1000);
@@ -337,7 +390,7 @@ bool AiTranscriptionModel::startImages(
 
 bool AiTranscriptionModel::setMeasureReviewed(int number, bool reviewed)
 {
-    if (!reviewRequired()) {
+    if (busy() || !reviewRequired()) {
         return false;
     }
     bool changed = false;
@@ -405,6 +458,9 @@ bool AiTranscriptionModel::updateReviewEvent(
     const QString& time,
     const QString& pitches)
 {
+    if (busy() || !reviewRequired()) {
+        return false;
+    }
     QVariantList events;
     int measureLength = 0;
     for (const QVariant& value : m_reviewMeasures) {
@@ -434,6 +490,9 @@ bool AiTranscriptionModel::addReviewEvent(
     const QString& time,
     const QString& pitches)
 {
+    if (busy() || !reviewRequired()) {
+        return false;
+    }
     QVariantList events;
     int measureLength = 0;
     for (const QVariant& value : m_reviewMeasures) {
@@ -454,6 +513,9 @@ bool AiTranscriptionModel::addReviewEvent(
 
 bool AiTranscriptionModel::deleteReviewEvent(int measureNumber, int eventIndex)
 {
+    if (busy() || !reviewRequired()) {
+        return false;
+    }
     QVariantList events;
     for (const QVariant& value : m_reviewMeasures) {
         const QVariantMap measure = value.toMap();
@@ -477,6 +539,9 @@ bool AiTranscriptionModel::updateReviewRest(
     const QString& voice,
     const QString& duration)
 {
+    if (busy() || !reviewRequired()) {
+        return false;
+    }
     QVariantList rests;
     int measureLength = 0;
     for (const QVariant& value : m_reviewMeasures) {
@@ -505,6 +570,9 @@ bool AiTranscriptionModel::addReviewRest(
     const QString& voice,
     const QString& duration)
 {
+    if (busy() || !reviewRequired()) {
+        return false;
+    }
     QVariantList rests;
     int measureLength = 0;
     for (const QVariant& value : m_reviewMeasures) {
@@ -525,6 +593,9 @@ bool AiTranscriptionModel::addReviewRest(
 
 bool AiTranscriptionModel::deleteReviewRest(int measureNumber, int restIndex)
 {
+    if (busy() || !reviewRequired()) {
+        return false;
+    }
     QVariantList rests;
     for (const QVariant& value : m_reviewMeasures) {
         const QVariantMap measure = value.toMap();
@@ -543,6 +614,9 @@ bool AiTranscriptionModel::deleteReviewRest(int measureNumber, int restIndex)
 
 bool AiTranscriptionModel::reflowReviewMeasure(int measureNumber)
 {
+    if (busy() || !reviewRequired()) {
+        return false;
+    }
     QVariantList events;
     for (const QVariant& value : m_reviewMeasures) {
         const QVariantMap measure = value.toMap();
@@ -573,6 +647,9 @@ bool AiTranscriptionModel::reflowReviewMeasure(int measureNumber)
 
 bool AiTranscriptionModel::updateReviewMeasureLength(int measureNumber, int beats)
 {
+    if (busy() || !reviewRequired()) {
+        return false;
+    }
     if (beats < 1 || beats > 16) {
         setStatusText(tr("拍数必须在 1 到 16 之间"));
         return false;
@@ -611,6 +688,10 @@ bool AiTranscriptionModel::updateReviewMeasureLength(int measureNumber, int beat
 bool AiTranscriptionModel::finalizeImageReview()
 {
     if (busy() || !reviewRequired()) {
+        return false;
+    }
+    if (m_reviewMeasureCount <= 0) {
+        setStatusText(tr("复核工程中没有可生成的小节"));
         return false;
     }
     if (m_reviewedMeasureCount != m_reviewMeasureCount) {
@@ -679,11 +760,15 @@ void AiTranscriptionModel::cancel()
     if (!busy()) {
         return;
     }
+    m_jobTimeoutTimer.stop();
+    const int generation = m_processGeneration;
     m_cancelRequested = true;
+    m_timeoutRequested = false;
     setStatusText(tr("正在停止转换任务…"));
     m_process.terminate();
-    QTimer::singleShot(3000, this, [this]() {
-        if (m_process.state() != QProcess::NotRunning) {
+    QTimer::singleShot(3000, this, [this, generation]() {
+        if (generation == m_processGeneration
+            && m_process.state() != QProcess::NotRunning) {
             m_process.kill();
         }
     });
@@ -691,6 +776,7 @@ void AiTranscriptionModel::cancel()
 
 void AiTranscriptionModel::reset()
 {
+    m_jobTimeoutTimer.stop();
     if (busy()) {
         cancel();
     }
@@ -701,6 +787,12 @@ void AiTranscriptionModel::reset()
     setOutputPath(QString());
     setSourceKind(QString());
     setReport({});
+    clearReviewState();
+    m_reportPath.clear();
+}
+
+void AiTranscriptionModel::clearReviewState()
+{
     m_reviewRequired = false;
     m_reviewProjectPath.clear();
     m_reviewPath.clear();
@@ -715,7 +807,6 @@ void AiTranscriptionModel::reset()
     m_selectedReviewMeasure = 0;
     m_selectedReviewMeasureLength = 4;
     emit reviewStateChanged();
-    m_reportPath.clear();
 }
 
 void AiTranscriptionModel::showError(const QString& message)
@@ -791,10 +882,17 @@ void AiTranscriptionModel::startJob(const QStringList& arguments, const QString&
         return;
     }
 
+    if (kind != "image-review") {
+        clearReviewState();
+    }
+
+    m_jobTimeoutTimer.stop();
+    ++m_processGeneration;
     setBusy(true);
     setCompleted(false);
     setReport({});
     m_cancelRequested = false;
+    m_timeoutRequested = false;
     m_statusBuffer.clear();
     appendLog(QString());
     setStatusText(kind == "midi"
@@ -803,15 +901,20 @@ void AiTranscriptionModel::startJob(const QStringList& arguments, const QString&
 
     QProcessEnvironment environment = QProcessEnvironment::systemEnvironment();
     environment.insert("PYTHONUNBUFFERED", "1");
+    const QString pythonHome = pythonHomeFor(python);
+    if (!pythonHome.isEmpty()) {
+        environment.insert("PYTHONHOME", pythonHome);
+        environment.insert("PYTHONNOUSERSITE", "1");
+    }
     m_process.setProcessEnvironment(environment);
     m_process.setWorkingDirectory(m_jobDir->path());
     m_process.start(python, arguments);
+    m_jobTimeoutTimer.start(jobTimeoutMilliseconds());
 }
 
 void AiTranscriptionModel::readProcessOutput()
 {
-    const QString text = QString::fromUtf8(
-        m_process.readAllStandardOutput() + m_process.readAllStandardError());
+    const QString text = QString::fromUtf8(m_process.readAllStandardOutput());
     if (text.isEmpty()) {
         return;
     }
@@ -834,6 +937,7 @@ void AiTranscriptionModel::finishJob(
     int exitCode,
     QProcess::ExitStatus exitStatus)
 {
+    m_jobTimeoutTimer.stop();
     readProcessOutput();
     if (!m_statusBuffer.trimmed().isEmpty()) {
         if (m_statusBuffer.startsWith("STAGE|")) {
@@ -856,23 +960,37 @@ void AiTranscriptionModel::finishJob(
     }
     setReport(parsedReport);
 
-    if (parsedReport.value("reviewRequired").toBool()) {
-        loadReview(parsedReport);
+    const bool processSucceeded = exitStatus == QProcess::NormalExit && exitCode == 0;
+    if (m_timeoutRequested) {
         setBusy(false);
         setCompleted(false);
-        setStatusText(
-            tr("识别完成，需要复核 %1 个小节；当前有 %2 个事件未唯一确认")
-                .arg(parsedReport.value("totalMeasures").toInt())
-                .arg(parsedReport.value(
-                    "unresolvedTotal",
-                    parsedReport.value("unresolvedEvents")).toInt()));
+        setStatusText(tr("转谱超时，任务已停止。请检查源文件或环境后重试"));
         return;
     }
 
-    const bool processSucceeded = exitStatus == QProcess::NormalExit && exitCode == 0;
+    if (processSucceeded && parsedReport.value("reviewRequired").toBool()) {
+        setBusy(false);
+        setCompleted(false);
+        if (!loadReview(parsedReport)) {
+            setStatusText(tr("识别已完成，但无法载入逐小节复核数据"));
+            return;
+        }
+        const int unresolved = parsedReport.value(
+            "unresolvedTotal",
+            parsedReport.value("unresolvedEvents")).toInt();
+        setStatusText(
+            tr("识别完成：请逐小节核对 %1 个；其中 %2 个记号需要确认。"
+               "勾选每行左侧复选框后，点击“生成正式鼓谱”")
+                .arg(m_reviewMeasureCount)
+                .arg(unresolved));
+        return;
+    }
+
     const bool reportSucceeded = parsedReport.value("valid").toBool();
-    const bool outputExists = QFileInfo::exists(outputPath())
-                              && QFileInfo(outputPath()).size() > 0;
+    const QFileInfo outputInfo(outputPath());
+    const bool outputExists = outputInfo.exists()
+                              && outputInfo.isFile()
+                              && outputInfo.size() > 0;
     const bool success = processSucceeded && reportSucceeded && outputExists
                          && !m_cancelRequested;
 
@@ -895,9 +1013,17 @@ void AiTranscriptionModel::finishJob(
     if (m_cancelRequested) {
         setStatusText(tr("转换任务已停止"));
     } else if (!parsedReport.isEmpty() && parsedReport.contains("error")) {
-        setStatusText(parsedReport.value("error").toString());
+        setStatusText(localizedJobError(parsedReport.value("error").toString()));
+    } else if (exitStatus == QProcess::CrashExit) {
+        setStatusText(tr("转换引擎异常退出，请查看日志后重试"));
+    } else if (exitCode != 0) {
+        setStatusText(tr("转换失败（退出码 %1）").arg(exitCode));
+    } else if (!reportSucceeded) {
+        setStatusText(tr("转换结果未通过严格校验"));
+    } else if (!outputExists) {
+        setStatusText(tr("转换结束后没有生成有效的 .db 文件"));
     } else {
-        setStatusText(tr("转换失败：%1").arg(m_process.errorString()));
+        setStatusText(tr("转换失败，请查看日志后重试"));
     }
 }
 
@@ -1458,6 +1584,27 @@ QString AiTranscriptionModel::applicationResourcePath(
         }
     }
     return QDir(roots.first()).filePath(relativePath);
+}
+
+QString AiTranscriptionModel::pythonHomeFor(const QString& pythonPath) const
+{
+    if (pythonPath.isEmpty()) {
+        return QString();
+    }
+    const QDir binDir = QFileInfo(pythonPath).absoluteDir();
+    if (binDir.dirName() != "bin") {
+        return QString();
+    }
+    const QString root = QDir::cleanPath(
+        QDir(binDir.absolutePath()).filePath(".."));
+    const QDir rootDir(root);
+    if (!QFileInfo(rootDir.filePath("Python3")).isFile()) {
+        return QString();
+    }
+    const QStringList libraries = QDir(rootDir.filePath("lib")).entryList(
+        { "python3.*" },
+        QDir::Dirs | QDir::NoDotAndDotDot);
+    return libraries.isEmpty() ? QString() : root;
 }
 
 QString AiTranscriptionModel::findInParents(const QString& relativePath) const

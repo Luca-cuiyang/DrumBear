@@ -31,6 +31,7 @@ DockPage {
     property int imageTempo: 120
     property int leadingMeasures: 0
     property bool diagnosticsVisible: false
+    property bool dropHovered: false
     property int reviewPageIndex: 0
     property real reviewZoom: 1.0
 
@@ -40,8 +41,8 @@ DockPage {
 
     readonly property int currentStep:
         transcription.completed ? 6
+        : transcription.busy ? (transcription.sourceKind === "image-review" ? 5 : 3)
         : transcription.reviewRequired ? 4
-        : transcription.busy ? 2
         : (imagePaths.length > 0 || midiPath.length > 0) ? 2 : 1
 
     function pathText(value) {
@@ -76,6 +77,62 @@ DockPage {
             return
         mode = value
         transcription.reset()
+    }
+
+    function isSupportedInput(path, imageMode) {
+        if (!path)
+            return false
+        return imageMode
+                ? /\.(png|jpe?g|tiff?|bmp|webp|pdf)$/i.test(path)
+                : /\.(midi?)$/i.test(path)
+    }
+
+    function acceptDroppedUrls(urls) {
+        if (transcription.busy || !urls)
+            return
+        var paths = []
+        for (var i = 0; i < urls.length; ++i) {
+            var path = pathText(urls[i])
+            if (isSupportedInput(path, imageMode))
+                paths.push(path)
+        }
+        if (paths.length === 0) {
+            transcription.showError(imageMode
+                                    ? qsTr("请拖入图片或 PDF 鼓谱")
+                                    : qsTr("请拖入 MIDI 文件"))
+            return
+        }
+        transcription.reset()
+        if (imageMode) {
+            imagePaths = paths
+            imageTitle = suggestedTitle(paths[0])
+        } else {
+            midiPath = paths[0]
+            imageTitle = suggestedTitle(paths[0])
+        }
+        outputPath = suggestedOutput(paths[0])
+        transcription.showError("")
+    }
+
+    function selectReviewPage(index) {
+        if (index < 0 || index >= transcription.reviewPages.length)
+            return
+        reviewPageIndex = index
+        var firstMeasure = transcription.reviewPages[index].firstMeasure
+        if (firstMeasure > 0)
+            transcription.selectReviewMeasure(firstMeasure)
+    }
+
+    function showReviewMeasure(measureNumber) {
+        transcription.selectReviewMeasure(measureNumber)
+        for (var i = 0; i < transcription.reviewPages.length; ++i) {
+            var page = transcription.reviewPages[i]
+            if (measureNumber >= page.firstMeasure
+                    && measureNumber <= page.lastMeasure) {
+                reviewPageIndex = i
+                break
+            }
+        }
     }
 
     function fileUrl(path) {
@@ -126,6 +183,15 @@ DockPage {
         id: transcription
     }
 
+    Connections {
+        target: transcription
+
+        function onReviewStateChanged() {
+            if (root.reviewPageIndex >= transcription.reviewPages.length)
+                root.reviewPageIndex = 0
+        }
+    }
+
     FileDialog {
         id: midiDialog
         title: qsTr("选择 MIDI 文件")
@@ -150,15 +216,14 @@ DockPage {
             for (var i = 0; i < urls.length; ++i)
                 paths.push(root.pathText(urls[i]))
             root.imagePaths = paths
+            transcription.reset()
             if (paths.length > 0) {
                 root.outputPath = root.suggestedOutput(paths[0])
                 if (!root.imageTitle)
                     root.imageTitle = root.suggestedTitle(paths[0])
-                transcription.showError("")
             } else {
                 transcription.showError(qsTr("未读取到所选图片，请重试"))
             }
-            transcription.reset()
         }
     }
 
@@ -365,7 +430,7 @@ DockPage {
                                 FlatButton {
                                     text: qsTr("上一页")
                                     enabled: root.reviewPageIndex > 0
-                                    onClicked: --root.reviewPageIndex
+                                    onClicked: root.selectReviewPage(root.reviewPageIndex - 1)
                                 }
                                 StyledTextLabel {
                                     Layout.fillWidth: true
@@ -381,7 +446,7 @@ DockPage {
                                 FlatButton {
                                     text: qsTr("下一页")
                                     enabled: root.reviewPageIndex + 1 < transcription.reviewPages.length
-                                    onClicked: ++root.reviewPageIndex
+                                    onClicked: root.selectReviewPage(root.reviewPageIndex + 1)
                                 }
                                 FlatButton {
                                     text: "－"
@@ -426,8 +491,7 @@ DockPage {
 
                                         MouseArea {
                                             anchors.fill: parent
-                                            z: -1
-                                            onClicked: transcription.selectReviewMeasure(modelData.number)
+                                            onClicked: root.showReviewMeasure(modelData.number)
                                         }
 
                                         RowLayout {
@@ -436,6 +500,7 @@ DockPage {
                                             anchors.rightMargin: 10
                                             CheckBox {
                                                 checked: modelData.reviewed
+                                                enabled: !transcription.busy
                                                 onClicked: transcription.setMeasureReviewed(
                                                                modelData.number, !checked)
                                             }
@@ -466,6 +531,7 @@ DockPage {
                             Rectangle {
                                 Layout.fillWidth: true
                                 visible: transcription.selectedReviewMeasure > 0
+                                enabled: !transcription.busy
                                 implicitHeight: eventEditorColumn.implicitHeight + 24
                                 radius: 9
                                 color: "#F8FAFE"
@@ -684,8 +750,22 @@ DockPage {
                                     Layout.fillWidth: true
                                     Layout.preferredHeight: 150
                                     radius: 12
-                                    color: "#F8FAFE"
-                                    border.color: "#D8E2F4"
+                                    color: root.dropHovered ? "#EEF4FF" : "#F8FAFE"
+                                    border.color: root.dropHovered ? "#2F6EE5" : "#D8E2F4"
+                                    border.width: root.dropHovered ? 2 : 1
+
+                                    DropArea {
+                                        anchors.fill: parent
+                                        z: 2
+
+                                        onEntered: root.dropHovered = true
+                                        onExited: root.dropHovered = false
+                                        onDropped: {
+                                            root.dropHovered = false
+                                            if (drop.hasUrls)
+                                                root.acceptDroppedUrls(drop.urls)
+                                        }
+                                    }
 
                                     ColumnLayout {
                                         anchors.centerIn: parent
@@ -965,6 +1045,7 @@ DockPage {
 
                                 FlatButton {
                                     Layout.fillWidth: true
+                                    visible: !transcription.reviewRequired || transcription.busy
                                     text: transcription.busy ? qsTr("停止")
                                           : (transcription.completed ? qsTr("重新转谱") : qsTr("开始转谱"))
                                     accentButton: !transcription.busy && !transcription.completed

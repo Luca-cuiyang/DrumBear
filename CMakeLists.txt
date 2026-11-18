@@ -90,6 +90,7 @@ set(MUSE_MODULE_CLOUD_DBSCORECLOUD OFF CACHE BOOL "Legacy DB Score cloud publish
 
 set(MUSE_ADTOF_SOURCE_DIR "" CACHE PATH "Path to the ADTOF transcription source (scripts + models) to bundle")
 set(MUSE_ADTOF_PYTHON_DIR "" CACHE PATH "Path to a portable Python runtime to bundle")
+set(MUSE_AI_TRANSCRIPTION_PYTHON_DIR "" CACHE PATH "Path to the portable P1.0.0 image/PDF transcription Python runtime to bundle")
 
 include(${MUSE_FRAMEWORK_SRC_PATH}/cmake/MuseDeclareOptions.cmake)
 

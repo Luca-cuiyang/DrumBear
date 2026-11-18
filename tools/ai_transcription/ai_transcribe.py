@@ -21,6 +21,7 @@ from score_validation import validate_curve_structure
 
 HERE = Path(__file__).resolve().parent
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".tif", ".tiff", ".bmp", ".webp"}
+DEFAULT_COMMAND_TIMEOUT_SECONDS = 30 * 60
 
 
 class JobError(RuntimeError):
@@ -31,15 +32,55 @@ def stage(message: str) -> None:
     print(f"STAGE|{message}", flush=True)
 
 
-def run(command: list[str], *, env: dict[str, str] | None = None) -> str:
-    print("RUN|" + json.dumps(command, ensure_ascii=False), flush=True)
-    result = subprocess.run(
-        command,
-        env=env,
-        text=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
+def command_timeout_seconds() -> int:
+    raw = os.environ.get(
+        "DBSCORE_AI_COMMAND_TIMEOUT_SECONDS",
+        str(DEFAULT_COMMAND_TIMEOUT_SECONDS),
     )
+    try:
+        return max(1, int(raw))
+    except ValueError:
+        return DEFAULT_COMMAND_TIMEOUT_SECONDS
+
+
+def command_output_tail(
+    stdout: str | bytes | None,
+    stderr: str | bytes | None,
+    limit: int = 4000,
+) -> str:
+    def text(value: str | bytes | None) -> str:
+        if value is None:
+            return ""
+        if isinstance(value, bytes):
+            return value.decode("utf-8", errors="replace")
+        return value
+
+    return (text(stderr) or text(stdout)).strip()[-limit:]
+
+
+def run(
+    command: list[str],
+    *,
+    env: dict[str, str] | None = None,
+    timeout: int | None = None,
+) -> str:
+    print("RUN|" + json.dumps(command, ensure_ascii=False), flush=True)
+    effective_timeout = timeout or command_timeout_seconds()
+    try:
+        result = subprocess.run(
+            command,
+            env=env,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            timeout=effective_timeout,
+        )
+    except subprocess.TimeoutExpired as error:
+        detail = command_output_tail(error.stdout, error.stderr)
+        raise JobError(
+            f"Command timed out after {effective_timeout}s: {command[0]}"
+            + (f"\n{detail}" if detail else "")
+        ) from error
     if result.stdout:
         print(result.stdout, end="", file=sys.stderr)
     if result.stderr:

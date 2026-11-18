@@ -126,6 +126,12 @@ require_bundled_file "${APP_PATH}/Contents/Resources/locale/qtdeclarative_zh_CN.
 require_bundled_file "${APP_PATH}/Contents/Resources/plugins/midi_converter/midi-converter"
 require_bundled_file "${APP_PATH}/Contents/Resources/ai_transcription/ai_transcribe.py"
 require_bundled_file "${APP_PATH}/Contents/Resources/ai_transcription/drum-style.db"
+AI_PYTHON="${APP_PATH}/Contents/Resources/ai_transcription/python/bin/python3"
+require_bundled_file "${AI_PYTHON}"
+require_bundled_file "${APP_PATH}/Contents/Resources/ai_transcription/python/Python3"
+PYTHONHOME="${APP_PATH}/Contents/Resources/ai_transcription/python" \
+PYTHONNOUSERSITE=1 \
+    "${AI_PYTHON}" -c 'import cv2, numpy, PIL; print("P1.0.0 Python runtime OK")'
 
 # DB Score does not use optional third-party SQL backends. Do not ship plugins
 # whose dependencies point to Homebrew, Postgres.app, or /usr/local.

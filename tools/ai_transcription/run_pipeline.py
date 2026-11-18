@@ -12,6 +12,7 @@ import shlex
 import shutil
 import subprocess
 import sys
+import tempfile
 import time
 import zipfile
 from fractions import Fraction
@@ -38,13 +39,59 @@ from score_validation import (
 
 
 HERE = Path(__file__).resolve().parent
+DEFAULT_COMMAND_TIMEOUT_SECONDS = 30 * 60
 
 
-def run(command: list[str], *, cwd: Path | None = None) -> None:
+def command_timeout_seconds() -> int:
+    raw = os.environ.get(
+        "DBSCORE_AI_COMMAND_TIMEOUT_SECONDS",
+        str(DEFAULT_COMMAND_TIMEOUT_SECONDS),
+    )
+    try:
+        return max(1, int(raw))
+    except ValueError:
+        return DEFAULT_COMMAND_TIMEOUT_SECONDS
+
+
+def run(
+    command: list[str],
+    *,
+    cwd: Path | None = None,
+    timeout: int | None = None,
+) -> None:
     print("+", " ".join(command))
-    result = subprocess.run(command, cwd=cwd)
+    effective_timeout = timeout or command_timeout_seconds()
+    try:
+        result = subprocess.run(
+            command,
+            cwd=cwd,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            timeout=effective_timeout,
+        )
+    except subprocess.TimeoutExpired as error:
+        stdout = error.stdout or ""
+        stderr = error.stderr or ""
+        if isinstance(stdout, bytes):
+            stdout = stdout.decode("utf-8", errors="replace")
+        if isinstance(stderr, bytes):
+            stderr = stderr.decode("utf-8", errors="replace")
+        detail = (stderr or stdout).strip()[-4000:]
+        raise RuntimeError(
+            f"Command timed out after {effective_timeout}s: {command[0]}"
+            + (f"\n{detail}" if detail else "")
+        ) from error
+    if result.stdout:
+        print(result.stdout, end="", file=sys.stderr)
+    if result.stderr:
+        print(result.stderr, end="", file=sys.stderr)
     if result.returncode:
-        raise RuntimeError(f"Command failed ({result.returncode}): {command}")
+        detail = (result.stderr or result.stdout).strip()[-4000:]
+        raise RuntimeError(
+            f"Command failed ({result.returncode}): {command}"
+            + (f"\n{detail}" if detail else "")
+        )
 
 
 def _run_dbscore_without_audio_once(
@@ -69,63 +116,85 @@ def _run_dbscore_without_audio_once(
     # the score/PDF conversion path does not need MuseSampler.
     environment["MUSESAMPLER_PATH"] = "/nonexistent/db-score-image-converter"
     expected_output.unlink(missing_ok=True)
-    process = subprocess.Popen(command, env=environment)
-    deadline = time.monotonic() + 45
-    completed = False
-    last_size = -1
-    stable_since = time.monotonic()
-
-    def output_is_complete() -> bool:
-        if not expected_output.is_file() or not expected_output.stat().st_size:
-            return False
-        if expected_output.suffix.lower() == ".db":
-            try:
-                with zipfile.ZipFile(expected_output) as archive:
-                    return bool(archive.namelist()) and archive.testzip() is None
-            except (OSError, zipfile.BadZipFile):
-                return False
-        if expected_output.suffix.lower() == ".pdf":
-            try:
-                with expected_output.open("rb") as handle:
-                    handle.seek(max(0, expected_output.stat().st_size - 1024))
-                    return b"%%EOF" in handle.read()
-            except OSError:
-                return False
-        return True
-
-    while True:
-        returncode = process.poll()
-        if output_is_complete():
-            size = expected_output.stat().st_size
-            if size != last_size:
-                last_size = size
-                stable_since = time.monotonic()
-            elif time.monotonic() - stable_since >= 0.15:
-                completed = True
-                break
-        if returncode is not None:
-            break
-        if time.monotonic() >= deadline:
-            process.terminate()
-            try:
-                process.wait(timeout=3)
-            except subprocess.TimeoutExpired:
-                process.kill()
-                process.wait()
-            raise RuntimeError(f"DB Score timed out: {command}")
-        time.sleep(0.05)
-
-    if completed and process.poll() is None:
-        # DB Score sometimes finishes the file but never leaves its audio
-        # shutdown path.  The output is stable, so terminate this owned child
-        # before it can enter the crashing teardown callback.  SIGKILL is
-        # intentional here: SIGTERM still enters the defective shutdown path.
-        process.kill()
-        process.wait()
-    elif process.returncode:
-        raise RuntimeError(
-            f"DB Score failed ({process.returncode}): {command}"
+    with tempfile.TemporaryFile(
+        mode="w+",
+        encoding="utf-8",
+        errors="replace",
+    ) as output_file:
+        process = subprocess.Popen(
+            command,
+            env=environment,
+            stdout=output_file,
+            stderr=subprocess.STDOUT,
+            text=True,
         )
+        deadline = time.monotonic() + 45
+        completed = False
+        last_size = -1
+        stable_since = time.monotonic()
+
+        def captured_output() -> str:
+            output_file.flush()
+            output_file.seek(0)
+            return output_file.read().strip()
+
+        def output_is_complete() -> bool:
+            if not expected_output.is_file() or not expected_output.stat().st_size:
+                return False
+            if expected_output.suffix.lower() == ".db":
+                try:
+                    with zipfile.ZipFile(expected_output) as archive:
+                        return bool(archive.namelist()) and archive.testzip() is None
+                except (OSError, zipfile.BadZipFile):
+                    return False
+            if expected_output.suffix.lower() == ".pdf":
+                try:
+                    with expected_output.open("rb") as handle:
+                        handle.seek(max(0, expected_output.stat().st_size - 1024))
+                        return b"%%EOF" in handle.read()
+                except OSError:
+                    return False
+            return True
+
+        while True:
+            returncode = process.poll()
+            if output_is_complete():
+                size = expected_output.stat().st_size
+                if size != last_size:
+                    last_size = size
+                    stable_since = time.monotonic()
+                elif time.monotonic() - stable_since >= 0.15:
+                    completed = True
+                    break
+            if returncode is not None:
+                break
+            if time.monotonic() >= deadline:
+                process.terminate()
+                try:
+                    process.wait(timeout=3)
+                except subprocess.TimeoutExpired:
+                    process.kill()
+                    process.wait()
+                detail = captured_output()
+                raise RuntimeError(
+                    f"DB Score timed out: {command}"
+                    + (f"\n{detail[-2000:]}" if detail else "")
+                )
+            time.sleep(0.05)
+
+        if completed and process.poll() is None:
+            # DB Score sometimes finishes the file but never leaves its audio
+            # shutdown path.  The output is stable, so terminate this owned
+            # child before it can enter the crashing teardown callback. SIGKILL
+            # is intentional: SIGTERM still enters the defective shutdown path.
+            process.kill()
+            process.wait()
+        elif process.returncode:
+            detail = captured_output()
+            raise RuntimeError(
+                f"DB Score failed ({process.returncode}): {command}"
+                + (f"\n{detail[-2000:]}" if detail else "")
+            )
 
     # CrashPad can publish the report a moment after the child exits.
     time.sleep(1.0)
@@ -158,6 +227,7 @@ def run_dbscore_without_audio(
             transient = (
                 "DB Score failed (40)" in text
                 or "DB Score failed (51)" in text
+                or "DB Score failed (1)" in text
                 or "DB Score failed (-11)" in text
                 or "crashed while exiting" in text
             )

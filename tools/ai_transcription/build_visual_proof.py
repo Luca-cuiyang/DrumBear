@@ -16,6 +16,9 @@ from PIL import Image, ImageDraw
 import run_pipeline
 
 
+PDFTOPPM_TIMEOUT_SECONDS = 5 * 60
+
+
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as handle:
@@ -39,6 +42,7 @@ def source_page_images(
         subprocess.run(
             [pdftoppm, "-r", "300", "-png", str(source), str(prefix)],
             check=True,
+            timeout=PDFTOPPM_TIMEOUT_SECONDS,
         )
         result.extend(
             sorted(
@@ -128,6 +132,7 @@ def main() -> None:
             str(rendered_dir / "page"),
         ],
         check=True,
+        timeout=PDFTOPPM_TIMEOUT_SECONDS,
     )
     rendered_pages = sorted(
         rendered_dir.glob("page-*.png"),

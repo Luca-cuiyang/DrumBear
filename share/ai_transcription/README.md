@@ -10,6 +10,26 @@ AI 转谱是 `主页 → AI转谱 → 乐谱` 中的独立页面。当前版本�
 
 转换器不会把“生成成功”和“内容正确”混为一谈。最终文件必须通过严格校验。
 
+## P1.0.0 运行库打包
+
+图片和 PDF 识别依赖 `numpy`、`opencv-python-headless` 和 `Pillow`。正式
+macOS 安装包必须内置便携 Python，不能依赖开发机上的虚拟环境：
+
+```bash
+cmake -S . -B build.release \
+  -DMUSE_AI_TRANSCRIPTION_PYTHON_DIR=/path/to/portable-python
+```
+
+该目录应包含 `bin/python3`、`Python3` 和 `lib/python3.x/site-packages`。
+安装后位于：
+
+```text
+DB score制谱大师.app/Contents/Resources/ai_transcription/python
+```
+
+macOS 打包脚本会执行 `import cv2, numpy, PIL`，任一项缺失都会拒绝生成安装包，
+避免发布后在用户电脑上出现白屏或英文依赖错误。
+
 ## MIDI 转谱
 
 1. MIDI 标准化器读取 Channel 10 鼓轨。

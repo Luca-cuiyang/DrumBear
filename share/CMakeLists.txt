@@ -40,6 +40,23 @@ install (DIRECTORY
     PATTERN "__pycache__" EXCLUDE
     )
 
+if (MUSE_AI_TRANSCRIPTION_PYTHON_DIR)
+    install (DIRECTORY
+        ${MUSE_AI_TRANSCRIPTION_PYTHON_DIR}/
+        DESTINATION ${MUSE_APP_INSTALL_RESOURCES_LOCATION}/ai_transcription/python
+        PATTERN "*.pyc" EXCLUDE
+        PATTERN "__pycache__" EXCLUDE
+        )
+    install (CODE
+        "file(CHMOD_RECURSE
+            \"\$ENV{DESTDIR}\${CMAKE_INSTALL_PREFIX}/${MUSE_APP_INSTALL_RESOURCES_LOCATION}/ai_transcription/python\"
+            PERMISSIONS
+            OWNER_READ OWNER_WRITE OWNER_EXECUTE
+            GROUP_READ GROUP_EXECUTE
+            WORLD_READ WORLD_EXECUTE)"
+        )
+endif()
+
 install (DIRECTORY
     extensions
     DESTINATION ${MUSE_APP_INSTALL_RESOURCES_LOCATION}
