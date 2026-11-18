@@ -437,6 +437,51 @@ class ImageToDbPipelineTests(unittest.TestCase):
         self.assertEqual(left.slur_starts, [])
         self.assertEqual(right.slur_ends, [])
 
+    def test_low_grade_beam_edge_curve_is_dropped(self) -> None:
+        # Audiveris follows a beam edge and reports a ~0.28-grade curve as a
+        # tie; this produced spurious ties in 车辆提升版 measures 5-6.
+        system = ET.fromstring(
+            """
+            <system>
+              <slur id="beam-edge" tie="true" grade="0.277" ctx-grade="0.742"/>
+              <relation source="beam-edge" target="head-a">
+                <slur-head side="LEFT" grade="1"/>
+              </relation>
+              <relation source="beam-edge" target="head-b">
+                <slur-head side="RIGHT" grade="1"/>
+              </relation>
+            </system>
+            """
+        )
+        left = omr_extract.Head(
+            source_id="head-a",
+            x=10,
+            y=10,
+            pitch_position=3,
+            shape="NOTEHEAD_BLACK",
+            drum=42,
+            measure=5,
+            time=Fraction(3, 4),
+        )
+        right = omr_extract.Head(
+            source_id="head-b",
+            x=20,
+            y=10,
+            pitch_position=3,
+            shape="NOTEHEAD_BLACK",
+            drum=42,
+            measure=5,
+            time=Fraction(7, 8),
+        )
+        stats = omr_extract.annotate_head_curves(
+            [system],
+            [[left, right]],
+        )
+        self.assertEqual(stats, {"ties": 0, "slurs": 0, "unresolved": 0})
+        self.assertIsNone(left.tie_start)
+        self.assertEqual(left.slur_starts, [])
+        self.assertEqual(right.slur_ends, [])
+
     def test_single_lower_voice_stays_single_and_stem_down(self) -> None:
         payload = {
             "title": "Single voice",

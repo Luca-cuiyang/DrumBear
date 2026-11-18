@@ -234,6 +234,9 @@ NOTE_VALUE_FRACTIONS = {
 # following a beam edge, so unsupported instrument pairs are discarded before
 # they reach the DB Score event map.
 CURVE_DRUMS = {42, 44, 46, 49, 51, 53}
+# Curves below this glyph grade are beam-edge artifacts rather than printed
+# ties/slurs (Audiveris commonly reports ~0.28 for them).
+CURVE_MIN_GRADE = 0.35
 
 
 def augmentation_dot_counts(system: ET.Element) -> collections.Counter[str]:
@@ -756,6 +759,30 @@ def parse_articulations(system: ET.Element) -> list[Articulation]:
     return result
 
 
+def curve_is_plausible(
+    left: "Head",
+    right: "Head",
+    chain: list[dict[str, object]],
+) -> bool:
+    """Reject curves that cannot be printed ties/slurs in this score family."""
+    if left is right:
+        return False
+    if left.drum not in CURVE_DRUMS or right.drum not in CURVE_DRUMS:
+        return False
+    grade = max(float(segment.get("grade") or 0) for segment in chain)
+    if grade < CURVE_MIN_GRADE:
+        return False
+    if (
+        left.measure is not None
+        and right.measure is not None
+        and left.time is not None
+        and right.time is not None
+        and (right.measure, right.time) <= (left.measure, left.time)
+    ):
+        return False
+    return True
+
+
 def annotate_head_curves(
     systems: list[ET.Element],
     heads_by_system: list[list[Head]],
@@ -795,7 +822,9 @@ def annotate_head_curves(
             segments[source_id] = {
                 "id": source_id,
                 "tie": slur.get("tie") == "true",
-                "grade": float(slur.get("grade") or "0"),
+                "grade": float(
+                    slur.get("grade") or slur.get("ctx-grade") or "0"
+                ),
                 "left-extension": slur.get("left-extension"),
                 "right-extension": slur.get("right-extension"),
                 "ctx-grade": float(slur.get("ctx-grade") or "0"),
@@ -856,7 +885,7 @@ def annotate_head_curves(
         if left is right:
             unresolved += 1
             continue
-        if left.drum not in CURVE_DRUMS or right.drum not in CURVE_DRUMS:
+        if not curve_is_plausible(left, right, chain):
             continue
         curve_id = "|".join(str(segment.get("id") or "") for segment in chain)
         same_instrument = (
@@ -865,12 +894,6 @@ def annotate_head_curves(
             and left.pitch_position == right.pitch_position
         )
         wants_tie = any(bool(segment.get("tie")) for segment in chain)
-        curve_grade = max(float(segment.get("grade") or 0) for segment in chain)
-        # Audiveris sometimes follows a beam edge and reports a low-confidence
-        # curve (grade around 0.28) that does not exist in the source.  Drop
-        # such curves entirely instead of turning them into ties or slurs.
-        if curve_grade < 0.35:
-            continue
         if wants_tie and not same_instrument:
             # Audiveris occasionally labels a phrase curve as a tie.  Different
             # drum positions cannot sustain one another, so downgrade it.
