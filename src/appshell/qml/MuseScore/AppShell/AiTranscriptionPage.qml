@@ -419,8 +419,8 @@ DockPage {
                                     anchors.rightMargin: 10
                                     CheckBox {
                                         checked: modelData.reviewed
-                                        onToggled: transcription.setMeasureReviewed(
-                                                       modelData.number, checked)
+                                        onClicked: transcription.setMeasureReviewed(
+                                                       modelData.number, !checked)
                                     }
                                     StyledTextLabel {
                                         text: qsTr("第 %1 小节").arg(modelData.number)
