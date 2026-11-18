@@ -269,7 +269,7 @@ else
     #! “Code Signature Invalid” 杀死，导致安装后打开即“意外退出”。
     echo "Ad-hoc code signing (no Developer ID)"
     find "${APP_PATH}/Contents/PlugIns" -name "*.dylib" -exec codesign --force --sign - {} \;
-    find "${APP_PATH}/Contents/Frameworks" -maxdepth 1 -name "*.framework" -exec codesign --force --sign - {} \;
+    find "${APP_PATH}/Contents/Frameworks" -maxdepth 1 -name "*.framework" -exec codesign --force --deep --sign - {} \;
     find "${APP_PATH}/Contents/Frameworks" -maxdepth 1 -name "*.dylib" -exec codesign --force --sign - {} \;
     find "${APP_PATH}/Contents/Frameworks/ffmpeg" -maxdepth 1 -name "*.dylib" -exec codesign --force --sign - {} \;
     codesign --force --sign - "${APP_PATH}/Contents/MacOS/museupdater"
