@@ -795,6 +795,7 @@ def annotate_head_curves(
             segments[source_id] = {
                 "id": source_id,
                 "tie": slur.get("tie") == "true",
+                "grade": float(slur.get("grade") or "0"),
                 "left-extension": slur.get("left-extension"),
                 "right-extension": slur.get("right-extension"),
                 "ctx-grade": float(slur.get("ctx-grade") or "0"),
@@ -864,6 +865,12 @@ def annotate_head_curves(
             and left.pitch_position == right.pitch_position
         )
         wants_tie = any(bool(segment.get("tie")) for segment in chain)
+        curve_grade = max(float(segment.get("grade") or 0) for segment in chain)
+        # Audiveris sometimes follows a beam edge and reports a low-confidence
+        # curve (grade around 0.28) that does not exist in the source.  Drop
+        # such curves entirely instead of turning them into ties or slurs.
+        if curve_grade < 0.35:
+            continue
         if wants_tie and not same_instrument:
             # Audiveris occasionally labels a phrase curve as a tie.  Different
             # drum positions cannot sustain one another, so downgrade it.

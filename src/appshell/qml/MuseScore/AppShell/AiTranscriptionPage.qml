@@ -223,7 +223,7 @@ DockPage {
                                     StyledTextLabel {
                                         id: poweredLabel
                                         anchors.centerIn: parent
-                                        text: "✦ AI POWERED"
+                                        text: "✦ AI POWERED · P1.0.0"
                                         color: "#2F6EE5"
                                         font: ui.theme.bodyBoldFont
                                     }
