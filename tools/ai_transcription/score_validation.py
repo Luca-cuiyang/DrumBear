@@ -432,8 +432,17 @@ def validate_rest_structure(mscx_path: Path, payload: dict) -> None:
     for measure in payload["measures"]:
         number = int(measure["number"])
         available = dict(actual.get(number, {}))
+        event_onsets = {
+            Fraction(str(event["time"]))
+            for event in measure.get("events", [])
+        }
         for rest in measure.get("rests", []):
             if rest.get("review"):
+                continue
+            if Fraction(str(rest["time"])) in event_onsets:
+                # A rest that shares an onset with an event is treated as a
+                # visual overlay: the builder keeps the attack authoritative
+                # and omits the rest, so it must not be required here.
                 continue
             key = (
                 Fraction(str(rest["time"])),
