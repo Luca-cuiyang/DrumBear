@@ -21,6 +21,8 @@ DockPage {
     objectName: "AiTranscription"
     uri: "dbscore://ai-transcription"
 
+    central: mainContent
+
     property string mode: "image"
     property string midiPath: ""
     property var imagePaths: []
@@ -164,6 +166,11 @@ DockPage {
         title: qsTr("选择 AI转谱复核资料目录")
         onAccepted: transcription.loadReviewProject(currentFolder.toString())
     }
+
+    Component {
+        id: mainContent
+
+        Item {
 
     Rectangle {
         anchors.fill: parent
@@ -1452,6 +1459,8 @@ DockPage {
                     }
                 }
             }
+        }
+    }
         }
     }
 }
