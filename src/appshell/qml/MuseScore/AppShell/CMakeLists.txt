@@ -24,6 +24,8 @@ qt_add_qml_module(appshell_qml
     URI DBScore.AppShell
     VERSION 1.0
     SOURCES
+        aitranscriptionmodel.cpp
+        aitranscriptionmodel.h
         aboutmodel.cpp
         aboutmodel.h
         appmenumodel.cpp
@@ -54,6 +56,7 @@ qt_add_qml_module(appshell_qml
         AccountPage/AccountPage.qml
         AccountPage/PageFrame.qml
         AccountPage/PageCard.qml
+        AiTranscriptionPage.qml
         AppWindow.qml
         DevTools/CorruptScore/CorruptScoreDevTools.qml
         DevTools/CrashHandler/CrashHandlerDevTools.qml

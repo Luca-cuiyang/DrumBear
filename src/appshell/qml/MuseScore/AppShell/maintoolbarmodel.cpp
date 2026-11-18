@@ -27,6 +27,7 @@
 using namespace mu::appshell;
 
 static const QString HOME_PAGE("dbscore://home");
+static const QString AI_TRANSCRIPTION_PAGE("dbscore://ai-transcription");
 static const QString NOTATION_PAGE("dbscore://notation");
 static const QString NOTATION_REVIEW_PAGE("dbscore://notation/review");
 static const QString DEVTOOLS_PAGE("dbscore://devtools");
@@ -103,6 +104,10 @@ void MainToolBarModel::load()
 
     m_items.clear();
     m_items << buildItem(muse::qtrc("appshell", "Home"), HOME_PAGE, m_currentUri);
+    m_items << buildItem(
+        QStringLiteral("AI转谱"),
+        AI_TRANSCRIPTION_PAGE,
+        m_currentUri);
     m_items << buildItem(muse::qtrc("appshell", "Score"), NOTATION_PAGE, m_currentUri);
     m_items << buildItem(muse::qtrc("appshell", "账户中心"), ACCOUNT_PAGE, m_currentUri);
 

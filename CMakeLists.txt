@@ -259,6 +259,10 @@ endif()
 add_subdirectory(share)
 add_subdirectory(${MUSE_FRAMEWORK_SRC_PATH})
 add_subdirectory(src)
+add_subdirectory(tools/midi_converter)
+if(TARGET DBScore)
+    add_dependencies(DBScore midi-converter)
+endif()
 
 
 ###########################################

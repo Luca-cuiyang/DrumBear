@@ -8,6 +8,8 @@
 .qtcreator
 .vscode/
 /builds
+/buildscripts/packaging/Windows/ffmpeg/
+/buildscripts/packaging/macOS/ffmpeg/
 build
 /build_overrides.cmake
 build.release

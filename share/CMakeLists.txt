@@ -27,6 +27,20 @@ install (DIRECTORY
     )
 
 install (DIRECTORY
+    ai_transcription
+    DESTINATION ${MUSE_APP_INSTALL_RESOURCES_LOCATION}
+    PATTERN ".*" EXCLUDE
+    )
+
+install (DIRECTORY
+    ${PROJECT_SOURCE_DIR}/tools/ai_transcription/
+    DESTINATION ${MUSE_APP_INSTALL_RESOURCES_LOCATION}/ai_transcription
+    PATTERN ".*" EXCLUDE
+    PATTERN "test_*.py" EXCLUDE
+    PATTERN "__pycache__" EXCLUDE
+    )
+
+install (DIRECTORY
     extensions
     DESTINATION ${MUSE_APP_INSTALL_RESOURCES_LOCATION}
     PATTERN ".*" EXCLUDE

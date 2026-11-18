@@ -138,6 +138,10 @@ DockWindow {
             visible: !root.studioPlayerMode
         },
 
+        AiTranscriptionPage {
+            visible: !root.studioPlayerMode
+        },
+
         NotationPage {
             id: notationPage
             topToolbarKeyNavSec: topToolbarKeyNavSec

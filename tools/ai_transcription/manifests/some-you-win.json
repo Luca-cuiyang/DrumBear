@@ -1,0 +1,901 @@
+{
+  "title": "Some You Win",
+  "tempo": 93,
+  "output": "/Users/luca/Desktop/C册-专业曲集/4.Part4/17.Some You Win-93无/Some You Win.db",
+  "audiveris": "/Volumes/Audiveris/Audiveris.app/Contents/MacOS/Audiveris",
+  "dbscore": "/Applications/DB score制谱大师.app/Contents/MacOS/dbscore",
+  "layout_reference": "/Users/luca/Desktop/C册-专业曲集/1.Part1/3.Piano Rock/4-4 钢琴摇滚.db",
+  "pages": [
+    {
+      "image": "/Users/luca/Desktop/C册-专业曲集/4.Part4/17.Some You Win-93无/Some You Win-1.png",
+      "counts": [
+        4,
+        3,
+        4,
+        3,
+        3,
+        3,
+        4,
+        3,
+        3,
+        3
+      ],
+      "splits": [
+        [
+          22,
+          1228
+        ]
+      ],
+      "lengths": "1-19:4,20:3,21:4,22:3,23-33:4"
+    },
+    {
+      "image": "/Users/luca/Desktop/C册-专业曲集/4.Part4/17.Some You Win-93无/Some You Win-2.png",
+      "counts": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "splits": [],
+      "lengths": "1-35:4"
+    },
+    {
+      "image": "/Users/luca/Desktop/C册-专业曲集/4.Part4/17.Some You Win-93无/Some You Win-3.png",
+      "counts": [
+        3,
+        3,
+        4,
+        3,
+        3
+      ],
+      "splits": [
+        [
+          8,
+          1316
+        ],
+        [
+          11,
+          1585
+        ]
+      ],
+      "lengths": "1-7:4,8:3,9:4,10:3,11:4,12:3,13:4,14-15:3,16:4"
+    }
+  ],
+  "reviewed": [
+    20,
+    60,
+    76,
+    80
+  ],
+  "time_overrides": {
+    "3": [
+      "1/8",
+      "1/4",
+      "5/16",
+      "3/8",
+      "1/2",
+      "9/16",
+      "5/8",
+      "11/16",
+      "3/4",
+      "13/16",
+      "7/8",
+      "15/16"
+    ],
+    "4": [
+      "1/8",
+      "1/4",
+      "5/16",
+      "3/8",
+      "7/16",
+      "1/2",
+      "9/16",
+      "5/8",
+      "3/4",
+      "13/16",
+      "15/16"
+    ],
+    "44": [
+      "0",
+      "1/16",
+      "1/8",
+      "3/16",
+      "1/4",
+      "5/16",
+      "3/8",
+      "1/2",
+      "9/16",
+      "5/8",
+      "3/4",
+      "13/16",
+      "7/8",
+      "15/16"
+    ],
+    "48": [
+      "0",
+      "1/16",
+      "1/8",
+      "3/16",
+      "1/4",
+      "5/16",
+      "3/8",
+      "1/2",
+      "9/16",
+      "5/8",
+      "3/4",
+      "13/16",
+      "7/8",
+      "15/16"
+    ],
+    "52": [
+      "0",
+      "1/16",
+      "1/8",
+      "3/16",
+      "1/4",
+      "5/16",
+      "3/8",
+      "1/2",
+      "9/16",
+      "5/8",
+      "3/4",
+      "13/16",
+      "7/8",
+      "15/16"
+    ],
+    "68": [
+      "0",
+      "1/8",
+      "3/16",
+      "1/4",
+      "3/8",
+      "7/16",
+      "1/2",
+      "5/8",
+      "11/16",
+      "3/4",
+      "7/8",
+      "15/16"
+    ],
+    "83": [
+      "0",
+      "1/8",
+      "3/16",
+      "1/4",
+      "9/32",
+      "5/16",
+      "11/32",
+      "3/8",
+      "13/32",
+      "7/16",
+      "15/32",
+      "1/2",
+      "17/32",
+      "9/16",
+      "19/32",
+      "5/8",
+      "21/32",
+      "11/16",
+      "23/32"
+    ]
+  },
+  "corrections": {
+    "20": [
+      {
+        "time": "1/8",
+        "pitches": [
+          36,
+          53
+        ]
+      },
+      {
+        "time": "1/4",
+        "pitches": [
+          38,
+          49
+        ]
+      },
+      {
+        "time": "3/8",
+        "pitches": [
+          38
+        ]
+      },
+      {
+        "time": "1/2",
+        "pitches": [
+          36
+        ]
+      },
+      {
+        "time": "5/8",
+        "pitches": [
+          38
+        ]
+      },
+      {
+        "time": "2/3",
+        "pitches": [
+          38
+        ]
+      },
+      {
+        "time": "17/24",
+        "pitches": [
+          38
+        ]
+      }
+    ],
+    "22": [
+      {
+        "time": "1/8",
+        "pitches": [
+          36,
+          53
+        ]
+      },
+      {
+        "time": "1/4",
+        "pitches": [
+          38,
+          53
+        ]
+      },
+      {
+        "time": "3/8",
+        "pitches": [
+          36
+        ]
+      },
+      {
+        "time": "1/2",
+        "pitches": [
+          43
+        ]
+      },
+      {
+        "time": "5/8",
+        "pitches": [
+          36
+        ]
+      }
+    ],
+    "23": [
+      {
+        "time": "0",
+        "pitches": [
+          36,
+          49
+        ]
+      },
+      {
+        "time": "1/4",
+        "pitches": [
+          42
+        ]
+      },
+      {
+        "time": "5/16",
+        "pitches": [
+          42
+        ]
+      },
+      {
+        "time": "3/8",
+        "pitches": [
+          42
+        ]
+      },
+      {
+        "time": "1/2",
+        "pitches": [
+          37,
+          42
+        ]
+      },
+      {
+        "time": "9/16",
+        "pitches": [
+          42
+        ]
+      },
+      {
+        "time": "5/8",
+        "pitches": [
+          42
+        ]
+      },
+      {
+        "time": "3/4",
+        "pitches": [
+          42
+        ]
+      },
+      {
+        "time": "13/16",
+        "pitches": [
+          42
+        ]
+      },
+      {
+        "time": "7/8",
+        "pitches": [
+          42
+        ]
+      }
+    ],
+    "60": [
+      {
+        "time": "1/16",
+        "x": 62.5,
+        "rhythm_x": 62.5,
+        "pitches": [
+          36,
+          46
+        ],
+        "parts": [
+          {
+            "voice": "up",
+            "pitches": [
+              46
+            ],
+            "duration": "16th",
+            "dots": 0,
+            "beams": 0,
+            "beam_group": null
+          },
+          {
+            "voice": "down",
+            "pitches": [
+              36
+            ],
+            "duration": "eighth",
+            "dots": 1,
+            "beams": 0,
+            "beam_group": null
+          }
+        ],
+        "articulations": [],
+        "review": false,
+        "time_verified": true,
+        "source": "manual-review"
+      },
+      {
+        "time": "1/8",
+        "x": 125.0,
+        "rhythm_x": 125.0,
+        "pitches": [
+          38,
+          42
+        ],
+        "parts": [
+          {
+            "voice": "up",
+            "pitches": [
+              38,
+              42
+            ],
+            "duration": "16th",
+            "dots": 0,
+            "beams": 0,
+            "beam_group": null
+          }
+        ],
+        "articulations": [],
+        "review": false,
+        "time_verified": true,
+        "source": "manual-review"
+      },
+      {
+        "time": "3/16",
+        "x": 187.5,
+        "rhythm_x": 187.5,
+        "pitches": [
+          42
+        ],
+        "parts": [
+          {
+            "voice": "up",
+            "pitches": [
+              42
+            ],
+            "duration": "16th",
+            "dots": 0,
+            "beams": 0,
+            "beam_group": null
+          }
+        ],
+        "articulations": [],
+        "review": false,
+        "time_verified": true,
+        "source": "manual-review"
+      },
+      {
+        "time": "1/4",
+        "x": 250.0,
+        "rhythm_x": 250.0,
+        "pitches": [
+          42
+        ],
+        "parts": [
+          {
+            "voice": "up",
+            "pitches": [
+              42
+            ],
+            "duration": "16th",
+            "dots": 0,
+            "beams": 0,
+            "beam_group": null
+          }
+        ],
+        "articulations": [],
+        "review": false,
+        "time_verified": true,
+        "source": "manual-review"
+      },
+      {
+        "time": "5/16",
+        "x": 312.5,
+        "rhythm_x": 312.5,
+        "pitches": [
+          36
+        ],
+        "parts": [
+          {
+            "voice": "down",
+            "pitches": [
+              36
+            ],
+            "duration": "eighth",
+            "dots": 0,
+            "beams": 0,
+            "beam_group": null
+          }
+        ],
+        "articulations": [],
+        "review": false,
+        "time_verified": true,
+        "source": "manual-review"
+      },
+      {
+        "time": "3/8",
+        "x": 375.0,
+        "rhythm_x": 375.0,
+        "pitches": [
+          42
+        ],
+        "parts": [
+          {
+            "voice": "up",
+            "pitches": [
+              42
+            ],
+            "duration": "16th",
+            "dots": 0,
+            "beams": 0,
+            "beam_group": null
+          }
+        ],
+        "articulations": [],
+        "review": false,
+        "time_verified": true,
+        "source": "manual-review"
+      },
+      {
+        "time": "7/16",
+        "x": 437.5,
+        "rhythm_x": 437.5,
+        "pitches": [
+          36,
+          42
+        ],
+        "parts": [
+          {
+            "voice": "up",
+            "pitches": [
+              42
+            ],
+            "duration": "16th",
+            "dots": 0,
+            "beams": 0,
+            "beam_group": null
+          },
+          {
+            "voice": "down",
+            "pitches": [
+              36
+            ],
+            "duration": "eighth",
+            "dots": 0,
+            "beams": 0,
+            "beam_group": null
+          }
+        ],
+        "articulations": [],
+        "review": false,
+        "time_verified": true,
+        "source": "manual-review"
+      },
+      {
+        "time": "1/2",
+        "x": 500.0,
+        "rhythm_x": 500.0,
+        "pitches": [
+          42
+        ],
+        "parts": [
+          {
+            "voice": "up",
+            "pitches": [
+              42
+            ],
+            "duration": "16th",
+            "dots": 0,
+            "beams": 0,
+            "beam_group": null
+          }
+        ],
+        "articulations": [],
+        "review": false,
+        "time_verified": true,
+        "source": "manual-review"
+      },
+      {
+        "time": "9/16",
+        "x": 562.5,
+        "rhythm_x": 562.5,
+        "pitches": [
+          42
+        ],
+        "parts": [
+          {
+            "voice": "up",
+            "pitches": [
+              42
+            ],
+            "duration": "16th",
+            "dots": 0,
+            "beams": 0,
+            "beam_group": null
+          }
+        ],
+        "articulations": [],
+        "review": false,
+        "time_verified": true,
+        "source": "manual-review"
+      },
+      {
+        "time": "5/8",
+        "x": 625.0,
+        "rhythm_x": 625.0,
+        "pitches": [
+          36,
+          42
+        ],
+        "parts": [
+          {
+            "voice": "up",
+            "pitches": [
+              42
+            ],
+            "duration": "16th",
+            "dots": 0,
+            "beams": 0,
+            "beam_group": null
+          },
+          {
+            "voice": "down",
+            "pitches": [
+              36
+            ],
+            "duration": "eighth",
+            "dots": 0,
+            "beams": 0,
+            "beam_group": null
+          }
+        ],
+        "articulations": [],
+        "review": false,
+        "time_verified": true,
+        "source": "manual-review"
+      },
+      {
+        "time": "11/16",
+        "x": 687.5,
+        "rhythm_x": 687.5,
+        "pitches": [
+          42
+        ],
+        "parts": [
+          {
+            "voice": "up",
+            "pitches": [
+              42
+            ],
+            "duration": "16th",
+            "dots": 0,
+            "beams": 0,
+            "beam_group": null
+          }
+        ],
+        "articulations": [],
+        "review": false,
+        "time_verified": true,
+        "source": "manual-review"
+      },
+      {
+        "time": "3/4",
+        "x": 750.0,
+        "rhythm_x": 750.0,
+        "pitches": [
+          42
+        ],
+        "parts": [
+          {
+            "voice": "up",
+            "pitches": [
+              42
+            ],
+            "duration": "16th",
+            "dots": 0,
+            "beams": 0,
+            "beam_group": null
+          }
+        ],
+        "articulations": [],
+        "review": false,
+        "time_verified": true,
+        "source": "manual-review"
+      },
+      {
+        "time": "13/16",
+        "x": 812.5,
+        "rhythm_x": 812.5,
+        "pitches": [
+          38,
+          42
+        ],
+        "parts": [
+          {
+            "voice": "up",
+            "pitches": [
+              38,
+              42
+            ],
+            "duration": "16th",
+            "dots": 0,
+            "beams": 0,
+            "beam_group": null
+          }
+        ],
+        "articulations": [],
+        "review": false,
+        "time_verified": true,
+        "source": "manual-review"
+      },
+      {
+        "time": "7/8",
+        "x": 875.0,
+        "rhythm_x": 875.0,
+        "pitches": [
+          42
+        ],
+        "parts": [
+          {
+            "voice": "up",
+            "pitches": [
+              42
+            ],
+            "duration": "16th",
+            "dots": 0,
+            "beams": 0,
+            "beam_group": null
+          }
+        ],
+        "articulations": [],
+        "review": false,
+        "time_verified": true,
+        "source": "manual-review"
+      },
+      {
+        "time": "15/16",
+        "x": 937.5,
+        "rhythm_x": 937.5,
+        "pitches": [
+          36,
+          42
+        ],
+        "parts": [
+          {
+            "voice": "up",
+            "pitches": [
+              42
+            ],
+            "duration": "16th",
+            "dots": 0,
+            "beams": 0,
+            "beam_group": null
+          },
+          {
+            "voice": "down",
+            "pitches": [
+              36
+            ],
+            "duration": "16th",
+            "dots": 0,
+            "beams": 0,
+            "beam_group": null
+          }
+        ],
+        "articulations": [],
+        "review": false,
+        "time_verified": true,
+        "source": "manual-review"
+      }
+    ],
+    "76": [
+      {
+        "time": "1/8",
+        "x": 1020.0,
+        "rhythm_x": 1020.25,
+        "pitches": [
+          36,
+          53
+        ],
+        "parts": [
+          {
+            "voice": "down",
+            "pitches": [
+              36
+            ],
+            "duration": "eighth",
+            "dots": 0,
+            "beams": 0,
+            "beam_group": null
+          },
+          {
+            "voice": "up",
+            "pitches": [
+              53
+            ],
+            "duration": "quarter",
+            "dots": 0,
+            "beams": 0,
+            "beam_group": null
+          }
+        ],
+        "articulations": [],
+        "review": false,
+        "time_verified": false,
+        "review_resolution": "visual-review"
+      },
+      {
+        "time": "1/4",
+        "x": 1088.25,
+        "rhythm_x": 1099.0,
+        "pitches": [
+          38,
+          49
+        ],
+        "parts": [
+          {
+            "voice": "up",
+            "pitches": [
+              38,
+              49
+            ],
+            "duration": "quarter",
+            "dots": 0,
+            "beams": 0,
+            "beam_group": null
+          }
+        ],
+        "articulations": [],
+        "review": false,
+        "time_verified": true
+      },
+      {
+        "time": "3/8",
+        "x": 1165.5,
+        "rhythm_x": 1176.5,
+        "pitches": [
+          47
+        ],
+        "parts": [
+          {
+            "voice": "up",
+            "pitches": [
+              47
+            ],
+            "duration": "16th",
+            "dots": 0,
+            "beams": 2,
+            "beam_group": "s3:1117"
+          }
+        ],
+        "articulations": [],
+        "review": false,
+        "time_verified": true
+      },
+      {
+        "time": "5/12",
+        "x": 1202.5,
+        "rhythm_x": 1214.0,
+        "pitches": [
+          47
+        ],
+        "parts": [
+          {
+            "voice": "up",
+            "pitches": [
+              47
+            ],
+            "duration": "16th",
+            "dots": 0,
+            "beams": 2,
+            "beam_group": "s3:1117"
+          }
+        ],
+        "articulations": [],
+        "review": false,
+        "time_verified": true
+      },
+      {
+        "time": "11/24",
+        "x": 1239.5,
+        "rhythm_x": 1251.5,
+        "pitches": [
+          43
+        ],
+        "parts": [
+          {
+            "voice": "up",
+            "pitches": [
+              43
+            ],
+            "duration": "16th",
+            "dots": 0,
+            "beams": 2,
+            "beam_group": "s3:1117"
+          }
+        ],
+        "articulations": [
+          "staccatissimo"
+        ],
+        "review": false,
+        "time_verified": true
+      },
+      {
+        "time": "1/2",
+        "x": 1277.5,
+        "rhythm_x": 1289.0,
+        "pitches": [
+          43
+        ],
+        "parts": [
+          {
+            "voice": "up",
+            "pitches": [
+              43
+            ],
+            "duration": "eighth",
+            "dots": 0,
+            "beams": 1,
+            "beam_group": "s3:1117"
+          }
+        ],
+        "articulations": [],
+        "review": false,
+        "time_verified": true
+      }
+    ]
+  }
+}

@@ -31,6 +31,7 @@ namespace mu::appshell {
 using DockName = QString;
 
 inline const muse::Uri HOME_URI("dbscore://home");
+inline const muse::Uri AI_TRANSCRIPTION_URI("dbscore://ai-transcription");
 inline const muse::Uri NOTATION_URI("dbscore://notation");
 
 // Panels:

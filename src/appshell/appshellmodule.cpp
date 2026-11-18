@@ -71,6 +71,7 @@ void AppShellModule::resolveImports()
     auto ir = globalIoc()->resolve<muse::interactive::IInteractiveUriRegister>(mname);
     if (ir) {
         ir->registerPageUri(Uri("dbscore://home"));
+        ir->registerPageUri(Uri("dbscore://ai-transcription"));
         ir->registerPageUri(Uri("dbscore://notation"));
         ir->registerPageUri(Uri("dbscore://notation/review"));
         ir->registerPageUri(Uri("dbscore://sequencer"));

@@ -92,6 +92,18 @@ if not exist "C:\DBscore\install\locale\qt_zh_CN.qm" (
   >> "%LOG%" echo MissingChineseTranslations
   goto :fail
 )
+if not exist "C:\DBscore\install\plugins\midi_converter\midi-converter.exe" (
+  >> "%LOG%" echo MissingMidiConverterExecutable
+  goto :fail
+)
+if not exist "C:\DBscore\install\ai_transcription\ai_transcribe.py" (
+  >> "%LOG%" echo MissingAiTranscriptionEngine
+  goto :fail
+)
+if not exist "C:\DBscore\install\ai_transcription\drum-style.db" (
+  >> "%LOG%" echo MissingAiTranscriptionStyle
+  goto :fail
+)
 
 del /q C:\DBscore\build\DBScore-*.msi 2>nul
 cpack -G WIX -C Release >> "%LOG%" 2>&1

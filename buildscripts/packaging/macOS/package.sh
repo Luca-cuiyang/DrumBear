@@ -123,6 +123,9 @@ require_bundled_file "${APP_PATH}/Contents/Resources/qml/QtQuick/qmldir"
 require_bundled_file "${APP_PATH}/Contents/Resources/locale/qtbase_zh_CN.qm"
 require_bundled_file "${APP_PATH}/Contents/Resources/locale/qtmultimedia_zh_CN.qm"
 require_bundled_file "${APP_PATH}/Contents/Resources/locale/qtdeclarative_zh_CN.qm"
+require_bundled_file "${APP_PATH}/Contents/Resources/plugins/midi_converter/midi-converter"
+require_bundled_file "${APP_PATH}/Contents/Resources/ai_transcription/ai_transcribe.py"
+require_bundled_file "${APP_PATH}/Contents/Resources/ai_transcription/drum-style.db"
 
 # DB Score does not use optional third-party SQL backends. Do not ship plugins
 # whose dependencies point to Homebrew, Postgres.app, or /usr/local.
@@ -218,6 +221,16 @@ if $DO_SIGN; then
         -s "$SIGN_IDENTITY" \
         "${APP_PATH}/Contents/MacOS/museupdater"
 
+    MIDI_CONVERTER="${APP_PATH}/Contents/Resources/plugins/midi_converter/midi-converter"
+    if [ -f "${MIDI_CONVERTER}" ]; then
+        echo "Sign MIDI converter"
+        codesign --force \
+            --options runtime \
+            "${CODESIGN_TIMESTAMP_ARGS[@]}" \
+            -s "$SIGN_IDENTITY" \
+            "${MIDI_CONVERTER}"
+    fi
+
     # Re-sign main app after removing dSYM files and renaming qml folder
     echo "Re-sign main app"
     codesign --force \
@@ -260,6 +273,9 @@ else
     find "${APP_PATH}/Contents/Frameworks" -maxdepth 1 -name "*.dylib" -exec codesign --force --sign - {} \;
     find "${APP_PATH}/Contents/Frameworks/ffmpeg" -maxdepth 1 -name "*.dylib" -exec codesign --force --sign - {} \;
     codesign --force --sign - "${APP_PATH}/Contents/MacOS/museupdater"
+    if [ -f "${APP_PATH}/Contents/Resources/plugins/midi_converter/midi-converter" ]; then
+        codesign --force --sign - "${APP_PATH}/Contents/Resources/plugins/midi_converter/midi-converter"
+    fi
     codesign --force --deep --sign - "${APP_PATH}"
 fi
 
