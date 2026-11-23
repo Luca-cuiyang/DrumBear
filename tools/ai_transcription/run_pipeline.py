@@ -116,6 +116,9 @@ def _run_dbscore_without_audio_once(
     # 0.105.8 as incompatible.  Prevent the console process from loading it;
     # the score/PDF conversion path does not need MuseSampler.
     environment["MUSESAMPLER_PATH"] = "/nonexistent/db-score-image-converter"
+    # Keep the one-shot converter out of the Dock / app switcher so the
+    # user never sees DB绘谱 "pop up" while a score is being generated.
+    environment["QT_MAC_DISABLE_FOREGROUND_APPLICATION_TRANSFORM"] = "1"
     expected_output.unlink(missing_ok=True)
     with tempfile.TemporaryFile(
         mode="w+",
@@ -259,6 +262,7 @@ def run_dbscore_pdf(
     )
     environment = os.environ.copy()
     environment["MUSESAMPLER_PATH"] = "/nonexistent/db-score-image-converter"
+    environment["QT_MAC_DISABLE_FOREGROUND_APPLICATION_TRANSFORM"] = "1"
     last_detail = "unknown error"
     for attempt in range(3):
         time.sleep(2.5)
