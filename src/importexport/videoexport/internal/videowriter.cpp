@@ -554,9 +554,11 @@ std::optional<VideoWriter::ScoreRestoreData> VideoWriter::prepareScore(INotation
     if (config.viewMode == ViewMode::PageFull) {
         double scaleX = config.width / page->width();
         double scaleY = config.height / page->height();
-        //! NOTE: Cover (not fit) so the page fills the whole canvas without black bars;
-        //! the overflow (page margins) is cropped by the frame.
-        double scale = std::max(scaleX, scaleY);
+        //! NOTE: Fit the whole page inside the frame. Cover-cropping (max)
+        //! cut the first/last systems of a page, which looked like missing
+        //! notes in exported videos. Keep every system visible; use the
+        //! "re-layout to video resolution" mode when bars are not desired.
+        double scale = std::min(scaleX, scaleY);
         config.canvasDpi = scale * engraving::DPI;
         config.moveToCenter = muse::PointF(0.5 * (config.width / scale - page->width()), 0.5 * (config.height / scale - page->height()));
         return result;

@@ -97,3 +97,8 @@ compile_commands.json
 
 # QML language server
 **/.qmlls.ini
+
+# Third-party AI transcription runtimes (several hundred MB).
+# See tools/ai_transcription/BUNDLED_RUNTIME.md for how to provision them.
+/tools/ai_transcription/audiveris/
+/tools/ai_transcription/python-win/

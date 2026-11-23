@@ -656,6 +656,16 @@ def voice_operations(measure_data: dict, voice_index: int) -> list[Operation]:
                 note_ticks = gap_ticks
             else:
                 note_ticks = explicit_ticks
+        available_ticks = measure_ticks - onset
+        if available_ticks <= 0:
+            # Event starts outside/at the barline; nothing valid can be
+            # emitted for this voice.
+            continue
+        if note_ticks > available_ticks:
+            # OMR occasionally reports a note a hair longer than the bar
+            # (e.g. one 32nd over). Clamp it so MuseScore can load the score
+            # instead of rejecting the whole file with "Voice too long".
+            note_ticks = available_ticks
         note_key = f"measure:{number}:note:{onset}:v{voice_index}"
         for grace_index, grace in enumerate(detail.get("graces", [])):
             operations.append(
@@ -708,6 +718,34 @@ def voice_operations(measure_data: dict, voice_index: int) -> list[Operation]:
             )
         )
     return operations
+
+
+def element_duration_ticks(element: ET.Element) -> int:
+    if element.tag not in ("Chord", "Rest"):
+        return 0
+    duration_type = element.findtext("durationType")
+    if duration_type not in DURATION_QUARTERS:
+        return 0
+    duration = DURATION_QUARTERS[duration_type]
+    dots = int(element.findtext("dots") or 0)
+    duration *= sum(Fraction(1, 2**power) for power in range(dots + 1))
+    return round(duration * QUARTER_TICKS)
+
+
+def trim_overfull_measure(measure: ET.Element, measure_ticks: int) -> None:
+    """Drop trailing rests/chords from voices that exceed the bar length.
+
+    MuseScore refuses to load an mscx containing "Voice too long". OMR
+    rounding occasionally produces an extra tail rest; removing trailing
+    silence keeps the score loadable without altering identified attacks.
+    """
+    for voice in measure.findall("voice"):
+        total = sum(element_duration_ticks(child) for child in voice)
+        while total > measure_ticks and len(voice):
+            last = voice[-1]
+            if last.tag in ("Chord", "Rest"):
+                total -= element_duration_ticks(last)
+            voice.remove(last)
 
 
 def overlay_rest_operations(
@@ -963,7 +1001,7 @@ def add_measure(
     previous_beats: int | None,
     tempo: int,
     break_after: str | None,
-) -> None:
+) -> ET.Element:
     number = int(measure_data["number"])
     beats = int(measure_data["length"])
     measure_ticks = beats * QUARTER_TICKS
@@ -1042,6 +1080,8 @@ def add_measure(
                 ET.SubElement(rest, "visible").text = "0"
             continue
         emit_voice_operations(voice, operations)
+
+    return measure
 
 
 def attach_curves(
@@ -1361,13 +1401,17 @@ def build(payload: dict, output: Path) -> None:
                 break_after = "page"
             elif next_measure.get("system_start"):
                 break_after = "line"
-        add_measure(
+        measure_element = add_measure(
             staff_score,
             measure_data,
             first=index == 0,
             previous_beats=previous_beats,
             tempo=int(payload["tempo"]),
             break_after=break_after,
+        )
+        trim_overfull_measure(
+            measure_element,
+            int(measure_data["length"]) * QUARTER_TICKS,
         )
         previous_beats = int(measure_data["length"])
 

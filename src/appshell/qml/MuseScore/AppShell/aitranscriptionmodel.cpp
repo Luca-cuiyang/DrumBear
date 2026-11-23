@@ -17,6 +17,7 @@
 #include <QSaveFile>
 #include <QSet>
 #include <QStandardPaths>
+#include <QSysInfo>
 #include <QTimer>
 #include <QUrl>
 
@@ -341,6 +342,13 @@ bool AiTranscriptionModel::startImages(
         setStatusText(tr("BPM 必须在 20 到 400 之间"));
         return false;
     }
+    for (const QVariant& value : inputPaths) {
+        const QString path = localPathFromInput(value.toString());
+        if (!QFileInfo::exists(path)) {
+            setStatusText(tr("找不到源文件：%1。请重新选择图片或 PDF。").arg(path));
+            return false;
+        }
+    }
     const QString audiveris = resolveAudiveris();
     if (audiveris.isEmpty()) {
         setStatusText(tr("找不到 Audiveris OMR 引擎，请检查安装路径"));
@@ -426,6 +434,34 @@ bool AiTranscriptionModel::setMeasureReviewed(int number, bool reviewed)
         tr("已完成 %1 / %2 个小节复核")
             .arg(m_reviewedMeasureCount)
             .arg(m_reviewMeasureCount));
+    return true;
+}
+
+bool AiTranscriptionModel::markAllMeasuresReviewed()
+{
+    if (busy() || !reviewRequired()) {
+        return false;
+    }
+    bool changed = false;
+    for (int index = 0; index < m_reviewMeasures.size(); ++index) {
+        QVariantMap measure = m_reviewMeasures[index].toMap();
+        if (!measure.value("reviewed").toBool()) {
+            measure["reviewed"] = true;
+            m_reviewMeasures[index] = measure;
+            changed = true;
+        }
+    }
+    if (!changed) {
+        return true;
+    }
+    m_reviewedMeasureCount = m_reviewMeasureCount;
+    m_reviewData["measures"] = m_reviewMeasures;
+    if (!saveReview()) {
+        setStatusText(tr("无法保存小节复核状态"));
+        return false;
+    }
+    emit reviewStateChanged();
+    setStatusText(tr("已将全部 %1 个小节标记为已复核").arg(m_reviewMeasureCount));
     return true;
 }
 
@@ -1462,11 +1498,14 @@ QString AiTranscriptionModel::resolvePython() const
     const QStringList candidates = {
         applicationResourcePath("ai_transcription/python/bin/python3"),
         applicationResourcePath("python/bin/python3"),
+        applicationResourcePath("ai_transcription/python-win/python.exe"),
+        applicationResourcePath("ai_transcription/python/python.exe"),
         findInParents(".venv-image-to-db/bin/python"),
         "/opt/homebrew/bin/python3",
         "/usr/local/bin/python3",
         "/usr/bin/python3",
         QStandardPaths::findExecutable("python3"),
+        QStandardPaths::findExecutable("python"),
     };
     for (const QString& candidate : candidates) {
         if (!candidate.isEmpty() && QFileInfo(candidate).isExecutable()) {
@@ -1541,7 +1580,49 @@ QString AiTranscriptionModel::resolveAudiveris() const
     if (!override.isEmpty()) {
         return override;
     }
-    const QStringList candidates = {
+
+    const QString appDir = QCoreApplication::applicationDirPath();
+    QStringList candidates;
+
+#ifdef Q_OS_MACOS
+    const QString bundledSubdir = QSysInfo::currentCpuArchitecture() == "arm64"
+                                  ? "mac-arm64" : "mac-x86_64";
+    candidates << QDir(appDir).filePath(
+        "../Resources/ai_transcription/audiveris/" + bundledSubdir
+        + "/Audiveris.app/Contents/MacOS/Audiveris");
+    candidates << findInParents(
+        "Resources/ai_transcription/audiveris/" + bundledSubdir
+        + "/Audiveris.app/Contents/MacOS/Audiveris");
+    const QString fallbackSubdir = bundledSubdir == "mac-arm64"
+                                   ? "mac-x86_64" : "mac-arm64";
+    candidates << findInParents(
+        "Resources/ai_transcription/audiveris/" + fallbackSubdir
+        + "/Audiveris.app/Contents/MacOS/Audiveris");
+#endif
+
+#ifdef Q_OS_WIN
+    const QStringList winBundled = {
+        QDir(appDir).filePath("../ai_transcription/audiveris/Audiveris.exe"),
+        QDir(appDir).filePath("../ai_transcription/audiveris/bin/Audiveris.exe"),
+        findInParents("ai_transcription/audiveris/Audiveris.exe"),
+        findInParents("ai_transcription/audiveris/bin/Audiveris.exe"),
+    };
+    candidates << winBundled;
+
+    const QString programFiles = qEnvironmentVariable("ProgramFiles");
+    const QString programFilesX86 = qEnvironmentVariable("ProgramFiles(x86)");
+    const QString localAppData = qEnvironmentVariable("LOCALAPPDATA");
+    const QStringList winInstallRoots = { programFiles, programFilesX86, localAppData };
+    for (const QString& root : winInstallRoots) {
+        if (root.isEmpty()) {
+            continue;
+        }
+        candidates << QDir(root).filePath("Audiveris/Audiveris.exe");
+        candidates << QDir(root).filePath("Audiveris/bin/Audiveris.exe");
+    }
+#endif
+
+    candidates << QStringList {
         "/Volumes/Audiveris/Audiveris.app/Contents/MacOS/Audiveris",
         "/Applications/Audiveris.app/Contents/MacOS/Audiveris",
         QStandardPaths::findExecutable("audiveris"),

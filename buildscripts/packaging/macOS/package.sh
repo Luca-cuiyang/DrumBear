@@ -126,12 +126,13 @@ require_bundled_file "${APP_PATH}/Contents/Resources/locale/qtdeclarative_zh_CN.
 require_bundled_file "${APP_PATH}/Contents/Resources/plugins/midi_converter/midi-converter"
 require_bundled_file "${APP_PATH}/Contents/Resources/ai_transcription/ai_transcribe.py"
 require_bundled_file "${APP_PATH}/Contents/Resources/ai_transcription/drum-style.db"
+require_bundled_file "${APP_PATH}/Contents/Resources/ai_transcription/audiveris/mac-arm64/Audiveris.app/Contents/MacOS/Audiveris"
 AI_PYTHON="${APP_PATH}/Contents/Resources/ai_transcription/python/bin/python3"
 require_bundled_file "${AI_PYTHON}"
 require_bundled_file "${APP_PATH}/Contents/Resources/ai_transcription/python/Python3"
 PYTHONHOME="${APP_PATH}/Contents/Resources/ai_transcription/python" \
 PYTHONNOUSERSITE=1 \
-    "${AI_PYTHON}" -c 'import cv2, numpy, PIL; print("P1.0.0 Python runtime OK")'
+    "${AI_PYTHON}" -c 'import cv2, numpy, PIL, pypdfium2; print("P1.0.0 Python runtime OK")'
 
 # DB Score does not use optional third-party SQL backends. Do not ship plugins
 # whose dependencies point to Homebrew, Postgres.app, or /usr/local.
@@ -152,6 +153,12 @@ fi
 # Remove dSYM files
 echo "Remove dSYM files"
 find ${APP_PATH}/Contents -type d -name "*.dSYM" -exec rm -r {} +
+
+# Remove stale codesign backup files (dbscore.prevN). They are unsigned Mach-O
+# artifacts left by repeated signing and would make the later
+# `codesign --verify --deep --strict` fail with "code object is not signed at all".
+find ${APP_PATH}/Contents -type f -name "*.prev*" -exec rm -f {} +
+find ${APP_PATH}/Contents/MacOS -type f -name "*.manual-*" -exec rm -f {} +
 
 # Rename Resources/qml to Resources/qml_mu. This way, VST3 plugins that also use QML
 # won't find these QML files, to prevent crashes because of conflicts.
@@ -310,8 +317,10 @@ COMPRESSED_DMG_NAME="${VOL_NAME}.dmg"
 
 rm -f "applebuild/${COMPRESSED_DMG_NAME}"
 
-# Tip: increase the size if error on copy
-hdiutil create -size 800m -fs APFS -volname "${VOL_NAME}" "applebuild/${DMG_NAME}"
+# Tip: increase the size if error on copy. The bundled app (Qt frameworks +
+# portable Python + AI transcription runtime + FFmpeg) is well over 700 MB,
+# so leave ample headroom for the APFS container and the cp step.
+hdiutil create -size 1500m -fs APFS -volname "${VOL_NAME}" "applebuild/${DMG_NAME}"
 
 # Mount the disk image
 VOLUME="/Volumes/${VOL_NAME}"

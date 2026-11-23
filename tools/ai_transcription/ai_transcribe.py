@@ -16,6 +16,7 @@ from pathlib import Path
 
 import measure_contract
 from midi_to_db import convert_midi
+from pdf_render import rasterize_pdf
 from score_validation import validate_curve_structure
 
 
@@ -202,24 +203,10 @@ def render_pdf(
     dpi: int,
 ) -> list[Path]:
     stage(f"正在渲染 PDF：{pdf_path.name}")
-    prefix = output_dir / pdf_path.stem
-    run(
-        [
-            pdftoppm,
-            "-r",
-            str(dpi),
-            "-png",
-            str(pdf_path),
-            str(prefix),
-        ]
-    )
-    pages = sorted(
-        output_dir.glob(f"{pdf_path.stem}-*.png"),
-        key=lambda path: int(path.stem.rsplit("-", 1)[-1]),
-    )
-    if not pages:
-        raise JobError(f"PDF 没有渲染出页面：{pdf_path}")
-    return pages
+    try:
+        return rasterize_pdf(pdf_path, output_dir, dpi, pdftoppm)
+    except RuntimeError as error:
+        raise JobError(str(error)) from error
 
 
 def expand_inputs(

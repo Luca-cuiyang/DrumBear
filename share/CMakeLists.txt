@@ -38,7 +38,37 @@ install (DIRECTORY
     PATTERN ".*" EXCLUDE
     PATTERN "test_*.py" EXCLUDE
     PATTERN "__pycache__" EXCLUDE
+    PATTERN "audiveris" EXCLUDE
+    PATTERN "python-win" EXCLUDE
     )
+
+# Bundled Audiveris OMR engine for image/PDF transcription.
+# macOS needs both architectures because DB Score is a universal binary.
+if (APPLE)
+    install (DIRECTORY
+        ${PROJECT_SOURCE_DIR}/tools/ai_transcription/audiveris/mac-arm64/
+        DESTINATION ${MUSE_APP_INSTALL_RESOURCES_LOCATION}/ai_transcription/audiveris/mac-arm64
+        USE_SOURCE_PERMISSIONS
+        )
+    if (EXISTS ${PROJECT_SOURCE_DIR}/tools/ai_transcription/audiveris/mac-x86_64/Audiveris.app)
+        install (DIRECTORY
+            ${PROJECT_SOURCE_DIR}/tools/ai_transcription/audiveris/mac-x86_64/
+            DESTINATION ${MUSE_APP_INSTALL_RESOURCES_LOCATION}/ai_transcription/audiveris/mac-x86_64
+            USE_SOURCE_PERMISSIONS
+            )
+    endif()
+elseif (WIN32)
+    install (DIRECTORY
+        ${PROJECT_SOURCE_DIR}/tools/ai_transcription/audiveris/win-x64/
+        DESTINATION ${MUSE_APP_INSTALL_RESOURCES_LOCATION}/ai_transcription/audiveris
+        USE_SOURCE_PERMISSIONS
+        )
+    install (DIRECTORY
+        ${PROJECT_SOURCE_DIR}/tools/ai_transcription/python-win/
+        DESTINATION ${MUSE_APP_INSTALL_RESOURCES_LOCATION}/ai_transcription/python-win
+        USE_SOURCE_PERMISSIONS
+        )
+endif()
 
 if (MUSE_AI_TRANSCRIPTION_PYTHON_DIR)
     install (DIRECTORY

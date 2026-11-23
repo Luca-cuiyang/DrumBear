@@ -662,6 +662,11 @@ def annotate_graphic_beams(
             if width >= 30 and 5 <= height <= 20:
                 boxes.append((x, y + y0, x + width, y + y0 + height))
 
+        # A system with no detected beam candidates (for example a page that
+        # only contains whole/half notes) is valid. Nothing to annotate here.
+        if not boxes:
+            continue
+
         groups: list[list[tuple[int, int, int, int]]] = []
         system_left = min(box[0] for box in boxes)
         system_right = max(box[2] for box in boxes)

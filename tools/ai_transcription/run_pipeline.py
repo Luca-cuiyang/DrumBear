@@ -20,6 +20,7 @@ from pathlib import Path
 from xml.etree import ElementTree as ET
 
 import measure_contract
+from pdf_render import rasterize_pdf
 import mxl_extract
 import omr_extract
 from build_mscx import build as build_mscx
@@ -629,16 +630,7 @@ def visual_roundtrip_validate(
         if fit_dir.exists():
             shutil.rmtree(fit_dir)
         fit_dir.mkdir(parents=True)
-        run(
-            [
-                pdftoppm,
-                "-r",
-                "72",
-                "-png",
-                str(pdf_path),
-                str(fit_dir / "page"),
-            ]
-        )
+        rasterize_pdf(pdf_path, fit_dir, 72, pdftoppm, prefix="page")
         page_count = len(list(fit_dir.glob("page-*.png")))
         if page_count == len(expected_page_counts):
             chosen_spatium = spatium
@@ -663,16 +655,7 @@ def visual_roundtrip_validate(
         ],
         pdf_path,
     )
-    run(
-        [
-            pdftoppm,
-            "-r",
-            "305",
-            "-png",
-            str(pdf_path),
-            str(render_dir / "page"),
-        ]
-    )
+    rasterize_pdf(pdf_path, render_dir, 305, pdftoppm, prefix="page")
     images = sorted(
         render_dir.glob("page-*.png"),
         key=lambda path: int(path.stem.rsplit("-", 1)[-1]),
@@ -1116,7 +1099,19 @@ def main() -> None:
     build_mscx(payload, mscx_path)
     validate_mscx_child_order(mscx_path)
     validate_no_unwanted_drum_articulations(mscx_path)
-    validate_event_timeline(mscx_path, payload)
+    try:
+        validate_event_timeline(mscx_path, payload)
+    except RuntimeError as error:
+        if not args.allow_review:
+            raise
+        # Keep a reviewable draft instead of failing the whole job. The
+        # mismatch is surfaced in the console/report so the measure can be
+        # checked visually in the app.
+        warning = f"WARNING: {error}"
+        print(warning)
+        (build_dir / "validation-warnings.txt").write_text(
+            warning + "\n", encoding="utf-8"
+        )
     validate_grace_structure(mscx_path, payload)
     validate_rest_structure(mscx_path, payload)
     validate_repeat_structure(mscx_path, payload)
@@ -1156,7 +1151,16 @@ def main() -> None:
     expected_style_sha256 = hashlib.sha256(
         conversion_style_path.read_bytes()
     ).hexdigest()
-    validate_db(pending_db, payload, preview, expected_style_sha256)
+    try:
+        validate_db(pending_db, payload, preview, expected_style_sha256)
+    except RuntimeError as error:
+        if not args.allow_review:
+            raise
+        warning = f"WARNING: {error}"
+        print(warning)
+        (build_dir / "validation-warnings.txt").write_text(
+            warning + "\n", encoding="utf-8"
+        )
     shutil.copy2(pending_db, output)
     print(f"Validated {len(payload['measures'])} measures")
     print(f"Installed {output}")

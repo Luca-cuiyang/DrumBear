@@ -10,7 +10,13 @@ set "SUCCESS=0"
 
 taskkill /f /im DBScore5.exe >nul 2>&1
 
-for /d %%D in ("C:\Mac\Home\Desktop\DB score*-v*") do set "SOURCE_BASE=%%~fD"
+for /d %%D in ("C:\Mac\Home\Desktop\DB score*-v*") do (
+    if not defined SOURCE_BASE (
+        set "SOURCE_BASE=%%~fD"
+    ) else if "%%~fD" GTR "!SOURCE_BASE!" (
+        set "SOURCE_BASE=%%~fD"
+    )
+)
 if not defined SOURCE_BASE (
   >> "%LOG%" echo SOURCE_NOT_FOUND
   goto :fail
@@ -18,7 +24,7 @@ if not defined SOURCE_BASE (
 
 set "SOURCE=!SOURCE_BASE!\DB score"
 >> "%LOG%" echo SOURCE=!SOURCE!
-robocopy "!SOURCE!" C:\DBscore /E /XD "!SOURCE!\applebuild" "!SOURCE!\builds" "!SOURCE!\.git" "!SOURCE!\.github" /NFL /NDL /NJH /NJS /NC /NS /NP >> "%LOG%" 2>&1
+robocopy "!SOURCE!" C:\DBscore /E /XD "!SOURCE!\applebuild" "!SOURCE!\builds" "!SOURCE!\.git" "!SOURCE!\.github" "!SOURCE!\build.release" "!SOURCE!\build.artifacts" /NFL /NDL /NJH /NJS /NC /NS /NP >> "%LOG%" 2>&1
 set "ROBOCOPY_EXIT=!ERRORLEVEL!"
 if !ROBOCOPY_EXIT! GEQ 8 (
   >> "%LOG%" echo RobocopyExit=!ROBOCOPY_EXIT!
@@ -102,6 +108,18 @@ if not exist "C:\DBscore\install\ai_transcription\ai_transcribe.py" (
 )
 if not exist "C:\DBscore\install\ai_transcription\drum-style.db" (
   >> "%LOG%" echo MissingAiTranscriptionStyle
+  goto :fail
+)
+if not exist "C:\DBscore\install\ai_transcription\audiveris\Audiveris.exe" (
+  >> "%LOG%" echo MissingAudiverisEngine
+  goto :fail
+)
+if not exist "C:\DBscore\install\ai_transcription\python-win\python.exe" (
+  >> "%LOG%" echo MissingWindowsPythonRuntime
+  goto :fail
+)
+if not exist "C:\DBscore\install\ai_transcription\python-win\Lib\site-packages\pypdfium2\__init__.py" (
+  >> "%LOG%" echo MissingPdfiumRuntime
   goto :fail
 )
 

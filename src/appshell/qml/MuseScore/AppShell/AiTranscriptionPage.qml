@@ -344,6 +344,13 @@ DockPage {
                                     font: ui.theme.bodyBoldFont
                                 }
                                 FlatButton {
+                                    text: qsTr("全部标记已确认")
+                                    enabled: !transcription.busy
+                                             && transcription.reviewMeasureCount > 0
+                                             && transcription.reviewedMeasureCount < transcription.reviewMeasureCount
+                                    onClicked: transcription.markAllMeasuresReviewed()
+                                }
+                                FlatButton {
                                     text: qsTr("生成正式鼓谱")
                                     accentButton: true
                                     enabled: !transcription.busy
