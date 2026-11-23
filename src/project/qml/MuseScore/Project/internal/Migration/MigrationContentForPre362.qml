@@ -75,7 +75,7 @@ ColumnLayout {
         StyledTextLabel {
             id: headerTitle
             font: ui.theme.tabBoldFont
-            text: qsTrc("project/migration", "This file was last saved in DB Score %1").arg(root.appVersion)
+            text: qsTrc("project/migration", "This file was last saved in DB绘谱 %1").arg(root.appVersion)
         }
 
         StyledTextLabel {
@@ -154,7 +154,7 @@ ColumnLayout {
 
         StyledTextLabel {
             id: affectedLabel
-            text: qsTrc("project/migration", "Please note: score layouts will be affected by improvements to DB Score")
+            text: qsTrc("project/migration", "Please note: score layouts will be affected by improvements to DB绘谱")
         }
 
         FlatButton {

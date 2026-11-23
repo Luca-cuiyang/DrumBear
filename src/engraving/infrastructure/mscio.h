@@ -27,7 +27,7 @@
 #include "io/path.h"
 
 namespace mu::engraving {
-//! NOTE The main DB Score format, is a zip archive with a specific structure.
+//! NOTE The main DB绘谱 format, is a zip archive with a specific structure.
 static const std::string MSCZ = "db";
 
 //! NOTE Legacy MuseScore format, still readable for backwards compatibility.

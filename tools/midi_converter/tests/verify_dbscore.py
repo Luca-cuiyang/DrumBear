@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""End-to-end verification of MIDI Converter output in a DB Score file."""
+"""End-to-end verification of MIDI Converter output in a DB绘谱 file."""
 
 import argparse
 import json
@@ -94,7 +94,7 @@ def main():
         )
         if verify.returncode != 0:
             raise SystemExit(
-                "DB Score package verification failed:\n"
+                "DB绘谱 package verification failed:\n"
                 f"{verify.stderr}\nconverter output:\n{convert.stderr}"
             )
 
@@ -114,14 +114,14 @@ def main():
 
         if score_pitches != report_pitches:
             raise SystemExit(
-                "drum pitch counts differ between normalized MIDI and DB Score:\n"
+                "drum pitch counts differ between normalized MIDI and DB绘谱:\n"
                 f"report={dict(sorted(report_pitches.items()))}\n"
                 f"score={dict(sorted(score_pitches.items()))}"
             )
         if sum(score_pitches.values()) != report["outputHits"]:
-            raise SystemExit("DB Score note count differs from the normalization report")
+            raise SystemExit("DB绘谱 note count differs from the normalization report")
         if ties:
-            raise SystemExit(f"DB Score contains {len(ties)} unexpected drum ties")
+            raise SystemExit(f"DB绘谱 contains {len(ties)} unexpected drum ties")
 
         print("valid=true")
         print(f"source_note_ons={report['sourceNoteOns']}")

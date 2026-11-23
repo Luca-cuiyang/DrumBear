@@ -22,6 +22,7 @@
 
 #pragma once
 
+#include <atomic>
 #include <memory>
 #include <vector>
 
@@ -95,6 +96,7 @@ private:
 
     Config makeConfig() const;
 
+    muse::Ret writeImpl(notation::INotationPtr notation, muse::io::IODevice& device, const Options& options);
     void startVideoExport(muse::media::IVideoEncoderPtr encoder, notation::INotationPtr notation, const Config& cfg);
     void startAudioExport(notation::INotationPtr notation, const muse::io::path_t& audioPath, const Config& cfg);
 
@@ -138,13 +140,13 @@ private:
     void restoreScore(notation::INotationPtr notation, const ScoreRestoreData& data);
 
     muse::Progress m_progress;
-    bool m_abort = false;
-    bool m_isCompleted = false;
+    std::atomic_bool m_abort = false;
+    std::atomic_bool m_isCompleted = false;
     muse::Ret m_writeRet;
 
     project::INotationWriterPtr m_audioWriter;
     std::unique_ptr<muse::io::FileStream> m_audioFile;
-    bool m_audioCompleted = false;
+    std::atomic_bool m_audioCompleted = false;
     muse::Ret m_audioRet;
 };
 }

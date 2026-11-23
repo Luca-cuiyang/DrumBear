@@ -64,11 +64,11 @@ elseif(OS_IS_LIN)
 elseif(OS_IS_MAC)
 
     set(MACOSX_BUNDLE_GUI_IDENTIFIER ${MUSE_APP_GUI_IDENTIFIER})
-    set(MACOSX_BUNDLE_BUNDLE_NAME "DB score制谱大师")
+    set(MACOSX_BUNDLE_BUNDLE_NAME "DB绘谱")
     set(MACOSX_BUNDLE_LONG_VERSION_STRING ${MUSE_APP_VERSION})
     set(MACOSX_BUNDLE_SHORT_VERSION_STRING ${MUSE_APP_VERSION})
     set(MACOSX_BUNDLE_BUNDLE_VERSION ${CMAKE_BUILD_NUMBER})
-    set(MACOSX_BUNDLE_COPYRIGHT "Copyright © 2026 DB Score. 遵循 GNU General Public License version 3 开源协议发布。")
+    set(MACOSX_BUNDLE_COPYRIGHT "Copyright © 2026 DB绘谱. 遵循 GNU General Public License version 3 开源协议发布。")
 
     set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_RPATH};${QT_INSTALL_LIBS};@loader_path/../Frameworks")
 
@@ -278,7 +278,7 @@ if (OS_IS_MAC)
         )
     endif()
 
-    # Embed the DB Score (DrumBear) icons used for .db files and the app itself.
+    # Embed the DB绘谱 (DrumBear) icons used for .db files and the app itself.
     add_custom_command(TARGET DBScore POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy
             ${PROJECT_SOURCE_DIR}/share/icons/DbIcon/DbIcon.icns
@@ -286,7 +286,7 @@ if (OS_IS_MAC)
         COMMAND ${CMAKE_COMMAND} -E copy
             ${PROJECT_SOURCE_DIR}/share/icons/DbIcon/DbIcon.icns
             $<TARGET_BUNDLE_DIR:DBScore>/Contents/Resources/AppIcon.icns
-        COMMENT "Embedding DB Score icons into the app bundle"
+        COMMENT "Embedding DB绘谱 icons into the app bundle"
         VERBATIM
     )
 endif (OS_IS_MAC)

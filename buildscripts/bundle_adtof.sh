@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Bundle the local ADTOF audio-to-score engine (scripts + models + Python) into DB Score.
+# Bundle the local ADTOF audio-to-score engine (scripts + models + Python) into DB绘谱.
 #
 # This re-configures an existing build directory with the bundling paths and
 # rebuilds/installs so that "Import Audio to Score" works offline on any machine.

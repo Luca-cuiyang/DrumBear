@@ -57,7 +57,7 @@ Item {
     Rectangle {
         id: background
         anchors.fill: parent
-        color: ui.theme.backgroundPrimaryColor
+        color: ui.theme.backgroundSecondaryColor
     }
 
     LegacyTreeView {
@@ -131,7 +131,7 @@ Item {
                 }
             }
 
-            iconComponent: StyledIconLabel {
+            iconComponent: DbIconLabel {
                 width: 24
                 height: width
                 iconCode: Boolean(model) ? model.item.icon : IconCode.NONE

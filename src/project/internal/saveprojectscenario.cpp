@@ -556,8 +556,8 @@ Promise<RetVal<muse::io::path_t> > SaveProjectScenario::askLocalPath(INotationPr
     muse::io::path_t defaultPath = configuration()->defaultSavingFilePath(project, filenameAddition);
 
     std::vector<std::string> filter {
-        muse::trc("project", "DB Score 文件") + " (*.db)",
-        muse::trc("project", "未压缩 DB Score 文件夹 [实验性]")
+        muse::trc("project", "DB绘谱文件") + " (*.db)",
+        muse::trc("project", "未压缩 DB绘谱文件夹 [实验性]")
 #ifdef Q_OS_MAC
         + " (*)"
 #else

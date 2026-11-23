@@ -1,10 +1,10 @@
 # Drum transcription regressions and normalization rules
 
 These cases come from user visual review of `推进式飞机.png`. They are
-mandatory checks for every future image/PDF -> DB Score conversion.
+mandatory checks for every future image/PDF -> DB绘谱 conversion.
 
 The eight approved scores in
-`/Users/luca/Desktop/DB Score-鼓谱成品-20261117/` are the current golden sample
+`/Users/luca/Desktop/DB绘谱-鼓谱成品-20261117/` are the current golden sample
 set. Their event timeline digests are recorded in `STANDARD_SAMPLE_INDEX.json`
 and can be checked with `verify_standard_samples.py`.
 
@@ -12,7 +12,7 @@ and can be checked with `verify_standard_samples.py`.
 
 - The bass-drum attack is the last 16th note of beat 2 (`7/16`).
 - It must remain to the right of the upper voice's `3/8` cymbal.
-- A dotted rest before it must retain its augmentation dot. Otherwise DB Score
+- A dotted rest before it must retain its augmentation dot. Otherwise DB绘谱
   reads the rest as an eighth rest and shifts the kick left onto `3/8`.
 
 ## M12, beat 4
@@ -70,7 +70,7 @@ and can be checked with `verify_standard_samples.py`.
 ## Ride notation
 
 - A hollow diamond-shaped cymbal head in the source drum notation means Ride.
-- It must map to DB Score's Ride Cymbal (`MIDI 51`), not a normal cross-head
+- It must map to DB绘谱's Ride Cymbal (`MIDI 51`), not a normal cross-head
   cymbal.
 - A filled diamond-shaped head means Ride Bell and must remain `MIDI 53`.
 - Audiveris labels both hollow and filled diamonds as
@@ -149,10 +149,10 @@ and can be checked with `verify_standard_samples.py`.
   ties.  M34 has no Bass Drum curve: its kick attacks at `3/8` and `1/2`
   remain separate notes.  M36's apparent curves through the lower voice are
   also discarded; the only remaining M36 curve is the real Ride tie into M37.
-- DB Score 5.0.7 stores a tie on the ending `Note` as
+- DB绘谱 5.0.7 stores a tie on the ending `Note` as
   `Tie/startElement,endElement,eid,track`.  Phrase slurs are score-level
   `SpannerMap/Slur` entries.  The obsolete inline `Spanner type="Tie"` form is
-  silently discarded by DB Score on save and is forbidden.
+  silently discarded by DB绘谱 on save and is forbidden.
 - M34 beats 3 and 4 keep their two independent voices.  The Ride tie ends at
   `1/2`; the Bass Drum is the second half of beat 3 at `5/8`.  Beat 4 begins
   with a Snare sixteenth at `3/4`, followed by a beamed Snare/Crash and Bass

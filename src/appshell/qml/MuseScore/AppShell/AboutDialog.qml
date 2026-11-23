@@ -31,7 +31,7 @@ import DBScore.AppShell
 StyledDialogView {
     id: root
 
-    title: qsTrc("appshell/about", "About DB Score")
+    title: qsTrc("appshell/about", "About DB绘谱")
 
     contentHeight: 424
     contentWidth: 480
@@ -109,7 +109,7 @@ StyledDialogView {
 
             StyledTextLabel {
                 Layout.fillWidth: true
-                text: qsTrc("appshell/about", "Copyright © 2026 DB Score. 遵循 <a href=\"%1\">GNU General Public License version 3</a> 开源协议发布。")
+                text: qsTrc("appshell/about", "Copyright © 2026 DB绘谱. 遵循 <a href=\"%1\">GNU General Public License version 3</a> 开源协议发布。")
                       .arg("https://www.gnu.org/licenses/gpl-3.0.html")
                       .replace("\n", "<br>")
 

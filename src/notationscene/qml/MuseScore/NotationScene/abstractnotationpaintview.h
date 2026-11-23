@@ -340,16 +340,6 @@ private:
     muse::RectF m_shadowNoteRect;
     muse::RectF m_previewMeasureRect;
 
-    struct PageCache {
-        const Page* page = nullptr;
-        std::optional<bool> adjustVerticallyDuringPlayback;
-
-        void clear()
-        {
-            *this = PageCache();
-        }
-    } mutable m_pageCache;
-
     QQuickItem* m_playbackCursorItem = nullptr;
 
     muse::secs_t m_lastPlaybackPosition = 0.;

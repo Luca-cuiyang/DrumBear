@@ -1,6 +1,6 @@
 /*
  * SPDX-License-Identifier: GPL-3.0-only
- * DB Score - DB后台端账号中心
+ * DB绘谱 - DB后台端账号中心
  */
 pragma ComponentBehavior: Bound
 
@@ -151,6 +151,9 @@ DockPage {
                 FlatButton {
                     text: qsTrc("appshell", "账号概览")
                     accentButton: root.currentPage === 0
+                    accentColor: Utils.colorWithAlpha(ui.theme.accentColor, 0.16)
+                    hoverHitColor: Utils.colorWithAlpha(ui.theme.accentColor, 0.22)
+                    textColor: root.currentPage === 0 ? ui.theme.accentColor : ui.theme.fontPrimaryColor
                     onClicked: {
                         root.currentPage = 0
                         accountModel.refresh()
@@ -159,6 +162,9 @@ DockPage {
                 FlatButton {
                     text: qsTrc("appshell", "我的会员")
                     accentButton: root.currentPage === 1
+                    accentColor: Utils.colorWithAlpha(ui.theme.accentColor, 0.16)
+                    hoverHitColor: Utils.colorWithAlpha(ui.theme.accentColor, 0.22)
+                    textColor: root.currentPage === 1 ? ui.theme.accentColor : ui.theme.fontPrimaryColor
                     onClicked: {
                         root.currentPage = 1
                         accountModel.refresh()
@@ -167,6 +173,9 @@ DockPage {
                 FlatButton {
                     text: qsTrc("appshell", "订单记录")
                     accentButton: root.currentPage === 2
+                    accentColor: Utils.colorWithAlpha(ui.theme.accentColor, 0.16)
+                    hoverHitColor: Utils.colorWithAlpha(ui.theme.accentColor, 0.22)
+                    textColor: root.currentPage === 2 ? ui.theme.accentColor : ui.theme.fontPrimaryColor
                     onClicked: {
                         root.currentPage = 2
                         accountModel.loadOrders()
@@ -179,7 +188,7 @@ DockPage {
                 Layout.fillWidth: true
                 visible: accountModel.lastError.length > 0
                 text: accountModel.lastError
-                color: ui.theme.accentColor
+                color: ui.theme.isDark ? "#FF8B8B" : "#C74444"
                 font: ui.theme.bodyFont
                 wrapMode: Text.WordWrap
             }
@@ -258,7 +267,7 @@ DockPage {
                                 StyledTextLabel {
                                     visible: accountModel.sendCodeMessage.length > 0
                                     text: accountModel.sendCodeMessage
-                                    color: "#2ECC71"
+                                    color: ui.theme.isDark ? "#6EE7A0" : "#16845B"
                                     font: ui.theme.bodyFont
                                 }
                             }
@@ -375,6 +384,8 @@ DockPage {
                         spacing: 16
 
                         PageCard {
+                            accent: true
+
                             RowLayout {
                                 spacing: 16
 
@@ -382,14 +393,14 @@ DockPage {
                                     Layout.fillWidth: true
                                     spacing: 5
                                     StyledTextLabel {
-                                        text: qsTrc("appshell", "DB Score 会员")
+                                        text: qsTrc("appshell", "DB绘谱会员")
                                         font: ui.theme.largeBodyBoldFont
                                     }
                                     StyledTextLabel {
                                         text: accountModel.statusText
                                         font: ui.theme.bodyFont
                                         color: accountModel.hasProAccess
-                                               ? "#2ECC71"
+                                               ? (ui.theme.isDark ? "#6EE7A0" : "#16845B")
                                                : ui.theme.accentColor
                                     }
                                 }

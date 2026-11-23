@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run image -> Audiveris geometry -> DB Score with hard validation gates."""
+"""Run image -> Audiveris geometry -> DB绘谱 with hard validation gates."""
 
 from __future__ import annotations
 
@@ -102,7 +102,7 @@ def _run_dbscore_without_audio_once(
 ) -> None:
     """Run the CLI with audio disabled and reject every crash.
 
-    DB Score 5.0.7 can segfault in ``StartAudioController::stopAudioProcessing``
+    DB绘谱 5.0.7 can segfault in ``StartAudioController::stopAudioProcessing``
     while exiting its command-line process.  A successfully written output does
     not make that crash acceptable, so this function also checks the macOS
     diagnostic-report directory for a report created by this invocation.
@@ -178,13 +178,13 @@ def _run_dbscore_without_audio_once(
                     process.wait()
                 detail = captured_output()
                 raise RuntimeError(
-                    f"DB Score timed out: {command}"
+                    f"DB绘谱 timed out: {command}"
                     + (f"\n{detail[-2000:]}" if detail else "")
                 )
             time.sleep(0.05)
 
         if completed and process.poll() is None:
-            # DB Score sometimes finishes the file but never leaves its audio
+            # DB绘谱 sometimes finishes the file but never leaves its audio
             # shutdown path.  The output is stable, so terminate this owned
             # child before it can enter the crashing teardown callback. SIGKILL
             # is intentional: SIGTERM still enters the defective shutdown path.
@@ -193,7 +193,7 @@ def _run_dbscore_without_audio_once(
         elif process.returncode:
             detail = captured_output()
             raise RuntimeError(
-                f"DB Score failed ({process.returncode}): {command}"
+                f"DB绘谱 failed ({process.returncode}): {command}"
                 + (f"\n{detail[-2000:]}" if detail else "")
             )
 
@@ -202,9 +202,9 @@ def _run_dbscore_without_audio_once(
     new_reports = set(reports_dir.glob("dbscore-*.ips")) - reports_before
     if new_reports:
         names = ", ".join(sorted(path.name for path in new_reports))
-        raise RuntimeError(f"DB Score crashed while exiting: {names}")
+        raise RuntimeError(f"DB绘谱 crashed while exiting: {names}")
     if not expected_output.is_file():
-        raise RuntimeError(f"DB Score did not create {expected_output}")
+        raise RuntimeError(f"DB绘谱 did not create {expected_output}")
 
 
 def run_dbscore_without_audio(
@@ -212,7 +212,7 @@ def run_dbscore_without_audio(
     arguments: list[str],
     expected_output: Path,
 ) -> None:
-    """Retry only transient DB Score process failures."""
+    """Retry only transient DB绘谱 process failures."""
     last_error: RuntimeError | None = None
     for attempt in range(3):
         try:
@@ -226,15 +226,15 @@ def run_dbscore_without_audio(
             last_error = error
             text = str(error)
             transient = (
-                "DB Score failed (40)" in text
-                or "DB Score failed (51)" in text
-                or "DB Score failed (1)" in text
-                or "DB Score failed (-11)" in text
+                "DB绘谱 failed (40)" in text
+                or "DB绘谱 failed (51)" in text
+                or "DB绘谱 failed (1)" in text
+                or "DB绘谱 failed (-11)" in text
                 or "crashed while exiting" in text
             )
             if not transient or attempt == 2:
                 raise
-            # DB Score can reject a new batch process while the previous
+            # DB绘谱 can reject a new batch process while the previous
             # command-line instance is still shutting down.
             time.sleep(2.5)
     if last_error is not None:
@@ -246,7 +246,7 @@ def run_dbscore_pdf(
     arguments: list[str],
     output: Path,
 ) -> None:
-    """Export PDF and verify the complete file after DB Score exits."""
+    """Export PDF and verify the complete file after DB绘谱 exits."""
     command = [str(dbscore), "-F", "--no-audio", *arguments]
     launch_command = (
         [
@@ -280,22 +280,64 @@ def run_dbscore_pdf(
         if attempt < 2:
             time.sleep(2.5)
     raise RuntimeError(
-        f"DB Score did not create a complete PDF ({last_detail}): {command}"
+        f"DB绘谱 did not create a complete PDF ({last_detail}): {command}"
     )
 
 
 def locate_omr(work_dir: Path, image: Path) -> Path:
     stem = image.stem
-    matches = sorted(work_dir.glob(f"{stem}*.omr"))
+    matches = [
+        path
+        for path in sorted(work_dir.glob(f"{stem}*.omr"))
+        if (
+            path.is_file()
+            and path.stat().st_size > 0
+            and path.with_suffix(".mxl").is_file()
+            and path.with_suffix(".mxl").stat().st_size > 0
+        )
+    ]
     if len(matches) != 1:
-        raise RuntimeError(f"Expected one OMR file for {image}, found {matches}")
+        raise RuntimeError(
+            f"Audiveris did not produce a complete OMR/MusicXML pair for {image}"
+        )
     return matches[0]
 
 
 def audiveris_scan(audiveris: Path, work_dir: Path, images: list[Path]) -> None:
-    if all(any(work_dir.glob(f"{image.stem}*.omr")) for image in images):
-        return
     work_dir.mkdir(parents=True, exist_ok=True)
+
+    complete = {}
+    for image in images:
+        match = next(
+            (
+                path
+                for path in sorted(work_dir.glob(f"{image.stem}*.omr"))
+                if (
+                    path.is_file()
+                    and path.stat().st_size > 0
+                    and path.with_suffix(".mxl").is_file()
+                    and path.with_suffix(".mxl").stat().st_size > 0
+                )
+            ),
+            None,
+        )
+        complete[image] = match
+
+    if all(complete.values()):
+        return
+
+    # A failed Audiveris run can leave an incomplete .omr cache. Reusing it
+    # makes every later attempt fail while looking for the missing .mxl.
+    # Remove only generated cache files for the pages in this job, then retry
+    # those pages from the original images.
+    for image, match in complete.items():
+        if match is not None:
+            continue
+        for suffix in (".omr", ".mxl"):
+            for stale in work_dir.glob(f"{image.stem}*{suffix}"):
+                if stale.is_file():
+                    stale.unlink()
+
     run(
         [
             str(audiveris),
@@ -309,7 +351,7 @@ def audiveris_scan(audiveris: Path, work_dir: Path, images: list[Path]) -> None:
             "org.audiveris.omr.sheet.ProcessingSwitches.drumNotation=true",
             "-constant",
             "org.audiveris.omr.sheet.ProcessingSwitches.smallHeads=true",
-            *[str(image) for image in images],
+            *[str(image) for image, match in complete.items() if match is None],
         ]
     )
 
@@ -380,7 +422,7 @@ def conversion_spatium_for_payload(payload: dict) -> str:
 
 
 def replace_db_style(db_path: Path, style_data: bytes) -> None:
-    """Atomically replace score_style.mss without invoking DB Score's -S path."""
+    """Atomically replace score_style.mss without invoking DB绘谱's -S path."""
     with zipfile.ZipFile(db_path) as source:
         entries = [(info, source.read(info.filename)) for info in source.infolist()]
     style_entries = [
@@ -569,6 +611,49 @@ def trim_spurious_empty_measures(
     page["measure_count"] = len(measures)
     return surplus
 
+
+def restore_omitted_empty_measures(
+    page: dict,
+    expected_measures: list[dict],
+    source_name: str,
+) -> int:
+    """Restore notated empty bars which the re-OMR pass skipped.
+
+    Audiveris may omit a measure containing only rests.  Such a bar is still
+    required for the native score layout, so align the generated non-empty
+    bars with the expected bars and restore the missing placeholders.
+    """
+    measures = page.get("measures", [])
+    if len(measures) >= len(expected_measures):
+        return 0
+
+    expected_non_empty = [
+        measure for measure in expected_measures if measure.get("events")
+    ]
+    if len(measures) != len(expected_non_empty):
+        raise RuntimeError(
+            f"Round-trip page {source_name} has {len(measures)} measures, "
+            f"expected {len(expected_measures)}, and the non-empty bar "
+            f"sequence does not align ({len(expected_non_empty)} expected)"
+        )
+
+    restored: list[dict] = []
+    actual_index = 0
+    for expected in expected_measures:
+        if expected.get("events"):
+            restored.append(measures[actual_index])
+            actual_index += 1
+            continue
+        placeholder = dict(expected)
+        placeholder["events"] = []
+        placeholder["page_start"] = False
+        restored.append(placeholder)
+
+    page["measures"] = restored
+    page["measure_count"] = len(restored)
+    return len(restored) - len(measures)
+
+
 def visual_roundtrip_validate(
     mscx_path: Path,
     payload: dict,
@@ -591,11 +676,12 @@ def visual_roundtrip_validate(
         shutil.rmtree(roundtrip_dir)
     roundtrip_dir.mkdir(parents=True)
     pdf_path = roundtrip_dir / "score.pdf"
-    expected_page_counts: list[int] = []
+    expected_pages: list[list[dict]] = []
     for measure in payload["measures"]:
-        if not expected_page_counts or measure.get("page_start"):
-            expected_page_counts.append(0)
-        expected_page_counts[-1] += 1
+        if not expected_pages or measure.get("page_start"):
+            expected_pages.append([])
+        expected_pages[-1].append(measure)
+    expected_page_counts = [len(page) for page in expected_pages]
     fit_dir = roundtrip_dir / "fit-pages"
     chosen_spatium = None
     fit_error: RuntimeError | None = None
@@ -687,6 +773,11 @@ def visual_roundtrip_validate(
             roundtrip_dir,
         )
         trim_spurious_empty_measures(page, expected_count, image.stem)
+        restore_omitted_empty_measures(
+            page,
+            expected_pages[page_number - 1],
+            image.stem,
+        )
         generated_pages.append(page)
     actual = combine_pages(generated_pages, title, tempo)
     layout_errors = []
@@ -746,7 +837,7 @@ def main() -> None:
         "--preview",
         action="store_true",
         help=(
-            "Also export a PDF preview. DB Score 5.0.7 may crash after writing "
+            "Also export a PDF preview. DB绘谱 5.0.7 may crash after writing "
             "this PDF on some macOS systems, so it is opt-in."
         ),
     )
@@ -1022,7 +1113,7 @@ def main() -> None:
     event_path = build_dir / f"{output.stem}-events.json"
     mscx_path = build_dir / f"{output.stem}.mscx"
     if args.prepare_review:
-        # Build the native score without asking DB Score to open it.  This lets
+        # Build the native score without asking DB绘谱 to open it.  This lets
         # us attach measure-duration failures to the same per-measure review
         # project instead of discovering them only during final export.
         build_mscx(payload, mscx_path)
@@ -1129,7 +1220,7 @@ def main() -> None:
         )
 
     pending_db = build_dir / output.name
-    # DB Score 5.0.7 can crash in its audio RPC teardown when -S is combined
+    # DB绘谱 5.0.7 can crash in its audio RPC teardown when -S is combined
     # with a command-line save.  Save normally, then inject the already
     # extracted layout file into the archive with stable ZIP operations.
     run_dbscore_without_audio(

@@ -86,7 +86,7 @@ set(MUSESCORE_REVISION "" CACHE STRING "Build revision")
 # DBScore: keep the musescore.com service compiled so cloud-dependent services
 # (e.g. "Convert file to score") don't crash at startup. All user-facing
 # musescore.com UI (account, learn, publish, cloud scores) is removed separately.
-set(MUSE_MODULE_CLOUD_DBSCORECLOUD OFF CACHE BOOL "Legacy DB Score cloud publishing" FORCE)
+set(MUSE_MODULE_CLOUD_DBSCORECLOUD OFF CACHE BOOL "Legacy DB绘谱 cloud publishing" FORCE)
 
 set(MUSE_ADTOF_SOURCE_DIR "" CACHE PATH "Path to the ADTOF transcription source (scripts + models) to bundle")
 set(MUSE_ADTOF_PYTHON_DIR "" CACHE PATH "Path to a portable Python runtime to bundle")

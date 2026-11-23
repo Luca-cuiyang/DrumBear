@@ -129,6 +129,24 @@ void Paint::paintScore(Painter* painter, Score* score, const IScoreRenderer::Sco
                 painter->translate(-pageRect.topLeft());
             }
 
+            if (!opt.isPrinting && opt.isMultiPage && opt.printPageBackground) {
+                painter->save();
+
+                constexpr double shadowOffset = 5.0;
+                constexpr int shadowLayers = 4;
+                for (int layer = shadowLayers; layer >= 1; --layer) {
+                    const double spread = 1.5 * layer;
+                    const RectF shadowRect = pageRect.adjusted(
+                        -spread + shadowOffset,
+                        -spread + shadowOffset,
+                        spread + shadowOffset,
+                        spread + shadowOffset);
+                    painter->fillRect(shadowRect, Color(15, 29, 51, 7));
+                }
+
+                painter->restore();
+            }
+
             // Draw page sheet
             if (opt.onPaintPageSheet) {
                 opt.onPaintPageSheet(painter, page, pageRect);

@@ -122,6 +122,8 @@ public:
     Q_INVOKABLE bool openOutputInScore();
     Q_INVOKABLE void revealOutput();
     Q_INVOKABLE QString environmentDiagnostics() const;
+    Q_INVOKABLE QString normalizeInputPath(const QString& path) const;
+    Q_INVOKABLE QString localFileUrl(const QString& path) const;
 
 signals:
     void busyChanged();

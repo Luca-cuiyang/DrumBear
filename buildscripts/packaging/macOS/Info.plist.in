@@ -9,12 +9,12 @@
 
 	<key>UTExportedTypeDeclarations</key>
 	<array>
-		<!-- DB Score documents -->
+		<!-- DB绘谱 documents -->
 		<dict>
 			<key>UTTypeIdentifier</key>
 			<string>org.dbscore.db</string>
 			<key>UTTypeDescription</key>
-			<string>DB Score File</string>
+			<string>DB绘谱 File</string>
 			<key>UTTypeIconFile</key>
 			<string>DbIcon.icns</string>
 			<key>UTTypeConformsTo</key>
@@ -38,7 +38,7 @@
 			<key>UTTypeIdentifier</key>
 			<string>org.dbscore.mscx</string>
 			<key>UTTypeDescription</key>
-			<string>DB Score Uncompressed File</string>
+			<string>DB绘谱 Uncompressed File</string>
 			<key>UTTypeIconFile</key>
 			<string>DbIcon.icns</string>
 			<key>UTTypeConformsTo</key>
@@ -62,7 +62,7 @@
 			<key>UTTypeIdentifier</key>
 			<string>org.dbscore.mscs</string>
 			<key>UTTypeDescription</key>
-			<string>DB Score Stand-alone File</string>
+			<string>DB绘谱 Stand-alone File</string>
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.data</string>
@@ -84,7 +84,7 @@
 			<key>UTTypeIdentifier</key>
 			<string>org.dbscore.db,</string>
 			<key>UTTypeDescription</key>
-			<string>DB Score Backup File</string>
+			<string>DB绘谱 Backup File</string>
 			<key>UTTypeIconFile</key>
 			<string>DbIcon.icns</string>
 			<key>UTTypeConformsTo</key>
@@ -109,7 +109,7 @@
 	<array>
 		<dict>
 			<key>CFBundleTypeName</key>
-			<string>DB Score File</string>
+			<string>DB绘谱 File</string>
 			<key>CFBundleTypeIconFile</key>
 			<string>DbIcon.icns</string>
 			<key>LSItemContentTypes</key>
@@ -129,7 +129,7 @@
 		</dict>
 		<dict>
 			<key>CFBundleTypeName</key>
-			<string>DB Score Uncompressed File</string>
+			<string>DB绘谱 Uncompressed File</string>
 			<key>CFBundleTypeIconFile</key>
 			<string>DbIcon.icns</string>
 			<key>LSItemContentTypes</key>
@@ -149,7 +149,7 @@
 		</dict>
 		<dict>
 			<key>CFBundleTypeName</key>
-			<string>DB Score Stand-alone File</string>
+			<string>DB绘谱 Stand-alone File</string>
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>org.dbscore.mscs</string>
@@ -167,7 +167,7 @@
 		</dict>
 		<dict>
 			<key>CFBundleTypeName</key>
-			<string>DB Score Backup File</string>
+			<string>DB绘谱 Backup File</string>
 			<key>CFBundleTypeIconFile</key>
 			<string>DbIcon.icns</string>
 			<key>LSItemContentTypes</key>
@@ -187,7 +187,7 @@
 		</dict>
 		<dict>
 			<key>CFBundleTypeName</key>
-			<string>DB Score Uncompressed Backup File</string>
+			<string>DB绘谱 Uncompressed Backup File</string>
 			<key>CFBundleTypeIconFile</key>
 			<string>DbIcon.icns</string>
 			<key>LSItemContentTypes</key>
@@ -591,15 +591,15 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>${MACOSX_BUNDLE_COPYRIGHT}</string>
 	<key>NSDesktopFolderUsageDescription</key>
-	<string>用于打开和保存您选择的 DB Score 鼓谱文件。</string>
+	<string>用于打开和保存您选择的 DB绘谱鼓谱文件。</string>
 	<key>NSDocumentsFolderUsageDescription</key>
-	<string>用于打开和保存您选择的 DB Score 鼓谱文件。</string>
+	<string>用于打开和保存您选择的 DB绘谱鼓谱文件。</string>
 	<key>NSDownloadsFolderUsageDescription</key>
-	<string>用于打开和保存您选择的 DB Score 鼓谱文件。</string>
+	<string>用于打开和保存您选择的 DB绘谱鼓谱文件。</string>
 	<key>NSNetworkVolumesUsageDescription</key>
-	<string>用于打开您放置在网络磁盘上的 DB Score 鼓谱文件。</string>
+	<string>用于打开您放置在网络磁盘上的 DB绘谱鼓谱文件。</string>
 	<key>NSRemovableVolumesUsageDescription</key>
-	<string>用于打开您放置在移动磁盘上的 DB Score 鼓谱文件。</string>
+	<string>用于打开您放置在移动磁盘上的 DB绘谱鼓谱文件。</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.music</string>
 	<key>ATSApplicationFontsPath</key>

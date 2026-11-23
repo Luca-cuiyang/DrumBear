@@ -58,24 +58,6 @@ private:
 
     muse::RectF resolveCursorRectByTick(int tick) const;
 
-    struct PlaybackCursorCache {
-        const engraving::System* system = nullptr;
-        const engraving::Measure* measure = nullptr;
-        const engraving::Segment* segment = nullptr;
-
-        engraving::Fraction segmentStartTick;
-        engraving::Fraction segmentEndTick;
-
-        double segmentStartX = 0.0;
-        double segmentEndX = 0.0;
-        double systemBottomY = 0.0;
-
-        void clear()
-        {
-            *this = PlaybackCursorCache();
-        }
-    } mutable m_cache;
-
     bool m_visible = false;
     muse::RectF m_rect;
 

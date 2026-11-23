@@ -30,10 +30,10 @@ using namespace mu::appshell;
 static std::vector<QVariantMap> welcomeDialogData()
 {
     QVariantMap welcome;
-    welcome.insert("title", muse::qtrc("appshell/welcome", "Welcome to DB Score"));
+    welcome.insert("title", muse::qtrc("appshell/welcome", "Welcome to DB绘谱"));
     welcome.insert("imageUrl", "qrc:/resources/welcomedialog/WhatsNew.png");
     welcome.insert("description", muse::qtrc("appshell/welcome",
-                                              "DB Score is a free, open source music notation software, forked from MuseScore Studio and licensed under GPL-3.0."));
+                                              "DB绘谱 is a free, open source music notation software, forked from MuseScore Studio and licensed under GPL-3.0."));
     welcome.insert("buttonText", muse::qtrc("appshell/welcome", "Learn more"));
     welcome.insert("destinationUrl", "https://www.drumbear.cn/");
 

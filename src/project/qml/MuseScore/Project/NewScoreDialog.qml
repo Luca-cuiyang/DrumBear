@@ -72,6 +72,22 @@ StyledDialogView {
         anchors.margins: 8
     }
 
+    Rectangle {
+        anchors.top: parent.top
+        anchors.topMargin: 12
+        anchors.left: parent.left
+        anchors.leftMargin: 12
+        anchors.right: parent.right
+        anchors.rightMargin: 12
+        anchors.bottom: footer.top
+        anchors.bottomMargin: 20
+
+        radius: 16
+        color: ui.theme.popupBackgroundColor
+        border.width: 1
+        border.color: ui.theme.strokeColor
+    }
+
     StackLayout {
         id: pagesStack
 

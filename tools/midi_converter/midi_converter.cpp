@@ -1,7 +1,7 @@
 /*
  * SPDX-License-Identifier: GPL-3.0-only
  *
- * MIDI Converter for DB Score.
+ * MIDI Converter for DB绘谱.
  *
  * This tool converts an audio-to-MIDI drum performance (for example, a MIDI
  * exported by YuE2) into a deterministic, notation-friendly drum MIDI file.
@@ -956,7 +956,7 @@ std::string reportJson(
 void printUsage()
 {
     std::cout
-        << "MIDI Converter for DB Score\n\n"
+        << "MIDI Converter for DB绘谱\n\n"
         << "Usage:\n"
         << "  midi-converter inspect --input <file.mid> [--json]\n"
         << "  midi-converter normalize --input <file.mid> --output <file.mid>\n"
@@ -1077,7 +1077,7 @@ int inspect(const Arguments& args)
 bool validateDbPackage(const Bytes& bytes, std::vector<std::string>& entries, std::string& error)
 {
     if (bytes.size() < 22) {
-        error = "DB Score package is too small to be a ZIP archive.";
+        error = "DB绘谱 package is too small to be a ZIP archive.";
         return false;
     }
 
@@ -1096,7 +1096,7 @@ bool validateDbPackage(const Bytes& bytes, std::vector<std::string>& entries, st
         }
     }
     if (eocd == std::string::npos) {
-        error = "DB Score package has no valid ZIP end-of-central-directory record.";
+        error = "DB绘谱 package has no valid ZIP end-of-central-directory record.";
         return false;
     }
 
@@ -1107,11 +1107,11 @@ bool validateDbPackage(const Bytes& bytes, std::vector<std::string>& entries, st
     const std::uint32_t centralSize = readLe32(bytes, eocd + 12);
     const std::uint32_t centralOffset = readLe32(bytes, eocd + 16);
     if (disk != 0 || centralDisk != 0 || entriesOnDisk != entryCount) {
-        error = "Multi-disk ZIP archives are not valid DB Score packages.";
+        error = "Multi-disk ZIP archives are not valid DB绘谱 packages.";
         return false;
     }
     if (static_cast<std::uint64_t>(centralOffset) + centralSize > eocd) {
-        error = "DB Score package has an invalid ZIP central directory.";
+        error = "DB绘谱 package has an invalid ZIP central directory.";
         return false;
     }
 
@@ -1120,7 +1120,7 @@ bool validateDbPackage(const Bytes& bytes, std::vector<std::string>& entries, st
     bool hasContainer = false;
     for (std::uint16_t index = 0; index < entryCount; ++index) {
         if (pos + 46 > eocd || readLe32(bytes, pos) != 0x02014b50) {
-            error = "DB Score package has a malformed ZIP central-directory entry.";
+            error = "DB绘谱 package has a malformed ZIP central-directory entry.";
             return false;
         }
 
@@ -1132,7 +1132,7 @@ bool validateDbPackage(const Bytes& bytes, std::vector<std::string>& entries, st
         const std::size_t next = nameStart + nameLength + extraLength + commentLength;
         if (next > eocd || localOffset + 4 > bytes.size()
             || readLe32(bytes, localOffset) != 0x04034b50) {
-            error = "DB Score package has an invalid ZIP file entry.";
+            error = "DB绘谱 package has an invalid ZIP file entry.";
             return false;
         }
 
@@ -1145,11 +1145,11 @@ bool validateDbPackage(const Bytes& bytes, std::vector<std::string>& entries, st
     }
 
     if (!hasScore) {
-        error = "DB Score package contains no .mscx score.";
+        error = "DB绘谱 package contains no .mscx score.";
         return false;
     }
     if (!hasContainer) {
-        error = "DB Score package contains no META-INF/container.xml.";
+        error = "DB绘谱 package contains no META-INF/container.xml.";
         return false;
     }
     return true;
@@ -1185,7 +1185,7 @@ int verifyDb(const Arguments& args)
         if (!parent.empty()) {
             fs::create_directories(parent, moveError);
             if (moveError) {
-                std::cerr << "Cannot create DB Score output directory: "
+                std::cerr << "Cannot create DB绘谱 output directory: "
                           << moveError.message() << '\n';
                 return 8;
             }
@@ -1194,14 +1194,14 @@ int verifyDb(const Arguments& args)
             std::error_code removeError;
             fs::remove(args.moveTo, removeError);
             if (removeError) {
-                std::cerr << "Cannot replace existing DB Score file: "
+                std::cerr << "Cannot replace existing DB绘谱 file: "
                           << removeError.message() << '\n';
                 return 8;
             }
         }
         fs::rename(args.input, args.moveTo, moveError);
         if (moveError) {
-            std::cerr << "Cannot move verified DB Score package: "
+            std::cerr << "Cannot move verified DB绘谱 package: "
                       << moveError.message() << '\n';
             return 8;
         }

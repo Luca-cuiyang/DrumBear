@@ -1,4 +1,4 @@
-"""Shared structural validation for generated DB Score drum notation."""
+"""Shared structural validation for generated DB绘谱 drum notation."""
 
 from __future__ import annotations
 
@@ -99,9 +99,9 @@ def expected_measure_lengths(payload: dict) -> dict[int, int]:
 
 
 def validate_mscx_child_order(mscx_path: Path) -> None:
-    """Reject dotted chords/rests that DB Score would read undotted.
+    """Reject dotted chords/rests that DB绘谱 would read undotted.
 
-    MSCX deserialization is schema-order dependent. In DB Score's writer,
+    MSCX deserialization is schema-order dependent. In DB绘谱's writer,
     ``dots`` precedes ``durationType`` inside both ``Chord`` and ``Rest``. A
     file with the reverse order opens, but the dot is silently ignored; the
     following attack then moves left by half of the base note value.
@@ -699,7 +699,7 @@ def validate_db(
             actual_style_sha256 = hashlib.sha256(style_data).hexdigest()
             if actual_style_sha256 != expected_style_sha256:
                 raise RuntimeError(
-                    "DB Score did not preserve the requested layout style"
+                    "DB绘谱 did not preserve the requested layout style"
                 )
         mscx_name = next(
             name for name in archive.namelist() if name.endswith(".mscx")

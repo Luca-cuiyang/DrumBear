@@ -1,4 +1,4 @@
-# DB Score AI 转谱
+# DB绘谱 AI 转谱
 
 AI 转谱是 `主页 → AI转谱 → 乐谱` 中的独立页面。当前版本只做架子鼓鼓谱，
 统一处理两类输入：
@@ -24,7 +24,7 @@ cmake -S . -B build.release \
 安装后位于：
 
 ```text
-DB score制谱大师.app/Contents/Resources/ai_transcription/python
+DB绘谱.app/Contents/Resources/ai_transcription/python
 ```
 
 macOS 打包脚本会执行 `import cv2, numpy, PIL`，任一项缺失都会拒绝生成安装包，
@@ -37,7 +37,7 @@ macOS 打包脚本会执行 `import cv2, numpy, PIL`，任一项缺失都会拒�
 3. 自动识别直拍或三连音网格。
 4. 自动把首镲的小幅延迟对齐到强拍；也可手动向前/向后调整
    `1/16`、`1/8`、`1/4`。
-5. 原生生成 DB Score 双层鼓谱，不经过会移动音符的 MIDI 导入器。
+5. 原生生成 DB绘谱 双层鼓谱，不经过会移动音符的 MIDI 导入器。
 6. 重新解析生成的 `.mscx`，要求 `(tick, pitch)` 与标准化 MIDI
    逐事件完全一致，否则不输出 `.db`。
 
@@ -81,7 +81,7 @@ macOS 打包脚本会执行 `import cv2, numpy, PIL`，任一项缺失都会拒�
 - 存在不支持的鼓件音高。
 - 小节总时值与拍号不一致。
 - 生成文件中的起音或鼓件与输入时间轴不一致。
-- 上下声部或符干方向不符合 DB Score 鼓谱规则。
+- 上下声部或符干方向不符合 DB绘谱鼓谱规则。
 - 图片识别存在未映射符头、未确认节奏或未通过结构检查。
 - 休止符声部、拍位、时值、附点无法确认。
 - 生成谱面的页数、系统数、每页小节数或拍号与源谱不一致。

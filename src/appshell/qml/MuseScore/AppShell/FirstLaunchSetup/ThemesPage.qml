@@ -31,7 +31,7 @@ import DBScore.Preferences
 Page {
     id: root
 
-    title: qsTrc("appshell/gettingstarted", "Welcome to DB Score")
+    title: qsTrc("appshell/gettingstarted", "Welcome to DB绘谱")
     explanation: qsTrc("appshell/gettingstarted", "Let’s get started by choosing a theme.")
 
     titleContentSpacing: model.isFollowSystemThemeAvailable ? 24 : 28

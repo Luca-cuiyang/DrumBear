@@ -28,7 +28,7 @@ import Muse.UiComponents
 Rectangle {
     id: root
 
-    color: ui.theme.backgroundPrimaryColor
+    color: ui.theme.popupBackgroundColor
 
     property alias navigation: buttonBox.navigationPanel
 

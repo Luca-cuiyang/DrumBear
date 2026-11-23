@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Build a two-voice DB Score/MuseScore drum score directly from event JSON.
+"""Build a two-voice DB绘谱/MuseScore drum score directly from event JSON.
 
-MusicXML import in DB Score merges upper and lower drum voices and can move
+MusicXML import in DB绘谱 merges upper and lower drum voices and can move
 events when a measure contains mixed subdivisions.  This writer emits the
 native score structure instead, so each vertical onset remains an onset and
 drum voices stay independent.
@@ -352,7 +352,7 @@ def add_chord(
         ET.SubElement(chord, "BeamMode").text = beam_mode
     if dots:
         ET.SubElement(chord, "dots").text = str(dots)
-    # DB Score reads MSCX children in schema order. `dots` precedes
+    # DB绘谱 reads MSCX children in schema order. `dots` precedes
     # `durationType`; reversing them silently drops the augmentation dot.
     ET.SubElement(chord, "durationType").text = duration_type
     if grace_kind:
@@ -386,7 +386,7 @@ def add_rest(
     add_eid(rest, f"{key}:rest")
     if dots:
         ET.SubElement(rest, "dots").text = str(dots)
-    # Keep the DB Score/MuseScore MSCX schema order. Otherwise a dotted rest is
+    # Keep the DB绘谱/MuseScore MSCX schema order. Otherwise a dotted rest is
     # read as the undotted base value and every following note shifts left.
     ET.SubElement(rest, "durationType").text = duration_type
 
@@ -723,6 +723,12 @@ def voice_operations(measure_data: dict, voice_index: int) -> list[Operation]:
 def element_duration_ticks(element: ET.Element) -> int:
     if element.tag not in ("Chord", "Rest"):
         return 0
+    if (
+        element.find("acciaccatura") is not None
+        or element.find("appoggiatura") is not None
+        or element.find("graceNoteType") is not None
+    ):
+        return 0
     duration_type = element.findtext("durationType")
     if duration_type not in DURATION_QUARTERS:
         return 0
@@ -730,6 +736,25 @@ def element_duration_ticks(element: ET.Element) -> int:
     dots = int(element.findtext("dots") or 0)
     duration *= sum(Fraction(1, 2**power) for power in range(dots + 1))
     return round(duration * QUARTER_TICKS)
+
+
+def voice_duration_ticks(voice: ET.Element) -> int:
+    """Return the performed duration, including tuplet scaling."""
+    total = 0
+    scales = [Fraction(1)]
+    for element in voice:
+        if element.tag == "Tuplet":
+            normal = int(element.findtext("normalNotes") or 1)
+            actual = int(element.findtext("actualNotes") or 1)
+            if normal > 0 and actual > 0:
+                scales.append(scales[-1] * Fraction(normal, actual))
+            continue
+        if element.tag == "endTuplet":
+            if len(scales) > 1:
+                scales.pop()
+            continue
+        total += round(element_duration_ticks(element) * scales[-1])
+    return total
 
 
 def trim_overfull_measure(measure: ET.Element, measure_ticks: int) -> None:
@@ -740,12 +765,29 @@ def trim_overfull_measure(measure: ET.Element, measure_ticks: int) -> None:
     silence keeps the score loadable without altering identified attacks.
     """
     for voice in measure.findall("voice"):
-        total = sum(element_duration_ticks(child) for child in voice)
+        total = voice_duration_ticks(voice)
         while total > measure_ticks and len(voice):
             last = voice[-1]
-            if last.tag in ("Chord", "Rest"):
-                total -= element_duration_ticks(last)
-            voice.remove(last)
+            if last.tag == "endTuplet":
+                depth = 0
+                start = None
+                for index in range(len(voice) - 1, -1, -1):
+                    if voice[index].tag == "endTuplet":
+                        depth += 1
+                    elif voice[index].tag == "Tuplet":
+                        depth -= 1
+                        if depth == 0:
+                            start = index
+                            break
+                if start is not None:
+                    del voice[start:]
+                else:
+                    voice.remove(last)
+            elif last.tag in ("Chord", "Rest"):
+                voice.remove(last)
+            else:
+                voice.remove(last)
+            total = voice_duration_ticks(voice)
 
 
 def overlay_rest_operations(
@@ -1089,11 +1131,11 @@ def attach_curves(
     staff: ET.Element,
     payload: dict,
 ) -> None:
-    """Attach ties and phrase slurs in DB Score 5.0.7 native format.
+    """Attach ties and phrase slurs in DB绘谱 5.0.7 native format.
 
     Ties are stored on their ending note with start/end EID references.
     Phrase slurs are score-level spanners.  Older inline ``Spanner`` elements
-    are silently discarded when DB Score saves the score.
+    are silently discarded when DB绘谱 saves the score.
     """
     notes_by_onset: dict[tuple[int, int, int, int], ET.Element] = {}
     chord_by_note: dict[ET.Element, ET.Element] = {}

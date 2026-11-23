@@ -42,7 +42,7 @@ ExportSettingsPage {
 
     CheckBox {
         width: parent.width
-        text: qsTrc("project/export", "Use DB Score element IDs")
+        text: qsTrc("project/export", "Use DB绘谱 element IDs")
 
         navigation.name: "MeiUseMuseScoreIds"
         navigation.panel: root.navigationPanel

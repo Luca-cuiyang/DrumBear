@@ -34,6 +34,8 @@
 #include "io/ifilesystem.h"
 #include "async/asyncable.h"
 #include "notation/types/viewmode.h"
+#include "global/iapplication.h"
+#include "playback/iplaybackcontroller.h"
 
 namespace mu::project {
 class ExportProjectScenario : public IExportProjectScenario, public muse::async::Asyncable, public muse::Contextable
@@ -43,8 +45,10 @@ class ExportProjectScenario : public IExportProjectScenario, public muse::async:
     muse::GlobalInject<iex::imagesexport::IImagesExportConfiguration> imagesExportConfiguration;
     muse::GlobalInject<INotationWritersRegister> writers;
     muse::GlobalInject<muse::IPlatformInteractive> platformInteractive;
+    muse::GlobalInject<muse::IApplication> application;
     muse::ContextInject<muse::IInteractive> interactive = { this };
     muse::ContextInject<context::IGlobalContext> context = { this };
+    muse::ContextInject<playback::IPlaybackController> playbackController = { this };
 
 public:
 

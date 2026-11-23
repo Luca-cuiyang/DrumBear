@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the eight approved DB Score drum transcriptions as golden samples."""
+"""Verify the eight approved DB绘谱 drum transcriptions as golden samples."""
 
 from __future__ import annotations
 
@@ -90,7 +90,7 @@ def main() -> None:
 
     if errors:
         raise SystemExit("Standard sample validation failed:\n" + "\n".join(errors))
-    print(f"Validated {len(index['items'])} standard DB Score transcriptions")
+    print(f"Validated {len(index['items'])} standard DB绘谱 transcriptions")
 
 
 if __name__ == "__main__":

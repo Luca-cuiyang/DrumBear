@@ -10,13 +10,13 @@ PROJECT_DIR="$(cd "$(dirname "$0")/../../.." && pwd)"
 SOURCE_ROOT="$(dirname "$PROJECT_DIR")"
 
 shopt -s nullglob
-canonical_app_matches=(/Applications/DB\ score*.app)
-canonical_windows_matches=("$HOME/Desktop/DB score"*.msi)
+canonical_app_matches=(/Applications/DB绘谱*.app /Applications/DB\ score*.app)
+canonical_windows_matches=("$HOME/Desktop/DB绘谱"*.msi "$HOME/Desktop/DB-Score-Windows-"*.msi)
 shopt -u nullglob
 
-CANONICAL_APP="${canonical_app_matches[0]:-/Applications/DB score制谱大师.app}"
+CANONICAL_APP="${canonical_app_matches[0]:-/Applications/DB绘谱.app}"
 CANONICAL_BINARY="$CANONICAL_APP/Contents/MacOS/dbscore"
-WINDOWS_CANONICAL="${canonical_windows_matches[0]:-$HOME/Desktop/DB score制谱大师.msi}"
+WINDOWS_CANONICAL="${canonical_windows_matches[0]:-$HOME/Desktop/DB绘谱-Windows.msi}"
 DRY_RUN=false
 KEEP_DMG=""
 
@@ -89,7 +89,7 @@ cleanup_app_copies() {
         {
             mdfind "kMDItemCFBundleIdentifier == 'app.dbscore.DBScore5' || kMDItemCFBundleIdentifier == 'app.dbscore.DBScore5Development'" 2>/dev/null || true
             find /Applications "$HOME/Applications" "$HOME/Desktop" "$HOME/Downloads" \
-                -maxdepth 8 -type d \( -name 'DB score*.app' -o -name 'dbscore.app' -o -name 'DBScore*.app' \) \
+                -maxdepth 8 -type d \( -name 'DB绘谱*.app' -o -name 'DB score*.app' -o -name 'dbscore.app' -o -name 'DBScore*.app' \) \
                 -prune -print 2>/dev/null || true
         } | sort -u
     )
@@ -132,7 +132,7 @@ cleanup_packages() {
         [[ -n "$package" ]] && all_candidates+=("$package")
     done < <(
         find "$PROJECT_DIR/applebuild" "$HOME/Desktop" "$HOME/Downloads" -maxdepth 1 -type f \
-            \( -iname '*db*score*.dmg' -o -iname '*db*score*.pkg' \) -print 2>/dev/null \
+            \( -iname '*db*score*.dmg' -o -iname '*db*score*.pkg' -o -iname '*绘谱*.dmg' -o -iname '*绘谱*.pkg' \) -print 2>/dev/null \
             | sort
     )
 

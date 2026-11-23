@@ -5,7 +5,7 @@
  * MuseScore Studio
  * Music Composition & Notation
  *
- * Copyright (C) 2026 DB Score contributors
+ * Copyright (C) 2026 DB绘谱 contributors
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -24,10 +24,9 @@
 #include <algorithm>
 #include <complex>
 #include <cmath>
-#include <thread>
 #include <vector>
 
-#include <QPointer>
+#include <QtConcurrent>
 
 #include "log.h"
 #include "notation/imasternotation.h"
@@ -93,7 +92,7 @@ bool computeAudioPeaks(const QString& path, double& duration, QVariantList& peak
 
     duration = double(actualFrames) / sampleRate;
 
-    const int bucketCount = std::min(buckets, int(actualFrames));
+    const int bucketCount = int(std::min<uint64_t>(uint64_t(std::max(1, buckets)), actualFrames));
     peaks.clear();
     peaks.reserve(bucketCount);
 
@@ -389,6 +388,41 @@ double detectBpm(const std::vector<float>& mono, unsigned int sampleRate)
 AudioTrackSettingsModel::AudioTrackSettingsModel(QObject* parent)
     : QObject(parent), muse::Contextable(muse::iocCtxForQmlObject(this))
 {
+    //! Keep background analysis in Qt's thread pool. BaseApplication waits for
+    //! that pool before destroying the UI and its IoC contexts, whereas detached
+    //! std::thread tasks could outlive this QML model and touch destroyed state.
+    connect(&m_waveformWatcher, &QFutureWatcher<QVariantMap>::finished, this, [this]() {
+        const QVariantMap result = m_waveformWatcher.result();
+        if (!result.value("ok").toBool()) {
+            return;
+        }
+
+        const AudioClipSettings* clip = firstClip();
+        if (!clip || clip->filePath.toQString() != result.value("path").toString()) {
+            return;
+        }
+
+        m_duration = result.value("duration").toDouble();
+        m_waveformPeaks = result.value("peaks").toList();
+        emit durationChanged();
+        emit waveformPeaksChanged();
+    });
+
+    connect(&m_bpmWatcher, &QFutureWatcher<QVariantMap>::finished, this, [this]() {
+        const QVariantMap result = m_bpmWatcher.result();
+        if (!result.value("ok").toBool()) {
+            return;
+        }
+
+        const AudioClipSettings* clip = firstClip();
+        if (!clip || clip->filePath.toQString() != result.value("path").toString()) {
+            return;
+        }
+
+        m_originalBpm = result.value("bpm").toDouble();
+        emit measuredBpmChanged();
+    });
+
     if (authorization()) {
         authorization()->stateChanged().onNotify(this, [this]() {
             emit proAccessChanged();
@@ -529,6 +563,10 @@ void AudioTrackSettingsModel::chooseFile()
         return;
     }
 
+    if (playbackController() && playbackController()->isPlaybackInited()) {
+        playbackController()->stop();
+    }
+
     if (m_settings.clips.empty()) {
         AudioClipSettings clip;
         clip.filePath = path;
@@ -557,6 +595,10 @@ void AudioTrackSettingsModel::replaceFile()
     const muse::io::path_t path = interactive()->selectOpeningFileSync(muse::trc("project", "Replace audio"), "", filter);
     if (path.empty()) {
         return;
+    }
+
+    if (playbackController() && playbackController()->isPlaybackInited()) {
+        playbackController()->stop();
     }
 
     if (m_settings.clips.empty()) {
@@ -589,6 +631,10 @@ void AudioTrackSettingsModel::apply()
 
 void AudioTrackSettingsModel::remove()
 {
+    if (playbackController() && playbackController()->isPlaybackInited()) {
+        playbackController()->stop();
+    }
+
     m_settings = AudioTrackSettings();
     m_duration = 0.0;
     m_waveformPeaks.clear();
@@ -710,28 +756,29 @@ void AudioTrackSettingsModel::updateWaveform()
 
     const QString path = clip->filePath.toQString();
 
-    //! NOTE: waveform peaks are computed off the UI thread so that importing a large
-    //! audio file does not freeze the interface. The result is posted back to the UI thread.
-    QPointer<AudioTrackSettingsModel> self(this);
-    std::thread([self, path]() {
-        double duration = 0.0;
-        QVariantList peaks;
-        const bool ok = computeAudioPeaks(path, duration, peaks);
-
-        if (!ok || !self) {
-            return;
-        }
-
-        QMetaObject::invokeMethod(self.data(), [self, duration, peaks]() {
-            if (!self) {
-                return;
+    //! NOTE: waveform peaks are computed in Qt's global thread pool so that
+    //! importing a large audio file does not freeze the interface. QFutureWatcher
+    //! delivers the result on this model's GUI thread and disconnects automatically.
+    m_waveformWatcher.setFuture(QtConcurrent::run([path]() -> QVariantMap {
+        try {
+            double duration = 0.0;
+            QVariantList peaks;
+            if (!computeAudioPeaks(path, duration, peaks)) {
+                return {};
             }
-            self->m_duration = duration;
-            self->m_waveformPeaks = peaks;
-            emit self->durationChanged();
-            emit self->waveformPeaksChanged();
-        }, Qt::QueuedConnection);
-    }).detach();
+            return QVariantMap {
+                { "ok", true },
+                { "path", path },
+                { "duration", duration },
+                { "peaks", peaks },
+            };
+        } catch (const std::exception& e) {
+            LOGE() << "failed to compute waveform: " << e.what();
+        } catch (...) {
+            LOGE() << "failed to compute waveform: unknown exception";
+        }
+        return {};
+    }));
 }
 
 void AudioTrackSettingsModel::notifyAll()
@@ -844,38 +891,33 @@ void AudioTrackSettingsModel::tapTempo()
 
     const QString path = clip->filePath.toQString();
 
-    //! NOTE: 测速在后台线程执行（整段解码 + FFT），避免大音频文件阻塞 UI。
-    QPointer<AudioTrackSettingsModel> self(this);
-    std::thread([self, path]() {
-        std::vector<float> mono;
-        unsigned int sampleRate = 0;
-        if (!decodeAudioMono(path, mono, sampleRate)) {
-            return;
-        }
-
-        double bpm = detectBpm(mono, sampleRate);
-        if (bpm <= 0.0) {
-            return;
-        }
-
-        bpm = std::round(bpm * 100.0) / 100.0;
-        if (!self) {
-            return;
-        }
-
-        QMetaObject::invokeMethod(self.data(), [self, path, bpm]() {
-            if (!self) {
-                return;
+    //! NOTE: 测速在 Qt 线程池执行（整段解码 + FFT），避免大音频文件阻塞 UI。
+    m_bpmWatcher.setFuture(QtConcurrent::run([path]() -> QVariantMap {
+        try {
+            std::vector<float> mono;
+            unsigned int sampleRate = 0;
+            if (!decodeAudioMono(path, mono, sampleRate)) {
+                return {};
             }
-            //! 防止结果过期：期间用户已更换/移除了音频时丢弃旧结果。
-            const AudioClipSettings* clip = self->firstClip();
-            if (!clip || clip->filePath.toQString() != path) {
-                return;
+
+            double bpm = detectBpm(mono, sampleRate);
+            if (bpm <= 0.0) {
+                return {};
             }
-            self->m_originalBpm = bpm;
-            emit self->measuredBpmChanged();
-        }, Qt::QueuedConnection);
-    }).detach();
+
+            bpm = std::round(bpm * 100.0) / 100.0;
+            return QVariantMap {
+                { "ok", true },
+                { "path", path },
+                { "bpm", bpm },
+            };
+        } catch (const std::exception& e) {
+            LOGE() << "failed to detect tempo: " << e.what();
+        } catch (...) {
+            LOGE() << "failed to detect tempo: unknown exception";
+        }
+        return {};
+    }));
 }
 
 void AudioTrackSettingsModel::setScoreOffset(double offset)

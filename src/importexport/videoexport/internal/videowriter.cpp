@@ -26,11 +26,11 @@
 
 #include <QPainter>
 #include <QEventLoop>
-#include <QThread>
 #include <QTimer>
 
 #include "global/concurrency/concurrent.h"
 #include "global/io/filestream.h"
+#include "types/videoexportstate.h"
 
 #include "draw/fontmetrics.h"
 #include "draw/painter.h"
@@ -212,6 +212,26 @@ bool VideoWriter::supportsUnitType(UnitType unitType) const
 
 muse::Ret VideoWriter::write(INotationPtr notation, muse::io::IODevice& device, const Options& options)
 {
+    try {
+        return writeImpl(notation, device, options);
+    } catch (const std::exception& e) {
+        const muse::Ret ret = make_ret(muse::Ret::Code::InternalError, std::string(e.what()));
+        LOGE() << "video export failed with exception: " << e.what();
+        m_progress.finish(ret);
+        return ret;
+    } catch (...) {
+        const muse::Ret ret = make_ret(
+            muse::Ret::Code::InternalError,
+            std::string("视频导出发生未知错误"));
+        LOGE() << "video export failed with an unknown exception";
+        m_progress.finish(ret);
+        return ret;
+    }
+}
+
+muse::Ret VideoWriter::writeImpl(INotationPtr notation, muse::io::IODevice& device, const Options& options)
+{
+    LOGI() << "video export: start";
     if (!authorization() || !authorization()->hasProAccess()) {
         return make_ret(muse::Ret::Code::UnknownError, std::string("导出 MP4 视频需要开通会员"));
     }
@@ -227,9 +247,41 @@ muse::Ret VideoWriter::write(INotationPtr notation, muse::io::IODevice& device, 
 
     muse::io::path_t finalPath(filePath);
     muse::io::path_t tempAudioPath = finalPath + ".tmp_audio.aac";
+    muse::videoExportInProgress.store(true);
+    DEFER {
+        muse::videoExportInProgress.store(false);
+    };
 
+    LOGI() << "video export: resolving encoder";
     auto encoder = videoEncodeResolver()->currentVideoEncoder();
+    if (!encoder) {
+        const muse::Ret ret = make_ret(muse::Ret::Code::InternalError, std::string("视频编码器未加载，无法导出视频"));
+        m_progress.finish(ret);
+        return ret;
+    }
 
+    LOGI() << "video export: preparing score";
+    //! Score layout is not thread-safe. Prepare all temporary export styles and page
+    //! geometry on the UI thread, then let the worker only read and render that stable
+    //! score snapshot. The original layout is restored after both encoders finish.
+    auto restoreData = prepareScore(notation, cfg);
+    if (!restoreData) {
+        const muse::Ret ret = make_ret(muse::Ret::Code::InternalError, std::string("导出谱面准备失败"));
+        m_progress.finish(ret);
+        return ret;
+    }
+
+    DEFER {
+        try {
+            restoreScore(notation, restoreData.value());
+        } catch (const std::exception& e) {
+            LOGE() << "failed to restore score after video export: " << e.what();
+        } catch (...) {
+            LOGE() << "failed to restore score after video export";
+        }
+    };
+
+    LOGI() << "video export: opening encoder";
     muse::media::IVideoEncoder::Options encoderOptions;
     encoderOptions.format = "mp4";
     encoderOptions.width = cfg.width;
@@ -240,26 +292,55 @@ muse::Ret VideoWriter::write(INotationPtr notation, muse::io::IODevice& device, 
 
     if (!encoder->open(finalPath, encoderOptions)) {
         LOGE() << "failed to open video encoder";
-        return make_ret(muse::Ret::Code::UnknownError);
+        const muse::Ret ret = make_ret(muse::Ret::Code::UnknownError, std::string("无法初始化视频编码器"));
+        m_progress.finish(ret);
+        return ret;
     }
 
-    m_isCompleted = false;
-    m_audioCompleted = false;
-    m_abort = false;
+    DEFER {
+        try {
+            encoder->close();
+        } catch (...) {
+            LOGE() << "failed to close video encoder";
+        }
+    };
+    DEFER {
+        try {
+            fileSystem()->remove(tempAudioPath);
+        } catch (...) {
+            LOGW() << "failed to remove temporary video audio";
+        }
+    };
+
+    m_isCompleted.store(false);
+    m_audioCompleted.store(false);
+    m_abort.store(false);
     m_writeRet = muse::Ret();
     m_audioRet = muse::Ret();
 
+    LOGI() << "video export: starting worker threads";
     startVideoExport(encoder, notation, cfg);
 
     if (withAudio) {
-        startAudioExport(notation, tempAudioPath, cfg);
+        LOGI() << "video export: starting audio export";
+        try {
+            startAudioExport(notation, tempAudioPath, cfg);
+        } catch (const std::exception& e) {
+            LOGE() << "audio export failed with exception: " << e.what();
+            m_audioRet = make_ret(muse::Ret::Code::InternalError, std::string(e.what()));
+            m_audioCompleted.store(true);
+        } catch (...) {
+            LOGE() << "audio export failed with an unknown exception";
+            m_audioRet = make_ret(muse::Ret::Code::InternalError, std::string("音频导出发生未知错误"));
+            m_audioCompleted.store(true);
+        }
     } else {
-        m_audioCompleted = true;
+        m_audioCompleted.store(true);
         m_audioRet = muse::make_ok();
     }
 
     //! NOTE: 用事件循环按小间隔等待，替代忙轮询，避免导出期间主线程空转占满 CPU。
-    while (!m_isCompleted || !m_audioCompleted) {
+    while (!m_isCompleted.load() || !m_audioCompleted.load()) {
         QEventLoop loop;
         QTimer::singleShot(16, &loop, &QEventLoop::quit);
         loop.exec();
@@ -293,10 +374,7 @@ muse::Ret VideoWriter::write(INotationPtr notation, muse::io::IODevice& device, 
             result = m_audioRet;
         }
 
-        fileSystem()->remove(tempAudioPath);
     }
-
-    encoder->close();
 
     return result;
 }
@@ -308,21 +386,21 @@ VideoWriter::Config VideoWriter::makeConfig() const
     cfg.fps = configuration()->fps();
 
     std::string resolution = configuration()->resolution();
-    if (resolution == "1080p_16x9") {
+    if (resolution == "2160p" || resolution == "4k_16x9") {
+        cfg.width = 3840;
+        cfg.height = 2160;
+    } else if (resolution == "1440p" || resolution == "2k_16x9") {
+        cfg.width = 2560;
+        cfg.height = 1440;
+    } else if (resolution == "1080p_16x9") {
         cfg.width = 1920;
         cfg.height = 1080;
     } else if (resolution == "1080p_9x16") {
         cfg.width = 1080;
         cfg.height = 1920;
-    } else if (resolution == "2k_16x9") {
-        cfg.width = 2560;
-        cfg.height = 1440;
     } else if (resolution == "2k_9x16") {
         cfg.width = 1440;
         cfg.height = 2560;
-    } else if (resolution == "4k_16x9") {
-        cfg.width = 3840;
-        cfg.height = 2160;
     } else if (resolution == "4k_9x16") {
         cfg.width = 2160;
         cfg.height = 3840;
@@ -377,7 +455,23 @@ VideoWriter::Config VideoWriter::makeConfig() const
 void VideoWriter::startVideoExport(muse::media::IVideoEncoderPtr encoder, INotationPtr notation, const Config& cfg)
 {
     muse::Concurrent::run([this, encoder, notation, cfg]() {
-        doGenerate(encoder, notation, cfg);
+        bool failedWithException = false;
+        try {
+            doGenerate(encoder, notation, cfg);
+        } catch (const std::exception& e) {
+            LOGE() << "video export failed with exception: " << e.what();
+            m_writeRet = make_ret(muse::Ret::Code::InternalError, std::string(e.what()));
+            failedWithException = true;
+        } catch (...) {
+            LOGE() << "video export failed with an unknown exception";
+            m_writeRet = make_ret(muse::Ret::Code::InternalError, std::string("视频导出发生未知错误"));
+            failedWithException = true;
+        }
+
+        if (failedWithException) {
+            m_progress.finish(m_writeRet);
+        }
+        m_isCompleted.store(true);
     });
 }
 
@@ -387,13 +481,13 @@ void VideoWriter::startAudioExport(INotationPtr notation, const muse::io::path_t
     if (!m_audioWriter) {
         LOGE() << "aac writer not found";
         m_audioRet = make_ret(muse::Ret::Code::InternalError);
-        m_audioCompleted = true;
+        m_audioCompleted.store(true);
         return;
     }
 
     m_audioWriter->progress()->finished().onReceive(this, [this](const muse::ProgressResult& res) {
         m_audioRet = res.ret;
-        m_audioCompleted = true;
+        m_audioCompleted.store(true);
     });
 
     Options audioOpts;
@@ -403,9 +497,17 @@ void VideoWriter::startAudioExport(INotationPtr notation, const muse::io::path_t
 
     m_audioFile = std::make_unique<muse::io::FileStream>(audioPath);
     m_audioFile->setMeta("file_path", audioPath.toStdString());
-    m_audioFile->open(muse::io::IODevice::WriteOnly);
+    if (!m_audioFile->open(muse::io::IODevice::WriteOnly)) {
+        m_audioRet = make_ret(muse::Ret::Code::InternalError, std::string("无法创建临时音频文件"));
+        m_audioCompleted.store(true);
+        return;
+    }
 
-    m_audioWriter->write(notation, *m_audioFile, audioOpts);
+    const muse::Ret writeRet = m_audioWriter->write(notation, *m_audioFile, audioOpts);
+    if (!writeRet) {
+        m_audioRet = writeRet;
+        m_audioCompleted.store(true);
+    }
 }
 
 muse::Ret VideoWriter::writeList(const INotationPtrList&, muse::io::IODevice&, const Options&)
@@ -421,14 +523,14 @@ muse::Progress* VideoWriter::progress()
 
 void VideoWriter::abort()
 {
-    m_abort = true;
+    m_abort.store(true);
 
     if (m_audioWriter) {
         m_audioWriter->abort();
     }
 
     // Wait abort completion（同样用事件循环替代忙轮询）
-    while (!m_isCompleted || !m_audioCompleted) {
+    while (!m_isCompleted.load() || !m_audioCompleted.load()) {
         QEventLoop loop;
         QTimer::singleShot(16, &loop, &QEventLoop::quit);
         loop.exec();
@@ -643,17 +745,6 @@ void VideoWriter::restoreScore(INotationPtr notation, const ScoreRestoreData& da
 void VideoWriter::doGenerate(muse::media::IVideoEncoderPtr encoder, INotationPtr notation, const Config& config)
 {
     Config actualConfig = config;
-    auto restoreData = prepareScore(notation, actualConfig);
-    if (!restoreData) {
-        m_writeRet = make_ret(muse::Ret::Code::UnknownError);
-        m_isCompleted = true;
-        return;
-    }
-
-    DEFER {
-        restoreScore(notation, restoreData.value());
-        m_isCompleted = true;
-    };
 
     //! NOTE: Smooth page transitions scroll vertically through the page systems, so the
     //! page must be rendered at "fit width" scale (it may be taller than the frame) rather
@@ -763,7 +854,7 @@ bool VideoWriter::generateLeadingFrames(muse::media::IVideoEncoderPtr encoder, I
     muse::RectF subtitleRect(textLeft, subtitleTop, maxTextWidth, subtitleHeight);
 
     for (int f = 0; f < leadingFrameCount; f++) {
-        if (m_abort) {
+        if (m_abort.load()) {
             m_writeRet = make_ret(muse::Ret::Code::Cancel);
             m_progress.finish(m_writeRet);
             return false;
@@ -799,7 +890,7 @@ bool VideoWriter::generateTrailingFrames(muse::media::IVideoEncoderPtr encoder, 
     muse::RectF frameRect = muse::RectF::fromQRectF(QRectF(frame.rect()));
 
     for (int f = 0; f < trailingFrameCount; f++) {
-        if (m_abort) {
+        if (m_abort.load()) {
             m_writeRet = make_ret(muse::Ret::Code::Cancel);
             m_progress.finish(m_writeRet);
             return false;
@@ -1051,7 +1142,7 @@ bool VideoWriter::generateScoreFrames(muse::media::IVideoEncoderPtr encoder, INo
     double nextPlaybackFollowUpdate = 0.0;
 
     for (int f = 0; f < scoreFrameCount; f++) {
-        if (m_abort) {
+        if (m_abort.load()) {
             m_writeRet = make_ret(muse::Ret::Code::Cancel);
             m_progress.finish(m_writeRet);
             return false;
@@ -1219,6 +1310,6 @@ void VideoWriter::drawWatermark(muse::draw::Painter& painter, QImage& frame, con
     painter.save();
     painter.setFont(font);
     painter.setPen(Color(255, 255, 255, 120));
-    painter.drawText(textRect, AlignRight | AlignBottom, TextDontClip, u"鼓乐熊AI · DB Score");
+    painter.drawText(textRect, AlignRight | AlignBottom, TextDontClip, u"鼓乐熊AI · DB绘谱");
     painter.restore();
 }

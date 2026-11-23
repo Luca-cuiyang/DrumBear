@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regression tests for the DB Score MIDI converter."""
+"""Regression tests for the DB绘谱 MIDI converter."""
 
 import json
 import struct

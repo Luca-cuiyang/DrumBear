@@ -138,13 +138,16 @@ Column {
         function refresh() {
             if (!root.exportModel.selectedExportType.settingsPagePath) {
                 setSource("")
+                return
             }
 
             var properties = {
                 model: Qt.binding(() => root.exportModel),
-                accountModel: root.accountModel,
                 navigationPanel: navPanel,
                 navigationOrder: 3
+            }
+            if (root.exportModel.selectedExportType.id === "mp4") {
+                properties.accountModel = root.accountModel
             }
 
             setSource(root.exportModel.selectedExportType.settingsPagePath, properties)

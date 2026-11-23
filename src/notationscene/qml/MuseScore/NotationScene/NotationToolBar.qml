@@ -28,6 +28,8 @@ import DBScore.NotationScene
 StyledToolBarView {
     property alias isCompactMode: toolBarModel.isCompactMode
 
+    showGroupSurface: true
+
     navigationPanel.name: "NotationToolBar"
     navigationPanel.accessible.name: qsTrc("notation", "Notation toolbar")
 

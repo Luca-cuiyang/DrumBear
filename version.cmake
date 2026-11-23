@@ -18,7 +18,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>. 
 
-set(MUSE_APP_NAME_HUMAN_READABLE "DB Score")
+set(MUSE_APP_NAME_HUMAN_READABLE "DB绘谱")
 set(MUSE_APP_NAME_MACHINE_READABLE "DBScore")
 
 set(MUSE_APP_VERSION_FILE "${CMAKE_CURRENT_LIST_DIR}/release-version.txt")

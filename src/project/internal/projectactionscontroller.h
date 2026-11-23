@@ -42,6 +42,7 @@
 #include "icloseprojectscenario.h"
 #include "iopenprojectscenario.h"
 #include "isaveprojectscenario.h"
+#include "playback/iplaybackcontroller.h"
 
 #include "async/asyncable.h"
 
@@ -62,6 +63,7 @@ public:
     muse::ContextInject<muse::IInteractive> interactive = { this };
     muse::ContextInject<context::IGlobalContext> globalContext = { this };
     muse::ContextInject<print::IPrintProvider> printProvider = { this };
+    muse::ContextInject<playback::IPlaybackController> playbackController = { this };
 
     ProjectActionsController(const muse::modularity::ContextPtr& iocCtx)
         : muse::Contextable(iocCtx) {}

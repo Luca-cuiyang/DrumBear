@@ -433,6 +433,13 @@ muse::Ret ProjectActionsController::openAudioTrackSettings()
         return make_ret(Ret::Code::UnknownError);
     }
 
+    //! Replacing an accompaniment changes the playback track graph. Stop the current
+    //! player before mutating that graph so the audio thread cannot access a track
+    //! that is being removed or recreated.
+    if (playbackController() && playbackController()->isPlaybackInited()) {
+        playbackController()->stop();
+    }
+
     AudioTrackSettings settings = audioSettings->audioTrackSettings();
     AudioClipSettings clip;
     clip.filePath = path;

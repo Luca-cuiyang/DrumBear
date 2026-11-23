@@ -105,7 +105,7 @@ void MainWindowTitleProvider::update()
     project::INotationProjectPtr project = context()->currentProject();
 
     if (!project) {
-        setTitle(muse::qtrc("appshell", "DB Score"));
+        setTitle(muse::qtrc("appshell", "DB绘谱"));
         setFilePath("");
         setFileModified(false);
         return;

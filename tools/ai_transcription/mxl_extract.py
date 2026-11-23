@@ -79,7 +79,7 @@ def instrument_map(
             if dbscore_export:
                 match = re.fullmatch(r"P\d+-I(\d+)", instrument_id)
                 if match:
-                    # DB Score's MusicXML exporter numbers drum instruments
+                    # DB绘谱's MusicXML exporter numbers drum instruments
                     # from 36 while preserving the zero-based source pitch.
                     result[instrument_id] = int(match.group(1)) - 1
                     continue

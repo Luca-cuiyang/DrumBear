@@ -78,7 +78,7 @@ ColumnLayout {
 
         PropertyItem {
             index: 2
-            propertyName: qsTrc("project/properties", "DB Score version:")
+            propertyName: qsTrc("project/properties", "DB绘谱版本：")
             propertyValue: root.propertiesModel.version
             isFileInfoPanelProperty: true
 

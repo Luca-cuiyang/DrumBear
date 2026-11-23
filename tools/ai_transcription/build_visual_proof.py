@@ -72,7 +72,7 @@ def side_by_side(source: Path, rendered: Path, output: Path, title: str) -> None
     )
     draw = ImageDraw.Draw(canvas)
     draw.text((10, 18), f"{title} | Source", fill="black")
-    draw.text((left.width + 20, 18), "DB Score output", fill="black")
+    draw.text((left.width + 20, 18), "DB绘谱 output", fill="black")
     canvas.paste(left, (0, header))
     canvas.paste(right, (left.width + 20, header))
     output.parent.mkdir(parents=True, exist_ok=True)

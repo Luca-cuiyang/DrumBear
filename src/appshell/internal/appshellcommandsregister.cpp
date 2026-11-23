@@ -57,8 +57,8 @@ static const std::vector<CommandInfo> s_commandInfos = {
 
     CommandInfo(
         APP_ABOUT_DBSCORE_COMMAND,
-        TranslatableString("action", "&About DB Score…"),
-        TranslatableString("action", "About DB Score"),
+        TranslatableString("action", "&About DB绘谱…"),
+        TranslatableString("action", "About DB绘谱"),
         InputSchema(),
         Decoration()
         ),

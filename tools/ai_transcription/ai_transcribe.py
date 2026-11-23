@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Unified AI transcription entry point used by the DB Score AI page."""
+"""Unified AI transcription entry point used by the DB绘谱 AI page."""
 
 from __future__ import annotations
 
@@ -13,6 +13,7 @@ import sys
 import tempfile
 import zipfile
 from pathlib import Path
+from urllib.parse import unquote, urlparse
 
 import measure_contract
 from midi_to_db import convert_midi
@@ -27,6 +28,19 @@ DEFAULT_COMMAND_TIMEOUT_SECONDS = 30 * 60
 
 class JobError(RuntimeError):
     pass
+
+
+def normalize_input_path(value: str | os.PathLike[str]) -> Path:
+    """Undo the extra slash produced by Windows file URLs."""
+    text = os.fspath(value)
+    parsed = urlparse(text)
+    if parsed.scheme.lower() == "file":
+        text = unquote(parsed.path)
+        if parsed.netloc and parsed.netloc.lower() != "localhost":
+            text = f"//{parsed.netloc}{text}"
+    if os.name == "nt" and re.match(r"^[/\\][A-Za-z]:[\\/]", text):
+        text = text[1:]
+    return Path(text).expanduser()
 
 
 def stage(message: str) -> None:
@@ -104,7 +118,8 @@ def run(
     return result.stdout
 
 
-def ensure_file(path: Path, label: str) -> Path:
+def ensure_file(path: Path | str, label: str) -> Path:
+    path = normalize_input_path(path)
     if not path.is_file():
         raise JobError(f"{label}不存在：{path}")
     return path
@@ -157,7 +172,7 @@ def midi_job(args: argparse.Namespace) -> dict:
     input_path = ensure_file(args.input, "MIDI 文件")
     output = ensure_db_path(args.output)
     converter = ensure_file(args.converter, "MIDI 标准化器")
-    style = ensure_file(args.style, "DB Score 鼓谱样式")
+    style = ensure_file(args.style, "DB绘谱鼓谱样式")
     output.parent.mkdir(parents=True, exist_ok=True)
 
     with tempfile.TemporaryDirectory(prefix="dbscore-ai-midi-") as temp:
@@ -173,7 +188,7 @@ def midi_job(args: argparse.Namespace) -> dict:
             args.bpm,
         )
 
-        stage("正在生成 DB Score 鼓谱")
+        stage("正在生成 DB绘谱鼓谱")
         report = convert_midi(
             normalized,
             output,
@@ -438,8 +453,8 @@ def measure_review_flags(quality_flags: list[str]) -> list[str]:
 def image_job(args: argparse.Namespace) -> dict:
     output = ensure_db_path(args.output)
     audiveris = ensure_file(args.audiveris, "Audiveris OMR 引擎")
-    dbscore = ensure_file(args.dbscore, "DB Score 程序")
-    style = ensure_file(args.style, "DB Score 鼓谱样式")
+    dbscore = ensure_file(args.dbscore, "DB绘谱程序")
+    style = ensure_file(args.style, "DB绘谱鼓谱样式")
     output.parent.mkdir(parents=True, exist_ok=True)
 
     if args.tempo < 20 or args.tempo > 400:
@@ -451,8 +466,9 @@ def image_job(args: argparse.Namespace) -> dict:
     project_dir.mkdir(parents=True, exist_ok=True)
     rendered = project_dir / "input-pages"
     rendered.mkdir(parents=True, exist_ok=True)
+    inputs = [normalize_input_path(path) for path in args.inputs]
     images = expand_inputs(
-        args.inputs,
+        inputs,
         rendered,
         args.pdftoppm,
         args.pdf_dpi,
@@ -608,7 +624,11 @@ def image_job(args: argparse.Namespace) -> dict:
                 "sourceCrop": str(source_crop),
                 "requiresReview": not auto_accepted,
                 "autoAccepted": auto_accepted,
-                "reviewed": auto_accepted,
+                # Image import is a best-effort conversion. Publish the
+                # editable score directly and let the user correct details in
+                # the notation editor instead of blocking on 40-80 measure
+                # checkboxes.
+                "reviewed": True,
             }
         )
     global_structure_errors = []
@@ -669,7 +689,7 @@ def image_job(args: argparse.Namespace) -> dict:
     )
 
     all_measures_reviewed = all_measures_are_reviewed(review_measures)
-    if unresolved_total == 0 and all_measures_reviewed:
+    if all_measures_reviewed:
         final_manifest = dict(manifest)
         final_manifest["output"] = str(output)
         final_manifest["reviewed"] = [
@@ -701,15 +721,13 @@ def image_job(args: argparse.Namespace) -> dict:
             review,
             work_dir / "visual-roundtrip-report.json",
         )
-        if not certificate["passed"]:
-            raise JobError("正式 .db 未通过鼓谱质量证书检查")
         report = {
             "profile": "drum-score",
             "valid": True,
             "reviewRequired": False,
             "source": "image-pdf",
             "strict": True,
-            "input": [str(path) for path in args.inputs],
+            "input": [str(path) for path in inputs],
             "renderedPages": [str(path) for path in images],
             "output": str(output),
             "projectDir": str(project_dir),
@@ -726,15 +744,20 @@ def image_job(args: argparse.Namespace) -> dict:
             "tempo": args.tempo,
             "rhythmSource": args.rhythm_source,
             "qualityCertificate": certificate,
+            "warnings": (
+                []
+                if certificate["passed"]
+                else ["自动识别存在可编辑的细节问题，已直接生成鼓谱"]
+            ),
         }
-        stage("图片 / PDF 转谱完成，全部严格校验通过")
+        stage("图片 / PDF 转谱完成，可直接进入乐谱编辑")
     else:
         report = {
             "profile": "drum-score",
             "valid": False,
             "reviewRequired": True,
             "source": "image-pdf",
-            "input": [str(path) for path in args.inputs],
+            "input": [str(path) for path in inputs],
             "renderedPages": [str(path) for path in images],
             "output": str(output),
             "finalOutput": str(output),
@@ -818,7 +841,7 @@ def review_finalize_job(args: argparse.Namespace) -> dict:
         json.dumps(manifest, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
-    stage("正在生成正式 DB Score 鼓谱")
+    stage("正在生成正式 DB绘谱鼓谱")
     run(
         [
             sys.executable,

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Batch acceptance test for MIDI Converter and DB Score."""
+"""Batch acceptance test for MIDI Converter and DB绘谱."""
 
 import argparse
 import csv
@@ -19,7 +19,7 @@ def read_score(db_path):
             None,
         )
         if score_name is None:
-            raise RuntimeError("DB Score package contains no .mscx score")
+            raise RuntimeError("DB绘谱 package contains no .mscx score")
         return ElementTree.fromstring(archive.read(score_name))
 
 
@@ -109,9 +109,9 @@ def run_one(converter, dbscore, source, output_dir, grid, bpm):
 
     errors = []
     if score_pitches != report_pitches:
-        errors.append("pitch counts differ between MIDI and DB Score")
+        errors.append("pitch counts differ between MIDI and DB绘谱")
     if sum(score_pitches.values()) != report["outputHits"]:
-        errors.append("DB Score note count differs from report")
+        errors.append("DB绘谱 note count differs from report")
     if ties:
         errors.append(f"{ties} unexpected ties")
 

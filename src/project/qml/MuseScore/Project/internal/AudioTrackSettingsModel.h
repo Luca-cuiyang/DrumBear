@@ -5,7 +5,7 @@
  * MuseScore Studio
  * Music Composition & Notation
  *
- * Copyright (C) 2026 DB Score contributors
+ * Copyright (C) 2026 DB绘谱 contributors
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -25,6 +25,7 @@
 #include <QObject>
 #include <QVariantList>
 #include <QElapsedTimer>
+#include <QFutureWatcher>
 #include <qqmlintegration.h>
 
 #include "context/iglobalcontext.h"
@@ -162,6 +163,8 @@ private:
     double m_masterVolumeDb = 0.0;
     bool m_volumeInitialized = false;
     bool m_prevHasTrack = false;
+    QFutureWatcher<QVariantMap> m_waveformWatcher;
+    QFutureWatcher<QVariantMap> m_bpmWatcher;
 };
 }
 

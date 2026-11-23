@@ -50,7 +50,7 @@ FlatButton {
     contentItem: Row {
         spacing: 4
 
-        StyledIconLabel {
+        DbIconLabel {
             iconCode: root.icon
             font: ui.theme.toolbarIconsFont
         }
@@ -61,7 +61,7 @@ FlatButton {
             text: root.text
         }
 
-        StyledIconLabel {
+        DbIconLabel {
             anchors.verticalCenter: parent.verticalCenter
 
             iconCode: IconCode.SMALL_ARROW_DOWN

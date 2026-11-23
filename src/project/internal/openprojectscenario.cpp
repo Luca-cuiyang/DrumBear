@@ -505,7 +505,7 @@ async::Promise<io::path_t> OpenProjectScenario::selectScoreOpeningFile() const
                          "*.ove *.scw *.bmw *.bww *.gtp *.gp3 *.gp4 *.gp5 *.gpx *.gp *.ptb *.mei *.mnx *.json *.tef *.mscx *.mscs *.db~ *.mscz~";
 
     std::vector<std::string> filter { muse::trc("project", "All supported files") + " (" + allExt + ")",
-                                      muse::trc("project", "DB Score 文件") + " (*.db *.mscz)",
+                                      muse::trc("project", "DB绘谱文件") + " (*.db *.mscz)",
                                       muse::trc("project", "MusicXML files") + " (*.mxl *.musicxml *.xml)",
                                       muse::trc("project", "MIDI files") + " (*.mid *.midi *.kar)",
                                       muse::trc("project", "MNX files [experimental]") + " (*.mnx *.json)",
@@ -520,7 +520,7 @@ async::Promise<io::path_t> OpenProjectScenario::selectScoreOpeningFile() const
                                       muse::trc("project", "TablEdit files [experimental]") + " (*.tef)",
                                       muse::trc("project", "Uncompressed MuseScore folders [experimental]") + " (*.mscx)",
                                       muse::trc("project", "MuseScore developer files") + " (*.mscs)",
-                                      muse::trc("project", "DB Score 备份文件") + " (*.db~ *.mscz~)" };
+                                      muse::trc("project", "DB绘谱备份文件") + " (*.db~ *.mscz~)" };
 
     muse::io::path_t defaultDir = configuration()->lastOpenedProjectsPath();
 

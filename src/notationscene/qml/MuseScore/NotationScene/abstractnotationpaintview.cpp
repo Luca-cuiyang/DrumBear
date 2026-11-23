@@ -30,6 +30,7 @@
 
 #include "async/async.h"
 #include "log.h"
+#include "types/videoexportstate.h"
 
 #include "actions/actiontypes.h"
 #include "engraving/dom/measure.h"
@@ -86,6 +87,9 @@ AbstractNotationPaintView::AbstractNotationPaintView(QQuickItem* parent)
     });
 
     connect(&m_updatePlaybackCursorInterpolatedTimer, &QTimer::timeout, this, [this]() {
+        if (muse::videoExportInProgress.load()) {
+            return;
+        }
         updatePlaybackCursorInterpolated();
     });
 }
@@ -125,6 +129,9 @@ void AbstractNotationPaintView::load()
     m_playbackCursor = std::make_unique<PlaybackCursor>(iocContext());
     m_playbackCursor->setVisible(false);
     playbackController()->playbackTickChanged().onReceive(this, [this](midi::tick_t tick) {
+        if (muse::videoExportInProgress.load()) {
+            return;
+        }
         if (!m_playbackCursor) {
             return;
         }
@@ -305,7 +312,6 @@ void AbstractNotationPaintView::onLoadNotation(INotationPtr)
     }
 
     m_notation->notationChanged().onReceive(this, [this](const RectF& updateRect) {
-        m_pageCache.clear();
         updateLoopMarkers();
         updateShadowNoteVisibility();
         scheduleRedraw(updateRect.isValid() ? fromLogical(updateRect) : RectF());
@@ -441,8 +447,6 @@ void AbstractNotationPaintView::onLoadNotation(INotationPtr)
 
 void AbstractNotationPaintView::onUnloadNotation(INotationPtr notation)
 {
-    m_pageCache.clear();
-
     globalContext()->playbackState()->playbackPositionChanged().disconnect(this);
     globalContext()->playbackState()->playbackStatusChanged().disconnect(this);
 
@@ -769,6 +773,12 @@ bool AbstractNotationPaintView::elementPopupIsOpen(const ElementType& elementTyp
 void AbstractNotationPaintView::paint(QPainter* qp)
 {
     TRACEFUNC;
+
+    // Video export re-lays out the score on a worker thread. The score view
+    // must not paint the same engraving objects until that layout is restored.
+    if (muse::videoExportInProgress.load()) {
+        return;
+    }
 
     RectF rect = RectF::fromQRectF(qp->clipBoundingRect());
     rect = correctDrawRect(rect);
@@ -1920,6 +1930,10 @@ void AbstractNotationPaintView::alignPortraitGroup(bool immediate)
 
 void AbstractNotationPaintView::movePlaybackCursor(muse::midi::tick_t tick, bool snapPortraitScroll)
 {
+    if (muse::videoExportInProgress.load()) {
+        return;
+    }
+
     TRACEFUNC;
 
     m_lastCursorTick = tick;
@@ -1958,6 +1972,10 @@ void AbstractNotationPaintView::movePlaybackCursor(muse::midi::tick_t tick, bool
 
 void AbstractNotationPaintView::refreshPlaybackCursorStyle()
 {
+    if (muse::videoExportInProgress.load()) {
+        return;
+    }
+
     if (m_playbackCursorItem) {
         m_playbackCursorItem->setProperty("color", notationConfiguration()->playbackCursorColor());
         m_playbackCursorItem->setProperty("opacity", notationConfiguration()->playbackCursorOpacity());
@@ -1985,12 +2003,7 @@ bool AbstractNotationPaintView::shouldAdjustCanvasVerticallyDuringPlayback(const
         return false;
     }
 
-    if (m_pageCache.adjustVerticallyDuringPlayback.has_value()) {
-        return m_pageCache.adjustVerticallyDuringPlayback.value();
-    }
-
     int nonEmptySystemCount = 0;
-    m_pageCache.adjustVerticallyDuringPlayback = false;
 
     for (const System* system : page->systems()) {
         if (!system->staves().empty()) {
@@ -1998,12 +2011,11 @@ bool AbstractNotationPaintView::shouldAdjustCanvasVerticallyDuringPlayback(const
         }
 
         if (nonEmptySystemCount > 1) {
-            m_pageCache.adjustVerticallyDuringPlayback = true;
-            break;
+            return true;
         }
     }
 
-    return m_pageCache.adjustVerticallyDuringPlayback.value();
+    return false;
 }
 
 void AbstractNotationPaintView::onPlaybackCursorRectChanged()
@@ -2025,19 +2037,10 @@ void AbstractNotationPaintView::onPlaybackCursorRectChanged()
 
 const Page* AbstractNotationPaintView::pageByPoint(const PointF& point) const
 {
-    if (m_pageCache.page) {
-        const RectF r = m_pageCache.page->ldata()->bbox().translated(m_pageCache.page->pos());
-        if (r.contains(point)) {
-            return m_pageCache.page;
-        }
-    }
-
-    m_pageCache.clear();
-
+    // Page objects can be replaced when the viewport changes (for example while
+    // opening a dock). Never retain their raw pointers across layout changes.
     INotationElementsPtr elements = notationElements();
-    m_pageCache.page = elements ? elements->pageByPoint(point) : nullptr;
-
-    return m_pageCache.page;
+    return elements ? elements->pageByPoint(point) : nullptr;
 }
 
 PointF AbstractNotationPaintView::alignToCurrentPageBorder(const RectF& showRect, const PointF& pos) const

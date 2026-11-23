@@ -29,7 +29,21 @@ using namespace muse::actions;
 static QString localPathFromInput(const QString& value)
 {
     const QUrl url(value);
-    return url.isLocalFile() ? url.toLocalFile() : value;
+    QString path = url.isLocalFile() ? url.toLocalFile() : value;
+    if (path.isEmpty()) {
+        return {};
+    }
+
+    //! File dialogs commonly return file:///C:/... on Windows. QUrl may expose
+    //! that local path as /C:/..., which is not an absolute Windows drive path.
+    if (path.size() >= 3
+        && path.at(0) == '/'
+        && path.at(1).isLetter()
+        && path.at(2) == ':') {
+        path.remove(0, 1);
+    }
+
+    return QDir::cleanPath(path);
 }
 
 static double fractionValue(const QString& value, bool* ok = nullptr)
@@ -65,6 +79,9 @@ static int jobTimeoutMilliseconds()
 static QString localizedJobError(const QString& value)
 {
     const QString detail = value.trimmed();
+    if (detail.contains("鼓谱文件不存在")) {
+        return QObject::tr("找不到所选原图片或 PDF。请重新选择文件后再试");
+    }
     if (detail.contains("No module named 'cv2'")) {
         return QObject::tr("图片转谱运行库缺少 OpenCV，请安装完整程序包后重试");
     }
@@ -77,13 +94,23 @@ static QString localizedJobError(const QString& value)
     if (detail.contains("Command timed out")) {
         return QObject::tr("转谱命令超时，任务已停止；请查看日志后重试");
     }
-    if (detail.contains("DB Score timed out")) {
-        return QObject::tr("DB Score 生成文件超时，请关闭其他乐谱窗口后重试");
+    if (detail.contains("DB绘谱 timed out")) {
+        return QObject::tr("DB绘谱 生成文件超时，请关闭其他乐谱窗口后重试");
     }
-    if (detail.contains("DB Score failed")) {
-        return QObject::tr("DB Score 生成文件失败，请查看日志后重试");
+    if (detail.contains("DB绘谱 failed")) {
+        return QObject::tr("DB绘谱 生成文件失败，请查看日志后重试");
     }
-    return detail.left(1200);
+    if ((detail.contains("Command failed") && detail.contains("Audiveris"))
+        || (detail.contains("FileNotFoundError") && detail.contains(".mxl"))
+        || detail.contains("too low interline value")
+        || detail.contains("Sheet ignored")
+        || detail.contains("Error in reaching step PAGE")) {
+        return QObject::tr(
+            "Audiveris 无法识别这张图片：分辨率过低或页面中没有可识别的五线谱。"
+            "请使用 300 DPI 以上的完整鼓谱图片，并确保谱线清晰、页面未裁切。"
+            "如果原图清晰，请打开转谱日志查看具体原因");
+    }
+    return detail.left(400);
 }
 
 AiTranscriptionModel::AiTranscriptionModel(QObject* parent)
@@ -903,10 +930,23 @@ QString AiTranscriptionModel::environmentDiagnostics() const
         line(tr("Python"), resolvePython()),
         line(tr("转换引擎"), resolveEngine()),
         line(tr("MIDI 标准化器"), resolveMidiConverter()),
-        line(tr("DB Score 样式"), resolveStyle()),
+        line(tr("DB绘谱样式"), resolveStyle()),
         line(tr("PDF 渲染器"), resolvePdfToPpm()),
         line(tr("Audiveris"), resolveAudiveris()),
     }.join('\n');
+}
+
+QString AiTranscriptionModel::normalizeInputPath(const QString& path) const
+{
+    return localPathFromInput(path);
+}
+
+QString AiTranscriptionModel::localFileUrl(const QString& path) const
+{
+    const QString localPath = localPathFromInput(path);
+    return localPath.isEmpty()
+           ? QString()
+           : QUrl::fromLocalFile(localPath).toString(QUrl::FullyEncoded);
 }
 
 void AiTranscriptionModel::startJob(const QStringList& arguments, const QString& kind)

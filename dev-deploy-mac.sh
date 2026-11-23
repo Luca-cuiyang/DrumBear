@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# DB Score - macOS 开发版部署脚本
+# DB绘谱 - macOS 开发版部署脚本
 # 用法：./dev-deploy-mac.sh
-# 构建并部署到 /Applications/DB score制谱大师.app（开发测试用，不打包 DMG）
+# 构建并部署到 /Applications/DB绘谱.app（开发测试用，不打包 DMG）
 
 set -e
 
@@ -10,7 +10,7 @@ PROJECT_PARENT="$(cd "$PROJECT_DIR/.." && pwd)"
 QT_BIN="${QT_BIN:-$PROJECT_PARENT/Qt/6.10.2/macos/bin}"
 BUILD_DIR="$PROJECT_DIR/builds/Mac-Qt6.10.2-macos-Ninja-Release"
 BUILT_APP="$BUILD_DIR/src/app/dbscore.app"
-TARGET_APP="/Applications/DB score制谱大师.app"
+TARGET_APP="/Applications/DB绘谱.app"
 
 export PATH="$QT_BIN:$PATH"
 
@@ -39,7 +39,7 @@ codesign --force --deep --sign - "$STAGE"
 
 echo "[4/4] 部署到 $TARGET_APP"
 if [ -d "$TARGET_APP" ]; then
-    mv "$TARGET_APP" "$(mktemp -d)/DB score制谱大师.old.app"
+    mv "$TARGET_APP" "$(mktemp -d)/DB绘谱.old.app"
 fi
 ditto "$STAGE" "$TARGET_APP"
 

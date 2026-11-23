@@ -83,7 +83,7 @@ VERSION_MINOR="$(cut -d'.' -f2 <<<"$BUILD_VERSION")"
 VERSION_PATCH="$(cut -d'.' -f3 <<<"$BUILD_VERSION")"
 
 # TODO: rename to MuseScore Studio (https://github.com/musescore/MuseScore/issues/32235)
-APP_NAME="DB score制谱大师"
+APP_NAME="DB绘谱"
 # Keep the DMG volume name out of the "*db*score*.dmg" cleanup pattern so the
 # freshly built image is not removed before it is moved to build.artifacts.
 VOL_NAME="MuseScore-Studio-${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}"

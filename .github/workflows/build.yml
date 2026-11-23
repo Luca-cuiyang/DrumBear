@@ -106,7 +106,7 @@ jobs:
           mkdir -p "$STAGING"
           cp -R "$APP" "$STAGING/"
           ln -s /Applications "$STAGING/Applications"
-          hdiutil create -volname "DB Score" -srcfolder "$STAGING" -ov -format UDZO "../DBScore-macOS-universal.dmg"
+          hdiutil create -volname "DB绘谱" -srcfolder "$STAGING" -ov -format UDZO "../DBScore-macOS-universal.dmg"
 
           # Also keep a zip for users who prefer it.
           ditto -c -k --keepParent "$APP" "../DBScore-macOS-universal.zip"

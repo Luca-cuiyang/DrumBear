@@ -62,7 +62,22 @@ FocusScope {
 
         anchors.fill: parent
 
-        color: ui.theme.backgroundSecondaryColor
+        color: ui.theme.backgroundPrimaryColor
+    }
+
+    Rectangle {
+        anchors.top: parent.top
+        anchors.topMargin: prv.sideMargin - 16
+        anchors.left: parent.left
+        anchors.leftMargin: prv.sideMargin - 16
+        anchors.right: parent.right
+        anchors.rightMargin: prv.sideMargin - 16
+        height: topLayout.height + 32
+
+        radius: 16
+        color: ui.theme.popupBackgroundColor
+        border.width: 1
+        border.color: ui.theme.strokeColor
     }
 
     RowLayout {
@@ -250,7 +265,7 @@ FocusScope {
         height: 100
         width: parent.width
 
-        color: ui.theme.backgroundSecondaryColor
+        color: ui.theme.backgroundPrimaryColor
 
         NavigationPanel {
             id: navBottomPanel

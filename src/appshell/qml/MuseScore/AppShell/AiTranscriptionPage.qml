@@ -39,21 +39,30 @@ DockPage {
     readonly property var currentReport: transcription.report
     readonly property bool strictValid: currentReport.valid === true
 
+    readonly property color pageBackgroundColor: ui.theme.backgroundPrimaryColor
+    readonly property color cardBackgroundColor: ui.theme.popupBackgroundColor
+    readonly property color insetBackgroundColor: ui.theme.backgroundSecondaryColor
+    readonly property color separatorColor: ui.theme.strokeColor
+    readonly property color accentSoftColor: Utils.colorWithAlpha(ui.theme.accentColor,
+                                                                  ui.theme.isDark ? 0.24 : 0.14)
+    readonly property color successSoftColor: ui.theme.isDark ? "#1B3A2A" : "#E8F8F0"
+    readonly property color warningSoftColor: Utils.colorWithAlpha(ui.theme.linkColor,
+                                                                   ui.theme.isDark ? 0.2 : 0.1)
+    readonly property color successTextColor: ui.theme.isDark ? "#8BE6AE" : "#20895A"
+    readonly property color warningTextColor: ui.theme.isDark ? "#FFB26B" : "#B96B2D"
+    readonly property color errorTextColor: ui.theme.isDark ? "#FF8B8B" : "#C74444"
+
     readonly property int currentStep:
-        transcription.completed ? 6
-        : transcription.busy ? (transcription.sourceKind === "image-review" ? 5 : 3)
-        : transcription.reviewRequired ? 4
+        transcription.completed ? 5
+        : transcription.busy ? 3
+        : transcription.reviewRequired ? 3
         : (imagePaths.length > 0 || midiPath.length > 0) ? 2 : 1
 
     function pathText(value) {
         if (!value)
             return ""
-        if (typeof value.toLocalFile === "function")
-            return value.toLocalFile()
         var text = value.toString()
-        if (text.startsWith("file://"))
-            return decodeURIComponent(text.substring(text.indexOf("file://") + 7))
-        return text
+        return transcription.normalizeInputPath(text)
     }
 
     function fileName(path) {
@@ -138,7 +147,7 @@ DockPage {
     function fileUrl(path) {
         if (!path)
             return ""
-        return path.startsWith("/") ? "file://" + encodeURI(path) : path
+        return transcription.localFileUrl(path)
     }
 
     function startConversion() {
@@ -229,9 +238,9 @@ DockPage {
 
     FileDialog {
         id: outputDialog
-        title: qsTr("保存 DB Score 鼓谱")
+        title: qsTr("保存 DB绘谱鼓谱")
         fileMode: FileDialog.SaveFile
-        nameFilters: [qsTr("DB Score 鼓谱 (*.db)")]
+        nameFilters: [qsTr("DB绘谱鼓谱 (*.db)")]
         currentFile: root.outputPath
         onAccepted: root.outputPath = root.pathText(currentFile)
     }
@@ -248,7 +257,7 @@ DockPage {
         Item {
             Rectangle {
                 anchors.fill: parent
-                color: "#F8FAFE"
+                color: root.pageBackgroundColor
             }
 
             Flickable {
@@ -284,12 +293,12 @@ DockPage {
                                     implicitWidth: poweredLabel.implicitWidth + 18
                                     implicitHeight: 26
                                     radius: 13
-                                    color: "#E8F0FF"
+                                    color: root.accentSoftColor
                                     StyledTextLabel {
                                         id: poweredLabel
                                         anchors.centerIn: parent
                                         text: "✦ AI POWERED · P1.0.0"
-                                        color: "#2F6EE5"
+                                        color: "#EA580C"
                                         font: ui.theme.bodyBoldFont
                                     }
                                 }
@@ -297,7 +306,7 @@ DockPage {
 
                             StyledTextLabel {
                                 Layout.fillWidth: true
-                                text: qsTr("鼓 MIDI 标准化，适配 DB Score 鼓谱")
+                                text: qsTr("鼓 MIDI 标准化，适配 DB绘谱鼓谱")
                                 color: ui.theme.fontSecondaryColor
                                 font: ui.theme.bodyFont
                             }
@@ -319,8 +328,8 @@ DockPage {
                         visible: transcription.reviewRequired
                         implicitHeight: reviewLayout.implicitHeight + 32
                         radius: 16
-                        color: "#FFFFFF"
-                        border.color: "#E7EBF3"
+                        color: root.cardBackgroundColor
+                        border.color: root.separatorColor
 
                         ColumnLayout {
                             id: reviewLayout
@@ -340,7 +349,7 @@ DockPage {
                                           .arg(transcription.reviewedMeasureCount)
                                           .arg(transcription.reviewMeasureCount)
                                     color: transcription.reviewedMeasureCount === transcription.reviewMeasureCount
-                                           ? "#20895A" : "#B96B2D"
+                                           ? root.successTextColor : root.warningTextColor
                                     font: ui.theme.bodyBoldFont
                                 }
                                 FlatButton {
@@ -367,7 +376,7 @@ DockPage {
                                     Layout.fillWidth: true
                                     Layout.preferredHeight: 300
                                     radius: 9
-                                    color: "#F2F3F5"
+                                    color: root.insetBackgroundColor
                                     clip: true
                                     ColumnLayout {
                                         anchors.fill: parent
@@ -401,7 +410,7 @@ DockPage {
                                     Layout.fillWidth: true
                                     Layout.preferredHeight: 300
                                     radius: 9
-                                    color: "#F2F3F5"
+                                    color: root.insetBackgroundColor
                                     clip: true
                                     ColumnLayout {
                                         anchors.fill: parent
@@ -475,8 +484,8 @@ DockPage {
                                 Layout.fillWidth: true
                                 Layout.preferredHeight: 240
                                 radius: 9
-                                color: "#F8FAFE"
-                                border.color: "#E7EBF3"
+                                color: root.insetBackgroundColor
+                                border.color: root.separatorColor
                                 clip: true
 
                                 ListView {
@@ -491,10 +500,11 @@ DockPage {
                                         width: ListView.view.width
                                         height: 40
                                         radius: 6
-                                        color: modelData.reviewed ? "#F1FAF5"
+                                        color: modelData.reviewed ? root.successSoftColor
                                                                  : ((modelData.unresolvedCount > 0
                                                                      || modelData.reviewReasonCount > 0)
-                                                                    ? "#FFF8F1" : "#FFFFFF")
+                                                                    ? root.warningSoftColor
+                                                                    : root.cardBackgroundColor)
 
                                         MouseArea {
                                             anchors.fill: parent
@@ -526,7 +536,7 @@ DockPage {
                                                             : qsTr("自动结构检查无警告")))
                                                 color: (modelData.unresolvedCount > 0
                                                         || modelData.reviewReasonCount > 0)
-                                                       ? "#B96B2D" : ui.theme.fontSecondaryColor
+                                                       ? root.warningTextColor : ui.theme.fontSecondaryColor
                                                 elide: Text.ElideRight
                                             }
                                         }
@@ -541,8 +551,8 @@ DockPage {
                                 enabled: !transcription.busy
                                 implicitHeight: eventEditorColumn.implicitHeight + 24
                                 radius: 9
-                                color: "#F8FAFE"
-                                border.color: "#E7EBF3"
+                                color: root.insetBackgroundColor
+                                border.color: root.separatorColor
 
                                 ColumnLayout {
                                     id: eventEditorColumn
@@ -718,8 +728,8 @@ DockPage {
                             Layout.fillWidth: true
                             Layout.preferredHeight: importColumn.implicitHeight + 48
                             radius: 16
-                            color: "#FFFFFF"
-                            border.color: "#E7EBF3"
+                            color: root.cardBackgroundColor
+                            border.color: root.separatorColor
 
                             ColumnLayout {
                                 id: importColumn
@@ -733,7 +743,7 @@ DockPage {
                                 }
                                 StyledTextLabel {
                                     Layout.fillWidth: true
-                                    text: qsTr("选择源文件，AI 将按 DB Score 的两声部鼓谱规范完成识别与校验。")
+                                    text: qsTr("选择源文件，AI 将按 DB绘谱 的两声部鼓谱规范完成识别与校验。")
                                     color: ui.theme.fontSecondaryColor
                                     wrapMode: Text.WordWrap
                                 }
@@ -757,8 +767,8 @@ DockPage {
                                     Layout.fillWidth: true
                                     Layout.preferredHeight: 150
                                     radius: 12
-                                    color: root.dropHovered ? "#EEF4FF" : "#F8FAFE"
-                                    border.color: root.dropHovered ? "#2F6EE5" : "#D8E2F4"
+                                    color: root.dropHovered ? root.accentSoftColor : root.insetBackgroundColor
+                                    border.color: root.dropHovered ? ui.theme.accentColor : root.separatorColor
                                     border.width: root.dropHovered ? 2 : 1
 
                                     DropArea {
@@ -794,7 +804,10 @@ DockPage {
                                         }
                                         FlatButton {
                                             Layout.alignment: Qt.AlignHCenter
-                                            text: qsTr("选择文件")
+                                            Layout.preferredWidth: 180
+                                            Layout.preferredHeight: 38
+                                            text: qsTr("上传文件")
+                                            accentButton: true
                                             enabled: !transcription.busy
                                             onClicked: root.imageMode ? imageDialog.open() : midiDialog.open()
                                         }
@@ -972,8 +985,8 @@ DockPage {
                             Layout.fillWidth: true
                             Layout.preferredHeight: flowColumn.implicitHeight + 48
                             radius: 16
-                            color: "#FFFFFF"
-                            border.color: "#E7EBF3"
+                            color: root.cardBackgroundColor
+                            border.color: root.separatorColor
 
                             ColumnLayout {
                                 id: flowColumn
@@ -993,11 +1006,11 @@ DockPage {
 
                                 Repeater {
                                     model: [
-                                        { n: "01", t: qsTr("导入原谱"), d: qsTr("图片、PDF 或 MIDI") },
+                                        { n: "01", t: qsTr("上传原谱"), d: qsTr("图片、PDF 或 MIDI") },
                                         { n: "02", t: qsTr("AI 识别"), d: qsTr("音符、鼓件、休止符、连线") },
-                                        { n: "03", t: qsTr("结构与节奏校验"), d: qsTr("逐拍对齐，异常自动拦截") },
-                                        { n: "04", t: qsTr("逐小节复核"), d: qsTr("原谱与新谱并排确认") },
-                                        { n: "05", t: qsTr("生成 DB 鼓谱"), d: qsTr("保存为可编辑.db 文件") }
+                                        { n: "03", t: qsTr("结构与节奏校验"), d: qsTr("自动检查音高、时值和声部") },
+                                        { n: "04", t: qsTr("生成 DB 鼓谱"), d: qsTr("自动保存为可编辑 .db 文件") },
+                                        { n: "05", t: qsTr("进入乐谱编辑"), d: qsTr("识别结果可直接修改") }
                                     ]
 
                                     RowLayout {
@@ -1010,13 +1023,15 @@ DockPage {
                                             width: 30
                                             height: 30
                                             radius: 15
-                                            color: (index + 1) === root.currentStep ? "#2F6EE5"
-                                                   : (index + 1) < root.currentStep ? "#E8F8F0" : "#F1F4F9"
+                                            color: (index + 1) === root.currentStep ? "#EA580C"
+                                                   : (index + 1) < root.currentStep
+                                                     ? root.successSoftColor : root.insetBackgroundColor
                                             StyledTextLabel {
                                                 anchors.centerIn: parent
                                                 text: (index + 1) < root.currentStep ? "✓" : modelData.n
                                                 color: (index + 1) === root.currentStep ? "#FFFFFF"
-                                                       : (index + 1) < root.currentStep ? "#278A5B" : "#94A1B6"
+                                                       : (index + 1) < root.currentStep
+                                                         ? root.successTextColor : ui.theme.fontSecondaryColor
                                                 font: ui.theme.bodyBoldFont
                                             }
                                         }
@@ -1043,10 +1058,11 @@ DockPage {
                                     Layout.fillWidth: true
                                     text: transcription.statusText.length > 0
                                           ? transcription.statusText
-                                          : qsTr("选择文件后开始。只有全部严格校验通过才会生成最终 .db。")
-                                    color: transcription.completed ? "#20895A"
-                                           : (transcription.reviewRequired ? "#B96B2D"
-                                              : (root.currentReport.valid === false ? "#C74444" : ui.theme.fontPrimaryColor))
+                                          : qsTr("上传文件后开始。识别完成会直接生成可编辑的 .db 鼓谱。")
+                                    color: transcription.completed ? root.successTextColor
+                                           : (transcription.reviewRequired ? root.warningTextColor
+                                              : (root.currentReport.valid === false
+                                                 ? root.errorTextColor : ui.theme.fontPrimaryColor))
                                     wrapMode: Text.WordWrap
                                 }
 
@@ -1073,7 +1089,7 @@ DockPage {
                                 StyledTextLabel {
                                     Layout.fillWidth: true
                                     text: qsTr("预计 15-30 秒 • 本机处理")
-                                    color: "#989DA8"
+                                    color: ui.theme.fontSecondaryColor
                                     font: ui.theme.bodyFont
                                     horizontalAlignment: Text.AlignHCenter
                                 }
@@ -1084,13 +1100,13 @@ DockPage {
                     StyledTextLabel {
                         Layout.fillWidth: true
                         text: qsTr("建议使用完整鼓谱页；页面越清晰，鼓件、休止符和连音线识别越稳定。")
-                        color: "#989DA8"
+                        color: ui.theme.fontSecondaryColor
                         wrapMode: Text.WordWrap
                     }
                     StyledTextLabel {
                         Layout.fillWidth: true
-                        text: qsTr("每次生成前都会执行逐小节合同、音高/时值/声部/连线结构和 DB 原生回读校验。")
-                        color: "#989DA8"
+                        text: qsTr("系统会自动完成音高、时值、声部和连线结构校验；识别完成后直接生成可编辑鼓谱。")
+                        color: ui.theme.fontSecondaryColor
                         wrapMode: Text.WordWrap
                     }
                 }

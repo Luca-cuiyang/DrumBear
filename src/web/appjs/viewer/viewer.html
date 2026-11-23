@@ -74,7 +74,7 @@ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
           ? 'score-editor'
           : 'studio-player';
       let playerLayout = viewerParams.get('layout') === 'landscape' ? 'landscape' : 'portrait';
-      const productTitle = mode === 'studio-player' ? 'DB Studio Web' : 'DB Score Web';
+      const productTitle = mode === 'studio-player' ? 'DB Studio Web' : 'DB绘谱 Web';
       document.title = productTitle;
       productName.textContent = productTitle;
       window.DB_PRODUCT_MODE = mode;
@@ -115,7 +115,7 @@ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
         }
 
         try {
-          if (!window.muapi) throw new Error('DB Score 内核尚未就绪')
+          if (!window.muapi) throw new Error('DB绘谱 内核尚未就绪')
           if (mode === 'studio-player' && window.muapi.isReadOnly() !== true) {
             throw new Error('只读播放器内核未就绪')
           }
@@ -136,7 +136,7 @@ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
                 ok: false,
                 error: scoreReady
                     ? '只读播放器输入锁未就绪'
-                    : 'DB Score 解析课件超时',
+                    : 'DB绘谱 解析课件超时',
               })
             } else {
               setTimeout(waitForScore, 100)

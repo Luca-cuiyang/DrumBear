@@ -38,6 +38,7 @@ Rectangle {
     color: ui.theme.textFieldColor
     border.width: 1
     border.color: ui.theme.strokeColor
+    radius: 12
 
     function focusOnFirst() {
         listView.itemAtIndex(0).requestActiveFocus()

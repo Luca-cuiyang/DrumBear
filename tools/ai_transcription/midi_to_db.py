@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Convert a normalized MIDI drum track into a deterministic DB Score .db."""
+"""Convert a normalized MIDI drum track into a deterministic DB绘谱 .db."""
 
 from __future__ import annotations
 

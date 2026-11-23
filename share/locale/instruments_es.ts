@@ -1672,7 +1672,7 @@
         <source>Soprano ocarina made from an animal horn. Pitched in C.</source>
         <comment>soprano-gemshorn description</comment>
         <extracomment>description for Soprano Gemshorn; Please see https://github.com/musescore/MuseScore/wiki/Translating-instrument-names</extracomment>
-        <translation>Ocarina Soprano hecha de cuerno de animal. 
+        <translation>Ocarina Soprano hecha de cuerno de animal.
 Afinada en Do.</translation>
     </message>
     <message>

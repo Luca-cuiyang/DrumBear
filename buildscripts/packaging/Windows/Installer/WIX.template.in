@@ -32,13 +32,13 @@
 
         <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" CompressionLevel="high" />
 
-        <!-- 安装/升级前必须先关闭正在运行的 DB Score。
+        <!-- 安装/升级前必须先关闭正在运行的 DB绘谱。
              否则 d3dcompiler_47.dll、qwindows.dll 等已被进程加载的 DLL 无法覆盖，
              安装会写入失败，回滚后又可能留下不完整的 Qt 插件目录。 -->
         <util:CloseApplication
             Id="CloseRunningDBScore"
             Target="$(var.ExeName)"
-            Description="安装程序需要先关闭正在运行的 DB Score。请保存好你的乐谱，然后点击“确定”继续安装。"
+            Description="安装程序需要先关闭正在运行的 DB绘谱。请保存好你的乐谱，然后点击“确定”继续安装。"
             CloseMessage="yes"
             RebootPrompt="no"
             PromptToContinue="no"
@@ -204,7 +204,7 @@
             <!-- Instead of using WiX's/MSI's ProgId functionality, we use the registry directly for more control -->
             <!-- MSCZ -->
             <RegistryKey Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\DBScore.db.$(var.ProgIdSuffix)">
-                <RegistryValue Value="DB Score 文件" Type="string" />
+                <RegistryValue Value="DB绘谱文件" Type="string" />
                 <RegistryValue Key="DefaultIcon" Value="[INSTALL_ROOT]bin\$(var.ExeName),1" Type="string" />
                 <RegistryValue Key="shell\open\command" Value="&quot;[INSTALL_ROOT]bin\$(var.ExeName)&quot; &quot;%1&quot;" Type="string" />
             </RegistryKey>
@@ -221,7 +221,7 @@
 
             <!-- MSCX -->
             <RegistryKey Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\DBScore.mscx.$(var.ProgIdSuffix)">
-                <RegistryValue Value="DB Score 未压缩文件" Type="string" />
+                <RegistryValue Value="DB绘谱未压缩文件" Type="string" />
                 <RegistryValue Key="DefaultIcon" Value="[INSTALL_ROOT]bin\$(var.ExeName),2" Type="string" />
                 <RegistryValue Key="shell\open\command" Value="&quot;[INSTALL_ROOT]bin\$(var.ExeName)&quot; &quot;%1&quot;" Type="string" />
             </RegistryKey>
@@ -238,7 +238,7 @@
 
             <!-- MSCS -->
             <RegistryKey Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\DBScore.mscs.$(var.ProgIdSuffix)">
-                <RegistryValue Value="DB Score 未压缩文件" Type="string" />
+                <RegistryValue Value="DB绘谱未压缩文件" Type="string" />
                 <RegistryValue Key="DefaultIcon" Value="[INSTALL_ROOT]bin\$(var.ExeName),1" Type="string" />
                 <RegistryValue Key="shell\open\command" Value="&quot;[INSTALL_ROOT]bin\$(var.ExeName)&quot; &quot;%1&quot;" Type="string" />
             </RegistryKey>
@@ -255,7 +255,7 @@
 
             <!-- MSCZ~ -->
             <RegistryKey Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\DBScore.db~.$(var.ProgIdSuffix)">
-                <RegistryValue Value="DB Score 备份文件" Type="string" />
+                <RegistryValue Value="DB绘谱备份文件" Type="string" />
                 <RegistryValue Key="DefaultIcon" Value="[INSTALL_ROOT]bin\$(var.ExeName),1" Type="string" />
                 <RegistryValue Key="shell\open\command" Value="&quot;[INSTALL_ROOT]bin\$(var.ExeName)&quot; &quot;%1&quot;" Type="string" />
             </RegistryKey>
@@ -272,7 +272,7 @@
 
             <!-- dbscore URL scheme -->
             <RegistryKey Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\DBScore.Url.dbscore.$(var.ProgIdSuffix)">
-                <RegistryValue Value="DB Score 链接" Type="string" />
+                <RegistryValue Value="DB绘谱链接" Type="string" />
                 <RegistryValue Key="DefaultIcon" Value="[INSTALL_ROOT]bin\$(var.ExeName),1" Type="string" />
                 <RegistryValue Key="shell\open\command" Value="&quot;[INSTALL_ROOT]bin\$(var.ExeName)&quot; &quot;%1&quot;" Type="string" />
             </RegistryKey>
@@ -282,7 +282,7 @@
 
             <RegistryKey Root="$(var.RegistryRoot)" Key="SOFTWARE\Classes\dbscore">
                 <RegistryValue Name="URL Protocol" Value="" Type="string" />
-                <RegistryValue Value="URL:DB Score 链接" Type="string" />
+                <RegistryValue Value="URL:DB绘谱链接" Type="string" />
                 <RegistryValue Key="shell\open\command" Value="&quot;[INSTALL_ROOT]bin\$(var.ExeName)&quot; &quot;%1&quot;" Type="string" />
             </RegistryKey>
         </Component>

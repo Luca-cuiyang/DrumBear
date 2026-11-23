@@ -50,6 +50,18 @@ Item {
                             : (endSeparator.visible ? endSeparator.x : tempoLoader.x + tempoLoader.width)
     height: 30
 
+    Rectangle {
+        z: -1
+        width: buttonsListView.width
+        height: root.height
+        radius: 10
+        color: Utils.colorWithAlpha(ui.theme.backgroundSecondaryColor,
+                                    ui.theme.isDark ? 0.72 : 0.58)
+        border.width: 1
+        border.color: Utils.colorWithAlpha(ui.theme.strokeColor,
+                                           ui.theme.isDark ? 0.9 : 0.75)
+    }
+
     ListView {
         id: buttonsListView
 
@@ -74,6 +86,8 @@ Item {
             required property MenuItem item
             required property int index
 
+            readonly property bool isPlayAction: Boolean(item) && item.id === "play-toggle"
+
             width: 30
             height: 30
 
@@ -87,11 +101,17 @@ Item {
 
             iconFont: ui.theme.toolbarIconsFont
             textFont: ui.theme.bodyBoldFont
-            iconColor: accentButton ? "#ffffff" : ui.theme.fontPrimaryColor
+            iconColor: isPlayAction
+                       ? (ui.theme.isDark ? ui.theme.backgroundPrimaryColor : "#FFFFFF")
+                       : (accentButton ? "#FFFFFF" : ui.theme.fontPrimaryColor)
 
-            accentButton: (Boolean(item) && item.checked)
+            accentButton: isPlayAction
+                          || (Boolean(item) && item.checked)
                           || menuLoader.isMenuOpened
-            accentColor: ui.theme.accentColor
+            accentColor: isPlayAction
+                         ? (ui.theme.isDark ? "#2ECC71" : "#0D9488")
+                         : ui.theme.accentColor
+            backgroundRadius: isPlayAction ? width / 2 : 8
             transparent: !accentButton
 
             navigation.panel: root.navPanel

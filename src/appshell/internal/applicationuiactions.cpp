@@ -63,7 +63,7 @@ const UiActionList ApplicationUiActions::m_actions = {
     UiAction("about-dbscore",
              mu::context::UiCtxAny,
              mu::context::CTX_ANY,
-             TranslatableString("action", "&About DB Score…")
+             TranslatableString("action", "&About DB绘谱…")
              ),
     UiAction("about-qt",
              mu::context::UiCtxAny,

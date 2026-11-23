@@ -3,28 +3,18 @@ setlocal EnableExtensions EnableDelayedExpansion
 chcp 65001 >nul
 
 set "LOG=C:\DBscore\package_win.log"
-set "SOURCE_BASE="
 set "SUCCESS=0"
-> "%LOG%" echo === DB Score Windows package ===
+> "%LOG%" echo === DB绘谱 Windows package ===
 >> "%LOG%" echo START=%DATE% %TIME%
 
 taskkill /f /im DBScore5.exe >nul 2>&1
 
-for /d %%D in ("C:\Mac\Home\Desktop\DB score*-v*") do (
-    if not defined SOURCE_BASE (
-        set "SOURCE_BASE=%%~fD"
-    ) else if "%%~fD" GTR "!SOURCE_BASE!" (
-        set "SOURCE_BASE=%%~fD"
-    )
-)
-if not defined SOURCE_BASE (
-  >> "%LOG%" echo SOURCE_NOT_FOUND
-  goto :fail
-)
-
-set "SOURCE=!SOURCE_BASE!\DB score"
+rem Always package the tree that contains this script. Selecting the lexically
+rem greatest desktop folder previously built a 5.1.3 installer from v5.0.8 source.
+set "SOURCE=%~dp0..\..\.."
+for %%I in ("!SOURCE!") do set "SOURCE=%%~fI"
 >> "%LOG%" echo SOURCE=!SOURCE!
-robocopy "!SOURCE!" C:\DBscore /E /XD "!SOURCE!\applebuild" "!SOURCE!\builds" "!SOURCE!\.git" "!SOURCE!\.github" "!SOURCE!\build.release" "!SOURCE!\build.artifacts" /NFL /NDL /NJH /NJS /NC /NS /NP >> "%LOG%" 2>&1
+robocopy "!SOURCE!" C:\DBscore /E /XD "!SOURCE!\applebuild" "!SOURCE!\builds" "!SOURCE!\build" "!SOURCE!\build.release" "!SOURCE!\build.artifacts" "!SOURCE!\.git" "!SOURCE!\.github" /NFL /NDL /NJH /NJS /NC /NS /NP >> "%LOG%" 2>&1
 set "ROBOCOPY_EXIT=!ERRORLEVEL!"
 if !ROBOCOPY_EXIT! GEQ 8 (
   >> "%LOG%" echo RobocopyExit=!ROBOCOPY_EXIT!
@@ -38,7 +28,7 @@ if errorlevel 1 (
   >> "%LOG%" echo VcVarsExit=1
   goto :fail
 )
-set "PATH=C:\Qt\6.10.2\msvc2022_64\bin;C:\Mac\Home\.dbstudio-build-tools\WiX314;%PATH%"
+set "PATH=C:\Qt\6.10.2\msvc2022_64\bin;C:\Mac\Home\.guyuexiong-build-tools\WiX314;%PATH%"
 
 cd /d C:\DBscore\build
 if errorlevel 1 goto :fail
@@ -140,18 +130,13 @@ set "VERSION="
 set /p VERSION=<C:\DBscore\release-version.txt
 if not defined VERSION goto :fail
 
-cscript //nologo C:\DBscore\buildscripts\packaging\Windows\validate_windows_msi.vbs "!MSIFILE!" "DB Score" "{22222222-2222-2222-2222-222222222222}" "!VERSION!" >> "%LOG%" 2>&1
+cscript //nologo C:\DBscore\buildscripts\packaging\Windows\validate_windows_msi.vbs "!MSIFILE!" "DB绘谱" "{22222222-2222-2222-2222-222222222222}" "!VERSION!" >> "%LOG%" 2>&1
 if errorlevel 1 goto :fail
 
-powershell -NoProfile -ExecutionPolicy Bypass -Command "Copy-Item -LiteralPath '!MSIFILE!' -Destination ('C:\Mac\Home\Desktop\DB-Score-Windows-' + '!VERSION!' + '.msi') -Force" >> "%LOG%" 2>&1
+powershell -NoProfile -ExecutionPolicy Bypass -Command "Copy-Item -LiteralPath '!MSIFILE!' -Destination ('C:\Mac\Home\Desktop\DB' + [char]0x7ED8 + [char]0x8C31 + '-Windows-' + '!VERSION!' + '.msi') -Force" >> "%LOG%" 2>&1
 set "COPY_MSI_EXIT=!ERRORLEVEL!"
 echo CopyMsiExit=!COPY_MSI_EXIT! >> "%LOG%"
 if not "!COPY_MSI_EXIT!"=="0" goto :fail
-
-powershell -NoProfile -ExecutionPolicy Bypass -Command "Copy-Item -LiteralPath '!MSIFILE!' -Destination ('C:\Mac\Home\Desktop\' + [char]68 + [char]66 + ' score' + [char]0x5236 + [char]0x8C31 + [char]0x5927 + [char]0x5E08 + '.msi') -Force" >> "%LOG%" 2>&1
-set "COPY_PUBLIC_MSI_EXIT=!ERRORLEVEL!"
-echo CopyPublicMsiExit=!COPY_PUBLIC_MSI_EXIT! >> "%LOG%"
-if not "!COPY_PUBLIC_MSI_EXIT!"=="0" goto :fail
 
 set "SUCCESS=1"
 goto :finish

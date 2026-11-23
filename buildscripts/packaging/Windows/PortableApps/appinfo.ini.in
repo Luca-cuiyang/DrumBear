@@ -1,15 +1,15 @@
 [Format]
 Type=PortableApps.comFormat
-Version=3.7 # Version of the PortableApps format, not of DB Score
+Version=3.7 # Version of the PortableApps format, not of DB绘谱
 
 [Details]
-Name=DB Score Portable
+Name=DB绘谱 Portable
 AppId=DBScorePortable
-Publisher=DB Score
+Publisher=DB绘谱
 Homepage=drumbear.cn
 Donate=drumbear.cn/donate
 Category=Music & Video
-Description=DB Score Portable is the free DB Score music composition & notation program packaged with a PortableApps.com Launcher as a portable app.
+Description=DB绘谱 Portable is the free DB绘谱 music composition & notation program packaged with a PortableApps.com Launcher as a portable app.
 Language=Multilingual
 
 [License]

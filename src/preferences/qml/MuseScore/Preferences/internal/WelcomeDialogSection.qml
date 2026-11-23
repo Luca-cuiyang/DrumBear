@@ -40,7 +40,7 @@ BaseSection {
 
         width: parent.width
 
-        text: qsTrc("preferences", "Show welcome screen when DB Score launches")
+        text: qsTrc("preferences", "Show welcome screen when DB绘谱 launches")
         checked: root.model.showWelcomeDialog
 
         navigation.name: checkbox.text

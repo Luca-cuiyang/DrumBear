@@ -1,7 +1,7 @@
-# MIDI Converter for DB Score
+# MIDI Converter for DB绘谱
 
 `midi-converter` converts audio-to-MIDI drum performances into deterministic,
-notation-friendly Standard MIDI Files for DB Score.
+notation-friendly Standard MIDI Files for DB绘谱.
 
 The first implementation targets YuE2 exports:
 
@@ -52,12 +52,12 @@ the MIDI tempo or pass a numeric BPM to override it.
 ctest --test-dir build-midi-converter --output-on-failure
 ```
 
-## End-to-end DB Score test
+## End-to-end DB绘谱 test
 
 ```sh
 python3 tools/midi_converter/tests/verify_dbscore.py \
   --converter build-midi-converter/midi-converter \
-  --dbscore "/Applications/DB score制谱大师.app/Contents/MacOS/dbscore" \
+  --dbscore "/Applications/DB绘谱.app/Contents/MacOS/dbscore" \
   --input "drums.mid" \
   --bpm auto
 ```
@@ -67,7 +67,7 @@ For a directory containing multiple test files:
 ```sh
 python3 tools/midi_converter/tests/run_batch.py \
   --converter build-midi-converter/midi-converter \
-  --dbscore "/Applications/DB score制谱大师.app/Contents/MacOS/dbscore" \
+  --dbscore "/Applications/DB绘谱.app/Contents/MacOS/dbscore" \
   --input-dir test-midis \
   --output-dir test-results \
   --bpm auto

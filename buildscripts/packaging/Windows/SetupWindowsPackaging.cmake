@@ -7,8 +7,8 @@ endif()
 include(InstallRequiredSystemLibraries)
 
 set(CPACK_PACKAGE_NAME ${MUSE_APP_NAME_MACHINE_READABLE})
-set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "DB Score is a full featured WYSIWYG score editor")
-set(CPACK_PACKAGE_VENDOR "DB Score")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "DB绘谱 is a full featured WYSIWYG score editor")
+set(CPACK_PACKAGE_VENDOR "DB绘谱")
 set(CPACK_PACKAGE_CONTACT "https://drumbear.cn")
 set(CPACK_PACKAGE_HOMEPAGE_URL "https://drumbear.cn")
 
@@ -72,8 +72,8 @@ if(MUSE_APP_NAME_MACHINE_READABLE STREQUAL "DBStudio")
     # already-installed copies appear as a separate product instead of upgrading.
     set(CPACK_WIX_UPGRADE_GUID "11111111-1111-1111-1111-111111111111" CACHE STRING "DB Studio upgrade code" FORCE)
 elseif(MUSE_APP_NAME_MACHINE_READABLE STREQUAL "DBScore")
-    # DB Studio and DB Score are separate products and must never share an upgrade code.
-    set(CPACK_WIX_UPGRADE_GUID "22222222-2222-2222-2222-222222222222" CACHE STRING "DB Score upgrade code" FORCE)
+    # DB Studio and DB绘谱 are separate products and must never share an upgrade code.
+    set(CPACK_WIX_UPGRADE_GUID "22222222-2222-2222-2222-222222222222" CACHE STRING "DB绘谱 upgrade code" FORCE)
 elseif(NOT CPACK_WIX_UPGRADE_GUID)
     string(UUID CPACK_WIX_UPGRADE_GUID
         NAMESPACE "6ba7b810-9dad-11d1-80b4-00c04fd430c8"

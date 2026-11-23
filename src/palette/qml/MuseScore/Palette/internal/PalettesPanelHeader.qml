@@ -57,6 +57,17 @@ Item {
         Qt.callLater(addPalettesButton.navigation.requestActive)
     }
 
+    Rectangle {
+        anchors.fill: parent
+        z: -1
+        radius: 10
+        color: Utils.colorWithAlpha(ui.theme.backgroundSecondaryColor,
+                                    ui.theme.isDark ? 0.72 : 0.58)
+        border.width: 1
+        border.color: Utils.colorWithAlpha(ui.theme.strokeColor,
+                                           ui.theme.isDark ? 0.9 : 0.75)
+    }
+
     NavigationPanel {
         id: navPanel
         name: "PalettesHeader"

@@ -43,7 +43,7 @@ install (DIRECTORY
     )
 
 # Bundled Audiveris OMR engine for image/PDF transcription.
-# macOS needs both architectures because DB Score is a universal binary.
+# macOS needs both architectures because DB绘谱 is a universal binary.
 if (APPLE)
     install (DIRECTORY
         ${PROJECT_SOURCE_DIR}/tools/ai_transcription/audiveris/mac-arm64/

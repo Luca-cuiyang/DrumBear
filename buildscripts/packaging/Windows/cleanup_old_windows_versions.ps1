@@ -1,5 +1,5 @@
 # HARD RELEASE POLICY:
-# Keep only the current DB Score MSI packages.
+# Keep only the current DB绘谱 MSI packages.
 
 param(
     [Parameter(Mandatory = $true)]
@@ -15,6 +15,7 @@ $candidateRoots = @(
     "C:\Mac\Home\Downloads",
     "C:\DBscore\dist"
 )
+$productName = "DB" + [char]0x7ED8 + [char]0x8C31
 $patterns = @(
     "*DB*Score*.msi",
     "*DB*Score*.exe",
@@ -22,7 +23,14 @@ $patterns = @(
     "*DB*Score*.zip",
     "*DB*Score*.7z",
     "*DB*Score*.appx",
-    "*DB*Score*.msix"
+    "*DB*Score*.msix",
+    "*$productName*.msi",
+    "*$productName*.exe",
+    "*$productName*.win",
+    "*$productName*.zip",
+    "*$productName*.7z",
+    "*$productName*.appx",
+    "*$productName*.msix"
 )
 
 $candidates = foreach ($root in $candidateRoots) {
@@ -35,14 +43,13 @@ $candidates = foreach ($root in $candidateRoots) {
 
 $candidates = $candidates | Sort-Object FullName -Unique
 if (-not $candidates) {
-    Write-Output "No DB Score Windows package candidates found."
+    Write-Output "No DB绘谱 Windows package candidates found."
     exit 0
 }
 
-$publicMsiName = "DB score" + [char]0x5236 + [char]0x8C31 + [char]0x5927 + [char]0x5E08 + ".msi"
+$publicMsiName = "$productName-Windows-$Version.msi"
 $keepPaths = @(
-    [IO.Path]::GetFullPath((Join-Path "C:\Mac\Home\Desktop" $publicMsiName)),
-    [IO.Path]::GetFullPath("C:\Mac\Home\Desktop\DB-Score-Windows-$Version.msi")
+    [IO.Path]::GetFullPath((Join-Path "C:\Mac\Home\Desktop" $publicMsiName))
 )
 
 foreach ($candidate in $candidates) {

@@ -94,18 +94,7 @@ void PlaybackCursor::setNotation(INotationPtr notation)
         m_notation->viewModeChanged().disconnect(this);
     }
 
-    if (notation) {
-        notation->elements()->msScore()->changesChannel().onReceive(this, [this](const ScoreChanges&) {
-            m_cache.clear();
-        });
-
-        notation->viewModeChanged().onNotify(this, [this]() {
-            m_cache.clear();
-        });
-    }
-
     m_notation = notation;
-    m_cache.clear();
     m_rect = RectF();
 }
 
@@ -138,31 +127,17 @@ muse::RectF PlaybackCursor::resolveCursorRectByTick(int _tick) const
     const double thickness = configuration()->playbackCursorThickness();
     const double length = configuration()->playbackCursorLength();
 
-    if (m_cache.segment && tick >= m_cache.segmentStartTick && tick < m_cache.segmentEndTick) {
-        const double x = interpolateXByTicks(tickValue, m_cache.segmentStartTick.ticks(), m_cache.segmentEndTick.ticks(),
-                                             m_cache.segmentStartX, m_cache.segmentEndX);
-        return calculateRect(x, score, m_cache.system, m_cache.systemBottomY, thickness, length);
+    const Measure* measure = score->tick2measureMM(tick);
+    if (!measure) {
+        return RectF();
     }
 
-    const Measure* measure = nullptr;
-    const System* system = nullptr;
-
-    if (m_cache.measure && tick >= m_cache.measure->tick() && tick < m_cache.measure->endTick()) {
-        measure = m_cache.measure;
-        system = m_cache.system;
-    } else {
-        measure = score->tick2measureMM(tick);
-        if (!measure) {
-            m_cache.clear();
-            return RectF();
-        }
-
-        system = measure->system();
-        if (!system || !system->page() || system->staves().empty()) {
-            m_cache.clear();
-            return RectF();
-        }
+    const System* system = measure->system();
+    if (!system || !system->page() || system->staves().empty()) {
+        return RectF();
     }
+
+    const double resolvedSystemBottomY = systemBottomY(score, system);
 
     for (const Segment* s = measure->first(SegmentType::ChordRest); s;) {
         const Fraction segmentStartTick = s->tick();
@@ -193,24 +168,10 @@ muse::RectF PlaybackCursor::resolveCursorRectByTick(int _tick) const
             continue;
         }
 
-        if (m_cache.system != system) {
-            m_cache.system = system;
-            m_cache.systemBottomY = systemBottomY(score, system);
-        }
-
-        m_cache.measure = measure;
-        m_cache.segment = s;
-        m_cache.segmentStartTick = segmentStartTick;
-        m_cache.segmentEndTick = segmentEndTick;
-        m_cache.segmentStartX = segmentStartX;
-        m_cache.segmentEndX = segmentEndX;
-
         const double x = interpolateXByTicks(tickValue, segmentStartTick.ticks(), segmentEndTick.ticks(),
                                              segmentStartX, segmentEndX);
-        return calculateRect(x, score, system, m_cache.systemBottomY, thickness, length);
+        return calculateRect(x, score, system, resolvedSystemBottomY, thickness, length);
     }
-
-    m_cache.clear();
 
     return RectF();
 }

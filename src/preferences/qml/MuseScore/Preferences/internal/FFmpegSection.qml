@@ -42,7 +42,7 @@ BaseSection {
             Layout.fillWidth: true
             text: model && model.ffmpegVersion !== -1
                   ? qsTrc("preferences", "内置视频组件已就绪")
-                  : qsTrc("preferences", "内置视频组件加载失败，请重新安装最新版 DB Score")
+                  : qsTrc("preferences", "内置视频组件加载失败，请重新安装最新版 DB绘谱")
             horizontalAlignment: Text.AlignLeft
         }
     }

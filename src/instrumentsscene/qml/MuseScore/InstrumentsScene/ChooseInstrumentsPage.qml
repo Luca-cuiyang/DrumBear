@@ -68,7 +68,7 @@ Rectangle {
         familyView.focusOnFirst()
     }
 
-    color: ui.theme.backgroundPrimaryColor
+    color: "transparent"
 
     InstrumentListModel {
         id: instrumentsModel

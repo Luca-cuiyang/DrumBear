@@ -63,9 +63,9 @@ void AudioMidiPreferencesModel::setCurrentAudioDriverIndex(int index)
         auto promise = interactive()->warning(
             muse::trc("preferences", "No audio devices available"),
             muse::qtrc("preferences", "The selected audio driver does not have any available audio devices. "
-                                      "DB Score will use the default audio driver instead. "
+                                      "DB绘谱 will use the default audio driver instead. "
                                       "To use %1, ensure your hardware is set up correctly, "
-                                      "then restart DB Score and try again.")
+                                      "then restart DB绘谱 and try again.")
             .arg(QString::fromStdString(audioDriverController()->currentAudioDriverName())).toStdString());
 
         promise.onResolve(this, [this, fallback](const muse::IInteractive::Result&) {

@@ -45,6 +45,8 @@ ExpandableBlank {
 
     signal ensureContentVisibleRequested(int invisibleContentHeight)
 
+    showCardBackground: true
+
     property NavigationPanel navigationPanel: NavigationPanel {
         name: root.title
         direction: NavigationPanel.Vertical

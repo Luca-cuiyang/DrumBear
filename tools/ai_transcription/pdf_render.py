@@ -1,6 +1,6 @@
 """Rasterize PDF pages for the transcription pipeline.
 
-Rendering is done in-process with pypdfium2. It is bundled with DB Score so
+Rendering is done in-process with pypdfium2. It is bundled with DB绘谱 so
 desktop installs do not depend on a separately installed poppler/pdftoppm.
 pdftoppm remains as a fallback for development environments.
 """
@@ -42,7 +42,7 @@ def rasterize_pdf(
     else:
         if not pdftoppm:
             raise RuntimeError(
-                "缺少 PDF 渲染组件（pypdfium2），请重新安装 DB Score"
+                "缺少 PDF 渲染组件（pypdfium2），请重新安装 DB绘谱"
             )
         subprocess.run(
             [pdftoppm, "-r", str(dpi), "-png", str(pdf_path), str(output_dir / stem)],

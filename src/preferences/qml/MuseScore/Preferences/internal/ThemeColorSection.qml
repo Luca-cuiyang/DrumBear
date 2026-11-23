@@ -2,7 +2,7 @@
  * SPDX-License-Identifier: GPL-3.0-only
  * MuseScore-Studio-CLA-applies
  *
- * DB Score - 主题颜色（一键换肤）
+ * DB绘谱 - 主题颜色（一键换肤）
  */
 import QtQuick
 

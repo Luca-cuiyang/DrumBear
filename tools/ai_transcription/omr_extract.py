@@ -5,7 +5,7 @@ Audiveris noteheads and slots are evidence, not authoritative rhythm.  The
 converter resolves each measure through one deterministic arbitration pipeline:
 cross-voice separation, regular-pulse recovery, printed beam durations,
 bar-wide grid fallback, voice/rest alignment, and sparse-sixteenth handling.
-The final event map is then locked by a per-measure contract before a DB Score
+The final event map is then locked by a per-measure contract before a DB绘谱
 file can be published.
 """
 
@@ -69,7 +69,7 @@ SHAPE_TO_DRUM = {
     (-3, "NOTEHEAD_TRIANGLE_DOWN_FILLED"): 56,
     (-2, "NOTEHEAD_TRIANGLE_DOWN_FILLED"): 56,
     # In the source book, a diamond-shaped cymbal head means Ride, even
-    # though Audiveris labels the glyph as "filled". DB Score represents that
+    # though Audiveris labels the glyph as "filled". DB绘谱 represents that
     # notation as MIDI 51 (Ride Cymbal), not Ride Bell.
     (-4, "NOTEHEAD_DIAMOND_FILLED"): 51,
     (1, "NOTEHEAD_BLACK"): 43,
@@ -232,7 +232,7 @@ NOTE_VALUE_FRACTIONS = {
 # curve; Bass Drum, Snare and Toms are always separate strokes in this score
 # family.  Audiveris sometimes draws a tie/slur over those strokes by
 # following a beam edge, so unsupported instrument pairs are discarded before
-# they reach the DB Score event map.
+# they reach the DB绘谱 event map.
 CURVE_DRUMS = {42, 44, 46, 49, 51, 53}
 # Curves below this glyph grade are beam-edge artifacts rather than printed
 # ties/slurs (Audiveris commonly reports ~0.28 for them).

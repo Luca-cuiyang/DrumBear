@@ -57,7 +57,7 @@ static const std::string SESSION_RESOURCE_NAME("SESSION");
 
 void AppShellConfiguration::init()
 {
-    // DB Score opens directly into the workspace. The inherited first-run and
+    // DB绘谱 opens directly into the workspace. The inherited first-run and
     // version-welcome dialogs must never block the application at startup.
     settings()->setSharedValue(HAS_COMPLETED_FIRST_LAUNCH_SETUP, Val(true));
     settings()->setSharedValue(WELCOME_DIALOG_SHOW_ON_STARTUP_KEY, Val(false));

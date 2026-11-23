@@ -63,6 +63,15 @@ Item {
     implicitHeight: paletteExpandArrow.height
     implicitWidth: paletteExpandArrow.implicitWidth + textItem.implicitWidth + menuButton.implicitWidth + 8 // 8 for margins
 
+    Rectangle {
+        anchors.fill: parent
+        z: -1
+        radius: 6
+        color: root.hovered
+               ? Utils.colorWithAlpha(ui.theme.buttonColor, ui.theme.isDark ? 0.72 : 0.56)
+               : "transparent"
+    }
+
     FlatButton {
         id: paletteExpandArrow
         z: 1000

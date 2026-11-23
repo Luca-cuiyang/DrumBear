@@ -51,6 +51,18 @@ FocusScope {
     signal retryRequested()
     signal cancelRequested(int convertType, int convertId)
 
+    Rectangle {
+        id: cardBackground
+
+        anchors.fill: parent
+        radius: 16
+        color: ui.theme.popupBackgroundColor
+        border.width: 1
+        border.color: rootMouseArea.containsMouse
+                      ? Utils.colorWithAlpha(ui.theme.accentColor, 0.55)
+                      : ui.theme.strokeColor
+    }
+
     NavigationControl {
         id: navCtrl
         name: root.name
@@ -115,10 +127,10 @@ FocusScope {
                 id: thumbnail
                 anchors.fill: parent
 
-                opacity: 0.9
+                opacity: 1.0
 
                 property int borderWidth: 0
-                readonly property int radius: 3
+                readonly property int radius: 12
 
                 Loader {
                     id: loader
@@ -201,7 +213,7 @@ FocusScope {
                     z: -1
 
                     glowRadius: 20
-                    color: "#08000000"
+                    color: Utils.colorWithAlpha(ui.theme.fontPrimaryColor, 0.08)
                     cornerRadius: thumbnail.radius + glowRadius
                 }
             }
@@ -270,15 +282,87 @@ FocusScope {
 
         Rectangle {
             anchors.fill: parent
-            color: "white"
+            radius: 12
+            color: Utils.colorWithAlpha(ui.theme.accentColor,
+                                        ui.theme.isDark ? 0.18 : 0.08)
+            border.width: 1
+            border.color: Utils.colorWithAlpha(ui.theme.accentColor, 0.42)
 
-            StyledIconLabel {
+            Item {
                 anchors.centerIn: parent
+                width: 96
+                height: 76
 
-                iconCode: IconCode.PLUS
+                Rectangle {
+                    id: scorePaper
 
-                font.pixelSize: 50
-                color: "black"
+                    anchors.centerIn: parent
+                    width: 84
+                    height: 68
+                    radius: 8
+                    color: ui.theme.popupBackgroundColor
+                    border.width: 1
+                    border.color: Utils.colorWithAlpha(ui.theme.accentColor, 0.52)
+
+                    Column {
+                        anchors.left: parent.left
+                        anchors.leftMargin: 14
+                        anchors.verticalCenter: parent.verticalCenter
+                        spacing: 4
+
+                        Repeater {
+                            model: 5
+
+                            Rectangle {
+                                width: 44
+                                height: 1
+                                color: Utils.colorWithAlpha(ui.theme.fontPrimaryColor, 0.48)
+                            }
+                        }
+                    }
+
+                    Rectangle {
+                        anchors.left: parent.left
+                        anchors.leftMargin: 22
+                        anchors.verticalCenter: parent.verticalCenter
+                        anchors.verticalCenterOffset: -8
+                        width: 7
+                        height: 7
+                        radius: 3.5
+                        rotation: 45
+                        color: ui.theme.accentColor
+                    }
+
+                    Rectangle {
+                        anchors.left: parent.left
+                        anchors.leftMargin: 48
+                        anchors.verticalCenter: parent.verticalCenter
+                        anchors.verticalCenterOffset: 8
+                        width: 7
+                        height: 7
+                        radius: 3.5
+                        color: ui.theme.accentColor
+                    }
+                }
+
+                Rectangle {
+                    width: 30
+                    height: 30
+                    radius: 15
+                    anchors.right: parent.right
+                    anchors.bottom: parent.bottom
+                    color: ui.theme.accentColor
+                    border.width: 2
+                    border.color: ui.theme.popupBackgroundColor
+
+                    StyledTextLabel {
+                        anchors.centerIn: parent
+                        text: "+"
+                        color: "#FFFFFF"
+                        font.pixelSize: 22
+                        font.bold: true
+                    }
+                }
             }
         }
     }

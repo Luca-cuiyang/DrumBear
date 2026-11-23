@@ -22,6 +22,9 @@
 
 #include "exportprojectscenario.h"
 
+#include <chrono>
+#include <thread>
+
 #include "global/io/fileinfo.h"
 #include "global/io/filestream.h"
 
@@ -119,6 +122,24 @@ bool ExportProjectScenario::exportScores(notation::INotationPtrList notations, c
 
     if (!writer) {
         return false;
+    }
+
+    //! Video rendering runs on a worker thread while the score is temporarily
+    //! re-laid out. Stop the playback cursor timer before any writer can touch
+    //! the same engraving objects.
+    const auto playback = playbackController();
+    if (playback && playback->isPlaybackInited()) {
+        const bool wasPlaying = playback->isPlaying();
+        playback->stop();
+        if (wasPlaying) {
+            for (int i = 0; i < 200 && playback->isPlaying(); ++i) {
+                application()->processEvents();
+                std::this_thread::sleep_for(std::chrono::milliseconds(5));
+            }
+        }
+        if (playback->isPlaying()) {
+            return false;
+        }
     }
 
     IF_ASSERT_FAILED(writer->supportsUnitType(unitType)) {

@@ -150,12 +150,12 @@ void NotationConfiguration::init()
         });
     }
 
-    settings()->setDefaultValue(LIGHT_SCORE_BACKGROUND_COLOR, Val(QColor("#BCC1CC")));
+    settings()->setDefaultValue(LIGHT_SCORE_BACKGROUND_COLOR, Val(QColor("#DCE5F1")));
     settings()->valueChanged(LIGHT_SCORE_BACKGROUND_COLOR).onReceive(nullptr, [this](const Val&) {
         m_backgroundChanged.notify();
     });
 
-    settings()->setDefaultValue(DARK_SCORE_BACKGROUND_COLOR, Val(QColor("#27272B")));
+    settings()->setDefaultValue(DARK_SCORE_BACKGROUND_COLOR, Val(QColor("#0B172B")));
     settings()->valueChanged(DARK_SCORE_BACKGROUND_COLOR).onReceive(nullptr, [this](const Val&) {
         m_backgroundChanged.notify();
     });

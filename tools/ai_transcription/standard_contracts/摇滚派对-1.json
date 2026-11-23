@@ -1,0 +1,315 @@
+{
+  "schemaVersion": 1,
+  "title": "摇滚派对-1",
+  "measureCount": 77,
+  "measures": [
+    {
+      "number": 1,
+      "digest": "032259c29acb75d2509a1e09d8d55ac1e048cf7bc3cec5752bc87addca8a96ed"
+    },
+    {
+      "number": 2,
+      "digest": "0cf9ba25ac4f915ab19b4bd825433790d663cc0dfee9783a86d750e88a153518"
+    },
+    {
+      "number": 3,
+      "digest": "a12b1f76ac8e395c947f75857df36c21e45008981bff73c96b91df8b13dacf96"
+    },
+    {
+      "number": 4,
+      "digest": "616f3f21cccea462e2c4f7df1849b7dc05ded3258b3c43e8e22c4ac874da4277"
+    },
+    {
+      "number": 5,
+      "digest": "a6e5644b82fb13d0effc6e0e73a6192c18461c53e42773825acea0176af44fe5"
+    },
+    {
+      "number": 6,
+      "digest": "de52d93602f5bda381269360030183c2787baefca453ff60b495b0ce452f5617"
+    },
+    {
+      "number": 7,
+      "digest": "d35a136d779ef16284c96c49723aa3100d4c979c9a2bfd9da19cc3a6611da5e7"
+    },
+    {
+      "number": 8,
+      "digest": "f52221017db91fc1d264e64f407bed72ffe26afb457dfc9d6897063123ec946a"
+    },
+    {
+      "number": 9,
+      "digest": "bc32e0aa9bbd25a646e1edba1d2873ab3da8a2a2436c6734c8cf3878253135bc"
+    },
+    {
+      "number": 10,
+      "digest": "9bcd63a69bb169f341c56e37c691ad9cf0fa6aaea32f238fc1675e0d7bda1cee"
+    },
+    {
+      "number": 11,
+      "digest": "05d6462d822da0526edc66bc7a4ff1fda6b791352a4f42a1aa417553eec4c2a3"
+    },
+    {
+      "number": 12,
+      "digest": "9922637c593148200400919a757639a18b37e80bee60702159c7b9f157af240b"
+    },
+    {
+      "number": 13,
+      "digest": "b54ac730301c866fa7291062f74e6fa54b5dc3c618f2b90f8778f5ce095862b3"
+    },
+    {
+      "number": 14,
+      "digest": "040a8a0a29380402e51d1d0ae765e314efea8b607b7ef9de2977950465b267b6"
+    },
+    {
+      "number": 15,
+      "digest": "14746fb2747334b617e248bd972abc2f310d2d173553ba70694228f822ccfc8d"
+    },
+    {
+      "number": 16,
+      "digest": "6d6deeced90f9dd276ef33cadda2a6d49feb51d85a8bc4998b0c57d3660b3025"
+    },
+    {
+      "number": 17,
+      "digest": "0c5bf1d1b9ca0cbda4cabdd4a6c2de5a0709eb046c9a59c11d57ae98425db5c7"
+    },
+    {
+      "number": 18,
+      "digest": "c9e285d506f994a695f9e5d30eff2c11fdee49f78b7f843dd9d0c401e8ad77aa"
+    },
+    {
+      "number": 19,
+      "digest": "e8b3e599e55f59557329c2a300a94dd594cef3c3a24b621b2efb575c2f7f2767"
+    },
+    {
+      "number": 20,
+      "digest": "bb7a9756f4f6a1b7cec1038ea86abfe0763ccddb2d769747771db445393fb691"
+    },
+    {
+      "number": 21,
+      "digest": "63245d86dadf6a0f17aa44094fdb64e51fea5f5f5761e3a66e082b46f34c5c1c"
+    },
+    {
+      "number": 22,
+      "digest": "e09ab7cc38ef17c5cba6196852baf4c9aa9d14a6d7ee72bf2f2ad74a9f0ef62f"
+    },
+    {
+      "number": 23,
+      "digest": "cadbbc7163534d831685b058c6e95c977165dedfb9833fc423402f41c13645c2"
+    },
+    {
+      "number": 24,
+      "digest": "0683e5f4f8f5901e403425ef806668c75aefd5fc5f81c3f288e1c1b24cfc5b31"
+    },
+    {
+      "number": 25,
+      "digest": "cf599f005a4f3c2d0e357a5a22bc46ef5dc5ae015164b8ddd989e0e7241eda3d"
+    },
+    {
+      "number": 26,
+      "digest": "b04368537c7f29578862e8f6255b82f54c29ec084fa4065711adb6d25814c212"
+    },
+    {
+      "number": 27,
+      "digest": "b2d047a1dd5999d2bc72dc88b3dcc46a8ba3b9ee9e5f5797dc5d1ebbc6056656"
+    },
+    {
+      "number": 28,
+      "digest": "5060f8c3f4ee30bbad9992e58966f12989620e4821bd80700af667f671d4b6de"
+    },
+    {
+      "number": 29,
+      "digest": "57c4644f2865f9b4b58fee2bd6ede4d46225af98ebf8f66f6b37195c2e688f80"
+    },
+    {
+      "number": 30,
+      "digest": "edd720d6b17c2d52f4beadf91e4e70fedb5f0a682663ae231ddc1253409411a5"
+    },
+    {
+      "number": 31,
+      "digest": "e684b8f5d27a238181af952a177365f812eeaa561f6a0322a2e951d1568c6e98"
+    },
+    {
+      "number": 32,
+      "digest": "c8646d9a014bb6b25f3d24db86a6a0912346e6b5e282e6bbf1386b5d33065161"
+    },
+    {
+      "number": 33,
+      "digest": "69c61835fec6f828a671edcbbf77a958ed0b82afcd981681cb6a1cc94630cc3c"
+    },
+    {
+      "number": 34,
+      "digest": "7aff09c392d5e865afca5283e8b17c67a5cc609fd2a0d8dba746497dbdb19129"
+    },
+    {
+      "number": 35,
+      "digest": "24a8862bd7d0ecd174869d5c2b471dfc8da4aeb60a489c21c2f2e3610e2f26c6"
+    },
+    {
+      "number": 36,
+      "digest": "5d8f9ea6e4b60e87210f3b4efa1e3ea732f6f48922dbf2118653d10f3453228e"
+    },
+    {
+      "number": 37,
+      "digest": "79b182e93d9b3bc395472497728ce350186d0b920c6b7a4dc51146be55bcec51"
+    },
+    {
+      "number": 38,
+      "digest": "7f02c13fa336050e45b605a7f45f00e922f0ecf54af375f87f77b955be3f750a"
+    },
+    {
+      "number": 39,
+      "digest": "692bff7b2dce82331bcf211b14d9a98a00a8a5a467aeda9dd1b4afd949b31620"
+    },
+    {
+      "number": 40,
+      "digest": "fea0aba3b777ac05a3a6afb0b6b71977e2a47cf8713a9c2a576ab7d17fe5e834"
+    },
+    {
+      "number": 41,
+      "digest": "32edff64ff9c282446894f2e437c67bbd6e3b63a2aec60daf8139798a8854705"
+    },
+    {
+      "number": 42,
+      "digest": "73346c90b2a96cb0c6d11fe7568e4b7f2170ba32d52e31bd572ae4dfc4f12623"
+    },
+    {
+      "number": 43,
+      "digest": "f7283f856d22ee8ecf6e7d46f8ef0f63b4c7c0937c22f1e278b39b3da041a6ea"
+    },
+    {
+      "number": 44,
+      "digest": "042ab1cba2d7845898b231c7d5ee93b03aeef000526e9e3324a90dfeb4e5f1df"
+    },
+    {
+      "number": 45,
+      "digest": "b8322d94517b343de856601b73a516b0bd174e504d202c4375661473f1ec34ae"
+    },
+    {
+      "number": 46,
+      "digest": "c634ae84627f2fea836dc274f7a638e8a33c13051774d914eef080765c467287"
+    },
+    {
+      "number": 47,
+      "digest": "e28b4e48c6506c1981983a269ae1fbd922deb236decff7d0b209d67b6de999e6"
+    },
+    {
+      "number": 48,
+      "digest": "e95c397f5dbf95898a4599e40236882d244e85568b05e8ce04d6041c3d932eb8"
+    },
+    {
+      "number": 49,
+      "digest": "0306d8377cb883d4326857175082bf48dc88a774a75823ff80e77189c058f2da"
+    },
+    {
+      "number": 50,
+      "digest": "66bf66d8748ce71a54101531aa6de34717babffa18000fdc936b764a2b03d905"
+    },
+    {
+      "number": 51,
+      "digest": "cba9e1d42132e2f728d980ef4d5abe8a2ebb6aea3936430387dacdaece8eafb5"
+    },
+    {
+      "number": 52,
+      "digest": "53adcb1efd3e1a70070c97057b2de19de33ac26d1e65efe0ed1c94c134f022a1"
+    },
+    {
+      "number": 53,
+      "digest": "9f1b9e982c3b593d73b7575cf27d3794f8bbc6ed3157eace2b691aea847f1cd8"
+    },
+    {
+      "number": 54,
+      "digest": "eb0809b7dd9def6209d9494e31a519775fd7ce5f30d946a605cbb1ff7b331018"
+    },
+    {
+      "number": 55,
+      "digest": "8c5de31c8178a71a6d2848f6e5fa247a876a44880d7075598260fd582f106664"
+    },
+    {
+      "number": 56,
+      "digest": "990ee932d1e9eb6bf3ad475f3f3904f683d5445f41b31b4ff7f6c36ec6433c2a"
+    },
+    {
+      "number": 57,
+      "digest": "ea87b9e27d3e1574805233b68a187b71c22d82f785f01e66b4748bd3755924f3"
+    },
+    {
+      "number": 58,
+      "digest": "79c8b6057e2ff4ed33e9e3e669dc7d020fdf7588b5163e8f03b4d34aed25815a"
+    },
+    {
+      "number": 59,
+      "digest": "265f0d6d625870f01cd21f212da54e931c4774aecda502931d2051e705a08db3"
+    },
+    {
+      "number": 60,
+      "digest": "338ad936134ec0699360a356d5ff663b9d4886aabcd79b9df78bc9bf23f129c3"
+    },
+    {
+      "number": 61,
+      "digest": "f101330d921e2629d1c623ca0c970f4cf5d10013602bddc3f881398f5978dd76"
+    },
+    {
+      "number": 62,
+      "digest": "ef083aca797a8a7cbde30435a8b660361c464f4452f4547aecfd276bdd7a791d"
+    },
+    {
+      "number": 63,
+      "digest": "9e42a676e53018d6acdf4938cfc7f920ce117b9a51bfde292627fc57d11c0ab8"
+    },
+    {
+      "number": 64,
+      "digest": "0eecf9ea65544c629367ee20679b63646b4abcf97c4db32ff5022387756b87b7"
+    },
+    {
+      "number": 65,
+      "digest": "07c30445ec1e7072ec8606dca0d1af20fe518e121ca9fec5d1e6f38a065843e1"
+    },
+    {
+      "number": 66,
+      "digest": "8c91c3397e76615d694fd086b81413574e8f2f5f9c5a07912dbeab1982d46ef1"
+    },
+    {
+      "number": 67,
+      "digest": "1c00dd35707764eec6786d6cfde5d9b658f36d2a6ebc6a9263b0d4f39390ca7e"
+    },
+    {
+      "number": 68,
+      "digest": "da5d4401bfd37b64fbab087de8f65e0c4bcbc4ec09f7e28633b106141ed89d8c"
+    },
+    {
+      "number": 69,
+      "digest": "10c6ec6ad1028c8c041f30999920c80f7950f9d23177bb6eef27d4f4ddc03275"
+    },
+    {
+      "number": 70,
+      "digest": "d3963384d6ddd456f0b1989ccbd2b8a3d67e82428b181dfb7d2ce18e48cf1dae"
+    },
+    {
+      "number": 71,
+      "digest": "fe3b468aa9b716fcd4c21ba0c15abf2fac63349048a30929ca3ddc9eaf582183"
+    },
+    {
+      "number": 72,
+      "digest": "e9e9ceef9683f498b493400b20658c3ff49ed56ce8eca01e5dae98ea1db47924"
+    },
+    {
+      "number": 73,
+      "digest": "3f20a8f2b547155868243f94ce9d996ae869410e591a2043d78ea70e640acd3c"
+    },
+    {
+      "number": 74,
+      "digest": "333adc4f94dc2ba00172839ff107511f5cedb56ef06f90edb8981bf0c2c7268a"
+    },
+    {
+      "number": 75,
+      "digest": "e3be2c93ca26886416fa3dfaf6a008a28659aff0ec0fb48ed827090c2d338214"
+    },
+    {
+      "number": 76,
+      "digest": "adaf1cdbdf3eb271d21956df481e09169eb5c8b1857b9469ba0234251d88ff81"
+    },
+    {
+      "number": 77,
+      "digest": "92dcb12650f39b48f3f5f3c55d9ad6957a3152e66949755f1164e7f957bcb520"
+    }
+  ]
+}

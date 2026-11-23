@@ -98,7 +98,7 @@ ExportSettingsPage {
 
             StyledTextLabel {
                 width: parent.width
-                text: qsTrc("project/export", "内置视频组件加载失败。请退出并重新安装最新版 DB Score；安装包已内置视频导出组件，无需另行安装 FFmpeg。")
+                text: qsTrc("project/export", "内置视频组件加载失败。请退出并重新安装最新版 DB绘谱；安装包已内置视频导出组件，无需另行安装 FFmpeg。")
                 horizontalAlignment: Text.AlignLeft
                 wrapMode: Text.WordWrap
             }

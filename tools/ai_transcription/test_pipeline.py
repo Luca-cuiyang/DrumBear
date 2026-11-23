@@ -1618,7 +1618,7 @@ class ImageToDbPipelineTests(unittest.TestCase):
             run_pipeline,
             "_run_dbscore_without_audio_once",
             side_effect=[
-                RuntimeError("DB Score failed (51)"),
+                RuntimeError("DB绘谱 failed (51)"),
                 None,
             ],
         ) as run_once, patch.object(run_pipeline.time, "sleep"):
@@ -1634,7 +1634,7 @@ class ImageToDbPipelineTests(unittest.TestCase):
             run_pipeline,
             "_run_dbscore_without_audio_once",
             side_effect=[
-                RuntimeError("DB Score failed (1)"),
+                RuntimeError("DB绘谱 failed (1)"),
                 None,
             ],
         ) as run_once, patch.object(run_pipeline.time, "sleep"):
@@ -3062,6 +3062,82 @@ class ImageToDbPipelineTests(unittest.TestCase):
             [operation[1] for operation in operations],
             [320, 320, 320, 2880],
         )
+
+    def test_two_complete_triplets_are_not_trimmed_as_overfull(self) -> None:
+        event_times = (
+            "0",
+            "1/8",
+            "1/4",
+            "3/8",
+            "1/2",
+            "7/12",
+            "2/3",
+            "3/4",
+            "5/6",
+            "11/12",
+        )
+        payload = {
+            "title": "Two triplets",
+            "tempo": 100,
+            "measures": [
+                {
+                    "number": 1,
+                    "length": 4,
+                    "events": [
+                        {
+                            "time": time,
+                            "pitches": [38, 43] if time in ("5/6", "11/12") else [42],
+                            "parts": [
+                                {
+                                    "voice": "up",
+                                    "pitches": (
+                                        [38, 43]
+                                        if time in ("5/6", "11/12")
+                                        else [42]
+                                    ),
+                                    "duration": "eighth",
+                                    "dots": 0,
+                                    "beam_group": None,
+                                }
+                            ],
+                        }
+                        for time in event_times
+                    ],
+                    "rests": [],
+                }
+            ],
+        }
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output = Path(temp_dir) / "two-triplets.mscx"
+            build_mscx.build(payload, output)
+            score_validation.validate_event_timeline(output, payload)
+            voice = ET.parse(output).getroot().find(".//Score/Staff/Measure/voice")
+            self.assertIsNotNone(voice)
+            self.assertEqual(len(voice.findall("Chord")), len(event_times))
+            self.assertEqual(len(voice.findall("Tuplet")), 2)
+            self.assertEqual(len(voice.findall("endTuplet")), 2)
+
+    def test_roundtrip_restores_an_omitted_empty_measure(self) -> None:
+        expected = [
+            {"number": 1, "length": 4, "events": [], "rests": [{"time": "0"}]},
+            {"number": 2, "length": 4, "events": [{"time": "0"}]},
+            {"number": 3, "length": 4, "events": [{"time": "1/4"}]},
+        ]
+        page = {
+            "measures": [
+                {"number": 1, "length": 4, "events": [{"time": "0"}]},
+                {"number": 2, "length": 4, "events": [{"time": "1/4"}]},
+            ]
+        }
+        restored = run_pipeline.restore_omitted_empty_measures(
+            page,
+            expected,
+            "page-1",
+        )
+        self.assertEqual(restored, 1)
+        self.assertEqual(len(page["measures"]), 3)
+        self.assertEqual(page["measures"][0]["events"], [])
+        self.assertEqual(page["measures"][0]["rests"], [{"time": "0"}])
 
     def test_mixed_duration_triplet_uses_one_complete_bracket(self) -> None:
         payload = {

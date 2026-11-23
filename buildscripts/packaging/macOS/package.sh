@@ -3,12 +3,12 @@
 echo "Package"
 trap 'echo Package failed; exit 1' ERR
 
-APP_NAME="DB score制谱大师"
-VOL_NAME="DB-Score"
+APP_NAME="DB绘谱"
+VOL_NAME="DB绘谱"
 DO_SIGN=false
 DEPLOY_ONLY=false
 ALLOW_ADHOC=false
-SIGN_IDENTITY="${CODE_SIGN_IDENTITY:-Developer ID Application: DB Score}"
+SIGN_IDENTITY="${CODE_SIGN_IDENTITY:-Developer ID Application: DB绘谱}"
 APPLE_TEAM_ID=""
 APPLE_USERNAME=""
 APPLE_PASSWORD=""
@@ -16,6 +16,7 @@ APPLE_PASSWORD=""
 #! NOTE Project root, used as the macdeployqt qmldir. Must be an absolute
 #! path so macdeployqt can resolve QML imports and deploy their plugins.
 PROJECT_DIR="$(cd "$(dirname "$0")/../../.." && pwd)"
+APP_VERSION="$(tr -d '[:space:]' < "${PROJECT_DIR}/release-version.txt")"
 
 while [[ "$#" -gt 0 ]]; do
     case $1 in
@@ -92,15 +93,14 @@ echo "otool -L pre-macdeployqt"
 otool -L ${APP_PATH}/Contents/MacOS/dbscore
 
 echo "macdeployqt"
+MACDEPLOYQT_SIGN_ARGS=()
 if $DO_SIGN && [[ "$SIGN_IDENTITY" == "Developer ID Application:"* ]]; then
-    sign_args="-sign-for-notarization=${SIGN_IDENTITY}"
-else
-    sign_args=""
+    MACDEPLOYQT_SIGN_ARGS=("-sign-for-notarization=${SIGN_IDENTITY}")
 fi
 macdeployqt ${APP_PATH} \
     -verbose=2 \
     -qmldir="${PROJECT_DIR}" \
-    $sign_args
+    "${MACDEPLOYQT_SIGN_ARGS[@]}"
 
 echo "otool -L post-macdeployqt"
 otool -L ${APP_PATH}/Contents/MacOS/dbscore
@@ -134,7 +134,7 @@ PYTHONHOME="${APP_PATH}/Contents/Resources/ai_transcription/python" \
 PYTHONNOUSERSITE=1 \
     "${AI_PYTHON}" -c 'import cv2, numpy, PIL, pypdfium2; print("P1.0.0 Python runtime OK")'
 
-# DB Score does not use optional third-party SQL backends. Do not ship plugins
+# DB绘谱 does not use optional third-party SQL backends. Do not ship plugins
 # whose dependencies point to Homebrew, Postgres.app, or /usr/local.
 mkdir -p "${STALE_DEPLOY}/sqldrivers"
 for _driver in libqsqlodbc.dylib libqsqlpsql.dylib libqsqlmimer.dylib; do
@@ -413,7 +413,8 @@ shasum -a 256 "applebuild/${COMPRESSED_DMG_NAME}"
 rm "applebuild/${DMG_NAME}"
 
 # 复制最新 DMG 到桌面，并只保留最新安装包（清理旧 .dmg / .msi / .win）
-cp "applebuild/${COMPRESSED_DMG_NAME}" "${HOME}/Desktop/DB score制谱大师.dmg"
+PUBLIC_DMG="${HOME}/Desktop/DB绘谱-${APP_VERSION}.dmg"
+cp "applebuild/${COMPRESSED_DMG_NAME}" "${PUBLIC_DMG}"
 find "${HOME}/Desktop" -maxdepth 1 -type f \( -name "DBScore-*.dmg" -o -name "DBScore-*.msi" -o -name "DBScore-*.win" -o -name "MuseScore_Studio_Installer*.exe" \) -delete 2>/dev/null
 bash "${PROJECT_DIR}/buildscripts/packaging/macOS/cleanup_old_versions.sh" \
-    --keep-dmg "${HOME}/Desktop/DB score制谱大师.dmg"
+    --keep-dmg "${PUBLIC_DMG}"
