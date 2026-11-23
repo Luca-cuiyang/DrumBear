@@ -224,6 +224,16 @@ jobs:
         done
         ls -lh buildscripts/packaging/Windows/ffmpeg
 
+    - name: Fetch AI transcription runtimes (Audiveris + Python)
+      shell: bash
+      run: |
+        mkdir -p tools/ai_transcription/audiveris
+        curl -fsSL --retry 3 "https://drumbear.cn/downloads/ai_transcription/audiveris-win-x64.tar.gz" -o audiveris-win-x64.tar.gz
+        curl -fsSL --retry 3 "https://drumbear.cn/downloads/ai_transcription/python-win.tar.gz" -o python-win.tar.gz
+        tar -xzf audiveris-win-x64.tar.gz -C tools/ai_transcription/audiveris
+        tar -xzf python-win.tar.gz -C tools/ai_transcription
+        ls -d tools/ai_transcription/audiveris/win-x64 tools/ai_transcription/python-win
+
     - parallel:
       - name: Generate _en.ts files
         shell: bash
@@ -410,6 +420,16 @@ jobs:
       - name: Setup environment
         run: |
           buildscripts\ci\windows\setup.bat --portable ON
+
+      - name: Fetch AI transcription runtimes (Audiveris + Python)
+        shell: bash
+        run: |
+          mkdir -p tools/ai_transcription/audiveris
+          curl -fsSL --retry 3 "https://drumbear.cn/downloads/ai_transcription/audiveris-win-x64.tar.gz" -o audiveris-win-x64.tar.gz
+          curl -fsSL --retry 3 "https://drumbear.cn/downloads/ai_transcription/python-win.tar.gz" -o python-win.tar.gz
+          tar -xzf audiveris-win-x64.tar.gz -C tools/ai_transcription/audiveris
+          tar -xzf python-win.tar.gz -C tools/ai_transcription
+          ls -d tools/ai_transcription/audiveris/win-x64 tools/ai_transcription/python-win
 
     - parallel:
       - name: Generate _en.ts files
