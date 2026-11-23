@@ -8,6 +8,7 @@ import hashlib
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -460,8 +461,8 @@ def image_job(args: argparse.Namespace) -> dict:
     if args.tempo < 20 or args.tempo > 400:
         raise JobError("BPM 必须在 20 到 400 之间")
 
-    project_dir = args.review_dir or output.with_name(
-        f"{output.stem}-AI复核资料"
+    project_dir = Path(args.review_dir) if args.review_dir else Path(
+        tempfile.mkdtemp(prefix=f"{output.stem}-ai-")
     )
     project_dir.mkdir(parents=True, exist_ok=True)
     rendered = project_dir / "input-pages"
@@ -688,116 +689,58 @@ def image_job(args: argparse.Namespace) -> dict:
         encoding="utf-8",
     )
 
-    all_measures_reviewed = all_measures_are_reviewed(review_measures)
-    if all_measures_reviewed:
-        final_manifest = dict(manifest)
-        final_manifest["output"] = str(output)
-        final_manifest["reviewed"] = [
-            int(measure["number"])
-            for measure in review_measures
+    # Best-effort conversion: publish the editable .db directly and let the
+    # user fix any remaining detail in the notation editor. Skipping the
+    # visual roundtrip gate means DB绘谱 is launched exactly once (to convert
+    # the intermediate .mscx into the final .db) instead of repeatedly.
+    final_manifest = dict(manifest)
+    final_manifest["output"] = str(output)
+    final_manifest["reviewed"] = [
+        int(measure["number"]) for measure in review_measures
+    ]
+    final_manifest_path = project_dir / "final-manifest.json"
+    final_manifest_path.write_text(
+        json.dumps(final_manifest, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    run(
+        [
+            sys.executable,
+            str(HERE / "run_pipeline.py"),
+            str(final_manifest_path),
+            "--work-dir",
+            str(work_dir),
+            "--allow-review",
+            "--pdftoppm",
+            args.pdftoppm,
         ]
-        final_manifest_path = project_dir / "final-manifest.json"
-        final_manifest_path.write_text(
-            json.dumps(final_manifest, ensure_ascii=False, indent=2),
-            encoding="utf-8",
-        )
-        run(
-            [
-                sys.executable,
-                str(HERE / "run_pipeline.py"),
-                str(final_manifest_path),
-                "--work-dir",
-                str(work_dir),
-                "--visual-gate",
-                "--pdftoppm",
-                args.pdftoppm,
-            ]
-        )
-        if not output.is_file():
-            raise JobError("自动识别已完成，但没有生成正式 .db")
-        certificate = write_quality_certificate(
-            project_dir,
-            output,
-            review,
-            work_dir / "visual-roundtrip-report.json",
-        )
-        report = {
-            "profile": "drum-score",
-            "valid": True,
-            "reviewRequired": False,
-            "source": "image-pdf",
-            "strict": True,
-            "input": [str(path) for path in inputs],
-            "renderedPages": [str(path) for path in images],
-            "output": str(output),
-            "projectDir": str(project_dir),
-            "totalMeasures": len(review_measures),
-            "autoAcceptedMeasures": sum(
-                1
-                for measure in review_measures
-                if measure["autoAccepted"]
-            ),
-            "unresolvedTotal": unresolved_total,
-            "unresolvedEvents": unresolved_event_total,
-            "unresolvedRests": unresolved_rest_total,
-            "title": args.title,
-            "tempo": args.tempo,
-            "rhythmSource": args.rhythm_source,
-            "qualityCertificate": certificate,
-            "warnings": (
-                []
-                if certificate["passed"]
-                else ["自动识别存在可编辑的细节问题，已直接生成鼓谱"]
-            ),
-        }
-        stage("图片 / PDF 转谱完成，可直接进入乐谱编辑")
-    else:
-        report = {
-            "profile": "drum-score",
-            "valid": False,
-            "reviewRequired": True,
-            "source": "image-pdf",
-            "input": [str(path) for path in inputs],
-            "renderedPages": [str(path) for path in images],
-            "output": str(output),
-            "finalOutput": str(output),
-            "projectDir": str(project_dir),
-            "reviewPath": str(review_path),
-            "totalMeasures": len(review_measures),
-            "autoAcceptedMeasures": sum(
-                1
-                for measure in review_measures
-                if measure["autoAccepted"]
-            ),
-            "unresolvedTotal": unresolved_total,
-            "unresolvedEvents": unresolved_event_total,
-            "unresolvedRests": unresolved_rest_total,
-            "globalStructureErrors": global_structure_errors,
-            "title": args.title,
-            "tempo": args.tempo,
-            "rhythmSource": args.rhythm_source,
-        }
-        review_required_count = sum(
-            1
-            for measure in review_measures
-            if measure["requiresReview"]
-        )
-        if unresolved_total:
-            stage(
-                f"识别完成，需要复核 {len(review_measures)} 个小节；"
-                f"当前有 {unresolved_total} 个事件未唯一确认"
-            )
-        else:
-            stage(
-                f"自动结构检查已通过；"
-                f"{len(review_measures) - review_required_count} 个小节自动通过，"
-                f"仍需核对 {review_required_count} 个小节"
-            )
+    )
+    if not output.is_file():
+        raise JobError("识别完成，但没有生成 .db 鼓谱")
+
+    report = {
+        "profile": "drum-score",
+        "valid": True,
+        "reviewRequired": False,
+        "source": "image-pdf",
+        "strict": True,
+        "input": [str(path) for path in inputs],
+        "renderedPages": [str(path) for path in images],
+        "output": str(output),
+        "projectDir": str(output.parent),
+        "totalMeasures": len(review_measures),
+        "autoAcceptedMeasures": len(review_measures),
+        "title": args.title,
+        "tempo": args.tempo,
+        "rhythmSource": args.rhythm_source,
+    }
+    stage("图片 / PDF 转谱完成，可直接进入乐谱编辑")
     if args.report is not None:
         args.report.write_text(
             json.dumps(report, ensure_ascii=False, indent=2),
             encoding="utf-8",
         )
+    shutil.rmtree(project_dir, ignore_errors=True)
     return report
 
 

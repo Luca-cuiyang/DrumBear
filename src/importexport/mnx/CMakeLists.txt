@@ -43,6 +43,7 @@ else()
         mnxdom
         GIT_REPOSITORY https://github.com/rpatters1/mnxdom.git
         GIT_TAG        ${MNXDOM_GIT_TAG}
+        GIT_SUBMODULES ""
     )
     set(MNXDOM_GIT_COMMIT "${MNXDOM_GIT_COMMIT}" CACHE STRING "mnxdom source control revision to embed in provenance" FORCE)
     FetchContent_MakeAvailable(mnxdom)
