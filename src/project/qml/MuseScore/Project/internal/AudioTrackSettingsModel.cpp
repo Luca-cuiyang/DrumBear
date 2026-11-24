@@ -392,7 +392,16 @@ AudioTrackSettingsModel::AudioTrackSettingsModel(QObject* parent)
     //! that pool before destroying the UI and its IoC contexts, whereas detached
     //! std::thread tasks could outlive this QML model and touch destroyed state.
     connect(&m_waveformWatcher, &QFutureWatcher<QVariantMap>::finished, this, [this]() {
-        const QVariantMap result = m_waveformWatcher.result();
+        QVariantMap result;
+        try {
+            result = m_waveformWatcher.result();
+        } catch (const std::exception& e) {
+            LOGE() << "waveform watcher exception: " << e.what();
+            return;
+        } catch (...) {
+            LOGE() << "waveform watcher unknown exception";
+            return;
+        }
         if (!result.value("ok").toBool()) {
             return;
         }
@@ -409,7 +418,16 @@ AudioTrackSettingsModel::AudioTrackSettingsModel(QObject* parent)
     });
 
     connect(&m_bpmWatcher, &QFutureWatcher<QVariantMap>::finished, this, [this]() {
-        const QVariantMap result = m_bpmWatcher.result();
+        QVariantMap result;
+        try {
+            result = m_bpmWatcher.result();
+        } catch (const std::exception& e) {
+            LOGE() << "bpm watcher exception: " << e.what();
+            return;
+        } catch (...) {
+            LOGE() << "bpm watcher unknown exception";
+            return;
+        }
         if (!result.value("ok").toBool()) {
             return;
         }

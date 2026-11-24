@@ -450,8 +450,14 @@ Item {
                         onPaint: {
                             var ctx = getContext("2d")
                             ctx.clearRect(0, 0, width, height)
+                            if (width <= 0 || height <= 0) {
+                                return
+                            }
                             var range = visibleDuration
                             var pxPerSec = timeline.pxPerSec
+                            if (!isFinite(pxPerSec) || pxPerSec <= 0) {
+                                return
+                            }
                             var minorStep = root.niceStep(8 / Math.max(0.001, pxPerSec))
                             var majorStep = root.niceStep(64 / Math.max(0.001, pxPerSec))
                             if (majorStep < minorStep) {
@@ -498,6 +504,9 @@ Item {
                             onPaint: {
                                 var ctx = getContext("2d")
                                 ctx.clearRect(0, 0, width, height)
+                                if (width <= 0 || height <= 0) {
+                                    return
+                                }
                                 var grid = audioModel.scoreBeatGrid
                                 for (var i = 0; i < grid.length; ++i) {
                                     var item = grid[i]
@@ -505,6 +514,9 @@ Item {
                                         continue
                                     }
                                     var x = timeline.xAt(item.time + audioModel.scoreOffset)
+                                    if (!isFinite(x)) {
+                                        continue
+                                    }
                                     if (x < -1 || x > width + 1) {
                                         continue
                                     }
@@ -597,6 +609,9 @@ Item {
                             onPaint: {
                                 var ctx = getContext("2d")
                                 ctx.clearRect(0, 0, width, height)
+                                if (width <= 0 || height <= 0) {
+                                    return
+                                }
                                 if (!audioModel.hasTrack) {
                                     return
                                 }
