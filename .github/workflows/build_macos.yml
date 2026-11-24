@@ -333,6 +333,10 @@ jobs:
       if: inputs.deploy == 'on'
       shell: bash
       env:
+        GH_TOKEN: ${{ github.token }}
+        GH_REPO: ${{ github.repository }}
+        GH_RUN_ID: ${{ github.run_id }}
+        UPLOAD_ARTIFACT_NAME: ${{ env.UPLOAD_ARTIFACT_NAME }}
         DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
         DEPLOY_HOST: ${{ vars.DEPLOY_HOST }}
         DEPLOY_USER: ${{ vars.DEPLOY_USER }}
