@@ -73,9 +73,49 @@ void TemplatesModel::loadAllCategories()
     updateTemplatesByCurrentCategory();
 }
 
+static QString zhTemplateTitle(const QString& english)
+{
+    static const QHash<QString, QString> zh = {
+        { "General", "通用" }, { "Choral", "合唱" }, { "Chamber Music", "室内乐" },
+        { "Solo", "独奏" }, { "Jazz", "爵士" }, { "Popular", "流行" },
+        { "Band and Percussion", "管乐队与打击乐" }, { "Orchestral", "管弦乐" },
+        { "Treble Clef", "高音谱表" }, { "Bass Clef", "低音谱表" }, { "Grand Staff", "大谱表" },
+        { "SATB", "混声四部合唱" }, { "SATB + Organ", "混声四部合唱 + 管风琴" },
+        { "SATB + Piano", "混声四部合唱 + 钢琴" },
+        { "SATB Closed Score", "混声四部合唱（紧缩谱）" },
+        { "SATB Closed Score + Organ", "混声四部合唱（紧缩谱）+ 管风琴" },
+        { "SATB Closed Score + Piano", "混声四部合唱（紧缩谱）+ 钢琴" },
+        { "Voice + Piano", "独唱 + 钢琴" },
+        { "Barbershop Ensemble (TTBB)", "男声四重唱（TTBB）" },
+        { "Barbershop Ensemble (SSAA)", "女声四重唱（SSAA）" },
+        { "Barbershop Ensemble (SATB)", "四重唱（SATB）" },
+        { "Liturgical Unmetrical", "无节拍礼仪音乐" },
+        { "Liturgical Unmetrical + Organ", "无节拍礼仪音乐 + 管风琴" },
+        { "String Quartet", "弦乐四重奏" }, { "Wind Quartet", "木管四重奏" },
+        { "Wind Quintet", "木管五重奏" }, { "Saxophone Quartet", "萨克斯四重奏" },
+        { "Brass Quartet", "铜管四重奏" }, { "Brass Quintet", "铜管五重奏" },
+        { "Guitar", "吉他" }, { "Guitar + Tablature", "吉他 + 六线谱" },
+        { "Guitar Tablature", "吉他六线谱" }, { "Piano", "钢琴" },
+        { "Jazz Lead Sheet", "爵士主旋律谱" }, { "Big Band", "大乐队" },
+        { "Jazz Combo", "爵士小乐队" }, { "Rock Band", "摇滚乐队" },
+        { "Bluegrass Band", "蓝草乐队" }, { "Concert Band", "管乐团" },
+        { "Small Concert Band", "小型管乐团" }, { "Brass Band", "铜管乐团" },
+        { "Marching Band", "行进管乐团" }, { "Small Marching Band", "小型行进管乐团" },
+        { "Battery Percussion", "打击乐" }, { "Large Pit Percussion", "大型前排打击乐" },
+        { "Small Pit Percussion", "小型前排打击乐" }, { "European Concert Band", "欧式管乐团" },
+        { "Classical Orchestra", "古典管弦乐团" }, { "Symphony Orchestra", "交响乐团" },
+        { "String Orchestra", "弦乐团" }, { "My First Score", "我的第一份乐谱" },
+    };
+    return zh.value(english, english);
+}
+
 QStringList TemplatesModel::categoriesTitles() const
 {
-    return m_visibleCategoriesTitles;
+    QStringList titles;
+    for (const QString& title : m_visibleCategoriesTitles) {
+        titles << zhTemplateTitle(title);
+    }
+    return titles;
 }
 
 int TemplatesModel::currentCategoryIndex() const
@@ -99,7 +139,7 @@ QStringList TemplatesModel::templatesTitles() const
 
     for (const Template& templ: m_visibleTemplates) {
         QString titleToAdd = templ.isCustom ? templ.meta.fileName(false).toQString() : templ.meta.title;
-        titles << titleToAdd;
+        titles << zhTemplateTitle(titleToAdd);
     }
 
     return titles;
