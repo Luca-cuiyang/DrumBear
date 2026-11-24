@@ -95,7 +95,7 @@ concurrency:
 jobs:
   windows_x64:
     if: inputs.platforms == '' || contains(inputs.platforms, 'windows_x64')
-    runs-on: windows-2025
+    runs-on: self-hosted
     steps:
     - name: Clone repository
       uses: actions/checkout@v7
@@ -211,7 +211,8 @@ jobs:
     #       bash ./buildscripts/ci/tools/setup_ccache_config.sh
 
     - parallel:
-      - name: Install Qt
+      - name: Install Qt (cloud)
+        if: runner.environment != 'self-hosted'
         uses: jurplel/install-qt-action@v4
         with:
           version: 6.10.2
@@ -220,7 +221,14 @@ jobs:
           arch: 'win64_msvc2022_64'
           modules: 'qt5compat qtnetworkauth qtshadertools qtwebsockets'
           cache: true
+      - name: Use pre-installed Qt (self-hosted)
+        if: runner.environment == 'self-hosted'
+        shell: bash
+        run: |
+          echo "C:/Qt/6.10.2/msvc2022_64/bin" >> "$GITHUB_PATH"
+          echo "CMAKE_PREFIX_PATH=C:/Qt/6.10.2/msvc2022_64" >> "$GITHUB_ENV"
       - name: Setup environment
+        shell: cmd
         run: |
           buildscripts\ci\windows\setup.bat
 
@@ -260,6 +268,7 @@ jobs:
           args: "pull -f"
 
     - name: Register msvc problem matcher
+      shell: bash
       run: echo "::add-matcher::.github/problem_matchers/msvc.json"
 
     - name: Build
@@ -280,6 +289,7 @@ jobs:
       run: |
         buildscripts\ci\windows\package.bat --signsecret "%WIN_SIGN_S3_SECRET%" --signkey "%WIN_SIGN_S3_KEY%" --guid %WIN_MSI_GUID%
     - name: Checksum
+      shell: bash
       run: |
         bash ./buildscripts/ci/tools/checksum.sh
     - name: Generate and upload dump symbols
