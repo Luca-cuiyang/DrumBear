@@ -97,6 +97,29 @@ MACDEPLOYQT_SIGN_ARGS=()
 if $DO_SIGN && [[ "$SIGN_IDENTITY" == "Developer ID Application:"* ]]; then
     MACDEPLOYQT_SIGN_ARGS=("-sign-for-notarization=${SIGN_IDENTITY}")
 fi
+
+# DB绘谱 不使用 PostgreSQL/ODBC/Mimer 等可选 SQL 后端。在 macdeployqt 之前把
+# 这些 sqldriver 插件从 app 和 Qt 安装目录中排除，避免 macdeployqt 跟随它们
+# 指向 Homebrew/Postgres.app 的缺失依赖（libpq/libiodbc/libmimerapi）而失败。
+for _qtdir in "${HOME}/Qt/6.10.2/macos" "$(dirname "${PROJECT_DIR}")/Qt/6.10.2/macos"; do
+    _sqldir="${_qtdir}/plugins/sqldrivers"
+    if [ -d "${_sqldir}" ]; then
+        for _driver in libqsqlodbc.dylib libqsqlpsql.dylib libqsqlmimer.dylib; do
+            if [ -e "${_sqldir}/${_driver}" ]; then
+                mv "${_sqldir}/${_driver}" "${_sqldir}/${_driver}.disabled"
+            fi
+        done
+    fi
+done
+_app_sqldir="${APP_PATH}/Contents/PlugIns/sqldrivers"
+if [ -d "${_app_sqldir}" ]; then
+    for _driver in libqsqlodbc.dylib libqsqlpsql.dylib libqsqlmimer.dylib; do
+        if [ -e "${_app_sqldir}/${_driver}" ]; then
+            mv "${_app_sqldir}/${_driver}" "${_app_sqldir}/${_driver}.disabled"
+        fi
+    done
+fi
+
 macdeployqt ${APP_PATH} \
     -verbose=2 \
     -qmldir="${PROJECT_DIR}" \
