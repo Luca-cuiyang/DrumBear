@@ -20,6 +20,10 @@ on:
         description: 'Use KDDockWidgets v2: ON/OFF'
         default: 'ON'
         required: false
+      deploy:
+        description: '打包完成后直传 drumbear.cn 并更新软件内更新源: on - 直传'
+        default: 'off'
+        required: false
   workflow_call:
     inputs:
       build_mode:
@@ -45,6 +49,11 @@ on:
       dockwidgets_v2:
         description: 'Use KDDockWidgets v2: ON/OFF'
         default: 'ON'
+        type: string
+        required: false
+      deploy:
+        description: 'Upload to drumbear.cn and update in-app update feed: on - upload'
+        default: 'off'
         type: string
         required: false
       app_repo:
@@ -311,6 +320,20 @@ jobs:
       with:
         name: ${{ env.UPLOAD_ARTIFACT_NAME }}
         path: ./build.artifacts/
+
+    - name: Deploy to drumbear.cn
+      if: inputs.deploy == 'on'
+      shell: bash
+      env:
+        DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+        DEPLOY_HOST: ${{ vars.DEPLOY_HOST }}
+        DEPLOY_USER: ${{ vars.DEPLOY_USER }}
+        DEPLOY_PORT: ${{ vars.DEPLOY_PORT || '22' }}
+        DEPLOY_DOWNLOAD_DIR: ${{ vars.DEPLOY_DOWNLOAD_DIR }}
+        DEPLOY_UPDATES_DIR: ${{ vars.DEPLOY_UPDATES_DIR }}
+        OS: macos
+      run: |
+        bash ./buildscripts/ci/tools/deploy_to_drumbear.sh
 
     - name: Prepare ccache files for saving
       id: prepare-save-ccache
