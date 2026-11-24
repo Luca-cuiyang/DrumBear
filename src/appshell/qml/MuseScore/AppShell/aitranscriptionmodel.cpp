@@ -1540,6 +1540,8 @@ QString AiTranscriptionModel::resolvePython() const
         applicationResourcePath("python/bin/python3"),
         applicationResourcePath("ai_transcription/python-win/python.exe"),
         applicationResourcePath("ai_transcription/python/python.exe"),
+        findInParents("ai_transcription/python-win/python.exe"),
+        findInParents("ai_transcription/python/bin/python3"),
         findInParents(".venv-image-to-db/bin/python"),
         "/opt/homebrew/bin/python3",
         "/usr/local/bin/python3",
