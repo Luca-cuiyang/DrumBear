@@ -39,9 +39,9 @@ def find_source_dir():
         '/usr/local/lib',
     ]
 
-    # Prefer a universal FFmpeg set. The app bundle is universal, so packaging an
-    # arm64-only FFmpeg directory would break MP4 export on Intel Macs.
-    preferred_sets = [CORE_V7, CORE_V8]
+    # 统一使用最新稳定 FFmpeg 8，Mac / Windows 版本一致，避免 ABI 不一致导致解码崩溃。
+    # 打包的是 universal App，因此必须找 arm64 + x86_64 双架构的 FFmpeg 8。
+    preferred_sets = [CORE_V8, CORE_V7]
     for core in preferred_sets:
         for candidate in candidates:
             if not candidate:
