@@ -239,6 +239,14 @@ jobs:
         echo "DBSCORE_FFMPEG_DIR=$GITHUB_WORKSPACE/buildscripts/packaging/macOS/ffmpeg" >> "$GITHUB_ENV"
         ls -lh buildscripts/packaging/macOS/ffmpeg
 
+    - name: Fetch AI transcription runtimes (Audiveris)
+      run: |
+        # DB绘谱 是 universal 二进制，图片转谱需要内置 Apple Silicon 版 Audiveris。
+        mkdir -p tools/ai_transcription/audiveris
+        curl -fsSL --retry 3 "https://drumbear.cn/downloads/ai_transcription/audiveris-mac-arm64.tar.gz" -o audiveris-mac-arm64.tar.gz
+        tar -xzf audiveris-mac-arm64.tar.gz -C tools/ai_transcription/audiveris
+        ls -d tools/ai_transcription/audiveris/mac-arm64/Audiveris.app
+
     - parallel:
       - name: Generate _en.ts files
         env:
