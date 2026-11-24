@@ -211,18 +211,7 @@ jobs:
     #       bash ./buildscripts/ci/tools/setup_ccache_config.sh
 
     - parallel:
-      - name: Install Qt (cloud)
-        if: runner.environment != 'self-hosted'
-        uses: jurplel/install-qt-action@v4
-        with:
-          version: 6.10.2
-          host: 'windows'
-          target: 'desktop'
-          arch: 'win64_msvc2022_64'
-          modules: 'qt5compat qtnetworkauth qtshadertools qtwebsockets'
-          cache: true
       - name: Use pre-installed Qt (self-hosted)
-        if: runner.environment == 'self-hosted'
         shell: bash
         run: |
           echo "C:/Qt/6.10.2/msvc2022_64/bin" >> "$GITHUB_PATH"
@@ -260,13 +249,6 @@ jobs:
           POSTPROCESS_LAUNCHER: "python3 -X utf8"
         run: |
           bash ./tools/translations/run_lupdate.sh
-      - name: Update .ts files (tx pull)
-        if: env.DO_UPDATE_TS == 'true'
-        uses: cbjeukendrup/cli-action@windows
-        with:
-          token: ${{ secrets.TRANSIFEX_API_TOKEN }}
-          args: "pull -f"
-
     - name: Register msvc problem matcher
       shell: bash
       run: echo "::add-matcher::.github/problem_matchers/msvc.json"
