@@ -28,7 +28,7 @@ DockPage {
     property var imagePaths: []
     property string outputPath: ""
     property string imageTitle: ""
-    property double imageTempo: 120.0
+    property string imageTempoText: "120"
     property int leadingMeasures: 0
     property bool diagnosticsVisible: false
     property bool dropHovered: false
@@ -162,7 +162,7 @@ DockPage {
                 imagePaths,
                 outputPath,
                 imageTitle,
-                imageTempo
+                parseFloat(imageTempoText) || 120
             )
             return
         }
@@ -857,14 +857,16 @@ DockPage {
                                         text: qsTr("速度")
                                         color: ui.theme.fontSecondaryColor
                                     }
-                                    SpinBox {
-                                        from: 20
-                                        to: 400
-                                        decimals: 3
-                                        stepSize: 0.001
-                                        value: root.imageTempo
+                                    TextField {
+                                        Layout.fillWidth: true
+                                        text: root.imageTempoText
                                         enabled: !transcription.busy
-                                        onValueModified: root.imageTempo = value
+                                        validator: DoubleValidator {
+                                            bottom: 20
+                                            top: 400
+                                            decimals: 3
+                                        }
+                                        onTextEdited: root.imageTempoText = text
                                     }
                                     StyledTextLabel {
                                         text: qsTr("BPM")
