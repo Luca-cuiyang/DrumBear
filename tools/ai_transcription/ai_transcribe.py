@@ -268,7 +268,7 @@ def resolve_tesseract(override: str | None) -> str | None:
     return shutil.which("tesseract")
 
 
-def detect_tempo(image_path: Path, tesseract: str | None) -> int | None:
+def detect_tempo(image_path: Path, tesseract: str | None) -> float | None:
     """OCR 鼓谱图片顶部，尽力读出印刷的速度记号（如 ♩=130）。"""
     if not tesseract:
         return None
@@ -292,14 +292,14 @@ def detect_tempo(image_path: Path, tesseract: str | None) -> int | None:
         )
         tmp.unlink(missing_ok=True)
         text = (result.stdout or "") + " " + (result.stderr or "")
-        # 优先取等号 / 破折号后面的数字（♩=130 / ♩—130 这类）
-        for match in re.finditer(r"[=:—–~\-]\s*(\d{2,3})", text):
-            value = int(match.group(1))
+        # 优先取等号 / 破折号后面的数字（♩=130 / ♩—130 这类），支持小数
+        for match in re.finditer(r"[=:—–~\-]\s*(\d{2,3}(?:[.,]\d{1,3})?)", text):
+            value = float(match.group(1).replace(",", "."))
             if 30 <= value <= 400:
                 return value
-        # 退而求其次：任意 30..400 的两位数/三位数
-        for match in re.finditer(r"(?<!\d)(\d{2,3})(?!\d)", text):
-            value = int(match.group(1))
+        # 退而求其次：任意 30..400 的数字（支持小数）
+        for match in re.finditer(r"(?<!\d)(\d{2,3}(?:[.,]\d{1,3})?)(?!\d)", text):
+            value = float(match.group(1).replace(",", "."))
             if 30 <= value <= 400:
                 return value
         return None
@@ -967,7 +967,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     image.add_argument("--output", type=Path, required=True)
     image.add_argument("--title", required=True)
-    image.add_argument("--tempo", type=int, required=True)
+    image.add_argument("--tempo", type=float, required=True)
     image.add_argument("--audiveris", type=Path, required=True)
     image.add_argument("--dbscore", type=Path, required=True)
     image.add_argument("--style", type=Path, default=default_style())

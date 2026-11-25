@@ -85,7 +85,7 @@ public:
         const QVariantList& inputPaths,
         const QString& outputPath,
         const QString& title,
-        int tempo);
+        double tempo);
     Q_INVOKABLE bool setMeasureReviewed(int number, bool reviewed);
     Q_INVOKABLE bool markAllMeasuresReviewed();
     Q_INVOKABLE void selectReviewMeasure(int number);

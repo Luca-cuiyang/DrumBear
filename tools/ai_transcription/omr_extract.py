@@ -1537,7 +1537,7 @@ def detect_tuplets(
 def write_json(
     output_path: Path,
     title: str,
-    tempo: int,
+    tempo: float,
     measures: list[Measure],
     heads_by_measure: dict[int, list[Head]],
     rests_by_measure: dict[int, list[RestSymbol]],
@@ -3858,7 +3858,7 @@ def main() -> None:
     parser.add_argument("--output-review", type=Path, required=True)
     parser.add_argument("--review-dir", type=Path)
     parser.add_argument("--title", required=True)
-    parser.add_argument("--tempo", type=int, required=True)
+    parser.add_argument("--tempo", type=float, required=True)
     parser.add_argument(
         "--ride-template",
         type=Path,

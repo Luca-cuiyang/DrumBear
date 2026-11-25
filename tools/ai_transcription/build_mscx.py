@@ -1041,7 +1041,7 @@ def add_measure(
     *,
     first: bool,
     previous_beats: int | None,
-    tempo: int,
+    tempo: float,
     break_after: str | None,
 ) -> ET.Element:
     number = int(measure_data["number"])
@@ -1099,12 +1099,14 @@ def add_measure(
         if first and voice_index == 0:
             tempo_element = ET.SubElement(voice, "Tempo")
             add_eid(tempo_element, "tempo:1")
-            ET.SubElement(tempo_element, "tempo").text = str(tempo / 60)
+            ET.SubElement(tempo_element, "tempo").text = f"{tempo / 60:.6f}"
             ET.SubElement(tempo_element, "followText").text = "1"
             text = ET.SubElement(tempo_element, "text")
             symbol = ET.SubElement(text, "sym")
             symbol.text = "metNoteQuarterUp"
-            symbol.tail = f" = {tempo}"
+            # 最多保留三位小数，去掉多余的 0：130.0 -> 130，92.375 -> 92.375
+            display_tempo = f"{tempo:.3f}".rstrip("0").rstrip(".")
+            symbol.tail = f" = {display_tempo}"
 
         if voice_index >= 2:
             operations = overlay_rest_operations(
@@ -1448,7 +1450,7 @@ def build(payload: dict, output: Path) -> None:
             measure_data,
             first=index == 0,
             previous_beats=previous_beats,
-            tempo=int(payload["tempo"]),
+            tempo=float(payload["tempo"]),
             break_after=break_after,
         )
         trim_overfull_measure(

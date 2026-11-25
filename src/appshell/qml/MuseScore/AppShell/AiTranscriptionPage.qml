@@ -28,7 +28,7 @@ DockPage {
     property var imagePaths: []
     property string outputPath: ""
     property string imageTitle: ""
-    property int imageTempo: 120
+    property double imageTempo: 120.0
     property int leadingMeasures: 0
     property bool diagnosticsVisible: false
     property bool dropHovered: false
@@ -860,6 +860,8 @@ DockPage {
                                     SpinBox {
                                         from: 20
                                         to: 400
+                                        decimals: 3
+                                        stepSize: 0.001
                                         value: root.imageTempo
                                         enabled: !transcription.busy
                                         onValueModified: root.imageTempo = value

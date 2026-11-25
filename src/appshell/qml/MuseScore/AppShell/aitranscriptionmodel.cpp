@@ -347,7 +347,7 @@ bool AiTranscriptionModel::startImages(
     const QVariantList& inputPaths,
     const QString& outputPath,
     const QString& title,
-    int tempo)
+    double tempo)
 {
     const QString output = localPathFromInput(outputPath);
     if (busy()) {
@@ -399,7 +399,7 @@ bool AiTranscriptionModel::startImages(
         "--title",
         title,
         "--tempo",
-        QString::number(tempo),
+        QString::number(tempo, 'f', 3),
         "--audiveris",
         audiveris,
         "--dbscore",

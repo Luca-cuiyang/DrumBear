@@ -457,7 +457,7 @@ def extract_page(
     page: dict,
     page_number: int,
     title: str,
-    tempo: int,
+    tempo: float,
     omr_dir: Path,
     build_dir: Path,
 ) -> dict:
@@ -512,7 +512,7 @@ def extract_page(
 def extract_musicxml_page(
     page: dict,
     title: str,
-    tempo: int,
+    tempo: float,
     omr_dir: Path,
 ) -> dict:
     image = Path(page["image"])
@@ -536,7 +536,7 @@ def extract_musicxml_page(
 def infer_page_lengths(
     page: dict,
     title: str,
-    tempo: int,
+    tempo: float,
     omr_dir: Path,
 ) -> str:
     image = Path(page["image"])
@@ -553,7 +553,7 @@ def infer_page_lengths(
     )
 
 
-def combine_pages(pages: list[dict], title: str, tempo: int) -> dict:
+def combine_pages(pages: list[dict], title: str, tempo: float) -> dict:
     combined = {
         "title": title,
         "tempo": tempo,
@@ -668,7 +668,7 @@ def visual_roundtrip_validate(
     *,
     page_configs: list[dict],
     title: str,
-    tempo: int,
+    tempo: float,
     audiveris: Path,
     dbscore: Path,
     pdftoppm: str,
@@ -887,7 +887,7 @@ def main() -> None:
 
     manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
     title = manifest["title"]
-    tempo = int(manifest["tempo"])
+    tempo = float(manifest["tempo"])
     output = Path(manifest["output"])
     if args.output_dir is not None:
         output = args.output_dir / output.name
