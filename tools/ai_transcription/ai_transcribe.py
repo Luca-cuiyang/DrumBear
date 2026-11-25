@@ -16,6 +16,10 @@ import zipfile
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
+# 内置 embeddable Python 不会自动把脚本所在目录加入 sys.path，
+# 这里手动加上，确保同目录的 measure_contract 等模块可以被导入。
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 import measure_contract
 from midi_to_db import convert_midi
 from pdf_render import rasterize_pdf

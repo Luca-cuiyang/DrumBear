@@ -19,6 +19,10 @@ from fractions import Fraction
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
+# 内置 embeddable Python 不会自动把脚本所在目录加入 sys.path，
+# 这里手动加上，确保同目录模块可以被导入。
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 import measure_contract
 from pdf_render import rasterize_pdf
 import mxl_extract

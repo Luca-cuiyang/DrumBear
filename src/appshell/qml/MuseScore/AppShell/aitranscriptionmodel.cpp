@@ -977,6 +977,8 @@ void AiTranscriptionModel::startJob(const QStringList& arguments, const QString&
 
     QProcessEnvironment environment = QProcessEnvironment::systemEnvironment();
     environment.insert("PYTHONUNBUFFERED", "1");
+    environment.insert("PYTHONUTF8", "1");
+    environment.insert("PYTHONIOENCODING", "utf-8");
     const QString pythonHome = pythonHomeFor(python);
     if (!pythonHome.isEmpty()) {
         environment.insert("PYTHONHOME", pythonHome);
