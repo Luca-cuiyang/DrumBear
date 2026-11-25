@@ -406,11 +406,11 @@ bool AiTranscriptionModel::startImages(
         applicationExecutable(),
         "--style",
         resolveStyle(),
-        "--pdftoppm",
-        resolvePdfToPpm(),
-        "--report",
-        m_reportPath,
     };
+    if (!resolvePdfToPpm().isEmpty()) {
+        arguments << "--pdftoppm" << resolvePdfToPpm();
+    }
+    arguments << "--report" << m_reportPath;
     for (const QVariant& path : inputPaths) {
         arguments << "--input" << localPathFromInput(path.toString());
     }
@@ -773,19 +773,18 @@ bool AiTranscriptionModel::finalizeImageReview()
     }
     m_reportPath = m_jobDir->filePath("report.json");
     setSourceKind("image-review");
-    startJob(
-        {
-            "-u",
-            resolveEngine(),
-            "review-finalize",
-            "--project",
-            m_reviewProjectPath,
-            "--pdftoppm",
-            resolvePdfToPpm(),
-            "--report",
-            m_reportPath,
-        },
-        "image-review");
+    QStringList arguments = {
+        "-u",
+        resolveEngine(),
+        "review-finalize",
+        "--project",
+        m_reviewProjectPath,
+    };
+    if (!resolvePdfToPpm().isEmpty()) {
+        arguments << "--pdftoppm" << resolvePdfToPpm();
+    }
+    arguments << "--report" << m_reportPath;
+    startJob(arguments, "image-review");
     setStatusText(tr("全部小节已确认，正在生成正式鼓谱…"));
     return true;
 }
