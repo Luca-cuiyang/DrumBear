@@ -348,21 +348,11 @@ void AppshellCommandsController::doQuit(bool isAllInstances, const muse::io::pat
             bool installerStarted = false;
             const QString package = installerPath.toQString();
             if (QFileInfo(package).suffix().compare(QStringLiteral("msi"), Qt::CaseInsensitive) == 0) {
-                const QString appPath = QCoreApplication::applicationFilePath();
-                const QString escapedPackage = QString(package).replace(QLatin1Char('\''), QStringLiteral("''"));
-                const QString escapedApp = QString(appPath).replace(QLatin1Char('\''), QStringLiteral("''"));
-                const QString script =
-                    QStringLiteral(
-                        "$p = Start-Process -FilePath 'msiexec.exe' "
-                        "-ArgumentList @('/i','%1','/passive','/norestart') -PassThru -Wait; "
-                        "if ($p.ExitCode -eq 0 -or $p.ExitCode -eq 3010) { "
-                        "Start-Process -FilePath '%2' }")
-                        .arg(escapedPackage, escapedApp);
+                // 直接调用 msiexec 安装：升级安装时会自动触发 UAC 提权，
+                // 避免隐藏 PowerShell 脚本在非交互场景下静默失败导致“闪一下就没了”。
                 installerStarted = QProcess::startDetached(
-                    QStringLiteral("powershell.exe"),
-                    { QStringLiteral("-NoProfile"), QStringLiteral("-NonInteractive"),
-                      QStringLiteral("-WindowStyle"), QStringLiteral("Hidden"),
-                      QStringLiteral("-Command"), script });
+                    QStringLiteral("msiexec.exe"),
+                    { QStringLiteral("/i"), package, QStringLiteral("/passive"), QStringLiteral("/norestart") });
             }
             if (!installerStarted) {
                 platformInteractive()->openUrl(QUrl::fromLocalFile(package));
