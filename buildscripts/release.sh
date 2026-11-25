@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# DB绘谱 发布：版本 +1，桌面目录同步改名，提交并触发云端打包。
+# DB绘谱 发布：版本 +1，桌面目录同步改名，提交并推送（国内镜像 + GitHub），再手动触发自托管台式机打包。
 
 SOURCE_ROOT="${SOURCE_ROOT:-$HOME/Desktop}"
 PREFIX="DB绘谱-v"
@@ -49,5 +49,7 @@ mv "$current_dir" "$new_dir"
 git -C "$new_dir/DB绘谱" add -A
 git -C "$new_dir/DB绘谱" commit -m "release($new_version): bump version" || true
 git -C "$new_dir/DB绘谱" push origin "$REPO_BRANCH"
+git -C "$new_dir/DB绘谱" push ssh://ubuntu@106.53.124.26/opt/git/DrumBear.git "$REPO_BRANCH:$REPO_BRANCH"
 
-echo "完成。请重新配置构建并触发云端打包，然后上传并推送更新。"
+echo "完成。请触发自托管台式机打包（build_windows.yml, windows_x64），"
+echo "然后用 buildscripts/ci/tools/upload_installer.sh 上传并更新更新源。"
