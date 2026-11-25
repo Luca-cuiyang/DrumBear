@@ -104,6 +104,13 @@ jobs:
         ref: ${{ inputs.app_ref || github.ref }}
         submodules: recursive
 
+    - name: Trust workspace for git
+      shell: bash
+      run: |
+        git config --global --add safe.directory "$GITHUB_WORKSPACE"
+        git config --global --add safe.directory "$GITHUB_WORKSPACE/muse"
+        git config --global --add safe.directory "$GITHUB_WORKSPACE/muse_deps"
+
     - name: Override muse_framework
       if: inputs.framework_ref != '' && inputs.framework_repo != ''
       uses: actions/checkout@v7
