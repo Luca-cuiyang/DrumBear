@@ -102,3 +102,4 @@ compile_commands.json
 # See tools/ai_transcription/BUNDLED_RUNTIME.md for how to provision them.
 /tools/ai_transcription/audiveris/
 /tools/ai_transcription/python-win/
+/tools/ai_transcription/tesseract/

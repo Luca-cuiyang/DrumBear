@@ -234,11 +234,14 @@ jobs:
       shell: bash
       run: |
         mkdir -p tools/ai_transcription/audiveris
+        mkdir -p tools/ai_transcription/tesseract
         curl -fsSL --retry 3 "https://drumbear.cn/downloads/ai_transcription/audiveris-win-x64.tar.gz" -o audiveris-win-x64.tar.gz
         curl -fsSL --retry 3 "https://drumbear.cn/downloads/ai_transcription/python-win.tar.gz" -o python-win.tar.gz
+        curl -fsSL --retry 3 "https://drumbear.cn/downloads/ai_transcription/tesseract-win-x64.tar.gz" -o tesseract-win-x64.tar.gz
         tar -xzf audiveris-win-x64.tar.gz -C tools/ai_transcription/audiveris
         tar -xzf python-win.tar.gz -C tools/ai_transcription
-        ls -d tools/ai_transcription/audiveris/win-x64 tools/ai_transcription/python-win
+        tar -xzf tesseract-win-x64.tar.gz -C tools/ai_transcription/tesseract
+        ls -d tools/ai_transcription/audiveris/win-x64 tools/ai_transcription/python-win tools/ai_transcription/tesseract/tesseract.exe
 
     - parallel:
       - name: Generate _en.ts files
@@ -445,11 +448,14 @@ jobs:
         shell: bash
         run: |
           mkdir -p tools/ai_transcription/audiveris
+          mkdir -p tools/ai_transcription/tesseract
           curl -fsSL --retry 3 "https://drumbear.cn/downloads/ai_transcription/audiveris-win-x64.tar.gz" -o audiveris-win-x64.tar.gz
           curl -fsSL --retry 3 "https://drumbear.cn/downloads/ai_transcription/python-win.tar.gz" -o python-win.tar.gz
+          curl -fsSL --retry 3 "https://drumbear.cn/downloads/ai_transcription/tesseract-win-x64.tar.gz" -o tesseract-win-x64.tar.gz
           tar -xzf audiveris-win-x64.tar.gz -C tools/ai_transcription/audiveris
           tar -xzf python-win.tar.gz -C tools/ai_transcription
-          ls -d tools/ai_transcription/audiveris/win-x64 tools/ai_transcription/python-win
+          tar -xzf tesseract-win-x64.tar.gz -C tools/ai_transcription/tesseract
+          ls -d tools/ai_transcription/audiveris/win-x64 tools/ai_transcription/python-win tools/ai_transcription/tesseract/tesseract.exe
 
     - parallel:
       - name: Generate _en.ts files

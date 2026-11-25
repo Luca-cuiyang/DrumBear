@@ -258,9 +258,13 @@ def resolve_tesseract(override: str | None) -> str | None:
     """定位可用的 Tesseract 可执行文件（优先内置，其次 PATH）。"""
     if override:
         return override
-    bundled = HERE / "tesseract" / "tesseract.exe"
-    if bundled.is_file():
-        return str(bundled)
+    for bundled in (
+        HERE / "tesseract" / "tesseract.exe",
+        HERE / "tesseract" / "tesseract",
+        HERE / "tesseract" / "bin" / "tesseract",
+    ):
+        if bundled.is_file():
+            return str(bundled)
     return shutil.which("tesseract")
 
 
