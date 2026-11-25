@@ -473,8 +473,10 @@ def image_job(args: argparse.Namespace) -> dict:
     if args.tempo < 20 or args.tempo > 400:
         raise JobError("BPM 必须在 20 到 400 之间")
 
+    # 临时目录必须用 ASCII 前缀：否则中文输出名会让整条临时路径带中文，
+    # Windows 上的 OpenCV 等底层库会读不了。
     project_dir = Path(args.review_dir) if args.review_dir else Path(
-        tempfile.mkdtemp(prefix=f"{output.stem}-ai-")
+        tempfile.mkdtemp(prefix="dbscore-ai-")
     )
     project_dir.mkdir(parents=True, exist_ok=True)
     rendered = project_dir / "input-pages"
