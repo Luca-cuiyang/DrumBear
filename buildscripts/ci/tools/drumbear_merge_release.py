@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
-"""DB绘谱 更新源合并脚本（在 drumbear.cn 服务器上运行）。
+"""drumbear.cn 软件内更新源合并脚本（在服务器上运行，DB绘谱 / 鼓乐熊Studio 共用）。
 
 把某个平台的安装包资产合并进软件内更新源：
   - /opt/db-platform/public/updates/db-score.json
   - /opt/db-platform/public/updates/db-score-history.json
+  - /opt/db-platform/public/updates/db-studio.json
+  - /opt/db-platform/public/updates/db-studio-history.json
 
 用法:
-  drumbear_merge_release.py ASSET_NAME VERSION SIZE SHA256 OS NOTES UPDATES_DIR DOWNLOADS_DIR
+  drumbear_merge_release.py ASSET_NAME VERSION SIZE SHA256 OS NOTES FEED_NAME UPDATES_DIR DOWNLOADS_DIR
+
+  FEED_NAME: db-score（DB绘谱）或 db-studio（鼓乐熊Studio）。
 
 说明:
   - 两个平台（Windows/macOS）并行跑 CI 时都会调用本脚本，外部用 flock 加锁即可避免竞态。
@@ -27,18 +31,19 @@ def atomic_write(path, data):
 
 
 def main():
-    if len(sys.argv) != 9:
+    if len(sys.argv) != 10:
         print(
-            "usage: merge_release.py ASSET_NAME VERSION SIZE SHA256 OS NOTES UPDATES_DIR DOWNLOADS_DIR",
+            "usage: merge_release.py ASSET_NAME VERSION SIZE SHA256 OS NOTES FEED_NAME UPDATES_DIR DOWNLOADS_DIR",
             file=sys.stderr,
         )
         return 2
 
-    asset_name, version, size, sha256, os_name, notes, updates_dir, downloads_dir = sys.argv[1:9]
+    asset_name, version, size, sha256, os_name, notes, feed_name, updates_dir, downloads_dir = sys.argv[1:10]
     size = int(size)
 
-    feed_path = os.path.join(updates_dir, "db-score.json")
-    hist_path = os.path.join(updates_dir, "db-score-history.json")
+    feed_path = os.path.join(updates_dir, feed_name + ".json")
+    hist_path = os.path.join(updates_dir, feed_name + "-history.json")
+    app_name = "DB绘谱" if feed_name == "db-score" else "鼓乐熊Studio"
 
     feed = {"tag_name": "", "bodyMarkdown": "", "assets": []}
     hist = {"releases": []}
@@ -57,7 +62,7 @@ def main():
     }
 
     tag = "v" + version
-    default_notes = "DB绘谱 " + version
+    default_notes = app_name + " " + version
     if feed.get("tag_name") != tag:
         feed = {
             "tag_name": tag,
