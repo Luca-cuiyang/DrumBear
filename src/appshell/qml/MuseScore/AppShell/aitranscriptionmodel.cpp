@@ -1565,6 +1565,7 @@ QString AiTranscriptionModel::resolveEngine() const
     }
     const QStringList candidates = {
         applicationResourcePath("ai_transcription/ai_transcribe.py"),
+        findInParents("ai_transcription/ai_transcribe.py"),
         findInParents("tools/ai_transcription/ai_transcribe.py"),
     };
     for (const QString& candidate : candidates) {
@@ -1699,6 +1700,7 @@ QString AiTranscriptionModel::applicationResourcePath(
     const QStringList roots = {
         executableDir.filePath("resources"),
         QDir(executableDir.filePath("..")).filePath("Resources"),
+        QDir(executableDir.filePath("..")).absolutePath(),
     };
     for (const QString& root : roots) {
         const QString candidate = QDir(root).filePath(relativePath);

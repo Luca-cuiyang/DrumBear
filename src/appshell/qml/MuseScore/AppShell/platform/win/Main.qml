@@ -30,6 +30,10 @@ import DBScore.AppShell
 AppWindow {
     id: root
 
+    Component.onCompleted: {
+        window.init()
+    }
+
     function toggleMaximized() {
         if (root.visibility === Window.Maximized) {
             root.showNormal()
