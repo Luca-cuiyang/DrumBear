@@ -112,9 +112,41 @@
         <CustomAction Id="UnregisterUpdateTask" BinaryKey="WixCA" DllEntry="WixQuietExec"
             Execute="deferred" Impersonate="no" Return="ignore" />
 
+        <!-- 升级/安装时清理旧版本残留：旧的「DB绘谱 5」「DB score制谱大师」等开始菜单文件夹与快捷方式 -->
+        <CustomAction Id="CleanupLegacyDbScoreShortcuts" Script="vbscript"
+            Execute="deferred" Impersonate="no" Return="ignore">
+          <![CDATA[
+On Error Resume Next
+Dim fso, sh, base, pub, i, p
+Set fso = CreateObject("Scripting.FileSystemObject")
+Set sh = CreateObject("WScript.Shell")
+base = sh.ExpandEnvironmentStrings("%ProgramData%") & "\Microsoft\Windows\Start Menu\Programs\"
+pub = sh.ExpandEnvironmentStrings("%PUBLIC%") & "\Desktop\"
+
+Dim hui, zhpd
+hui = "DB" & ChrW(&H7ED8) & ChrW(&H8C31)
+zhpd = ChrW(&H5236) & ChrW(&H8C31) & ChrW(&H5927) & ChrW(&H5E08)
+
+Dim folders, files
+folders = Array(hui & " 5", "DB Score", "DBscore", "DB score" & zhpd, "DB Score" & zhpd)
+files = Array("Uninstall DBScore.lnk", hui & " 5.lnk", "DB Score.lnk", "DBscore.lnk", "DB score" & zhpd & ".lnk", "DB Score" & zhpd & ".lnk")
+
+For Each i In folders
+  If fso.FolderExists(base & i) Then fso.DeleteFolder base & i, True
+Next
+For Each i In files
+  p = base & i
+  If fso.FileExists(p) Then fso.DeleteFile p, True
+  p = pub & i
+  If fso.FileExists(p) Then fso.DeleteFile p, True
+Next
+          ]]>
+        </CustomAction>
+
         <InstallExecuteSequence>
             <Custom Action="SetRegisterUpdateTask" Before="RegisterUpdateTask">NOT REMOVE</Custom>
             <Custom Action="RegisterUpdateTask" After="InstallFiles">NOT REMOVE</Custom>
+            <Custom Action="CleanupLegacyDbScoreShortcuts" After="InstallFiles">NOT REMOVE</Custom>
             <!-- NOT UPGRADINGPRODUCTCODE: on a major upgrade the removal of the previous
                  version would delete the staged package msiexec is reading from
                  (1316 -> 1603 -> rollback), and the new version re-registers anyway. -->
