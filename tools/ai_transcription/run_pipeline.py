@@ -71,6 +71,8 @@ def run(
             command,
             cwd=cwd,
             text=True,
+            encoding="utf-8",
+            errors="replace",
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             timeout=effective_timeout,
@@ -135,6 +137,8 @@ def _run_dbscore_without_audio_once(
             stdout=output_file,
             stderr=subprocess.STDOUT,
             text=True,
+            encoding="utf-8",
+            errors="replace",
         )
         deadline = time.monotonic() + 45
         completed = False

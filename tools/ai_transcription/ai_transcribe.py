@@ -91,6 +91,8 @@ def run(
             command,
             env=env,
             text=True,
+            encoding="utf-8",
+            errors="replace",
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             timeout=effective_timeout,
@@ -236,13 +238,19 @@ def expand_inputs(
     dpi: int,
 ) -> list[Path]:
     result: list[Path] = []
+    page_index = 0
     for path in paths:
         ensure_file(path, "鼓谱文件")
         suffix = path.suffix.lower()
         if suffix == ".pdf":
             result.extend(render_pdf(path, output_dir, pdftoppm, dpi))
         elif suffix in IMAGE_SUFFIXES:
-            result.append(path)
+            # Windows 上 OpenCV/Audiveris 等子进程对中文路径处理不稳定，
+            # 统一复制为 ASCII 文件名，避免路径乱码导致转谱失败。
+            page_index += 1
+            dest = output_dir / f"input-page-{page_index}{suffix}"
+            shutil.copy2(path, dest)
+            result.append(dest)
         else:
             raise JobError(f"不支持的鼓谱文件类型：{path.suffix}")
     if not result:
@@ -472,17 +480,24 @@ def image_job(args: argparse.Namespace) -> dict:
     rendered = project_dir / "input-pages"
     rendered.mkdir(parents=True, exist_ok=True)
     inputs = [normalize_input_path(path) for path in args.inputs]
+    # 黄金样板按原始文件名匹配（图片稍后会被复制成 ASCII 临时名）
+    template = matching_manifest(inputs)
     images = expand_inputs(
         inputs,
         rendered,
         args.pdftoppm,
         args.pdf_dpi,
     )
-    template = matching_manifest(images)
     template_pages = {
         Path(page["image"]).name: page
         for page in (template or {}).get("pages", [])
     }
+    # 复制后的 ASCII 路径 -> 原始文件名，用于回查黄金样板
+    original_by_copied = {}
+    image_inputs = [p for p in inputs if p.suffix.lower() in IMAGE_SUFFIXES]
+    copied_images = [im for im in images if im.name.startswith("input-page-")]
+    for copied, original in zip(copied_images, image_inputs):
+        original_by_copied[str(copied)] = original.name
     draft_output = project_dir / "draft.db"
     work_dir = project_dir / "work"
     layout_reference = template_layout_reference(template, style)
@@ -498,10 +513,18 @@ def image_job(args: argparse.Namespace) -> dict:
         "pages": [
             {
                 "image": str(image),
-                "lengths": template_pages.get(image.name, {}).get("lengths", ""),
-                "counts": template_pages.get(image.name, {}).get("counts"),
-                "splits": template_pages.get(image.name, {}).get("splits", []),
-                "tuplets": template_pages.get(image.name, {}).get("tuplets", {}),
+                "lengths": template_pages.get(
+                    original_by_copied.get(str(image), ""), {}
+                ).get("lengths", ""),
+                "counts": template_pages.get(
+                    original_by_copied.get(str(image), ""), {}
+                ).get("counts"),
+                "splits": template_pages.get(
+                    original_by_copied.get(str(image), ""), {}
+                ).get("splits", []),
+                "tuplets": template_pages.get(
+                    original_by_copied.get(str(image), ""), {}
+                ).get("tuplets", {}),
             }
             for image in images
         ],
