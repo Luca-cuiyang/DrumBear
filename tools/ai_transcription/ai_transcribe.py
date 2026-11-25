@@ -254,6 +254,55 @@ def expand_inputs(
     return result
 
 
+def resolve_tesseract(override: str | None) -> str | None:
+    """定位可用的 Tesseract 可执行文件（优先内置，其次 PATH）。"""
+    if override:
+        return override
+    bundled = HERE / "tesseract" / "tesseract.exe"
+    if bundled.is_file():
+        return str(bundled)
+    return shutil.which("tesseract")
+
+
+def detect_tempo(image_path: Path, tesseract: str | None) -> int | None:
+    """OCR 鼓谱图片顶部，尽力读出印刷的速度记号（如 ♩=130）。"""
+    if not tesseract:
+        return None
+    try:
+        from PIL import Image
+
+        with Image.open(image_path) as im:
+            width, height = im.size
+            top_h = max(1, int(height * 0.18))
+            strip = im.crop((0, 0, width, top_h))
+            strip = strip.resize((width * 2, top_h * 2), Image.LANCZOS)
+            tmp = image_path.with_suffix(".tempo.png")
+            strip.save(tmp)
+        result = subprocess.run(
+            [tesseract, str(tmp), "stdout", "-l", "eng", "--psm", "6"],
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            timeout=60,
+        )
+        tmp.unlink(missing_ok=True)
+        text = (result.stdout or "") + " " + (result.stderr or "")
+        # 优先取等号 / 破折号后面的数字（♩=130 / ♩—130 这类）
+        for match in re.finditer(r"[=:—–~\-]\s*(\d{2,3})", text):
+            value = int(match.group(1))
+            if 30 <= value <= 400:
+                return value
+        # 退而求其次：任意 30..400 的两位数/三位数
+        for match in re.finditer(r"(?<!\d)(\d{2,3})(?!\d)", text):
+            value = int(match.group(1))
+            if 30 <= value <= 400:
+                return value
+        return None
+    except Exception:
+        return None
+
+
 def matching_manifest(inputs: list[Path]) -> dict | None:
     selected_names = sorted(path.name for path in inputs)
     for path in sorted((HERE / "manifests").glob("*.json")):
@@ -496,13 +545,17 @@ def image_job(args: argparse.Namespace) -> dict:
     copied_images = [im for im in images if im.name.startswith("input-page-")]
     for copied, original in zip(copied_images, image_inputs):
         original_by_copied[str(copied)] = original.name
+    # 尽力识别图片上印刷的速度记号，识别不到就用手动指定的速度。
+    tesseract = resolve_tesseract(args.tesseract)
+    detected_tempo = detect_tempo(images[0], tesseract) if images else None
+    effective_tempo = detected_tempo if detected_tempo is not None else args.tempo
     draft_output = project_dir / "draft.db"
     work_dir = project_dir / "work"
     layout_reference = template_layout_reference(template, style)
     manifest = {
         "profile": "drum-score",
         "title": args.title,
-        "tempo": args.tempo,
+        "tempo": effective_tempo,
         "output": str(draft_output),
         "final_output": str(output),
         "audiveris": str(audiveris),
@@ -679,7 +732,8 @@ def image_job(args: argparse.Namespace) -> dict:
     review = {
         "profile": "drum-score",
         "title": args.title,
-        "tempo": args.tempo,
+        "tempo": effective_tempo,
+        "detectedTempo": detected_tempo,
         "projectDir": str(project_dir),
         "manifest": str(manifest_path),
         "finalOutput": str(output),
@@ -756,7 +810,8 @@ def image_job(args: argparse.Namespace) -> dict:
         "totalMeasures": len(review_measures),
         "autoAcceptedMeasures": len(review_measures),
         "title": args.title,
-        "tempo": args.tempo,
+        "tempo": effective_tempo,
+        "detectedTempo": detected_tempo,
         "rhythmSource": args.rhythm_source,
     }
     stage("图片 / PDF 转谱完成，可直接进入乐谱编辑")
@@ -912,6 +967,7 @@ def build_parser() -> argparse.ArgumentParser:
     image.add_argument("--audiveris", type=Path, required=True)
     image.add_argument("--dbscore", type=Path, required=True)
     image.add_argument("--style", type=Path, default=default_style())
+    image.add_argument("--tesseract", default=None)
     image.add_argument(
         "--rhythm-source",
         choices=("omr", "musicxml"),
